@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+/* ── Theme variables ─────────────────────────────── */
+:root {
+  --bg0: #0a0a14;
+  --bg1: #12122a;
+  --bg2: #16213e;
+  --bg2h: #1e2a4e;
+  --bg3: #1a1a3e;
+  --bd0: #1e2547;
+  --bd1: #2d3758;
+  --t0: #e2e8f0;
+  --t1: #94a3b8;
+  --t2: #64748b;
+  --t3: #3a3a6a;
+  --sidebar: #0e0e22;
+
+  --blue: #4f8ef7;
+  --purple: #a855f7;
+  --pink: #ec4899;
+  --green: #10b981;
+  --yellow: #f59e0b;
+  --red: #ef4444;
+  --orange: #f97316;
+
+  --chart-grid: #1e2547;
+  --tooltip-bg: #16213e;
+  --scrollbar: #2d3758;
+}
+
+[data-theme="light"] {
+  --bg0: #f0f4f8;
+  --bg1: #e8edf5;
+  --bg2: #ffffff;
+  --bg2h: #f7f9fc;
+  --bg3: #eef2f8;
+  --bd0: #dde3ee;
+  --bd1: #c8d2e0;
+  --t0: #1a202c;
+  --t1: #4a5568;
+  --t2: #718096;
+  --t3: #a0aec0;
+  --sidebar: #1e2547;
+
+  --chart-grid: #e2e8f0;
+  --tooltip-bg: #ffffff;
+  --scrollbar: #c8d2e0;
+}
+
+/* ── Reset ───────────────────────────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg0);
+  color: var(--t0);
+  min-height: 100vh;
+  transition: background 0.25s, color 0.25s;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg1); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--bd1); }
+
+input[type="number"]::-webkit-inner-spin-button { opacity: 0.5; }
+input[type="month"]::-webkit-calendar-picker-indicator { filter: invert(0.5); cursor: pointer; }
+
+/* ── Recharts tooltip ────────────────────────────── */
+.recharts-tooltip-wrapper { outline: none; }
