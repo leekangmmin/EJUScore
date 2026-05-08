@@ -11,6 +11,10 @@ console.info(
   'background:#313244;color:#89b4fa;padding:2px 6px;border-radius:0 4px 4px 0'
 )
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />

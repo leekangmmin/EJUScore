@@ -1,20 +1,47 @@
 {
   "name": "eju-score-tracker",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "description": "EJU 모의고사 점수 관리 앱",
   "author": "이강민 (Lee Kangmin) <leekangmmin@github>",
   "license": "MIT",
+  "main": "electron/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/leekangmmin/EJUScore.git"
   },
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "electron:dev": "npm run build && electron .",
+    "electron:build:win": "npm run build && electron-builder --win",
+    "electron:build:linux": "npm run build && electron-builder --linux"
   },
+  "build": {
+    "appId": "com.ejuscore.app",
+    "productName": "EJU Score Tracker",
+    "copyright": "Copyright © 2025 이강민 (Lee Kangmin)",
+    "directories": { "output": "release" },
+    "files": ["dist/**", "electron/**", "public/icon-512.png"],
+    "win": {
+      "icon": "public/icon-512.png",
+      "target": [{ "target": "nsis", "arch": ["x64"] }]
+    },
+    "linux": {
+      "icon": "public/icon-512.png",
+      "target": ["AppImage", "deb"],
+      "category": "Education"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "public/icon-512.png",
+      "installerHeaderIcon": "public/icon-512.png"
+    }
+  },
+  "type": "module",
   "dependencies": {
     "lucide-react": "^1.14.0",
     "react": "^19.2.5",
@@ -26,6 +53,8 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "electron": "^35.0.0",
+    "electron-builder": "^25.0.0",
     "eslint": "^10.2.1",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",

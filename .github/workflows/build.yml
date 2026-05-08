@@ -1,7 +1,5 @@
 # Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
-# VSCode에서 main에 push하면 자동으로 macOS 앱을 빌드하고 아티팩트로 저장합니다.
-
-name: Build macOS App
+name: Build
 
 on:
   push:
@@ -10,46 +8,54 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  # ── macOS (.app) ──────────────────────────────────
+  build-macos:
     runs-on: macos-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install & Build React
-        run: npm ci && npm run build
-
-      - name: Copy web bundle to Xcode project
-        run: |
-          rm -rf EJUScore/EJUScore/www
-          cp -r dist EJUScore/EJUScore/www
-
-      - name: Build macOS App
-        run: |
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci && npm run build
+      - run: rm -rf EJUScore/EJUScore/www && cp -r dist EJUScore/EJUScore/www
+      - run: |
           xcodebuild \
             -project EJUScore/EJUScore.xcodeproj \
-            -scheme EJUScore \
-            -configuration Release \
+            -scheme EJUScore -configuration Release \
             -derivedDataPath /tmp/ejubuild \
-            CODE_SIGN_IDENTITY="" \
-            CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO \
-            build
-
-      - name: Zip .app
-        run: |
-          cd /tmp/ejubuild/Build/Products/Release
-          zip -r EJUScore.app.zip EJUScore.app
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
+      - run: cd /tmp/ejubuild/Build/Products/Release && zip -r EJUScore-macOS.zip EJUScore.app
+      - uses: actions/upload-artifact@v4
         with:
           name: EJUScore-macOS-${{ github.sha }}
-          path: /tmp/ejubuild/Build/Products/Release/EJUScore.app.zip
+          path: /tmp/ejubuild/Build/Products/Release/EJUScore-macOS.zip
+          retention-days: 30
+
+  # ── Windows (.exe) ────────────────────────────────
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci && npm run build
+      - run: npx electron-builder --win --publish never
+      - uses: actions/upload-artifact@v4
+        with:
+          name: EJUScore-Windows-${{ github.sha }}
+          path: release/*.exe
+          retention-days: 30
+
+  # ── Linux (.AppImage) ─────────────────────────────
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci && npm run build
+      - run: npx electron-builder --linux --publish never
+      - uses: actions/upload-artifact@v4
+        with:
+          name: EJUScore-Linux-${{ github.sha }}
+          path: release/*.AppImage
           retention-days: 30

@@ -1,5 +1,6 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
 import { useMemo, useState } from 'react';
+import { generateDiagnosis, getDday } from '../utils/diagnosis';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
   Legend, ResponsiveContainer, ReferenceLine,
@@ -144,6 +145,8 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
   const tJap = settings.targetJapanese ?? 320;
   const tComp = settings.targetComprehensive ?? 170;
   const threshold = settings.alertThreshold ?? 3;
+  const dday = getDday(settings.nextExamDate);
+  const diagnosis = useMemo(() => generateDiagnosis(exams), [exams]);
 
   // Latest / prev scores
   const latest = exams[exams.length - 1];
@@ -221,8 +224,44 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
     );
   }
 
+  // D-day color + label
+  const ddayColor  = dday === null ? null : dday <= 0 ? 'var(--green)' : dday <= 7 ? 'var(--red)' : dday <= 30 ? 'var(--orange)' : 'var(--blue)';
+  const ddayLabel  = dday === null ? null : dday > 0 ? `D-${dday}` : dday === 0 ? 'D-Day!' : `D+${Math.abs(dday)}`;
+  const ddayEmoji  = dday === null ? null : dday <= 0 ? '🎌' : dday <= 7 ? '🔥' : dday <= 30 ? '⚡' : '📅';
+
+  const LEVEL_STYLE = {
+    critical: { bg:'rgba(239,68,68,0.08)',  border:'rgba(239,68,68,0.3)',  color:'var(--red)',    badge:'#ef4444' },
+    warning:  { bg:'rgba(245,158,11,0.08)', border:'rgba(245,158,11,0.3)', color:'var(--yellow)', badge:'#f59e0b' },
+    info:     { bg:'rgba(79,142,247,0.08)', border:'rgba(79,142,247,0.3)', color:'var(--blue)',   badge:'#4f8ef7' },
+    good:     { bg:'rgba(16,185,129,0.08)', border:'rgba(16,185,129,0.3)', color:'var(--green)',  badge:'#10b981' },
+  };
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+      {/* D-day banner */}
+      {dday !== null && (
+        <div style={{
+          borderRadius: 18, padding: '20px 24px',
+          background: `linear-gradient(135deg, ${ddayColor}18, ${ddayColor}08)`,
+          border: `1px solid ${ddayColor}44`,
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16,
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+            <div style={{ fontSize: 36 }}>{ddayEmoji}</div>
+            <div>
+              <div style={{ fontSize: 12, color: 'var(--t2)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>다음 EJU 시험</div>
+              <div style={{ fontSize: 14, color: 'var(--t1)', marginTop: 2 }}>
+                {new Date(settings.nextExamDate).toLocaleDateString('ko-KR', { year:'numeric', month:'long', day:'numeric' })}
+              </div>
+            </div>
+          </div>
+          <div style={{ textAlign: 'right' }}>
+            <div style={{ fontSize: 42, fontWeight: 800, color: ddayColor, letterSpacing: '-2px', lineHeight: 1 }}>{ddayLabel}</div>
+            {dday > 0 && <div style={{ fontSize: 11, color: 'var(--t2)', marginTop: 4 }}>남은 기간 {Math.floor(dday/7)}주 {dday%7}일</div>}
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>
         <div>
@@ -252,8 +291,36 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
       {/* Alerts */}
       <AlertBanner reading={alerts.reading} listening={alerts.listening} threshold={threshold} />
 
+      {/* Diagnosis cards */}
+      {diagnosis.length > 0 && (
+        <div style={{ ...CARD, padding: 20 }}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)', marginBottom: 14, display: 'flex', alignItems: 'center', gap: 8 }}>
+            <span>🩺</span> 약점 자동 진단
+            <span style={{ fontSize: 11, color: 'var(--t3)', fontWeight: 400, marginLeft: 4 }}>— AI가 오답 패턴을 분석했어요</span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {diagnosis.map((item, i) => {
+              const s = LEVEL_STYLE[item.level];
+              return (
+                <div key={i} style={{
+                  display: 'flex', alignItems: 'center', gap: 14, padding: '12px 14px',
+                  borderRadius: 12, background: s.bg, border: `1px solid ${s.border}`,
+                }}>
+                  <span style={{ fontSize: 20, flexShrink: 0 }}>{item.icon}</span>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: s.color }}>{item.title}</div>
+                    <div style={{ fontSize: 12, color: 'var(--t2)', marginTop: 2 }}>{item.desc}</div>
+                  </div>
+                  <div style={{ width: 8, height: 8, borderRadius: '50%', background: s.badge, flexShrink: 0 }} />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {/* Stat cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
+      <div className="stat-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
         <StatCard label="일본어 합계" value={latestJap} max={400} color="var(--blue)" diff={diffJap} />
         <StatCard label="독해" value={latest?.japanese?.reading} max={200} color="var(--purple)" diff={diffRead} />
         <StatCard label="청해" value={latest?.japanese?.listening} max={200} color="var(--pink)" diff={diffList} />

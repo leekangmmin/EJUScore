@@ -1,68 +1,66 @@
 # Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
-# v1.0.0 같은 태그를 push하면 자동으로 GitHub Release가 생성됩니다.
-
 name: Release
 
 on:
   push:
-    tags:
-      - 'v*'
+    tags: ['v*']
 
 jobs:
-  release:
+  release-macos:
     runs-on: macos-latest
-    permissions:
-      contents: write
+    permissions: { contents: write }
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install & Build React
-        run: npm ci && npm run build
-
-      - name: Copy web bundle to Xcode project
-        run: |
-          rm -rf EJUScore/EJUScore/www
-          cp -r dist EJUScore/EJUScore/www
-
-      - name: Build macOS App
-        run: |
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci && npm run build
+      - run: rm -rf EJUScore/EJUScore/www && cp -r dist EJUScore/EJUScore/www
+      - run: |
           xcodebuild \
             -project EJUScore/EJUScore.xcodeproj \
-            -scheme EJUScore \
-            -configuration Release \
+            -scheme EJUScore -configuration Release \
             -derivedDataPath /tmp/ejubuild \
-            CODE_SIGN_IDENTITY="" \
-            CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO \
-            build
-
-      - name: Package .app
-        run: |
-          cd /tmp/ejubuild/Build/Products/Release
-          zip -r EJUScore.app.zip EJUScore.app
-
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
+      - run: cd /tmp/ejubuild/Build/Products/Release && zip -r EJUScore-macOS.zip EJUScore.app
+      - uses: softprops/action-gh-release@v2
         with:
-          name: EJU Score Tracker ${{ github.ref_name }}
+          files: /tmp/ejubuild/Build/Products/Release/EJUScore-macOS.zip
           body: |
             ## EJU Score Tracker ${{ github.ref_name }}
-
             **Copyright © 2025 이강민 (Lee Kangmin)**
 
-            ### 설치 방법
-            1. `EJUScore.app.zip` 다운로드
-            2. 압축 해제 후 응용 프로그램 폴더로 이동
-            3. 처음 실행 시 우클릭 → 열기
+            | 플랫폼 | 파일 |
+            |--------|------|
+            | macOS 12+ | `EJUScore-macOS.zip` |
+            | Windows 10+ | `EJUScore-Windows-Setup.exe` |
+            | Linux | `EJUScore.AppImage` |
+            | 모바일 (iOS/Android) | 브라우저에서 [웹앱](https://leekangmmin.github.io/EJUScore/) 설치 |
 
-            > macOS 12.0 Monterey 이상 필요
-          files: /tmp/ejubuild/Build/Products/Release/EJUScore.app.zip
-          draft: false
-          prerelease: false
+            ### 설치 방법 (macOS)
+            압축 해제 → 응용 프로그램 이동 → 우클릭 → 열기
+
+  release-windows:
+    runs-on: windows-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci && npm run build
+      - run: npx electron-builder --win --publish never
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: release/*.exe
+
+  release-linux:
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci && npm run build
+      - run: npx electron-builder --linux --publish never
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: release/*.AppImage

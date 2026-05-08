@@ -9,6 +9,7 @@ export const DEFAULT_SETTINGS = {
   targetComprehensive: 170,
   theme: 'dark',
   alertThreshold: 3,
+  nextExamDate: '',
 };
 
 export function getSettings() {

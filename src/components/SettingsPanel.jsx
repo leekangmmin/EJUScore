@@ -115,6 +115,33 @@ export default function SettingsPanel({ settings, onClose, onSave }) {
           </div>
         </div>
 
+        {/* D-day */}
+        <div style={{ marginBottom: 28, padding: 20, background: 'var(--bg3)', borderRadius: 14, border: '1px solid var(--bd0)' }}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--orange)', marginBottom: 16 }}>📅 다음 시험 D-day</div>
+          <div style={ROW}>
+            <span style={LABEL_S}>시험 날짜</span>
+            <div style={{ flex: 1, display: 'flex', gap: 10, alignItems: 'center' }}>
+              <input type="date" value={s.nextExamDate || ''} onChange={e => set('nextExamDate', e.target.value)}
+                style={{
+                  background: 'var(--bg2)', border: '1px solid var(--bd1)', borderRadius: 8,
+                  padding: '7px 10px', color: 'var(--t0)', fontSize: 14, fontFamily: 'inherit',
+                  outline: 'none', cursor: 'pointer', colorScheme: 'dark',
+                }} />
+              {s.nextExamDate && (
+                <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--orange)' }}>
+                  {(() => { const d = Math.ceil((new Date(s.nextExamDate) - new Date()) / 86400000); return d > 0 ? `D-${d}` : d === 0 ? 'D-Day!' : `D+${Math.abs(d)}`; })()}
+                </span>
+              )}
+              {s.nextExamDate && (
+                <button onClick={() => set('nextExamDate', '')} style={{
+                  background: 'transparent', color: 'var(--t3)', border: 'none',
+                  cursor: 'pointer', fontSize: 16, padding: '0 4px',
+                }}>✕</button>
+              )}
+            </div>
+          </div>
+        </div>
+
         {/* Buttons */}
         <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end' }}>
           <button onClick={handleReset} style={{
