@@ -112,8 +112,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       view.addSubview(sub)
 
       var scoreStr = ""
-      if let j = p.latestJap  { scoreStr += "일어 \(j)/\(p.targetJap ?? 400)  " }
-      if let c = p.latestComp { scoreStr += "종합 \(c)/\(p.targetComp ?? 200)" }
+      if let j = p.latestJap  { scoreStr += "일어 \(j)/400  " }
+      if let c = p.latestComp { scoreStr += "종합 \(c)/200" }
       if !scoreStr.isEmpty {
         let score = NSTextField(labelWithString: scoreStr.trimmingCharacters(in: .whitespaces))
         score.font = NSFont.monospacedDigitSystemFont(ofSize: 12, weight: .semibold)

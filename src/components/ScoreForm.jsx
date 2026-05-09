@@ -1,6 +1,6 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
 import { useState, useEffect } from 'react';
-import { saveExam } from '../utils/storage';
+import { saveExam, getExams } from '../utils/storage';
 
 const ERROR_TYPES  = ['실수', '정보부족', '연계사고부족'];
 const COMMON_UNITS = ['정치', '경제', '사회', '지리', '역사', '현대사', '국제관계', '기타'];
@@ -44,6 +44,7 @@ function ScoreInput({ label, value, onChange, max, accent }) {
 }
 
 export default function ScoreForm({ editingExam, onSave, onCancel }) {
+  const [entryMode, setEntryMode] = useState('both');
   const [date, setDate] = useState(() => {
     const n = new Date();
     return `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}`;
@@ -55,8 +56,11 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
   const [wrongListening, setWrongListening] = useState('');
   const [compScore, setCompScore]       = useState(0);
   const [mistakes, setMistakes]         = useState([]);
+  const [latestExam, setLatestExam]     = useState(null);
 
   useEffect(() => {
+    const exams = getExams();
+    setLatestExam(exams[exams.length - 1] || null);
     if (!editingExam) return;
     setDate(editingExam.date);
     setExamName(editingExam.examName);
@@ -69,24 +73,43 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
   }, [editingExam]);
 
   const parseNums = str => str.split(/[\s,]+/).map(Number).filter(n => Number.isInteger(n) && n > 0);
+  const copyLatest = () => {
+    if (!latestExam) return;
+    setExamName(`${latestExam.examName || '이전 시험'} 복사`);
+    setReading(latestExam.japanese?.reading || 0);
+    setListening(latestExam.japanese?.listening || 0);
+    setWrongReading((latestExam.japanese?.wrongQuestions?.reading || []).join(', '));
+    setWrongListening((latestExam.japanese?.wrongQuestions?.listening || []).join(', '));
+    setCompScore(latestExam.comprehensive?.score || 0);
+    setMistakes((latestExam.comprehensive?.mistakes || []).map(m => ({ ...m, id: crypto.randomUUID() })));
+  };
   const addMistake = () => setMistakes(m => [...m, { id: crypto.randomUUID(), questionNumber: '', unit: '', errorType: '정보부족', memo: '' }]);
   const updateMistake = (id, field, val) => setMistakes(m => m.map(x => x.id === id ? { ...x, [field]: val } : x));
   const removeMistake = id => setMistakes(m => m.filter(x => x.id !== id));
 
   const handleSubmit = e => {
     e.preventDefault();
+    const existingSameMonth = !editingExam
+      ? getExams().find(ex => ex.date === date)
+      : null;
+    const base = existingSameMonth || {};
+
     saveExam({
-      id: editingExam?.id || crypto.randomUUID(),
+      id: editingExam?.id || existingSameMonth?.id || crypto.randomUUID(),
       date,
       examName: examName.trim() || `${date} 모의고사`,
-      japanese: {
-        reading, listening,
-        wrongQuestions: { reading: parseNums(wrongReading), listening: parseNums(wrongListening) },
-      },
-      comprehensive: {
-        score: compScore,
-        mistakes: mistakes.filter(m => m.unit || m.questionNumber),
-      },
+      japanese: entryMode === 'comprehensive'
+        ? (base.japanese || editingExam?.japanese)
+        : {
+            reading, listening,
+            wrongQuestions: { reading: parseNums(wrongReading), listening: parseNums(wrongListening) },
+          },
+      comprehensive: entryMode === 'japanese'
+        ? (base.comprehensive || editingExam?.comprehensive)
+        : {
+            score: compScore,
+            mistakes: mistakes.filter(m => m.unit || m.questionNumber),
+          },
     });
     onSave();
   };
@@ -98,6 +121,36 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
       <div style={{ marginBottom: 26 }}>
         <h1 style={{ fontSize: 24, fontWeight: 700, color: 'var(--t0)' }}>{editingExam ? '점수 수정' : '점수 입력'}</h1>
         <div style={{ color: 'var(--t2)', fontSize: 13, marginTop: 3 }}>모의고사 결과를 기록해보세요</div>
+      </div>
+
+      <div style={{ ...SECTION, padding: 14, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+        {[
+          { id: 'both', label: '일본어 + 종합과목' },
+          { id: 'japanese', label: '일본어만 입력' },
+          { id: 'comprehensive', label: '종합과목만 입력' },
+        ].map(opt => {
+          const active = entryMode === opt.id;
+          return (
+            <button
+              key={opt.id}
+              type="button"
+              onClick={() => setEntryMode(opt.id)}
+              style={{
+                background: active ? 'rgba(79,142,247,0.16)' : 'var(--bg3)',
+                color: active ? 'var(--blue)' : 'var(--t1)',
+                border: active ? '1px solid rgba(79,142,247,0.55)' : '1px solid var(--bd1)',
+                borderRadius: 10,
+                padding: '8px 12px',
+                fontSize: 12,
+                fontWeight: 600,
+                cursor: 'pointer',
+                fontFamily: 'inherit',
+              }}
+            >
+              {opt.label}
+            </button>
+          );
+        })}
       </div>
 
       {/* Basic */}
@@ -118,9 +171,31 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
               onBlur={e => e.target.style.borderColor = 'var(--bd1)'} />
           </div>
         </div>
+        {!editingExam && latestExam && (
+          <div style={{ marginTop: 12 }}>
+            <button
+              type="button"
+              onClick={copyLatest}
+              style={{
+                background: 'rgba(79,142,247,0.1)',
+                color: 'var(--blue)',
+                border: '1px solid rgba(79,142,247,0.3)',
+                borderRadius: 8,
+                padding: '6px 12px',
+                fontSize: 12,
+                fontWeight: 600,
+                cursor: 'pointer',
+                fontFamily: 'inherit',
+              }}
+            >
+              최근 입력값 복사
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Japanese */}
+      {entryMode !== 'comprehensive' && (
       <div style={SECTION}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 18 }}>
           <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--t0)' }}>🇯🇵 일본어</div>
@@ -151,8 +226,10 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
           </div>
         </div>
       </div>
+      )}
 
       {/* Comprehensive */}
+      {entryMode !== 'japanese' && (
       <div style={SECTION}>
         <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--t0)', marginBottom: 16 }}>📚 종합과목</div>
         <ScoreInput label="점수" value={compScore} onChange={setCompScore} max={200} accent="var(--green)" />
@@ -226,6 +303,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
           </div>
         </div>
       </div>
+      )}
 
       {/* Buttons */}
       <div style={{ display: 'flex', gap: 10 }}>

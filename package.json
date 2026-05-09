@@ -1,7 +1,7 @@
 {
   "name": "eju-score-tracker",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "EJU 모의고사 점수 관리 앱",
   "author": "이강민 (Lee Kangmin) <leekangmmin@github>",
   "license": "MIT",
@@ -23,15 +23,31 @@
     "appId": "com.ejuscore.app",
     "productName": "EJU Score Tracker",
     "copyright": "Copyright © 2025 이강민 (Lee Kangmin)",
-    "directories": { "output": "release" },
-    "files": ["dist/**", "electron/**", "public/icon-512.png"],
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**",
+      "electron/**",
+      "public/icon-512.png"
+    ],
     "win": {
       "icon": "public/icon-512.png",
-      "target": [{ "target": "nsis", "arch": ["x64"] }]
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
     },
     "linux": {
       "icon": "public/icon-512.png",
-      "target": ["AppImage", "deb"],
+      "target": [
+        "AppImage",
+        "deb"
+      ],
       "category": "Education"
     },
     "nsis": {

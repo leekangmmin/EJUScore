@@ -5,7 +5,7 @@ const NAV = [
   { id: 'comprehensive', icon: '📚', label: '종합과목' },
 ];
 
-export default function Layout({ currentPage, onNavigate, onAddNew, onOpenSettings, onToggleTheme, theme, children }) {
+export default function Layout({ currentPage, onNavigate, onAddNew, onOpenQuickInput, onOpenSettings, onToggleTheme, theme, children }) {
   return (
     <div className="app-shell">
       {/* ── Sidebar (desktop) ── */}
@@ -28,6 +28,11 @@ export default function Layout({ currentPage, onNavigate, onAddNew, onOpenSettin
         </nav>
 
         <div className="sidebar-bottom">
+          <div style={{ display: 'flex', gap: 6, marginBottom: 6 }}>
+            <button onClick={onOpenQuickInput} className="ctrl-btn" style={{ flex: 1 }}>
+              빠른 입력
+            </button>
+          </div>
           <div style={{ display: 'flex', gap: 6 }}>
             <button onClick={onToggleTheme} className="ctrl-btn" style={{ flex: 1 }}>
               <span>{theme === 'dark' ? '☀️' : '🌙'}</span>
@@ -53,6 +58,7 @@ export default function Layout({ currentPage, onNavigate, onAddNew, onOpenSettin
             <span style={{ color: 'var(--t0)' }}> 스코어</span>
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
+            <button onClick={onOpenQuickInput} className="mobile-icon-btn">⚡</button>
             <button onClick={onToggleTheme} className="mobile-icon-btn">{theme === 'dark' ? '☀️' : '🌙'}</button>
             <button onClick={onOpenSettings} className="mobile-icon-btn">⚙️</button>
             <button onClick={onAddNew} className="mobile-add-btn">+ 입력</button>

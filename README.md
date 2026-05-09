@@ -1,6 +1,7 @@
 <div align="center">
 
 <img src=".github/assets/icon.png" width="120" alt="EJU Score Tracker Icon" />
+<img src=".github/assets/app-cover.svg" width="100%" alt="EJU Score Tracker Cover" />
 
 # EJU Score Tracker
 
@@ -38,6 +39,8 @@ EJU Score Tracker는 일본 유학 시험(EJU) 모의고사 점수를 체계적�
 | 📚 **종합과목 단원 분석** | 단원별 오답 유형(실수/정보부족/연계사고부족) 분류 및 우선순위 |
 | 🌙 **다크/라이트 모드** | 시스템 테마에 맞춘 자유로운 전환 |
 | 🖥️ **메뉴바 위젯** | 최신 점수를 macOS 메뉴바에 상시 표시 |
+| ⚡ **빠른 입력 팝업** | 대시보드에서 일본어/종합과목 점수를 즉시 기록 |
+| 📋 **최근 입력값 복사** | 새 입력 시 직전 시험 값을 한 번에 불러오기 |
 
 ---
 
