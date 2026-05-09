@@ -89,15 +89,14 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const existingSameMonth = !editingExam
-      ? getExams().find(ex => ex.date === date)
-      : null;
-    const base = existingSameMonth || {};
+    const base = editingExam || {};
+    const modeLabel = entryMode === 'japanese' ? '일본어' : entryMode === 'comprehensive' ? '종합과목' : '전체';
+    const autoName = `${date} ${modeLabel} 입력`;
 
     saveExam({
-      id: editingExam?.id || existingSameMonth?.id || crypto.randomUUID(),
+      id: editingExam?.id || crypto.randomUUID(),
       date,
-      examName: examName.trim() || `${date} 모의고사`,
+      examName: examName.trim() || autoName,
       japanese: entryMode === 'comprehensive'
         ? (base.japanese || editingExam?.japanese)
         : {

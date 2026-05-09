@@ -18,19 +18,17 @@ function QuickInputModal({ onClose, onSaved }) {
   const [compScore, setCompScore] = useState(0);
 
   const saveQuick = () => {
-    const exams = getExams();
-    const existing = exams.find(e => e.date === date);
-    const name = existing?.examName || `${date} 모의고사`;
+    const name = `${date} ${mode === 'japanese' ? '일본어' : '종합과목'} 빠른입력`;
     saveExam({
-      id: existing?.id || crypto.randomUUID(),
+      id: crypto.randomUUID(),
       date,
       examName: name,
       japanese: mode === 'japanese'
-        ? { reading, listening, wrongQuestions: existing?.japanese?.wrongQuestions || { reading: [], listening: [] } }
-        : existing?.japanese,
+        ? { reading, listening, wrongQuestions: { reading: [], listening: [] } }
+        : undefined,
       comprehensive: mode === 'comprehensive'
-        ? { score: compScore, mistakes: existing?.comprehensive?.mistakes || [] }
-        : existing?.comprehensive,
+        ? { score: compScore, mistakes: [] }
+        : undefined,
     });
     onSaved();
     onClose();
