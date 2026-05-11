@@ -1,0 +1,66 @@
+# Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  release-macos:
+    runs-on: macos-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci && npm run build
+      - run: rm -rf EJUScore/EJUScore/www && cp -r dist EJUScore/EJUScore/www
+      - run: |
+          xcodebuild \
+            -project EJUScore/EJUScore.xcodeproj \
+            -scheme EJUScore -configuration Release \
+            -derivedDataPath /tmp/ejubuild \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
+      - run: cd /tmp/ejubuild/Build/Products/Release && zip -r EJUScore-macOS.zip EJUScore.app
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: /tmp/ejubuild/Build/Products/Release/EJUScore-macOS.zip
+          body: |
+            ## EJU Score Tracker ${{ github.ref_name }}
+            **Copyright © 2025 이강민 (Lee Kangmin)**
+
+            | 플랫폼 | 파일 |
+            |--------|------|
+            | macOS 12+ | `EJUScore-macOS.zip` |
+            | Windows 10+ | `EJUScore-Windows-Setup.exe` |
+            | Linux | `EJUScore.AppImage` |
+            | 모바일 (iOS/Android) | 브라우저에서 [웹앱](https://leekangmmin.github.io/EJUScore/) 설치 |
+
+            ### 설치 방법 (macOS)
+            압축 해제 → 응용 프로그램 이동 → 우클릭 → 열기
+
+  release-windows:
+    runs-on: windows-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci && npm run build
+      - run: npx electron-builder --win --publish never
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: release/*.exe
+
+  release-linux:
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci && npm run build
+      - run: npx electron-builder --linux --publish never
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: release/*.AppImage

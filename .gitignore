@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output (generated from src)
+dist/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Xcode
+EJUScore/EJUScore/www/
+EJUScore/**/*.xcuserdata/
+EJUScore/DerivedData/
+EJUScore/**/*.xccheckout
+
+# Editor
+.vscode/settings.json
+
+# Env
+.env
+.env.local
+# Old nested project
+모의고사 점수/

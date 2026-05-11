@@ -1,0 +1,61 @@
+# Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ── macOS (.app) ──────────────────────────────────
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci && npm run build
+      - run: rm -rf EJUScore/EJUScore/www && cp -r dist EJUScore/EJUScore/www
+      - run: |
+          xcodebuild \
+            -project EJUScore/EJUScore.xcodeproj \
+            -scheme EJUScore -configuration Release \
+            -derivedDataPath /tmp/ejubuild \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
+      - run: cd /tmp/ejubuild/Build/Products/Release && zip -r EJUScore-macOS.zip EJUScore.app
+      - uses: actions/upload-artifact@v4
+        with:
+          name: EJUScore-macOS-${{ github.sha }}
+          path: /tmp/ejubuild/Build/Products/Release/EJUScore-macOS.zip
+          retention-days: 30
+
+  # ── Windows (.exe) ────────────────────────────────
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci && npm run build
+      - run: npx electron-builder --win --publish never
+      - uses: actions/upload-artifact@v4
+        with:
+          name: EJUScore-Windows-${{ github.sha }}
+          path: release/*.exe
+          retention-days: 30
+
+  # ── Linux (.AppImage) ─────────────────────────────
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci && npm run build
+      - run: npx electron-builder --linux --publish never
+      - uses: actions/upload-artifact@v4
+        with:
+          name: EJUScore-Linux-${{ github.sha }}
+          path: release/*.AppImage
+          retention-days: 30
