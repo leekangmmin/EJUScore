@@ -12,6 +12,11 @@ export const DEFAULT_SETTINGS = {
   nextExamDate: '',
 };
 
+// EJU 만점 상수 (득점등화 기준)
+export const JAP_MAX = 370;
+export const JAP_READ_MAX = 185;
+export const JAP_LISTEN_MAX = 185;
+
 export function getSettings() {
   try {
     return { ...DEFAULT_SETTINGS, ...JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}') };

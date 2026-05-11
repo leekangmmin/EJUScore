@@ -1,6 +1,6 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { saveExam, getExams } from '../utils/storage';
+import { saveExam, getExams, JAP_MAX, JAP_READ_MAX, JAP_LISTEN_MAX } from '../utils/storage';
 import { confidenceLabel, estimateComprehensiveScore, estimateJapaneseScore } from '../utils/scorePrediction';
 
 const ERROR_TYPES  = ['실수', '정보부족', '연계사고부족'];
@@ -90,6 +90,7 @@ function ScoreInput({ label, value, onChange, max, accent, disabled = false, onT
 // ── Main ─────────────────────────────────────────────
 export default function ScoreForm({ editingExam, onSave, onCancel }) {
   const [entryMode, setEntryMode] = useState('both');
+  const [recordType, setRecordType] = useState('exam'); // 'exam' | 'workbook'
   const [date, setDate] = useState(() => {
     const n = new Date();
     return `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}`;
@@ -130,6 +131,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
     setMistakes(editingExam.comprehensive?.mistakes || []);
     setUseEstimatedJapanese(Boolean(editingExam.japanese?.estimateMeta?.isEstimated));
     setUseEstimatedComprehensive(Boolean(editingExam.comprehensive?.estimateMeta?.isEstimated));
+    setRecordType(editingExam.recordType || 'exam');
   }, [editingExam]);
 
   const parseNums = str => str.split(/[\s,]+/).map(Number).filter(n => Number.isInteger(n) && n > 0);
@@ -172,6 +174,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
     saveExam({
       id: editingExam?.id || crypto.randomUUID(),
       date,
+      recordType,
       examName: examName.trim() || autoName,
       japanese: entryMode === 'comprehensive'
         ? (base.japanese || editingExam?.japanese)
@@ -266,6 +269,22 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
           <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 18, display: 'flex', alignItems: 'center', gap: 8 }}>
             <span style={{ fontSize: 20 }}>📋</span> 기본 정보
           </div>
+          {/* 기록 유형 */}
+          <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
+            {[{ id: 'exam', label: '📝 모의고사' }, { id: 'workbook', label: '📖 문제집' }].map(opt => {
+              const active = recordType === opt.id;
+              return (
+                <button key={opt.id} type="button" onClick={() => setRecordType(opt.id)} style={{
+                  background: active ? 'rgba(79,142,247,0.15)' : 'var(--bg3)',
+                  color: active ? 'var(--blue)' : 'var(--t2)',
+                  border: active ? '1.5px solid rgba(79,142,247,0.5)' : '1.5px solid var(--bd1)',
+                  borderRadius: 10, padding: '7px 16px', fontSize: 12, fontWeight: active ? 700 : 500,
+                  cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.2s',
+                }}>{opt.label}</button>
+              );
+            })}
+          </div>
+
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 16 }}>
             <div>
               <label style={LABEL}>시험 연월</label>
@@ -307,7 +326,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
                 background: 'rgba(79,142,247,0.1)', padding: '6px 16px', borderRadius: 12,
                 border: '1px solid rgba(79,142,247,0.25)',
               }}>
-                {japTotal} <span style={{ fontSize: 13, color: 'var(--t2)', fontWeight: 400 }}>/ 400점</span>
+                {japTotal} <span style={{ fontSize: 13, color: 'var(--t2)', fontWeight: 400 }}>/ 370점</span>
               </div>
             </div>
 

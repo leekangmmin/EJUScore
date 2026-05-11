@@ -155,9 +155,9 @@ function CompareView({ exams }) {
   const compB = b?.comprehensive?.score ?? null;
 
   const rows = [
-    { label: '일본어 합계', vA: japA, vB: japB, max: 400, color: 'var(--blue)' },
-    { label: '독해', vA: a?.japanese?.reading, vB: b?.japanese?.reading, max: 200, color: 'var(--purple)' },
-    { label: '청해', vA: a?.japanese?.listening, vB: b?.japanese?.listening, max: 200, color: 'var(--pink)' },
+    { label: '일본어 합계', vA: japA, vB: japB, max: 370, color: 'var(--blue)' },
+    { label: '독해', vA: a?.japanese?.reading, vB: b?.japanese?.reading, max: 185, color: 'var(--purple)' },
+    { label: '청해', vA: a?.japanese?.listening, vB: b?.japanese?.listening, max: 185, color: 'var(--pink)' },
     { label: '종합과목', vA: compA, vB: compB, max: 200, color: 'var(--green)' },
   ];
 
@@ -354,7 +354,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
       for (let i = 0; i < 3; i++) {
         data.push({
           name: addMonths(exams[exams.length - 1].date, i + 1),
-          pred_jap:  Math.min(400, Math.max(0, japPred[i]  ?? 0)),
+          pred_jap:  Math.min(370, Math.max(0, japPred[i]  ?? 0)),
           pred_comp: Math.min(200, Math.max(0, compPred[i] ?? 0)),
         });
       }
@@ -422,7 +422,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
       <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>
         <div>
           <h1 style={{ fontSize: 28, fontWeight: 800, color: 'var(--t0)', letterSpacing: '-0.5px' }}>대시보드</h1>
-          <div style={{ color: 'var(--t2)', fontSize: 13, marginTop: 4 }}>총 {exams.length}회 기록 · 목표 일어 {tJap}/400 · 종합 {tComp}/200</div>
+          <div style={{ color: 'var(--t2)', fontSize: 13, marginTop: 4 }}>총 {exams.length}회 기록 · 목표 일어 {tJap}/370 · 종합 {tComp}/200</div>
         </div>
         <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
           {growthJap !== null && (
@@ -481,16 +481,16 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
 
       {/* 스탯 카드 4개 */}
       <div className="stat-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
-        <StatCard label="일본어 합계" value={latestJap} max={400} color="var(--blue)" diff={diffJap} />
-        <StatCard label="독해" value={latest?.japanese?.reading} max={200} color="var(--purple)" diff={diffRead} />
-        <StatCard label="청해" value={latest?.japanese?.listening} max={200} color="var(--pink)" diff={diffList} />
+        <StatCard label="일본어 합계" value={latestJap} max={370} color="var(--blue)" diff={diffJap} />
+        <StatCard label="독해" value={latest?.japanese?.reading} max={185} color="var(--purple)" diff={diffRead} />
+        <StatCard label="청해" value={latest?.japanese?.listening} max={185} color="var(--pink)" diff={diffList} />
         <StatCard label="종합과목" value={latestComp} max={200} color="var(--green)" diff={diffComp} />
       </div>
 
       {/* 목표 진행 */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
         {[
-          { label: '일본어 목표까지', cur: latestJap, target: tJap, color: 'var(--blue)', max: 400 },
+          { label: '일본어 목표까지', cur: latestJap, target: tJap, color: 'var(--blue)', max: 370 },
           { label: '종합과목 목표까지', cur: latestComp, target: tComp, color: 'var(--green)', max: 200 },
         ].map(g => {
           const remain = g.cur != null ? Math.max(0, g.target - g.cur) : null;
@@ -537,7 +537,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
               <LineChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" />
                 <XAxis dataKey="name" tick={{ fill: 'var(--t2)', fontSize: 10 }} />
-                <YAxis domain={[0, 400]} tick={{ fill: 'var(--t2)', fontSize: 10 }} />
+                <YAxis domain={[0, 370]} tick={{ fill: 'var(--t2)', fontSize: 10 }} />
                 <Tooltip content={<ChartTooltip />} />
                 <Legend wrapperStyle={{ fontSize: 11, color: 'var(--t1)' }} />
                 <ReferenceLine y={tJap} stroke="var(--blue)" strokeDasharray="6 3" strokeWidth={1.5} label={{ value: `목표 ${tJap}`, fill: 'var(--blue)', fontSize: 10 }} />
@@ -601,7 +601,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
       {/* 최고 기록 */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
         {[
-          { icon: '🏆', label: '일본어 최고 기록', value: bestJap, max: 400, color: 'var(--blue)' },
+          { icon: '🏆', label: '일본어 최고 기록', value: bestJap, max: 370, color: 'var(--blue)' },
           { icon: '🏆', label: '종합과목 최고 기록', value: bestComp, max: 200, color: 'var(--green)' },
         ].map(r => (
           <div key={r.label} style={{ ...CARD, display: 'flex', alignItems: 'center', gap: 16,
@@ -653,7 +653,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
                 <div style={{ display: 'flex', gap: 7 }}>
                   {jap != null && (
                     <span style={{ fontSize: 12, background: 'rgba(79,142,247,0.1)', color: 'var(--blue)', padding: '3px 10px', borderRadius: 8, fontWeight: 600 }}>
-                      일어 {jap}/400{japEstimated ? ' (예측)' : ''}
+                      일어 {jap}/370{japEstimated ? ' (예측)' : ''}
                     </span>
                   )}
                   {comp != null && (

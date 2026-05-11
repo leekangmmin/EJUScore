@@ -71,17 +71,17 @@ export default function SettingsPanel({ settings, onClose, onSave }) {
           <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--blue)', marginBottom: 16 }}>🇯🇵 일본어 목표</div>
           <div style={ROW}>
             <span style={LABEL_S}>독해 목표</span>
-            <NumInput value={s.targetReading} onChange={v => { set('targetReading', v); set('targetJapanese', v + s.targetListening); }} max={200} color="var(--purple)" />
+            <NumInput value={s.targetReading} onChange={v => { set('targetReading', v); set('targetJapanese', v + s.targetListening); }} max={185} color="var(--purple)" />
           </div>
           <div style={ROW}>
             <span style={LABEL_S}>청해 목표</span>
-            <NumInput value={s.targetListening} onChange={v => { set('targetListening', v); set('targetJapanese', s.targetReading + v); }} max={200} color="var(--pink)" />
+            <NumInput value={s.targetListening} onChange={v => { set('targetListening', v); set('targetJapanese', s.targetReading + v); }} max={185} color="var(--pink)" />
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 0 0', borderTop: '1px solid var(--bd0)', marginTop: 4 }}>
             <span style={{ ...LABEL_S, color: 'var(--t0)', fontWeight: 700 }}>합계 목표</span>
             <span style={{ fontSize: 22, fontWeight: 700, color: 'var(--blue)' }}>
               {s.targetReading + s.targetListening}
-              <span style={{ fontSize: 13, color: 'var(--t2)', fontWeight: 400 }}> / 400</span>
+              <span style={{ fontSize: 13, color: 'var(--t2)', fontWeight: 400 }}> / 370</span>
             </span>
           </div>
         </div>
