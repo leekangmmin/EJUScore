@@ -11,8 +11,40 @@ console.info(
   'background:#313244;color:#89b4fa;padding:2px 6px;border-radius:0 4px 4px 0'
 )
 
+// ── PWA Service Worker + D-day 알림 ──────────────
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+  window.addEventListener('load', async () => {
+    try {
+      await navigator.serviceWorker.register('./sw.js');
+
+      // 알림 권한 요청 (사용자 첫 방문 또는 권한 미결정 시)
+      if ('Notification' in window && Notification.permission === 'default') {
+        // 페이지 로드 후 3초 뒤에 조용히 요청
+        setTimeout(async () => {
+          const perm = await Notification.requestPermission();
+          if (perm === 'granted') {
+            // D-day 알림 스케줄 확인
+            scheduleDdayNotification();
+          }
+        }, 3000);
+      } else if (Notification.permission === 'granted') {
+        scheduleDdayNotification();
+      }
+    } catch (_) {}
+  });
+}
+
+function scheduleDdayNotification() {
+  try {
+    const settings = JSON.parse(localStorage.getItem('eju_settings') || '{}');
+    if (!settings.nextExamDate) return;
+    const dday = Math.ceil((new Date(settings.nextExamDate) - new Date()) / 86400000);
+    if ([0, 1, 3, 7].includes(dday)) {
+      navigator.serviceWorker.ready.then(reg => {
+        reg.active?.postMessage({ type: 'SCHEDULE_DDAY', dday, examDate: settings.nextExamDate });
+      });
+    }
+  } catch (_) {}
 }
 
 createRoot(document.getElementById('root')).render(
