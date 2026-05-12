@@ -17,10 +17,10 @@
     "preview": "vite preview",
     "build:icons": "node scripts/generate-icons.js",
     "build:electron": "npm run build:icons && vite build --mode electron",
-    "electron:dev": "npm run build:electron && electron .",
+    "electron:dev": "npm run build:electron && ELECTRON_RUN_AS_NODE= electron .",
     "electron:build:win": "npm run build:electron && electron-builder --win",
     "electron:build:linux": "npm run build:electron && electron-builder --linux",
-    "electron:build:mac": "npm run build:electron && electron-builder --mac",
+    "electron:build:mac": "npm run build:electron && ELECTRON_RUN_AS_NODE= electron-builder --mac",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
@@ -33,7 +33,7 @@
     },
     "files": [
       "dist/**",
-      "electron/**",
+      "electron/main.js",
       "public/icon-512.png",
       "public/icon.ico"
     ],
