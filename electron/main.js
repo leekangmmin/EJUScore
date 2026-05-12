@@ -1,6 +1,9 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
-const { app, BrowserWindow, shell } = require('electron');
-const path = require('path');
+import { app, BrowserWindow, shell } from 'electron';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -10,8 +13,8 @@ function createWindow() {
     minHeight: 600,
     title: 'EJU Score Tracker',
     icon: process.platform === 'win32'
-      ? path.join(__dirname, '../public/icon.ico')
-      : path.join(__dirname, '../public/icon-512.png'),
+      ? join(__dirname, '../public/icon.ico')
+      : join(__dirname, '../public/icon-512.png'),
     backgroundColor: '#0a0a14',
     webPreferences: {
       nodeIntegration: false,
@@ -20,7 +23,7 @@ function createWindow() {
     titleBarStyle: process.platform === 'darwin' ? 'hiddenInset' : 'default',
   });
 
-  win.loadFile(path.join(__dirname, '../dist/index.html'));
+  win.loadFile(join(__dirname, '../dist/index.html'));
 
   win.webContents.setWindowOpenHandler(({ url }) => {
     shell.openExternal(url);
