@@ -6,7 +6,8 @@ import ScoreForm from './components/ScoreForm';
 import JapaneseAnalysis from './components/JapaneseAnalysis';
 import ComprehensiveAnalysis from './components/ComprehensiveAnalysis';
 import SettingsPanel from './components/SettingsPanel';
-import { getExams, deleteExam, loadSampleData, getSettings, saveExam } from './utils/storage';
+import { getExams, deleteExam, loadSampleData, getSettings, saveExam, JAP_READ_MAX, JAP_LISTEN_MAX } from './utils/storage';
+import { getDday } from './utils/diagnosis';
 
 function QuickInputModal({ onClose, onSaved }) {
   const now = new Date();
@@ -68,12 +69,12 @@ function QuickInputModal({ onClose, onSaved }) {
         {mode === 'japanese' ? (
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             <div>
-              <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 600, marginBottom: 5 }}>독해 /200</div>
-              <input type="number" min={0} max={200} value={reading} onChange={e => setReading(Math.max(0, Math.min(200, Number(e.target.value))))} style={inputStyle} />
+              <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 600, marginBottom: 5 }}>독해 /{JAP_READ_MAX}</div>
+              <input type="number" min={0} max={JAP_READ_MAX} value={reading} onChange={e => setReading(Math.max(0, Math.min(JAP_READ_MAX, Number(e.target.value))))} style={inputStyle} />
             </div>
             <div>
-              <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 600, marginBottom: 5 }}>청해 /200</div>
-              <input type="number" min={0} max={200} value={listening} onChange={e => setListening(Math.max(0, Math.min(200, Number(e.target.value))))} style={inputStyle} />
+              <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 600, marginBottom: 5 }}>청해 /{JAP_LISTEN_MAX}</div>
+              <input type="number" min={0} max={JAP_LISTEN_MAX} value={listening} onChange={e => setListening(Math.max(0, Math.min(JAP_LISTEN_MAX, Number(e.target.value))))} style={inputStyle} />
             </div>
           </div>
         ) : (
@@ -112,6 +113,32 @@ export default function App() {
     setExams(stored);
     if (stored.length === 0) setShowSamplePrompt(true);
   }, []);
+
+  // D-day OS 알림
+  useEffect(() => {
+    if (!('Notification' in window)) return;
+    const dday = getDday(settings.nextExamDate);
+    if (dday === null || dday < 0 || dday > 30) return;
+
+    const lastNotifKey = 'eju_last_notif_date';
+    const today = new Date().toISOString().slice(0, 10);
+    if (localStorage.getItem(lastNotifKey) === today) return;
+
+    const notify = () => {
+      const title = dday === 0 ? '📅 오늘이 EJU 시험일입니다!' : `🔔 EJU 시험 D-${dday}`;
+      const body  = dday === 0
+        ? '오늘 시험이에요. 화이팅! 💪'
+        : `${settings.nextExamDate} 시험까지 ${dday}일 남았습니다!`;
+      new Notification(title, { body, icon: '/icon-192.png', tag: 'eju-dday' });
+      localStorage.setItem(lastNotifKey, today);
+    };
+
+    if (Notification.permission === 'granted') {
+      notify();
+    } else if (Notification.permission === 'default') {
+      Notification.requestPermission().then(p => { if (p === 'granted') notify(); });
+    }
+  }, [settings.nextExamDate]);
 
   // Apply theme to html element
   useEffect(() => {

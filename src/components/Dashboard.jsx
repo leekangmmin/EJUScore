@@ -30,8 +30,12 @@ function addMonths(dateStr, n) {
 }
 
 const CARD = {
-  background: 'var(--card-bg)', border: '1px solid var(--bd0)',
-  borderRadius: 18, padding: 22, boxShadow: 'var(--card-shadow)',
+  background: 'var(--card-bg)',
+  border: '1px solid var(--card-border)',
+  borderRadius: 18, padding: 22,
+  boxShadow: 'var(--card-shadow)',
+  backdropFilter: 'blur(14px)',
+  WebkitBackdropFilter: 'blur(14px)',
 };
 
 // ── Sub-components ───────────────────────────────────
@@ -73,20 +77,41 @@ function GrowthBadge({ diff, unit = '점' }) {
 function StatCard({ label, value, max, color, diff, diffUnit = '점', pct }) {
   const p = pct ?? (max ? Math.round((value / max) * 100) : null);
   return (
-    <div style={{ ...CARD, display: 'flex', flexDirection: 'column', gap: 10, transition: 'transform 0.2s, box-shadow 0.2s' }}
-      onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = 'var(--card-shadow-hover)'; }}
-      onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'var(--card-shadow)'; }}
+    <div style={{
+      ...CARD, display: 'flex', flexDirection: 'column', gap: 10,
+      transition: 'transform 0.22s cubic-bezier(.4,0,.2,1), box-shadow 0.22s, border-color 0.22s',
+    }}
+      onMouseEnter={e => {
+        e.currentTarget.style.transform = 'translateY(-4px)';
+        e.currentTarget.style.boxShadow = 'var(--card-shadow-hover)';
+        e.currentTarget.style.borderColor = 'rgba(91,158,255,0.22)';
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.transform = 'none';
+        e.currentTarget.style.boxShadow = 'var(--card-shadow)';
+        e.currentTarget.style.borderColor = 'var(--card-border)';
+      }}
     >
-      <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em' }}>{label}</div>
+      <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>{label}</div>
       <div style={{ display: 'flex', alignItems: 'baseline', flexWrap: 'wrap', gap: 2 }}>
-        <span style={{ fontSize: 36, fontWeight: 800, color, letterSpacing: '-1px' }}>{value ?? '—'}</span>
+        <span style={{
+          fontSize: 38, fontWeight: 800, letterSpacing: '-1.5px',
+          background: `linear-gradient(135deg, ${color}, ${color}cc)`,
+          WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+        }}>{value ?? '—'}</span>
         {max && <span style={{ fontSize: 13, color: 'var(--t2)', marginLeft: 3 }}>/ {max}</span>}
         {diff !== undefined && <GrowthBadge diff={diff} unit={diffUnit} />}
       </div>
       {p !== null && (
         <div>
-          <div style={{ height: 7, background: 'var(--bg3)', borderRadius: 4, overflow: 'hidden' }}>
-            <div style={{ height: '100%', width: `${p}%`, background: color, borderRadius: 4, transition: 'width 0.6s cubic-bezier(.4,0,.2,1)' }} />
+          <div style={{ height: 6, background: 'var(--bg3)', borderRadius: 4, overflow: 'hidden', position: 'relative' }}>
+            <div style={{
+              height: '100%', width: `${p}%`, borderRadius: 4,
+              background: `linear-gradient(90deg, ${color}bb, ${color}, ${color}dd)`,
+              backgroundSize: '200% 100%',
+              animation: 'shimmer 2.6s infinite linear',
+              transition: 'width 0.7s cubic-bezier(.4,0,.2,1)',
+            }} />
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 5 }}>
             <span style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 600 }}>{p}% 달성</span>
@@ -396,24 +421,47 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
       {/* D-day 배너 */}
       {dday !== null && (
         <div style={{
-          borderRadius: 20, padding: '20px 26px',
-          background: `linear-gradient(135deg, ${ddayColor}18, ${ddayColor}06)`,
-          border: `1px solid ${ddayColor}44`,
+          borderRadius: 22, padding: '22px 28px',
+          background: `linear-gradient(135deg, ${ddayColor}1a, ${ddayColor}07)`,
+          border: `1px solid ${ddayColor}4a`,
           display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16,
-          boxShadow: `0 4px 24px ${ddayColor}18`,
+          boxShadow: `0 6px 32px ${ddayColor}18, inset 0 1px 0 rgba(255,255,255,0.06)`,
+          backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
+          position: 'relative', overflow: 'hidden',
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
-            <div style={{ fontSize: 40 }}>{ddayEmoji}</div>
+          {/* 배경 글로우 */}
+          <div style={{
+            position: 'absolute', right: -30, top: '50%', transform: 'translateY(-50%)',
+            width: 160, height: 160, borderRadius: '50%',
+            background: `radial-gradient(circle, ${ddayColor}20 0%, transparent 70%)`,
+            pointerEvents: 'none',
+          }} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: 18, zIndex: 1 }}>
+            <div style={{
+              fontSize: 36, width: 56, height: 56, borderRadius: 16,
+              background: `${ddayColor}22`, border: `1px solid ${ddayColor}44`,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              flexShrink: 0,
+              animation: dday <= 7 ? 'pulse-glow 2s infinite' : 'none',
+            }}>{ddayEmoji}</div>
             <div>
-              <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 2 }}>다음 EJU 시험</div>
-              <div style={{ fontSize: 14, color: 'var(--t1)', fontWeight: 500 }}>
+              <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 4 }}>다음 EJU 시험</div>
+              <div style={{ fontSize: 15, color: 'var(--t0)', fontWeight: 600 }}>
                 {new Date(settings.nextExamDate).toLocaleDateString('ko-KR', { year:'numeric', month:'long', day:'numeric' })}
               </div>
+              {dday > 0 && (
+                <div style={{ fontSize: 12, color: 'var(--t2)', marginTop: 4, fontWeight: 500 }}>
+                  {Math.floor(dday/7) > 0 ? `${Math.floor(dday/7)}주 ` : ''}{dday%7}일 남음
+                </div>
+              )}
             </div>
           </div>
-          <div style={{ textAlign: 'right' }}>
-            <div style={{ fontSize: 46, fontWeight: 900, color: ddayColor, letterSpacing: '-3px', lineHeight: 1 }}>{ddayLabel}</div>
-            {dday > 0 && <div style={{ fontSize: 11, color: 'var(--t2)', marginTop: 5, fontWeight: 600 }}>{Math.floor(dday/7)}주 {dday%7}일 남음</div>}
+          <div style={{ textAlign: 'right', zIndex: 1 }}>
+            <div style={{
+              fontSize: 50, fontWeight: 900, letterSpacing: '-3px', lineHeight: 1,
+              background: `linear-gradient(135deg, ${ddayColor}, ${ddayColor}cc)`,
+              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+            }}>{ddayLabel}</div>
           </div>
         </div>
       )}
@@ -490,27 +538,44 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
       {/* 목표 진행 */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
         {[
-          { label: '일본어 목표까지', cur: latestJap, target: tJap, color: 'var(--blue)', max: 370 },
-          { label: '종합과목 목표까지', cur: latestComp, target: tComp, color: 'var(--green)', max: 200 },
+          { label: '일본어 목표까지', cur: latestJap, target: tJap, color: 'var(--blue)', hexColor: '#5b9eff', max: 370 },
+          { label: '종합과목 목표까지', cur: latestComp, target: tComp, color: 'var(--green)', hexColor: '#10d98c', max: 200 },
         ].map(g => {
           const remain = g.cur != null ? Math.max(0, g.target - g.cur) : null;
           const achieved = g.cur != null && g.cur >= g.target;
+          const pct = g.cur != null ? Math.min(100, (g.cur / g.target) * 100) : 0;
           return (
-            <div key={g.label} style={{ ...CARD, display: 'flex', alignItems: 'center', gap: 16 }}>
-              <span style={{ fontSize: 28 }}>{achieved ? '🎉' : '🎯'}</span>
-              <div style={{ flex: 1 }}>
-                <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>{g.label}</div>
+            <div key={g.label} style={{
+              ...CARD, display: 'flex', alignItems: 'center', gap: 16,
+              transition: 'transform 0.22s cubic-bezier(.4,0,.2,1), box-shadow 0.22s',
+            }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = 'var(--card-shadow-hover)'; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'var(--card-shadow)'; }}
+            >
+              <div style={{
+                width: 48, height: 48, borderRadius: 14, flexShrink: 0,
+                background: achieved ? 'linear-gradient(135deg, rgba(16,217,140,0.2), rgba(34,211,238,0.15))' : `${g.hexColor}18`,
+                border: `1px solid ${g.hexColor}33`,
+                display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22,
+              }}>{achieved ? '🎉' : '🎯'}</div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 5 }}>{g.label}</div>
                 {achieved
                   ? <div style={{ fontSize: 16, fontWeight: 800, color: 'var(--green)' }}>목표 달성! 🎊</div>
                   : remain !== null
-                    ? <div style={{ fontSize: 22, fontWeight: 800, color: g.color }}>
-                        +{remain}점 <span style={{ fontSize: 13, color: 'var(--t2)', fontWeight: 400 }}>남음 ({g.cur}/{g.target})</span>
+                    ? <div style={{ fontSize: 22, fontWeight: 800, color: g.color, letterSpacing: '-0.5px' }}>
+                        +{remain}<span style={{ fontSize: 12, color: 'var(--t2)', fontWeight: 400, marginLeft: 4 }}>점 남음</span>
+                        <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 500, marginTop: 1 }}>{g.cur}/{g.target}</div>
                       </div>
                     : <div style={{ color: 'var(--t2)', fontSize: 13 }}>데이터 없음</div>
                 }
                 {g.cur != null && (
-                  <div style={{ height: 6, background: 'var(--bg3)', borderRadius: 3, overflow: 'hidden', marginTop: 8 }}>
-                    <div style={{ height: '100%', width: `${Math.min(100, (g.cur / g.target) * 100)}%`, background: g.color, borderRadius: 3, transition: 'width 0.6s cubic-bezier(.4,0,.2,1)' }} />
+                  <div style={{ height: 5, background: 'var(--bg3)', borderRadius: 3, overflow: 'hidden', marginTop: 8 }}>
+                    <div style={{
+                      height: '100%', width: `${pct}%`, borderRadius: 3,
+                      background: `linear-gradient(90deg, ${g.hexColor}99, ${g.hexColor})`,
+                      transition: 'width 0.7s cubic-bezier(.4,0,.2,1)',
+                    }} />
                   </div>
                 )}
               </div>
@@ -601,20 +666,30 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
       {/* 최고 기록 */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
         {[
-          { icon: '🏆', label: '일본어 최고 기록', value: bestJap, max: 370, color: 'var(--blue)' },
-          { icon: '🏆', label: '종합과목 최고 기록', value: bestComp, max: 200, color: 'var(--green)' },
+          { icon: '🏆', label: '일본어 최고 기록', value: bestJap, max: 370, color: 'var(--blue)', hex: '#5b9eff' },
+          { icon: '🏆', label: '종합과목 최고 기록', value: bestComp, max: 200, color: 'var(--green)', hex: '#10d98c' },
         ].map(r => (
-          <div key={r.label} style={{ ...CARD, display: 'flex', alignItems: 'center', gap: 16,
-            transition: 'transform 0.2s', cursor: 'default',
+          <div key={r.label} style={{
+            ...CARD, display: 'flex', alignItems: 'center', gap: 16,
+            transition: 'transform 0.22s cubic-bezier(.4,0,.2,1), box-shadow 0.22s', cursor: 'default',
           }}
-            onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
-            onMouseLeave={e => e.currentTarget.style.transform = 'none'}
+            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = 'var(--card-shadow-hover)'; }}
+            onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'var(--card-shadow)'; }}
           >
-            <span style={{ fontSize: 30 }}>{r.icon}</span>
+            <div style={{
+              width: 52, height: 52, borderRadius: 15, flexShrink: 0,
+              background: `linear-gradient(135deg, ${r.hex}25, ${r.hex}12)`,
+              border: `1px solid ${r.hex}3a`,
+              display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24,
+            }}>{r.icon}</div>
             <div>
-              <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 3 }}>{r.label}</div>
-              <div style={{ fontSize: 26, fontWeight: 800, color: r.color, letterSpacing: '-1px' }}>
-                {r.value} <span style={{ fontSize: 13, color: 'var(--t2)', fontWeight: 400 }}>/ {r.max}</span>
+              <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 4 }}>{r.label}</div>
+              <div style={{
+                fontSize: 28, fontWeight: 800, letterSpacing: '-1px',
+                background: `linear-gradient(135deg, ${r.color}, ${r.hex}bb)`,
+                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+              }}>
+                {r.value} <span style={{ fontSize: 13, color: 'var(--t2)', fontWeight: 400, WebkitTextFillColor: 'var(--t2)' }}>/ {r.max}</span>
               </div>
             </div>
           </div>

@@ -88,20 +88,20 @@ export default function Layout({ currentPage, onNavigate, onAddNew, onOpenQuickI
       <aside className="sidebar">
         {/* 로고 */}
         <div className="sidebar-logo">
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 11 }}>
             <div style={{
-              width: 34, height: 34, borderRadius: 10,
-              background: 'linear-gradient(135deg, var(--blue), var(--purple))',
+              width: 36, height: 36, borderRadius: 11,
+              background: 'var(--grad-primary)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: 17, flexShrink: 0,
-              boxShadow: '0 4px 14px rgba(91,158,255,0.3)',
+              fontSize: 18, flexShrink: 0,
+              boxShadow: '0 4px 16px var(--glow-blue), inset 0 1px 0 rgba(255,255,255,0.25)',
             }}>🎌</div>
             <div>
               <div style={{ fontSize: 16, fontWeight: 800, letterSpacing: '-0.5px', lineHeight: 1.2 }}>
-                <span style={{ background: 'linear-gradient(135deg, var(--blue), var(--purple))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>EJU</span>
+                <span className="grad-text">EJU</span>
                 <span style={{ color: 'var(--t0)' }}>스코어</span>
               </div>
-              <div style={{ fontSize: 9, color: 'var(--t3)', letterSpacing: '0.04em', marginTop: 1 }}>留学試験 점수 트래커</div>
+              <div style={{ fontSize: 9, color: 'var(--t3)', letterSpacing: '0.06em', marginTop: 2 }}>留学試験 점수 트래커</div>
             </div>
           </div>
         </div>

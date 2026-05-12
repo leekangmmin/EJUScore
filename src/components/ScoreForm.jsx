@@ -331,8 +331,8 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 16 }}>
-              <ScoreInput label="독해 (読解)" value={effectiveReading} onChange={setReading} max={200} accent="var(--purple)" disabled={useEstimatedJapanese} onToast={showToast} />
-              <ScoreInput label="청해 (聴解)" value={effectiveListening} onChange={setListening} max={200} accent="var(--pink)" disabled={useEstimatedJapanese} onToast={showToast} />
+              <ScoreInput label="독해 (読解)" value={effectiveReading} onChange={setReading} max={JAP_READ_MAX} accent="var(--purple)" disabled={useEstimatedJapanese} onToast={showToast} />
+              <ScoreInput label="청해 (聴解)" value={effectiveListening} onChange={setListening} max={JAP_LISTEN_MAX} accent="var(--pink)" disabled={useEstimatedJapanese} onToast={showToast} />
             </div>
 
             {/* 예측 체크박스 */}

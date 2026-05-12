@@ -9,7 +9,9 @@ function createWindow() {
     minWidth: 900,
     minHeight: 600,
     title: 'EJU Score Tracker',
-    icon: path.join(__dirname, '../public/icon-512.png'),
+    icon: process.platform === 'win32'
+      ? path.join(__dirname, '../public/icon.ico')
+      : path.join(__dirname, '../public/icon-512.png'),
     backgroundColor: '#0a0a14',
     webPreferences: {
       nodeIntegration: false,
