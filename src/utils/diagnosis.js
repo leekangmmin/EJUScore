@@ -54,34 +54,34 @@ export function generateDiagnosis(exams) {
   // ── Build diagnosis items ──────────────────────────
   if(topR[0]?.[1] >= 2) {
     const [q,c]=topR[0];
-    d.push({ level:c>=4?'critical':'warning', icon:'🎯', title:`독해 ${q}번 반복 오답`, desc:`${c}회 틀림 — 해당 문제 유형 집중 공략 필요` });
+    d.push({ level:c>=4?'critical':'warning', title:`독해 ${q}번 반복 오답`, desc:`${c}회 틀림 — 해당 문제 유형 집중 공략 필요` });
   }
   if(topL[0]?.[1] >= 2) {
     const [q,c]=topL[0];
-    d.push({ level:c>=4?'critical':'warning', icon:'🎧', title:`청해 ${q}번 반복 오답`, desc:`${c}회 틀림 — 해당 파트 집중 청취 훈련 권장` });
+    d.push({ level:c>=4?'critical':'warning', title:`청해 ${q}번 반복 오답`, desc:`${c}회 틀림 — 해당 파트 집중 청취 훈련 권장` });
   }
   if(worstRBkt) {
-    d.push({ level:'info', icon:'📖', title:`독해 ${worstRBkt[0]} 구간 집중 약점`, desc:'해당 구간 오답 비율 최고 — 관련 파트 반복 풀이 권장' });
+    d.push({ level:'info', title:`독해 ${worstRBkt[0]} 구간 집중 약점`, desc:'해당 구간 오답 비율 최고 — 관련 파트 반복 풀이 권장' });
   }
   if(worstLBkt && worstLBkt[0] !== worstRBkt?.[0]) {
-    d.push({ level:'info', icon:'🎙', title:`청해 ${worstLBkt[0]} 구간 집중 약점`, desc:'해당 구간 오답 비율 최고 — 집중 청취 훈련 권장' });
+    d.push({ level:'info', title:`청해 ${worstLBkt[0]} 구간 집중 약점`, desc:'해당 구간 오답 비율 최고 — 집중 청취 훈련 권장' });
   }
   if(unitRanked[0]) {
     const w=unitRanked[0];
     const tip = w.dominant==='정보부족'?'관련 이론 지식 보완 필요':
                 w.dominant==='연계사고부족'?'복합 논리 문제 연습 필요':'실수 방지를 위한 꼼꼼한 검토 필요';
-    d.push({ level:'warning', icon:'📚', title:`종합과목 '${w.u}' 집중 약점`, desc:`${w.dominant} 오답 다수 — ${tip}` });
+    d.push({ level:'warning', title:`종합과목 '${w.u}' 집중 약점`, desc:`${w.dominant} 오답 다수 — ${tip}` });
   }
   if(japTrend3 !== null) {
-    if(japTrend3 > 10)       d.push({ level:'good',     icon:'📈', title:'일본어 상승세', desc:`최근 3회 기준 +${japTrend3}점 상승 — 현 페이스 유지하세요!` });
-    else if(japTrend3 < -5)  d.push({ level:'critical', icon:'📉', title:'일본어 점수 하락 추세', desc:`최근 3회 기준 ${japTrend3}점 하락 — 학습 방식 점검 필요` });
-    else if(japStagnant)     d.push({ level:'info',     icon:'😐', title:'일본어 점수 정체 구간', desc:'3회 연속 유사한 점수 — 새로운 전략 시도 권장' });
+    if(japTrend3 > 10)       d.push({ level:'good',     title:'일본어 상승세', desc:`최근 3회 기준 +${japTrend3}점 상승 — 현 페이스 유지하세요.` });
+    else if(japTrend3 < -5)  d.push({ level:'critical', title:'일본어 점수 하락 추세', desc:`최근 3회 기준 ${japTrend3}점 하락 — 학습 방식 점검 필요` });
+    else if(japStagnant)     d.push({ level:'info',     title:'일본어 점수 정체 구간', desc:'3회 연속 유사한 점수 — 새로운 전략 시도를 권장합니다.' });
   }
   if(compTrend3 !== null && compTrend3 > 5) {
-    d.push({ level:'good', icon:'📊', title:'종합과목 상승세', desc:`최근 3회 기준 +${compTrend3}점 상승 — 잘하고 있어요!` });
+    d.push({ level:'good', title:'종합과목 상승세', desc:`최근 3회 기준 +${compTrend3}점 상승 — 현 페이스를 유지하세요.` });
   }
   if(d.length === 0 && exams.length >= 2) {
-    d.push({ level:'good', icon:'✅', title:'눈에 띄는 약점 없음', desc:'오답 패턴이 안정적입니다. 현재 페이스를 유지하세요!' });
+    d.push({ level:'good', title:'눈에 띄는 약점 없음', desc:'오답 패턴이 안정적입니다. 현재 페이스를 유지하세요.' });
   }
 
   return d;

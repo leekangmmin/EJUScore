@@ -1,6 +1,7 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
 import { useState } from 'react';
-import { saveSettings, DEFAULT_SETTINGS } from '../utils/storage';
+import { saveSettings, DEFAULT_SETTINGS, COMP_MAX } from '../utils/storage';
+import { BookOpen, Layers, AlertTriangle, CalendarDays, Database, Download, Upload, X } from 'lucide-react';
 
 const OVERLAY = {
   position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)',
@@ -35,8 +36,9 @@ function NumInput({ value, onChange, max, color }) {
   );
 }
 
-export default function SettingsPanel({ settings, onClose, onSave }) {
+export default function SettingsPanel({ settings, onClose, onSave, onExport, onImport }) {
   const [s, setS] = useState({ ...settings });
+  const [importError, setImportError] = useState('');
 
   const set = (key, val) => setS(prev => ({ ...prev, [key]: val }));
 
@@ -48,11 +50,31 @@ export default function SettingsPanel({ settings, onClose, onSave }) {
 
   const handleReset = () => setS({ ...DEFAULT_SETTINGS, theme: s.theme });
 
+  const handleImportFile = (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setImportError('');
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try {
+        const data = JSON.parse(ev.target.result);
+        if (!data.exams && !data.settings) throw new Error('올바른 백업 파일이 아닙니다.');
+        onImport(data);
+        onClose();
+      } catch (err) {
+        setImportError(err.message || '파일 형식이 올바르지 않아요.');
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  };
+
   return (
     <div style={OVERLAY} onClick={e => e.target === e.currentTarget && onClose()}>
       <div style={{
         background: 'var(--bg2)', border: '1px solid var(--bd0)', borderRadius: 20,
-        padding: 32, width: 520, maxWidth: '95vw', boxShadow: '0 24px 60px rgba(0,0,0,0.4)',
+        padding: 32, width: 520, maxWidth: '95vw', maxHeight: '92vh', overflowY: 'auto',
+        boxShadow: '0 24px 60px rgba(0,0,0,0.4)',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 28 }}>
           <div>
@@ -61,14 +83,16 @@ export default function SettingsPanel({ settings, onClose, onSave }) {
           </div>
           <button onClick={onClose} style={{
             background: 'var(--bg3)', border: 'none', borderRadius: 8,
-            width: 32, height: 32, color: 'var(--t1)', fontSize: 18,
+            width: 32, height: 32, color: 'var(--t1)',
             cursor: 'pointer', fontFamily: 'inherit', display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}>✕</button>
+          }}><X size={16} strokeWidth={2} /></button>
         </div>
 
         {/* Japanese targets */}
-        <div style={{ marginBottom: 24, padding: 20, background: 'var(--bg3)', borderRadius: 14, border: '1px solid var(--bd0)' }}>
-          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--blue)', marginBottom: 16 }}>🇯🇵 일본어 목표</div>
+        <div style={{ marginBottom: 20, padding: 20, background: 'var(--bg3)', borderRadius: 14, border: '1px solid var(--bd0)' }}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--blue)', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 7 }}>
+            <BookOpen size={14} strokeWidth={2} /> 일본어 목표
+          </div>
           <div style={ROW}>
             <span style={LABEL_S}>독해 목표</span>
             <NumInput value={s.targetReading} onChange={v => { set('targetReading', v); set('targetJapanese', v + s.targetListening); }} max={185} color="var(--purple)" />
@@ -87,17 +111,30 @@ export default function SettingsPanel({ settings, onClose, onSave }) {
         </div>
 
         {/* Comprehensive target */}
-        <div style={{ marginBottom: 24, padding: 20, background: 'var(--bg3)', borderRadius: 14, border: '1px solid var(--bd0)' }}>
-          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--green)', marginBottom: 16 }}>📚 종합과목 목표</div>
+        <div style={{ marginBottom: 20, padding: 20, background: 'var(--bg3)', borderRadius: 14, border: '1px solid var(--bd0)' }}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--green)', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 7 }}>
+            <Layers size={14} strokeWidth={2} /> 종합과목 목표
+            <span style={{ fontSize: 11, color: 'var(--t3)', fontWeight: 400, marginLeft: 4 }}>만점 {COMP_MAX}점 (득점등화)</span>
+          </div>
           <div style={ROW}>
             <span style={LABEL_S}>종합과목 목표</span>
-            <NumInput value={s.targetComprehensive} onChange={v => set('targetComprehensive', v)} max={200} color="var(--green)" />
+            <NumInput value={s.targetComprehensive} onChange={v => set('targetComprehensive', v)} max={COMP_MAX} color="var(--green)" />
           </div>
+          {/* 허용 오답 수 표시 */}
+          {s.targetComprehensive > 0 && (
+            <div style={{ padding: '10px 14px', background: 'rgba(16,185,129,0.07)', borderRadius: 10, border: '1px solid rgba(16,185,129,0.2)', marginTop: 4 }}>
+              <span style={{ fontSize: 12, color: 'var(--green)', fontWeight: 600 }}>
+                목표 달성 허용 오답: 최대 {Math.floor((COMP_MAX - s.targetComprehensive) / (COMP_MAX / 40))}문제 / 40문항
+              </span>
+            </div>
+          )}
         </div>
 
         {/* Alert threshold */}
-        <div style={{ marginBottom: 28, padding: 20, background: 'var(--bg3)', borderRadius: 14, border: '1px solid var(--bd0)' }}>
-          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--yellow)', marginBottom: 16 }}>⚠️ 오답 누적 경고 기준</div>
+        <div style={{ marginBottom: 20, padding: 20, background: 'var(--bg3)', borderRadius: 14, border: '1px solid var(--bd0)' }}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--yellow)', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 7 }}>
+            <AlertTriangle size={14} strokeWidth={2} /> 오답 누적 경고 기준
+          </div>
           <div style={ROW}>
             <span style={LABEL_S}>경고 발생 횟수</span>
             <div style={{ display: 'flex', gap: 8 }}>
@@ -116,8 +153,10 @@ export default function SettingsPanel({ settings, onClose, onSave }) {
         </div>
 
         {/* D-day */}
-        <div style={{ marginBottom: 28, padding: 20, background: 'var(--bg3)', borderRadius: 14, border: '1px solid var(--bd0)' }}>
-          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--orange)', marginBottom: 16 }}>📅 다음 시험 D-day</div>
+        <div style={{ marginBottom: 20, padding: 20, background: 'var(--bg3)', borderRadius: 14, border: '1px solid var(--bd0)' }}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--orange)', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 7 }}>
+            <CalendarDays size={14} strokeWidth={2} /> 다음 시험 D-day
+          </div>
           <div style={ROW}>
             <span style={LABEL_S}>시험 날짜</span>
             <div style={{ flex: 1, display: 'flex', gap: 10, alignItems: 'center' }}>
@@ -141,6 +180,47 @@ export default function SettingsPanel({ settings, onClose, onSave }) {
             </div>
           </div>
         </div>
+
+        {/* Export / Import */}
+        {(onExport || onImport) && (
+          <div style={{ marginBottom: 24, padding: 20, background: 'var(--bg3)', borderRadius: 14, border: '1px solid var(--bd0)' }}>
+            <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)', marginBottom: 14, display: 'flex', alignItems: 'center', gap: 7 }}>
+              <Database size={14} color="var(--t2)" strokeWidth={2} /> 데이터 백업 / 복구
+            </div>
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+              {onExport && (
+                <button onClick={onExport} style={{
+                  background: 'rgba(79,142,247,0.12)', color: 'var(--blue)',
+                  border: '1px solid rgba(79,142,247,0.35)', borderRadius: 10,
+                  padding: '9px 18px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit',
+                  transition: 'all 0.18s', display: 'inline-flex', alignItems: 'center', gap: 6,
+                }}>
+                  <Download size={14} strokeWidth={2} /> JSON 내보내기
+                </button>
+              )}
+              {onImport && (
+                <label style={{
+                  background: 'rgba(16,185,129,0.1)', color: 'var(--green)',
+                  border: '1px solid rgba(16,185,129,0.3)', borderRadius: 10,
+                  padding: '9px 18px', fontSize: 13, fontWeight: 600, cursor: 'pointer',
+                  transition: 'all 0.18s',
+                  display: 'inline-flex', alignItems: 'center', gap: 6,
+                }}>
+                  <Upload size={14} strokeWidth={2} /> JSON 가져오기
+                  <input type="file" accept=".json" onChange={handleImportFile} style={{ display: 'none' }} />
+                </label>
+              )}
+            </div>
+            {importError && (
+              <div style={{ marginTop: 10, fontSize: 12, color: 'var(--red)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 5 }}>
+                <X size={13} strokeWidth={2.5} style={{ flexShrink: 0 }} /> {importError}
+              </div>
+            )}
+            <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 10 }}>
+              가져오기 시 기존 데이터가 대체됩니다. 먼저 내보내기로 백업하세요.
+            </div>
+          </div>
+        )}
 
         {/* Buttons */}
         <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end' }}>

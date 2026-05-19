@@ -1,6 +1,7 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { saveExam, getExams, JAP_MAX, JAP_READ_MAX, JAP_LISTEN_MAX } from '../utils/storage';
+import { CheckCircle2, XCircle, AlertTriangle, Info, X } from 'lucide-react';
+import { saveExam, getExams, JAP_MAX, JAP_READ_MAX, JAP_LISTEN_MAX, COMP_MAX, JAP_READ_QUESTIONS, JAP_LISTEN_QUESTIONS, COMP_RAW_MAX } from '../utils/storage';
 import { confidenceLabel, estimateComprehensiveScore, estimateJapaneseScore } from '../utils/scorePrediction';
 
 const ERROR_TYPES  = ['실수', '정보부족', '연계사고부족'];
@@ -34,6 +35,7 @@ function Toast({ message, type = 'info', onClose }) {
     warning: { bg: 'rgba(245,158,11,0.15)',  border: 'rgba(245,158,11,0.4)',  color: '#f59e0b' },
   };
   const c = colors[type];
+  const ToastIcon = type === 'success' ? CheckCircle2 : type === 'error' ? XCircle : type === 'warning' ? AlertTriangle : Info;
   return (
     <div style={{
       position: 'fixed', bottom: 28, right: 28, zIndex: 9999,
@@ -45,29 +47,29 @@ function Toast({ message, type = 'info', onClose }) {
       animation: 'slideInRight 0.3s ease',
       maxWidth: 340,
     }}>
-      <span style={{ fontSize: 18 }}>
-        {type === 'success' ? '✅' : type === 'error' ? '❌' : type === 'warning' ? '⚠️' : 'ℹ️'}
-      </span>
+      <ToastIcon size={17} color={c.color} strokeWidth={2} style={{ flexShrink: 0 }} />
       <span style={{ fontSize: 13, color: c.color, fontWeight: 600, flex: 1 }}>{message}</span>
-      <button onClick={onClose} style={{ background: 'none', border: 'none', color: c.color, cursor: 'pointer', fontSize: 16, padding: 0 }}>✕</button>
+      <button onClick={onClose} style={{ background: 'none', border: 'none', color: c.color, cursor: 'pointer', padding: 0, display: 'flex' }}>
+        <X size={15} strokeWidth={2} />
+      </button>
     </div>
   );
 }
 
 // ── ScoreInput ────────────────────────────────────────
-function ScoreInput({ label, value, onChange, max, accent, disabled = false, onToast }) {
+function ScoreInput({ label, value, onChange, max, accent, disabled = false, onToast, unit = '점' }) {
   const pct = max ? Math.round((Number(value) / max) * 100) : 0;
   const color = pct >= 80 ? 'var(--green)' : pct >= 60 ? accent : pct >= 40 ? 'var(--yellow)' : 'var(--red)';
   const handleChange = (e) => {
     const raw = Number(e.target.value);
     if (raw > max) {
-      onToast?.(`${label}은 최대 ${max}점까지 입력할 수 있어요.`, 'warning');
+      onToast?.(`${label}은 최대 ${max}${unit}까지 입력할 수 있어요.`, 'warning');
     }
     onChange(Math.min(max, Math.max(0, raw)));
   };
   return (
     <div>
-      <label style={LABEL}>{label} <span style={{ color: 'var(--t3)', fontWeight: 400, textTransform: 'none', fontSize: 12 }}>/ {max}점</span></label>
+      <label style={LABEL}>{label} <span style={{ color: 'var(--t3)', fontWeight: 400, textTransform: 'none', fontSize: 12 }}>/ {max}{unit}</span></label>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
         <input type="number" min={0} max={max} value={value}
           onChange={handleChange}
@@ -93,7 +95,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
   const [recordType, setRecordType] = useState('exam'); // 'exam' | 'workbook'
   const [date, setDate] = useState(() => {
     const n = new Date();
-    return `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}`;
+    return `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}-${String(n.getDate()).padStart(2, '0')}`;
   });
   const [examName, setExamName]         = useState('');
   const [reading, setReading]           = useState(0);
@@ -120,7 +122,9 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
     const exams = getExams();
     setLatestExam(exams[exams.length - 1] || null);
     if (!editingExam) return;
-    setDate(editingExam.date);
+    // 기존 YYYY-MM 형식 데이터는 -01을 붙여 date 입력에 표시
+    const d = editingExam.date;
+    setDate(/^\d{4}-\d{2}$/.test(d) ? `${d}-01` : d);
     setExamName(editingExam.examName);
     setReading(editingExam.japanese?.reading || 0);
     setListening(editingExam.japanese?.listening || 0);
@@ -133,6 +137,11 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
     setUseEstimatedComprehensive(Boolean(editingExam.comprehensive?.estimateMeta?.isEstimated));
     setRecordType(editingExam.recordType || 'exam');
   }, [editingExam]);
+
+  // 기록 유형에 따른 입력 최댓값
+  const readMax   = recordType === 'workbook' ? JAP_READ_QUESTIONS  : JAP_READ_MAX;
+  const listenMax = recordType === 'workbook' ? JAP_LISTEN_QUESTIONS : JAP_LISTEN_MAX;
+  const compMax   = recordType === 'workbook' ? COMP_RAW_MAX         : COMP_MAX;
 
   const parseNums = str => str.split(/[\s,]+/).map(Number).filter(n => Number.isInteger(n) && n > 0);
   const parsedWrongReading = useMemo(() => parseNums(wrongReading), [wrongReading]);
@@ -157,7 +166,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
     setJapMemos(latestExam.japanese?.wrongMemos || {});
     setCompScore(latestExam.comprehensive?.score || 0);
     setMistakes((latestExam.comprehensive?.mistakes || []).map(m => ({ ...m, id: crypto.randomUUID() })));
-    showToast('이전 입력값을 복사했어요!', 'success');
+    showToast('이전 입력값을 복사했습니다.', 'success');
   };
 
   const addMistake = () => setMistakes(m => [...m, { id: crypto.randomUUID(), questionNumber: '', unit: '', errorType: '정보부족', memo: '' }]);
@@ -166,7 +175,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (!date) { showToast('시험 연월을 선택해주세요.', 'error'); return; }
+    if (!date) { showToast('시험 날짜를 선택해주세요.', 'error'); return; }
     const base = editingExam || {};
     const modeLabel = entryMode === 'japanese' ? '일본어' : entryMode === 'comprehensive' ? '종합과목' : '전체';
     const autoName = `${date} ${modeLabel} 입력`;
@@ -183,6 +192,9 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
             listening: useEstimatedJapanese ? japaneseEstimate.listening : listening,
             wrongQuestions: { reading: parsedWrongReading, listening: parsedWrongListening },
             wrongMemos: japMemos,
+            rawMeta: (recordType === 'workbook' && !useEstimatedJapanese)
+              ? { isRaw: true, readingMax: readMax, listeningMax: listenMax }
+              : undefined,
             estimateMeta: useEstimatedJapanese ? {
               isEstimated: true,
               confidence: japaneseEstimate.confidence,
@@ -195,6 +207,9 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
         : {
             score: useEstimatedComprehensive ? compEstimate.score : compScore,
             mistakes: mistakes.filter(m => m.unit || m.questionNumber),
+            rawMeta: (recordType === 'workbook' && !useEstimatedComprehensive)
+              ? { isRaw: true, max: COMP_RAW_MAX }
+              : undefined,
             estimateMeta: useEstimatedComprehensive ? {
               isEstimated: true,
               confidence: compEstimate.confidence,
@@ -203,7 +218,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
             } : undefined,
           },
     });
-    showToast('저장되었습니다! 🎉', 'success');
+    showToast('저장되었습니다.', 'success');
     setTimeout(onSave, 600);
   };
 
@@ -219,9 +234,9 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
   ];
 
   const modeButtons = [
-    { id: 'both', label: '📝 전체 입력', desc: '일본어 + 종합과목' },
-    { id: 'japanese', label: '🇯🇵 일본어만', desc: '일본어만 입력' },
-    { id: 'comprehensive', label: '📚 종합과목만', desc: '종합과목만 입력' },
+    { id: 'both', label: '전체 입력', desc: '일본어 + 종합과목' },
+    { id: 'japanese', label: '일본어만', desc: '일본어만 입력' },
+    { id: 'comprehensive', label: '종합과목만', desc: '종합과목만 입력' },
   ];
 
   return (
@@ -230,7 +245,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
         {/* Header */}
         <div style={{ marginBottom: 28 }}>
           <h1 style={{ fontSize: 26, fontWeight: 800, color: 'var(--t0)', letterSpacing: '-0.5px' }}>
-            {editingExam ? '✏️ 점수 수정' : '📊 점수 입력'}
+            {editingExam ? '점수 수정' : '점수 입력'}
           </h1>
           <div style={{ color: 'var(--t2)', fontSize: 13, marginTop: 5 }}>모의고사 결과를 기록하고 성장을 추적해보세요</div>
         </div>
@@ -266,12 +281,11 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
 
         {/* Basic info */}
         <div style={SECTION}>
-          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 18, display: 'flex', alignItems: 'center', gap: 8 }}>
-            <span style={{ fontSize: 20 }}>📋</span> 기본 정보
+          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 18 }}>
+            기본 정보
           </div>
-          {/* 기록 유형 */}
           <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
-            {[{ id: 'exam', label: '📝 모의고사' }, { id: 'workbook', label: '📖 문제집' }].map(opt => {
+            {[{ id: 'exam', label: '모의고사' }, { id: 'workbook', label: '문제집' }].map(opt => {
               const active = recordType === opt.id;
               return (
                 <button key={opt.id} type="button" onClick={() => setRecordType(opt.id)} style={{
@@ -287,8 +301,8 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 16 }}>
             <div>
-              <label style={LABEL}>시험 연월</label>
-              <input type="month" value={date} onChange={e => setDate(e.target.value)} style={INPUT}
+              <label style={LABEL}>시험 날짜</label>
+              <input type="date" value={date} onChange={e => setDate(e.target.value)} style={INPUT}
                 onFocus={e => { e.target.style.borderColor = 'var(--blue)'; e.target.style.boxShadow = '0 0 0 3px rgba(79,142,247,0.15)'; }}
                 onBlur={e => { e.target.style.borderColor = 'var(--bd1)'; e.target.style.boxShadow = 'none'; }} />
             </div>
@@ -308,7 +322,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
                 padding: '7px 14px', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit',
                 transition: 'all 0.2s',
               }}>
-                📋 최근 입력값 복사
+                최근 입력값 복사
               </button>
             </div>
           )}
@@ -318,34 +332,44 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
         {entryMode !== 'comprehensive' && (
           <div style={SECTION}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
-              <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', display: 'flex', alignItems: 'center', gap: 8 }}>
-                <span style={{ fontSize: 20 }}>🇯🇵</span> 일본어
+              <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)' }}>
+                일본어
               </div>
               <div style={{
                 fontSize: 22, fontWeight: 800, color: 'var(--blue)',
                 background: 'rgba(79,142,247,0.1)', padding: '6px 16px', borderRadius: 12,
                 border: '1px solid rgba(79,142,247,0.25)',
               }}>
-                {japTotal} <span style={{ fontSize: 13, color: 'var(--t2)', fontWeight: 400 }}>/ 370점</span>
+                {recordType === 'workbook'
+                  ? <><span style={{ fontSize: 14 }}>{effectiveReading}/{readMax} + {effectiveListening}/{listenMax}</span></>
+                  : <>{japTotal} <span style={{ fontSize: 13, color: 'var(--t2)', fontWeight: 400 }}>/ 370점</span></>
+                }
               </div>
             </div>
 
+            {recordType === 'workbook' && (
+              <div style={{ fontSize: 12, color: 'var(--purple)', background: 'rgba(168,85,247,0.07)', border: '1px solid rgba(168,85,247,0.2)', borderRadius: 10, padding: '8px 14px', marginBottom: 16 }}>
+                문제집 원점수 입력 — 독해 /25문항, 청해 /40문항 (차트에서 득점등화 점수로 환산됩니다)
+              </div>
+            )}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 16 }}>
-              <ScoreInput label="독해 (読解)" value={effectiveReading} onChange={setReading} max={JAP_READ_MAX} accent="var(--purple)" disabled={useEstimatedJapanese} onToast={showToast} />
-              <ScoreInput label="청해 (聴解)" value={effectiveListening} onChange={setListening} max={JAP_LISTEN_MAX} accent="var(--pink)" disabled={useEstimatedJapanese} onToast={showToast} />
+              <ScoreInput label="독해 (読解)" value={effectiveReading} onChange={setReading} max={readMax} accent="var(--purple)" disabled={useEstimatedJapanese} onToast={showToast} unit={recordType === 'workbook' ? '문항' : '점'} />
+              <ScoreInput label="청해 (聴解)" value={effectiveListening} onChange={setListening} max={listenMax} accent="var(--pink)" disabled={useEstimatedJapanese} onToast={showToast} unit={recordType === 'workbook' ? '문항' : '점'} />
             </div>
 
-            {/* 예측 체크박스 */}
-            <label style={{
-              display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14,
-              fontSize: 13, color: 'var(--t1)', cursor: 'pointer',
-              padding: '10px 14px', borderRadius: 10, background: 'var(--bg3)',
-              border: '1px solid var(--bd0)',
-            }}>
-              <input type="checkbox" checked={useEstimatedJapanese} onChange={e => setUseEstimatedJapanese(e.target.checked)}
-                style={{ width: 16, height: 16, accentColor: 'var(--blue)' }} />
-              <span>📊 점수 모름 — 틀린 번호로 자동 예측</span>
-            </label>
+            {/* 예측 체크박스 — 모의고사 모드에서만 표시 */}
+            {recordType === 'exam' && (
+              <label style={{
+                display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14,
+                fontSize: 13, color: 'var(--t1)', cursor: 'pointer',
+                padding: '10px 14px', borderRadius: 10, background: 'var(--bg3)',
+                border: '1px solid var(--bd0)',
+              }}>
+                <input type="checkbox" checked={useEstimatedJapanese} onChange={e => setUseEstimatedJapanese(e.target.checked)}
+                  style={{ width: 16, height: 16, accentColor: 'var(--blue)' }} />
+                <span>점수 모름 — 틀린 번호로 자동 예측</span>
+              </label>
+            )}
             {useEstimatedJapanese && (
               <div style={{ background: 'rgba(79,142,247,0.08)', border: '1px solid rgba(79,142,247,0.3)', borderRadius: 12, padding: '12px 16px', marginBottom: 16 }}>
                 <div style={{ fontSize: 13, color: 'var(--blue)', fontWeight: 700 }}>
@@ -385,7 +409,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
                   borderRadius: 10, padding: '8px 14px', fontSize: 12, cursor: 'pointer', fontFamily: 'inherit',
                   display: 'flex', alignItems: 'center', gap: 6,
                 }}>
-                  📝 틀린 문제 메모 {showJapMemoPanel ? '▲ 닫기' : '▼ 열기'}
+                  틀린 문제 메모 {showJapMemoPanel ? '닫기' : '열기'}
                   <span style={{ fontSize: 10, color: 'var(--t3)' }}>({memoNumbers.length}문제)</span>
                 </button>
                 {showJapMemoPanel && (
@@ -422,25 +446,32 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
         {/* Comprehensive section */}
         {entryMode !== 'japanese' && (
           <div style={SECTION}>
-            <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 18, display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span style={{ fontSize: 20 }}>📚</span> 종합과목
+            <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 18 }}>
+              종합과목
             </div>
-            <ScoreInput label="점수" value={effectiveCompScore} onChange={setCompScore} max={200} accent="var(--green)" disabled={useEstimatedComprehensive} onToast={showToast} />
+            {recordType === 'workbook' && (
+              <div style={{ fontSize: 12, color: 'var(--green)', background: 'rgba(16,185,129,0.07)', border: '1px solid rgba(16,185,129,0.2)', borderRadius: 10, padding: '8px 14px', marginBottom: 14 }}>
+                문제집 원점수 입력 — /200점 (차트에서 득점등화 점수로 환산됩니다)
+              </div>
+            )}
+            <ScoreInput label="점수" value={effectiveCompScore} onChange={setCompScore} max={compMax} accent="var(--green)" disabled={useEstimatedComprehensive} onToast={showToast} />
 
-            <label style={{
-              display: 'flex', alignItems: 'center', gap: 10, marginTop: 14,
-              fontSize: 13, color: 'var(--t1)', cursor: 'pointer',
-              padding: '10px 14px', borderRadius: 10, background: 'var(--bg3)',
-              border: '1px solid var(--bd0)',
-            }}>
-              <input type="checkbox" checked={useEstimatedComprehensive} onChange={e => setUseEstimatedComprehensive(e.target.checked)}
-                style={{ width: 16, height: 16, accentColor: 'var(--green)' }} />
-              <span>📊 점수 모름 — 오답분석으로 자동 예측</span>
-            </label>
+            {recordType === 'exam' && (
+              <label style={{
+                display: 'flex', alignItems: 'center', gap: 10, marginTop: 14,
+                fontSize: 13, color: 'var(--t1)', cursor: 'pointer',
+                padding: '10px 14px', borderRadius: 10, background: 'var(--bg3)',
+                border: '1px solid var(--bd0)',
+              }}>
+                <input type="checkbox" checked={useEstimatedComprehensive} onChange={e => setUseEstimatedComprehensive(e.target.checked)}
+                  style={{ width: 16, height: 16, accentColor: 'var(--green)' }} />
+                <span>점수 모름 — 오답분석으로 자동 예측</span>
+              </label>
+            )}
 
-            {useEstimatedComprehensive && (
+            {useEstimatedComprehensive && recordType === 'exam' && (
               <div style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.28)', borderRadius: 12, padding: '12px 16px', marginTop: 12 }}>
-                <div style={{ fontSize: 13, color: 'var(--green)', fontWeight: 700 }}>예측 점수: {compEstimate.score} / 200</div>
+                <div style={{ fontSize: 13, color: 'var(--green)', fontWeight: 700 }}>예측 점수: {compEstimate.score} / {COMP_MAX}</div>
                 <div style={{ fontSize: 11, color: 'var(--t2)', marginTop: 4 }}>
                   신뢰도 {confidenceLabel(compEstimate.confidence)} ({Math.round(compEstimate.confidence * 100)}%) · 학습데이터 {compEstimate.sampleSize}회
                 </div>
@@ -465,8 +496,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
                   border: '1.5px dashed var(--bd1)', borderRadius: 12,
                   background: 'var(--bg3)',
                 }}>
-                  <div style={{ fontSize: 28, marginBottom: 8 }}>📝</div>
-                  <div>오답 추가 버튼으로 틀린 문제를 기록하세요</div>
+                  오답 추가 버튼으로 틀린 문제를 기록하세요
                 </div>
               )}
 
@@ -540,7 +570,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
             onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 10px 32px rgba(79,142,247,0.45)'; }}
             onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 6px 24px rgba(79,142,247,0.35)'; }}
           >
-            {editingExam ? '✅ 수정 완료' : '💾 저장하기'}
+            {editingExam ? '수정 완료' : '저장'}
           </button>
           <button type="button" onClick={onCancel} style={{
             background: 'transparent', color: 'var(--t1)', border: '1.5px solid var(--bd1)',

@@ -19,6 +19,8 @@ export const JAP_READ_MAX = 185;  // 독해 만점
 export const JAP_LISTEN_MAX = 185; // 청해 만점
 export const JAP_READ_QUESTIONS = 25;   // 독해 문항 수
 export const JAP_LISTEN_QUESTIONS = 40; // 청해 문항 수
+export const COMP_MAX = 198;       // 종합과목 만점 (득점등화)
+export const COMP_QUESTIONS = 40;  // 종합과목 문항 수
 
 // 문항별 기본 배점 가중치 (독해)
 // 문법·어휘 문항(1-10): 표준 배점
@@ -257,22 +259,32 @@ export function estimateJapaneseScore(
       date: e.date,
     }));
 
-  // 평소 문제집 기록도 낮은 가중치로 반영
+  // 평소 문제집 기록도 낮은 가중치로 반영 (원점수인 경우 등화 환산 후 적용)
   const rWorkbookHistory = workbookHistory
     .filter(e => e?.japanese && typeof e.japanese.reading === 'number')
-    .map(e => ({
-      reading: Math.round(e.japanese.reading * 0.95), // 문제집은 실제 시험보다 약간 높게 나오는 경향 보정
-      features: setFromNumbers(e.japanese?.wrongQuestions?.reading || []),
-      date: e.date,
-    }));
+    .map(e => {
+      const normReading = e.japanese.rawMeta?.isRaw
+        ? Math.round(e.japanese.reading * JAP_READ_MAX / (e.japanese.rawMeta.readingMax || JAP_READ_QUESTIONS))
+        : e.japanese.reading;
+      return {
+        reading: Math.round(normReading * 0.95),
+        features: setFromNumbers(e.japanese?.wrongQuestions?.reading || []),
+        date: e.date,
+      };
+    });
 
   const lWorkbookHistory = workbookHistory
     .filter(e => e?.japanese && typeof e.japanese.listening === 'number')
-    .map(e => ({
-      listening: Math.round(e.japanese.listening * 0.95),
-      features: setFromNumbers(e.japanese?.wrongQuestions?.listening || []),
-      date: e.date,
-    }));
+    .map(e => {
+      const normListening = e.japanese.rawMeta?.isRaw
+        ? Math.round(e.japanese.listening * JAP_LISTEN_MAX / (e.japanese.rawMeta.listeningMax || JAP_LISTEN_QUESTIONS))
+        : e.japanese.listening;
+      return {
+        listening: Math.round(normListening * 0.95),
+        features: setFromNumbers(e.japanese?.wrongQuestions?.listening || []),
+        date: e.date,
+      };
+    });
 
   const combinedRHistory = [...rHistory, ...rWorkbookHistory];
   const combinedLHistory = [...lHistory, ...lWorkbookHistory];
@@ -408,22 +420,61 @@ export function estimateComprehensiveScore(exams, mistakes = []) {
 
   const workbookHistory = exams
     .filter(e => e?.comprehensive && typeof e.comprehensive.score === 'number' && e.recordType === 'workbook')
-    .map(e => ({
-      score: Math.round(e.comprehensive.score * 0.95),
-      features: setFromMistakes(e.comprehensive?.mistakes || []),
-      date: e.date,
-    }));
+    .map(e => {
+      const normScore = e.comprehensive.rawMeta?.isRaw
+        ? Math.round(e.comprehensive.score * COMP_MAX / (e.comprehensive.rawMeta.max || 200))
+        : e.comprehensive.score;
+      return {
+        score: Math.round(normScore * 0.95),
+        features: setFromMistakes(e.comprehensive?.mistakes || []),
+        date: e.date,
+      };
+    });
 
   const combined = [...examHistory, ...workbookHistory];
-  const result = estimateBySimilarity(combined, target, 'score', 200);
+  const result = estimateBySimilarity(combined, target, 'score', COMP_MAX);
 
   // 트렌드 보정
   const scores = examHistory.map(h => h.score);
-  const trend = trendBasedPrediction(scores, 200);
+  const trend = trendBasedPrediction(scores, COMP_MAX);
   if (trend !== null && examHistory.length >= 3) {
     const blended = Math.round(result.score * 0.7 + trend * 0.3);
-    return { ...result, score: clamp(blended, 0, 200) };
+    return { ...result, score: clamp(blended, 0, COMP_MAX) };
   }
 
   return result;
+}
+
+// ── 목표 달성 예상 시점 계산 ──────────────────────────
+// exams: 시험 기록 배열, targetScore: 목표 점수, scoreExtractor: 점수 추출 함수
+// 반환: { monthsAhead: number, date: string } | null
+export function predictGoalDate(exams, targetScore, scoreExtractor) {
+  const scores = exams
+    .map(e => ({ score: scoreExtractor(e), date: e.date }))
+    .filter(x => x.score != null && x.score > 0);
+  if (scores.length < 2) return null;
+
+  const recent = scores.slice(-6);
+  const n = recent.length;
+  const lastScore = recent[n - 1].score;
+  if (lastScore >= targetScore) return { monthsAhead: 0, date: recent[n - 1].date, alreadyAchieved: true };
+
+  const sumX = (n * (n - 1)) / 2;
+  const sumY = recent.reduce((a, x) => a + x.score, 0);
+  const sumXY = recent.reduce((s, x, i) => s + i * x.score, 0);
+  const sumX2 = recent.reduce((s, _, i) => s + i * i, 0);
+  const denom = n * sumX2 - sumX * sumX;
+  if (!denom) return null;
+  const slope = (n * sumXY - sumX * sumY) / denom;
+  if (slope <= 0) return null;
+  const intercept = (sumY - slope * sumX) / n;
+
+  const k = Math.ceil((targetScore - intercept) / slope - n + 1);
+  if (k <= 0 || k > 60) return null;
+
+  const lastDate = recent[n - 1].date;
+  const [y, m] = lastDate.split('-').map(Number);
+  const target = new Date(y, m - 1 + k);
+  const dateStr = `${target.getFullYear()}-${String(target.getMonth() + 1).padStart(2, '0')}`;
+  return { monthsAhead: k, date: dateStr, alreadyAchieved: false };
 }

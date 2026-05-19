@@ -1,19 +1,21 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
 import { useState, useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import Layout from './components/Layout';
 import Dashboard from './components/Dashboard';
 import ScoreForm from './components/ScoreForm';
 import JapaneseAnalysis from './components/JapaneseAnalysis';
 import ComprehensiveAnalysis from './components/ComprehensiveAnalysis';
+import AICoach from './components/AICoach';
 import SettingsPanel from './components/SettingsPanel';
-import { getExams, deleteExam, loadSampleData, getSettings, saveExam, JAP_READ_MAX, JAP_LISTEN_MAX } from './utils/storage';
+import { getExams, deleteExam, loadSampleData, getSettings, saveSettings, saveExam, JAP_READ_MAX, JAP_LISTEN_MAX, COMP_MAX } from './utils/storage';
 import { getDday } from './utils/diagnosis';
 
 function QuickInputModal({ onClose, onSaved }) {
   const now = new Date();
-  const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
   const [mode, setMode] = useState('japanese');
-  const [date, setDate] = useState(currentMonth);
+  const [date, setDate] = useState(today);
   const [reading, setReading] = useState(0);
   const [listening, setListening] = useState(0);
   const [compScore, setCompScore] = useState(0);
@@ -64,7 +66,7 @@ function QuickInputModal({ onClose, onSaved }) {
         </div>
         <div style={{ marginBottom: 12 }}>
           <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 600, marginBottom: 5 }}>시험 연월</div>
-          <input type="month" value={date} onChange={e => setDate(e.target.value)} style={inputStyle} />
+          <input type="date" value={date} onChange={e => setDate(e.target.value)} style={inputStyle} />
         </div>
         {mode === 'japanese' ? (
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
@@ -79,8 +81,8 @@ function QuickInputModal({ onClose, onSaved }) {
           </div>
         ) : (
           <div>
-            <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 600, marginBottom: 5 }}>종합과목 /200</div>
-            <input type="number" min={0} max={200} value={compScore} onChange={e => setCompScore(Math.max(0, Math.min(200, Number(e.target.value))))} style={inputStyle} />
+            <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 600, marginBottom: 5 }}>종합과목 /{COMP_MAX}</div>
+            <input type="number" min={0} max={COMP_MAX} value={compScore} onChange={e => setCompScore(Math.max(0, Math.min(COMP_MAX, Number(e.target.value))))} style={inputStyle} />
           </div>
         )}
         <div style={{ marginTop: 14, display: 'flex', justifyContent: 'flex-end' }}>
@@ -149,6 +151,26 @@ export default function App() {
   const handleAddNew = () => { setEditingExam(null); setPage('form'); };
   const handleSave = () => { refresh(); setPage('dashboard'); setEditingExam(null); };
   const handleCancel = () => { setPage('dashboard'); setEditingExam(null); };
+
+  const handleExport = () => {
+    const data = { exams: getExams(), settings: getSettings(), exportedAt: new Date().toISOString() };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `eju-score-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImport = (data) => {
+    if (data.exams) localStorage.setItem('eju_exam_data', JSON.stringify(data.exams));
+    if (data.settings) {
+      saveSettings(data.settings);
+      setSettings(data.settings);
+    }
+    refresh();
+  };
   const handleLoadSample = () => { loadSampleData(); refresh(); setShowSamplePrompt(false); };
   const toggleTheme = () => {
     const next = settings.theme === 'dark' ? 'light' : 'dark';
@@ -159,14 +181,23 @@ export default function App() {
     document.documentElement.setAttribute('data-theme', next);
   };
 
+  const PAGE_VARIANTS = {
+    initial: { opacity: 0, y: 10 },
+    animate: { opacity: 1, y: 0 },
+    exit:    { opacity: 0, y: -6 },
+  };
+  const PAGE_TRANSITION = { duration: 0.15, ease: 'easeOut' };
+
   const renderPage = () => {
     switch (page) {
       case 'form':
         return <ScoreForm editingExam={editingExam} onSave={handleSave} onCancel={handleCancel} />;
       case 'japanese':
-        return <JapaneseAnalysis exams={exams} />;
+        return <JapaneseAnalysis exams={exams} onAddNew={handleAddNew} />;
       case 'comprehensive':
-        return <ComprehensiveAnalysis exams={exams} settings={settings} />;
+        return <ComprehensiveAnalysis exams={exams} settings={settings} onAddNew={handleAddNew} />;
+      case 'ai':
+        return <AICoach exams={exams} settings={settings} />;
       default:
         return (
           <>
@@ -194,11 +225,13 @@ export default function App() {
                 </div>
               </div>
             )}
-            <Dashboard exams={exams} onEdit={handleEdit} onDelete={handleDelete} onDeleteAll={handleDeleteAll} settings={settings} />
+            <Dashboard exams={exams} onEdit={handleEdit} onDelete={handleDelete} onDeleteAll={handleDeleteAll} onAddNew={handleAddNew} settings={settings} />
           </>
         );
     }
   };
+
+  const pageContent = renderPage();
 
   return (
     <>
@@ -211,7 +244,18 @@ export default function App() {
         onToggleTheme={toggleTheme}
         theme={settings.theme}
       >
-        {renderPage()}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={page}
+            variants={PAGE_VARIANTS}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={PAGE_TRANSITION}
+          >
+            {pageContent}
+          </motion.div>
+        </AnimatePresence>
       </Layout>
 
       {showSettings && (
@@ -219,6 +263,8 @@ export default function App() {
           settings={settings}
           onClose={() => setShowSettings(false)}
           onSave={s => setSettings(s)}
+          onExport={handleExport}
+          onImport={handleImport}
         />
       )}
 

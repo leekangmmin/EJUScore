@@ -1,6 +1,7 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
 import { useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import { Target, Plus, AlertTriangle } from 'lucide-react';
 
 const CARD = { background: 'var(--bg2)', border: '1px solid var(--bd0)', borderRadius: 16, padding: 24 };
 
@@ -78,7 +79,7 @@ const CustomTooltip = ({ active, payload }) => {
   );
 };
 
-export default function JapaneseAnalysis({ exams }) {
+export default function JapaneseAnalysis({ exams, onAddNew }) {
   const allR = useMemo(() => exams.flatMap(e => e.japanese?.wrongQuestions?.reading   || []), [exams]);
   const allL = useMemo(() => exams.flatMap(e => e.japanese?.wrongQuestions?.listening || []), [exams]);
 
@@ -93,10 +94,35 @@ export default function JapaneseAnalysis({ exams }) {
 
   if (!exams || exams.length === 0) {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', gap: 16 }}>
-        <div style={{ fontSize: 56 }}>🎯</div>
-        <div style={{ fontSize: 22, fontWeight: 700, color: 'var(--t0)' }}>데이터가 없어요</div>
-        <div style={{ color: 'var(--t2)', fontSize: 14 }}>점수를 입력하면 오답 분석이 표시됩니다</div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', gap: 18, padding: '40px 20px', textAlign: 'center' }}>
+        <div style={{
+          width: 88, height: 88, borderRadius: 24,
+          background: 'linear-gradient(135deg, rgba(107,163,255,0.12), rgba(164,110,245,0.12))',
+          border: '1px solid rgba(107,163,255,0.18)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+          <Target size={38} color="var(--blue)" strokeWidth={1.5} style={{ opacity: 0.75 }} />
+        </div>
+        <div>
+          <div style={{ fontSize: 22, fontWeight: 800, color: 'var(--t0)', letterSpacing: '-0.4px', marginBottom: 8 }}>일본어 오답 기록이 없어요</div>
+          <div style={{ color: 'var(--t2)', fontSize: 13.5, lineHeight: 1.8, maxWidth: 300 }}>
+            오답 문제 번호를 포함해 점수를 입력하면<br />어떤 문제를 자주 틀리는지 분석해드려요
+          </div>
+        </div>
+        <button
+          onClick={onAddNew}
+          style={{
+            display: 'flex', alignItems: 'center', gap: 7,
+            background: 'linear-gradient(135deg, var(--blue), var(--purple))',
+            color: '#fff', border: 'none', borderRadius: 12,
+            padding: '11px 22px', fontSize: 14, fontWeight: 700,
+            cursor: 'pointer', fontFamily: 'inherit',
+            boxShadow: '0 4px 16px rgba(107,163,255,0.3)',
+          }}
+        >
+          <Plus size={16} strokeWidth={2.5} />
+          점수 입력하기
+        </button>
       </div>
     );
   }
@@ -134,8 +160,10 @@ export default function JapaneseAnalysis({ exams }) {
       {(worstR || worstL) && (
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
           {worstR && (
-            <div style={{ ...CARD, display: 'flex', gap: 14, alignItems: 'center', borderColor: 'rgba(168,85,247,0.35)', background: 'rgba(168,85,247,0.05)' }}>
-              <span style={{ fontSize: 28 }}>⚠️</span>
+            <div style={{ ...CARD, display: 'flex', gap: 14, alignItems: 'center', borderColor: 'rgba(168,85,247,0.3)', background: 'rgba(168,85,247,0.05)' }}>
+              <div style={{ width: 40, height: 40, borderRadius: 11, background: 'rgba(168,85,247,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <AlertTriangle size={18} color="var(--purple)" strokeWidth={2} />
+              </div>
               <div>
                 <div style={{ fontSize: 11, color: 'var(--t2)' }}>독해 최다 오답</div>
                 <div style={{ fontSize: 20, fontWeight: 700, color: 'var(--purple)' }}>{worstR.name}</div>
@@ -144,8 +172,10 @@ export default function JapaneseAnalysis({ exams }) {
             </div>
           )}
           {worstL && (
-            <div style={{ ...CARD, display: 'flex', gap: 14, alignItems: 'center', borderColor: 'rgba(236,72,153,0.35)', background: 'rgba(236,72,153,0.05)' }}>
-              <span style={{ fontSize: 28 }}>⚠️</span>
+            <div style={{ ...CARD, display: 'flex', gap: 14, alignItems: 'center', borderColor: 'rgba(236,72,153,0.3)', background: 'rgba(236,72,153,0.05)' }}>
+              <div style={{ width: 40, height: 40, borderRadius: 11, background: 'rgba(236,72,153,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <AlertTriangle size={18} color="var(--pink)" strokeWidth={2} />
+              </div>
               <div>
                 <div style={{ fontSize: 11, color: 'var(--t2)' }}>청해 최다 오답</div>
                 <div style={{ fontSize: 20, fontWeight: 700, color: 'var(--pink)' }}>{worstL.name}</div>
@@ -177,8 +207,8 @@ export default function JapaneseAnalysis({ exams }) {
               <ResponsiveContainer width="100%" height={200}>
                 <BarChart data={topR} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" />
-                  <XAxis dataKey="name" tick={{ fill: 'var(--t2)', fontSize: 10 }} />
-                  <YAxis tick={{ fill: 'var(--t2)', fontSize: 10 }} allowDecimals={false} />
+                  <XAxis dataKey="name" tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} />
+                  <YAxis tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} allowDecimals={false} />
                   <Tooltip content={<CustomTooltip />} />
                   <Bar dataKey="count" radius={[5, 5, 0, 0]}>
                     {topR.map((_, i) => <Cell key={i} fill={i === 0 ? '#ef4444' : i === 1 ? '#f59e0b' : '#a855f7'} />)}
@@ -193,8 +223,8 @@ export default function JapaneseAnalysis({ exams }) {
               <ResponsiveContainer width="100%" height={200}>
                 <BarChart data={topL} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" />
-                  <XAxis dataKey="name" tick={{ fill: 'var(--t2)', fontSize: 10 }} />
-                  <YAxis tick={{ fill: 'var(--t2)', fontSize: 10 }} allowDecimals={false} />
+                  <XAxis dataKey="name" tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} />
+                  <YAxis tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} allowDecimals={false} />
                   <Tooltip content={<CustomTooltip />} />
                   <Bar dataKey="count" radius={[5, 5, 0, 0]}>
                     {topL.map((_, i) => <Cell key={i} fill={i === 0 ? '#ef4444' : i === 1 ? '#f59e0b' : '#ec4899'} />)}

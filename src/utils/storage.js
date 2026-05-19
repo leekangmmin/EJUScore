@@ -16,6 +16,31 @@ export const DEFAULT_SETTINGS = {
 export const JAP_MAX = 370;
 export const JAP_READ_MAX = 185;
 export const JAP_LISTEN_MAX = 185;
+export const COMP_MAX = 198;          // 종합과목 만점 (득점등화 후 198점)
+export const COMP_QUESTIONS = 40;     // 종합과목 문항 수
+export const JAP_READ_QUESTIONS = 25; // 독해 문항 수 (문제집 원점수용)
+export const JAP_LISTEN_QUESTIONS = 40; // 청해 문항 수 (문제집 원점수용)
+export const COMP_RAW_MAX = 200;      // 종합과목 원점수 만점 (문제집용)
+
+// 문제집(원점수) → 득점등화점수 변환
+export function normalizeJapaneseScore(jap) {
+  if (!jap) return null;
+  if (jap.rawMeta?.isRaw) {
+    return {
+      reading:   Math.round(jap.reading   * JAP_READ_MAX   / (jap.rawMeta.readingMax   || JAP_READ_QUESTIONS)),
+      listening: Math.round(jap.listening * JAP_LISTEN_MAX / (jap.rawMeta.listeningMax || JAP_LISTEN_QUESTIONS)),
+    };
+  }
+  return { reading: jap.reading, listening: jap.listening };
+}
+
+export function normalizeCompScore(comp) {
+  if (!comp || comp.score == null) return null;
+  if (comp.rawMeta?.isRaw) {
+    return Math.round(comp.score * COMP_MAX / (comp.rawMeta.max || COMP_RAW_MAX));
+  }
+  return comp.score;
+}
 
 export function getSettings() {
   try {
@@ -71,12 +96,14 @@ function notifyNative() {
       return c.score > 0 || (c.mistakes?.length || 0) > 0 || Boolean(c.estimateMeta?.isEstimated);
     });
 
-    // 일본어 합계 계산 — latestJapExam 기준으로 올바르게 참조
+    // 일본어 합계 계산 — latestJapExam 기준 (득점등화 환산)
     const latestJap = latestJapExam?.japanese
-      ? latestJapExam.japanese.reading + latestJapExam.japanese.listening
+      ? (() => { const n = normalizeJapaneseScore(latestJapExam.japanese); return n ? n.reading + n.listening : null; })()
       : null;
 
-    const latestComp = latestCompExam?.comprehensive?.score ?? null;
+    const latestComp = latestCompExam?.comprehensive
+      ? normalizeCompScore(latestCompExam.comprehensive)
+      : null;
 
     const payload = {
       examCount: exams.length,

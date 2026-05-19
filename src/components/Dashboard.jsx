@@ -1,10 +1,18 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
 import { useMemo, useState } from 'react';
 import { generateDiagnosis, getDday } from '../utils/diagnosis';
+import { COMP_MAX, normalizeJapaneseScore, normalizeCompScore } from '../utils/storage';
+import { predictGoalDate } from '../utils/scorePrediction';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
   Legend, ResponsiveContainer, ReferenceLine,
 } from 'recharts';
+import {
+  BookOpen, Plus, AlertTriangle, Headphones, Trophy,
+  CalendarDays, ArrowLeftRight, Target, CheckCircle2,
+  AlertCircle, Info, TrendingUp, TrendingDown, Minus,
+  ClipboardList, BookMarked,
+} from 'lucide-react';
 
 // ── Utilities ────────────────────────────────────────
 function linearPredict(values, ahead = 3) {
@@ -126,11 +134,11 @@ function AlertBanner({ reading, listening, threshold }) {
   if (!reading.length && !listening.length) return null;
   return (
     <div style={{
-      ...CARD, borderColor: 'rgba(239,68,68,0.4)',
-      background: 'rgba(239,68,68,0.06)', marginBottom: 0,
+      ...CARD, borderColor: 'rgba(239,68,68,0.35)',
+      background: 'rgba(239,68,68,0.05)', marginBottom: 0,
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
-        <span style={{ fontSize: 20 }}>⚠️</span>
+        <AlertTriangle size={16} color="var(--red)" strokeWidth={2} style={{ flexShrink: 0 }} />
         <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--red)' }}>
           오답 누적 경고 — {threshold}회 이상 틀린 문제
         </span>
@@ -138,26 +146,30 @@ function AlertBanner({ reading, listening, threshold }) {
       <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
         {reading.length > 0 && (
           <div>
-            <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 700, marginBottom: 8 }}>📖 독해</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11, color: 'var(--t2)', fontWeight: 700, marginBottom: 8 }}>
+              <BookOpen size={12} strokeWidth={2} /> 독해
+            </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
               {reading.map(([q, c]) => (
                 <span key={q} style={{
-                  background: 'rgba(239,68,68,0.15)', color: 'var(--red)',
+                  background: 'rgba(239,68,68,0.12)', color: 'var(--red)',
                   padding: '3px 11px', borderRadius: 8, fontSize: 12, fontWeight: 700,
-                }}>{q}번 <span style={{ opacity: 0.7, fontWeight: 400 }}>×{c}</span></span>
+                }}>{q}번 <span style={{ opacity: 0.65, fontWeight: 400 }}>×{c}</span></span>
               ))}
             </div>
           </div>
         )}
         {listening.length > 0 && (
           <div>
-            <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 700, marginBottom: 8 }}>🎧 청해</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11, color: 'var(--t2)', fontWeight: 700, marginBottom: 8 }}>
+              <Headphones size={12} strokeWidth={2} /> 청해
+            </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
               {listening.map(([q, c]) => (
                 <span key={q} style={{
-                  background: 'rgba(236,72,153,0.15)', color: 'var(--pink)',
+                  background: 'rgba(236,72,153,0.12)', color: 'var(--pink)',
                   padding: '3px 11px', borderRadius: 8, fontSize: 12, fontWeight: 700,
-                }}>{q}번 <span style={{ opacity: 0.7, fontWeight: 400 }}>×{c}</span></span>
+                }}>{q}번 <span style={{ opacity: 0.65, fontWeight: 400 }}>×{c}</span></span>
               ))}
             </div>
           </div>
@@ -183,7 +195,7 @@ function CompareView({ exams }) {
     { label: '일본어 합계', vA: japA, vB: japB, max: 370, color: 'var(--blue)' },
     { label: '독해', vA: a?.japanese?.reading, vB: b?.japanese?.reading, max: 185, color: 'var(--purple)' },
     { label: '청해', vA: a?.japanese?.listening, vB: b?.japanese?.listening, max: 185, color: 'var(--pink)' },
-    { label: '종합과목', vA: compA, vB: compB, max: 200, color: 'var(--green)' },
+    { label: '종합과목', vA: compA, vB: compB, max: COMP_MAX, color: 'var(--green)' },
   ];
 
   const selStyle = {
@@ -195,7 +207,7 @@ function CompareView({ exams }) {
   return (
     <div style={{ ...CARD }}>
       <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 18, display: 'flex', alignItems: 'center', gap: 8 }}>
-        <span>⚖️</span> 회차별 점수 비교
+        <ArrowLeftRight size={16} color="var(--blue)" strokeWidth={2} /> 회차별 점수 비교
       </div>
       {/* 선택 */}
       <div style={{ display: 'flex', gap: 12, marginBottom: 20, alignItems: 'center' }}>
@@ -265,8 +277,9 @@ function GoalTimeline({ exams, tJap, tComp }) {
     const list = [];
     let japReached = false, compReached = false;
     for (const e of exams) {
-      const jap = e.japanese ? e.japanese.reading + e.japanese.listening : null;
-      const comp = e.comprehensive?.score ?? null;
+      const japNorm = e.japanese ? normalizeJapaneseScore(e.japanese) : null;
+      const jap = japNorm ? japNorm.reading + japNorm.listening : null;
+      const comp = normalizeCompScore(e.comprehensive);
       if (!japReached && jap != null && jap >= tJap) {
         list.push({ date: e.date, name: e.examName, type: 'jap', score: jap, target: tJap });
         japReached = true;
@@ -284,33 +297,31 @@ function GoalTimeline({ exams, tJap, tComp }) {
   return (
     <div style={{ ...CARD }}>
       <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 18, display: 'flex', alignItems: 'center', gap: 8 }}>
-        <span>🏆</span> 목표 달성 타임라인
+        <Trophy size={16} color="var(--yellow)" strokeWidth={2} /> 목표 달성 타임라인
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
         {events.map((ev, i) => (
           <div key={i} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-            {/* 타임라인 선 */}
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 32 }}>
               <div style={{
                 width: 32, height: 32, borderRadius: '50%',
                 background: ev.type === 'jap' ? 'linear-gradient(135deg, var(--blue), var(--purple))' : 'linear-gradient(135deg, var(--green), #06b6d4)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: 14, flexShrink: 0, boxShadow: `0 4px 12px ${ev.type === 'jap' ? 'rgba(79,142,247,0.4)' : 'rgba(16,185,129,0.4)'}`,
+                flexShrink: 0, boxShadow: `0 4px 12px ${ev.type === 'jap' ? 'rgba(79,142,247,0.4)' : 'rgba(16,185,129,0.4)'}`,
               }}>
-                {ev.type === 'jap' ? '🎌' : '📚'}
+                <Trophy size={14} color="#fff" strokeWidth={2} />
               </div>
               {i < events.length - 1 && (
                 <div style={{ width: 2, flex: 1, background: 'var(--bd0)', minHeight: 24, margin: '4px 0' }} />
               )}
             </div>
-            {/* 내용 */}
             <div style={{ flex: 1, paddingBottom: i < events.length - 1 ? 20 : 0 }}>
               <div style={{ fontSize: 11, color: 'var(--t3)', fontWeight: 600, marginBottom: 3 }}>{ev.date}</div>
               <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)' }}>
-                {ev.type === 'jap' ? '🎯 일본어 목표 달성!' : '🎯 종합과목 목표 달성!'}
+                {ev.type === 'jap' ? '일본어 목표 달성' : '종합과목 목표 달성'}
               </div>
               <div style={{ fontSize: 12, color: 'var(--t2)', marginTop: 2 }}>
-                {ev.name} · {ev.score}점 (목표 {ev.target}점 초과)
+                {ev.name} · {ev.score}점 (목표 {ev.target}점 달성)
               </div>
             </div>
           </div>
@@ -321,9 +332,10 @@ function GoalTimeline({ exams, tJap, tComp }) {
 }
 
 // ── Main Dashboard ────────────────────────────────────
-export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settings }) {
+export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddNew, settings }) {
   const [confirmDelete, setConfirmDelete] = useState(null);
   const [showCompare, setShowCompare]     = useState(false);
+  const [recordFilter, setRecordFilter]   = useState('all'); // 'all'|'exam'|'workbook'
   const tJap = settings.targetJapanese ?? 320;
   const tComp = settings.targetComprehensive ?? 170;
   const threshold = settings.alertThreshold ?? 3;
@@ -332,18 +344,34 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
 
   const latest = exams[exams.length - 1];
   const prev   = exams.length >= 2 ? exams[exams.length - 2] : null;
-  const latestJap  = latest?.japanese ? latest.japanese.reading + latest.japanese.listening : undefined;
-  const prevJap    = prev?.japanese ? prev.japanese.reading + prev.japanese.listening : null;
-  const latestComp = latest?.comprehensive?.score;
-  const prevComp   = prev?.comprehensive?.score ?? null;
+
+  const latestJapNorm  = latest?.japanese ? normalizeJapaneseScore(latest.japanese) : null;
+  const prevJapNorm    = prev?.japanese   ? normalizeJapaneseScore(prev.japanese)   : null;
+  const latestJap  = latestJapNorm ? latestJapNorm.reading + latestJapNorm.listening : undefined;
+  const prevJap    = prevJapNorm   ? prevJapNorm.reading   + prevJapNorm.listening   : null;
+  const latestComp = latest?.comprehensive ? normalizeCompScore(latest.comprehensive) : undefined;
+  const prevComp   = prev?.comprehensive   ? normalizeCompScore(prev.comprehensive)   : null;
 
   const diffJap  = prevJap   != null && latestJap  != null ? latestJap  - prevJap   : undefined;
   const diffComp = prevComp  != null && latestComp != null ? latestComp - prevComp  : undefined;
-  const diffRead = prev?.japanese && latest?.japanese ? latest.japanese.reading   - prev.japanese.reading   : undefined;
-  const diffList = prev?.japanese && latest?.japanese ? latest.japanese.listening - prev.japanese.listening : undefined;
+  const diffRead = prevJapNorm && latestJapNorm ? latestJapNorm.reading   - prevJapNorm.reading   : undefined;
+  const diffList = prevJapNorm && latestJapNorm ? latestJapNorm.listening - prevJapNorm.listening : undefined;
 
   const growthJap  = prevJap   ? ((latestJap  - prevJap)  / prevJap  * 100).toFixed(1) : null;
   const growthComp = prevComp  ? ((latestComp - prevComp) / prevComp * 100).toFixed(1) : null;
+
+  const goalDateJap = useMemo(() =>
+    predictGoalDate(exams, tJap, e => {
+      if (!e.japanese) return null;
+      const n = normalizeJapaneseScore(e.japanese);
+      return n ? n.reading + n.listening : null;
+    }),
+    [exams, tJap]
+  );
+  const goalDateComp = useMemo(() =>
+    predictGoalDate(exams, tComp, e => normalizeCompScore(e.comprehensive)),
+    [exams, tComp]
+  );
 
   const alerts = useMemo(() => {
     const rc = {}, lc = {};
@@ -358,17 +386,21 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
   }, [exams, threshold]);
 
   const chartData = useMemo(() => {
-    const data = exams.map(e => ({
-      name: e.date,
-      독해: e.japanese?.reading,
-      청해: e.japanese?.listening,
-      일본어합계: e.japanese ? e.japanese.reading + e.japanese.listening : undefined,
-      종합과목: e.comprehensive?.score,
-    }));
+    const data = exams.map(e => {
+      const japNorm = e.japanese ? normalizeJapaneseScore(e.japanese) : null;
+      const compNorm = normalizeCompScore(e.comprehensive);
+      return {
+        name: e.date,
+        독해: japNorm?.reading,
+        청해: japNorm?.listening,
+        일본어합계: japNorm ? japNorm.reading + japNorm.listening : undefined,
+        종합과목: compNorm ?? undefined,
+      };
+    });
 
     if (exams.length >= 2) {
-      const japVals  = exams.map(e => e.japanese ? e.japanese.reading + e.japanese.listening : null).filter(Boolean);
-      const compVals = exams.map(e => e.comprehensive?.score ?? null).filter(Boolean);
+      const japVals  = data.map(d => d.일본어합계).filter(v => v != null);
+      const compVals = data.map(d => d.종합과목).filter(v => v != null);
       const japPred  = linearPredict(japVals, 3);
       const compPred = linearPredict(compVals, 3);
 
@@ -380,33 +412,59 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
         data.push({
           name: addMonths(exams[exams.length - 1].date, i + 1),
           pred_jap:  Math.min(370, Math.max(0, japPred[i]  ?? 0)),
-          pred_comp: Math.min(200, Math.max(0, compPred[i] ?? 0)),
+          pred_comp: Math.min(COMP_MAX, Math.max(0, compPred[i] ?? 0)),
         });
       }
     }
     return data;
   }, [exams]);
 
-  // bestJap / bestComp — 빈 배열 안전 처리
-  const bestJap  = exams.length > 0 ? Math.max(...exams.map(e => e.japanese ? e.japanese.reading + e.japanese.listening : 0)) : 0;
-  const bestComp = exams.length > 0 ? Math.max(...exams.map(e => e.comprehensive?.score ?? 0)) : 0;
+  // bestJap / bestComp — 득점등화 환산 기준
+  const bestJap  = exams.length > 0 ? Math.max(...exams.map(e => {
+    if (!e.japanese) return 0;
+    const n = normalizeJapaneseScore(e.japanese);
+    return n ? n.reading + n.listening : 0;
+  })) : 0;
+  const bestComp = exams.length > 0 ? Math.max(...exams.map(e => normalizeCompScore(e.comprehensive) ?? 0)) : 0;
 
   // Empty state
   if (!exams || exams.length === 0) {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', gap: 20 }}>
-        <div style={{ fontSize: 72, filter: 'drop-shadow(0 4px 24px rgba(79,142,247,0.35))' }}>📝</div>
-        <div style={{ fontSize: 26, fontWeight: 800, color: 'var(--t0)', letterSpacing: '-0.5px' }}>아직 데이터가 없어요</div>
-        <div style={{ color: 'var(--t2)', fontSize: 14, textAlign: 'center', lineHeight: 1.8 }}>
-          왼쪽의 <strong style={{ color: 'var(--blue)' }}>점수 입력</strong> 버튼으로 첫 모의고사를 기록해보세요
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', gap: 18, padding: '40px 20px', textAlign: 'center' }}>
+        <div style={{
+          width: 88, height: 88, borderRadius: 24,
+          background: 'linear-gradient(135deg, rgba(107,163,255,0.12), rgba(164,110,245,0.12))',
+          border: '1px solid rgba(107,163,255,0.18)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+          <BookOpen size={38} color="var(--blue)" strokeWidth={1.5} style={{ opacity: 0.75 }} />
         </div>
+        <div>
+          <div style={{ fontSize: 22, fontWeight: 800, color: 'var(--t0)', letterSpacing: '-0.4px', marginBottom: 8 }}>아직 기록된 시험이 없어요</div>
+          <div style={{ color: 'var(--t2)', fontSize: 13.5, lineHeight: 1.8, maxWidth: 300 }}>
+            모의고사나 문제집 점수를 입력하면<br />성적 추이와 분석이 여기에 표시됩니다
+          </div>
+        </div>
+        <button
+          onClick={onAddNew}
+          style={{
+            display: 'flex', alignItems: 'center', gap: 7,
+            background: 'linear-gradient(135deg, var(--blue), var(--purple))',
+            color: '#fff', border: 'none', borderRadius: 12,
+            padding: '11px 22px', fontSize: 14, fontWeight: 700,
+            cursor: 'pointer', fontFamily: 'inherit',
+            boxShadow: '0 4px 16px rgba(107,163,255,0.3)',
+          }}
+        >
+          <Plus size={16} strokeWidth={2.5} />
+          첫 점수 입력하기
+        </button>
       </div>
     );
   }
 
   const ddayColor = dday === null ? null : dday <= 0 ? 'var(--green)' : dday <= 7 ? 'var(--red)' : dday <= 30 ? 'var(--orange)' : 'var(--blue)';
-  const ddayLabel = dday === null ? null : dday > 0 ? `D-${dday}` : dday === 0 ? 'D-Day!' : `D+${Math.abs(dday)}`;
-  const ddayEmoji = dday === null ? null : dday <= 0 ? '🎌' : dday <= 7 ? '🔥' : dday <= 30 ? '⚡' : '📅';
+  const ddayLabel = dday === null ? null : dday > 0 ? `D-${dday}` : dday === 0 ? 'D-Day' : `D+${Math.abs(dday)}`;
 
   const LEVEL_STYLE = {
     critical: { bg:'rgba(239,68,68,0.08)',  border:'rgba(239,68,68,0.3)',  color:'var(--red)',    badge:'#ef4444' },
@@ -438,12 +496,14 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
           }} />
           <div style={{ display: 'flex', alignItems: 'center', gap: 18, zIndex: 1 }}>
             <div style={{
-              fontSize: 36, width: 56, height: 56, borderRadius: 16,
+              width: 52, height: 52, borderRadius: 16,
               background: `${ddayColor}22`, border: `1px solid ${ddayColor}44`,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               flexShrink: 0,
               animation: dday <= 7 ? 'pulse-glow 2s infinite' : 'none',
-            }}>{ddayEmoji}</div>
+            }}>
+              <CalendarDays size={24} color={ddayColor} strokeWidth={1.8} />
+            </div>
             <div>
               <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 4 }}>다음 EJU 시험</div>
               <div style={{ fontSize: 15, color: 'var(--t0)', fontWeight: 600 }}>
@@ -470,7 +530,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
       <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>
         <div>
           <h1 style={{ fontSize: 28, fontWeight: 800, color: 'var(--t0)', letterSpacing: '-0.5px' }}>대시보드</h1>
-          <div style={{ color: 'var(--t2)', fontSize: 13, marginTop: 4 }}>총 {exams.length}회 기록 · 목표 일어 {tJap}/370 · 종합 {tComp}/200</div>
+          <div style={{ color: 'var(--t2)', fontSize: 13, marginTop: 4 }}>총 {exams.length}회 기록 · 목표 일어 {tJap}/370 · 종합 {tComp}/{COMP_MAX}</div>
         </div>
         <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
           {growthJap !== null && (
@@ -499,12 +559,16 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
       {diagnosis.length > 0 && (
         <div style={{ ...CARD, padding: 20 }}>
           <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 8 }}>
-            <span>🩺</span> 약점 자동 진단
-            <span style={{ fontSize: 11, color: 'var(--t3)', fontWeight: 400, marginLeft: 4 }}>— 오답 패턴을 분석했어요</span>
+            약점 자동 진단
+            <span style={{ fontSize: 11, color: 'var(--t3)', fontWeight: 400, marginLeft: 4 }}>— 오답 패턴 기반</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {diagnosis.map((item, i) => {
               const s = LEVEL_STYLE[item.level];
+              const LevelIcon = item.level === 'critical' ? AlertCircle
+                : item.level === 'warning'  ? AlertTriangle
+                : item.level === 'good'     ? CheckCircle2
+                : Info;
               return (
                 <div key={i} style={{
                   display: 'flex', alignItems: 'center', gap: 14, padding: '12px 16px',
@@ -514,12 +578,12 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
                   onMouseEnter={e => e.currentTarget.style.transform = 'translateX(4px)'}
                   onMouseLeave={e => e.currentTarget.style.transform = 'none'}
                 >
-                  <span style={{ fontSize: 20, flexShrink: 0 }}>{item.icon}</span>
+                  <LevelIcon size={16} color={s.color} strokeWidth={2} style={{ flexShrink: 0 }} />
                   <div style={{ flex: 1 }}>
                     <div style={{ fontSize: 13, fontWeight: 700, color: s.color }}>{item.title}</div>
                     <div style={{ fontSize: 12, color: 'var(--t2)', marginTop: 2 }}>{item.desc}</div>
                   </div>
-                  <div style={{ width: 8, height: 8, borderRadius: '50%', background: s.badge, flexShrink: 0 }} />
+                  <div style={{ width: 6, height: 6, borderRadius: '50%', background: s.badge, flexShrink: 0 }} />
                 </div>
               );
             })}
@@ -530,16 +594,16 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
       {/* 스탯 카드 4개 */}
       <div className="stat-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
         <StatCard label="일본어 합계" value={latestJap} max={370} color="var(--blue)" diff={diffJap} />
-        <StatCard label="독해" value={latest?.japanese?.reading} max={185} color="var(--purple)" diff={diffRead} />
-        <StatCard label="청해" value={latest?.japanese?.listening} max={185} color="var(--pink)" diff={diffList} />
-        <StatCard label="종합과목" value={latestComp} max={200} color="var(--green)" diff={diffComp} />
+        <StatCard label="독해" value={latestJapNorm?.reading} max={185} color="var(--purple)" diff={diffRead} />
+        <StatCard label="청해" value={latestJapNorm?.listening} max={185} color="var(--pink)" diff={diffList} />
+        <StatCard label="종합과목" value={latestComp} max={COMP_MAX} color="var(--green)" diff={diffComp} />
       </div>
 
       {/* 목표 진행 */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
         {[
-          { label: '일본어 목표까지', cur: latestJap, target: tJap, color: 'var(--blue)', hexColor: '#5b9eff', max: 370 },
-          { label: '종합과목 목표까지', cur: latestComp, target: tComp, color: 'var(--green)', hexColor: '#10d98c', max: 200 },
+          { label: '일본어 목표까지', cur: latestJap, target: tJap, color: 'var(--blue)', hexColor: '#5b9eff', max: 370, goalDate: goalDateJap },
+          { label: '종합과목 목표까지', cur: latestComp, target: tComp, color: 'var(--green)', hexColor: '#10d98c', max: COMP_MAX, goalDate: goalDateComp },
         ].map(g => {
           const remain = g.cur != null ? Math.max(0, g.target - g.cur) : null;
           const achieved = g.cur != null && g.cur >= g.target;
@@ -556,16 +620,25 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
                 width: 48, height: 48, borderRadius: 14, flexShrink: 0,
                 background: achieved ? 'linear-gradient(135deg, rgba(16,217,140,0.2), rgba(34,211,238,0.15))' : `${g.hexColor}18`,
                 border: `1px solid ${g.hexColor}33`,
-                display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22,
-              }}>{achieved ? '🎉' : '🎯'}</div>
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                {achieved
+                  ? <CheckCircle2 size={22} color="var(--green)" strokeWidth={1.8} />
+                  : <Target size={22} color={g.color} strokeWidth={1.8} />}
+              </div>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 5 }}>{g.label}</div>
                 {achieved
-                  ? <div style={{ fontSize: 16, fontWeight: 800, color: 'var(--green)' }}>목표 달성! 🎊</div>
+                  ? <div style={{ fontSize: 16, fontWeight: 800, color: 'var(--green)' }}>목표 달성</div>
                   : remain !== null
                     ? <div style={{ fontSize: 22, fontWeight: 800, color: g.color, letterSpacing: '-0.5px' }}>
                         +{remain}<span style={{ fontSize: 12, color: 'var(--t2)', fontWeight: 400, marginLeft: 4 }}>점 남음</span>
                         <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 500, marginTop: 1 }}>{g.cur}/{g.target}</div>
+                        {g.goalDate && !g.goalDate.alreadyAchieved && (
+                          <div style={{ fontSize: 11, color: g.color, fontWeight: 600, marginTop: 3 }}>
+                            예상 달성: {g.goalDate.date} (약 {g.goalDate.monthsAhead}개월)
+                          </div>
+                        )}
                       </div>
                     : <div style={{ color: 'var(--t2)', fontSize: 13 }}>데이터 없음</div>
                 }
@@ -590,7 +663,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
           {/* 일본어 차트 */}
           <div style={{ ...CARD }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-              <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)' }}>🇯🇵 일본어 점수 추이</div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)' }}>일본어 점수 추이</div>
               <div style={{ display: 'flex', gap: 10, fontSize: 10, color: 'var(--t2)' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
                   <span style={{ borderTop: '2px dashed var(--blue)', width: 14, display: 'inline-block' }} /> 예측
@@ -601,8 +674,8 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
             <ResponsiveContainer width="100%" height={220}>
               <LineChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" />
-                <XAxis dataKey="name" tick={{ fill: 'var(--t2)', fontSize: 10 }} />
-                <YAxis domain={[0, 370]} tick={{ fill: 'var(--t2)', fontSize: 10 }} />
+                <XAxis dataKey="name" tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} />
+                <YAxis domain={[0, 370]} tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} />
                 <Tooltip content={<ChartTooltip />} />
                 <Legend wrapperStyle={{ fontSize: 11, color: 'var(--t1)' }} />
                 <ReferenceLine y={tJap} stroke="var(--blue)" strokeDasharray="6 3" strokeWidth={1.5} label={{ value: `목표 ${tJap}`, fill: 'var(--blue)', fontSize: 10 }} />
@@ -618,14 +691,14 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
           {/* 종합과목 차트 */}
           <div style={{ ...CARD }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-              <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)' }}>📚 종합과목 점수 추이</div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)' }}>종합과목 점수 추이</div>
               <div style={{ fontSize: 10, color: 'var(--t2)' }}>목표 {tComp}점</div>
             </div>
             <ResponsiveContainer width="100%" height={220}>
               <LineChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" />
-                <XAxis dataKey="name" tick={{ fill: 'var(--t2)', fontSize: 10 }} />
-                <YAxis domain={[0, 200]} tick={{ fill: 'var(--t2)', fontSize: 10 }} />
+                <XAxis dataKey="name" tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} />
+                <YAxis domain={[0, COMP_MAX]} tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} />
                 <Tooltip content={<ChartTooltip />} />
                 <Legend wrapperStyle={{ fontSize: 11, color: 'var(--t1)' }} />
                 <ReferenceLine y={tComp} stroke="var(--green)" strokeDasharray="6 3" strokeWidth={1.5} label={{ value: `목표 ${tComp}`, fill: 'var(--green)', fontSize: 10 }} />
@@ -653,7 +726,8 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
                 display: 'flex', alignItems: 'center', gap: 6,
               }}
             >
-              ⚖️ 회차 비교 {showCompare ? '▲ 닫기' : '▼ 열기'}
+              <ArrowLeftRight size={14} strokeWidth={2} />
+              회차 비교 {showCompare ? '닫기' : '열기'}
             </button>
           </div>
           {showCompare && <CompareView exams={exams} />}
@@ -666,8 +740,8 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
       {/* 최고 기록 */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
         {[
-          { icon: '🏆', label: '일본어 최고 기록', value: bestJap, max: 370, color: 'var(--blue)', hex: '#5b9eff' },
-          { icon: '🏆', label: '종합과목 최고 기록', value: bestComp, max: 200, color: 'var(--green)', hex: '#10d98c' },
+          { label: '일본어 최고 기록', value: bestJap, max: 370, color: 'var(--blue)', hex: '#5b9eff' },
+          { label: '종합과목 최고 기록', value: bestComp, max: COMP_MAX, color: 'var(--green)', hex: '#10d98c' },
         ].map(r => (
           <div key={r.label} style={{
             ...CARD, display: 'flex', alignItems: 'center', gap: 16,
@@ -680,8 +754,10 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
               width: 52, height: 52, borderRadius: 15, flexShrink: 0,
               background: `linear-gradient(135deg, ${r.hex}25, ${r.hex}12)`,
               border: `1px solid ${r.hex}3a`,
-              display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24,
-            }}>{r.icon}</div>
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}>
+              <Trophy size={22} color={r.color} strokeWidth={1.8} />
+            </div>
             <div>
               <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 4 }}>{r.label}</div>
               <div style={{
@@ -698,18 +774,37 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
 
       {/* 시험 기록 목록 */}
       <div style={{ ...CARD }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 18 }}>
-          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)' }}>📋 시험 기록 목록</div>
-          <button onClick={onDeleteAll} style={{
-            background: 'rgba(239,68,68,0.1)', color: 'var(--red)',
-            border: '1px solid rgba(239,68,68,0.3)', borderRadius: 9,
-            padding: '6px 14px', fontSize: 12, cursor: 'pointer', fontFamily: 'inherit', fontWeight: 700,
-          }}>전체 삭제</button>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap', gap: 10 }}>
+          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', display: 'flex', alignItems: 'center', gap: 7 }}>
+            <ClipboardList size={16} color="var(--t2)" strokeWidth={2} /> 시험 기록 목록
+          </div>
+          <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
+            {[{ id: 'all', label: '전체' }, { id: 'exam', label: '모의고사' }, { id: 'workbook', label: '문제집' }].map(opt => {
+              const active = recordFilter === opt.id;
+              return (
+                <button key={opt.id} onClick={() => setRecordFilter(opt.id)} style={{
+                  background: active ? 'rgba(79,142,247,0.12)' : 'transparent',
+                  color: active ? 'var(--blue)' : 'var(--t2)',
+                  border: active ? '1px solid rgba(79,142,247,0.4)' : '1px solid var(--bd1)',
+                  borderRadius: 8, padding: '5px 12px', fontSize: 11, fontWeight: active ? 700 : 500,
+                  cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.15s',
+                }}>{opt.label}</button>
+              );
+            })}
+            <button onClick={onDeleteAll} style={{
+              background: 'rgba(239,68,68,0.1)', color: 'var(--red)',
+              border: '1px solid rgba(239,68,68,0.3)', borderRadius: 8,
+              padding: '5px 14px', fontSize: 11, cursor: 'pointer', fontFamily: 'inherit', fontWeight: 700,
+            }}>전체 삭제</button>
+          </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {[...exams].reverse().map(exam => {
-            const jap  = exam.japanese ? exam.japanese.reading + exam.japanese.listening : null;
-            const comp = exam.comprehensive?.score;
+          {[...exams].reverse().filter(exam => recordFilter === 'all' || (exam.recordType || 'exam') === recordFilter).map(exam => {
+            const isRawJap  = Boolean(exam.japanese?.rawMeta?.isRaw);
+            const isRawComp = Boolean(exam.comprehensive?.rawMeta?.isRaw);
+            const japNorm   = exam.japanese ? normalizeJapaneseScore(exam.japanese) : null;
+            const jap       = japNorm ? japNorm.reading + japNorm.listening : null;
+            const comp      = exam.comprehensive ? normalizeCompScore(exam.comprehensive) : null;
             const japEstimated = Boolean(exam.japanese?.estimateMeta?.isEstimated);
             const compEstimated = Boolean(exam.comprehensive?.estimateMeta?.isEstimated);
             const isPendingDelete = confirmDelete === exam.id;
@@ -724,16 +819,27 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, settin
                 onMouseLeave={e => { if (!isPendingDelete) e.currentTarget.style.borderColor = 'var(--bd0)'; }}
               >
                 <div style={{ flex: '0 0 72px', fontSize: 11, color: 'var(--t3)', fontWeight: 700 }}>{exam.date}</div>
-                <div style={{ flex: 1, fontSize: 13, color: 'var(--t0)', fontWeight: 600 }}>{exam.examName}</div>
-                <div style={{ display: 'flex', gap: 7 }}>
-                  {jap != null && (
+                <div style={{ flex: 1, fontSize: 13, color: 'var(--t0)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 8 }}>
+                  {exam.examName}
+                  {exam.recordType === 'workbook' && (
+                    <span style={{ fontSize: 10, background: 'rgba(168,85,247,0.12)', color: 'var(--purple)', padding: '2px 7px', borderRadius: 5, fontWeight: 700 }}>문제집</span>
+                  )}
+                </div>
+                <div style={{ display: 'flex', gap: 7, flexWrap: 'wrap' }}>
+                  {exam.japanese && (
                     <span style={{ fontSize: 12, background: 'rgba(79,142,247,0.1)', color: 'var(--blue)', padding: '3px 10px', borderRadius: 8, fontWeight: 600 }}>
-                      일어 {jap}/370{japEstimated ? ' (예측)' : ''}
+                      {isRawJap
+                        ? `독해 ${exam.japanese.reading}/${exam.japanese.rawMeta?.readingMax||25} 청해 ${exam.japanese.listening}/${exam.japanese.rawMeta?.listeningMax||40}`
+                        : `일어 ${jap}/370`
+                      }{japEstimated ? ' (예측)' : ''}
                     </span>
                   )}
-                  {comp != null && (
+                  {exam.comprehensive?.score != null && (
                     <span style={{ fontSize: 12, background: 'rgba(16,185,129,0.1)', color: 'var(--green)', padding: '3px 10px', borderRadius: 8, fontWeight: 600 }}>
-                      종합 {comp}/200{compEstimated ? ' (예측)' : ''}
+                      {isRawComp
+                        ? `종합 ${exam.comprehensive.score}/${exam.comprehensive.rawMeta?.max||200} 원점수`
+                        : `종합 ${comp}/${COMP_MAX}`
+                      }{compEstimated ? ' (예측)' : ''}
                     </span>
                   )}
                 </div>

@@ -34,6 +34,11 @@
     "files": [
       "dist/**",
       "electron/main.js",
+      "electron/preload.js",
+      "electron/aiWorker.js",
+      "node_modules/@huggingface/transformers/**",
+      "node_modules/onnxruntime-node/**",
+      "node_modules/onnxruntime-common/**",
       "public/icon-512.png",
       "public/icon.ico"
     ],
@@ -82,7 +87,10 @@
   },
   "type": "module",
   "dependencies": {
-    "lucide-react": "^1.14.0",
+    "@huggingface/transformers": "^4.2.0",
+    "framer-motion": "^12.39.0",
+    "lucide-react": "^1.16.0",
+    "pretendard": "^1.3.9",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "recharts": "^3.8.1"
