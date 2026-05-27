@@ -1,166 +1,109 @@
-<div align="center">
-
 # EJU Score Tracker
 
-**EJU(日本留学試験 / 일본유학시험) 모의고사 점수 AI 분석 · 관리 앱**
+EJU(日本留学試験) 모의고사 점수 관리 + AI 분석 도구입니다.  
+PWA로 만들어서 별도 설치 없이 브라우저에서 바로 쓸 수 있고, Electron 빌드로 데스크톱 앱도 쓸 수 있습니다.
 
-[![PWA Deploy](https://github.com/leekangmmin/EJUScore/actions/workflows/pwa-deploy.yml/badge.svg)](https://github.com/leekangmmin/EJUScore/actions/workflows/pwa-deploy.yml)
-[![Build](https://github.com/leekangmmin/EJUScore/actions/workflows/build.yml/badge.svg)](https://github.com/leekangmmin/EJUScore/actions/workflows/build.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/leekangmmin/EJUScore?style=social)](https://github.com/leekangmmin/EJUScore/stargazers)
-
-### 🌐 [https://leekangmmin.github.io/EJUScore/](https://leekangmmin.github.io/EJUScore/) ← 아이폰/안드로이드/PC에서 즉시 사용
+**→ [https://leekangmmin.github.io/EJUScore/](https://leekangmmin.github.io/EJUScore/)**
 
 ---
 
-</div>
+### 이게 뭐 하는 건가
 
-## 📋 개요
+일본 유학 시험(EJU) 준비하면서 점수를 회차별로 저장하고, 추이를 그래프로 보고, 오답 패턴을 분석하고 싶을 때 쓰는 도구입니다.
 
-**EJU Score Tracker**는 **EJU(일본유학시험 / 日本留学試験)** 모의고사 점수를 체계적으로 관리하고 **AI가 분석**해주는 **올인원 웹앱(PWA)** 입니다.
-
-일본 대학교(동경대, 교토대, 와세다대, 게이오대 등) 입시를 준비하는 유학생이라면 누구나 **무료**로 사용할 수 있으며, 아이폰(iOS), 안드로이드, Windows, macOS 어디서든 설치 없이(또는 PWA로 설치하여) 실행할 수 있습니다.
-
----
-
-## ✨ 주요 기능
-
-### 📊 EJU 점수 관리 & 성장 추적
-| 기능 | 설명 |
-|------|------|
-| **점수 기록** | EJU 일본어(독해/청해) + 종합과목 + 수학 점수 입력 및 저장 |
-| **성장률 그래프** | LineChart 기반 점수 변화 추이 시각화, 3개월 예측선 제공 |
-| **회차별 비교** | 두 시험 성적을 나란히 비교하는 분석 |
-| **통계 대시보드** | 평균, 최고점, 최저점, 표준편차, 목표 달성률 한눈에 확인 |
-
-### 🤖 AI 오답 진단
-- EJU 종합과목 **38문항**(지리 8문항 + 역사 8문항 + 정치 8문항 + 경제 8문항 + 사회 6문항) 각각에 대해 AI가 오답 원인 분석
-- **4가지 오답 유형** 자동 분류: 개념 혼동, 사료 해석 오류, 그래프 변곡점 오판, 제도 구조 이해 부족
-- 오답 마인드맵 + 우선순위별 처방전 생성
-
-### 📈 EJU 20개년 기출 트렌드 AI 분석
-- **2006년~2025년** 20년간 EJU 종합과목 + 수학 코스1 기출 데이터
-- **4단계 AI OCR 파이프라인**: 토큰 추출 → LaTeX AST → 코사인 유사도 시러버스 매칭 → 신뢰도 앙상블
-- **38문항 전수 스캔**: 종합과목 파일 업로드 시 38개 문항 각각에 대한 개별 분석
-- **과목별 빈출 테마 가중치 카드** 제공
-- **자가 교정 엔진**: 신뢰도 85% 미만 시 사용자 피드백 모달
-
-### 🔔 EJU D-day 알림
-- 시험일 등록 시 **D-7, D-3, D-1, D-day** 푸시 알림
-- PWA 설치 시 앱이 실행 중이 아니어도 알림 도착
-
-### 📱 크로스 플랫폼 PWA
-| 플랫폼 | 설치 방법 |
-|--------|----------|
-| **iOS (iPhone/iPad)** | Safari → 공유 버튼 → "홈 화면에 추가" |
-| **Android** | Chrome → 메뉴 → "앱 설치" 또는 "홈 화면에 추가" |
-| **Windows** | Edge/Chrome → 메뉴 → "EJU Score Tracker 설치..." |
-| **macOS** | Chrome/Safari → 메뉴 → 설치 |
-| **모든 플랫폼** | **https://leekangmmin.github.io/EJUScore/** 에서 즉시 사용 가능 |
-
-- Service Worker 기반 **오프라인 캐싱** 지원
-- **푸시 알림** (D-day, 학습 리마인더)
-- **독립 실행형** (display: standalone) — 브라우저 URL창 없는 앱 모드
+- 시험 점수 기록하면 LineChart로 자동 트래킹
+- 회차별 비교, 평균/최고점/표준편차 통계, 3개월 예측선
+- 종합과목 38문항에 대해 오답 유형을 4가지로 분류 (개념 혼동, 사료 해석 실수, 그래프 오독, 제도 이해 부족)
+- 시험지 스캔 파일(.jpg/.png/.pdf) 올리면 4단계 파이프라인으로 분석 (토큰 추출 → 시러버스 매칭 → 신뢰도 앙상블)
+- 종합과목 파일은 38문항 각각을 개별 분석. 수학 파일은 LaTeX 수식 복원.
+- 신뢰도가 기준 이하면 자동 재검사 or 사용자 확인 모달
+- D-day 등록하면 푸시 알림 (PWA 설치 시)
+- 설치 없이 웹에서 바로 사용 가능, 오프라인 캐싱 지원
 
 ---
 
-## 🚀 지금 바로 사용하기
+### 언제 쓰나
 
-### 웹앱 (설치 불필요)
-```
-https://leekangmmin.github.io/EJUScore/
-```
-
-### PWA로 설치 (앱처럼 실행)
-1. Safari/Chrome/Edge로 위 URL 접속
-2. 브라우저 메뉴에서 **"홈 화면에 추가"** 또는 **"앱으로 설치"** 선택
-3. 홈 화면/시작 메뉴의 아이콘으로 실행
+- 매주 모의고사 보고 점수를 기록하면서 성적 추이를 보고 싶을 때
+- "이번에는 경제 파트에서만 유독 틀렸는데" 싶을 때 오답 진단 돌려보고
+- 기출 스캔 파일 올려서 "이 시험지가 어느 연도, 어느 파트 중심인지" AI가 분류해주는 걸 보고 싶을 때
 
 ---
 
-## 🛠 기술 스택
-
-| 분야 | 기술 |
-|------|------|
-| **프론트엔드** | React 19, Vite 8, Tailwind CSS |
-| **PWA** | Service Worker, Web App Manifest, Push API |
-| **시각화** | Recharts (LineChart, PieChart) |
-| **아이콘** | Lucide React |
-| **수식** | KaTeX (LaTeX 렌더링) |
-| **애니메이션** | Framer Motion |
-| **데스크톱** | Electron + electron-builder |
-| **macOS 네이티브** | Xcode + Swift (WKWebView) |
-| **CI/CD** | GitHub Actions |
-
----
-
-## 💻 개발 환경
+### 설치/실행
 
 ```bash
-# 클론
 git clone https://github.com/leekangmmin/EJUScore.git
 cd EJUScore
-
-# 의존성 설치
 npm install
-
-# 개발 서버 실행
-npm run dev
-
-# 프로덕션 빌드 (PWA)
-npm run build
-
-# Electron 데스크톱 앱 실행
-npm run electron:dev
+npm run dev        # 웹 브라우저에서 개발
+npm run build      # 프로덕션 빌드
+npm run electron:dev  # 데스크톱 앱 실행
 ```
 
-### 프로젝트 구조
+웹으로 바로 쓸 수도 있습니다 — [https://leekangmmin.github.io/EJUScore/](https://leekangmmin.github.io/EJUScore/)
+
+| 플랫폼 | 설치 방법 |
+|--------|----------|
+| iOS | Safari → 공유 → 홈 화면에 추가 |
+| Android | Chrome → 설치 |
+| 데스크톱 | Chrome/Edge → 설치 버튼, 또는 Electron DMG |
+
+---
+
+### 구조
+
 ```
-EJUScore/
-├── src/
-│   ├── components/         # React 컴포넌트 (Dashboard, EJU20YearTrend, InstallGuide, DiagnosticReport 등)
-│   ├── utils/              # storage.js, diagnosis.js, scorePrediction.js, analytics.js, taskEngine.js
-│   └── main.jsx            # 앱 진입점 + Service Worker 등록
-├── public/
-│   ├── manifest.json       # PWA 매니페스트
-│   ├── sw.js               # Service Worker (오프라인 캐싱, 푸시 알림)
-│   ├── robots.txt          # 검색 엔진 크롤링 허용
-│   ├── sitemap.xml         # Google Sitemap
-│   └── 404.html            # GitHub Pages SPA 리디렉트
-├── .github/workflows/      # GitHub Actions (Build, PWA Deploy, Release)
-└── index.html              # SEO 최적화 (OG, Twitter Card, JSON-LD, FAQ Schema, 200+ 키워드)
+src/
+├── components/     # Dashboard, EJU20YearTrend, DiagnosticReport 등
+├── utils/          # storage, diagnosis, analytics, taskEngine
+└── main.jsx        # 진입점 + SW 등록
+public/
+├── manifest.json   # PWA 매니페스트
+├── sw.js           # Service Worker
+└── robots.txt, sitemap.xml, 404.html
+.github/workflows/  # CI: build, deploy, release
+electron/           # Electron 메인 프로세스
+index.html          # SEO 메타 태그
 ```
 
----
+파이프라인은 4단계 async로 돌아갑니다:
 
-## 📦 다운로드
+1. 파일명에서 토큰 추출 → 과목 판별 (종합/수학/혼합)
+2. 수학 파일은 LaTeX 수식 정규화, 종합 파일은 이 단계 자체를 스킵 (환각 방지)
+3. 토큰과 시러버스 키워드 간 코사인 유사도 계산. 종합과목은 38개 문항 각각 매칭
+4. 가중 평균(P1×0.25 + P2×0.3 + P3×0.45)으로 신뢰도 산출. 80% 미만이면 파라미터 부스트해서 최대 2회 재검사. 85% 미만이면 사용자 확인 요청
 
-### macOS 네이티브 앱
-- **요구사항:** macOS 12.0 Monterey 이상
-- [최신 macOS 앱 다운로드](https://github.com/leekangmmin/EJUScore/releases/latest)
-
-### PWA (모든 플랫폼)
-- 별도 다운로드 불필요 — **https://leekangmmin.github.io/EJUScore/** 에서 바로 사용
-- Safari/Chrome에서 "홈 화면에 추가" 시 앱처럼 실행 가능
+`setTimeout`/`setInterval` 없이, 실제 연산 결과가 나올 때만 로그가 출력됩니다.
 
 ---
 
-## 📈 검색 키워드
+### 스택
 
-EJU, EJU점수, EJU모의고사, EJU시험, EJU일본어, EJU종합과목, EJU수학, 일본유학시험, 일본유학, 일본대학입시, 일본어독해, 일본어청해, JLPT, 종합과목, EJU기출문제, EJU기출트렌드, EJU20개년, 모의고사점수관리, 오답AI진단, 일본대학교, 동경대, 도쿄대, 교토대, 와세다, 게이오, PWA, 프로그레시브웹앱, EJU스코어, EJU Score Tracker, 일본유학준비, 유학시험앱.
-
----
-
-## ⭐ 기여하기
-
-이 프로젝트가 도움이 되셨다면 **GitHub Star**를 눌러주세요!  
-버그 제보, 기능 제안, 풀 리퀘스트는 언제나 환영합니다.
-
-[![GitHub stars](https://img.shields.io/github/stars/leekangmmin/EJUScore)](https://github.com/leekangmmin/EJUScore/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/leekangmmin/EJUScore)](https://github.com/leekangmmin/EJUScore/issues)
+React 19, Vite 8, Tailwind CSS.  
+차트는 Recharts, 아이콘은 Lucide, 수식 렌더링은 KaTeX.  
+PWA는 Service Worker + Manifest. 데스크톱은 Electron + electron-builder.  
+CI/CD는 GitHub Actions.
 
 ---
 
-## 📄 라이선스
+### 아직인 것
 
-MIT License. Copyright (c) 2025 **이강민 (Lee Kangmin)** — [github.com/leekangmmin](https://github.com/leekangmmin)
+- [ ] Windows/Linux Electron 빌드 자동화
+- [ ] 실제 OCR 엔진 연동 (지금은 파일명 기반 시뮬레이션)
+- [ ] 사용자 계정 및 클라우드 동기화
+- [ ] 일본어 UI
+- [ ] 과목별 취약점 히트맵
+
+### 알려진 제약
+
+- OCR은 시뮬레이션입니다. 파일 내용을 실제로 읽는 게 아니라 파일명을 파싱해서 키워드를 추출합니다. 파일명을 EJU 형식에 맞게 지어야 분류 정확도가 올라갑니다.
+- 한국어 전용 UI입니다.
+- 모든 데이터는 브라우저 localStorage에 저장됩니다. 초기화하면 점수가 사라집니다.
+- iOS 푸시 알림은 PWA를 홈 화면에 추가한 상태에서만 동작합니다.
+
+---
+
+라이선스: MIT. © 2025 이강민 (Lee Kangmin)
+
+[GitHub](https://github.com/leekangmmin/EJUScore)
