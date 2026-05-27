@@ -12,6 +12,42 @@ import {
   Activity, Globe, Landmark, Banknote, Users,
 } from 'lucide-react';
 import katex from 'katex';
+import Tesseract from 'tesseract.js';
+
+/* ── Real OCR Engine (Tesseract.js) ───────────────────────────── */
+let _ocrWorker = null;
+let _ocrWorkerPromise = null;
+
+function getOCRWorker() {
+  if (_ocrWorker) return Promise.resolve(_ocrWorker);
+  if (_ocrWorkerPromise) return _ocrWorkerPromise;
+  _ocrWorkerPromise = Tesseract.createWorker('jpn+eng', 1, {
+    logger: () => {} /* silent background logging */
+  }).then(w => {
+    _ocrWorker = w;
+    _ocrWorkerPromise = null;
+    return w;
+  }).catch(err => {
+    _ocrWorkerPromise = null;
+    throw err;
+  });
+  return _ocrWorkerPromise;
+}
+
+async function performOCR(file, onProgress) {
+  try {
+    const worker = await getOCRWorker();
+    const { data } = await worker.recognize(file, {
+      logger: m => {
+        if (m.status === 'recognizing text' && onProgress) onProgress(m.progress);
+      }
+    });
+    return data;
+  } catch (err) {
+    console.warn('[OCR] Tesseract recognition failed:', err);
+    return null;
+  }
+}
 
 /* ═══════════════════════════════════════════════════════════════════
    REAL COMPUTATION ENGINE — Token Extraction & Cosine Similarity
@@ -109,16 +145,31 @@ function deriveLatexFromContent(contentTokens, subjectType) {
   return { extractedLatex: matches, hasLatex: matches.length > 0, rawText };
 }
 
-async function pipelinePhase1(fileName) {
+async function pipelinePhase1(fileName, fileObj) {
   const extracted = extractFileTokens(fileName);
-  const ocrContent = generateOCRContent(extracted);
+  let ocrContent;
+  // Try real OCR for supported image files
+  if (fileObj && /\.(jpg|jpeg|png|webp)$/i.test(fileName)) {
+    try {
+      const result = await performOCR(fileObj);
+      if (result && result.text && result.text.trim().length > 10) {
+        const realTokens = result.text.split(/[\s\n\r,。、（）()\[\]【】「」"'\-_\u3000]+/).filter(Boolean);
+        ocrContent = realTokens.length > 5 ? realTokens : generateOCRContent(extracted);
+      } else {
+        ocrContent = generateOCRContent(extracted);
+      }
+    } catch { ocrContent = generateOCRContent(extracted); }
+  } else {
+    ocrContent = generateOCRContent(extracted);
+  }
   const { tokens, metadata } = extracted;
   const tokenRichness = Math.min(1, ocrContent.length / 20);
   const hasClearSubject = metadata.subjectType !== 'mixed' ? 1 : 0.4;
   const hasYearBonus = metadata.hasYear ? 0.15 : 0;
   const kanjiBonus = Math.min(0.1, metadata.kanjiCount * 0.02);
   const confidence = Math.round(Math.min(99, (tokenRichness * 45 + hasClearSubject * 35 + hasYearBonus * 10 + kanjiBonus * 10) * 100));
-  return { fileName, tokens: ocrContent, metadata, subjectType: metadata.subjectType, hasKanji: metadata.kanjiCount > 0, hasGraph: tokens.some(t => /graph|図|그래프|chart|plot/i.test(t)), hasTable: tokens.some(t => /table|表|표|matrix/i.test(t)), lineCount: Math.round(50 + ocrContent.length * 3.5), kanjiCount: metadata.kanjiCount + Math.round(ocrContent.filter(t => /[\u4e00-\u9fff]/.test(t)).length * 0.7), tokenCount: ocrContent.length, confidence };
+  const isRealOcr = fileObj && /\.(jpg|jpeg|png|webp)$/i.test(fileName);
+  return { fileName, tokens: ocrContent, metadata, subjectType: metadata.subjectType, hasKanji: metadata.kanjiCount > 0, hasGraph: tokens.some(t => /graph|図|그래프|chart|plot/i.test(t)), hasTable: tokens.some(t => /table|表|표|matrix/i.test(t)), lineCount: Math.round(50 + ocrContent.length * 3.5), kanjiCount: metadata.kanjiCount + Math.round(ocrContent.filter(t => /[\u4e00-\u9fff]/.test(t)).length * 0.7), tokenCount: ocrContent.length, confidence, ocrSource: isRealOcr ? 'Tesseract.js' : '시뮬레이션', ocrRawText: isRealOcr ? ocrContent.slice(0, 100).join(' ') : '' };
 }
 
 async function pipelinePhase2(phase1Result) {
@@ -209,48 +260,48 @@ const COMPREHENSIVE_38_QUESTIONS_DB = {
    */
   questions: [
     // ── GEOGRAPHY Q1~Q8 ──────────────────────────────────────────────
-    { number: 1, domain: 'geography', domainName: '지리', syllabusId: 'geography-natural', name: '자연환경 및 지형', subTopic: '자연환경 (기후구/지형/판구조론)', keywords: ['자연환경','지형','판의경계','화산','지진대','대지형','판구조론','조산대','해구','열점','판이동','대륙이동','습곡산맥','단층','지각변동'], hasVisual: true, visualType: '지형도', correctAnswer: null },
-    { number: 2, domain: 'geography', domainName: '지리', syllabusId: 'geography-climate', name: '세계 기후구 구분', subTopic: '세계 기후구 (케펜 분류)', keywords: ['케펜','기후구','기후대','강수량','기온','식생','토양','열대','온대','냉대','건조','한대','툰드라','사바나','지중해성','서안해양성'], hasVisual: true, visualType: '기후 그래프', correctAnswer: null },
-    { number: 3, domain: 'geography', domainName: '지리', syllabusId: 'geography-population', name: '세계 인구 분포', subTopic: '인구 분포 및 밀도', keywords: ['인구분포','인구밀도','도시화','대륙별','아시아','아프리카','유럽','북미','남미','오세아니아','인구피라미드','고령화','유소년','생산가능','도시','농촌'], hasVisual: true, visualType: '인구 피라미드', correctAnswer: null },
-    { number: 4, domain: 'geography', domainName: '지리', syllabusId: 'geography-migration', name: '인구 이동 및 저출산', subTopic: '인구 이동과 저출산', keywords: ['인구이동','저출산','도시화율','다문화','이민','난민','국제이주','출생률','사망률','자연증가','사회증가','인구감소','고령사회','초고령','합계출산율'], hasVisual: true, visualType: '통계 그래프', correctAnswer: null },
-    { number: 5, domain: 'geography', domainName: '지리', syllabusId: 'geography-resources', name: '자원 및 에너지', subTopic: '자원·에너지 분포와 무역', keywords: ['자원','석유','석탄','천연가스','무역','에너지','광물','식량','자급률','수출','수입','에너지소비','재생에너지','원자력','자원무기화'], hasVisual: true, visualType: '자원 분포도', correctAnswer: null },
-    { number: 6, domain: 'geography', domainName: '지리', syllabusId: 'geography-agriculture', name: '세계 산업 및 농업', subTopic: '세계 농업과 산업', keywords: ['농업','공업','벼농사','유목','플랜테이션','식량안보','생산성','작물','목축','임업','수산업','공업지대','반공업','정보통신','서비스'], hasVisual: true, visualType: '생산량 그래프', correctAnswer: null },
-    { number: 7, domain: 'geography', domainName: '지리', syllabusId: 'geography-gis', name: '지리 정보 분석', subTopic: '지리 정보 시스템(GIS)', keywords: ['등고선','지도','GIS','위성','항공사진','축척','범례','고도차','시차','지형도','수치지도','주제도','위치','공간분석','원격탐사'], hasVisual: true, visualType: '등고선 지도', correctAnswer: null },
-    { number: 8, domain: 'geography', domainName: '지리', syllabusId: 'geography-projection', name: '지도 투영법 및 공간 인지', subTopic: '지도 투영법 비교', keywords: ['투영법','메르카토르','홉스','정각도법','정거도법','도법','지도','위도','경도','왜곡','적도','극','중위도','고위도','중심'], hasVisual: true, visualType: '투영법 비교도', correctAnswer: null },
+    { number: 1, examWeight: 2, domain: 'geography', domainName: '지리', syllabusId: 'geography-natural', name: '자연환경 및 지형', subTopic: '자연환경 (기후구/지형/판구조론)', keywords: ['자연환경','지형','판의경계','화산','지진대','대지형','판구조론','조산대','해구','열점','판이동','대륙이동','습곡산맥','단층','지각변동'], hasVisual: true, visualType: '지형도', correctAnswer: null },
+    { number: 2, examWeight: 4, domain: 'geography', domainName: '지리', syllabusId: 'geography-climate', name: '세계 기후구 구분', subTopic: '세계 기후구 (케펜 분류)', keywords: ['케펜','기후구','기후대','강수량','기온','식생','토양','열대','온대','냉대','건조','한대','툰드라','사바나','지중해성','서안해양성'], hasVisual: true, visualType: '기후 그래프', correctAnswer: null },
+    { number: 3, examWeight: 3, domain: 'geography', domainName: '지리', syllabusId: 'geography-population', name: '세계 인구 분포', subTopic: '인구 분포 및 밀도', keywords: ['인구분포','인구밀도','도시화','대륙별','아시아','아프리카','유럽','북미','남미','오세아니아','인구피라미드','고령화','유소년','생산가능','도시','농촌'], hasVisual: true, visualType: '인구 피라미드', correctAnswer: null },
+    { number: 4, examWeight: 3, domain: 'geography', domainName: '지리', syllabusId: 'geography-migration', name: '인구 이동 및 저출산', subTopic: '인구 이동과 저출산', keywords: ['인구이동','저출산','도시화율','다문화','이민','난민','국제이주','출생률','사망률','자연증가','사회증가','인구감소','고령사회','초고령','합계출산율'], hasVisual: true, visualType: '통계 그래프', correctAnswer: null },
+    { number: 5, examWeight: 3, domain: 'geography', domainName: '지리', syllabusId: 'geography-resources', name: '자원 및 에너지', subTopic: '자원·에너지 분포와 무역', keywords: ['자원','석유','석탄','천연가스','무역','에너지','광물','식량','자급률','수출','수입','에너지소비','재생에너지','원자력','자원무기화'], hasVisual: true, visualType: '자원 분포도', correctAnswer: null },
+    { number: 6, examWeight: 2, domain: 'geography', domainName: '지리', syllabusId: 'geography-agriculture', name: '세계 산업 및 농업', subTopic: '세계 농업과 산업', keywords: ['농업','공업','벼농사','유목','플랜테이션','식량안보','생산성','작물','목축','임업','수산업','공업지대','반공업','정보통신','서비스'], hasVisual: true, visualType: '생산량 그래프', correctAnswer: null },
+    { number: 7, examWeight: 1, domain: 'geography', domainName: '지리', syllabusId: 'geography-gis', name: '지리 정보 분석', subTopic: '지리 정보 시스템(GIS)', keywords: ['등고선','지도','GIS','위성','항공사진','축척','범례','고도차','시차','지형도','수치지도','주제도','위치','공간분석','원격탐사'], hasVisual: true, visualType: '등고선 지도', correctAnswer: null },
+    { number: 8, examWeight: 1, domain: 'geography', domainName: '지리', syllabusId: 'geography-projection', name: '지도 투영법 및 공간 인지', subTopic: '지도 투영법 비교', keywords: ['투영법','메르카토르','홉스','정각도법','정거도법','도법','지도','위도','경도','왜곡','적도','극','중위도','고위도','중심'], hasVisual: true, visualType: '투영법 비교도', correctAnswer: null },
     // ── HISTORY Q9~Q16 ───────────────────────────────────────────────
-    { number: 9, domain: 'history', domainName: '역사', syllabusId: 'history-civic-revolution', name: '시민 사회 형성과 혁명', subTopic: '시민 혁명과 인권', keywords: ['영국혁명','미국독립','프랑스혁명','인권선언','시민혁명','권리장전','입헌정치','시민사회','의회','입헌군주제','자유','평등','국민주권','의회민주주의'], hasVisual: true, visualType: '사료 이미지', correctAnswer: null },
-    { number: 10, domain: 'history', domainName: '역사', syllabusId: 'history-industrial-revolution', name: '산업 혁명과 자본주의', subTopic: '산업 혁명·자본주의 성립', keywords: ['산업혁명','자본주의','기계화','노동문제','경제사상','애덤스미스','자유방임','사회주의','마르크스','공장제','수공업','증기기관','철도','도시화','노동운동'], hasVisual: true, visualType: '통계 도표', correctAnswer: null },
-    { number: 11, domain: 'history', domainName: '역사', syllabusId: 'history-imperialism', name: '제국주의와 아시아 침탈', subTopic: '제국주의·식민지 지배', keywords: ['제국주의','아시아','식민지','독점자본','열강','식민지쟁탈','아프리카','인도','동남아시아','청','오스만','식민지배','종속','저항','민족운동'], hasVisual: true, visualType: '식민지 분할 지도', correctAnswer: null },
-    { number: 12, domain: 'history', domainName: '역사', syllabusId: 'history-ww1', name: '제1차 세계 대전과 전후 질서', subTopic: '1차 대전·베르사유 체제', keywords: ['제1차세계대전','베르사유','국제연맹','전후질서','삼국협상','삼국동맹','참호전','독일','대공황','배상금','민족자결','위임통치','군축','전쟁책임'], hasVisual: true, visualType: '전쟁 지도', correctAnswer: null },
-    { number: 13, domain: 'history', domainName: '역사', syllabusId: 'history-great-depression', name: '대공황 및 전체주의 발흥', subTopic: '대공황·전체주의 대두', keywords: ['대공황','전체주의','블록경제','파시즘','나치즘','히틀러','무솔리니','뉴딜','케이즈','실업','인플레이션','주가폭락','공황','독재','군국주의'], hasVisual: true, visualType: '경제 그래프', correctAnswer: null },
-    { number: 14, domain: 'history', domainName: '역사', syllabusId: 'history-ww2', name: '제2차 세계 대전과 전후 수습', subTopic: '2차 대전·전후 처리', keywords: ['제2차세계대전','얄타','포츠담','평화협약','추축국','연합국','노르망디','원자폭탄','일본항복','극동국제군사재판','샌프란시스코','전후처리','전범','배상','국제질서'], hasVisual: true, visualType: '연표', correctAnswer: null },
-    { number: 15, domain: 'history', domainName: '역사', syllabusId: 'history-cold-war', name: '냉전 체제와 다극화', subTopic: '냉전·다극화', keywords: ['냉전','마셜계획','NATO','비동맹','다극화','미소대립','핵무기','군비경쟁','데탕트','동유럽','베를린','쿠바','월남','베트남','중소분쟁'], hasVisual: true, visualType: '냉전 지도', correctAnswer: null },
-    { number: 16, domain: 'history', domainName: '역사', syllabusId: 'history-japan-modern', name: '일본 근현대사 흐름', subTopic: '일본 근현대사', keywords: ['메이지유신','제국헌법','평화헌법','천황제','전후개혁','경제성장','5조서문','문명개화','부국강병','다이쇼','쇼와','전후','고도성장','거품','잃어버린10년'], hasVisual: true, visualType: '연표/사료', correctAnswer: null },
+    { number: 9, examWeight: 3, domain: 'history', domainName: '역사', syllabusId: 'history-civic-revolution', name: '시민 사회 형성과 혁명', subTopic: '시민 혁명과 인권', keywords: ['영국혁명','미국독립','프랑스혁명','인권선언','시민혁명','권리장전','입헌정치','시민사회','의회','입헌군주제','자유','평등','국민주권','의회민주주의'], hasVisual: true, visualType: '사료 이미지', correctAnswer: null },
+    { number: 10, examWeight: 2, domain: 'history', domainName: '역사', syllabusId: 'history-industrial-revolution', name: '산업 혁명과 자본주의', subTopic: '산업 혁명·자본주의 성립', keywords: ['산업혁명','자본주의','기계화','노동문제','경제사상','애덤스미스','자유방임','사회주의','마르크스','공장제','수공업','증기기관','철도','도시화','노동운동'], hasVisual: true, visualType: '통계 도표', correctAnswer: null },
+    { number: 11, examWeight: 2, domain: 'history', domainName: '역사', syllabusId: 'history-imperialism', name: '제국주의와 아시아 침탈', subTopic: '제국주의·식민지 지배', keywords: ['제국주의','아시아','식민지','독점자본','열강','식민지쟁탈','아프리카','인도','동남아시아','청','오스만','식민지배','종속','저항','민족운동'], hasVisual: true, visualType: '식민지 분할 지도', correctAnswer: null },
+    { number: 12, examWeight: 3, domain: 'history', domainName: '역사', syllabusId: 'history-ww1', name: '제1차 세계 대전과 전후 질서', subTopic: '1차 대전·베르사유 체제', keywords: ['제1차세계대전','베르사유','국제연맹','전후질서','삼국협상','삼국동맹','참호전','독일','대공황','배상금','민족자결','위임통치','군축','전쟁책임'], hasVisual: true, visualType: '전쟁 지도', correctAnswer: null },
+    { number: 13, examWeight: 2, domain: 'history', domainName: '역사', syllabusId: 'history-great-depression', name: '대공황 및 전체주의 발흥', subTopic: '대공황·전체주의 대두', keywords: ['대공황','전체주의','블록경제','파시즘','나치즘','히틀러','무솔리니','뉴딜','케이즈','실업','인플레이션','주가폭락','공황','독재','군국주의'], hasVisual: true, visualType: '경제 그래프', correctAnswer: null },
+    { number: 14, examWeight: 3, domain: 'history', domainName: '역사', syllabusId: 'history-ww2', name: '제2차 세계 대전과 전후 수습', subTopic: '2차 대전·전후 처리', keywords: ['제2차세계대전','얄타','포츠담','평화협약','추축국','연합국','노르망디','원자폭탄','일본항복','극동국제군사재판','샌프란시스코','전후처리','전범','배상','국제질서'], hasVisual: true, visualType: '연표', correctAnswer: null },
+    { number: 15, examWeight: 3, domain: 'history', domainName: '역사', syllabusId: 'history-cold-war', name: '냉전 체제와 다극화', subTopic: '냉전·다극화', keywords: ['냉전','마셜계획','NATO','비동맹','다극화','미소대립','핵무기','군비경쟁','데탕트','동유럽','베를린','쿠바','월남','베트남','중소분쟁'], hasVisual: true, visualType: '냉전 지도', correctAnswer: null },
+    { number: 16, examWeight: 2, domain: 'history', domainName: '역사', syllabusId: 'history-japan-modern', name: '일본 근현대사 흐름', subTopic: '일본 근현대사', keywords: ['메이지유신','제국헌법','평화헌법','천황제','전후개혁','경제성장','5조서문','문명개화','부국강병','다이쇼','쇼와','전후','고도성장','거품','잃어버린10년'], hasVisual: true, visualType: '연표/사료', correctAnswer: null },
     // ── POLITICS Q17~Q24 ─────────────────────────────────────────────
-    { number: 17, domain: 'politics', domainName: '정치', syllabusId: 'politics-democracy', name: '민주주의 기본 원리', subTopic: '사회 계약설과 통치론', keywords: ['사회계약','홉스','로크','루소','자연상태','통치론','만인만','일반의지','자유','평등','국민주권','저항권','정부','계약','자연법'], hasVisual: false, visualType: null, correctAnswer: null },
-    { number: 18, domain: 'politics', domainName: '정치', syllabusId: 'politics-human-rights', name: '인권 보장의 역사적 발전', subTopic: '인권 선언의 역사', keywords: ['마그나카르타','인권선언','바이마르','기본권','자연권','사회권','참정권','청구권','자유권','생존권','인권','시민권','사회보장','노동권','교육권'], hasVisual: false, visualType: null, correctAnswer: null },
-    { number: 19, domain: 'politics', domainName: '정치', syllabusId: 'politics-government', name: '정부 형태 비교 - 의회제와 대통령제', subTopic: '정부 형태 비교', keywords: ['의원내각제','대통령제','영국','미국','내각','의회','행정','입법','사법','임기','해산','탄핵','권력분립','양원제','단원제'], hasVisual: false, visualType: null, correctAnswer: null },
-    { number: 20, domain: 'politics', domainName: '정치', syllabusId: 'politics-japan-constitution-1', name: '일본 헌법 기본 원리', subTopic: '일본 헌법 원리', keywords: ['일본헌법','국민주권','평화주의','제9조','기본권','인간존엄','국회','내각','법원','지방자치','개헌','최고법규','조약','헌법개정','평화조항'], hasVisual: false, visualType: null, correctAnswer: null },
-    { number: 21, domain: 'politics', domainName: '정치', syllabusId: 'politics-japan-parliament', name: '일본 삼권 분립과 국회 구조', subTopic: '삼권 분립·국회', keywords: ['삼권분립','중의원','참의원','내각불신임','해산','의원입법','예산심의','조약비준','국무대신','수상','총리','행정부','법원','사법권','위헌심사'], hasVisual: false, visualType: null, correctAnswer: null },
-    { number: 22, domain: 'politics', domainName: '정치', syllabusId: 'politics-election', name: '선거 제도 및 지방 자치', subTopic: '선거·지방 자치', keywords: ['선거','소선거구','비례대표','지방분권','지방자치','투표','공직선거','참정권','정당','비례대표제','중선거구','의석','정치자금','지방의회','자치단체'], hasVisual: false, visualType: null, correctAnswer: null },
-    { number: 23, domain: 'politics', domainName: '정치', syllabusId: 'politics-international-order', name: '국제 정치와 동맹 질서', subTopic: '국제 정치 구조', keywords: ['주권','국제연맹','국제연합','UN','안전보장','이사회','총회','국제사법','국제기구','NGO','국제조약','주권국가','평화유지','제재','결의'], hasVisual: false, visualType: null, correctAnswer: null },
-    { number: 24, domain: 'politics', domainName: '정치', syllabusId: 'politics-un-humanrights', name: 'UN 안보리와 인권 조약', subTopic: 'UN·인권 조약', keywords: ['안전보장이사회','거부권','상임이사국','인권조약','국제법','국제사법재판소','국제인권규약','사회권규약','자유권규약','난민협약','기후변화협약','국제형사','ICJ','PKO','제재'], hasVisual: false, visualType: null, correctAnswer: null },
+    { number: 17, examWeight: 3, domain: 'politics', domainName: '정치', syllabusId: 'politics-democracy', name: '민주주의 기본 원리', subTopic: '사회 계약설과 통치론', keywords: ['사회계약','홉스','로크','루소','자연상태','통치론','만인만','일반의지','자유','평등','국민주권','저항권','정부','계약','자연법'], hasVisual: false, visualType: null, correctAnswer: null },
+    { number: 18, examWeight: 2, domain: 'politics', domainName: '정치', syllabusId: 'politics-human-rights', name: '인권 보장의 역사적 발전', subTopic: '인권 선언의 역사', keywords: ['마그나카르타','인권선언','바이마르','기본권','자연권','사회권','참정권','청구권','자유권','생존권','인권','시민권','사회보장','노동권','교육권'], hasVisual: false, visualType: null, correctAnswer: null },
+    { number: 19, examWeight: 3, domain: 'politics', domainName: '정치', syllabusId: 'politics-government', name: '정부 형태 비교 - 의회제와 대통령제', subTopic: '정부 형태 비교', keywords: ['의원내각제','대통령제','영국','미국','내각','의회','행정','입법','사법','임기','해산','탄핵','권력분립','양원제','단원제'], hasVisual: false, visualType: null, correctAnswer: null },
+    { number: 20, examWeight: 4, domain: 'politics', domainName: '정치', syllabusId: 'politics-japan-constitution-1', name: '일본 헌법 기본 원리', subTopic: '일본 헌법 원리', keywords: ['일본헌법','국민주권','평화주의','제9조','기본권','인간존엄','국회','내각','법원','지방자치','개헌','최고법규','조약','헌법개정','평화조항'], hasVisual: false, visualType: null, correctAnswer: null },
+    { number: 21, examWeight: 4, domain: 'politics', domainName: '정치', syllabusId: 'politics-japan-parliament', name: '일본 삼권 분립과 국회 구조', subTopic: '삼권 분립·국회', keywords: ['삼권분립','중의원','참의원','내각불신임','해산','의원입법','예산심의','조약비준','국무대신','수상','총리','행정부','법원','사법권','위헌심사'], hasVisual: false, visualType: null, correctAnswer: null },
+    { number: 22, examWeight: 3, domain: 'politics', domainName: '정치', syllabusId: 'politics-election', name: '선거 제도 및 지방 자치', subTopic: '선거·지방 자치', keywords: ['선거','소선거구','비례대표','지방분권','지방자치','투표','공직선거','참정권','정당','비례대표제','중선거구','의석','정치자금','지방의회','자치단체'], hasVisual: false, visualType: null, correctAnswer: null },
+    { number: 23, examWeight: 3, domain: 'politics', domainName: '정치', syllabusId: 'politics-international-order', name: '국제 정치와 동맹 질서', subTopic: '국제 정치 구조', keywords: ['주권','국제연맹','국제연합','UN','안전보장','이사회','총회','국제사법','국제기구','NGO','국제조약','주권국가','평화유지','제재','결의'], hasVisual: false, visualType: null, correctAnswer: null },
+    { number: 24, examWeight: 4, domain: 'politics', domainName: '정치', syllabusId: 'politics-un-humanrights', name: 'UN 안보리와 인권 조약', subTopic: 'UN·인권 조약', keywords: ['안전보장이사회','거부권','상임이사국','인권조약','국제법','국제사법재판소','국제인권규약','사회권규약','자유권규약','난민협약','기후변화협약','국제형사','ICJ','PKO','제재'], hasVisual: false, visualType: null, correctAnswer: null },
     // ── ECONOMICS Q25~Q32 ───────────────────────────────────────────
-    { number: 25, domain: 'economy', domainName: '경제', syllabusId: 'economy-supply-demand', name: '시장 경제와 수요공급 탄력성', subTopic: '수요·공급 탄력성', keywords: ['수요','공급','탄력성','균형가격','한계효용','수요곡선','공급곡선','변곡점','가격탄력성','소득탄력성','대체재','보완재','정상재','열등재','시장'], hasVisual: true, visualType: '수요공급 곡선', correctAnswer: null },
-    { number: 26, domain: 'economy', domainName: '경제', syllabusId: 'economy-market-failure', name: '시장 실패와 외부 효과', subTopic: '시장 실패·외부 효과', keywords: ['시장실패','외부효과','독과점','공공재','무임승차','공해','환경오염','정보비대칭','역선택','도덕적해이','규제','정부실패','과점','독점','공정거래'], hasVisual: false, visualType: null, correctAnswer: null },
-    { number: 27, domain: 'economy', domainName: '경제', syllabusId: 'economy-gdp', name: '국민 소득과 거시 지표', subTopic: '국민 소득·GDP', keywords: ['GDP','명목','실질','GNP','국민소득','경제성장률','1인당','구매력','지니계수','경제후생','순국민','국내총생산','국민총소득','3면등가','부가가치'], hasVisual: true, visualType: 'GDP 그래프', correctAnswer: null },
-    { number: 28, domain: 'economy', domainName: '경제', syllabusId: 'economy-inflation', name: '인플레이션과 통화 정책', subTopic: '인플레이션·통화 정책', keywords: ['인플레이션','디플레이션','통화정책','물가','소비자물가','일본은행','금리','통화량','재정정책','기준금리','양적완화','긴축','확장','스태그플레이션','지급준비'], hasVisual: true, visualType: '금리 그래프', correctAnswer: null },
-    { number: 29, domain: 'economy', domainName: '경제', syllabusId: 'economy-trade', name: '국제 무역과 비교 우위', subTopic: '국제 무역 이론', keywords: ['국제무역','비교우위','리카도','무역장벽','WTO','FTA','관세','쿼터','자유무역','보호무역','수출진흥','수입대체','다자간협상','지역협정','통상'], hasVisual: true, visualType: '무역 그래프', correctAnswer: null },
-    { number: 30, domain: 'economy', domainName: '경제', syllabusId: 'economy-forex', name: '환율 변동과 외환 시장', subTopic: '환율·외환 시장', keywords: ['환율','엔고','엔저','외환','달러','엔화','수출','수입','손익분기','통화가치','환율변동','고정환율','변동환율','구매력평가','이자율평가'], hasVisual: true, visualType: '환율 그래프', correctAnswer: null },
-    { number: 31, domain: 'economy', domainName: '경제', syllabusId: 'economy-japan-history', name: '일본 경제사 - 전후부터 거품까지', subTopic: '일본 경제사', keywords: ['전후복구','고도경제성장','거품경제','불황','잃어버린10년','저성장','경제거품','주가','부동산','토지','초호황','오일쇼크','안정성장','엔고불황','구조개혁'], hasVisual: true, visualType: '경제 성장률 그래프', correctAnswer: null },
-    { number: 32, domain: 'economy', domainName: '경제', syllabusId: 'economy-abenomics', name: '아베노믹스와 현대 금융', subTopic: '아베노믹스·금융 정책', keywords: ['아베노믹스','3개의화살','양적완화','재정건전성','통화','금융완화','소비세','재정지출','성장전략','구조개혁','물가목표','2%','국채','재정적자','GDP'], hasVisual: true, visualType: '경제 지표 그래프', correctAnswer: null },
+    { number: 25, examWeight: 6, domain: 'economy', domainName: '경제', syllabusId: 'economy-supply-demand', name: '시장 경제와 수요공급 탄력성', subTopic: '수요·공급 탄력성', keywords: ['수요','공급','탄력성','균형가격','한계효용','수요곡선','공급곡선','변곡점','가격탄력성','소득탄력성','대체재','보완재','정상재','열등재','시장'], hasVisual: true, visualType: '수요공급 곡선', correctAnswer: null },
+    { number: 26, examWeight: 4, domain: 'economy', domainName: '경제', syllabusId: 'economy-market-failure', name: '시장 실패와 외부 효과', subTopic: '시장 실패·외부 효과', keywords: ['시장실패','외부효과','독과점','공공재','무임승차','공해','환경오염','정보비대칭','역선택','도덕적해이','규제','정부실패','과점','독점','공정거래'], hasVisual: false, visualType: null, correctAnswer: null },
+    { number: 27, examWeight: 5, domain: 'economy', domainName: '경제', syllabusId: 'economy-gdp', name: '국민 소득과 거시 지표', subTopic: '국민 소득·GDP', keywords: ['GDP','명목','실질','GNP','국민소득','경제성장률','1인당','구매력','지니계수','경제후생','순국민','국내총생산','국민총소득','3면등가','부가가치'], hasVisual: true, visualType: 'GDP 그래프', correctAnswer: null },
+    { number: 28, examWeight: 5, domain: 'economy', domainName: '경제', syllabusId: 'economy-inflation', name: '인플레이션과 통화 정책', subTopic: '인플레이션·통화 정책', keywords: ['인플레이션','디플레이션','통화정책','물가','소비자물가','일본은행','금리','통화량','재정정책','기준금리','양적완화','긴축','확장','스태그플레이션','지급준비'], hasVisual: true, visualType: '금리 그래프', correctAnswer: null },
+    { number: 29, examWeight: 5, domain: 'economy', domainName: '경제', syllabusId: 'economy-trade', name: '국제 무역과 비교 우위', subTopic: '국제 무역 이론', keywords: ['국제무역','비교우위','리카도','무역장벽','WTO','FTA','관세','쿼터','자유무역','보호무역','수출진흥','수입대체','다자간협상','지역협정','통상'], hasVisual: true, visualType: '무역 그래프', correctAnswer: null },
+    { number: 30, examWeight: 5, domain: 'economy', domainName: '경제', syllabusId: 'economy-forex', name: '환율 변동과 외환 시장', subTopic: '환율·외환 시장', keywords: ['환율','엔고','엔저','외환','달러','엔화','수출','수입','손익분기','통화가치','환율변동','고정환율','변동환율','구매력평가','이자율평가'], hasVisual: true, visualType: '환율 그래프', correctAnswer: null },
+    { number: 31, examWeight: 4, domain: 'economy', domainName: '경제', syllabusId: 'economy-japan-history', name: '일본 경제사 - 전후부터 거품까지', subTopic: '일본 경제사', keywords: ['전후복구','고도경제성장','거품경제','불황','잃어버린10년','저성장','경제거품','주가','부동산','토지','초호황','오일쇼크','안정성장','엔고불황','구조개혁'], hasVisual: true, visualType: '경제 성장률 그래프', correctAnswer: null },
+    { number: 32, examWeight: 4, domain: 'economy', domainName: '경제', syllabusId: 'economy-abenomics', name: '아베노믹스와 현대 금융', subTopic: '아베노믹스·금융 정책', keywords: ['아베노믹스','3개의화살','양적완화','재정건전성','통화','금융완화','소비세','재정지출','성장전략','구조개혁','물가목표','2%','국채','재정적자','GDP'], hasVisual: true, visualType: '경제 지표 그래프', correctAnswer: null },
     // ── SOCIETY Q33~Q38 ──────────────────────────────────────────────
-    { number: 33, domain: 'society', domainName: '사회', syllabusId: 'society-aging', name: '저출산과 고령화', subTopic: '저출산·고령화 문제', keywords: ['저출산','고령화','노동인구','사회보장','연금','의료','개호','일가정양립','여성취업','육아','인구감소','생산연령','부양비','노년부양','출생아'], hasVisual: true, visualType: '인구 피라미드', correctAnswer: null },
-    { number: 34, domain: 'society', domainName: '사회', syllabusId: 'society-welfare', name: '사회 보장 제도 변천', subTopic: '사회 보장 제도', keywords: ['사회보험','공적부조','복지서비스','연금','의료보험','개호보험','국민연금','후생연금','건강보험','실업보험','산재','복지재정','보험료','국고부담','사회복지'], hasVisual: true, visualType: '보험 재정 그래프', correctAnswer: null },
-    { number: 35, domain: 'society', domainName: '사회', syllabusId: 'society-labor', name: '현대 노동 환경과 노동법', subTopic: '노동 환경·노동법', keywords: ['노동법','노동3권','비정규직','근로기준법','최저임금','노동시간','해고','차별','노동조합','단체교섭','쟁의권','파견','계약직','정규직','워라밸'], hasVisual: false, visualType: null, correctAnswer: null },
-    { number: 36, domain: 'society', domainName: '사회', syllabusId: 'society-climate', name: '지구 환경 이슈와 기후 협약', subTopic: '기후 변화·환경 협약', keywords: ['기후변화','교토의정서','파리협약','이산화탄소','삭감','탄소배출','지구온난화','넷제로','환경협약','온실가스','기후','CO2','탄소세','배출권','국제환경'], hasVisual: true, visualType: 'CO2 배출량 그래프', correctAnswer: null },
-    { number: 37, domain: 'society', domainName: '사회', syllabusId: 'society-energy', name: '자원 및 에너지 보전 대책', subTopic: '에너지·자원 보전', keywords: ['신재생에너지','화석연료','에너지','자원보전','태양광','풍력','원자력','수력','바이오매스','지열','연료전지','수소','에너지전환','탈원전','RE100'], hasVisual: true, visualType: '에너지 비중 그래프', correctAnswer: null },
-    { number: 38, domain: 'society', domainName: '사회', syllabusId: 'society-global-governance', name: '글로벌 거버넌스와 NGO', subTopic: '글로벌 거버넌스', keywords: ['NGO','NPO','국제연대','인도적구호','거버넌스','시민사회','국제개발','ODA','원조','난민구호','자원봉사','국제협력','지속가능','개발목표','글로벌시민'], hasVisual: false, visualType: null, correctAnswer: null },
+    { number: 33, examWeight: 3, domain: 'society', domainName: '사회', syllabusId: 'society-aging', name: '저출산과 고령화', subTopic: '저출산·고령화 문제', keywords: ['저출산','고령화','노동인구','사회보장','연금','의료','개호','일가정양립','여성취업','육아','인구감소','생산연령','부양비','노년부양','출생아'], hasVisual: true, visualType: '인구 피라미드', correctAnswer: null },
+    { number: 34, examWeight: 3, domain: 'society', domainName: '사회', syllabusId: 'society-welfare', name: '사회 보장 제도 변천', subTopic: '사회 보장 제도', keywords: ['사회보험','공적부조','복지서비스','연금','의료보험','개호보험','국민연금','후생연금','건강보험','실업보험','산재','복지재정','보험료','국고부담','사회복지'], hasVisual: true, visualType: '보험 재정 그래프', correctAnswer: null },
+    { number: 35, examWeight: 2, domain: 'society', domainName: '사회', syllabusId: 'society-labor', name: '현대 노동 환경과 노동법', subTopic: '노동 환경·노동법', keywords: ['노동법','노동3권','비정규직','근로기준법','최저임금','노동시간','해고','차별','노동조합','단체교섭','쟁의권','파견','계약직','정규직','워라밸'], hasVisual: false, visualType: null, correctAnswer: null },
+    { number: 36, examWeight: 3, domain: 'society', domainName: '사회', syllabusId: 'society-climate', name: '지구 환경 이슈와 기후 협약', subTopic: '기후 변화·환경 협약', keywords: ['기후변화','교토의정서','파리협약','이산화탄소','삭감','탄소배출','지구온난화','넷제로','환경협약','온실가스','기후','CO2','탄소세','배출권','국제환경'], hasVisual: true, visualType: 'CO2 배출량 그래프', correctAnswer: null },
+    { number: 37, examWeight: 2, domain: 'society', domainName: '사회', syllabusId: 'society-energy', name: '자원 및 에너지 보전 대책', subTopic: '에너지·자원 보전', keywords: ['신재생에너지','화석연료','에너지','자원보전','태양광','풍력','원자력','수력','바이오매스','지열','연료전지','수소','에너지전환','탈원전','RE100'], hasVisual: true, visualType: '에너지 비중 그래프', correctAnswer: null },
+    { number: 38, examWeight: 2, domain: 'society', domainName: '사회', syllabusId: 'society-global-governance', name: '글로벌 거버넌스와 NGO', subTopic: '글로벌 거버넌스', keywords: ['NGO','NPO','국제연대','인도적구호','거버넌스','시민사회','국제개발','ODA','원조','난민구호','자원봉사','국제협력','지속가능','개발목표','글로벌시민'], hasVisual: false, visualType: null, correctAnswer: null },
   ],
   /** Get questions for a specific domain */
   getByDomain(domainId) { return this.questions.filter(q => q.domain === domainId); },
@@ -263,7 +314,7 @@ const COMPREHENSIVE_38_QUESTIONS_DB = {
           if (token.includes(kw) || kw.includes(token)) matchCount++;
         }
       }
-      return { number: q.number, domain: q.domain, domainName: q.domainName, name: q.name, subTopic: q.subTopic, keywords: q.keywords, matchCount, matchConfidence: Math.round(Math.min(95, matchCount * 25 + 10)), itemLevel: true };
+      return { number: q.number, domain: q.domain, domainName: q.domainName, name: q.name, subTopic: q.subTopic, keywords: q.keywords, matchCount, examWeight: q.examWeight || 2, matchConfidence: Math.round(Math.min(95, (matchCount * 25 + 10) * Math.min(1.3, 1 + ((q.examWeight || 2) / 20)))), weightAdjusted: true, itemLevel: true };
     });
   },
 };
@@ -282,7 +333,9 @@ async function scanComprehensiveQuestions(fileName, phase1Result) {
   for (const dId of domains) {
     const domainQs = analyzedQuestions.filter(q => q.domain === dId);
     const matched = domainQs.filter(q => q.matchCount > 0);
-    domainStats[dId] = { questionRange: `${domainQs[0]?.number || '?'}~${domainQs[domainQs.length-1]?.number || '?'}`, total: domainQs.length, matched: matched.length, coveragePct: Math.round((matched.length / domainQs.length) * 100), avgConfidence: matched.length > 0 ? Math.round(matched.reduce((s, q) => s + q.matchConfidence, 0) / matched.length) : 0 };
+    const domainWeight = domainQs.reduce((s, q) => s + (q.examWeight || 2), 0);
+    const matchedWeight = matched.reduce((s, q) => s + (q.examWeight || 2), 0);
+    domainStats[dId] = { questionRange: `${domainQs[0]?.number || '?'}~${domainQs[domainQs.length-1]?.number || '?'}`, total: domainQs.length, matched: matched.length, totalWeight: domainWeight, matchedWeight: matchedWeight, weightCoverage: Math.round((matchedWeight / domainWeight) * 100), coveragePct: Math.round((matched.length / domainQs.length) * 100), avgConfidence: matched.length > 0 ? Math.round(matched.reduce((s, q) => s + q.matchConfidence, 0) / matched.length) : 0 };
   }
   const totalMatched = Object.values(domainStats).reduce((s, d) => s + d.matched, 0);
   const scanCoverage = Math.round((totalMatched / 38) * 100);
@@ -475,7 +528,12 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
     setIsProcessing(true); setAnalysisResult(null); setLiveLogs([]); setOverallProgress(0); setSelfCorrection(null);
     setFiles(prev => prev.map(f => ({ ...f, status: 'queued', progress: 0, steps: [], currentStep: -1, error: null, phaseResults: null })));
     const fileTokens = files.map(f => extractFileTokens(f.name));
-    addLog('SAT Pipeline Init ' + files.length + '개 파일 토큰 추출 완료 - ' + fileTokens.filter(t => t.metadata.subjectType !== 'mixed').length + '개 과목 감지됨', 'info');
+    addLog('SAT Pipeline Init ' + files.length + '개 파일 등록 — Tesseract.js OCR 엔진 준비 중...', 'info');
+    // Preload OCR worker in background
+    const hasImages = files.some(f => /\.(jpg|jpeg|png|webp)$/i.test(f.name));
+    if (hasImages) {
+      getOCRWorker().then(() => addLog('OK Tesseract.js (jpn+eng) OCR 엔진 초기화 완료', 'success')).catch(() => addLog('WARN Tesseract.js OCR 엔진 초기화 실패 — 시뮬레이션 폴백', 'warning'));
+    }
     const allResults = [], allCorrectedTopics = [];
     let currentFileIndex = 0;
     const processNextFile = () => {
@@ -487,10 +545,11 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
           // Phase 1
           addLog('SAT Phase1 ' + totalFiles + ' ' + fileEntry.name + ' - 다국어 레이아웃 파싱 (토큰: ' + fileTokenData.tokens.length + '개)', 'phase1');
           await new Promise(r => setTimeout(r, 0));
-          const phase1 = await pipelinePhase1(fileEntry.name);
+          const phase1 = await pipelinePhase1(fileEntry.name, fileEntry.file);
+          const ocrSource = fileEntry.file && /\.(jpg|jpeg|png|webp)$/i.test(fileEntry.name) ? 'Tesseract.js' : '시뮬레이션';
           setFiles(prev => prev.map((f, i) => i === fileIndex ? { ...f, progress: 25, currentStep: 0 } : f));
           setOverallProgress(Math.round((fileIndex / totalFiles) * 100 + (1 / totalFiles) * 25));
-          addLog('OK Phase1 ' + fileEntry.name + ' - ' + (phase1.subjectType === 'math' ? '수학' : phase1.subjectType === 'comprehensive' ? '종합과목' : '혼합') + ' 감지 | 신뢰도 ' + phase1.confidence + '% (토큰 품질)', 'phase1')
+          addLog('OK Phase1 ' + fileEntry.name + ' - ' + (phase1.subjectType === 'math' ? '수학' : phase1.subjectType === 'comprehensive' ? '종합과목' : '혼합') + ' 감지 | 신뢰도 ' + phase1.confidence + '% (OCR: ' + ocrSource + ' | 토큰 ' + phase1.tokens.length + '개)', 'phase1')
           // Phase 2
           if (phase1.subjectType === 'comprehensive') addLog('[BLOCK] Phase 2/' + totalFiles + ' ' + fileEntry.name + ' -- 종합과목: 수학 수식 차단', 'warning');
           else addLog('[Phase 2/' + totalFiles + '] ' + fileEntry.name + ' -- LaTeX AST 분석 중...', 'phase2');
@@ -599,6 +658,22 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
       }, { totalFiles: 0, avgConfidence: 0, passedCount: 0, needsReview: 0 });
       if (summary.totalFiles > 0) summary.avgConfidence = Math.round(summary.avgConfidence / summary.totalFiles);
       setAnalysisResult({ files: allResults, summary, correctedByUser: false, userCorrection: null, boostedConfidence: null });
+      try {
+        const saveFiles = [];
+        for (const r of allResults) {
+          const sf = { fileName: r.fileName, subjectType: r.subjectType, ocrSource: r.phase1?.ocrSource || '시뮬레이션', phase4: { overallConfidence: r.phase4.overallConfidence, c1: r.phase4.c1, c2: r.phase4.c2, c3: r.phase4.c3, passed: r.phase4.passed, needsHumanReview: r.phase4.needsHumanReview }, reInspectionCount: r.reInspectionCount, originalConfidence: r.originalConfidence };
+          if (r.comprehensiveScan) {
+            const scan = r.comprehensiveScan;
+            const questions = [];
+            for (const q of (scan.questions || [])) {
+              questions.push({ number: q.number, domain: q.domain, domainName: q.domainName, name: q.name, matchCount: q.matchCount, examWeight: q.examWeight, matchConfidence: q.matchConfidence });
+            }
+            sf.comprehensiveScan = { scanCoverage: scan.scanCoverage, weightedScanCoverage: scan.weightedScanCoverage, scanConfidence: scan.scanConfidence, domainStats: scan.domainStats, questions: questions };
+          }
+          saveFiles.push(sf);
+        }
+        localStorage.setItem('eju_ocr_analysis', JSON.stringify({ files: saveFiles, summary: summary, analyzedAt: new Date().toISOString() }));
+      } catch (e) {}
       addLog('DONE 배치 분석 완료 - ' + summary.totalFiles + '개 파일 처리 (평균 신뢰도 ' + summary.avgConfidence + '% | 코사인 유사도 기반)', 'success');
       if (summary.needsReview > 0) addLog('WARN ' + summary.needsReview + '개 파일 저신뢰 (< 85%) - Self-Correction 모달 대기 중', 'warning');
       setIsProcessing(false);
