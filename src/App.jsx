@@ -12,6 +12,7 @@ import EJU20YearTrend from './components/EJU20YearTrend';
 import DiagnosticReport from './components/DiagnosticReport';
 import SettingsPanel from './components/SettingsPanel';
 import ErrorBoundary from './components/ErrorBoundary';
+import InstallGuide from './components/InstallGuide';
 import { getExams, deleteExam, loadSampleData, getSettings, saveSettings, saveExam, JAP_READ_MAX, JAP_LISTEN_MAX, COMP_MAX } from './utils/storage';
 import { getDday } from './utils/diagnosis';
 
@@ -109,6 +110,12 @@ export default function App() {
   const [showSettings, setShowSettings] = useState(false);
   const [showQuickInput, setShowQuickInput] = useState(false);
   const [settings, setSettings] = useState(getSettings());
+  const [showInstallGuide, setShowInstallGuide] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    try {
+      return !localStorage.getItem('eju_pwa_guide_dismissed');
+    } catch { return false; }
+  });
 
   const refresh = () => setExams(getExams());
   const handleDelete = (id) => { deleteExam(id); setExams(prev => prev.filter(e => e.id !== id)); };
@@ -304,6 +311,16 @@ export default function App() {
         <QuickInputModal
           onClose={() => setShowQuickInput(false)}
           onSaved={refresh}
+        />
+      )}
+
+      {showInstallGuide && (
+        <InstallGuide
+          onClose={() => setShowInstallGuide(false)}
+          onDontShowAgain={() => {
+            localStorage.setItem('eju_pwa_guide_dismissed', '1');
+            setShowInstallGuide(false);
+          }}
         />
       )}
     </>
