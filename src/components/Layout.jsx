@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import {
   LayoutDashboard, BookOpen, Layers, Plus, Zap,
   Settings, Sun, Moon, GraduationCap, Sparkles, CalendarCheck,
-  ChartLine, ClipboardList, BarChartBig,
+  ChartLine, ClipboardList, BarChartBig, Camera,
 } from 'lucide-react';
 import { getExams, getSettings, normalizeJapaneseScore, normalizeCompScore } from '../utils/storage';
 import { getDday } from '../utils/diagnosis';
@@ -18,6 +18,7 @@ const NAV = [
   { id: 'diagnosis',     Icon: ClipboardList,    label: '오답 진단' },
   { id: 'trend',         Icon: ChartLine,        label: '기출 트렌드' },
   { id: 'trend-insights', Icon: BarChartBig,      label: '출제 경향' },
+  { id: 'photo-question', Icon: Camera,            label: '사진 변환' },
 ];
 
 function SidebarMiniStats() {

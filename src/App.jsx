@@ -11,6 +11,7 @@ import DailyTasks from './components/DailyTasks';
 import EJU20YearTrend from './components/EJU20YearTrend';
 import DiagnosticReport from './components/DiagnosticReport';
 import TrendDashboard from './components/TrendDashboard';
+import PhotoToQuestion from './components/PhotoToQuestion';
 import SettingsPanel from './components/SettingsPanel';
 import ErrorBoundary from './components/ErrorBoundary';
 import InstallGuide from './components/InstallGuide';
@@ -236,6 +237,12 @@ export default function App() {
         return (
           <ErrorBoundary fallbackMessage="출제 경향 화면을 불러오는 중 오류가 발생했어요.">
             <TrendDashboard />
+          </ErrorBoundary>
+        );
+      case 'photo-question':
+        return (
+          <ErrorBoundary fallbackMessage="사진 변환 화면을 불러오는 중 오류가 발생했어요.">
+            <PhotoToQuestion />
           </ErrorBoundary>
         );
       case 'trend':
