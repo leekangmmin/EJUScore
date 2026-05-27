@@ -356,7 +356,7 @@ export default function ComprehensiveAnalysis({ exams, settings, onAddNew }) {
       </div>
 
       {/* Stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
+      <div className="grid-wrap-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
         {[
           {
             label: '평균 점수', color: 'var(--green)',
@@ -424,7 +424,7 @@ export default function ComprehensiveAnalysis({ exams, settings, onAddNew }) {
       )}
 
       {/* Radar + Pie */}
-      <div style={{ display: 'grid', gridTemplateColumns: unitPriority.length >= 3 ? '1fr 1fr' : '1fr', gap: 14 }}>
+      <div className="grid-2-mobile" style={{ display: 'grid', gridTemplateColumns: unitPriority.length >= 3 ? '1fr 1fr' : '1fr', gap: 14 }}>
         {unitPriority.length >= 3 && <UnitRadarChart unitPriority={unitPriority} />}
         {errorTypeCounts.length > 0 && (
           <div style={{ ...CARD }}>
@@ -501,7 +501,7 @@ export default function ComprehensiveAnalysis({ exams, settings, onAddNew }) {
 
       {/* Charts */}
       {unitErrorMap.length > 0 && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+        <div className="grid-2-mobile" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
           <div style={{ ...CARD }}>
             <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 7 }}>
             <BarChart3 size={14} color="var(--t2)" strokeWidth={2} /> 단원별 오답 횟수

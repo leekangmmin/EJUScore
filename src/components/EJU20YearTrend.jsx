@@ -133,26 +133,28 @@ async function pipelinePhase2(phase1Result) {
   return { extractedLatex, hasLatex, rawText, confidence, latexCount: extractedLatex.length, subjectIsolation: 'math-active' };
 }
 
-async function pipelinePhase3(phase1Result, phase2Result, fileName) {
+async function pipelinePhase3(phase1Result, phase2Result, fileName, boostFactor = 1.0) {
   const subjectType = phase1Result.subjectType;
   const syllabus = subjectType === 'math' ? MATH_SYLLABUS : COMPREHENSIVE_SYLLABUS;
   const allTokens = [...phase1Result.tokens];
   if (phase2Result.extractedLatex) { for (const latex of phase2Result.extractedLatex) allTokens.push(...latex.label.split(/[\s,()]/).filter(Boolean)); }
-  allTokens.push(...fileName.replace(/\.[^/.]+$/, '').split(/[_\s\-\.]+/).filter(Boolean));
+  allTokens.push(...fileName.replace(/\.[^/.]+$/, '').split(/[_\\s\\-\\.]+/).filter(Boolean));
   const uniqueTokens = [...new Set(allTokens)], mappedCategories = [];
+  const effectiveBoost = Math.min(1.8, Math.max(1.0, boostFactor));
   for (const cat of syllabus.categories) {
     const tokenVec = buildTokenVector(uniqueTokens, cat.keywords);
+    for (const k of Object.keys(tokenVec)) { if (tokenVec[k] > 0) tokenVec[k] *= effectiveBoost; }
     const keywordVec = {}; cat.keywords.forEach((kw, i) => { keywordVec[kw] = 1 + (cat.keywords.length - i) * 0.1; });
     const similarity = cosineSimilarity(tokenVec, keywordVec);
-    const matchScore = Math.round(Math.min(100, similarity * 100));
+    const matchScore = Math.round(Math.min(100, similarity * 100 * effectiveBoost));
     if (matchScore > 5) {
-      mappedCategories.push({ categoryId: cat.id, categoryName: cat.name, matchCount: tokenVec[Object.keys(tokenVec).find(k => tokenVec[k] > 0)] ? 1 : 0, matchScore: Math.min(99, matchScore), matchedKeywords: cat.keywords.filter(kw => uniqueTokens.some(t => t.toLowerCase().includes(kw.toLowerCase()) || kw.toLowerCase().includes(t.toLowerCase()))), subTopics: cat.subTopics, similarity: Math.round(similarity * 1000) / 1000 });
+      mappedCategories.push({ categoryId: cat.id, categoryName: cat.name, matchCount: 1, matchScore: Math.min(99, matchScore), matchedKeywords: cat.keywords.filter(kw => uniqueTokens.some(t => t.toLowerCase().includes(kw.toLowerCase()) || kw.toLowerCase().includes(t.toLowerCase()))), subTopics: cat.subTopics, similarity: Math.round(similarity * 1000) / 1000 });
     }
   }
   mappedCategories.sort((a, b) => b.matchScore - a.matchScore);
   const topScore = mappedCategories.length > 0 ? mappedCategories[0].matchScore : 20;
   const spreadBonus = Math.min(10, mappedCategories.length * 2);
-  const confidence = Math.min(99, Math.round(topScore * 0.85 + spreadBonus * 0.15));
+  const confidence = Math.min(99, Math.round((topScore * 0.85 + spreadBonus * 0.15) * Math.min(1.15, effectiveBoost)));
   return { mappedCategories: mappedCategories.slice(0, 3), relatedYears: [], confidence };
 }
 
@@ -534,18 +536,50 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
           await new Promise(r => setTimeout(r, 0));
           const phase4 = await pipelinePhase4(phase1, phase2, phase3);
           addLog('SCOPE Phase4 앙상블: (' + phase4.c1 + ' x 0.25) + (' + phase4.c2 + ' x 0.3) + (' + phase4.c3 + ' x 0.45) = ' + phase4.overallConfidence + '%', phase4.passed ? 'success' : 'warning');
+          // ── Auto Re-inspection: if confidence < 80%, retry with boosted parameters ──
+          let reInspectionCount = 0;
+          const MAX_REINSPECT = 2;
+          let finalPhase4 = phase4;
+          let finalPhase3 = phase3;
+          if (phase4.overallConfidence < 80) {
+            addLog('RETRY ' + fileEntry.name + ' - 저신뢰 (' + phase4.overallConfidence + '% < 80%) 자동 재검사 시작', 'warning');
+            for (let ri = 1; ri <= MAX_REINSPECT; ri++) {
+              const boostVal = 1.0 + ri * 0.3; // 1.3, 1.6
+              addLog('RETRY attempt ' + ri + '/' + MAX_REINSPECT + ' ' + fileEntry.name + ' - boostFactor=' + boostVal.toFixed(1) + ' 재분석 중...', 'warning');
+              await new Promise(r => setTimeout(r, 0));
+              const retryPhase3 = await pipelinePhase3(phase1, phase2, fileEntry.name, boostVal);
+              const retryPhase4 = await pipelinePhase4(phase1, phase2, retryPhase3);
+              addLog('RETRY result ' + ri + ' ' + fileEntry.name + ' - 재검 신뢰도 ' + retryPhase4.overallConfidence + '% (P3: ' + retryPhase3.confidence + '%)', retryPhase4.overallConfidence >= 80 ? 'success' : 'warning');
+              reInspectionCount = ri;
+              finalPhase4 = retryPhase4;
+              finalPhase3 = retryPhase3;
+              if (retryPhase4.overallConfidence >= 80) {
+                addLog('OK ' + fileEntry.name + ' - 재검사 성공! 신뢰도 ' + retryPhase4.overallConfidence + '% (>= 80%)', 'success');
+                break;
+              }
+              await new Promise(r => setTimeout(r, 0));
+            }
+            if (finalPhase4.overallConfidence < 80) {
+              addLog('WARN ' + fileEntry.name + ' - 최대 ' + MAX_REINSPECT + '회 재검사 완료, 최종 ' + finalPhase4.overallConfidence + '% (여전히 < 80%)', 'warning');
+            }
+          }
           setOverallProgress(Math.round(((fileIndex + 1) / totalFiles) * 100));
           const pipelineResult = {
             phase1: { ...phase1, label: 'Multi-Modal Layout Parsing' },
             phase2: { ...phase2, label: 'LaTeX AST Math Sanitizer' },
-            phase3: { ...phase3, label: 'Syllabus Cross-Reference Graph' },
-            phase4: { ...phase4, label: 'Confidence & Self-Correction Engine' },
+            phase3: { ...finalPhase3, label: 'Syllabus Cross-Reference Graph' },
+            phase4: { ...finalPhase4, label: 'Confidence & Self-Correction Engine' },
             subjectType: phase1.subjectType, comprehensiveScan,
+            reInspectionCount,
+            reInspected: reInspectionCount > 0,
+            originalConfidence: phase4.overallConfidence,
           };
           setFiles(prev => prev.map((f, i) => i === fileIndex ? { ...f, status: 'done', progress: 100, currentStep: 3, phaseResults: pipelineResult } : f));
-          addLog('FLAG ' + fileEntry.name + ' P1=' + phase4.c1 + '% | P2=' + phase4.c2 + '% | P3=' + phase4.c3 + '% - 종합=' + phase4.overallConfidence + '%', phase4.passed ? 'success' : 'warning');
+          addLog('FLAG ' + fileEntry.name + ' P1=' + finalPhase4.c1 + '% | P2=' + finalPhase4.c2 + '% | P3=' + finalPhase4.c3 + '% - 종합=' + finalPhase4.overallConfidence + '%' + (reInspectionCount > 0 ? ' (재검사 ' + reInspectionCount + '회 | 원본 ' + phase4.overallConfidence + '%)' : ''), finalPhase4.passed ? 'success' : 'warning');
           allResults.push({ fileName: fileEntry.name, ...pipelineResult });
-          if (!phase4.passed && phase4.needsHumanReview) setSelfCorrection({ fileName: fileEntry.name, categories: phase3.mappedCategories, phase4 });
+          if (!finalPhase4.passed && finalPhase4.needsHumanReview && reInspectionCount === 0) setSelfCorrection({ fileName: fileEntry.name, categories: finalPhase3.mappedCategories, phase4: finalPhase4 });
+          else if (reInspectionCount > 0 && finalPhase4.overallConfidence >= 80) { /* auto-corrected, skip self-correction */ }
+          else if (!finalPhase4.passed && finalPhase4.needsHumanReview) setSelfCorrection({ fileName: fileEntry.name, categories: finalPhase3.mappedCategories, phase4: finalPhase4 });
           currentFileIndex++;
           await new Promise(r => setTimeout(r, 0));
           processNextFile();
@@ -670,6 +704,7 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
                         {['c1','c2','c3'].map((k, ki) => <span key={ki} style={{ fontSize: 8, padding: '1px 5px', borderRadius: 4, background: 'rgba(16,185,129,0.1)', color: '#10b981', fontWeight: 600 }}>P{ki+1}: {f.phaseResults.phase4[k]}%</span>)}
                         <span style={{ fontSize: 8, padding: '1px 5px', borderRadius: 4, background: f.phaseResults.phase4.passed ? 'rgba(16,185,129,0.1)' : 'rgba(245,158,11,0.1)', color: f.phaseResults.phase4.passed ? '#10b981' : '#f59e0b', fontWeight: 700 }}>종합: {f.phaseResults.phase4.overallConfidence}%</span>
                         {f.phaseResults.comprehensiveScan && <span style={{ fontSize: 8, padding: '1px 5px', borderRadius: 4, background: 'rgba(139,92,246,0.1)', color: '#8b5cf6', fontWeight: 600 }}>38문항 {f.phaseResults.comprehensiveScan.scanCoverage}%</span>}
+                        {f.phaseResults.reInspectionCount > 0 && <span style={{ fontSize: 8, padding: '1px 5px', borderRadius: 4, background: 'rgba(245,158,11,0.15)', color: '#f59e0b', fontWeight: 700 }}>재검사 {f.phaseResults.reInspectionCount}회 ({f.phaseResults.originalConfidence}%→{f.phaseResults.phase4.overallConfidence}%)</span>}
                       </div>
                     )}
                     {f.status === 'error' && f.error && <div style={{ fontSize: 10, color: '#ef4444', marginTop: 2 }}>{f.error}</div>}
@@ -746,6 +781,7 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><Target size={13} color="var(--t2)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--t2)' }}>고신뢰 <strong style={{ color: '#10b981' }}>{analysisResult.summary.passedCount}개</strong></span></div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><AlertTriangle size={13} color="var(--t2)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--t2)' }}>저신뢰 <strong style={{ color: '#f59e0b' }}>{analysisResult.summary.needsReview}개</strong></span></div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><Search size={13} color="var(--t2)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--t2)' }}>38문항 <strong style={{ color: '#8b5cf6' }}>1:1 개별 분석</strong></span></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><RefreshCw size={13} color="var(--t2)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--t2)' }}>재검사 <strong style={{ color: '#f59e0b' }}>{analysisResult.files.filter(f => f.reInspectionCount > 0).length}개</strong></span></div>
             </div>
           </div>
 
@@ -753,12 +789,12 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
           {analysisResult.files.map((fr, fi) => (
             <div key={fi} style={{ ...TOSS_CARD }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', marginBottom: phaseDetailIndex === fi ? 16 : 0 }} onClick={() => setPhaseDetailIndex(phaseDetailIndex === fi ? -1 : fi)}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}><FileText size={14} color="var(--t2)" strokeWidth={1.5} /><span style={{ fontSize: 13, fontWeight: 700, color: 'var(--t0)' }}>{fr.fileName}</span><span style={{ ...BADGE_BASE, color: fr.phase4.passed ? '#10b981' : '#f59e0b', background: fr.phase4.passed ? 'rgba(16,185,129,0.1)' : 'rgba(245,158,11,0.1)' }}>{fr.phase4.passed ? '✅ 고신뢰' : '⚠️ 저신뢰'}</span></div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}><FileText size={14} color="var(--t2)" strokeWidth={1.5} /><span style={{ fontSize: 13, fontWeight: 700, color: 'var(--t0)' }}>{fr.fileName}</span><span style={{ ...BADGE_BASE, color: fr.phase4.passed ? '#10b981' : '#f59e0b', background: fr.phase4.passed ? 'rgba(16,185,129,0.1)' : 'rgba(245,158,11,0.1)' }}>{fr.phase4.passed ? '고신뢰' : '저신뢰'}</span>{fr.reInspectionCount > 0 && <span style={{ ...BADGE_BASE, color: '#f59e0b', background: 'rgba(245,158,11,0.15)', fontSize: 9 }}>재검사 {fr.reInspectionCount}회 ({fr.originalConfidence}%→{fr.phase4.overallConfidence}%)</span>}</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}><button onClick={(e) => { e.stopPropagation(); setPhaseDetailIndex(phaseDetailIndex === fi ? -1 : fi); }} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--t2)', display: 'flex', padding: 4 }}><Eye size={14} strokeWidth={2} /></button>{phaseDetailIndex === fi ? <ChevronDown size={14} color="var(--t2)" /> : <ChevronRight size={14} color="var(--t2)" />}</div>
               </div>
               {phaseDetailIndex === fi && (
                 <>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, marginBottom: 14 }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 8, marginBottom: 14 }}>
                     {[['P1: 토큰', fr.phase4.c1, '📝'], [fr.subjectType === 'comprehensive' ? 'P2: 격리' : 'P2: LaTeX', fr.phase4.c2, fr.subjectType === 'comprehensive' ? '[B]' : '∑'], ['P3: 코사인', fr.phase4.c3, '📊'], ['P4: 종합', fr.phase4.overallConfidence, '🎯']].map(([label, score, icon], pi) => (
                       <div key={pi} style={{ padding: '10px 12px', borderRadius: 10, background: 'var(--bg3)', textAlign: 'center' }}>
                         <div style={{ fontSize: 18, marginBottom: 4 }}>{icon}</div>
@@ -893,23 +929,47 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
               <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--t0)', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 6 }}>
                 <Search size={14} color="#8b5cf6" strokeWidth={2} /> EJU 종합과목 38문항 정밀 추천 로드맵
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 8 }}>
+              {/* Re-inspection summary */}
+              {analysisResult.files.some(f => f.reInspectionCount > 0) && (
+                <div style={{ padding: '8px 12px', borderRadius: 10, background: 'rgba(245,158,11,0.06)', border: '1px solid rgba(245,158,11,0.15)', marginBottom: 10, display: 'flex', alignItems: 'center', gap: 8, fontSize: 10.5, color: 'var(--t1)' }}>
+                  <RefreshCw size={13} color="#f59e0b" strokeWidth={2} style={{ flexShrink: 0 }} />
+                  <span>자동 재검사 완료: <strong style={{ color: '#f59e0b' }}>{analysisResult.files.filter(f => f.reInspectionCount > 0).length}개 파일</strong>이 80% 미만으로 감지되어 재분석됨
+                    {analysisResult.files.filter(f => f.reInspectionCount > 0).map((f, i) =>
+                      <span key={i}> · {f.fileName}: {f.originalConfidence}%→{f.phase4.overallConfidence}%</span>
+                    )}
+                  </span>
+                </div>
+              )}
+              {/* Domain-level year/part breakdown */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 8 }}>
                 {['geography','history','politics','economy','society'].map(dId => {
                   const fr = analysisResult.files.find(f => f.comprehensiveScan);
                   if (!fr) return null;
                   const ds = fr.comprehensiveScan.domainStats[dId];
                   if (!ds) return null;
                   const DIcon = DOMAIN_ICONS[dId] || Globe;
+                  const yearInfo = fr.phase1?.metadata?.year ? (fr.phase1.metadata.year + '년') : '연도미상';
                   return (
-                    <div key={dId} style={{ padding: '10px 12px', borderRadius: 10, background: `${DOMAIN_COLORS[dId]}08`, border: `1px solid ${DOMAIN_COLORS[dId]}20` }}>
+                    <div key={dId} style={{ padding: '10px 12px', borderRadius: 10, background: DOMAIN_COLORS[dId] + '08', border: '1px solid ' + DOMAIN_COLORS[dId] + '20' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginBottom: 4 }}>
                         <DIcon size={12} color={DOMAIN_COLORS[dId]} strokeWidth={2} />
                         <span style={{ fontSize: 9, fontWeight: 700, color: DOMAIN_COLORS[dId] }}>{DOMAIN_LABELS[dId]}</span>
                       </div>
                       <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 500 }}>{ds.matched}/{ds.total} 문항 매칭</div>
                       <ConfidenceGauge score={ds.coveragePct} size="sm" showLabel={false} />
+                      <div style={{ fontSize: 8, color: 'var(--t3)', marginTop: 3 }}>
+                        평균 신뢰도 {ds.avgConfidence}% · {yearInfo}
+                      </div>
                     </div>
                   );
+                })}
+              </div>
+              {/* Per-question year mapping summary */}
+              <div style={{ marginTop: 10, padding: '8px 12px', borderRadius: 10, background: 'var(--bg3)', border: '1px solid var(--bd0)', fontSize: 10, color: 'var(--t2)', lineHeight: 1.7, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <span>출제 파트: <strong style={{ color: 'var(--t0)' }}>지리(Q1~Q8) · 역사(Q9~Q16) · 정치(Q17~Q24) · 경제(Q25~Q32) · 사회(Q33~Q38)</strong></span>
+                {analysisResult.files.map((f, i) => {
+                  const yr = f.phase1?.metadata?.year;
+                  return yr ? <span key={i}>· {f.fileName}: <strong style={{ color: '#3182f6' }}>{yr}년</strong> | 종합 신뢰도 <strong style={{ color: f.phase4.passed ? '#10b981' : '#f59e0b' }}>{f.phase4.overallConfidence}%</strong></span> : null;
                 })}
               </div>
             </div>

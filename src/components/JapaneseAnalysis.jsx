@@ -140,7 +140,7 @@ export default function JapaneseAnalysis({ exams, onAddNew }) {
       </div>
 
       {/* Summary cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
+      <div className="grid-wrap-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
         {[
           { label: '독해 누적 오답', value: allR.length, color: 'var(--purple)', unit: '개' },
           { label: '독해 오답 문제 수', value: Object.keys(rCounts).length, color: 'var(--purple)', unit: '문제' },
@@ -158,7 +158,7 @@ export default function JapaneseAnalysis({ exams, onAddNew }) {
 
       {/* Worst question alerts */}
       {(worstR || worstL) && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+        <div className="grid-2-mobile" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
           {worstR && (
             <div style={{ ...CARD, display: 'flex', gap: 14, alignItems: 'center', borderColor: 'rgba(168,85,247,0.3)', background: 'rgba(168,85,247,0.05)' }}>
               <div style={{ width: 40, height: 40, borderRadius: 11, background: 'rgba(168,85,247,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -187,7 +187,7 @@ export default function JapaneseAnalysis({ exams, onAddNew }) {
       )}
 
       {/* Heatmaps */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+      <div className="grid-2-mobile" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
         <div style={{ ...CARD }}>
           <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--t0)', marginBottom: 18 }}>독해 오답 히트맵</div>
           <Heatmap title="문제별 오답 횟수 (독해)" color="#a855f7" questions={allR} maxQ={maxRQ} />
@@ -200,7 +200,7 @@ export default function JapaneseAnalysis({ exams, onAddNew }) {
 
       {/* Bar charts */}
       {(topR.length > 0 || topL.length > 0) && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+        <div className="grid-2-mobile" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
           {topR.length > 0 && (
             <div style={{ ...CARD }}>
               <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--t0)', marginBottom: 16 }}>독해 Top {topR.length}</div>

@@ -4,14 +4,17 @@ import { generateDiagnosis, getDday } from '../utils/diagnosis';
 import { COMP_MAX, normalizeJapaneseScore, normalizeCompScore } from '../utils/storage';
 import { predictGoalDate } from '../utils/scorePrediction';
 import {
+  getStudyStreak, getStudyConsistency, detectBurnoutRisk,
+  getAchievementProbability, generateQuickInsight,
+} from '../utils/analytics';
+import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
   Legend, ResponsiveContainer, ReferenceLine,
 } from 'recharts';
 import {
   BookOpen, Plus, AlertTriangle, Headphones, Trophy,
   CalendarDays, ArrowLeftRight, Target, CheckCircle2,
-  AlertCircle, Info, TrendingUp, TrendingDown, Minus,
-  ClipboardList, BookMarked,
+  AlertCircle, Info, ClipboardList, Flame, Activity, Sparkles,
 } from 'lucide-react';
 
 // ── Utilities ────────────────────────────────────────
@@ -385,6 +388,12 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
     };
   }, [exams, threshold]);
 
+  const streak      = useMemo(() => getStudyStreak(exams),          [exams]);
+  const consistency = useMemo(() => getStudyConsistency(exams, 3),  [exams]);
+  const burnout     = useMemo(() => detectBurnoutRisk(exams),        [exams]);
+  const achProb     = useMemo(() => getAchievementProbability(exams, tJap, tComp), [exams, tJap, tComp]);
+  const insight     = useMemo(() => generateQuickInsight(exams, settings), [exams, settings]);
+
   const chartData = useMemo(() => {
     const data = exams.map(e => {
       const japNorm = e.japanese ? normalizeJapaneseScore(e.japanese) : null;
@@ -555,6 +564,162 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
       {/* 오답 누적 경고 */}
       <AlertBanner reading={alerts.reading} listening={alerts.listening} threshold={threshold} />
 
+      {/* ── 학습 상태 위젯 행 ── */}
+      <div className="grid-wrap-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12 }}>
+        {/* 스트릭 */}
+        <div style={{
+          ...CARD, display: 'flex', alignItems: 'center', gap: 12,
+          transition: 'transform 0.2s, box-shadow 0.2s',
+        }}
+          onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = 'var(--card-shadow-hover)'; }}
+          onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'var(--card-shadow)'; }}
+        >
+          <div style={{
+            width: 40, height: 40, borderRadius: 12, flexShrink: 0,
+            background: 'rgba(245,147,78,0.12)', border: '1px solid rgba(245,147,78,0.25)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <Flame size={18} color="var(--orange)" strokeWidth={1.8} />
+          </div>
+          <div>
+            <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 3 }}>연속 학습</div>
+            <div style={{ fontSize: 22, fontWeight: 800, color: 'var(--orange)', letterSpacing: '-0.5px' }}>
+              {streak.current}<span style={{ fontSize: 12, fontWeight: 400, color: 'var(--t2)', marginLeft: 3 }}>개월</span>
+            </div>
+            <div style={{ fontSize: 10, color: 'var(--t3)', marginTop: 1 }}>최고 {streak.best}개월</div>
+          </div>
+        </div>
+
+        {/* 일관성 */}
+        <div style={{
+          ...CARD, display: 'flex', alignItems: 'center', gap: 12,
+          transition: 'transform 0.2s, box-shadow 0.2s',
+        }}
+          onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = 'var(--card-shadow-hover)'; }}
+          onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'var(--card-shadow)'; }}
+        >
+          <div style={{
+            width: 40, height: 40, borderRadius: 12, flexShrink: 0,
+            background: 'rgba(107,163,255,0.12)', border: '1px solid rgba(107,163,255,0.25)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <Activity size={18} color="var(--blue)" strokeWidth={1.8} />
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 3 }}>학습 일관성</div>
+            <div style={{ fontSize: 22, fontWeight: 800, color: 'var(--blue)', letterSpacing: '-0.5px' }}>
+              {consistency}<span style={{ fontSize: 12, fontWeight: 400, color: 'var(--t2)', marginLeft: 1 }}>%</span>
+            </div>
+            <div style={{ height: 3, background: 'var(--bg3)', borderRadius: 2, overflow: 'hidden', marginTop: 4 }}>
+              <div style={{ height: '100%', width: `${consistency}%`, background: 'var(--blue)', borderRadius: 2, transition: 'width 0.5s' }} />
+            </div>
+          </div>
+        </div>
+
+        {/* 번아웃 리스크 */}
+        <div style={{
+          ...CARD, display: 'flex', alignItems: 'center', gap: 12,
+          borderColor: burnout.risk === 'high' ? 'rgba(239,68,68,0.35)' : 'var(--card-border)',
+          transition: 'transform 0.2s, box-shadow 0.2s',
+        }}
+          onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = 'var(--card-shadow-hover)'; }}
+          onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'var(--card-shadow)'; }}
+        >
+          <div style={{
+            width: 40, height: 40, borderRadius: 12, flexShrink: 0,
+            background: burnout.risk === 'high' ? 'rgba(239,68,68,0.12)' : burnout.risk === 'medium' ? 'rgba(245,158,11,0.1)' : 'rgba(16,185,129,0.1)',
+            border: `1px solid ${burnout.risk === 'high' ? 'rgba(239,68,68,0.3)' : burnout.risk === 'medium' ? 'rgba(245,158,11,0.25)' : 'rgba(16,185,129,0.25)'}`,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <AlertTriangle size={18}
+              color={burnout.risk === 'high' ? 'var(--red)' : burnout.risk === 'medium' ? 'var(--yellow)' : 'var(--green)'}
+              strokeWidth={1.8}
+            />
+          </div>
+          <div>
+            <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 3 }}>번아웃 리스크</div>
+            <div style={{
+              fontSize: 16, fontWeight: 800,
+              color: burnout.risk === 'high' ? 'var(--red)' : burnout.risk === 'medium' ? 'var(--yellow)' : 'var(--green)',
+            }}>
+              {burnout.risk === 'high' ? '주의 필요' : burnout.risk === 'medium' ? '보통' : '안정'}
+            </div>
+            {burnout.reasons[0] && (
+              <div style={{ fontSize: 10, color: 'var(--t3)', marginTop: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: 100 }}>
+                {burnout.reasons[0]}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* 목표 달성 확률 */}
+        <div style={{
+          ...CARD, display: 'flex', alignItems: 'center', gap: 12,
+          transition: 'transform 0.2s, box-shadow 0.2s',
+        }}
+          onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = 'var(--card-shadow-hover)'; }}
+          onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'var(--card-shadow)'; }}
+        >
+          <div style={{
+            width: 40, height: 40, borderRadius: 12, flexShrink: 0,
+            background: 'rgba(164,110,245,0.12)', border: '1px solid rgba(164,110,245,0.25)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <Target size={18} color="var(--purple)" strokeWidth={1.8} />
+          </div>
+          <div>
+            <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 3 }}>목표 달성 확률</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--t0)', lineHeight: 1.4 }}>
+              {achProb.japanese != null
+                ? <span>일어 <span style={{ color: 'var(--blue)' }}>{achProb.japanese}%</span></span>
+                : <span style={{ color: 'var(--t3)' }}>—</span>
+              }
+            </div>
+            <div style={{ fontSize: 12, color: 'var(--t2)', marginTop: 1 }}>
+              {achProb.comprehensive != null
+                ? <span>종합 <span style={{ color: 'var(--green)' }}>{achProb.comprehensive}%</span></span>
+                : null
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* AI 인사이트 배너 */}
+      {insight && (
+        <div style={{
+          ...CARD,
+          padding: '16px 20px',
+          background: insight.type === 'success' ? 'rgba(16,185,129,0.06)'
+                    : insight.type === 'warning' ? 'rgba(239,68,68,0.06)'
+                    : 'rgba(107,163,255,0.06)',
+          borderColor: insight.type === 'success' ? 'rgba(16,185,129,0.25)'
+                     : insight.type === 'warning' ? 'rgba(239,68,68,0.25)'
+                     : 'rgba(107,163,255,0.2)',
+          display: 'flex', alignItems: 'center', gap: 14,
+        }}>
+          <div style={{
+            width: 38, height: 38, borderRadius: 11, flexShrink: 0,
+            background: insight.type === 'success' ? 'rgba(16,185,129,0.15)'
+                      : insight.type === 'warning' ? 'rgba(239,68,68,0.12)'
+                      : 'rgba(107,163,255,0.12)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <Sparkles size={17}
+              color={insight.type === 'success' ? 'var(--green)' : insight.type === 'warning' ? 'var(--red)' : 'var(--blue)'}
+              strokeWidth={1.8}
+            />
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{
+              fontSize: 13, fontWeight: 700, marginBottom: 3,
+              color: insight.type === 'success' ? 'var(--green)' : insight.type === 'warning' ? 'var(--red)' : 'var(--blue)',
+            }}>{insight.title}</div>
+            <div style={{ fontSize: 12, color: 'var(--t2)', lineHeight: 1.6 }}>{insight.body}</div>
+          </div>
+        </div>
+      )}
+
       {/* 약점 자동 진단 */}
       {diagnosis.length > 0 && (
         <div style={{ ...CARD, padding: 20 }}>
@@ -600,7 +765,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
       </div>
 
       {/* 목표 진행 */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+      <div className="grid-2-mobile" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
         {[
           { label: '일본어 목표까지', cur: latestJap, target: tJap, color: 'var(--blue)', hexColor: '#5b9eff', max: 370, goalDate: goalDateJap },
           { label: '종합과목 목표까지', cur: latestComp, target: tComp, color: 'var(--green)', hexColor: '#10d98c', max: COMP_MAX, goalDate: goalDateComp },
@@ -659,7 +824,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
 
       {/* 차트 */}
       {exams.length >= 2 && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+        <div className="grid-2-mobile" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
           {/* 일본어 차트 */}
           <div style={{ ...CARD }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
@@ -738,7 +903,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
       <GoalTimeline exams={exams} tJap={tJap} tComp={tComp} />
 
       {/* 최고 기록 */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+      <div className="grid-2-mobile" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
         {[
           { label: '일본어 최고 기록', value: bestJap, max: 370, color: 'var(--blue)', hex: '#5b9eff' },
           { label: '종합과목 최고 기록', value: bestComp, max: COMP_MAX, color: 'var(--green)', hex: '#10d98c' },
