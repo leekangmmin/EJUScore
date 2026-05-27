@@ -10,6 +10,7 @@ import AICoach from './components/AICoach';
 import DailyTasks from './components/DailyTasks';
 import EJU20YearTrend from './components/EJU20YearTrend';
 import DiagnosticReport from './components/DiagnosticReport';
+import TrendDashboard from './components/TrendDashboard';
 import SettingsPanel from './components/SettingsPanel';
 import ErrorBoundary from './components/ErrorBoundary';
 import InstallGuide from './components/InstallGuide';
@@ -229,6 +230,12 @@ export default function App() {
         return (
           <ErrorBoundary fallbackMessage="오답 진단 화면을 불러오는 중 오류가 발생했어요.">
             <DiagnosticReport exams={exams} />
+          </ErrorBoundary>
+        );
+      case 'trend-insights':
+        return (
+          <ErrorBoundary fallbackMessage="출제 경향 화면을 불러오는 중 오류가 발생했어요.">
+            <TrendDashboard />
           </ErrorBoundary>
         );
       case 'trend':
