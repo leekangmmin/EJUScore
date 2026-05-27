@@ -1,0 +1,56 @@
+# Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
+# GitHub Pages에 PWA 배포 → 아이폰/안드로이드/모든 브라우저에서 설치 가능
+name: PWA Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      # PWA 모드로 빌드 (base: /EJUScore/)
+      - run: npm run build
+        env:
+          MODE: production
+
+      # GitHub Pages에 필요한 .nojekyll 파일 (파일명이 _로 시작해도 배포되도록)
+      - run: touch dist/.nojekyll
+
+      # Service Worker를 GitHub Pages에서도 동작하도록 설정
+      - name: Copy PWA assets to dist
+        run: |
+          cp public/manifest.json dist/manifest.json
+          cp public/sw.js dist/sw.js
+          cp public/icon-192.png dist/icon-192.png
+          cp public/icon-512.png dist/icon-512.png
+          cp public/favicon.svg dist/favicon.svg
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
