@@ -1,0 +1,8 @@
+# ── EJU Score Tracker — robots.txt ──
+# 모든 검색 로봇의 크롤링을 허용합니다.
+# Sitemap 위치를 알려줍니다.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://leekangmmin.github.io/EJUScore/sitemap.xml

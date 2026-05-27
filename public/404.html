@@ -1,0 +1,21 @@
+<!doctype html>
+<!--
+  EJU Score Tracker — GitHub Pages SPA Redirect (404 → index.html)
+  GitHub Pages는 SPA 라우팅을 지원하지 않으므로,
+  알 수 없는 경로는 모두 index.html로 리디렉트합니다.
+-->
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJU Score Tracker — 리디렉트</title>
+    <script>
+      // GitHub Pages SPA fallback: 404가 발생하면 /EJUScore/로 리디렉트
+      sessionStorage.redirect = location.href;
+      location.replace('/EJUScore/');
+    </script>
+  </head>
+  <body>
+    <p>리디렉트 중...</p>
+  </body>
+</html>
