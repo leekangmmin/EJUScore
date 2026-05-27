@@ -77,10 +77,11 @@
     <meta property="og:url" content="https://leekangmmin.github.io/EJUScore/" />
     <meta property="og:title" content="EJU Score Tracker — EJU 모의고사 점수 AI 분석 · 일본유학시험 합격 전략 앱" />
     <meta property="og:description" content="EJU(일본유학시험) 모의고사 점수 추적, 오답 AI 진단, 20개년 기출 트렌드 분석, 성장률 그래프, D-day 알림. 무료 오픈소스 PWA. 아이폰/안드로이드/PC에서 사용 가능." />
-    <meta property="og:image" content="https://leekangmmin.github.io/EJUScore/icon-512.png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
-    <meta property="og:image:alt" content="EJU Score Tracker — EJU 모의고사 점수 AI 분석 앱 아이콘" />
+    <meta property="og:image" content="https://leekangmmin.github.io/EJUScore/app-cover.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="EJU Score Tracker — EJU 모의고사 점수 AI 분석 앱 프리미엄 커버" />
+    <meta property="og:image:type" content="image/svg+xml" />
     <meta property="og:locale" content="ko_KR" />
 
     <!-- ── Twitter Card ── -->
@@ -88,8 +89,8 @@
     <meta name="twitter:url" content="https://leekangmmin.github.io/EJUScore/" />
     <meta name="twitter:title" content="EJU Score Tracker — EJU 모의고사 점수 AI 분석 앱" />
     <meta name="twitter:description" content="EJU(일본유학시험) 모의고사 점수 추적 · 오답 AI 진단 · 성장률 그래프 · 20개년 기출 트렌드 분석. 무료 오픈소스 PWA." />
-    <meta name="twitter:image" content="https://leekangmmin.github.io/EJUScore/icon-512.png" />
-    <meta name="twitter:image:alt" content="EJU Score Tracker 앱 아이콘" />
+    <meta name="twitter:image" content="https://leekangmmin.github.io/EJUScore/app-cover.svg" />
+    <meta name="twitter:image:alt" content="EJU Score Tracker — EJU 모의고사 점수 AI 분석 앱 프리미엄 커버" />
 
     <!-- ── Search Console (소유권 인증 — 직접 등록 후 주석 해제) ── -->
     <!-- Google: https://search.google.com/search-console -->
@@ -316,14 +317,44 @@
          REACT APP MOUNT POINT
          ════════════════════════════════════════════════ -->
     <div id="root">
-      <!-- 초기 로딩 상태 — JS 실행 전에도 표시 -->
-      <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #0a0a14; color: #cdd6f4; font-family: sans-serif; flex-direction: column; gap: 16px;">
-        <div style="width: 48px; height: 48px; border: 3px solid rgba(79,142,247,0.15); border-top-color: #4f8ef7; border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
-        <div style="font-size: 14px; font-weight: 600; letter-spacing: -0.01em;">EJU Score Tracker 로딩 중...</div>
-        <div style="font-size: 11px; color: #6c7086;">EJU 모의고사 점수 AI 분석 앱</div>
+      <!-- 프리미엄 로딩 스플래시 — JS 실행 전 표시 -->
+      <div class="eju-splash">
+        <div class="splash-inner">
+          <div class="splash-logo-wrap">
+            <div class="splash-logo-glow"></div>
+            <div class="splash-logo">
+              <svg width="32" height="32" viewBox="0 0 30 30" fill="none">
+                <path d="M0,20 L0,10 L15,2 L30,10 L30,20" stroke="url(#splashBrand)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+                <path d="M0,10 L15,2 L30,10" fill="url(#splashBrand)" opacity="0.15"/>
+                <path d="M30,10 L23,7 L21,20" stroke="rgba(255,255,255,0.35)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <div class="splash-brand">
+            <span class="splash-eju">EJU</span>
+            <span class="splash-tracker">SCORE TRACKER</span>
+          </div>
+          <div class="splash-loader">
+            <div class="splash-loader-bar"></div>
+          </div>
+          <div class="splash-tag">일본유학시험 · AI 분석 · 기출 트렌드</div>
+        </div>
       </div>
       <style>
         @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes splashPulse { 0%,100%{opacity:0.3} 50%{opacity:0.8} }
+        @keyframes splashSlide { 0%{transform:translateX(-100%)} 100%{transform:translateX(400%)} }
+        .eju-splash{display:flex;align-items:center;justify-content:center;min-height:100vh;min-height:100dvh;background:#07080f;color:#e8eaf6;font-family:system-ui,-apple-system,sans-serif;flex-direction:column;gap:16px;background-image:radial-gradient(ellipse 55% 35% at 15% 20%,rgba(107,163,255,0.07) 0%,transparent 60%),radial-gradient(ellipse 45% 35% at 85% 80%,rgba(164,110,245,0.05) 0%,transparent 60%)}
+        .splash-inner{display:flex;flex-direction:column;align-items:center;gap:24px}
+        .splash-logo-wrap{position:relative;width:72px;height:72px}
+        .splash-logo-glow{position:absolute;inset:-8px;background:linear-gradient(135deg,#6ba3ff,#a46ef5);border-radius:24px;filter:blur(12px);opacity:0.25;animation:splashPulse 2.4s ease-in-out infinite}
+        .splash-logo{width:72px;height:72px;border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;position:relative;backdrop-filter:blur(8px);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+        .splash-brand{display:flex;flex-direction:column;align-items:center;gap:4px}
+        .splash-eju{font-size:42px;font-weight:800;letter-spacing:-2px;background:linear-gradient(135deg,#6ba3ff,#a46ef5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .splash-tracker{font-size:13px;font-weight:600;letter-spacing:8px;color:rgba(255,255,255,0.3)}
+        .splash-loader{width:160px;height:3px;border-radius:3px;background:rgba(255,255,255,0.06);overflow:hidden;margin-top:4px}
+        .splash-loader-bar{height:100%;width:25%;border-radius:3px;background:linear-gradient(90deg,#6ba3ff,#a46ef5);animation:splashSlide 1.2s ease-in-out infinite}
+        .splash-tag{font-size:12px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,0.12);margin-top:4px}
       </style>
     </div>
 

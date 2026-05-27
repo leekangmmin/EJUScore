@@ -13,8 +13,12 @@ import {
 } from 'lucide-react';
 import katex from 'katex';
 import Tesseract from 'tesseract.js';
+import * as pdfjsLib from 'pdfjs-dist';
 
-/* ── Real OCR Engine (Tesseract.js) ───────────────────────────── */
+// PDF.js worker — CDN 기반 (Electron/브라우저 모두 호환)
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@5.7.284/build/pdf.worker.min.mjs';
+
+/* ── Real OCR Engine (Tesseract.js + PDF.js) ───────────────────── */
 let _ocrWorker = null;
 let _ocrWorkerPromise = null;
 
@@ -45,6 +49,53 @@ async function performOCR(file, onProgress) {
     return data;
   } catch (err) {
     console.warn('[OCR] Tesseract recognition failed:', err);
+    return null;
+  }
+}
+
+/* ── PDF OCR Engine (pdfjs-dist + Tesseract.js fallback) ────────── */
+async function performPDFOCR(file, onProgress) {
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    const numPages = pdf.numPages;
+    const allPageTexts = [];
+
+    for (let i = 1; i <= numPages; i++) {
+      const page = await pdf.getPage(i);
+      // Try native text extraction first (digital PDFs)
+      const textContent = await page.getTextContent();
+      const pageText = textContent.items.map(item => item.str).join(' ').trim();
+
+      if (pageText.length > 30) {
+        // Digital PDF: use extracted text directly
+        allPageTexts.push(pageText);
+        if (onProgress) onProgress((i / numPages) * 100);
+      } else {
+        // Scanned PDF: render page to canvas and run Tesseract OCR
+        const viewport = page.getViewport({ scale: 2.0 });
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        const ctx = canvas.getContext('2d');
+        await page.render({ canvasContext: ctx, viewport }).promise;
+        // Run Tesseract on rendered page image
+        const worker = await getOCRWorker();
+        const { data } = await worker.recognize(canvas, {
+          logger: m => { if (m.status === 'recognizing text' && onProgress) onProgress(((i - 1 + m.progress) / numPages) * 100); }
+        });
+        if (data && data.text && data.text.trim().length > 5) {
+          allPageTexts.push(data.text.trim());
+        }
+        if (onProgress) onProgress((i / numPages) * 100);
+      }
+    }
+
+    const combinedText = allPageTexts.join('\n').trim();
+    if (combinedText.length < 10) return null;
+    return { text: combinedText, numPages, isScanned: allPageTexts.every(t => t.length <= 30) };
+  } catch (err) {
+    console.warn('[PDF OCR] Failed:', err);
     return null;
   }
 }
@@ -153,7 +204,19 @@ async function pipelinePhase1(fileName, fileObj) {
     try {
       const result = await performOCR(fileObj);
       if (result && result.text && result.text.trim().length > 10) {
-        const realTokens = result.text.split(/[\s\n\r,。、（）()\[\]【】「」"'\-_\u3000]+/).filter(Boolean);
+        const realTokens = result.text.split(/[\s\n\r,。、（）()\[\]【】「」\"'\-_\u3000]+/).filter(Boolean);
+        ocrContent = realTokens.length > 5 ? realTokens : generateOCRContent(extracted);
+      } else {
+        ocrContent = generateOCRContent(extracted);
+      }
+    } catch { ocrContent = generateOCRContent(extracted); }
+  } else if (fileObj && /\.pdf$/i.test(fileName)) {
+    // PDF: use pdfjs-dist for text extraction + Tesseract OCR for scanned pages
+    try {
+      const pdfResult = await performPDFOCR(fileObj, (pct) => {});
+      if (pdfResult && pdfResult.text && pdfResult.text.trim().length > 10) {
+        const isScanned = pdfResult.isScanned || false;
+        const realTokens = pdfResult.text.split(/[\s\n\r,。、（）()\[\]【】「」\"'\-_\u3000]+/).filter(Boolean);
         ocrContent = realTokens.length > 5 ? realTokens : generateOCRContent(extracted);
       } else {
         ocrContent = generateOCRContent(extracted);
@@ -169,7 +232,8 @@ async function pipelinePhase1(fileName, fileObj) {
   const kanjiBonus = Math.min(0.1, metadata.kanjiCount * 0.02);
   const confidence = Math.round(Math.min(99, (tokenRichness * 45 + hasClearSubject * 35 + hasYearBonus * 10 + kanjiBonus * 10) * 100));
   const isRealOcr = fileObj && /\.(jpg|jpeg|png|webp)$/i.test(fileName);
-  return { fileName, tokens: ocrContent, metadata, subjectType: metadata.subjectType, hasKanji: metadata.kanjiCount > 0, hasGraph: tokens.some(t => /graph|図|그래프|chart|plot/i.test(t)), hasTable: tokens.some(t => /table|表|표|matrix/i.test(t)), lineCount: Math.round(50 + ocrContent.length * 3.5), kanjiCount: metadata.kanjiCount + Math.round(ocrContent.filter(t => /[\u4e00-\u9fff]/.test(t)).length * 0.7), tokenCount: ocrContent.length, confidence, ocrSource: isRealOcr ? 'Tesseract.js' : '시뮬레이션', ocrRawText: isRealOcr ? ocrContent.slice(0, 100).join(' ') : '' };
+  const isPdfOcr = fileObj && /\.pdf$/i.test(fileName);
+  return { fileName, tokens: ocrContent, metadata, subjectType: metadata.subjectType, hasKanji: metadata.kanjiCount > 0, hasGraph: tokens.some(t => /graph|図|그래프|chart|plot/i.test(t)), hasTable: tokens.some(t => /table|表|표|matrix/i.test(t)), lineCount: Math.round(50 + ocrContent.length * 3.5), kanjiCount: metadata.kanjiCount + Math.round(ocrContent.filter(t => /[\u4e00-\u9fff]/.test(t)).length * 0.7), tokenCount: ocrContent.length, confidence, ocrSource: isPdfOcr ? 'PDF.js+Tesseract' : (isRealOcr ? 'Tesseract.js' : '시뮬레이션'), ocrRawText: (isRealOcr || isPdfOcr) ? ocrContent.slice(0, 100).join(' ') : '' };
 }
 
 async function pipelinePhase2(phase1Result) {
@@ -546,7 +610,9 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
           addLog('SAT Phase1 ' + totalFiles + ' ' + fileEntry.name + ' - 다국어 레이아웃 파싱 (토큰: ' + fileTokenData.tokens.length + '개)', 'phase1');
           await new Promise(r => setTimeout(r, 0));
           const phase1 = await pipelinePhase1(fileEntry.name, fileEntry.file);
-          const ocrSource = fileEntry.file && /\.(jpg|jpeg|png|webp)$/i.test(fileEntry.name) ? 'Tesseract.js' : '시뮬레이션';
+          const isImgOcr = fileEntry.file && /\.(jpg|jpeg|png|webp)$/i.test(fileEntry.name);
+          const isPdfFile = fileEntry.file && /\.pdf$/i.test(fileEntry.name);
+          const ocrSource = isPdfFile ? 'PDF.js+Tesseract' : (isImgOcr ? 'Tesseract.js' : '시뮬레이션');
           setFiles(prev => prev.map((f, i) => i === fileIndex ? { ...f, progress: 25, currentStep: 0 } : f));
           setOverallProgress(Math.round((fileIndex / totalFiles) * 100 + (1 / totalFiles) * 25));
           addLog('OK Phase1 ' + fileEntry.name + ' - ' + (phase1.subjectType === 'math' ? '수학' : phase1.subjectType === 'comprehensive' ? '종합과목' : '혼합') + ' 감지 | 신뢰도 ' + phase1.confidence + '% (OCR: ' + ocrSource + ' | 토큰 ' + phase1.tokens.length + '개)', 'phase1')

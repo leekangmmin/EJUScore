@@ -15,6 +15,7 @@ import {
   BookOpen, Plus, AlertTriangle, Headphones, Trophy,
   CalendarDays, ArrowLeftRight, Target, CheckCircle2,
   AlertCircle, Info, ClipboardList, Flame, Activity, Sparkles,
+  Search, Globe, Landmark, Banknote, Users, Layers, FileText,
 } from 'lucide-react';
 
 // ── Utilities ────────────────────────────────────────
@@ -338,7 +339,13 @@ function GoalTimeline({ exams, tJap, tComp }) {
 export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddNew, settings }) {
   const [confirmDelete, setConfirmDelete] = useState(null);
   const [showCompare, setShowCompare]     = useState(false);
-  const [recordFilter, setRecordFilter]   = useState('all'); // 'all'|'exam'|'workbook'
+  const [recordFilter, setRecordFilter]   = useState('all');
+  const [ocrAnalysis, setOcrAnalysis] = useState(() => {
+    try {
+      const d = localStorage.getItem('eju_ocr_analysis');
+      return d ? JSON.parse(d) : null;
+    } catch { return null; }
+  }); // 'all'|'exam'|'workbook'
   const tJap = settings.targetJapanese ?? 320;
   const tComp = settings.targetComprehensive ?? 170;
   const threshold = settings.alertThreshold ?? 3;
@@ -485,13 +492,182 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
 
+      {/* OCR 분석 결과 카드 */}
+      {ocrAnalysis && (() => {
+        const fs = ocrAnalysis.files || [];
+        const sm = ocrAnalysis.summary || {};
+        const totalFiles = fs.length;
+        const avgConf = sm.avgConfidence || 0;
+        const hasComprehensive = fs.some(f => f.subjectType === 'comprehensive' && f.comprehensiveScan);
+        const compScan = fs.find(f => f.comprehensiveScan);
+        const domainColors = { geography: '#3b82f6', history: '#a855f7', politics: '#ef4444', economy: '#10b981', society: '#f59e0b' };
+        const domainNames = { geography: '지리', history: '역사', politics: '정치', economy: '경제', society: '사회' };
+        const domainIcons = { geography: Globe, history: BookOpen, politics: Landmark, economy: Banknote, society: Users };
+
+        return (
+          <div style={{
+            ...CARD,
+            borderColor: avgConf >= 80 ? 'rgba(16,185,129,0.25)' : 'rgba(245,158,11,0.25)',
+            background: avgConf >= 80 ? 'rgba(16,185,129,0.04)' : 'rgba(245,158,11,0.04)',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <div style={{
+                  width: 40, height: 40, borderRadius: 12,
+                  background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(59,130,246,0.15))',
+                  border: '1px solid rgba(99,102,241,0.25)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <Search size={18} color="#818cf8" strokeWidth={1.8} />
+                </div>
+                <div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)' }}>AI OCR 분류 엔진 — 분석 리포트</div>
+                  <div style={{ fontSize: 11, color: 'var(--t2)', marginTop: 2 }}>
+                    {totalFiles}개 파일 · 평균 신뢰도 {avgConf}%
+                    {ocrAnalysis.analyzedAt && ` · ${new Date(ocrAnalysis.analyzedAt).toLocaleDateString('ko-KR', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })} 분석`}
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={() => { setOcrAnalysis(null); try { localStorage.removeItem('eju_ocr_analysis'); } catch {} }}
+                style={{
+                  background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)',
+                  borderRadius: 8, padding: '4px 12px', fontSize: 11, fontWeight: 600,
+                  cursor: 'pointer', fontFamily: 'inherit', color: 'var(--red)',
+                  transition: 'all 0.15s',
+                }}
+                onMouseEnter={e => { e.target.style.background = 'rgba(239,68,68,0.15)'; }}
+                onMouseLeave={e => { e.target.style.background = 'rgba(239,68,68,0.08)'; }}
+              >분석 제거</button>
+            </div>
+
+            {/* 평균 신뢰도 게이지 */}
+            <div style={{ display: 'flex', gap: 16, marginBottom: 16, flexWrap: 'wrap' }}>
+              <div style={{ flex: 1, minWidth: 200 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: 'var(--t2)', marginBottom: 5 }}>
+                  <span>평균 신뢰도</span>
+                  <span style={{ fontWeight: 700, color: avgConf >= 80 ? 'var(--green)' : avgConf >= 60 ? 'var(--yellow)' : 'var(--red)' }}>{avgConf}%</span>
+                </div>
+                <div style={{ height: 8, background: 'var(--bg3)', borderRadius: 5, overflow: 'hidden' }}>
+                  <div style={{
+                    height: '100%', width: `${avgConf}%`, borderRadius: 5,
+                    background: avgConf >= 80
+                      ? 'linear-gradient(90deg, #10b981, #34d399)'
+                      : avgConf >= 60
+                        ? 'linear-gradient(90deg, #f59e0b, #fbbf24)'
+                        : 'linear-gradient(90deg, #ef4444, #f87171)',
+                    transition: 'width 0.7s cubic-bezier(.4,0,.2,1)',
+                  }} />
+                </div>
+              </div>
+              {compScan && compScan.comprehensiveScan && (
+                <div style={{ flex: 1, minWidth: 200 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: 'var(--t2)', marginBottom: 5 }}>
+                    <span>종합과목 38문항 스캔 커버리지</span>
+                    <span style={{ fontWeight: 700, color: 'var(--blue)' }}>{compScan.comprehensiveScan.weightedScanCoverage?.toFixed(0) || compScan.comprehensiveScan.scanCoverage}%</span>
+                  </div>
+                  <div style={{ height: 8, background: 'var(--bg3)', borderRadius: 5, overflow: 'hidden' }}>
+                    <div style={{
+                      height: '100%', width: `${compScan.comprehensiveScan.weightedScanCoverage || compScan.comprehensiveScan.scanCoverage}%`, borderRadius: 5,
+                      background: 'linear-gradient(90deg, #6366f1, #3b82f6)',
+                      transition: 'width 0.7s cubic-bezier(.4,0,.2,1)',
+                    }} />
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* 파일별 요약 */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 14 }}>
+              {fs.slice(0, 5).map((f, i) => (
+                <div key={i} style={{
+                  display: 'flex', alignItems: 'center', gap: 10,
+                  padding: '8px 12px', background: 'var(--bg3)', borderRadius: 10,
+                  border: '1px solid var(--bd0)',
+                }}>
+                  <FileText size={13} color="var(--t2)" strokeWidth={1.8} style={{ flexShrink: 0 }} />
+                  <span style={{ fontSize: 12, color: 'var(--t0)', fontWeight: 600, flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    {f.fileName}
+                  </span>
+                  <span style={{
+                    fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 5,
+                    color: f.phase4.passed ? 'var(--green)' : 'var(--yellow)',
+                    background: f.phase4.passed ? 'rgba(16,185,129,0.12)' : 'rgba(245,158,11,0.12)',
+                  }}>{f.phase4.overallConfidence}%</span>
+                  {f.subjectType === 'comprehensive' && (
+                    <Globe size={12} color="#3b82f6" strokeWidth={1.8} style={{ flexShrink: 0 }} />
+                  )}
+                  {f.subjectType === 'math' && (
+                    <Layers size={12} color="#a855f7" strokeWidth={1.8} style={{ flexShrink: 0 }} />
+                  )}
+                </div>
+              ))}
+              {fs.length > 5 && (
+                <div style={{ fontSize: 11, color: 'var(--t3)', textAlign: 'center', padding: '4px 0' }}>
+                  외 {fs.length - 5}개 파일
+                </div>
+              )}
+            </div>
+
+            {/* 도메인별 브레이크다운 (종합과목 있을 때) */}
+            {hasComprehensive && compScan?.comprehensiveScan?.domainStats && (() => {
+              const ds = compScan.comprehensiveScan.domainStats;
+              const domainKeys = ['geography','history','politics','economy','society'];
+              return (
+                <div>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--t2)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                    종합과목 도메인 커버리지
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: 6 }}>
+                    {domainKeys.map(dk => {
+                      const d = ds[dk];
+                      if (!d) return null;
+                      const IconComp = domainIcons[dk];
+                      const color = domainColors[dk];
+                      const wCoverage = d.weightCoverage ?? d.coveragePct ?? 0;
+                      const matchedQuestions = d.matched || 0;
+                      const totalQuestions = d.total || 0;
+                      return (
+                        <div key={dk} style={{
+                          padding: '10px 12px', background: 'var(--bg3)', borderRadius: 10,
+                          border: '1px solid var(--bd0)',
+                        }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 6 }}>
+                            {IconComp && <IconComp size={12} color={color} strokeWidth={1.8} />}
+                            <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--t0)' }}>{domainNames[dk]}</span>
+                          </div>
+                          <div style={{ fontSize: 18, fontWeight: 800, color, letterSpacing: '-0.5px' }}>
+                            {matchedQuestions}<span style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 400 }}>/{totalQuestions}</span>
+                          </div>
+                          <div style={{ height: 4, background: 'var(--bg2)', borderRadius: 3, overflow: 'hidden', marginTop: 6 }}>
+                            <div style={{ height: '100%', width: `${wCoverage}%`, borderRadius: 3, background: color, transition: 'width 0.5s' }} />
+                          </div>
+                          <div style={{ fontSize: 9, color: 'var(--t3)', marginTop: 3 }}>커버리지 {wCoverage}%</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* 꼬리 링크 */}
+            <div style={{ marginTop: 14, display: 'flex', justifyContent: 'flex-end' }}>
+              <span style={{ fontSize: 11, color: 'var(--blue)', fontWeight: 600, opacity: 0.7 }}>
+                자세한 분석은 '기출 트렌드' 탭에서 확인하세요
+              </span>
+            </div>
+          </div>
+        );
+      })()}
+
       {/* D-day 배너 */}
       {dday !== null && (
         <div style={{
           borderRadius: 22, padding: '22px 28px',
           background: `linear-gradient(135deg, ${ddayColor}1a, ${ddayColor}07)`,
           border: `1px solid ${ddayColor}4a`,
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16,
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap',
           boxShadow: `0 6px 32px ${ddayColor}18, inset 0 1px 0 rgba(255,255,255,0.06)`,
           backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
           position: 'relative', overflow: 'hidden',
@@ -503,7 +679,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
             background: `radial-gradient(circle, ${ddayColor}20 0%, transparent 70%)`,
             pointerEvents: 'none',
           }} />
-          <div style={{ display: 'flex', alignItems: 'center', gap: 18, zIndex: 1 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 18, zIndex: 1, flexWrap: 'wrap' }}>
             <div style={{
               width: 52, height: 52, borderRadius: 16,
               background: `${ddayColor}22`, border: `1px solid ${ddayColor}44`,
@@ -525,7 +701,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
               )}
             </div>
           </div>
-          <div style={{ textAlign: 'right', zIndex: 1 }}>
+          <div style={{ textAlign: 'right', zIndex: 1, paddingLeft: 52 }}>
             <div style={{
               fontSize: 50, fontWeight: 900, letterSpacing: '-3px', lineHeight: 1,
               background: `linear-gradient(135deg, ${ddayColor}, ${ddayColor}cc)`,
@@ -536,16 +712,16 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
       )}
 
       {/* 헤더 */}
-      <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>
+      <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
         <div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: 'var(--t0)', letterSpacing: '-0.5px' }}>대시보드</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: 'var(--t0)', letterSpacing: '-0.5px', lineHeight: 1.2 }}>대시보드</h1>
           <div style={{ color: 'var(--t2)', fontSize: 13, marginTop: 4 }}>총 {exams.length}회 기록 · 목표 일어 {tJap}/370 · 종합 {tComp}/{COMP_MAX}</div>
         </div>
-        <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
           {growthJap !== null && (
             <div style={{ textAlign: 'right' }}>
               <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 600 }}>일어 성장률</div>
-              <div style={{ fontSize: 22, fontWeight: 800, color: Number(growthJap) >= 0 ? 'var(--green)' : 'var(--red)' }}>
+              <div style={{ fontSize: 20, fontWeight: 800, color: Number(growthJap) >= 0 ? 'var(--green)' : 'var(--red)' }}>
                 {Number(growthJap) >= 0 ? '+' : ''}{growthJap}%
               </div>
             </div>
@@ -553,7 +729,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
           {growthComp !== null && (
             <div style={{ textAlign: 'right' }}>
               <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 600 }}>종합 성장률</div>
-              <div style={{ fontSize: 22, fontWeight: 800, color: Number(growthComp) >= 0 ? 'var(--green)' : 'var(--red)' }}>
+              <div style={{ fontSize: 20, fontWeight: 800, color: Number(growthComp) >= 0 ? 'var(--green)' : 'var(--red)' }}>
                 {Number(growthComp) >= 0 ? '+' : ''}{growthComp}%
               </div>
             </div>
@@ -696,7 +872,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
           borderColor: insight.type === 'success' ? 'rgba(16,185,129,0.25)'
                      : insight.type === 'warning' ? 'rgba(239,68,68,0.25)'
                      : 'rgba(107,163,255,0.2)',
-          display: 'flex', alignItems: 'center', gap: 14,
+          display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap',
         }}>
           <div style={{
             width: 38, height: 38, borderRadius: 11, flexShrink: 0,

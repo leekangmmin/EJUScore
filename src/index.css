@@ -507,12 +507,22 @@ input[type="date"] { color-scheme: dark; }
   .page-body { padding: 10px 10px 100px; }
   .bottom-tab { padding: 6px 2px; gap: 1px; }
   .bottom-tab span:last-child { font-size: 9px; }
+
+  /* Dashboard-specific mobile overrides */
+  .page-body h1 { font-size: 20px !important; }
+  .stat-grid-4 { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+  .grid-2-mobile { gap: 10px !important; }
+  .grid-wrap-mobile { gap: 10px !important; }
 }
 
 /* ── Very small (≤375px) — iPhone SE ── */
 @media (max-width: 375px) {
   .page-body { padding: 8px 8px 100px; }
   .bottom-tab span:first-child { transform: scale(0.85); }
+  .page-body h1 { font-size: 18px !important; }
+  .stat-grid-4 { grid-template-columns: 1fr !important; gap: 8px !important; }
+  .grid-2-mobile { gap: 8px !important; }
+  .grid-wrap-mobile { gap: 8px !important; }
 }
 
 /* ── Tablet (769–1100px) ─────────────────────────── */
