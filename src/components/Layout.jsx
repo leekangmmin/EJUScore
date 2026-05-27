@@ -2,7 +2,8 @@
 import { useMemo } from 'react';
 import {
   LayoutDashboard, BookOpen, Layers, Plus, Zap,
-  Settings, Sun, Moon, GraduationCap, Sparkles,
+  Settings, Sun, Moon, GraduationCap, Sparkles, CalendarCheck,
+  ChartLine, ClipboardList,
 } from 'lucide-react';
 import { getExams, getSettings, normalizeJapaneseScore, normalizeCompScore } from '../utils/storage';
 import { getDday } from '../utils/diagnosis';
@@ -10,9 +11,12 @@ import WindowsTitlebar from './WindowsTitlebar';
 
 const NAV = [
   { id: 'dashboard',     Icon: LayoutDashboard, label: '대시보드' },
+  { id: 'tasks',         Icon: CalendarCheck,   label: '오늘의 학습' },
   { id: 'japanese',      Icon: BookOpen,         label: '일본어 분석' },
   { id: 'comprehensive', Icon: Layers,           label: '종합과목 분석' },
   { id: 'ai',            Icon: Sparkles,         label: 'AI 코치' },
+  { id: 'diagnosis',     Icon: ClipboardList,    label: '오답 진단' },
+  { id: 'trend',         Icon: ChartLine,        label: '기출 트렌드' },
 ];
 
 function SidebarMiniStats() {

@@ -7,7 +7,11 @@ import ScoreForm from './components/ScoreForm';
 import JapaneseAnalysis from './components/JapaneseAnalysis';
 import ComprehensiveAnalysis from './components/ComprehensiveAnalysis';
 import AICoach from './components/AICoach';
+import DailyTasks from './components/DailyTasks';
+import EJU20YearTrend from './components/EJU20YearTrend';
+import DiagnosticReport from './components/DiagnosticReport';
 import SettingsPanel from './components/SettingsPanel';
+import ErrorBoundary from './components/ErrorBoundary';
 import { getExams, deleteExam, loadSampleData, getSettings, saveSettings, saveExam, JAP_READ_MAX, JAP_LISTEN_MAX, COMP_MAX } from './utils/storage';
 import { getDday } from './utils/diagnosis';
 
@@ -99,9 +103,9 @@ function QuickInputModal({ onClose, onSaved }) {
 
 export default function App() {
   const [page, setPage] = useState('dashboard');
-  const [exams, setExams] = useState([]);
+  const [exams, setExams] = useState(() => getExams());
   const [editingExam, setEditingExam] = useState(null);
-  const [showSamplePrompt, setShowSamplePrompt] = useState(false);
+  const [showSamplePrompt, setShowSamplePrompt] = useState(() => getExams().length === 0);
   const [showSettings, setShowSettings] = useState(false);
   const [showQuickInput, setShowQuickInput] = useState(false);
   const [settings, setSettings] = useState(getSettings());
@@ -109,12 +113,6 @@ export default function App() {
   const refresh = () => setExams(getExams());
   const handleDelete = (id) => { deleteExam(id); setExams(prev => prev.filter(e => e.id !== id)); };
   const handleDeleteAll = () => { localStorage.removeItem('eju_exam_data'); setExams([]); };
-
-  useEffect(() => {
-    const stored = getExams();
-    setExams(stored);
-    if (stored.length === 0) setShowSamplePrompt(true);
-  }, []);
 
   // D-day OS 알림
   useEffect(() => {
@@ -191,13 +189,47 @@ export default function App() {
   const renderPage = () => {
     switch (page) {
       case 'form':
-        return <ScoreForm editingExam={editingExam} onSave={handleSave} onCancel={handleCancel} />;
+        return (
+          <ErrorBoundary fallbackMessage="점수 입력 화면을 불러오는 중 오류가 발생했어요.">
+            <ScoreForm editingExam={editingExam} onSave={handleSave} onCancel={handleCancel} />
+          </ErrorBoundary>
+        );
+      case 'tasks':
+        return (
+          <ErrorBoundary fallbackMessage="오늘의 학습 화면을 불러오는 중 오류가 발생했어요.">
+            <DailyTasks exams={exams} settings={settings} />
+          </ErrorBoundary>
+        );
       case 'japanese':
-        return <JapaneseAnalysis exams={exams} onAddNew={handleAddNew} />;
+        return (
+          <ErrorBoundary fallbackMessage="일본어 분석 화면을 불러오는 중 오류가 발생했어요.">
+            <JapaneseAnalysis exams={exams} onAddNew={handleAddNew} />
+          </ErrorBoundary>
+        );
       case 'comprehensive':
-        return <ComprehensiveAnalysis exams={exams} settings={settings} onAddNew={handleAddNew} />;
+        return (
+          <ErrorBoundary fallbackMessage="종합과목 분석 화면을 불러오는 중 오류가 발생했어요.">
+            <ComprehensiveAnalysis exams={exams} settings={settings} onAddNew={handleAddNew} />
+          </ErrorBoundary>
+        );
       case 'ai':
-        return <AICoach exams={exams} settings={settings} />;
+        return (
+          <ErrorBoundary fallbackMessage="AI 코치 화면을 불러오는 중 오류가 발생했어요.">
+            <AICoach exams={exams} settings={settings} />
+          </ErrorBoundary>
+        );
+      case 'diagnosis':
+        return (
+          <ErrorBoundary fallbackMessage="오답 진단 화면을 불러오는 중 오류가 발생했어요.">
+            <DiagnosticReport exams={exams} />
+          </ErrorBoundary>
+        );
+      case 'trend':
+        return (
+          <ErrorBoundary fallbackMessage="기출 트렌드 분석 화면을 불러오는 중 오류가 발생했어요.">
+            <EJU20YearTrend exams={exams} settings={settings} />
+          </ErrorBoundary>
+        );
       default:
         return (
           <>
