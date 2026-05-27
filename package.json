@@ -1,7 +1,7 @@
 {
   "name": "eju-score-tracker",
   "private": true,
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "EJU 모의고사 점수 관리 앱",
   "author": "이강민 (Lee Kangmin) <leekangmmin@github>",
   "license": "MIT",
