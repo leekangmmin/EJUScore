@@ -89,6 +89,7 @@
   "dependencies": {
     "@huggingface/transformers": "^4.2.0",
     "framer-motion": "^12.39.0",
+    "katex": "^0.17.0",
     "lucide-react": "^1.16.0",
     "pretendard": "^1.3.9",
     "react": "^19.2.5",
