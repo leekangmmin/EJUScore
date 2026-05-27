@@ -8,7 +8,6 @@ import JapaneseAnalysis from './components/JapaneseAnalysis';
 import ComprehensiveAnalysis from './components/ComprehensiveAnalysis';
 import AICoach from './components/AICoach';
 import DailyTasks from './components/DailyTasks';
-import EJU20YearTrend from './components/EJU20YearTrend';
 import DiagnosticReport from './components/DiagnosticReport';
 import TrendDashboard from './components/TrendDashboard';
 import PhotoToQuestion from './components/PhotoToQuestion';
@@ -243,12 +242,6 @@ export default function App() {
         return (
           <ErrorBoundary fallbackMessage="사진 변환 화면을 불러오는 중 오류가 발생했어요.">
             <PhotoToQuestion />
-          </ErrorBoundary>
-        );
-      case 'trend':
-        return (
-          <ErrorBoundary fallbackMessage="기출 트렌드 분석 화면을 불러오는 중 오류가 발생했어요.">
-            <EJU20YearTrend exams={exams} settings={settings} />
           </ErrorBoundary>
         );
       default:

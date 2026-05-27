@@ -118,7 +118,9 @@ export default function TrendDashboard() {
   const [tab, setTab] = useState('overview');
   const td = TREND_DATA;
 
-  const totalAnalyzed = useMemo(() => td.sourceStats.mathProblems + td.sourceStats.compProblems, []);
+  const totalCompQuestions = useMemo(() => td.sourceStats.compProblems * 38, []);
+  const totalMathQuestions = useMemo(() => td.sourceStats.mathProblems * 15, []);
+  const totalQuestions = totalCompQuestions + totalMathQuestions;
 
   const tabs = [
     { id: 'overview', label: '개요', Icon: BarChart3 },
@@ -153,13 +155,13 @@ export default function TrendDashboard() {
           </div>
           <div style={{ fontSize: 11, color: 'var(--t2)' }}>
             <CalendarDays size={11} style={{ verticalAlign: 'middle', marginRight: 4 }} />
-            {td.sourceStats.yearRange} · {td.sourceStats.totalFiles}개 파일 분석
+            {td.sourceStats.yearRange} · 종합 38문항 × {td.sourceStats.compProblems}회 = {totalCompQuestions.toLocaleString()}문항 분석
             <span style={{ marginLeft: 8, fontSize: 10, color: 'var(--t3)' }}>⚖️ 저작권 보호 통계</span>
           </div>
         </div>
         <div style={{ textAlign: 'right' }}>
-          <div style={{ fontSize: 24, fontWeight: 800, color: 'var(--blue)' }}>{totalAnalyzed}</div>
-          <div style={{ fontSize: 9, color: 'var(--t3)' }}>문제 분석</div>
+          <div style={{ fontSize: 24, fontWeight: 800, color: 'var(--blue)' }}>{totalQuestions.toLocaleString()}</div>
+          <div style={{ fontSize: 9, color: 'var(--t3)' }}>총 분석 문항</div>
         </div>
       </div>
 
@@ -179,11 +181,11 @@ export default function TrendDashboard() {
           <div style={{ ...CARD }}>
             <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)', marginBottom: 12 }}>📊 수집 현황</div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: 8 }}>
-              <InfoBadge label="수학 문제" value={`${td.sourceStats.mathProblems}개`} color="#10b981" />
-              <InfoBadge label="종합 문제" value={`${td.sourceStats.compProblems}개`} color="#3b82f6" />
-              <InfoBadge label="답안지" value={`${td.sourceStats.mathAnswers + td.sourceStats.compAnswers}개`} color="#a855f7" />
+              <InfoBadge label="종합과목 문항" value={`38문항 × ${td.sourceStats.compProblems}회`} color="#3b82f6" />
+              <InfoBadge label="수학 코스1 문항" value={`약 ${td.sourceStats.mathProblems * 15}문항`} color="#10b981" />
               <InfoBadge label="커버 기간" value={td.sourceStats.yearRange} color="#f59e0b" />
               <InfoBadge label="커버 년수" value={`${td.sourceStats.totalExamYears}년`} color="#ec4899" />
+              <InfoBadge label="분석 파일" value={`${td.sourceStats.totalFiles}개`} color="#a855f7" />
             </div>
           </div>
 
@@ -336,7 +338,7 @@ export default function TrendDashboard() {
       {/* 푸터 */}
       <div style={{ textAlign: 'center', padding: '16px 0', fontSize: 10, color: 'var(--t3)' }}>
         <ArrowUpRight size={10} style={{ verticalAlign: 'middle', marginRight: 4 }} />
-        분석 기준: {td.sourceStats.yearRange} ({td.sourceStats.totalFiles}개 파일)
+        분석 기준: {td.sourceStats.yearRange} · 총 {totalQuestions.toLocaleString()}문항 ({td.sourceStats.totalFiles}개 파일 기반)
         <span style={{ marginLeft: 8 }}>⚖️ 문제 저작권 침해 없음</span>
       </div>
     </div>
