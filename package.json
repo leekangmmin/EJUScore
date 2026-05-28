@@ -2,8 +2,8 @@
   "name": "eju-score-tracker",
   "private": true,
   "version": "1.3.1",
-  "description": "EJU 모의고사 점수 관리 앱",
-  "author": "이강민 (Lee Kangmin) <leekangmmin@github>",
+  "description": "EJU Exam Score Tracker — Mock Exam Management App",
+  "author": "Lee Kangmin <leekangmmin@github>",
   "license": "MIT",
   "main": "electron/main.js",
   "repository": {
@@ -44,6 +44,7 @@
     ],
     "win": {
       "icon": "public/icon.ico",
+      "publisherName": "Lee Kangmin",
       "target": [
         {
           "target": "nsis",
@@ -81,8 +82,9 @@
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "installerIcon": "public/icon-512.png",
-      "installerHeaderIcon": "public/icon-512.png"
+      "installerIcon": "public/icon.ico",
+      "installerHeaderIcon": "public/icon.ico",
+      "unicode": true
     }
   },
   "type": "module",
