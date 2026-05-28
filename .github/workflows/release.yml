@@ -3,64 +3,159 @@ name: Release
 
 on:
   push:
-    tags: ['v*']
+    tags:
+      - 'v*'
+
+env:
+  NODE_VERSION: '20'
 
 jobs:
+  # ─────────────────────────────────────────────────────────────────
+  # macOS  ·  Electron DMG  (arm64 + x64)
+  # ─────────────────────────────────────────────────────────────────
   release-macos:
     runs-on: macos-latest
-    permissions: { contents: write }
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
-        with: { node-version: '20', cache: 'npm' }
-      - run: npm ci && npm run build
-      - run: rm -rf EJUScore/EJUScore/www && cp -r dist EJUScore/EJUScore/www
-      - run: |
-          xcodebuild \
-            -project EJUScore/EJUScore.xcodeproj \
-            -scheme EJUScore -configuration Release \
-            -derivedDataPath /tmp/ejubuild \
-            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
-      - run: cd /tmp/ejubuild/Build/Products/Release && zip -r EJUScore-macOS.zip EJUScore.app
-      - uses: softprops/action-gh-release@v2
         with:
-          files: /tmp/ejubuild/Build/Products/Release/EJUScore-macOS.zip
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (Vite + Electron)
+        run: npm run build:electron
+
+      - name: Package macOS DMG (arm64 + x64)
+        run: npx electron-builder --mac --publish never
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+
+      - name: Upload DMG to release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "EJU Score Tracker ${{ github.ref_name }}"
           body: |
+            <div align="center">
+
             ## EJU Score Tracker ${{ github.ref_name }}
             **Copyright © 2025 이강민 (Lee Kangmin)**
 
-            | 플랫폼 | 파일 |
-            |--------|------|
-            | macOS 12+ | `EJUScore-macOS.zip` |
-            | Windows 10+ | `EJUScore-Windows-Setup.exe` |
-            | Linux | `EJUScore.AppImage` |
-            | 모바일 (iOS/Android) | 브라우저에서 [웹앱](https://leekangmmin.github.io/EJUScore/) 설치 |
+            </div>
 
-            ### 설치 방법 (macOS)
-            압축 해제 → 응용 프로그램 이동 → 우클릭 → 열기
+            ### 📥 다운로드
 
+            | 플랫폼 | 설치 파일 | 아키텍처 |
+            |--------|-----------|----------|
+            | 💻 **macOS 12+** | `EJU Score Tracker-*-arm64.dmg` | Apple Silicon |
+            | 💻 **macOS 12+** | `EJU Score Tracker-*.dmg` | Intel x64 |
+            | 🪟 **Windows 10+** | `EJU Score Tracker Setup *.exe` | x64 |
+            | 🐧 **Linux** | `EJU Score Tracker-*.AppImage` | x64 |
+            | 🐧 **Linux (deb)** | `eju-score-tracker_*_amd64.deb` | x64 |
+            | 📱 **iOS / Android** | [웹앱 바로가기 →](https://leekangmmin.github.io/EJUScore/) | PWA |
+
+            ### 설치 방법
+
+            **macOS** — `.dmg` 다운로드 → 마운트 → Applications 폴더로 드래그
+            > 처음 실행 시: 시스템 설정 → 개인 정보 보호 및 보안 → "확인 없이 열기"
+
+            **Windows** — `.exe` 실행 → SmartScreen 경고 시 "추가 정보" → "실행"
+
+            **Linux** — `chmod +x *.AppImage && ./*.AppImage`
+
+            ---
+
+            ### 🆕 v1.3.1 변경사항
+
+            #### OCR 파이프라인 고도화 (PhotoToQuestion)
+            - Sauvola 적응형 이진화 (integral image 최적화, k=0.15, w=25)
+            - 히스토그램 1%–99% 퍼센타일 스트레치
+            - 단어 레벨 신뢰도 집계 → 신뢰도 배너 표시 (고정밀/보통/저정밀)
+            - OCR 처리 단계별 진행 상태 표시
+
+            #### 로컬 AI 개념 분석 (Qwen2.5-0.5B-Instruct)
+            - Electron: Main Process Worker Thread → IPC 스트리밍 출력
+            - Web / PWA: aiAnalysisWorker.js (Web Worker + @huggingface/transformers)
+            - 핵심 개념 · 오답 포인트 · 학습 권장사항 실시간 생성
+
+            #### 빌드 / CI
+            - `preload.js` → `preload.cjs` 마이그레이션 완료
+            - Windows / Linux CI `npm run build:electron` 적용
+            - macOS 릴리즈 Xcode 빌드 → Electron DMG 전환
+
+          files: |
+            release/*.dmg
+            release/*.blockmap
+          fail_on_unmatched_files: false
+
+  # ─────────────────────────────────────────────────────────────────
+  # Windows  ·  NSIS Installer  (x64)
+  # ─────────────────────────────────────────────────────────────────
   release-windows:
     runs-on: windows-latest
-    permissions: { contents: write }
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: '20', cache: 'npm' }
-      - run: npm ci && npm run build
-      - run: npx electron-builder --win --publish never
-      - uses: softprops/action-gh-release@v2
-        with:
-          files: release/*.exe
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (Vite + Electron)
+        run: npm run build:electron
+
+      - name: Package Windows NSIS installer
+        run: npx electron-builder --win --publish never
+
+      - name: Upload installer to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            release/*.exe
+            release/*.blockmap
+          fail_on_unmatched_files: false
+
+  # ─────────────────────────────────────────────────────────────────
+  # Linux  ·  AppImage + deb  (x64)
+  # ─────────────────────────────────────────────────────────────────
   release-linux:
     runs-on: ubuntu-latest
-    permissions: { contents: write }
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
-        with: { node-version: '20', cache: 'npm' }
-      - run: npm ci && npm run build
-      - run: npx electron-builder --linux --publish never
-      - uses: softprops/action-gh-release@v2
         with:
-          files: release/*.AppImage
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install Linux packaging dependencies
+        run: sudo apt-get update -y && sudo apt-get install -y rpm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (Vite + Electron)
+        run: npm run build:electron
+
+      - name: Package Linux AppImage + deb
+        run: npx electron-builder --linux --publish never
+
+      - name: Upload AppImage + deb to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            release/*.AppImage
+            release/*.deb
+          fail_on_unmatched_files: false
