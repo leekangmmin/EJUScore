@@ -31,8 +31,18 @@ jobs:
       - name: Build (Vite + Electron)
         run: npm run build:electron
 
-      - name: Package macOS DMG (arm64 + x64)
-        run: npx electron-builder --mac --publish never
+      # Build arm64 and x64 sequentially to avoid hdiutil volume name collision
+      # (both archs mount /Volumes/EJU Score Tracker simultaneously → exit 16/1)
+      - name: Package macOS arm64 DMG
+        run: npx electron-builder --mac --arm64 --publish never
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+
+      - name: Detach mounted DMG volumes (cleanup between archs)
+        run: hdiutil detach "/Volumes/EJU Score Tracker" -force 2>/dev/null || true
+
+      - name: Package macOS x64 DMG
+        run: npx electron-builder --mac --x64 --publish never
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: false
 
