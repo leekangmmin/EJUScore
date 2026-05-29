@@ -43,7 +43,7 @@
       "public/icon.ico"
     ],
     "win": {
-      "icon": "public/icon.ico",
+      "icon": "public/icon-512.png",
       "publisherName": "Lee Kangmin",
       "target": [
         {
@@ -82,8 +82,6 @@
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "installerIcon": "public/icon.ico",
-      "installerHeaderIcon": "public/icon.ico",
       "unicode": true
     }
   },
