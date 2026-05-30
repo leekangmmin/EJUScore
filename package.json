@@ -1,7 +1,7 @@
 {
   "name": "eju-score-tracker",
   "private": true,
-  "version": "1.3.1",
+  "version": "1.3.9",
   "description": "EJU Exam Score Tracker — Mock Exam Management App",
   "author": "Lee Kangmin <leekangmmin@github>",
   "license": "MIT",
@@ -42,6 +42,9 @@
       "public/icon-512.png",
       "public/icon.ico"
     ],
+    "asarUnpack": [
+      "dist/tesseract/**"
+    ],
     "win": {
       "icon": "public/icon-512.png",
       "publisherName": "Lee Kangmin",
@@ -63,7 +66,7 @@
       "category": "Education"
     },
     "mac": {
-      "icon": "public/icon-512.png",
+      "icon": "public/icon-1024.png",
       "target": [
         {
           "target": "dmg",
@@ -88,6 +91,7 @@
   "type": "module",
   "dependencies": {
     "@huggingface/transformers": "^4.2.0",
+    "@hyzyla/pdfium": "^2.1.13",
     "framer-motion": "^12.39.0",
     "katex": "^0.17.0",
     "lucide-react": "^1.16.0",
