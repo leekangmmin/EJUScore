@@ -37,13 +37,70 @@ function splitJongkwa(rawText) {
     const winEnd=k+1<bounds.length?bounds[k+1].s:t.length; const win=t.slice(b.e,winEnd); const o=parseOpts(win); cursor=b.e+o.after;
     if(stem.length<8 && o.n<2) continue;
     const ctxBefore=t.slice(Math.max(0,b.s-700),b.s).replace(/\s+/g,' ');
-    raw.push({subject:classify(ctxBefore+' '+stem+' '+o.txt), newDae:DAEMUN.test(stemFull)}); }
+    raw.push({subject:classify(ctxBefore+' '+stem+' '+o.txt), newDae:DAEMUN.test(stemFull), text:ctxBefore+' '+stem+' '+o.txt}); }
   let last='unknown';
   for(let i=0;i<raw.length;i++){ if(raw[i].newDae) last='unknown'; if(raw[i].subject!=='unknown') last=raw[i].subject; else if(last!=='unknown') raw[i].subject=last; }
   let next='unknown';
   for(let i=raw.length-1;i>=0;i--){ if(raw[i].subject!=='unknown') next=raw[i].subject; else if(next!=='unknown'&&!raw[i].newDae) raw[i].subject=next; if(raw[i].newDae) next=raw[i].subject!=='unknown'?raw[i].subject:'unknown'; }
-  return raw.map(q=>q.subject);
+  return raw.map(q=>({subject:q.subject, text:q.text}));   // 문항별 {과목, 분류컨텍스트}
 }
+
+/* ═══════════ 심층 분석 분류 (문항 단위, 다중 라벨/우선순위) ═══════════ */
+// 제시자료 유형 — 우선순위로 단일 라벨
+const MATERIAL = [
+  ['map','지도', /地図|地形図/],
+  ['graph','그래프·도표', /グラフ|折れ線|棒グラフ|円グラフ|次の図|図\s*[1-9１-９]|図は|模式図/],
+  ['table','표', /次の表|下の表|表\s*[1-9１-９]|表は/],
+  ['timeline','연표', /年表|年代順|古い順|できごとを年代/],
+  ['photo','사진·사료', /写真|風刺画|史料|ポスター/],
+];
+function materialOf(t){ for(const[id,,re]of MATERIAL) if(re.test(t)) return id; return 'passage'; } // 기본=문장 독해
+// 역사 시대·사건 (다중 라벨)
+const HISTORY = {
+  '시민혁명': /フランス革命|名誉革命|独立宣言|アメリカ独立|清教徒革命/,
+  '산업혁명': /産業革命/,
+  '제국주의·식민지': /帝国主義|植民地/,
+  '제1차세계대전': /第一次世界大戦|第一次大戦/,
+  '제2차세계대전': /第二次世界大戦|第二次大戦|ナチス|ヒトラー/,
+  '냉전': /冷戦|ベルリンの壁|キューバ危機|ワルシャワ条約/,
+  '근대중국': /辛亥革命|清朝|アヘン戦争|中華民国|義和団/,
+  '근대일본': /明治維新|明治政府|日清戦争|日露戦争|大日本帝国/,
+  '러시아혁명·소련': /ロシア革命|ソ連|スターリン|レーニン/,
+  '탈냉전·현대': /ソ連崩壊|東西ドイツ統一|湾岸戦争|グローバル化/,
+};
+// 지리 지역 (다중 라벨)
+const REGION = {
+  '유럽': /ヨーロッパ|欧州|EU|地中海|アルプス|ライン川/,
+  '동아시아': /東アジア|中国|日本列島|朝鮮半島|モンスーンアジア/,
+  '동남아시아': /東南アジア|ASEAN|インドネシア|メコン/,
+  '남아시아': /インド|南アジア|ガンジス|ヒマラヤ/,
+  '중동·서아시아': /中東|西アジア|アラブ|ペルシア|アラビア半島/,
+  '아프리카': /アフリカ|サハラ|ナイル/,
+  '북아메리카': /アメリカ合衆国|北アメリカ|カナダ|五大湖|グレートプレーン/,
+  '남아메리카': /南アメリカ|ラテンアメリカ|ブラジル|アマゾン|アンデス/,
+  '러시아·CIS': /ロシア|シベリア|ウラル/,
+  '오세아니아': /オセアニア|オーストラリア|太平洋諸島/,
+};
+// 경제 세부영역
+const ECON = {
+  '시장·가격': /需要|供給|価格|市場メカニズム|均衡|弾力性/,
+  '재정·조세': /財政|租税|税制|国債|予算|累進課税/,
+  '금융·통화': /金融|中央銀行|日本銀行|通貨|金利|インフレ|デフレ|マネーサプライ/,
+  '무역·국제수지': /貿易|関税|為替|国際収支|比較優位|WTO|自由貿易|保護貿易/,
+  '경기·성장': /GDP|GNP|景気|経済成長|失業|国民所得|景気循環/,
+  '기업·노동': /企業|株式会社|労働|雇用|賃金|労働組合/,
+  '사회보장': /社会保障|年金|医療保険|生活保護/,
+};
+// 정치 세부영역
+const POL = {
+  '헌법·인권': /憲法|基本的人権|人権|自由権|社会権|参政権/,
+  '통치기구': /三権分立|国会|内閣|議院内閣制|立法|行政|司法|大統領制/,
+  '선거·정당': /選挙|政党|比例代表|小選挙区|普通選挙/,
+  '국제정치·기구': /国際連合|国連|安全保障理事会|NATO|条約|PKO|国際法/,
+  '지방자치': /地方自治|地方公共団体|条例|住民投票/,
+  '사법·재판': /裁判|司法権|違憲審査|裁判所/,
+};
+function multiHits(text, table){ const out=[]; for(const k in table) if(table[k].test(text)) out.push(k); return out; }
 
 /* ═══════════ 수학 코스1 토픽 분류기 (大問 단위 토픽 존재 빈도) ═══════════ */
 const MATH_TOPICS = {
@@ -74,16 +131,33 @@ const jk = JSON.parse(fs.readFileSync('scripts/exam-bank-raw/jongkwa_raw.json','
 const SUBS=['economy','politics','history','geography','society'];
 const jkTotal={economy:0,politics:0,history:0,geography:0,society:0,unknown:0};
 const jkByYear={}; const jkExams=[]; let jkTotalQ=0;
+// 심층 차원 누적기
+const material={ map:0, graph:0, table:0, timeline:0, photo:0, passage:0 };
+const matKeyMap={ map:'지도', graph:'그래프·도표', table:'표', timeline:'연표', photo:'사진·사료', passage:'문장 독해' };
+const histAgg={}, regionAgg={}, econAgg={}, polAgg={};
+const addMulti=(agg,keys)=>keys.forEach(k=>agg[k]=(agg[k]||0)+1);
+const CANONICAL=38; // EJU 종합과목 회당 공식 문항 수
+
 for (const e of jk) {
-  const {year,round}=parseMeta(e.name); const subs=splitJongkwa(e.rawText);
+  const {year,round}=parseMeta(e.name); const qs=splitJongkwa(e.rawText);
   const cnt={economy:0,politics:0,history:0,geography:0,society:0,unknown:0};
-  for (const s of subs){ cnt[s]++; jkTotal[s]++; jkTotalQ++; }
-  jkExams.push({ name:e.name, year, round, conf:Math.round(e.conf||0), pages:e.pages||null, numQ:subs.length,
+  for (const q of qs){
+    cnt[q.subject]++; jkTotal[q.subject]++; jkTotalQ++;
+    material[materialOf(q.text)]++;                         // 자료유형(전 문항)
+    if (q.subject==='history')   addMulti(histAgg,   multiHits(q.text, HISTORY));
+    if (q.subject==='geography') addMulti(regionAgg, multiHits(q.text, REGION));
+    if (q.subject==='economy')   addMulti(econAgg,   multiHits(q.text, ECON));
+    if (q.subject==='politics')  addMulti(polAgg,    multiHits(q.text, POL));
+  }
+  jkExams.push({ name:e.name, year, round, conf:Math.round(e.conf||0), pages:e.pages||null,
+    numQ:qs.length, recognized:qs.length, total:CANONICAL,
     economy:cnt.economy, politics:cnt.politics, history:cnt.history, geography:cnt.geography, society:cnt.society });
   if (year!=null){ jkByYear[year]=jkByYear[year]||{economy:0,politics:0,history:0,geography:0,society:0,numQ:0,exams:0};
-    for (const s of SUBS) jkByYear[year][s]+=cnt[s]; jkByYear[year].numQ+=subs.length; jkByYear[year].exams++; }
+    for (const s of SUBS) jkByYear[year][s]+=cnt[s]; jkByYear[year].numQ+=qs.length; jkByYear[year].exams++; }
 }
 const jkYears=Object.keys(jkByYear).map(Number).sort((a,b)=>a-b);
+const sortAgg=(agg)=>Object.entries(agg).map(([name,count])=>({name,count})).sort((a,b)=>b.count-a.count);
+const materialList=Object.entries(material).map(([id,count])=>({id, name:matKeyMap[id], count})).filter(x=>x.count>0).sort((a,b)=>b.count-a.count);
 
 /* ═══════════ 수학 집계 (있을 때만) ═══════════ */
 let math=null;
@@ -101,8 +175,14 @@ if (fs.existsSync('scripts/exam-bank-raw/math_raw.json')) {
 }
 
 /* ═══════════ 출력 ═══════════ */
-console.log('종합과목: 시험',jk.length,'| 문항',jkTotalQ,'| 미분류',jkTotal.unknown,
+console.log('종합과목: 시험',jk.length,'| 문항',jkTotalQ,'/',CANONICAL*jk.length,
+  `(인식률 ${Math.round(jkTotalQ/(CANONICAL*jk.length)*100)}%) | 미분류`,jkTotal.unknown,
   '\n  ', SUBS.map(s=>`${s} ${jkTotal[s]}(${Math.round(jkTotal[s]/jkTotalQ*100)}%)`).join('  '));
+console.log('  자료유형:', materialList.map(x=>`${x.name} ${x.count}`).join(' / '));
+console.log('  역사 시대:', sortAgg(histAgg).slice(0,5).map(x=>`${x.name} ${x.count}`).join(' / ')||'(없음)');
+console.log('  지리 지역:', sortAgg(regionAgg).slice(0,5).map(x=>`${x.name} ${x.count}`).join(' / ')||'(없음)');
+console.log('  경제 영역:', sortAgg(econAgg).slice(0,5).map(x=>`${x.name} ${x.count}`).join(' / ')||'(없음)');
+console.log('  정치 영역:', sortAgg(polAgg).slice(0,5).map(x=>`${x.name} ${x.count}`).join(' / ')||'(없음)');
 if (math) { console.log('수학: 시험',math.totalExams);
   for (const id in math.topicExams) console.log('  ',MATH_TOPICS[id].name, math.topicExams[id]+'/'+math.totalExams,'회'); }
 else console.log('수학: (아직 scripts/exam-bank-raw/math_raw.json 없음)');
@@ -115,6 +195,14 @@ const bank = {
     yearsCovered:jkYears, yearRange:[jkYears[0], jkYears[jkYears.length-1]],
     subjectTotals:{ economy:jkTotal.economy, politics:jkTotal.politics, history:jkTotal.history, geography:jkTotal.geography, society:jkTotal.society },
     unknown:jkTotal.unknown,
+    canonicalTotal:CANONICAL,                              // 회당 공식 문항 수(38)
+    canonicalAll:CANONICAL*jk.length,                      // 전체 공식 문항 수
+    recallPct:Math.round(jkTotalQ/(CANONICAL*jk.length)*100), // OCR 인식률
+    material:materialList,                                  // 자료유형 분포(전 문항)
+    history:sortAgg(histAgg),                               // 역사 시대·사건
+    regions:sortAgg(regionAgg),                             // 지리 지역
+    econSub:sortAgg(econAgg),                               // 경제 세부영역
+    polSub:sortAgg(polAgg),                                 // 정치 세부영역
     byYear:jkYears.map(y=>({ year:y, exams:jkByYear[y].exams, numQ:jkByYear[y].numQ,
       economy:jkByYear[y].economy, politics:jkByYear[y].politics, history:jkByYear[y].history, geography:jkByYear[y].geography, society:jkByYear[y].society })),
     perExam:jkExams,

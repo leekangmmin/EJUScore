@@ -43,6 +43,176 @@ export const PAST_EXAM_BANK = {
       "society": 29
     },
     "unknown": 2,
+    "canonicalTotal": 38,
+    "canonicalAll": 1444,
+    "recallPct": 89,
+    "material": [
+      {
+        "id": "passage",
+        "name": "문장 독해",
+        "count": 607
+      },
+      {
+        "id": "map",
+        "name": "지도",
+        "count": 253
+      },
+      {
+        "id": "graph",
+        "name": "그래프·도표",
+        "count": 224
+      },
+      {
+        "id": "table",
+        "name": "표",
+        "count": 151
+      },
+      {
+        "id": "timeline",
+        "name": "연표",
+        "count": 55
+      }
+    ],
+    "history": [
+      {
+        "name": "제1차세계대전",
+        "count": 81
+      },
+      {
+        "name": "제2차세계대전",
+        "count": 64
+      },
+      {
+        "name": "러시아혁명·소련",
+        "count": 54
+      },
+      {
+        "name": "제국주의·식민지",
+        "count": 47
+      },
+      {
+        "name": "냉전",
+        "count": 42
+      },
+      {
+        "name": "시민혁명",
+        "count": 24
+      },
+      {
+        "name": "산업혁명",
+        "count": 21
+      },
+      {
+        "name": "근대일본",
+        "count": 20
+      },
+      {
+        "name": "근대중국",
+        "count": 7
+      },
+      {
+        "name": "탈냉전·현대",
+        "count": 4
+      }
+    ],
+    "regions": [
+      {
+        "name": "유럽",
+        "count": 91
+      },
+      {
+        "name": "남아시아",
+        "count": 46
+      },
+      {
+        "name": "아프리카",
+        "count": 46
+      },
+      {
+        "name": "동아시아",
+        "count": 45
+      },
+      {
+        "name": "오세아니아",
+        "count": 41
+      },
+      {
+        "name": "러시아·CIS",
+        "count": 41
+      },
+      {
+        "name": "북아메리카",
+        "count": 37
+      },
+      {
+        "name": "남아메리카",
+        "count": 34
+      },
+      {
+        "name": "동남아시아",
+        "count": 27
+      },
+      {
+        "name": "중동·서아시아",
+        "count": 16
+      }
+    ],
+    "econSub": [
+      {
+        "name": "기업·노동",
+        "count": 285
+      },
+      {
+        "name": "금융·통화",
+        "count": 248
+      },
+      {
+        "name": "무역·국제수지",
+        "count": 243
+      },
+      {
+        "name": "경기·성장",
+        "count": 229
+      },
+      {
+        "name": "시장·가격",
+        "count": 218
+      },
+      {
+        "name": "재정·조세",
+        "count": 153
+      },
+      {
+        "name": "사회보장",
+        "count": 63
+      }
+    ],
+    "polSub": [
+      {
+        "name": "통치기구",
+        "count": 237
+      },
+      {
+        "name": "선거·정당",
+        "count": 205
+      },
+      {
+        "name": "헌법·인권",
+        "count": 186
+      },
+      {
+        "name": "국제정치·기구",
+        "count": 151
+      },
+      {
+        "name": "사법·재판",
+        "count": 136
+      },
+      {
+        "name": "지방자치",
+        "count": 79
+      }
+    ],
     "byYear": [
       {
         "year": 2005,
@@ -263,6 +433,8 @@ export const PAST_EXAM_BANK = {
         "conf": 82,
         "pages": 19,
         "numQ": 31,
+        "recognized": 31,
+        "total": 38,
         "economy": 17,
         "politics": 11,
         "history": 1,
@@ -276,6 +448,8 @@ export const PAST_EXAM_BANK = {
         "conf": 82,
         "pages": 20,
         "numQ": 35,
+        "recognized": 35,
+        "total": 38,
         "economy": 22,
         "politics": 6,
         "history": 3,
@@ -289,6 +463,8 @@ export const PAST_EXAM_BANK = {
         "conf": 84,
         "pages": 23,
         "numQ": 36,
+        "recognized": 36,
+        "total": 38,
         "economy": 15,
         "politics": 9,
         "history": 3,
@@ -302,6 +478,8 @@ export const PAST_EXAM_BANK = {
         "conf": 81,
         "pages": 22,
         "numQ": 33,
+        "recognized": 33,
+        "total": 38,
         "economy": 10,
         "politics": 8,
         "history": 5,
@@ -315,6 +493,8 @@ export const PAST_EXAM_BANK = {
         "conf": 83,
         "pages": 21,
         "numQ": 32,
+        "recognized": 32,
+        "total": 38,
         "economy": 12,
         "politics": 12,
         "history": 4,
@@ -328,6 +508,8 @@ export const PAST_EXAM_BANK = {
         "conf": 85,
         "pages": 21,
         "numQ": 37,
+        "recognized": 37,
+        "total": 38,
         "economy": 15,
         "politics": 10,
         "history": 2,
@@ -341,6 +523,8 @@ export const PAST_EXAM_BANK = {
         "conf": 83,
         "pages": 24,
         "numQ": 39,
+        "recognized": 39,
+        "total": 38,
         "economy": 17,
         "politics": 12,
         "history": 3,
@@ -354,6 +538,8 @@ export const PAST_EXAM_BANK = {
         "conf": 81,
         "pages": 23,
         "numQ": 33,
+        "recognized": 33,
+        "total": 38,
         "economy": 14,
         "politics": 9,
         "history": 5,
@@ -367,6 +553,8 @@ export const PAST_EXAM_BANK = {
         "conf": 84,
         "pages": 24,
         "numQ": 35,
+        "recognized": 35,
+        "total": 38,
         "economy": 20,
         "politics": 11,
         "history": 0,
@@ -380,6 +568,8 @@ export const PAST_EXAM_BANK = {
         "conf": 80,
         "pages": 21,
         "numQ": 33,
+        "recognized": 33,
+        "total": 38,
         "economy": 17,
         "politics": 9,
         "history": 4,
@@ -393,6 +583,8 @@ export const PAST_EXAM_BANK = {
         "conf": 85,
         "pages": 24,
         "numQ": 38,
+        "recognized": 38,
+        "total": 38,
         "economy": 12,
         "politics": 17,
         "history": 1,
@@ -406,6 +598,8 @@ export const PAST_EXAM_BANK = {
         "conf": 99,
         "pages": 22,
         "numQ": 35,
+        "recognized": 35,
+        "total": 38,
         "economy": 15,
         "politics": 6,
         "history": 6,
@@ -419,6 +613,8 @@ export const PAST_EXAM_BANK = {
         "conf": 84,
         "pages": 26,
         "numQ": 36,
+        "recognized": 36,
+        "total": 38,
         "economy": 17,
         "politics": 10,
         "history": 2,
@@ -432,6 +628,8 @@ export const PAST_EXAM_BANK = {
         "conf": 83,
         "pages": 22,
         "numQ": 33,
+        "recognized": 33,
+        "total": 38,
         "economy": 12,
         "politics": 10,
         "history": 3,
@@ -445,6 +643,8 @@ export const PAST_EXAM_BANK = {
         "conf": 85,
         "pages": 28,
         "numQ": 37,
+        "recognized": 37,
+        "total": 38,
         "economy": 14,
         "politics": 5,
         "history": 9,
@@ -458,6 +658,8 @@ export const PAST_EXAM_BANK = {
         "conf": 99,
         "pages": 28,
         "numQ": 37,
+        "recognized": 37,
+        "total": 38,
         "economy": 12,
         "politics": 7,
         "history": 5,
@@ -471,6 +673,8 @@ export const PAST_EXAM_BANK = {
         "conf": 99,
         "pages": 25,
         "numQ": 37,
+        "recognized": 37,
+        "total": 38,
         "economy": 9,
         "politics": 18,
         "history": 2,
@@ -484,6 +688,8 @@ export const PAST_EXAM_BANK = {
         "conf": 99,
         "pages": 23,
         "numQ": 38,
+        "recognized": 38,
+        "total": 38,
         "economy": 12,
         "politics": 10,
         "history": 6,
@@ -497,6 +703,8 @@ export const PAST_EXAM_BANK = {
         "conf": 83,
         "pages": 25,
         "numQ": 35,
+        "recognized": 35,
+        "total": 38,
         "economy": 13,
         "politics": 13,
         "history": 3,
@@ -510,6 +718,8 @@ export const PAST_EXAM_BANK = {
         "conf": 82,
         "pages": 25,
         "numQ": 36,
+        "recognized": 36,
+        "total": 38,
         "economy": 9,
         "politics": 8,
         "history": 8,
@@ -523,6 +733,8 @@ export const PAST_EXAM_BANK = {
         "conf": 84,
         "pages": 24,
         "numQ": 34,
+        "recognized": 34,
+        "total": 38,
         "economy": 11,
         "politics": 12,
         "history": 3,
@@ -536,6 +748,8 @@ export const PAST_EXAM_BANK = {
         "conf": 84,
         "pages": 23,
         "numQ": 37,
+        "recognized": 37,
+        "total": 38,
         "economy": 14,
         "politics": 11,
         "history": 6,
@@ -549,6 +763,8 @@ export const PAST_EXAM_BANK = {
         "conf": 83,
         "pages": 23,
         "numQ": 35,
+        "recognized": 35,
+        "total": 38,
         "economy": 12,
         "politics": 7,
         "history": 7,
@@ -562,6 +778,8 @@ export const PAST_EXAM_BANK = {
         "conf": 83,
         "pages": 25,
         "numQ": 32,
+        "recognized": 32,
+        "total": 38,
         "economy": 13,
         "politics": 7,
         "history": 5,
@@ -575,6 +793,8 @@ export const PAST_EXAM_BANK = {
         "conf": 86,
         "pages": 21,
         "numQ": 35,
+        "recognized": 35,
+        "total": 38,
         "economy": 12,
         "politics": 9,
         "history": 4,
@@ -588,6 +808,8 @@ export const PAST_EXAM_BANK = {
         "conf": 84,
         "pages": 22,
         "numQ": 33,
+        "recognized": 33,
+        "total": 38,
         "economy": 12,
         "politics": 9,
         "history": 4,
@@ -601,6 +823,8 @@ export const PAST_EXAM_BANK = {
         "conf": 83,
         "pages": 24,
         "numQ": 35,
+        "recognized": 35,
+        "total": 38,
         "economy": 12,
         "politics": 5,
         "history": 6,
@@ -614,6 +838,8 @@ export const PAST_EXAM_BANK = {
         "conf": 85,
         "pages": 22,
         "numQ": 36,
+        "recognized": 36,
+        "total": 38,
         "economy": 16,
         "politics": 5,
         "history": 4,
@@ -627,6 +853,8 @@ export const PAST_EXAM_BANK = {
         "conf": 85,
         "pages": 24,
         "numQ": 33,
+        "recognized": 33,
+        "total": 38,
         "economy": 9,
         "politics": 13,
         "history": 3,
@@ -640,6 +868,8 @@ export const PAST_EXAM_BANK = {
         "conf": 79,
         "pages": 22,
         "numQ": 33,
+        "recognized": 33,
+        "total": 38,
         "economy": 14,
         "politics": 9,
         "history": 4,
@@ -653,6 +883,8 @@ export const PAST_EXAM_BANK = {
         "conf": 81,
         "pages": 29,
         "numQ": 33,
+        "recognized": 33,
+        "total": 38,
         "economy": 13,
         "politics": 10,
         "history": 4,
@@ -666,6 +898,8 @@ export const PAST_EXAM_BANK = {
         "conf": 80,
         "pages": 26,
         "numQ": 34,
+        "recognized": 34,
+        "total": 38,
         "economy": 12,
         "politics": 5,
         "history": 7,
@@ -679,6 +913,8 @@ export const PAST_EXAM_BANK = {
         "conf": 82,
         "pages": 27,
         "numQ": 34,
+        "recognized": 34,
+        "total": 38,
         "economy": 12,
         "politics": 11,
         "history": 6,
@@ -692,6 +928,8 @@ export const PAST_EXAM_BANK = {
         "conf": 82,
         "pages": 25,
         "numQ": 33,
+        "recognized": 33,
+        "total": 38,
         "economy": 10,
         "politics": 12,
         "history": 1,
@@ -705,6 +943,8 @@ export const PAST_EXAM_BANK = {
         "conf": 83,
         "pages": 28,
         "numQ": 36,
+        "recognized": 36,
+        "total": 38,
         "economy": 12,
         "politics": 9,
         "history": 6,
@@ -718,6 +958,8 @@ export const PAST_EXAM_BANK = {
         "conf": 85,
         "pages": 28,
         "numQ": 33,
+        "recognized": 33,
+        "total": 38,
         "economy": 12,
         "politics": 11,
         "history": 4,
@@ -731,6 +973,8 @@ export const PAST_EXAM_BANK = {
         "conf": 79,
         "pages": 32,
         "numQ": 30,
+        "recognized": 30,
+        "total": 38,
         "economy": 9,
         "politics": 9,
         "history": 3,
@@ -744,6 +988,8 @@ export const PAST_EXAM_BANK = {
         "conf": 75,
         "pages": 28,
         "numQ": 8,
+        "recognized": 8,
+        "total": 38,
         "economy": 2,
         "politics": 2,
         "history": 3,

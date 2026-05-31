@@ -5,6 +5,7 @@ import { useMemo } from 'react';
 import {
   BarChart3, TrendingUp, TrendingDown, Minus, FileText, Inbox,
   CalendarDays, Layers, Target, Gauge, Sparkles, Calculator, BookOpen,
+  Image, Clock, Globe2, Coins, Landmark,
 } from 'lucide-react';
 import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell,
@@ -91,10 +92,24 @@ function buildModel() {
         .sort((a, b) => b.exams - a.exams)
     : [];
 
+  // 심층 차원(뱅크 하드코딩) — 자료유형/역사 시대/지리 지역/경제·정치 세부영역
+  const sumCounts = (arr) => (arr || []).reduce((s, x) => s + x.count, 0);
+  const withPct = (arr, denom) => (arr || []).map((x) => ({ ...x, pct: denom ? Math.round((x.count / denom) * 100) : 0 }));
+  const material = withPct(jk.material, jk.totalQuestions);
+  const history = withPct(jk.history, jk.subjectTotals.history);
+  const regions = withPct(jk.regions, jk.subjectTotals.geography);
+  const econSub = withPct(jk.econSub, jk.subjectTotals.economy);
+  const polSub = withPct(jk.polSub, jk.subjectTotals.politics);
+
   return {
     jk, totalQ, subjectList, byYear, trend, math, mathTopics,
     userNewExams, userNewQ,
-    avgPerExam: Math.round(jk.totalQuestions / jk.totalExams),
+    material, history, regions, econSub, polSub,
+    canonicalTotal: jk.canonicalTotal || 38,
+    canonicalAll: jk.canonicalAll || (jk.totalExams * 38),
+    recallPct: jk.recallPct || Math.round((jk.totalQuestions / (jk.totalExams * 38)) * 100),
+    avgRecognized: Math.round(jk.totalQuestions / jk.totalExams),
+    avgPerExam: jk.canonicalTotal || 38,
     compShare: { pe: Math.round(((subj.economy + subj.politics) / totalQ) * 100) },
   };
 }
@@ -113,8 +128,15 @@ function buildInsights(m) {
     if (!down || t.delta < down.d) down = { k, d: t.delta };
   });
   if (up && up.d > 0.8) out.push({ icon: '📈', text: `<b>${SUBJECT_MAP[up.k].name}</b> 출제가 최근 늘어나는 추세예요`, color: '#ef4444' });
+  // 자료해석 비중
+  const passagePct = m.material?.find((x) => x.id === 'passage')?.pct ?? null;
+  if (passagePct != null) out.push({ icon: '🗺️', text: `문항의 <b>${100 - passagePct}%</b>가 지도·그래프·표 등 <b>자료 해석형</b>이에요`, color: '#0ea5e9' });
+  // 역사 최빈 시대
+  if (m.history?.[0]) out.push({ icon: '📜', text: `역사는 <b>${m.history[0].name}</b> 관련 출제가 가장 많아요`, color: '#8b5cf6' });
+  // 지리 최빈 지역
+  if (m.regions?.[0]) out.push({ icon: '🌍', text: `지리는 <b>${m.regions[0].name}</b> 지역이 최다 출제`, color: '#0284c7' });
   if (m.mathTopics[0]) out.push({ icon: '📐', text: `수학은 <b>${m.mathTopics[0].name}</b>이 ${m.mathTopics[0].pct}%로 최빈출`, color: '#8b5cf6' });
-  return out.slice(0, 4);
+  return out.slice(0, 6);
 }
 
 /* ── 작은 컴포넌트 ── */
@@ -167,6 +189,31 @@ function SubjectCard({ s, trend, avgPerExam }) {
   );
 }
 
+/* ── 심층 차원 막대(자료유형·시대·지역·세부영역 공용) ── */
+function DimBars({ items, color, unit = '문항', max }) {
+  if (!items || items.length === 0) return <div style={{ fontSize: 12, color: 'var(--t3)' }}>분석 가능한 데이터가 부족합니다.</div>;
+  const peak = max || Math.max(...items.map((x) => x.count), 1);
+  const grad = `linear-gradient(90deg, ${color}, ${color}b3)`;
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+      {items.map((t) => {
+        const w = Math.round((t.count / peak) * 100);
+        return (
+          <div key={t.name} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{ width: 116, fontSize: 12.5, fontWeight: 700, color: 'var(--t1)', flexShrink: 0, textAlign: 'right', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{t.name}</div>
+            <div style={{ flex: 1, height: 22, background: 'var(--bg3)', borderRadius: 6, overflow: 'hidden', position: 'relative' }}>
+              <div style={{ width: `${Math.max(w, 2)}%`, height: '100%', background: grad, borderRadius: 6, transition: 'width .4s' }} />
+              <span style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', fontSize: 11, fontWeight: 700, color: w > 22 ? '#fff' : 'var(--t2)', right: w > 22 ? 8 : 'auto', left: w > 22 ? 'auto' : `calc(${Math.max(w, 2)}% + 8px)` }}>
+                {t.count}{unit}{t.pct != null ? ` · ${t.pct}%` : ''}
+              </span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function EmptyState() {
   return (
     <div style={{ maxWidth: 720, margin: '0 auto', padding: '0 4px' }}>
@@ -200,7 +247,7 @@ export default function TrendDashboard() {
           </div>
           <div style={{ fontSize: 12.5, color: 'var(--t2)', marginTop: 6, display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
             <CalendarDays size={13} />
-            종합과목 {m.jk.totalExams}회분 ({y0}~{y1}) · {m.jk.totalQuestions.toLocaleString()}문항
+            종합과목 {m.jk.totalExams}회분 ({y0}~{y1}) · 회당 {m.canonicalTotal}문항 중 평균 {m.avgRecognized}문항 인식({m.recallPct}%)
             {m.math && <> · 수학 코스1 {m.math.totalExams}회분</>}
             {m.userNewExams > 0 && <span style={{ fontSize: 10.5, color: '#10b981', background: 'rgba(16,185,129,0.1)', padding: '2px 8px', borderRadius: 6 }}>+ 내 자료 {m.userNewExams}건</span>}
           </div>
@@ -228,9 +275,10 @@ export default function TrendDashboard() {
       <div style={CARD}>
         <SectionTitle icon={Layers} color="var(--blue)">수집 현황</SectionTitle>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 12 }}>
-          <StatTile label="종합과목 문항" value={`${m.jk.totalQuestions.toLocaleString()}개`} color="#3182F6" />
+          <StatTile label="분석 문항" value={`${m.jk.totalQuestions.toLocaleString()}개`} color="#3182F6" />
           <StatTile label="기출 연도" value={`${y0}~${y1}`} color="#1B64DA" />
-          <StatTile label="회당 평균" value={`${m.avgPerExam}문제`} color="#0ea5e9" />
+          <StatTile label="회당 공식 문항" value={`${m.canonicalTotal}문제`} color="#0ea5e9" />
+          <StatTile label="OCR 인식률" value={`${m.recallPct}%`} color="#f59e0b" />
           <StatTile label="수학 회분" value={`${m.math ? m.math.totalExams : 0}회`} color="#8b5cf6" />
           <StatTile label="내 추가 자료" value={`${m.userNewExams}건`} color="#10b981" />
         </div>
@@ -293,6 +341,57 @@ export default function TrendDashboard() {
         </div>
       </div>
 
+      {/* 제시자료 유형 — 어떤 그래프·지도·표가 나오나 */}
+      {m.material.length > 0 && (
+        <div style={CARD}>
+          <SectionTitle icon={Image} color="#0ea5e9" sub={`문항이 어떤 자료를 제시하는지 분류했습니다. 지도·그래프·표 등 자료 해석형이 전체의 약 ${100 - (m.material.find((x) => x.id === 'passage')?.pct || 0)}%.`}>제시자료 유형 — 무슨 그래프·자료가 나오나</SectionTitle>
+          <DimBars items={m.material} color="#0ea5e9" />
+          <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 12, lineHeight: 1.6 }}>
+            ※ 지도·지형도, 막대·꺾은선·원 그래프와 모식도, 통계표, 연표·연대순 배열, 사진·풍자화·사료로 분류. 순수 지문 독해는 "문장 독해".
+          </div>
+        </div>
+      )}
+
+      {/* 역사 — 어느 시대·사건이 나오나 */}
+      {m.history.length > 0 && (
+        <div style={CARD}>
+          <SectionTitle icon={Clock} color="#8b5cf6" sub={`역사 ${m.jk.subjectTotals.history}문항에서 자주 등장하는 시대·사건입니다(한 문항이 여러 시대를 다룰 수 있어 합계는 문항 수보다 클 수 있음).`}>역사 — 어느 시대·사건이 집중 출제되나</SectionTitle>
+          <DimBars items={m.history.slice(0, 8)} color="#8b5cf6" unit="회" />
+          <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 12, lineHeight: 1.6 }}>
+            ※ <b>양차 세계대전·러시아혁명·제국주의·냉전</b> 등 19세기 후반~20세기 근현대사가 압도적입니다. 시민혁명·산업혁명·근대 동아시아(아편전쟁·메이지유신)도 단골.
+          </div>
+        </div>
+      )}
+
+      {/* 지리 — 어느 지역이 나오나 */}
+      {m.regions.length > 0 && (
+        <div style={CARD}>
+          <SectionTitle icon={Globe2} color="#0ea5e9" sub={`지리 ${m.jk.subjectTotals.geography}문항에서 다뤄진 지역 분포입니다.`}>지리 — 어느 지역이 자주 나오나</SectionTitle>
+          <DimBars items={m.regions.slice(0, 8)} color="#0284c7" unit="회" />
+          <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 12, lineHeight: 1.6 }}>
+            ※ <b>유럽</b>이 최다, 그다음 아시아 각 지역과 아프리카가 고르게 출제됩니다. 기후·지형·인구·자원·무역을 지역과 엮어 묻습니다.
+          </div>
+        </div>
+      )}
+
+      {/* 경제·정치 세부영역 */}
+      {(m.econSub.length > 0 || m.polSub.length > 0) && (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20 }}>
+          {m.econSub.length > 0 && (
+            <div style={CARD}>
+              <SectionTitle icon={Coins} color="#10b981" sub={`경제 ${m.jk.subjectTotals.economy}문항의 세부영역 분포(다중 라벨).`}>경제 — 어느 부분이 집중 출제되나</SectionTitle>
+              <DimBars items={m.econSub} color="#10b981" unit="회" />
+            </div>
+          )}
+          {m.polSub.length > 0 && (
+            <div style={CARD}>
+              <SectionTitle icon={Landmark} color="#ef4444" sub={`정치 ${m.jk.subjectTotals.politics}문항의 세부영역 분포(다중 라벨).`}>정치 — 어느 부분이 집중 출제되나</SectionTitle>
+              <DimBars items={m.polSub} color="#ef4444" unit="회" />
+            </div>
+          )}
+        </div>
+      )}
+
       {/* 수학 코스1 토픽 */}
       {m.mathTopics.length > 0 && (
         <div style={CARD}>
@@ -323,7 +422,7 @@ export default function TrendDashboard() {
           {m.jk.perExam.map((e) => (
             <span key={e.name} style={{ fontSize: 11, fontWeight: 600, color: 'var(--t1)', background: 'var(--bg1)', border: '1px solid var(--bd0)', borderRadius: 8, padding: '5px 10px', display: 'inline-flex', alignItems: 'center', gap: 5 }}>
               <FileText size={11} color="var(--blue)" />
-              {e.year}{e.round ? ` 제${e.round}회` : ''} · {e.numQ}문항
+              {e.year}{e.round ? ` 제${e.round}회` : ''} · {e.recognized || e.numQ}/{e.total || m.canonicalTotal}문항
             </span>
           ))}
         </div>
