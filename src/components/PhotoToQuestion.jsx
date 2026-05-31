@@ -11,6 +11,8 @@
  *       Web/PWA:  aiAnalysisWorker.js (Web Worker + @huggingface/transformers)
  */
 import { useState, useRef, useCallback } from 'react';
+// 과목 분류기(기출 뱅크 빌드와 공유) — 분류 기준 일관성
+import { classifySubject, carryForwardSubjects, DAEMUN_RE } from '../utils/subjectClassifier';
 // ⚠️ Electron(file://)에서는 동적 import() 청크 fetch가 막히므로 정적 import로 번들에 포함
 import { createWorker } from 'tesseract.js';
 // PDF 래스터화는 PDFium(WASM)로 처리한다. pdfjs 는 구형 Chromium(Electron 35)에서
@@ -575,36 +577,36 @@ function splitIntoQuestions(rawText) {
     }
     return { opts, after: last };
   }
-  // 과목 분류(원문 일본어 키워드 기반)
-  function classify(s) {
-    if (/経済|需要|供給|GDP|為替|市場|貿易|財政|金融|インフレ|関税|景気|金利|株|物価/.test(s)) return 'economy';
-    if (/憲法|政治|民主|選挙|議会|内閣|大統領|国会|立法|行政|司法|人権|条約|主権/.test(s)) return 'politics';
-    if (/歴史|革命|戦争|冷戦|帝国|独立|世界大戦|王朝|近代|古代|植民|条約機構/.test(s)) return 'history';
-    if (/地理|気候|地形|人口|都市|農業|資源|地図|降水|山脈|平野|海流|大陸|貿易風/.test(s)) return 'geography';
-    if (/社会|環境|福祉|高齢|エネルギー|NGO|協定|少子|移民|多文化|持続可能/.test(s)) return 'society';
-    return 'unknown';
-  }
-
   const qs = [];
   let cursor = 0;
   for (let k = 0; k < bounds.length; k++) {
     const b = bounds[k];
-    const stem = t.slice(cursor, b.s).replace(/\s+/g, ' ').trim();
+    const stemFull = t.slice(cursor, b.s);
+    const stem = stemFull.replace(/\s+/g, ' ').trim();
     const winEnd = k + 1 < bounds.length ? bounds[k + 1].s : t.length;
     const win = t.slice(b.e, winEnd);
     const { opts, after } = parseOpts(win);
     const boxM = win.slice(0, 40).match(/[[【]\s*(\d{1,2})/);
     cursor = b.e + after;
     if (stem.length < 8 && opts.length < 2) continue; // 머리글 등 빈 세그먼트 스킵
+    // 분류 컨텍스트: 직전 700자 본문(大問 지문) + 문항 + 보기 → 키워드 포착률↑
+    const ctxBefore = t.slice(Math.max(0, b.s - 700), b.s).replace(/\s+/g, ' ');
+    const ctxText = `${ctxBefore} ${stem} ${opts.map((o) => o.content).join(' ')}`;
     qs.push({
       index: qs.length + 1,
       questionText: stem.slice(-400),
       options: opts,
       answerBox: boxM ? parseInt(boxM[1]) : null,
-      subjectType: classify(stem + ' ' + opts.map((o) => o.content).join(' ')),
+      subjectType: classifySubject(ctxText),
+      newDaemun: DAEMUN_RE.test(stemFull), // 이 문항 앞에 새 大問(問N) 헤더가 있는가
       confidence: opts.length >= 4 ? 80 : opts.length >= 2 ? 60 : 30,
     });
   }
+  // 大問 단위 carry-forward: 본문에서만 키워드가 나오는 短문항을 같은 大問 주제로 보정
+  const fixed = carryForwardSubjects(
+    qs.map((q) => ({ subject: q.subjectType, newDaemun: q.newDaemun }))
+  );
+  qs.forEach((q, i) => { q.subjectType = fixed[i].subject; delete q.newDaemun; });
   return qs;
 }
 
