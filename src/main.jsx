@@ -13,16 +13,6 @@ console.info(
   'background:#313244;color:#89b4fa;padding:2px 6px;border-radius:0 4px 4px 0'
 )
 
-// ── 일회성 정리: 기존 업로드 기출/오답 데이터 초기화 ──
-// (모의고사 점수 eju_exam_data·설정은 보존, 업로드 변환문제만 삭제)
-try {
-  if (!localStorage.getItem('eju_clear_uploads_v1')) {
-    localStorage.removeItem('eju_photo_questions');
-    localStorage.removeItem('eju_ocr_analysis');
-    localStorage.setItem('eju_clear_uploads_v1', '1');
-  }
-} catch (_) {}
-
 // ── Electron 데스크톱: 서비스 워커 절대 등록 금지 ──────────────
 // SW 의 fetch 핸들러가 file:// 요청을 fetch(e.request) 로 가로채면 실패하여
 // tesseract 워커·WASM·언어데이터(.gz) 로드가 전부 막혀 OCR 이 0%에서 멈춘다.

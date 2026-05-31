@@ -535,6 +535,79 @@ function parseQuestionFromText(rawText) {
   };
 }
 
+/* 시험지(다중 문제) 원문을 개별 문제 단위로 분할.
+   EJU 종합과목: 각 문제 stem이 "…の中から一つ選びなさい。[N]" 로 끝나는 점을 앵커로 사용.
+   OCR 노이즈가 심해 完璧한 분할은 불가능 → 평균 ~34/38문항 분할(약 90%).
+   지도·그래프·표 문제는 본문이 이미지라 stem이 비거나 짧을 수 있음(정상). */
+function splitIntoQuestions(rawText) {
+  if (!rawText) return [];
+  // 1) 페이지 구분선/머리글/페이지번호 노이즈 제거
+  const t = rawText
+    .replace(/──────/g, '\n')
+    .replace(/総合科目\s*[ー\-]?\s*\d+/g, '\n')
+    .replace(/[一ー]\s*\d{2,3}\s*[一ー]/g, '\n');
+  // 2) 문제 끝 어구(選びなさい, OCR 변형 허용)로 경계 검출
+  const SEL = /選び[なゥっ]{0,2}[なさきい]{1,3}/g;
+  const bounds = [];
+  let m;
+  while ((m = SEL.exec(t)) !== null) bounds.push({ s: m.index, e: m.index + m[0].length });
+  if (bounds.length < 3) return [];
+
+  // 윈도에서 첫 ①②③④ 1세트만 추출, ④ 내용 끝 인덱스 반환
+  function parseOpts(win) {
+    const re = /[①②③④]/g;
+    const hits = [];
+    let mm;
+    while ((mm = re.exec(win)) !== null) hits.push({ sym: mm[0], i: mm.index });
+    const opts = [];
+    let last = 0;
+    const seen = new Set();
+    for (let k = 0; k < hits.length; k++) {
+      const sym = hits[k].sym;
+      if (seen.has(sym)) { if (seen.size >= 4) break; else continue; }
+      seen.add(sym);
+      const start = hits[k].i + 1;
+      const end = k + 1 < hits.length ? hits[k + 1].i : win.length;
+      const content = win.slice(start, end).replace(/\s+/g, ' ').trim().slice(0, 120);
+      opts.push({ label: sym, content });
+      last = end;
+      if (seen.size >= 4) break;
+    }
+    return { opts, after: last };
+  }
+  // 과목 분류(원문 일본어 키워드 기반)
+  function classify(s) {
+    if (/経済|需要|供給|GDP|為替|市場|貿易|財政|金融|インフレ|関税|景気|金利|株|物価/.test(s)) return 'economy';
+    if (/憲法|政治|民主|選挙|議会|内閣|大統領|国会|立法|行政|司法|人権|条約|主権/.test(s)) return 'politics';
+    if (/歴史|革命|戦争|冷戦|帝国|独立|世界大戦|王朝|近代|古代|植民|条約機構/.test(s)) return 'history';
+    if (/地理|気候|地形|人口|都市|農業|資源|地図|降水|山脈|平野|海流|大陸|貿易風/.test(s)) return 'geography';
+    if (/社会|環境|福祉|高齢|エネルギー|NGO|協定|少子|移民|多文化|持続可能/.test(s)) return 'society';
+    return 'unknown';
+  }
+
+  const qs = [];
+  let cursor = 0;
+  for (let k = 0; k < bounds.length; k++) {
+    const b = bounds[k];
+    const stem = t.slice(cursor, b.s).replace(/\s+/g, ' ').trim();
+    const winEnd = k + 1 < bounds.length ? bounds[k + 1].s : t.length;
+    const win = t.slice(b.e, winEnd);
+    const { opts, after } = parseOpts(win);
+    const boxM = win.slice(0, 40).match(/[[【]\s*(\d{1,2})/);
+    cursor = b.e + after;
+    if (stem.length < 8 && opts.length < 2) continue; // 머리글 등 빈 세그먼트 스킵
+    qs.push({
+      index: qs.length + 1,
+      questionText: stem.slice(-400),
+      options: opts,
+      answerBox: boxM ? parseInt(boxM[1]) : null,
+      subjectType: classify(stem + ' ' + opts.map((o) => o.content).join(' ')),
+      confidence: opts.length >= 4 ? 80 : opts.length >= 2 ? 60 : 30,
+    });
+  }
+  return qs;
+}
+
 /* ══════════════════════════════════════════════════════════════
    SECTION 4  과목 메타데이터
 ══════════════════════════════════════════════════════════════ */
@@ -721,6 +794,224 @@ function OptionBlock({ opt }) {
   );
 }
 
+/** 시험지 전체(다중 문제) 보기 — 개별 문제 단위로 펼쳐 표시 */
+function MultiQuestionView({ questions, parsed }) {
+  const [open, setOpen] = useState(() => new Set([0]));
+  const toggle = (i) => setOpen((s) => {
+    const n = new Set(s);
+    n.has(i) ? n.delete(i) : n.add(i);
+    return n;
+  });
+  return (
+    <div>
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10,
+        padding: '8px 12px', background: 'rgba(49,130,246,0.07)',
+        border: '1px solid rgba(49,130,246,0.18)', borderRadius: 10,
+      }}>
+        <ScanLine size={14} color="var(--blue)" />
+        <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--t0)' }}>
+          {questions.length}개 문제 인식됨
+        </span>
+        <span style={{ fontSize: 11, color: 'var(--t3)' }}>
+          · 원문 {parsed.rawLength}자 · OCR {parsed.confidence}%
+        </span>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+        {questions.map((q, i) => {
+          const subj = SUBJECT_MAP[q.subjectType] || SUBJECT_MAP.unknown;
+          const isOpen = open.has(i);
+          return (
+            <div key={i} style={{
+              border: '1px solid rgba(0,27,55,0.08)', borderRadius: 10, overflow: 'hidden',
+              background: 'var(--bg-card, #fff)',
+            }}>
+              {/* 헤더 (클릭 시 접기/펼치기) */}
+              <div onClick={() => toggle(i)} style={{
+                display: 'flex', alignItems: 'center', gap: 8, padding: '9px 12px',
+                cursor: 'pointer', userSelect: 'none',
+                background: isOpen ? 'rgba(49,130,246,0.05)' : 'transparent',
+              }}>
+                <span style={{
+                  minWidth: 26, height: 22, padding: '0 6px', borderRadius: 6,
+                  background: 'rgba(49,130,246,0.12)', color: '#1B64DA',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: 11, fontWeight: 700, flexShrink: 0,
+                }}>
+                  {q.answerBox ? `[${q.answerBox}]` : `#${q.index}`}
+                </span>
+                <span style={{
+                  fontSize: 12, color: 'var(--t1, #334)', flex: 1, minWidth: 0,
+                  overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                  opacity: q.questionText ? 1 : 0.5,
+                }}>
+                  {q.questionText
+                    ? q.questionText.slice(-80)
+                    : '(본문이 이미지인 문제 — 지도/그래프/표)'}
+                </span>
+                <span style={{ fontSize: 10, fontWeight: 600, color: subj.color, flexShrink: 0 }}>
+                  {subj.icon} {subj.name}
+                </span>
+                <span style={{ fontSize: 11, color: 'var(--t3)', flexShrink: 0 }}>
+                  {isOpen ? '▾' : '▸'}
+                </span>
+              </div>
+
+              {/* 본문 + 보기 */}
+              {isOpen && (
+                <div style={{ padding: '4px 12px 12px' }}>
+                  {q.questionText && (
+                    <div style={{
+                      fontSize: 13, color: 'var(--t0)', lineHeight: 1.65,
+                      padding: '8px 0', whiteSpace: 'pre-wrap',
+                    }}>
+                      {q.questionText}
+                    </div>
+                  )}
+                  {q.options.length >= 1
+                    ? q.options.map((opt, k) => <OptionBlock key={k} opt={opt} />)
+                    : (
+                      <div style={{ fontSize: 11, color: 'var(--t3)', padding: '4px 0' }}>
+                        선택지 미검출 (이미지형 문제이거나 OCR 누락)
+                      </div>
+                    )}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <div style={{ fontSize: 10, color: 'var(--t3)', marginTop: 10, lineHeight: 1.5 }}>
+        ※ 스캔 OCR 특성상 일부 보기·번호에 오인식이 있을 수 있으며, 지도·그래프·표
+        문제는 본문이 이미지라 텍스트가 비어 있을 수 있습니다.
+      </div>
+    </div>
+  );
+}
+
+/** PDF/이미지 OCR 진행 중 — 문서 스캔 애니메이션 로더
+ *  embedded=true → 카드 배경/패딩 제거(배치 카드 안에 중첩될 때) */
+function ScanLoader({ phase, label, progress, embedded = false }) {
+  const steps = [
+    { key: 'pre',   icon: '🧼', name: '전처리' },
+    { key: 'ocr',   icon: '🔍', name: 'OCR 인식' },
+    { key: 'split', icon: '✂️', name: '문제 분할' },
+  ];
+  const activeIdx = phase === 'parsing' ? 2
+    : (phase === 'ocr' || phase === 'pdf') ? 1
+    : 0;
+  const tips = [
+    '🌸 EJU 종합과목은 정치·경제·지리·역사·사회 5개 영역에서 출제돼요.',
+    '📚 tessdata_best 모델로 일본어를 한 글자씩 정밀 인식하는 중…',
+    '✂️ 시험지 한 장을 문제 단위로 잘게 나누고 있어요.',
+    '⚡ 스캔 화질이 좋을수록 인식 정확도가 올라가요.',
+  ];
+  const tip = tips[Math.min(tips.length - 1, Math.floor(progress / 25))];
+  const floaters = ['漢', 'あ', '①', '文', '政', '経', '②', '史'];
+
+  return (
+    <div style={{
+      ...(embedded
+        ? { background: 'rgba(49,130,246,0.04)', borderRadius: 12, margin: '4px 0 10px' }
+        : CARD),
+      textAlign: 'center', padding: embedded ? '18px 16px' : '26px 20px',
+      position: 'relative', overflow: 'hidden',
+    }}>
+      <style>{`
+        @keyframes sl_beam   { 0%{top:10%} 50%{top:78%} 100%{top:10%} }
+        @keyframes sl_float  { 0%{transform:translateY(10px);opacity:0} 15%{opacity:.85} 80%{opacity:.5} 100%{transform:translateY(-70px);opacity:0} }
+        @keyframes sl_line   { 0%,100%{opacity:.35} 50%{opacity:.85} }
+        @keyframes sl_pop    { 0%{transform:scale(.7);opacity:.3} 50%{transform:scale(1.12);opacity:1} 100%{transform:scale(1);opacity:1} }
+        @keyframes sl_dots   { 0%,80%,100%{opacity:.2} 40%{opacity:1} }
+      `}</style>
+
+      {/* 떠오르는 일본어 글자 */}
+      {floaters.map((c, i) => (
+        <span key={i} style={{
+          position: 'absolute', bottom: 60, left: `${10 + i * 11}%`,
+          fontSize: 13 + (i % 3) * 4, color: 'var(--blue)', opacity: 0,
+          fontWeight: 700, pointerEvents: 'none',
+          animation: `sl_float ${2.6 + (i % 4) * 0.5}s ease-in ${i * 0.35}s infinite`,
+        }}>{c}</span>
+      ))}
+
+      {/* 문서 + 스캔 빔 */}
+      <div style={{
+        position: 'relative', width: 110, height: 138, margin: '0 auto 18px',
+        background: '#fff', borderRadius: 8, border: '1px solid rgba(0,27,55,0.12)',
+        boxShadow: '0 6px 22px rgba(49,130,246,0.18)', overflow: 'hidden',
+        padding: '14px 12px',
+      }}>
+        {[...Array(7)].map((_, i) => (
+          <div key={i} style={{
+            height: 6, borderRadius: 3, marginBottom: 7,
+            width: `${[90, 100, 75, 95, 60, 88, 70][i]}%`,
+            background: 'linear-gradient(90deg, rgba(49,130,246,0.5), rgba(139,92,246,0.4))',
+            animation: `sl_line ${1.6 + (i % 3) * 0.4}s ease-in-out ${i * 0.12}s infinite`,
+          }} />
+        ))}
+        {/* 스캔 빔 */}
+        <div style={{
+          position: 'absolute', left: 0, right: 0, height: 3,
+          background: 'linear-gradient(90deg, transparent, var(--blue), transparent)',
+          boxShadow: '0 0 14px 2px rgba(49,130,246,0.7)',
+          animation: 'sl_beam 2.2s ease-in-out infinite',
+        }} />
+      </div>
+
+      {/* 단계 스텝퍼 */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: 6, marginBottom: 14, flexWrap: 'wrap' }}>
+        {steps.map((s, i) => {
+          const done = i < activeIdx, active = i === activeIdx;
+          return (
+            <div key={s.key} style={{
+              display: 'flex', alignItems: 'center', gap: 5, padding: '5px 11px',
+              borderRadius: 20, fontSize: 12, fontWeight: 600,
+              background: active ? 'rgba(49,130,246,0.14)' : done ? 'rgba(16,185,129,0.12)' : 'rgba(0,27,55,0.04)',
+              color: active ? 'var(--blue)' : done ? '#10b981' : 'var(--t3)',
+              animation: active ? 'sl_pop 0.5s ease' : 'none',
+            }}>
+              <span>{done ? '✓' : s.icon}</span>{s.name}
+            </div>
+          );
+        })}
+      </div>
+
+      <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--t0)', marginBottom: 4 }}>
+        {label}
+        <span style={{ display: 'inline-flex', marginLeft: 2 }}>
+          {[0, 1, 2].map((d) => (
+            <span key={d} style={{ animation: `sl_dots 1.2s ease-in-out ${d * 0.2}s infinite` }}>.</span>
+          ))}
+        </span>
+      </div>
+
+      {/* 진행 바 */}
+      <div style={{
+        maxWidth: 320, margin: '8px auto 0', height: 7,
+        background: 'rgba(0,27,55,0.05)', borderRadius: 4, overflow: 'hidden',
+      }}>
+        <div style={{
+          width: `${progress}%`, height: '100%',
+          background: 'linear-gradient(90deg, var(--blue), var(--purple))',
+          borderRadius: 4, transition: 'width 0.4s',
+        }} />
+      </div>
+      <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 6 }}>{progress}%</div>
+
+      {/* 회전 팁 */}
+      <div style={{
+        fontSize: 11, color: 'var(--t2)', marginTop: 14, lineHeight: 1.5,
+        maxWidth: 360, marginLeft: 'auto', marginRight: 'auto', minHeight: 32,
+      }}>
+        {tip}
+      </div>
+    </div>
+  );
+}
+
 /** AI 개념 분석 패널 */
 function ConceptAnalysisPanel({ streamText, loading, loadProgress, error, onStart, hasParsed }) {
   if (!hasParsed) return null;
@@ -875,6 +1166,13 @@ async function processOneFile(file, onProgress) {
   parsedQ.confidence = Math.max(parsedQ.confidence || 0, confidence);
   if (pdfMeta) parsedQ.pdfMeta = pdfMeta;
 
+  // 시험지(다중 문제) → 개별 문제 단위 분할
+  const questions = splitIntoQuestions(rawText);
+  if (questions.length >= 3) {
+    parsedQ.questions = questions;
+    parsedQ.numQuestions = questions.length;
+  }
+
   const entry = {
     id:           crypto.randomUUID(),
     date:         new Date().toISOString().slice(0, 10),
@@ -1015,6 +1313,12 @@ export default function PhotoToQuestion({ onSaved }) {
       parsedQ.rawText = rawText;
       parsedQ.confidence = Math.max(parsedQ.confidence || 0, res.confidence);
       parsedQ.pdfMeta = { numPages: res.numPages, ocrUsed: res.ocrUsed };
+      // 시험지(다중 문제) → 개별 문제 단위 분할
+      const questions = splitIntoQuestions(rawText);
+      if (questions.length >= 3) {
+        parsedQ.questions = questions;
+        parsedQ.numQuestions = questions.length;
+      }
       setOcrConfidence(res.confidence);
       setParsed(parsedQ);
       setEditForm({
@@ -1266,26 +1570,9 @@ export default function PhotoToQuestion({ onSaved }) {
         </div>
       </div>
 
-      {/* ── OCR 진행 상태 ── */}
+      {/* ── OCR 진행 상태 (스캔 애니메이션) ── */}
       {isProcessing && (
-        <div style={{ ...CARD, textAlign: 'center' }}>
-          <ScanLine size={32} color="var(--blue)"
-            style={{ margin: '12px 0', animation: 'spin 1.5s linear infinite' }} />
-          <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--t0)', marginBottom: 8 }}>
-            {ocrPhaseLabel}
-          </div>
-          <div style={{
-            maxWidth: 300, margin: '0 auto', height: 6,
-            background: 'rgba(0,27,55,0.045)', borderRadius: 3, overflow: 'hidden',
-          }}>
-            <div style={{
-              width: `${progress}%`, height: '100%',
-              background: 'linear-gradient(90deg, var(--blue), var(--purple))',
-              borderRadius: 3, transition: 'width 0.4s',
-            }} />
-          </div>
-          <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 6 }}>{progress}%</div>
-        </div>
+        <ScanLoader phase={ocrPhase} label={ocrPhaseLabel} progress={progress} />
       )}
 
       {/* ══════════════════════════════════════════
@@ -1313,9 +1600,21 @@ export default function PhotoToQuestion({ onSaved }) {
               }} />
             </div>
             {batchActive && (
-              <div style={{ fontSize: 11, color: 'var(--t3)', marginBottom: 6 }}>
-                현재: {batchQueue[batchCurrent]?.name} · {progress}%
-              </div>
+              <>
+                <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 6, marginBottom: 2 }}>
+                  현재: {batchQueue[batchCurrent]?.name}
+                </div>
+                <ScanLoader
+                  embedded
+                  phase={progress < 20 ? 'preprocessing' : progress < 88 ? 'ocr' : 'parsing'}
+                  label={
+                    progress < 20 ? 'PDF 페이지 래스터화 · 전처리 중'
+                      : progress < 88 ? '정밀 OCR 인식 중 (tessdata_best)'
+                        : '문제 구조 분할 중'
+                  }
+                  progress={progress}
+                />
+              </>
             )}
 
             {/* 파일별 상태 리스트 */}
@@ -1466,6 +1765,11 @@ export default function PhotoToQuestion({ onSaved }) {
                           {subj.icon} {subj.name}
                         </span>
                         <span style={{ fontSize: 10, color: 'var(--t3)' }}>{q.date}</span>
+                        {q.parsed?.numQuestions >= 3 && (
+                          <span style={{ fontSize: 10, color: 'var(--blue)', fontWeight: 600 }}>
+                            📝 {q.parsed.numQuestions}문제
+                          </span>
+                        )}
                         {q.aiAnalysis && (
                           <span style={{ fontSize: 10, color: '#8b5cf6', fontWeight: 600 }}>
                             <Sparkles size={9} style={{ verticalAlign: 'middle', marginRight: 2 }} />AI 분석
@@ -1631,6 +1935,9 @@ export default function PhotoToQuestion({ onSaved }) {
                   <Check size={14} /> 수정 완료
                 </button>
               </div>
+            ) : parsed.questions?.length >= 3 ? (
+              /* 다중 문제 보기 모드 (시험지 전체) */
+              <MultiQuestionView questions={parsed.questions} parsed={parsed} />
             ) : (
               /* 보기 모드 */
               <div>
