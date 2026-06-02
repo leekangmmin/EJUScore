@@ -1,0 +1,160 @@
+{
+  "id": "math_2009_r2",
+  "source_file": "2009平成21年第2回文数.pdf",
+  "subject": "mathematics",
+  "year": 2009,
+  "round": 2,
+  "total_pages": 15,
+  "ocr_confidence": 0.77,
+  "total_questions": 18,
+  "questions": [
+    {
+      "number": 1,
+      "section": "math_a",
+      "topic": "확률",
+      "text_snippet": "問1 数直線上の点 P を次の約束に従って動かすとする :\n\n大小 2 個のサイコロを同時に投げる試行を行うとき\n・両方の目の数が同じ場合, 点 P は負の向きに 1 だけ移動する。\n\n・大きいサイコロの目の数が小さいサイコロの目の数より大きい場合,\n点P は正の向きに 1 だけ移動する。\n\n* その他の場合, 点 P は移動しない。\n\n(1) この詩行を1 回行うとき\n\n点P が負の向きに 1 ",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 2,
+      "section": "math_1",
+      "topic": "이차함수",
+      "text_snippet": "問2 aqa>0とし, >の2次関数\n\nを考える。\n\n(1) ① のグラフを< 軸方向に 2q, y 軸方向に 12a だけ平行移動すると, そのグラフを表す\n2次関数は\n\nae- ロロ7+ロkl\n\nである。 さらに, このグラフと直線 y = 12qa に関して対称なグラフを表す2 次関数は\n\nた wlg Leroy ーー 。\n\nとなる。① と ② のグラフが異なる 2 点で交わるとき, qa ",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 3,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 4,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 5,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 6,
+      "section": "math_a",
+      "topic": "경우의 수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 7,
+      "section": "math_1",
+      "topic": "이차함수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 8,
+      "section": "math_a",
+      "topic": "확률",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 9,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 10,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 11,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 12,
+      "section": "math_a",
+      "topic": "경우의 수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 13,
+      "section": "math_2",
+      "topic": "미분",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 14,
+      "section": "math_2",
+      "topic": "적분",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 15,
+      "section": "math_2",
+      "topic": "수열",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 16,
+      "section": "math_b",
+      "topic": "벡터",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 17,
+      "section": "math_2",
+      "topic": "지수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 18,
+      "section": "math_2",
+      "topic": "로그",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    }
+  ],
+  "metadata": {
+    "processed_at": "2026-06-02T07:01:32.455485",
+    "confidence_average": 0.77
+  }
+}

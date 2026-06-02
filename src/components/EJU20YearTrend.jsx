@@ -457,7 +457,7 @@ function LatexRenderer({ latex, inline = false }) {
     try { const p = latex.replace(/\\\\\\\\\\\\\\\\/g, '\\\\\\\\'); setHtml(katex.renderToString(p, { throwOnError: false, displayMode: !inline, strict: false, trust: true })); setError(false); }
     catch { setError(true); }
   }, [latex, inline]);
-  if (error) return <span style={{ fontSize: 11, color: 'var(--t3)', fontFamily: 'monospace', fontStyle: 'italic' }}>{latex}</span>;
+  if (error) return <span style={{ fontSize: 11, color: 'var(--text-tertiary)', fontFamily: 'monospace', fontStyle: 'italic' }}>{latex}</span>;
   return <span dangerouslySetInnerHTML={{ __html: html }} style={{ display: inline ? 'inline-block' : 'block', overflow: 'auto', fontSize: inline ? 13 : 14 }} />;
 }
 
@@ -466,20 +466,20 @@ function LatexRenderer({ latex, inline = false }) {
    ═══════════════════════════════════════════════════════════════════ */
 
 function ConfidenceGauge({ score, label, size = 'sm', showLabel = true }) {
-  const color = score >= 90 ? '#10b981' : score >= 85 ? '#3182f6' : score >= 70 ? '#f59e0b' : '#ef4444';
+  const color = score >= 90 ? '#10b981' : score >= 85 ? '#3182F6' : score >= 70 ? '#f59e0b' : '#ef4444';
   const height = size === 'sm' ? 5 : size === 'md' ? 7 : 9;
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
       {showLabel && label && (
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 500 }}>{label}</span>
+          <span style={{ fontSize: 10, color: 'var(--text-secondary)', fontWeight: 500 }}>{label}</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: 3 }}>
             <span style={{ fontSize: 11, fontWeight: 700, color }}>{score}%</span>
             {score >= 85 ? <CheckCircle2 size={11} color="#10b981" strokeWidth={2.5} /> : <AlertTriangle size={11} color="#f59e0b" strokeWidth={2.5} />}
           </div>
         </div>
       )}
-      <div style={{ height, borderRadius: height / 2, background: 'var(--bg2)', overflow: 'hidden' }}>
+      <div style={{ height, borderRadius: height / 2, background: 'var(--bg-hover)', overflow: 'hidden' }}>
         <div style={{ height: '100%', width: `${score}%`, borderRadius: height / 2, background: `linear-gradient(90deg, ${color}88, ${color})`, transition: 'width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)' }} />
       </div>
     </div>
@@ -506,27 +506,27 @@ function SelfCorrectionModal({ fileName, lowConfidenceCategories, phase4Result, 
   const options = useMemo(generateOptions, [lowConfidenceCategories]);
   return (
     <div style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(8px)' }}>
-      <div style={{ width: 400, maxWidth: '90vw', background: 'var(--card-bg)', borderRadius: 24, border: '1px solid var(--bd0)', boxShadow: '0 24px 64px rgba(0,0,0,0.2)', padding: 28, display: 'flex', flexDirection: 'column', gap: 18 }}>
+      <div style={{ width: 400, maxWidth: '90vw', background: 'var(--bg-elevated)', borderRadius: 24, border: '1px solid var(--border)', boxShadow: '0 24px 64px rgba(0,0,0,0.2)', padding: 28, display: 'flex', flexDirection: 'column', gap: 18 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <div style={{ width: 40, height: 40, borderRadius: 14, background: 'rgba(245,158,11,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Brain size={20} color="#f59e0b" strokeWidth={1.8} /></div>
-          <div><div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)' }}>🔍 AI 분석 신뢰도 낮음</div><div style={{ fontSize: 11, color: 'var(--t2)', marginTop: 2 }}>{fileName} — 정확한 분류를 위해 도움이 필요합니다</div></div>
+          <div><div style={{ fontSize: 15, fontWeight: 700, color: 'var(--text-primary)' }}>🔍 AI 분석 신뢰도 낮음</div><div style={{ fontSize: 11, color: 'var(--text-secondary)', marginTop: 2 }}>{fileName} — 정확한 분류를 위해 도움이 필요합니다</div></div>
         </div>
-        <div style={{ padding: '12px 14px', background: 'rgba(245,158,11,0.06)', borderRadius: 12, border: '1px solid rgba(245,158,11,0.15)', fontSize: 11.5, color: 'var(--t1)', lineHeight: 1.6 }}>
+        <div style={{ padding: '12px 14px', background: 'rgba(245,158,11,0.06)', borderRadius: 12, border: '1px solid rgba(245,158,11,0.15)', fontSize: 11.5, color: 'var(--text-secondary)', lineHeight: 1.6 }}>
           <strong style={{ color: '#f59e0b' }}>⚠️ 판독 경고</strong><br />AI가 이 문서를 {phase4Result.overallConfidence}% 신뢰도로 분석했습니다. 85% 미만으로 환각 가능성이 있습니다. 아래 중 실제 내용과 가장 가까운 것을 선택해주세요.
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {options.map((opt, i) => (
-            <button key={i} onClick={() => onSelect(opt)} className="btn-toss-bounce" style={{ display: 'flex', flexDirection: 'column', gap: 3, padding: '12px 16px', borderRadius: 14, background: !opt.isMLGuess ? 'rgba(49,130,246,0.08)' : 'var(--bg3)', border: `1.5px solid ${!opt.isMLGuess ? 'rgba(49,130,246,0.3)' : 'var(--bd1)'}`, cursor: 'pointer', fontFamily: 'inherit', textAlign: 'left', color: 'var(--t0)' }}>
+            <button key={i} onClick={() => onSelect(opt)} className="btn-toss-bounce" style={{ display: 'flex', flexDirection: 'column', gap: 3, padding: '12px 16px', borderRadius: 14, background: !opt.isMLGuess ? 'rgba(49,130,246,0.08)' : 'var(--bg-active)', border: `1.5px solid ${!opt.isMLGuess ? 'rgba(49,130,246,0.3)' : 'var(--border)'}`, cursor: 'pointer', fontFamily: 'inherit', textAlign: 'left', color: 'var(--text-primary)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-                <span style={{ width: 22, height: 22, borderRadius: 7, background: '#3182f6', color: '#fff', fontSize: 10, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{i + 1}</span>
+                <span style={{ width: 22, height: 22, borderRadius: 7, background: '#3182F6', color: '#fff', fontSize: 10, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{i + 1}</span>
                 <span style={{ fontSize: 13, fontWeight: 600 }}>{opt.label}</span>
                 {!opt.isMLGuess && <span style={{ fontSize: 8, padding: '2px 6px', borderRadius: 4, background: 'rgba(16,185,129,0.12)', color: '#10b981', fontWeight: 600 }}>AI 추정</span>}
               </div>
-              {opt.description && <div style={{ fontSize: 10.5, color: 'var(--t3)', marginLeft: 29 }}>{opt.description}</div>}
+              {opt.description && <div style={{ fontSize: 10.5, color: 'var(--text-tertiary)', marginLeft: 29 }}>{opt.description}</div>}
             </button>
           ))}
         </div>
-        <button onClick={onDismiss} style={{ padding: '10px', borderRadius: 12, background: 'transparent', border: '1px solid var(--bd1)', cursor: 'pointer', fontFamily: 'inherit', fontSize: 12, color: 'var(--t3)', fontWeight: 500 }}>무시하고 AI 결과 사용하기</button>
+        <button onClick={onDismiss} style={{ padding: '10px', borderRadius: 12, background: 'transparent', border: '1px solid var(--border)', cursor: 'pointer', fontFamily: 'inherit', fontSize: 12, color: 'var(--text-tertiary)', fontWeight: 500 }}>무시하고 AI 결과 사용하기</button>
       </div>
     </div>
   );
@@ -536,8 +536,8 @@ function SelfCorrectionModal({ fileName, lowConfidenceCategories, phase4Result, 
    6. Main Component
    ═══════════════════════════════════════════════════════════════════ */
 
-const TOSS_CARD = { background: 'var(--card-bg)', border: '1px solid var(--bd0)', borderRadius: 24, padding: 24, boxShadow: '0 2px 8px rgba(0,0,0,0.01), 0 12px 32px rgba(0,0,0,0.03)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' };
-const BADGE_BASE = { display: 'inline-flex', alignItems: 'center', gap: 3, padding: '3px 9px', borderRadius: 8, fontSize: 10, fontWeight: 700, letterSpacing: '-0.015em' };
+const TOSS_CARD = { background: 'var(--bg-elevated)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: 24, boxShadow: 'var(--shadow-card)' };
+const BADGE_BASE = { display: 'inline-flex', alignItems: 'center', gap: 3, padding: '3px 9px', borderRadius: 'var(--radius-sm)', fontSize: 10, fontWeight: 700, letterSpacing: '-0.015em' };
 
 function formatFileSize(bytes) { if (bytes < 1024) return `${bytes}B`; if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)}KB`; return `${(bytes / (1024 * 1024)).toFixed(1)}MB`; }
 function createFileEntry(file, index) { return { id: `${Date.now()}-${index}`, file, name: file.name, size: file.size, type: file.type, status: 'pending', progress: 0, steps: [], currentStep: -1, ocrResult: null, error: null, phaseResults: null }; }
@@ -759,7 +759,7 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
     return t.metadata.subjectType === 'comprehensive' || t.metadata.subjectType === 'mixed';
   });
 
-  const DOMAIN_COLORS = { geography: '#10b981', history: '#f59e0b', politics: '#3182f6', economy: '#ef4444', society: '#8b5cf6' };
+  const DOMAIN_COLORS = { geography: '#10b981', history: '#f59e0b', politics: '#3182F6', economy: '#ef4444', society: '#1B64DA' };
   const DOMAIN_ICONS = { geography: Globe, history: BookOpen, politics: Landmark, economy: Banknote, society: Users };
   const DOMAIN_LABELS = { geography: 'Q1~Q8 지리', history: 'Q9~Q16 역사', politics: 'Q17~Q24 정치', economy: 'Q25~Q32 경제', society: 'Q33~Q38 사회' };
 
@@ -772,38 +772,38 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <div className="eju-logo-3d" style={{ position: 'relative', width: 48, height: 48 }}>
             {/* Multi-layer glow outline */}
-            <div style={{ position: 'absolute', inset: -5, background: 'linear-gradient(135deg, #6366f1, #3b82f6, #ec4899)', borderRadius: 16, filter: 'blur(8px)', opacity: 0.7, transition: 'opacity 0.5s' }} className="logo-glow" />
+            <div style={{ position: 'absolute', inset: -5, background: 'linear-gradient(135deg, #3182F6, #1B64DA)', borderRadius: 16, filter: 'blur(8px)', opacity: 0.7, transition: 'opacity 0.5s' }} className="logo-glow" />
             {/* Metallic sandblast texture card body */}
-            <div style={{ position: 'relative', width: 48, height: 48, background: 'linear-gradient(145deg, #1f202a, #2e303f)', borderRadius: 14, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)', overflow: 'hidden' }}>
+            <div style={{ position: 'relative', width: 48, height: 48, background: 'linear-gradient(145deg, #1f202a, #2e303f)', borderRadius: 14, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(0,27,55,0.045)', boxShadow: '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(0,27,55,0.045)', overflow: 'hidden' }}>
               {/* Inner reflection sheen */}
-              <div style={{ position: 'absolute', top: -8, left: -8, width: 32, height: 16, background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.06))', transform: 'rotate(-45deg)' }} />
-              <GraduationCap size={20} color="#a5b4fc" strokeWidth={1.5} style={{ opacity: 0.9 }} />
+              <div style={{ position: 'absolute', top: -8, left: -8, width: 32, height: 16, background: 'linear-gradient(90deg, transparent, rgba(0,27,55,0.045))', transform: 'rotate(-45deg)' }} />
+              <GraduationCap size={20} color="#3182F6" strokeWidth={1.5} style={{ opacity: 0.9 }} />
               {/* 3D neon anchor light */}
-              <div style={{ width: 18, height: 3, background: 'linear-gradient(90deg, #6366f1, #ec4899)', borderRadius: 4, marginTop: 3, opacity: 0.7, boxShadow: '0 0 8px rgba(99,102,241,0.4)' }} />
+              <div style={{ width: 18, height: 3, background: 'linear-gradient(90deg, #1B64DA, #1B64DA)', borderRadius: 4, marginTop: 3, opacity: 0.7, boxShadow: '0 0 8px rgba(49,130,246,0.4)' }} />
             </div>
           </div>
           <div>
-            <div style={{ fontSize: 18, fontWeight: 800, color: 'var(--t0)', letterSpacing: '-0.02em' }}>EJU <span style={{ background: 'linear-gradient(135deg, #818cf8, #6366f1, #a78bfa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>AI OCR</span></div>
-            <div style={{ fontSize: 10.5, color: 'var(--t3)', marginTop: 1 }}>종합과목 38문항 1:1 정밀 분석 · Anti-Hallucination</div>
+            <div style={{ fontSize: 18, fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>EJU <span style={{ background: 'linear-gradient(135deg, #3182F6, #1B64DA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>AI OCR</span></div>
+            <div style={{ fontSize: 10.5, color: 'var(--text-tertiary)', marginTop: 1 }}>종합과목 38문항 1:1 정밀 분석 · Anti-Hallucination</div>
           </div>
         </div>
         <div style={{ display: 'flex', gap: 8 }}>
-          <span style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '4px 10px', borderRadius: 8, background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.15)', fontSize: 10, fontWeight: 600, color: '#8b5cf6' }}><Layers size={11} strokeWidth={2.5} /> v3.1</span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '4px 10px', borderRadius: 8, background: 'rgba(49,130,246,0.08)', border: '1px solid rgba(49,130,246,0.15)', fontSize: 10, fontWeight: 600, color: '#3182f6' }}><Search size={11} strokeWidth={2.5} /> 38-Item Level</span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '4px 10px', borderRadius: 8, background: 'rgba(49,130,246,0.08)', border: '1px solid rgba(49,130,246,0.15)', fontSize: 10, fontWeight: 600, color: '#1B64DA' }}><Layers size={11} strokeWidth={2.5} /> v3.1</span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '4px 10px', borderRadius: 8, background: 'rgba(49,130,246,0.08)', border: '1px solid rgba(49,130,246,0.15)', fontSize: 10, fontWeight: 600, color: '#3182F6' }}><Search size={11} strokeWidth={2.5} /> 38-Item Level</span>
         </div>
       </div>
 
       {/* Dropzone */}
-      <div ref={dropRef} onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop} style={{ ...TOSS_CARD, border: `2px dashed ${isDragging ? '#3182f6' : 'var(--bd1)'}`, background: isDragging ? 'linear-gradient(135deg, rgba(49,130,246,0.04), rgba(99,102,241,0.04))' : 'var(--card-bg)', transition: 'all 0.3s', cursor: 'pointer', textAlign: 'center', padding: '36px 24px' }} onClick={() => !isProcessing && document.getElementById('eju-finput')?.click()}>
+      <div ref={dropRef} onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop} style={{ ...TOSS_CARD, border: `2px dashed ${isDragging ? '#3182F6' : 'var(--border)'}`, background: isDragging ? 'linear-gradient(135deg, rgba(49,130,246,0.04), rgba(49,130,246,0.04))' : 'var(--bg-elevated)', transition: 'all 0.3s', cursor: 'pointer', textAlign: 'center', padding: '36px 24px' }} onClick={() => !isProcessing && document.getElementById('eju-finput')?.click()}>
         <input id="eju-finput" type="file" multiple accept=".jpg,.jpeg,.png,.webp,.pdf" style={{ display: 'none' }} onChange={handleFileSelect} />
-        <div style={{ width: 56, height: 56, borderRadius: 16, margin: '0 auto 12px', background: isDragging ? 'linear-gradient(135deg, #3182f6, #6366f1)' : 'linear-gradient(135deg, rgba(49,130,246,0.08), rgba(99,102,241,0.08))', border: `1px solid ${isDragging ? 'rgba(49,130,246,0.4)' : 'rgba(49,130,246,0.15)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s' }}>
-          <Upload size={24} color={isDragging ? '#fff' : '#3182f6'} strokeWidth={1.8} />
+        <div style={{ width: 56, height: 56, borderRadius: 16, margin: '0 auto 12px', background: isDragging ? 'linear-gradient(135deg, #3182F6, #1B64DA)' : 'linear-gradient(135deg, rgba(49,130,246,0.08), rgba(49,130,246,0.08))', border: `1px solid ${isDragging ? 'rgba(49,130,246,0.4)' : 'rgba(49,130,246,0.15)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s' }}>
+          <Upload size={24} color={isDragging ? '#fff' : '#3182F6'} strokeWidth={1.8} />
         </div>
-        <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)', marginBottom: 4 }}>{isDragging ? '📥 놓으면 분석 시작' : '시험지 스캔 파일 업로드'}</div>
-        <div style={{ fontSize: 11, color: 'var(--t3)', lineHeight: 1.6 }}>JPG / PNG / WebP / PDF · 文综/종합과목/Liberal 지원<br />드래그 또는 <span style={{ color: '#3182f6', fontWeight: 600 }}>클릭</span></div>
+        <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 4 }}>{isDragging ? '📥 놓으면 분석 시작' : '시험지 스캔 파일 업로드'}</div>
+        <div style={{ fontSize: 11, color: 'var(--text-tertiary)', lineHeight: 1.6 }}>JPG / PNG / WebP / PDF · 文综/종합과목/Liberal 지원<br />드래그 또는 <span style={{ color: '#3182F6', fontWeight: 600 }}>클릭</span></div>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 12, flexWrap: 'wrap' }}>
           {['Phase 1: 토큰 추출','Phase 2: Subject 격리','Phase 3: 코사인 유사도','Phase 4: 38문항 스캔'].map((p, i) => (
-            <span key={i} style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 10, color: 'var(--t3)' }}><CheckCircle2 size={11} color="var(--green)" strokeWidth={2} /> {p}</span>
+            <span key={i} style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 10, color: 'var(--text-tertiary)' }}><CheckCircle2 size={11} color="var(--green)" strokeWidth={2} /> {p}</span>
           ))}
         </div>
       </div>
@@ -812,46 +812,46 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
       {hasFiles && (
         <div style={{ ...TOSS_CARD, padding: '16px 20px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}><FileText size={14} color="var(--t2)" strokeWidth={2} /><span style={{ fontSize: 13, fontWeight: 700, color: 'var(--t0)' }}>업로드 파일 ({files.length})</span></div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}><FileText size={14} color="var(--text-secondary)" strokeWidth={2} /><span style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-primary)' }}>업로드 파일 ({files.length})</span></div>
             <div style={{ display: 'flex', gap: 6 }}>
-              {!isProcessing && !isAllDone && <button onClick={startBatchProcessing} className="btn-toss-bounce" style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '7px 16px', borderRadius: 10, background: 'linear-gradient(135deg, #6366f1, #3b82f6)', color: '#fff', border: 'none', fontSize: 11.5, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', boxShadow: '0 2px 8px rgba(99,102,241,0.25)' }}><Play size={12} strokeWidth={2.5} /> 분석 시작</button>}
+              {!isProcessing && !isAllDone && <button onClick={startBatchProcessing} className="btn-toss-bounce" style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '7px 16px', borderRadius: 10, background: 'linear-gradient(135deg, #1B64DA, #1B64DA)', color: '#fff', border: 'none', fontSize: 11.5, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', boxShadow: '0 2px 8px rgba(49,130,246,0.25)' }}><Play size={12} strokeWidth={2.5} /> 분석 시작</button>}
               {isProcessing && <button onClick={cancelProcessing} className="btn-toss-bounce" style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '7px 16px', borderRadius: 10, background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)', color: '#ef4444', fontSize: 11.5, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit' }}><Square size={12} strokeWidth={2.5} /> 중단</button>}
-              {!isProcessing && isAllDone && <button onClick={clearAllFiles} className="btn-toss-bounce" style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '7px 12px', borderRadius: 10, background: 'var(--bg3)', border: '1px solid var(--bd1)', color: 'var(--t2)', fontSize: 11, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit' }}><Trash2 size={12} strokeWidth={2} /> 초기화</button>}
+              {!isProcessing && isAllDone && <button onClick={clearAllFiles} className="btn-toss-bounce" style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '7px 12px', borderRadius: 10, background: 'var(--bg-active)', border: '1px solid var(--border)', color: 'var(--text-secondary)', fontSize: 11, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit' }}><Trash2 size={12} strokeWidth={2} /> 초기화</button>}
             </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6, maxHeight: 260, overflow: 'auto' }}>
             {files.map((f, i) => {
-              const sColor = f.status === 'done' ? '#10b981' : f.status === 'error' ? '#ef4444' : f.status === 'processing' ? '#3182f6' : 'var(--t3)';
+              const sColor = f.status === 'done' ? '#10b981' : f.status === 'error' ? '#ef4444' : f.status === 'processing' ? '#3182F6' : 'var(--text-tertiary)';
               const SIcon = f.status === 'done' ? CheckCircle2 : f.status === 'error' ? AlertCircle : f.status === 'processing' ? Loader2 : Clock;
               const FileIcon = /png|jpg|jpeg|webp/i.test(f.name.split('.').pop()) ? Image : FileText;
               const isComp = f.name.match(/文综|문종|종합과목|종과|Liberal|综合|総合/i);
               return (
-                <div key={f.id} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 12px', borderRadius: 10, background: f.status === 'processing' ? 'rgba(49,130,246,0.04)' : 'var(--bg3)', border: `1px solid ${f.status === 'processing' ? 'rgba(49,130,246,0.15)' : 'var(--bd0)'}` }}>
-                  <FileIcon size={16} color="var(--t2)" strokeWidth={1.5} style={{ flexShrink: 0 }} />
+                <div key={f.id} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 12px', borderRadius: 10, background: f.status === 'processing' ? 'rgba(49,130,246,0.04)' : 'var(--bg-active)', border: `1px solid ${f.status === 'processing' ? 'rgba(49,130,246,0.15)' : 'var(--border)'}` }}>
+                  <FileIcon size={16} color="var(--text-secondary)" strokeWidth={1.5} style={{ flexShrink: 0 }} />
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 2 }}>
-                      <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--t0)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{f.name}</span>
+                      <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{f.name}</span>
                       <span style={{ ...BADGE_BASE, color: sColor, background: `${sColor}10`, fontSize: 9 }}><SIcon size={9} strokeWidth={2.5} style={f.status === 'processing' ? { animation: 'spin 1s linear infinite' } : {}} />{f.status === 'done' ? '완료' : f.status === 'error' ? '오류' : f.status === 'processing' ? `${f.progress}%` : '준비'}</span>
-                      <span style={{ fontSize: 9, color: 'var(--t3)' }}>{formatFileSize(f.size)}</span>
-                      {isComp && <span style={{ fontSize: 7, padding: '1px 4px', borderRadius: 3, background: 'rgba(99,102,241,0.12)', color: '#818cf8', fontWeight: 600 }}>종합</span>}
+                      <span style={{ fontSize: 9, color: 'var(--text-tertiary)' }}>{formatFileSize(f.size)}</span>
+                      {isComp && <span style={{ fontSize: 7, padding: '1px 4px', borderRadius: 3, background: 'rgba(49,130,246,0.12)', color: '#3182F6', fontWeight: 600 }}>종합</span>}
                     </div>
                     {f.status === 'processing' && <div style={{ display: 'flex', gap: 3 }}>{(() => {
                       const stepLabels = ['토큰', isComp ? '격리' : 'LaTeX', '유사도', '38문항'];
-                      return stepLabels.map((ph, pi) => { const act = pi === Math.min(3, Math.floor((f.currentStep || 0) / 0.8)); return <span key={pi} style={{ fontSize: 8, padding: '1px 5px', borderRadius: 4, background: act ? 'rgba(99,102,241,0.12)' : 'var(--bg2)', color: act ? '#818cf8' : 'var(--t3)', fontWeight: act ? 700 : 400 }}>{ph}</span>; });
+                      return stepLabels.map((ph, pi) => { const act = pi === Math.min(3, Math.floor((f.currentStep || 0) / 0.8)); return <span key={pi} style={{ fontSize: 8, padding: '1px 5px', borderRadius: 4, background: act ? 'rgba(49,130,246,0.12)' : 'var(--bg-hover)', color: act ? '#3182F6' : 'var(--text-tertiary)', fontWeight: act ? 700 : 400 }}>{ph}</span>; });
                     })()}</div>}
-                    {f.status === 'processing' && <div style={{ height: 3, background: 'var(--bg2)', borderRadius: 2, overflow: 'hidden', marginTop: 4 }}><div style={{ height: '100%', width: `${f.progress}%`, background: 'linear-gradient(90deg, #6366f1, #3b82f6)', borderRadius: 2, transition: 'width 0.4s ease' }} /></div>}
+                    {f.status === 'processing' && <div style={{ height: 3, background: 'var(--bg-hover)', borderRadius: 2, overflow: 'hidden', marginTop: 4 }}><div style={{ height: '100%', width: `${f.progress}%`, background: 'linear-gradient(90deg, #1B64DA, #1B64DA)', borderRadius: 2, transition: 'width 0.4s ease' }} /></div>}
                     {f.status === 'done' && f.phaseResults && (
                       <div style={{ display: 'flex', gap: 4, marginTop: 3, flexWrap: 'wrap' }}>
                         {['c1','c2','c3'].map((k, ki) => <span key={ki} style={{ fontSize: 8, padding: '1px 5px', borderRadius: 4, background: 'rgba(16,185,129,0.1)', color: '#10b981', fontWeight: 600 }}>P{ki+1}: {f.phaseResults.phase4[k]}%</span>)}
                         <span style={{ fontSize: 8, padding: '1px 5px', borderRadius: 4, background: f.phaseResults.phase4.passed ? 'rgba(16,185,129,0.1)' : 'rgba(245,158,11,0.1)', color: f.phaseResults.phase4.passed ? '#10b981' : '#f59e0b', fontWeight: 700 }}>종합: {f.phaseResults.phase4.overallConfidence}%</span>
-                        {f.phaseResults.comprehensiveScan && <span style={{ fontSize: 8, padding: '1px 5px', borderRadius: 4, background: 'rgba(139,92,246,0.1)', color: '#8b5cf6', fontWeight: 600 }}>38문항 {f.phaseResults.comprehensiveScan.scanCoverage}%</span>}
+                        {f.phaseResults.comprehensiveScan && <span style={{ fontSize: 8, padding: '1px 5px', borderRadius: 4, background: 'rgba(49,130,246,0.1)', color: '#1B64DA', fontWeight: 600 }}>38문항 {f.phaseResults.comprehensiveScan.scanCoverage}%</span>}
                         {f.phaseResults.reInspectionCount > 0 && <span style={{ fontSize: 8, padding: '1px 5px', borderRadius: 4, background: 'rgba(245,158,11,0.15)', color: '#f59e0b', fontWeight: 700 }}>재검사 {f.phaseResults.reInspectionCount}회 ({f.phaseResults.originalConfidence}%→{f.phaseResults.phase4.overallConfidence}%)</span>}
                       </div>
                     )}
                     {f.status === 'error' && f.error && <div style={{ fontSize: 10, color: '#ef4444', marginTop: 2 }}>{f.error}</div>}
                   </div>
                   {f.status === 'done' && f.phaseResults?.phase4.needsHumanReview && <span style={{ padding: '2px 6px', borderRadius: 5, background: 'rgba(245,158,11,0.12)', fontSize: 8, fontWeight: 700, color: '#f59e0b', whiteSpace: 'nowrap' }}>⚠️ 저신뢰</span>}
-                  {!isProcessing && f.status !== 'processing' && <button onClick={() => removeFile(f.id)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--t3)', padding: 2 }} onMouseEnter={e => e.currentTarget.style.color = '#ef4444'} onMouseLeave={e => e.currentTarget.style.color = 'var(--t3)'}><X size={14} strokeWidth={2} /></button>}
+                  {!isProcessing && f.status !== 'processing' && <button onClick={() => removeFile(f.id)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-tertiary)', padding: 2 }} onMouseEnter={e => e.currentTarget.style.color = '#ef4444'} onMouseLeave={e => e.currentTarget.style.color = 'var(--text-tertiary)'}><X size={14} strokeWidth={2} /></button>}
                 </div>
               );
             })}
@@ -863,15 +863,15 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
       {isProcessing && (
         <div style={{ ...TOSS_CARD, padding: '16px 20px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><Loader2 size={14} color="#3182f6" strokeWidth={2} style={{ animation: 'spin 1s linear infinite' }} /><span style={{ fontSize: 12, fontWeight: 700, color: 'var(--t0)' }}>4단계 AI 파이프라인 + 38문항 개별 분석 중...</span></div>
-            <span style={{ fontSize: 14, fontWeight: 800, color: '#6366f1' }}>{overallProgress}%</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><Loader2 size={14} color="#3182F6" strokeWidth={2} style={{ animation: 'spin 1s linear infinite' }} /><span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-primary)' }}>4단계 AI 파이프라인 + 38문항 개별 분석 중...</span></div>
+            <span style={{ fontSize: 14, fontWeight: 800, color: '#1B64DA' }}>{overallProgress}%</span>
           </div>
-          <div style={{ height: 6, background: 'var(--bg2)', borderRadius: 3, overflow: 'hidden' }}><div style={{ height: '100%', width: `${overallProgress}%`, background: 'linear-gradient(90deg, #6366f1, #3b82f6, #8b5cf6)', borderRadius: 3, transition: 'width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)' }}><div style={{ position: 'absolute', right: -3, top: -2, width: 10, height: 10, borderRadius: '50%', background: '#8b5cf6', boxShadow: '0 0 8px rgba(139,92,246,0.4)' }} /></div></div>
+          <div style={{ height: 6, background: 'var(--bg-hover)', borderRadius: 3, overflow: 'hidden' }}><div style={{ height: '100%', width: `${overallProgress}%`, background: 'linear-gradient(90deg, #1B64DA, #1B64DA, #1B64DA)', borderRadius: 3, transition: 'width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)' }}><div style={{ position: 'absolute', right: -3, top: -2, width: 10, height: 10, borderRadius: '50%', background: '#1B64DA', boxShadow: '0 0 8px rgba(49,130,246,0.4)' }} /></div></div>
           {files.filter(f => f.status === 'processing').length > 0 && (
-            <div style={{ marginTop: 6, fontSize: 10, color: 'var(--t2)', display: 'flex', alignItems: 'center', gap: 6, justifyContent: 'center' }}>
-              <Search size={11} color="#8b5cf6" strokeWidth={2} />
+            <div style={{ marginTop: 6, fontSize: 10, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: 6, justifyContent: 'center' }}>
+              <Search size={11} color="#1B64DA" strokeWidth={2} />
               <span>종합과목 38문항 1:1 개별 분석 중...</span>
-              <span style={{ fontWeight: 600, color: '#8b5cf6' }}>{files.filter(f => f.status === 'done').length}/{files.length} 파일 완료</span>
+              <span style={{ fontWeight: 600, color: '#1B64DA' }}>{files.filter(f => f.status === 'done').length}/{files.length} 파일 완료</span>
             </div>
           )}
         </div>
@@ -881,13 +881,13 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
       {(liveLogs.length > 0 || isProcessing) && (
         <div style={{ ...TOSS_CARD, padding: '14px 18px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', marginBottom: showLogPanel ? 10 : 0 }} onClick={() => setShowLogPanel(p => !p)}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><ListChecks size={14} color="var(--t2)" strokeWidth={2} /><span style={{ fontSize: 12, fontWeight: 700, color: 'var(--t0)' }}>실시간 파이프라인 로그</span><span style={{ fontSize: 10, color: 'var(--t3)', fontWeight: 500 }}>{liveLogs.length}개 (Promise 기반)</span></div>
-            {showLogPanel ? <ChevronDown size={14} color="var(--t2)" /> : <ChevronRight size={14} color="var(--t2)" />}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><ListChecks size={14} color="var(--text-secondary)" strokeWidth={2} /><span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-primary)' }}>실시간 파이프라인 로그</span><span style={{ fontSize: 10, color: 'var(--text-tertiary)', fontWeight: 500 }}>{liveLogs.length}개 (Promise 기반)</span></div>
+            {showLogPanel ? <ChevronDown size={14} color="var(--text-secondary)" /> : <ChevronRight size={14} color="var(--text-secondary)" />}
           </div>
           {showLogPanel && (
             <div style={{ maxHeight: 240, overflow: 'auto', background: '#0d1117', borderRadius: 12, padding: '10px 12px', fontFamily: 'ui-monospace, monospace', fontSize: 11, lineHeight: 1.8, display: 'flex', flexDirection: 'column' }}>
               {liveLogs.length === 0 ? (
-                <div style={{ color: 'var(--t3)', fontStyle: 'italic', padding: '12px 0', textAlign: 'center' }}>파이프라인이 시작되면 로그가 출력됩니다...</div>
+                <div style={{ color: 'var(--text-tertiary)', fontStyle: 'italic', padding: '12px 0', textAlign: 'center' }}>파이프라인이 시작되면 로그가 출력됩니다...</div>
               ) : liveLogs.map((log, i) => {
                 const isLast = i === liveLogs.length - 1;
                 const colors = { info: '#8b949e', processing: '#58a6ff', phase1: '#7ee787', phase2: '#d2a8ff', phase3: '#79c0ff', phase4: '#ffa657', success: '#3fb950', warning: '#d29922', error: '#f85149', math: '#ff7b72' };
@@ -907,22 +907,22 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
       {/* Analysis Result */}
       {analysisResult && (
         <>
-          <div style={{ ...TOSS_CARD, background: 'linear-gradient(135deg, rgba(99,102,241,0.05), rgba(139,92,246,0.05))', border: '1px solid rgba(99,102,241,0.12)' }}>
+          <div style={{ ...TOSS_CARD, background: 'linear-gradient(135deg, rgba(49,130,246,0.05), rgba(49,130,246,0.05))', border: '1px solid rgba(49,130,246,0.12)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
               <div style={{ width: 36, height: 36, borderRadius: 12, background: 'linear-gradient(135deg, rgba(16,185,129,0.15), rgba(5,150,105,0.15))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><CheckCircle2 size={18} color="#10b981" strokeWidth={1.8} /></div>
-              <div><div style={{ fontSize: 16, fontWeight: 700, color: 'var(--t0)' }}>📊 분석 완료 리포트</div><div style={{ fontSize: 11, color: 'var(--t2)', marginTop: 1 }}>{analysisResult.summary.totalFiles}개 파일 · 4단계 async 파이프라인 · 38문항 1:1 개별 분석</div></div>
+              <div><div style={{ fontSize: 16, fontWeight: 700, color: 'var(--text-primary)' }}>📊 분석 완료 리포트</div><div style={{ fontSize: 11, color: 'var(--text-secondary)', marginTop: 1 }}>{analysisResult.summary.totalFiles}개 파일 · 4단계 async 파이프라인 · 38문항 1:1 개별 분석</div></div>
               {analysisResult.correctedByUser && <span style={{ marginLeft: 'auto', padding: '4px 10px', borderRadius: 8, background: 'rgba(245,158,11,0.1)', fontSize: 10, fontWeight: 600, color: '#f59e0b', display: 'flex', alignItems: 'center', gap: 4 }}><Brain size={11} strokeWidth={2.5} /> Self-Corrected ({analysisResult.boostedConfidence}%)</span>}
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 8, marginBottom: 14 }}>
               <ConfidenceGauge score={analysisResult.summary.avgConfidence} label="평균 신뢰도" size="md" />
               {(() => { const n = analysisResult.files.length; const avg = (key) => Math.round(analysisResult.files.reduce((s, f) => s + f.phase4[key], 0) / n); return <><ConfidenceGauge score={avg('c1')} label="P1: 토큰 추출" size="md" /><ConfidenceGauge score={avg('c2')} label="P2: 격리/LaTeX" size="md" /><ConfidenceGauge score={avg('c3')} label="P3: 코사인 유사도" size="md" /></>; })()}
             </div>
-            <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', padding: '12px 14px', background: 'var(--bg3)', borderRadius: 12, border: '1px solid var(--bd0)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><BarChart3 size={13} color="var(--t2)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--t2)' }}>처리 <strong style={{ color: 'var(--t0)' }}>{analysisResult.summary.totalFiles}개</strong></span></div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><Target size={13} color="var(--t2)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--t2)' }}>고신뢰 <strong style={{ color: '#10b981' }}>{analysisResult.summary.passedCount}개</strong></span></div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><AlertTriangle size={13} color="var(--t2)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--t2)' }}>저신뢰 <strong style={{ color: '#f59e0b' }}>{analysisResult.summary.needsReview}개</strong></span></div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><Search size={13} color="var(--t2)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--t2)' }}>38문항 <strong style={{ color: '#8b5cf6' }}>1:1 개별 분석</strong></span></div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><RefreshCw size={13} color="var(--t2)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--t2)' }}>재검사 <strong style={{ color: '#f59e0b' }}>{analysisResult.files.filter(f => f.reInspectionCount > 0).length}개</strong></span></div>
+            <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', padding: '12px 14px', background: 'var(--bg-active)', borderRadius: 12, border: '1px solid var(--border)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><BarChart3 size={13} color="var(--text-secondary)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--text-secondary)' }}>처리 <strong style={{ color: 'var(--text-primary)' }}>{analysisResult.summary.totalFiles}개</strong></span></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><Target size={13} color="var(--text-secondary)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--text-secondary)' }}>고신뢰 <strong style={{ color: '#10b981' }}>{analysisResult.summary.passedCount}개</strong></span></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><AlertTriangle size={13} color="var(--text-secondary)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--text-secondary)' }}>저신뢰 <strong style={{ color: '#f59e0b' }}>{analysisResult.summary.needsReview}개</strong></span></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><Search size={13} color="var(--text-secondary)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--text-secondary)' }}>38문항 <strong style={{ color: '#1B64DA' }}>1:1 개별 분석</strong></span></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}><RefreshCw size={13} color="var(--text-secondary)" strokeWidth={2} /><span style={{ fontSize: 11, color: 'var(--text-secondary)' }}>재검사 <strong style={{ color: '#f59e0b' }}>{analysisResult.files.filter(f => f.reInspectionCount > 0).length}개</strong></span></div>
             </div>
           </div>
 
@@ -930,16 +930,16 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
           {analysisResult.files.map((fr, fi) => (
             <div key={fi} style={{ ...TOSS_CARD }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', marginBottom: phaseDetailIndex === fi ? 16 : 0 }} onClick={() => setPhaseDetailIndex(phaseDetailIndex === fi ? -1 : fi)}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}><FileText size={14} color="var(--t2)" strokeWidth={1.5} /><span style={{ fontSize: 13, fontWeight: 700, color: 'var(--t0)' }}>{fr.fileName}</span><span style={{ ...BADGE_BASE, color: fr.phase4.passed ? '#10b981' : '#f59e0b', background: fr.phase4.passed ? 'rgba(16,185,129,0.1)' : 'rgba(245,158,11,0.1)' }}>{fr.phase4.passed ? '고신뢰' : '저신뢰'}</span>{fr.reInspectionCount > 0 && <span style={{ ...BADGE_BASE, color: '#f59e0b', background: 'rgba(245,158,11,0.15)', fontSize: 9 }}>재검사 {fr.reInspectionCount}회 ({fr.originalConfidence}%→{fr.phase4.overallConfidence}%)</span>}</div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}><button onClick={(e) => { e.stopPropagation(); setPhaseDetailIndex(phaseDetailIndex === fi ? -1 : fi); }} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--t2)', display: 'flex', padding: 4 }}><Eye size={14} strokeWidth={2} /></button>{phaseDetailIndex === fi ? <ChevronDown size={14} color="var(--t2)" /> : <ChevronRight size={14} color="var(--t2)" />}</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}><FileText size={14} color="var(--text-secondary)" strokeWidth={1.5} /><span style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-primary)' }}>{fr.fileName}</span><span style={{ ...BADGE_BASE, color: fr.phase4.passed ? '#10b981' : '#f59e0b', background: fr.phase4.passed ? 'rgba(16,185,129,0.1)' : 'rgba(245,158,11,0.1)' }}>{fr.phase4.passed ? '고신뢰' : '저신뢰'}</span>{fr.reInspectionCount > 0 && <span style={{ ...BADGE_BASE, color: '#f59e0b', background: 'rgba(245,158,11,0.15)', fontSize: 9 }}>재검사 {fr.reInspectionCount}회 ({fr.originalConfidence}%→{fr.phase4.overallConfidence}%)</span>}</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}><button onClick={(e) => { e.stopPropagation(); setPhaseDetailIndex(phaseDetailIndex === fi ? -1 : fi); }} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', padding: 4 }}><Eye size={14} strokeWidth={2} /></button>{phaseDetailIndex === fi ? <ChevronDown size={14} color="var(--text-secondary)" /> : <ChevronRight size={14} color="var(--text-secondary)" />}</div>
               </div>
               {phaseDetailIndex === fi && (
                 <>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 8, marginBottom: 14 }}>
                     {[['P1: 토큰', fr.phase4.c1, '📝'], [fr.subjectType === 'comprehensive' ? 'P2: 격리' : 'P2: LaTeX', fr.phase4.c2, fr.subjectType === 'comprehensive' ? '[B]' : '∑'], ['P3: 코사인', fr.phase4.c3, '📊'], ['P4: 종합', fr.phase4.overallConfidence, '🎯']].map(([label, score, icon], pi) => (
-                      <div key={pi} style={{ padding: '10px 12px', borderRadius: 10, background: 'var(--bg3)', textAlign: 'center' }}>
+                      <div key={pi} style={{ padding: '10px 12px', borderRadius: 10, background: 'var(--bg-active)', textAlign: 'center' }}>
                         <div style={{ fontSize: 18, marginBottom: 4 }}>{icon}</div>
-                        <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 500, marginBottom: 4 }}>{label}</div>
+                        <div style={{ fontSize: 10, color: 'var(--text-secondary)', fontWeight: 500, marginBottom: 4 }}>{label}</div>
                         <div style={{ fontSize: 18, fontWeight: 800, color: score >= 85 ? '#10b981' : score >= 70 ? '#f59e0b' : '#ef4444' }}>{score}<span style={{ fontSize: 10, fontWeight: 400 }}>%</span></div>
                       </div>
                     ))}
@@ -947,14 +947,14 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
 
                   {/* Syllabus mapping */}
                   {fr.phase3.mappedCategories.length > 0 && (
-                    <div style={{ padding: '12px 14px', borderRadius: 12, background: 'var(--bg3)', border: '1px solid var(--bd0)', marginBottom: 12 }}>
-                      <div style={{ fontSize: 10, fontWeight: 700, color: 'var(--t2)', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 4 }}><GitBranch size={11} strokeWidth={2} /> 시라버스 매핑 (코사인 유사도 기반)</div>
+                    <div style={{ padding: '12px 14px', borderRadius: 12, background: 'var(--bg-active)', border: '1px solid var(--border)', marginBottom: 12 }}>
+                      <div style={{ fontSize: 10, fontWeight: 700, color: 'var(--text-secondary)', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 4 }}><GitBranch size={11} strokeWidth={2} /> 시라버스 매핑 (코사인 유사도 기반)</div>
                       {fr.phase3.mappedCategories.map((cat, ci) => (
-                        <div key={ci} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '6px 10px', borderRadius: 8, background: ci === 0 ? 'rgba(99,102,241,0.06)' : 'transparent' }}>
-                          <span style={{ width: 18, height: 18, borderRadius: 6, background: ci === 0 ? '#6366f1' : 'var(--bg2)', color: ci === 0 ? '#fff' : 'var(--t3)', fontSize: 9, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{ci + 1}</span>
-                          <span style={{ fontSize: 11.5, fontWeight: 600, color: 'var(--t0)', flex: 1 }}>{cat.categoryName}</span>
-                          {cat.similarity !== undefined && <span style={{ fontSize: 9, color: 'var(--t3)', marginRight: 4 }}>cos θ = {cat.similarity.toFixed(3)}</span>}
-                          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}><div style={{ width: 50, height: 4, background: 'var(--bg2)', borderRadius: 2, overflow: 'hidden' }}><div style={{ height: '100%', width: `${cat.matchScore}%`, background: ci === 0 ? '#6366f1' : '#8b5cf6', borderRadius: 2 }} /></div><span style={{ fontSize: 10, fontWeight: 700, color: ci === 0 ? '#6366f1' : 'var(--t2)', minWidth: 28, textAlign: 'right' }}>{cat.matchScore}%</span></div>
+                        <div key={ci} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '6px 10px', borderRadius: 8, background: ci === 0 ? 'rgba(49,130,246,0.06)' : 'transparent' }}>
+                          <span style={{ width: 18, height: 18, borderRadius: 6, background: ci === 0 ? '#1B64DA' : 'var(--bg-hover)', color: ci === 0 ? '#fff' : 'var(--text-tertiary)', fontSize: 9, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{ci + 1}</span>
+                          <span style={{ fontSize: 11.5, fontWeight: 600, color: 'var(--text-primary)', flex: 1 }}>{cat.categoryName}</span>
+                          {cat.similarity !== undefined && <span style={{ fontSize: 9, color: 'var(--text-tertiary)', marginRight: 4 }}>cos θ = {cat.similarity.toFixed(3)}</span>}
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}><div style={{ width: 50, height: 4, background: 'var(--bg-hover)', borderRadius: 2, overflow: 'hidden' }}><div style={{ height: '100%', width: `${cat.matchScore}%`, background: ci === 0 ? '#1B64DA' : '#1B64DA', borderRadius: 2 }} /></div><span style={{ fontSize: 10, fontWeight: 700, color: ci === 0 ? '#1B64DA' : 'var(--text-secondary)', minWidth: 28, textAlign: 'right' }}>{cat.matchScore}%</span></div>
                         </div>
                       ))}
                     </div>
@@ -968,43 +968,43 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
                         {Object.entries(fr.comprehensiveScan.domainStats).map(([id, ds]) => {
                           const DIcon = DOMAIN_ICONS[id] || Globe;
                           return (
-                            <div key={id} style={{ padding: '8px 12px', borderRadius: 10, background: 'var(--bg3)', border: '1px solid var(--bd0)', flex: '1 0 auto', minWidth: 110 }}>
+                            <div key={id} style={{ padding: '8px 12px', borderRadius: 10, background: 'var(--bg-active)', border: '1px solid var(--border)', flex: '1 0 auto', minWidth: 110 }}>
                               <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginBottom: 3 }}>
                                 <DIcon size={11} color={DOMAIN_COLORS[id]} strokeWidth={2} />
                                 <span style={{ fontSize: 8, fontWeight: 600, color: DOMAIN_COLORS[id] }}>{DOMAIN_LABELS[id]}</span>
                               </div>
-                              <div style={{ fontSize: 16, fontWeight: 800, color: 'var(--t0)' }}>{ds.matched}<span style={{ fontSize: 10, fontWeight: 400, color: 'var(--t3)' }}>/{ds.total}</span></div>
+                              <div style={{ fontSize: 16, fontWeight: 800, color: 'var(--text-primary)' }}>{ds.matched}<span style={{ fontSize: 10, fontWeight: 400, color: 'var(--text-tertiary)' }}>/{ds.total}</span></div>
                               <ConfidenceGauge score={ds.coveragePct} size="sm" showLabel={false} />
-                              <div style={{ fontSize: 8, color: 'var(--t3)', marginTop: 2 }}>평균 {ds.avgConfidence}%</div>
+                              <div style={{ fontSize: 8, color: 'var(--text-tertiary)', marginTop: 2 }}>평균 {ds.avgConfidence}%</div>
                             </div>
                           );
                         })}
                       </div>
 
                       {/* Item-Level Individual Question Grid */}
-                      <div style={{ padding: '12px 14px', borderRadius: 12, background: 'rgba(99,102,241,0.04)', border: '1px solid rgba(99,102,241,0.15)' }}>
-                        <div style={{ fontSize: 10, fontWeight: 700, color: '#8b5cf6', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 4 }}>
+                      <div style={{ padding: '12px 14px', borderRadius: 12, background: 'rgba(49,130,246,0.04)', border: '1px solid rgba(49,130,246,0.15)' }}>
+                        <div style={{ fontSize: 10, fontWeight: 700, color: '#1B64DA', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 4 }}>
                           <Search size={11} strokeWidth={2} /> 종합과목 38문항 1:1 개별 분석 — 각 문항 독립 노드
                         </div>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 4, marginBottom: 10, maxHeight: 320, overflow: 'auto' }}>
                           {fr.comprehensiveScan.questions.map((q, qi) => {
-                            const qColor = q.matchCount > 0 ? (q.matchConfidence >= 70 ? '#10b981' : q.matchConfidence >= 40 ? '#f59e0b' : '#ef4444') : 'var(--t3)';
+                            const qColor = q.matchCount > 0 ? (q.matchConfidence >= 70 ? '#10b981' : q.matchConfidence >= 40 ? '#f59e0b' : '#ef4444') : 'var(--text-tertiary)';
                             return (
-                              <div key={q.number} style={{ display: 'flex', alignItems: 'flex-start', gap: 5, padding: '5px 8px', borderRadius: 6, background: q.matchCount > 0 ? `${DOMAIN_COLORS[q.domain] || '#6366f1'}08` : 'transparent', border: q.matchCount > 0 ? `1px solid ${DOMAIN_COLORS[q.domain] || '#6366f1'}20` : '1px solid transparent' }}>
-                                <span style={{ width: 18, height: 18, borderRadius: 4, background: DOMAIN_COLORS[q.domain] || '#6366f1', color: '#fff', fontSize: 8, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{q.number}</span>
+                              <div key={q.number} style={{ display: 'flex', alignItems: 'flex-start', gap: 5, padding: '5px 8px', borderRadius: 6, background: q.matchCount > 0 ? `${DOMAIN_COLORS[q.domain] || '#1B64DA'}08` : 'transparent', border: q.matchCount > 0 ? `1px solid ${DOMAIN_COLORS[q.domain] || '#1B64DA'}20` : '1px solid transparent' }}>
+                                <span style={{ width: 18, height: 18, borderRadius: 4, background: DOMAIN_COLORS[q.domain] || '#1B64DA', color: '#fff', fontSize: 8, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{q.number}</span>
                                 <div style={{ flex: 1, minWidth: 0, overflow: 'hidden' }}>
-                                  <div style={{ fontSize: 9, fontWeight: 600, color: 'var(--t0)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{q.name}</div>
+                                  <div style={{ fontSize: 9, fontWeight: 600, color: 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{q.name}</div>
                                   <div style={{ fontSize: 8, color: qColor, fontWeight: 500 }}>{q.matchCount > 0 ? 'OK 매칭 ' + q.matchConfidence + '%' : '⏳ 미검출'}</div>
                                 </div>
                               </div>
                             );
                           })}
                         </div>
-                        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', borderTop: '1px solid var(--bd0)', paddingTop: 8 }}>
-                          <span style={{ fontSize: 9, color: 'var(--t2)', display: 'flex', alignItems: 'center', gap: 3 }}>📊 전체 커버리지: <strong style={{ color: 'var(--t0)' }}>{fr.comprehensiveScan.scanCoverage}%</strong></span>
-                          <span style={{ fontSize: 9, color: 'var(--t2)', display: 'flex', alignItems: 'center', gap: 3 }}>🎯 도메인 평균: <strong style={{ color: 'var(--t0)' }}>{fr.comprehensiveScan.avgDomainConfidence}%</strong></span>
-                          <span style={{ fontSize: 9, color: 'var(--t2)', display: 'flex', alignItems: 'center', gap: 3 }}>🔬 스캔 신뢰도: <strong style={{ color: fr.comprehensiveScan.scanConfidence >= 70 ? '#10b981' : '#f59e0b' }}>{fr.comprehensiveScan.scanConfidence}%</strong></span>
-                          <span style={{ fontSize: 9, color: 'var(--t3)', display: 'flex', alignItems: 'center', gap: 3 }}>38문항 <strong>1:1 개별 분석</strong> (Anti-Group Clustering)</span>
+                        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', borderTop: '1px solid var(--border)', paddingTop: 8 }}>
+                          <span style={{ fontSize: 9, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: 3 }}>📊 전체 커버리지: <strong style={{ color: 'var(--text-primary)' }}>{fr.comprehensiveScan.scanCoverage}%</strong></span>
+                          <span style={{ fontSize: 9, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: 3 }}>🎯 도메인 평균: <strong style={{ color: 'var(--text-primary)' }}>{fr.comprehensiveScan.avgDomainConfidence}%</strong></span>
+                          <span style={{ fontSize: 9, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: 3 }}>🔬 스캔 신뢰도: <strong style={{ color: fr.comprehensiveScan.scanConfidence >= 70 ? '#10b981' : '#f59e0b' }}>{fr.comprehensiveScan.scanConfidence}%</strong></span>
+                          <span style={{ fontSize: 9, color: 'var(--text-tertiary)', display: 'flex', alignItems: 'center', gap: 3 }}>38문항 <strong>1:1 개별 분석</strong> (Anti-Group Clustering)</span>
                         </div>
                       </div>
                     </div>
@@ -1013,11 +1013,11 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
                   {!fr.phase4.passed && (
                     <div style={{ padding: '10px 14px', borderRadius: 10, background: 'rgba(245,158,11,0.06)', border: '1px solid rgba(245,158,11,0.15)', display: 'flex', alignItems: 'flex-start', gap: 8 }}>
                       <AlertTriangle size={14} color="#f59e0b" strokeWidth={2} style={{ flexShrink: 0, marginTop: 1 }} />
-                      <div style={{ fontSize: 10.5, color: 'var(--t1)', lineHeight: 1.6 }}><strong style={{ color: '#f59e0b' }}>판독 경고:</strong> 신뢰도 <strong>{fr.phase4.overallConfidence}%</strong>가 85% 미만입니다.{fr.phase4.warnings.map((w, wi) => <div key={wi} style={{ marginTop: 2, color: 'var(--t3)' }}>· {w}</div>)}</div>
+                      <div style={{ fontSize: 10.5, color: 'var(--text-secondary)', lineHeight: 1.6 }}><strong style={{ color: '#f59e0b' }}>판독 경고:</strong> 신뢰도 <strong>{fr.phase4.overallConfidence}%</strong>가 85% 미만입니다.{fr.phase4.warnings.map((w, wi) => <div key={wi} style={{ marginTop: 2, color: 'var(--text-tertiary)' }}>· {w}</div>)}</div>
                     </div>
                   )}
                   {fr.phase4.passed && fr.phase4.ensembleFormula && (
-                    <div style={{ padding: '8px 14px', borderRadius: 8, background: 'rgba(16,185,129,0.05)', border: '1px solid rgba(16,185,129,0.1)', fontSize: 10, color: 'var(--t2)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ padding: '8px 14px', borderRadius: 8, background: 'rgba(16,185,129,0.05)', border: '1px solid rgba(16,185,129,0.1)', fontSize: 10, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: 6 }}>
                       <Info size={12} color="#10b981" /> 앙상블 공식: {fr.phase4.ensembleFormula}
                     </div>
                   )}
@@ -1030,8 +1030,8 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
             <div style={{ padding: '12px 14px', borderRadius: 12, background: 'rgba(245,158,11,0.04)', border: '1px solid rgba(245,158,11,0.12)' }}>
               <div style={{ fontSize: 10, fontWeight: 700, color: '#f59e0b', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 4 }}><Brain size={11} strokeWidth={2} /> Self-Correction 피드백 내역</div>
               {feedbackHistory.map((fb, fi) => (
-                <div key={fi} style={{ fontSize: 10, color: 'var(--t2)', lineHeight: 1.7, padding: '4px 0', borderTop: fi > 0 ? '1px solid var(--bd0)' : 'none' }}>
-                  <span style={{ color: 'var(--t3)' }}>{fb.fileName}:</span> AI <strong style={{ color: '#6366f1' }}>{fb.aiGuess.join(', ') || '?'}</strong> → 사용자 <strong style={{ color: '#10b981' }}>{fb.userChoice}</strong> <span style={{ color: 'var(--t3)' }}>(P4: {fb.phase4Score}%)</span>
+                <div key={fi} style={{ fontSize: 10, color: 'var(--text-secondary)', lineHeight: 1.7, padding: '4px 0', borderTop: fi > 0 ? '1px solid var(--border)' : 'none' }}>
+                  <span style={{ color: 'var(--text-tertiary)' }}>{fb.fileName}:</span> AI <strong style={{ color: '#1B64DA' }}>{fb.aiGuess.join(', ') || '?'}</strong> → 사용자 <strong style={{ color: '#10b981' }}>{fb.userChoice}</strong> <span style={{ color: 'var(--text-tertiary)' }}>(P4: {fb.phase4Score}%)</span>
                 </div>
               ))}
             </div>
@@ -1043,20 +1043,20 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
       {!hasFiles && !isProcessing && !analysisResult && (
         <div style={{ ...TOSS_CARD, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '48px 24px', gap: 12, textAlign: 'center' }}>
           <div className="eju-logo-3d" style={{ position: 'relative', width: 72, height: 72 }}>
-            <div style={{ position: 'absolute', inset: -6, background: 'linear-gradient(135deg, #6366f1, #3b82f6, #ec4899)', borderRadius: 20, filter: 'blur(12px)', opacity: 0.6 }} />
-            <div style={{ position: 'relative', width: 72, height: 72, background: 'linear-gradient(145deg, #1f202a, #2e303f)', borderRadius: 18, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}>
-              <GraduationCap size={28} color="#a5b4fc" strokeWidth={1.5} style={{ opacity: 0.9 }} />
-              <div style={{ width: 28, height: 4, background: 'linear-gradient(90deg, #6366f1, #ec4899)', borderRadius: 4, marginTop: 4, opacity: 0.7, boxShadow: '0 0 12px rgba(99,102,241,0.5)' }} />
+            <div style={{ position: 'absolute', inset: -6, background: 'linear-gradient(135deg, #1B64DA, #1B64DA, #1B64DA)', borderRadius: 20, filter: 'blur(12px)', opacity: 0.6 }} />
+            <div style={{ position: 'relative', width: 72, height: 72, background: 'linear-gradient(145deg, #1f202a, #2e303f)', borderRadius: 18, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(0,27,55,0.045)', boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}>
+              <GraduationCap size={28} color="#3182F6" strokeWidth={1.5} style={{ opacity: 0.9 }} />
+              <div style={{ width: 28, height: 4, background: 'linear-gradient(90deg, #1B64DA, #1B64DA)', borderRadius: 4, marginTop: 4, opacity: 0.7, boxShadow: '0 0 12px rgba(49,130,246,0.5)' }} />
             </div>
           </div>
-          <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--t0)' }}>EJU 종합과목 시험지 업로드</div>
-          <div style={{ fontSize: 12.5, color: 'var(--t2)', lineHeight: 1.7, maxWidth: 440 }}>시험지 스캔본(JPG/PNG/PDF)을 드롭존에 끌어다 놓으면<br /><strong style={{ color: 'var(--t0)' }}>38문항 개별 1:1 정밀 분석 파이프라인</strong>이 자동으로 가동됩니다</div>
+          <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--text-primary)' }}>EJU 종합과목 시험지 업로드</div>
+          <div style={{ fontSize: 12.5, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 440 }}>시험지 스캔본(JPG/PNG/PDF)을 드롭존에 끌어다 놓으면<br /><strong style={{ color: 'var(--text-primary)' }}>38문항 개별 1:1 정밀 분석 파이프라인</strong>이 자동으로 가동됩니다</div>
           <div style={{ display: 'flex', gap: 10, marginTop: 4, flexWrap: 'wrap', justifyContent: 'center' }}>
             {['4-Stage Pipeline','Subject Isolation','Cosine Similarity','38-Item Level Analysis','Self-Correction'].map((p, i) => (
-              <span key={i} style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 10, color: 'var(--t3)' }}><CheckCircle2 size={11} color="var(--green)" strokeWidth={2} /> {p}</span>
+              <span key={i} style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 10, color: 'var(--text-tertiary)' }}><CheckCircle2 size={11} color="var(--green)" strokeWidth={2} /> {p}</span>
             ))}
           </div>
-          <div style={{ marginTop: 6, padding: '8px 14px', borderRadius: 10, background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.1)', fontSize: 10, color: 'var(--t2)', lineHeight: 1.6, maxWidth: 420 }}>
+          <div style={{ marginTop: 6, padding: '8px 14px', borderRadius: 10, background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.1)', fontSize: 10, color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: 420 }}>
             <strong style={{ color: '#ef4444' }}>⚠️ Anti-Hallucination:</strong> 文综 → 종합과목 강제.<br />Phase 2 LaTeX 완전 차단. 38문항 개별 분석 (Anti-Group Clustering).
           </div>
         </div>
@@ -1066,13 +1066,13 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
       {isAllDone && analysisResult && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {hasCompFiles && analysisResult.files.some(f => f.comprehensiveScan) && (
-            <div style={{ ...TOSS_CARD, background: 'linear-gradient(135deg, rgba(99,102,241,0.04), rgba(139,92,246,0.04))', border: '1px solid rgba(99,102,241,0.12)' }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--t0)', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 6 }}>
-                <Search size={14} color="#8b5cf6" strokeWidth={2} /> EJU 종합과목 38문항 정밀 추천 로드맵
+            <div style={{ ...TOSS_CARD, background: 'linear-gradient(135deg, rgba(49,130,246,0.04), rgba(49,130,246,0.04))', border: '1px solid rgba(49,130,246,0.12)' }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 6 }}>
+                <Search size={14} color="#1B64DA" strokeWidth={2} /> EJU 종합과목 38문항 정밀 추천 로드맵
               </div>
               {/* Re-inspection summary */}
               {analysisResult.files.some(f => f.reInspectionCount > 0) && (
-                <div style={{ padding: '8px 12px', borderRadius: 10, background: 'rgba(245,158,11,0.06)', border: '1px solid rgba(245,158,11,0.15)', marginBottom: 10, display: 'flex', alignItems: 'center', gap: 8, fontSize: 10.5, color: 'var(--t1)' }}>
+                <div style={{ padding: '8px 12px', borderRadius: 10, background: 'rgba(245,158,11,0.06)', border: '1px solid rgba(245,158,11,0.15)', marginBottom: 10, display: 'flex', alignItems: 'center', gap: 8, fontSize: 10.5, color: 'var(--text-secondary)' }}>
                   <RefreshCw size={13} color="#f59e0b" strokeWidth={2} style={{ flexShrink: 0 }} />
                   <span>자동 재검사 완료: <strong style={{ color: '#f59e0b' }}>{analysisResult.files.filter(f => f.reInspectionCount > 0).length}개 파일</strong>이 80% 미만으로 감지되어 재분석됨
                     {analysisResult.files.filter(f => f.reInspectionCount > 0).map((f, i) =>
@@ -1096,9 +1096,9 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
                         <DIcon size={12} color={DOMAIN_COLORS[dId]} strokeWidth={2} />
                         <span style={{ fontSize: 9, fontWeight: 700, color: DOMAIN_COLORS[dId] }}>{DOMAIN_LABELS[dId]}</span>
                       </div>
-                      <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 500 }}>{ds.matched}/{ds.total} 문항 매칭</div>
+                      <div style={{ fontSize: 11, color: 'var(--text-secondary)', fontWeight: 500 }}>{ds.matched}/{ds.total} 문항 매칭</div>
                       <ConfidenceGauge score={ds.coveragePct} size="sm" showLabel={false} />
-                      <div style={{ fontSize: 8, color: 'var(--t3)', marginTop: 3 }}>
+                      <div style={{ fontSize: 8, color: 'var(--text-tertiary)', marginTop: 3 }}>
                         평균 신뢰도 {ds.avgConfidence}% · {yearInfo}
                       </div>
                     </div>
@@ -1106,27 +1106,27 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
                 })}
               </div>
               {/* Per-question year mapping summary */}
-              <div style={{ marginTop: 10, padding: '8px 12px', borderRadius: 10, background: 'var(--bg3)', border: '1px solid var(--bd0)', fontSize: 10, color: 'var(--t2)', lineHeight: 1.7, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                <span>출제 파트: <strong style={{ color: 'var(--t0)' }}>지리(Q1~Q8) · 역사(Q9~Q16) · 정치(Q17~Q24) · 경제(Q25~Q32) · 사회(Q33~Q38)</strong></span>
+              <div style={{ marginTop: 10, padding: '8px 12px', borderRadius: 10, background: 'var(--bg-active)', border: '1px solid var(--border)', fontSize: 10, color: 'var(--text-secondary)', lineHeight: 1.7, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <span>출제 파트: <strong style={{ color: 'var(--text-primary)' }}>지리(Q1~Q8) · 역사(Q9~Q16) · 정치(Q17~Q24) · 경제(Q25~Q32) · 사회(Q33~Q38)</strong></span>
                 {analysisResult.files.map((f, i) => {
                   const yr = f.phase1?.metadata?.year;
-                  return yr ? <span key={i}>· {f.fileName}: <strong style={{ color: '#3182f6' }}>{yr}년</strong> | 종합 신뢰도 <strong style={{ color: f.phase4.passed ? '#10b981' : '#f59e0b' }}>{f.phase4.overallConfidence}%</strong></span> : null;
+                  return yr ? <span key={i}>· {f.fileName}: <strong style={{ color: '#3182F6' }}>{yr}년</strong> | 종합 신뢰도 <strong style={{ color: f.phase4.passed ? '#10b981' : '#f59e0b' }}>{f.phase4.overallConfidence}%</strong></span> : null;
                 })}
               </div>
             </div>
           )}
           {!hasMathFiles && hasCompFiles && (
-            <div style={{ ...TOSS_CARD, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px', gap: 8, fontSize: 11, color: 'var(--t2)' }}>
-              <Info size={13} color="#6366f1" strokeWidth={2} /> 수학 파일 미감지 — 수학 로드맵이 표시되지 않습니다 (Conditional Rendering)
+            <div style={{ ...TOSS_CARD, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px', gap: 8, fontSize: 11, color: 'var(--text-secondary)' }}>
+              <Info size={13} color="#1B64DA" strokeWidth={2} /> 수학 파일 미감지 — 수학 로드맵이 표시되지 않습니다 (Conditional Rendering)
             </div>
           )}
           {hasMathFiles && (
-            <div style={{ ...TOSS_CARD, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px', gap: 8, fontSize: 11, color: 'var(--t2)' }}>
-              <Info size={13} color="#3182f6" strokeWidth={2} /> 수학 파일 감지됨 — 수학 코스1 로드맵 표시 가능
+            <div style={{ ...TOSS_CARD, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px', gap: 8, fontSize: 11, color: 'var(--text-secondary)' }}>
+              <Info size={13} color="#3182F6" strokeWidth={2} /> 수학 파일 감지됨 — 수학 코스1 로드맵 표시 가능
             </div>
           )}
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <button onClick={() => { setFiles([]); setAnalysisResult(null); setLiveLogs([]); setOverallProgress(0); setFeedbackHistory([]); setSelfCorrection(null); }} className="btn-toss-bounce" style={{ display: 'flex', alignItems: 'center', gap: 7, background: 'linear-gradient(135deg, #6366f1, #3b82f6)', color: '#fff', border: 'none', borderRadius: 14, padding: '12px 28px', fontSize: 13.5, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', boxShadow: '0 4px 16px rgba(99,102,241,0.3)', letterSpacing: '-0.015em' }}><Upload size={16} strokeWidth={2.5} /> 새 문서 업로드하고 다시 분석</button>
+            <button onClick={() => { setFiles([]); setAnalysisResult(null); setLiveLogs([]); setOverallProgress(0); setFeedbackHistory([]); setSelfCorrection(null); }} className="btn-toss-bounce" style={{ display: 'flex', alignItems: 'center', gap: 7, background: 'linear-gradient(135deg, #1B64DA, #1B64DA)', color: '#fff', border: 'none', borderRadius: 14, padding: '12px 28px', fontSize: 13.5, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', boxShadow: '0 4px 16px rgba(49,130,246,0.3)', letterSpacing: '-0.015em' }}><Upload size={16} strokeWidth={2.5} /> 새 문서 업로드하고 다시 분석</button>
           </div>
         </div>
       )}
@@ -1138,7 +1138,7 @@ export default function EJU20YearTrend({ exams = [], settings = {} }) {
         .eju-logo-3d:hover .logo-glow { opacity: 1 !important; }
         @keyframes spin { to { transform: rotate(360deg); } }
         @keyframes fadeInLog { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-        .katex { color: var(--t0); }
+        .katex { color: var(--text-primary); }
         .katex-display { margin: 4px 0; overflow-x: auto; }
       `}</style>
     </div>

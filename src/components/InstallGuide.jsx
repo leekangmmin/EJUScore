@@ -122,7 +122,7 @@ export default function InstallGuide({ onClose, onDontShowAgain }) {
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
           <div style={{
             width: 44, height: 44, borderRadius: 14,
-            background: 'linear-gradient(135deg, #6366f1, #3b82f6)',
+            background: 'linear-gradient(135deg, #1B64DA, #1B64DA)',
             display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
           }}>
             <Download size={20} color="#fff" strokeWidth={2} />
@@ -166,7 +166,7 @@ export default function InstallGuide({ onClose, onDontShowAgain }) {
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
               padding: '6px 12px', borderRadius: 10,
-              background: 'rgba(99,102,241,0.08)', color: '#6366f1',
+              background: 'rgba(49,130,246,0.08)', color: '#1B64DA',
               fontSize: 11.5, fontWeight: 600,
               alignSelf: 'flex-start',
             }}>
@@ -179,11 +179,11 @@ export default function InstallGuide({ onClose, onDontShowAgain }) {
               <button onClick={handleInstall} className="btn-toss-bounce" style={{
                 padding: '12px 20px', borderRadius: 14,
                 border: 'none',
-                background: 'linear-gradient(135deg, #6366f1, #3b82f6)',
+                background: 'linear-gradient(135deg, #1B64DA, #1B64DA)',
                 color: '#fff', cursor: 'pointer', fontFamily: 'inherit',
                 fontSize: 13, fontWeight: 700,
                 display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-                boxShadow: '0 4px 16px rgba(99,102,241,0.3)',
+                boxShadow: '0 4px 16px rgba(49,130,246,0.3)',
               }}>
                 <Download size={16} strokeWidth={2.5} />
                 앱 설치하기 (권장)
@@ -206,8 +206,8 @@ export default function InstallGuide({ onClose, onDontShowAgain }) {
                 }} onClick={() => setStepComplete(prev => ({ ...prev, [i]: !prev[i] }))}>
                   <div style={{
                     width: 24, height: 24, borderRadius: 8,
-                    background: stepComplete[i] ? '#10b981' : 'rgba(99,102,241,0.1)',
-                    color: stepComplete[i] ? '#fff' : '#6366f1',
+                    background: stepComplete[i] ? '#10b981' : 'rgba(49,130,246,0.1)',
+                    color: stepComplete[i] ? '#fff' : '#1B64DA',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: 11, fontWeight: 700, flexShrink: 0,
                   }}>
@@ -249,8 +249,8 @@ export default function InstallGuide({ onClose, onDontShowAgain }) {
           )}
           <button onClick={onClose} style={{
             marginLeft: 'auto', padding: '9px 18px', borderRadius: 12,
-            border: 'none', background: 'rgba(99,102,241,0.08)',
-            color: '#6366f1', cursor: 'pointer', fontSize: 12,
+            border: 'none', background: 'rgba(49,130,246,0.08)',
+            color: '#1B64DA', cursor: 'pointer', fontSize: 12,
             fontFamily: 'inherit', fontWeight: 600,
           }}>
             {isStandalone ? '앱 시작하기' : '닫기'}

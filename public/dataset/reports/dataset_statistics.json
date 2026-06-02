@@ -1,0 +1,52 @@
+{
+  "total_exams": 28,
+  "total_questions": 840,
+  "average_confidence": 0.8183,
+  "domain_distribution": {
+    "unknown": 396,
+    "geography": 73,
+    "politics": 108,
+    "economy": 159,
+    "history": 72,
+    "society": 32
+  },
+  "year_distribution": {
+    "2002": 92,
+    "2003": 94,
+    "2004": 84,
+    "2005": 42,
+    "2006": 48,
+    "2007": 48,
+    "2008": 51,
+    "2009": 50,
+    "2010": 51,
+    "2011": 49,
+    "2012": 65,
+    "2013": 58,
+    "2014": 57,
+    "2015": 51
+  },
+  "difficulty_distribution": {
+    "2": 319,
+    "4": 341,
+    "3": 180
+  },
+  "question_type_distribution": {
+    "multiple_choice": 433,
+    "economic_analysis": 104,
+    "social_analysis": 44,
+    "graph_analysis": 38,
+    "historical_analysis": 52,
+    "probability_statistics": 14,
+    "political_analysis": 60,
+    "geographical_analysis": 57,
+    "geometry": 6,
+    "data_interpretation": 32
+  },
+  "validation": {
+    "passed": 21,
+    "warned": 0,
+    "failed": 7,
+    "low_confidence_items": 235
+  }
+}

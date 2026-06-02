@@ -1,0 +1,702 @@
+{
+  "generated_at": "2026-06-02T07:37:36.606414",
+  "total_topics_analyzed": 35,
+  "topics": [
+    {
+      "topic": "수요·공급과 시장균형",
+      "domain": "economy",
+      "total_count": 217,
+      "recent_5yr": 44,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 51.9,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "GDP·국민소득",
+        "경제성장·경기변동",
+        "고용·노동",
+        "국제무역",
+        "근대일본"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "세계대전",
+      "domain": "history",
+      "total_count": 128,
+      "recent_5yr": 31,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 55.1,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "냉전",
+        "대공황",
+        "러시아혁명·소련",
+        "산업혁명·자본주의",
+        "시민혁명"
+      ],
+      "prerequisite_concepts": [
+        "제국주의",
+        "민족주의",
+        "베르사유조약"
+      ]
+    },
+    {
+      "topic": "환율·국제수지",
+      "domain": "economy",
+      "total_count": 116,
+      "recent_5yr": 9,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 51.9,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "GDP·국민소득",
+        "경제성장·경기변동",
+        "고용·노동",
+        "국제무역",
+        "근대일본"
+      ],
+      "prerequisite_concepts": [
+        "변동환율",
+        "고정환율",
+        "경상수지"
+      ]
+    },
+    {
+      "topic": "기후·케펜구분",
+      "domain": "geography",
+      "total_count": 109,
+      "recent_5yr": 30,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 58.5,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "인구·도시화",
+        "자원·농업",
+        "지도·GIS",
+        "지형·판구조"
+      ],
+      "prerequisite_concepts": [
+        "케펜기후구분",
+        "온대",
+        "열대",
+        "건조"
+      ]
+    },
+    {
+      "topic": "통치기구",
+      "domain": "politics",
+      "total_count": 74,
+      "recent_5yr": 21,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 59.5,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "국제정치·국제기구",
+        "사법·재판",
+        "선거·정당",
+        "안전보장·방위",
+        "정치사상"
+      ],
+      "prerequisite_concepts": [
+        "삼권분립",
+        "의원내각제"
+      ]
+    },
+    {
+      "topic": "국제무역",
+      "domain": "economy",
+      "total_count": 71,
+      "recent_5yr": 7,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 37.9,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "GDP·국민소득",
+        "경제성장·경기변동",
+        "고용·노동",
+        "근대일본",
+        "금융·통화정책"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "국제정치·국제기구",
+      "domain": "politics",
+      "total_count": 55,
+      "recent_5yr": 23,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 66.9,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "사법·재판",
+        "선거·정당",
+        "안전보장·방위",
+        "정치사상",
+        "지방자치"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "냉전",
+      "domain": "history",
+      "total_count": 51,
+      "recent_5yr": 9,
+      "last_appeared": 2024,
+      "gap_years": 1,
+      "prediction_probability": 38.8,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "대공황",
+        "러시아혁명·소련",
+        "산업혁명·자본주의",
+        "세계대전",
+        "시민혁명"
+      ],
+      "prerequisite_concepts": [
+        "마셜플랜",
+        "NATO",
+        "바르샤바조약"
+      ]
+    },
+    {
+      "topic": "GDP·국민소득",
+      "domain": "economy",
+      "total_count": 46,
+      "recent_5yr": 8,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 48.4,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "경제성장·경기변동",
+        "고용·노동",
+        "국제무역",
+        "근대일본",
+        "금융·통화정책"
+      ],
+      "prerequisite_concepts": [
+        "국내총생산",
+        "1인당소득"
+      ]
+    },
+    {
+      "topic": "경제성장·경기변동",
+      "domain": "economy",
+      "total_count": 34,
+      "recent_5yr": 9,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 57.3,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "GDP·국민소득",
+        "고용·노동",
+        "국제무역",
+        "근대일본",
+        "금융·통화정책"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "근대일본",
+      "domain": "economy",
+      "total_count": 29,
+      "recent_5yr": 5,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 44.9,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "GDP·국민소득",
+        "경제성장·경기변동",
+        "고용·노동",
+        "국제무역",
+        "금융·통화정책"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "선거·정당",
+      "domain": "politics",
+      "total_count": 29,
+      "recent_5yr": 2,
+      "last_appeared": 2024,
+      "gap_years": 1,
+      "prediction_probability": 32.8,
+      "priority": "B+",
+      "estimated_score_impact": 2.5,
+      "related_topics": [
+        "국제정치·국제기구",
+        "사법·재판",
+        "안전보장·방위",
+        "정치사상",
+        "지방자치"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "일본경제사",
+      "domain": "economy",
+      "total_count": 29,
+      "recent_5yr": 0,
+      "last_appeared": 2017,
+      "gap_years": 8,
+      "prediction_probability": 43.5,
+      "priority": "B",
+      "estimated_score_impact": 1.8,
+      "related_topics": [
+        "GDP·국민소득",
+        "경제성장·경기변동",
+        "고용·노동",
+        "국제무역",
+        "근대일본"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "자원·농업",
+      "domain": "geography",
+      "total_count": 29,
+      "recent_5yr": 11,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 52.9,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "기후·케펜구분",
+        "인구·도시화",
+        "지도·GIS",
+        "지형·판구조"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "헌법·기본권",
+      "domain": "politics",
+      "total_count": 29,
+      "recent_5yr": 15,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 66.9,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "국제정치·국제기구",
+        "사법·재판",
+        "선거·정당",
+        "안전보장·방위",
+        "정치사상"
+      ],
+      "prerequisite_concepts": [
+        "기본권",
+        "삼권분립"
+      ]
+    },
+    {
+      "topic": "환경문제",
+      "domain": "society",
+      "total_count": 28,
+      "recent_5yr": 7,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 55.8,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "다문화사회",
+        "사회보장·복지"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "금융·통화정책",
+      "domain": "economy",
+      "total_count": 25,
+      "recent_5yr": 10,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 52.9,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "GDP·국민소득",
+        "경제성장·경기변동",
+        "고용·노동",
+        "국제무역",
+        "근대일본"
+      ],
+      "prerequisite_concepts": [
+        "중앙은행",
+        "금리",
+        "통화량"
+      ]
+    },
+    {
+      "topic": "고용·노동",
+      "domain": "economy",
+      "total_count": 20,
+      "recent_5yr": 3,
+      "last_appeared": 2023,
+      "gap_years": 2,
+      "prediction_probability": 32.6,
+      "priority": "A",
+      "estimated_score_impact": 3.5,
+      "related_topics": [
+        "GDP·국민소득",
+        "경제성장·경기변동",
+        "국제무역",
+        "근대일본",
+        "금융·통화정책"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "지도·GIS",
+      "domain": "geography",
+      "total_count": 20,
+      "recent_5yr": 9,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 56.4,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "기후·케펜구분",
+        "인구·도시화",
+        "자원·농업",
+        "지형·판구조"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "사회보장·복지",
+      "domain": "society",
+      "total_count": 15,
+      "recent_5yr": 2,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 37.9,
+      "priority": "B+",
+      "estimated_score_impact": 2.5,
+      "related_topics": [
+        "다문화사회",
+        "환경문제"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "인구·도시화",
+      "domain": "geography",
+      "total_count": 15,
+      "recent_5yr": 5,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 51.2,
+      "priority": "A+",
+      "estimated_score_impact": 4.3,
+      "related_topics": [
+        "기후·케펜구분",
+        "자원·농업",
+        "지도·GIS",
+        "지형·판구조"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "시민혁명",
+      "domain": "history",
+      "total_count": 14,
+      "recent_5yr": 7,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 52.9,
+      "priority": "A",
+      "estimated_score_impact": 3.5,
+      "related_topics": [
+        "냉전",
+        "대공황",
+        "러시아혁명·소련",
+        "산업혁명·자본주의",
+        "세계대전"
+      ],
+      "prerequisite_concepts": [
+        "계몽사상",
+        "인권선언",
+        "권리장전"
+      ]
+    },
+    {
+      "topic": "재정·조세정책",
+      "domain": "economy",
+      "total_count": 14,
+      "recent_5yr": 0,
+      "last_appeared": 2011,
+      "gap_years": 14,
+      "prediction_probability": 37.5,
+      "priority": "B",
+      "estimated_score_impact": 1.8,
+      "related_topics": [
+        "GDP·국민소득",
+        "경제성장·경기변동",
+        "고용·노동",
+        "국제무역",
+        "근대일본"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "정치사상",
+      "domain": "politics",
+      "total_count": 14,
+      "recent_5yr": 7,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 52.9,
+      "priority": "A",
+      "estimated_score_impact": 3.5,
+      "related_topics": [
+        "국제정치·국제기구",
+        "사법·재판",
+        "선거·정당",
+        "안전보장·방위",
+        "지방자치"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "지방자치",
+      "domain": "politics",
+      "total_count": 14,
+      "recent_5yr": 6,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 66.9,
+      "priority": "A",
+      "estimated_score_impact": 3.5,
+      "related_topics": [
+        "국제정치·국제기구",
+        "사법·재판",
+        "선거·정당",
+        "안전보장·방위",
+        "정치사상"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "제국주의·식민지",
+      "domain": "history",
+      "total_count": 13,
+      "recent_5yr": 8,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 56.4,
+      "priority": "A",
+      "estimated_score_impact": 3.5,
+      "related_topics": [
+        "냉전",
+        "대공황",
+        "러시아혁명·소련",
+        "산업혁명·자본주의",
+        "세계대전"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "지형·판구조",
+      "domain": "geography",
+      "total_count": 13,
+      "recent_5yr": 9,
+      "last_appeared": 2025,
+      "gap_years": 0,
+      "prediction_probability": 66.9,
+      "priority": "A",
+      "estimated_score_impact": 3.5,
+      "related_topics": [
+        "기후·케펜구분",
+        "인구·도시화",
+        "자원·농업",
+        "지도·GIS"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "사법·재판",
+      "domain": "politics",
+      "total_count": 8,
+      "recent_5yr": 7,
+      "last_appeared": 2024,
+      "gap_years": 1,
+      "prediction_probability": 52.2,
+      "priority": "B+",
+      "estimated_score_impact": 2.5,
+      "related_topics": [
+        "국제정치·국제기구",
+        "선거·정당",
+        "안전보장·방위",
+        "정치사상",
+        "지방자치"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "다문화사회",
+      "domain": "society",
+      "total_count": 7,
+      "recent_5yr": 0,
+      "last_appeared": 2018,
+      "gap_years": 7,
+      "prediction_probability": 42.3,
+      "priority": "B",
+      "estimated_score_impact": 1.8,
+      "related_topics": [
+        "사회보장·복지",
+        "환경문제"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "전후세계질서",
+      "domain": "history",
+      "total_count": 7,
+      "recent_5yr": 0,
+      "last_appeared": 2004,
+      "gap_years": 21,
+      "prediction_probability": 26.8,
+      "priority": "B",
+      "estimated_score_impact": 1.8,
+      "related_topics": [
+        "냉전",
+        "대공황",
+        "러시아혁명·소련",
+        "산업혁명·자본주의",
+        "세계대전"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "러시아혁명·소련",
+      "domain": "history",
+      "total_count": 5,
+      "recent_5yr": 0,
+      "last_appeared": 2014,
+      "gap_years": 11,
+      "prediction_probability": 29.9,
+      "priority": "B",
+      "estimated_score_impact": 1.8,
+      "related_topics": [
+        "냉전",
+        "대공황",
+        "산업혁명·자본주의",
+        "세계대전",
+        "시민혁명"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "산업혁명·자본주의",
+      "domain": "history",
+      "total_count": 5,
+      "recent_5yr": 0,
+      "last_appeared": 2012,
+      "gap_years": 13,
+      "prediction_probability": 27.9,
+      "priority": "B",
+      "estimated_score_impact": 1.8,
+      "related_topics": [
+        "냉전",
+        "대공황",
+        "러시아혁명·소련",
+        "세계대전",
+        "시민혁명"
+      ],
+      "prerequisite_concepts": [
+        "증기기관",
+        "면방직",
+        "자본주의"
+      ]
+    },
+    {
+      "topic": "대공황",
+      "domain": "history",
+      "total_count": 2,
+      "recent_5yr": 0,
+      "last_appeared": 2017,
+      "gap_years": 8,
+      "prediction_probability": 22.4,
+      "priority": "C",
+      "estimated_score_impact": 1.0,
+      "related_topics": [
+        "냉전",
+        "러시아혁명·소련",
+        "산업혁명·자본주의",
+        "세계대전",
+        "시민혁명"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "소득분배·지니계수",
+      "domain": "economy",
+      "total_count": 1,
+      "recent_5yr": 0,
+      "last_appeared": 2014,
+      "gap_years": 11,
+      "prediction_probability": 16.0,
+      "priority": "C",
+      "estimated_score_impact": 1.0,
+      "related_topics": [
+        "GDP·국민소득",
+        "경제성장·경기변동",
+        "고용·노동",
+        "국제무역",
+        "근대일본"
+      ],
+      "prerequisite_concepts": []
+    },
+    {
+      "topic": "안전보장·방위",
+      "domain": "politics",
+      "total_count": 1,
+      "recent_5yr": 0,
+      "last_appeared": 2002,
+      "gap_years": 23,
+      "prediction_probability": 5.0,
+      "priority": "C",
+      "estimated_score_impact": 1.0,
+      "related_topics": [
+        "국제정치·국제기구",
+        "사법·재판",
+        "선거·정당",
+        "정치사상",
+        "지방자치"
+      ],
+      "prerequisite_concepts": []
+    }
+  ],
+  "priority_distribution": {
+    "A+": 17,
+    "B+": 3,
+    "B": 6,
+    "A": 6,
+    "C": 3
+  }
+}

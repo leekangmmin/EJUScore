@@ -1,0 +1,170 @@
+{
+  "total_exams": 38,
+  "total_questions": 574,
+  "total_pages": 0,
+  "exams_pass": 1,
+  "exams_warn": 0,
+  "exams_fail": 37,
+  "average_confidence": 0.7887,
+  "total_low_confidence": 291,
+  "domain_distribution": {
+    "unknown": 499,
+    "calculus": 13,
+    "geometry": 22,
+    "algebra": 39,
+    "probability": 1
+  },
+  "year_distribution": {
+    "2005": 26,
+    "2006": 24,
+    "2007": 26,
+    "2008": 22,
+    "2009": 30,
+    "2010": 30,
+    "2011": 31,
+    "2012": 30,
+    "2013": 30,
+    "2014": 31,
+    "2015": 31,
+    "2016": 30,
+    "2017": 31,
+    "2018": 32,
+    "2019": 16,
+    "2020": 16,
+    "2021": 30,
+    "2022": 24,
+    "2023": 44,
+    "2024": 31,
+    "2025": 9
+  },
+  "difficulty_distribution": {
+    "2": 304,
+    "3": 33,
+    "4": 236,
+    "5": 1
+  },
+  "validation": "PASS",
+  "timestamp": "2026-06-02T08:01:52.454921",
+  "low_confidence_items": [
+    {
+      "exam": "2005平成17年第1回文数.pdf",
+      "question_number": 4,
+      "confidence": 0.6764,
+      "text_preview": ""
+    },
+    {
+      "exam": "2005平成17年第1回文数.pdf",
+      "question_number": 1,
+      "confidence": 0.771,
+      "text_preview": "問"
+    },
+    {
+      "exam": "2005平成17年第1回文数.pdf",
+      "question_number": 1,
+      "confidence": 0.7691,
+      "text_preview": "問 1 三角形 BC において BC =H, cosB = 3, cos = ーー とする。このとき sin B = La] sinC = AB=[GH], Ac= また , 三角形 ABC の面積は"
+    },
+    {
+      "exam": "2005平成17年第1回文数.pdf",
+      "question_number": 23,
+      "confidence": 0.7605,
+      "text_preview": "問 23 辺の長さが AB=3, BC = V7, CA =1 の三角形 ABC に円 O が内接している。内接円 O と辺 BC, CA, AB の接点をそれぞれ D, E, FETS. (①⑪ Z"
+    },
+    {
+      "exam": "2005平成17年第1回文数.pdf",
+      "question_number": 3,
+      "confidence": 0.7766,
+      "text_preview": "3) AFRASK Jr? — Tr + 10] = |r — 2] = 3 の解はと +VLX ] でぁる。 — 135 一"
+    },
+    {
+      "exam": "2005平成17年第2回文数.pdf",
+      "question_number": 1,
+      "confidence": 0.6526,
+      "text_preview": ""
+    },
+    {
+      "exam": "2005平成17年第2回文数.pdf",
+      "question_number": 12,
+      "confidence": 0.6961,
+      "text_preview": "問 12 RBI y = 2? -— 62 +5 のグラフを平行移動して頂点が (-2,3) となるようにするには , もとのグラフを rewsenc"
+    },
+    {
+      "exam": "2005平成17年第2回文数.pdf",
+      "question_number": 9,
+      "confidence": 0.7383,
+      "text_preview": "9 Lr 注 ) 展開する : expand ー127 一"
+    },
+    {
+      "exam": "2005平成17年第2回文数.pdf",
+      "question_number": 1,
+      "confidence": 0.796,
+      "text_preview": "問"
+    },
+    {
+      "exam": "2005平成17年第2回文数.pdf",
+      "question_number": 2,
+      "confidence": 0.7271,
+      "text_preview": "問 7 an 9 ' う 0 である。 ー130 一"
+    },
+    {
+      "exam": "2005平成17年第2回文数.pdf",
+      "question_number": 1,
+      "confidence": 0.7674,
+      "text_preview": "問"
+    },
+    {
+      "exam": "2005平成17年第2回文数.pdf",
+      "question_number": 22,
+      "confidence": 0.5754,
+      "text_preview": "問 22 つの整式 P ア .」 のを P=a(b—c)+¥(c—a)+c(a—b) Q = a(0? — c?) + (ce? — a?) + e(a? — 8) (1) P, のを因数分解すると "
+    },
+    {
+      "exam": "2006平成18年第1回文数.pdf",
+      "question_number": 5,
+      "confidence": 0.698,
+      "text_preview": ""
+    },
+    {
+      "exam": "2006平成18年第1回文数.pdf",
+      "question_number": 12,
+      "confidence": 0.7501,
+      "text_preview": "問 12 次関数ゅ = 5z? +22 のグラフを C LTS. C は頂点の座標が Le] Le] の放物線である。 (1) C を原点に関して対称移動してできる放物線の方程式はッ = [GH ]o"
+    },
+    {
+      "exam": "2006平成18年第1回文数.pdf",
+      "question_number": 2,
+      "confidence": 0.767,
+      "text_preview": "問 2 A= fr la? S9}, B= {x | Ww? de -5>OP とする。集合 tn に属するすべての束数 の個数を求めよう。"
+    },
+    {
+      "exam": "2006平成18年第1回文数.pdf",
+      "question_number": 4,
+      "confidence": 0.4264,
+      "text_preview": "4 = - ビ ggLy]) B= ‘ me ae C+ YET a} であるから , ANB に届する和整数は | R | (CHS. [1] ormizc ncep oes. 1 | oman |"
+    },
+    {
+      "exam": "2006平成18年第1回文数.pdf",
+      "question_number": 1,
+      "confidence": 0.705,
+      "text_preview": "問 1 v= なし ae 2 とき s+y=[AB], =[c] であるから 32? — Sry + 3y? = [DEF | — 135 一"
+    },
+    {
+      "exam": "2006平成18年第1回文数.pdf",
+      "question_number": 1,
+      "confidence": 0.7621,
+      "text_preview": "問 1 四角形 ABCD は直径 8 の円に内接し AB=4, cm4 オーーーZB = 60° を満たしている。 (1) sinA= である。 ②⑰ Bp=Lp lyLerl Ac=Le 1]yLH"
+    },
+    {
+      "exam": "2006平成18年第1回文数.pdf",
+      "question_number": 1,
+      "confidence": 0.7599,
+      "text_preview": "問"
+    },
+    {
+      "exam": "2006平成18年第2回文数.pdf",
+      "question_number": 1,
+      "confidence": 0.6638,
+      "text_preview": ""
+    }
+  ]
+}

@@ -1,0 +1,1885 @@
+{
+  "generated_at": "2026-06-02T08:13:50.506636",
+  "summary": {
+    "total_topics_analyzed": 41,
+    "topics_with_errors": 17,
+    "hidden_weaknesses_detected": 22,
+    "critical_risk_count": 0,
+    "high_risk_count": 41
+  },
+  "topic_analysis": {
+    "수요·공급과 시장균형": {
+      "topic": "수요·공급과 시장균형",
+      "domain": "economy",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 3
+    },
+    "세계대전": {
+      "topic": "세계대전",
+      "domain": "history",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 3
+    },
+    "환율·국제수지": {
+      "topic": "환율·국제수지",
+      "domain": "economy",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 3
+    },
+    "기후·케펜구분": {
+      "topic": "기후·케펜구분",
+      "domain": "geography",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 3
+    },
+    "통치기구": {
+      "topic": "통치기구",
+      "domain": "politics",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 3
+    },
+    "국제무역": {
+      "topic": "국제무역",
+      "domain": "economy",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 3
+    },
+    "국제정치·국제기구": {
+      "topic": "국제정치·국제기구",
+      "domain": "politics",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 3
+    },
+    "냉전": {
+      "topic": "냉전",
+      "domain": "history",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 3
+    },
+    "GDP·국민소득": {
+      "topic": "GDP·국민소득",
+      "domain": "economy",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 3
+    },
+    "경제성장·경기변동": {
+      "topic": "경제성장·경기변동",
+      "domain": "economy",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 3
+    },
+    "선거·정당": {
+      "topic": "선거·정당",
+      "domain": "politics",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 2
+    },
+    "일본경제사": {
+      "topic": "일본경제사",
+      "domain": "economy",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 2
+    },
+    "자원·농업": {
+      "topic": "자원·농업",
+      "domain": "geography",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 2
+    },
+    "헌법·기본권": {
+      "topic": "헌법·기본권",
+      "domain": "politics",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 2
+    },
+    "환경문제": {
+      "topic": "환경문제",
+      "domain": "society",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 2
+    },
+    "금융·통화정책": {
+      "topic": "금융·통화정책",
+      "domain": "economy",
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 2
+    }
+  },
+  "hidden_weaknesses": {
+    "통치기구": {
+      "topic": "통치기구",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "안전보장·방위": {
+      "topic": "안전보장·방위",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "시민혁명": {
+      "topic": "시민혁명",
+      "weakness_type": "prerequisite_gap",
+      "confidence": 0.7,
+      "direct_evidence": false
+    },
+    "다문화사회": {
+      "topic": "다문화사회",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "사회보장·복지": {
+      "topic": "사회보장·복지",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "경제성장·경기변동": {
+      "topic": "경제성장·경기변동",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "세계대전": {
+      "topic": "세계대전",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "제국주의·식민지": {
+      "topic": "제국주의·식민지",
+      "weakness_type": "prerequisite_gap",
+      "confidence": 0.7,
+      "direct_evidence": false
+    },
+    "기후·케펜구분": {
+      "topic": "기후·케펜구분",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "수요·공급과 시장균형": {
+      "topic": "수요·공급과 시장균형",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "자원·농업": {
+      "topic": "자원·농업",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "냉전": {
+      "topic": "냉전",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "정치사상": {
+      "topic": "정치사상",
+      "weakness_type": "prerequisite_gap",
+      "confidence": 0.7,
+      "direct_evidence": false
+    },
+    "소득분배·지니계수": {
+      "topic": "소득분배·지니계수",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "세계화·지역통합": {
+      "topic": "세계화·지역통합",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "사법·재판": {
+      "topic": "사법·재판",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "지방자치": {
+      "topic": "지방자치",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "지형·판구조": {
+      "topic": "지형·판구조",
+      "weakness_type": "prerequisite_gap",
+      "confidence": 0.7,
+      "direct_evidence": false
+    },
+    "일본경제사": {
+      "topic": "일본경제사",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "전후세계질서": {
+      "topic": "전후세계질서",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "고용·노동": {
+      "topic": "고용·노동",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "환율·국제수지": {
+      "topic": "환율·국제수지",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "정보화사회": {
+      "topic": "정보화사회",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "선거·정당": {
+      "topic": "선거·정당",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "재정·조세정책": {
+      "topic": "재정·조세정책",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "금융·통화정책": {
+      "topic": "금융·통화정책",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "환경·생태": {
+      "topic": "환경·생태",
+      "weakness_type": "prerequisite_gap",
+      "confidence": 0.7,
+      "direct_evidence": false
+    },
+    "러시아혁명·소련": {
+      "topic": "러시아혁명·소련",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "저출산·고령화": {
+      "topic": "저출산·고령화",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "환경문제": {
+      "topic": "환경문제",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "국제정치·국제기구": {
+      "topic": "국제정치·국제기구",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "국제무역": {
+      "topic": "국제무역",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "산업·교통": {
+      "topic": "산업·교통",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "일본근대사": {
+      "topic": "일본근대사",
+      "weakness_type": "prerequisite_gap",
+      "confidence": 0.7,
+      "direct_evidence": false
+    },
+    "헌법·기본권": {
+      "topic": "헌법·기본권",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    },
+    "산업혁명·자본주의": {
+      "topic": "산업혁명·자본주의",
+      "weakness_type": "prerequisite_gap",
+      "confidence": 0.7,
+      "direct_evidence": false
+    },
+    "대공황": {
+      "topic": "대공황",
+      "weakness_type": "forward_risk",
+      "confidence": 0.5,
+      "direct_evidence": false
+    },
+    "GDP·국민소득": {
+      "topic": "GDP·국민소득",
+      "weakness_type": "direct",
+      "confidence": 0.9,
+      "direct_evidence": true
+    }
+  },
+  "prerequisite_analysis": {
+    "수요·공급과 시장균형": {
+      "topic": "수요·공급과 시장균형",
+      "prerequisites": [
+        "경제학 기초"
+      ],
+      "avg_prerequisite_mastery": null,
+      "num_prerequisites": 1,
+      "num_weak_prerequisites": 0
+    },
+    "GDP·국민소득": {
+      "topic": "GDP·국민소득",
+      "prerequisites": [
+        "수요·공급과 시장균형",
+        "경제학 기초"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 2,
+      "num_weak_prerequisites": 1
+    },
+    "환율·국제수지": {
+      "topic": "환율·국제수지",
+      "prerequisites": [
+        "GDP·국민소득",
+        "금융·통화정책",
+        "수요·공급과 시장균형",
+        "경제학 기초"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 4,
+      "num_weak_prerequisites": 3
+    },
+    "금융·통화정책": {
+      "topic": "금융·통화정책",
+      "prerequisites": [
+        "수요·공급과 시장균형",
+        "GDP·국민소득",
+        "경제학 기초"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 3,
+      "num_weak_prerequisites": 2
+    },
+    "재정·조세정책": {
+      "topic": "재정·조세정책",
+      "prerequisites": [
+        "GDP·국민소득",
+        "수요·공급과 시장균형",
+        "경제학 기초"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 3,
+      "num_weak_prerequisites": 2
+    },
+    "국제무역": {
+      "topic": "국제무역",
+      "prerequisites": [
+        "환율·국제수지",
+        "GDP·국민소득",
+        "국제정치·국제기구",
+        "금융·통화정책",
+        "수요·공급과 시장균형",
+        "경제학 기초",
+        "세계대전",
+        "냉전",
+        "제국주의·식민지",
+        "민족주의",
+        "산업혁명·자본주의",
+        "시민혁명"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 12,
+      "num_weak_prerequisites": 7
+    },
+    "고용·노동": {
+      "topic": "고용·노동",
+      "prerequisites": [
+        "경제성장·경기변동",
+        "수요·공급과 시장균형",
+        "GDP·국민소득",
+        "금융·통화정책",
+        "경제학 기초"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 5,
+      "num_weak_prerequisites": 4
+    },
+    "경제성장·경기변동": {
+      "topic": "경제성장·경기변동",
+      "prerequisites": [
+        "GDP·국민소득",
+        "금융·통화정책",
+        "수요·공급과 시장균형",
+        "경제학 기초"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 4,
+      "num_weak_prerequisites": 3
+    },
+    "소득분배·지니계수": {
+      "topic": "소득분배·지니계수",
+      "prerequisites": [
+        "경제성장·경기변동",
+        "고용·노동",
+        "GDP·국민소득",
+        "금융·통화정책",
+        "수요·공급과 시장균형",
+        "경제학 기초"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 6,
+      "num_weak_prerequisites": 4
+    },
+    "일본경제사": {
+      "topic": "일본경제사",
+      "prerequisites": [
+        "경제성장·경기변동",
+        "일본근대사",
+        "GDP·국민소득",
+        "금융·통화정책",
+        "수요·공급과 시장균형",
+        "경제학 기초",
+        "제국주의·식민지",
+        "시민혁명",
+        "산업혁명·자본주의",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 11,
+      "num_weak_prerequisites": 4
+    },
+    "헌법·기본권": {
+      "topic": "헌법·기본권",
+      "prerequisites": [
+        "시민혁명",
+        "정치사상",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": null,
+      "num_prerequisites": 4,
+      "num_weak_prerequisites": 0
+    },
+    "통치기구": {
+      "topic": "통치기구",
+      "prerequisites": [
+        "헌법·기본권",
+        "삼권분립",
+        "시민혁명",
+        "정치사상",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 6,
+      "num_weak_prerequisites": 1
+    },
+    "선거·정당": {
+      "topic": "선거·정당",
+      "prerequisites": [
+        "헌법·기본권",
+        "통치기구",
+        "시민혁명",
+        "정치사상",
+        "계몽사상",
+        "근대사회",
+        "삼권분립"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 7,
+      "num_weak_prerequisites": 2
+    },
+    "국제정치·국제기구": {
+      "topic": "국제정치·국제기구",
+      "prerequisites": [
+        "세계대전",
+        "냉전",
+        "제국주의·식민지",
+        "민족주의",
+        "산업혁명·자본주의",
+        "시민혁명",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 8,
+      "num_weak_prerequisites": 2
+    },
+    "지방자치": {
+      "topic": "지방자치",
+      "prerequisites": [
+        "통치기구",
+        "헌법·기본권",
+        "삼권분립",
+        "시민혁명",
+        "정치사상",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 7,
+      "num_weak_prerequisites": 2
+    },
+    "사법·재판": {
+      "topic": "사법·재판",
+      "prerequisites": [
+        "헌법·기본권",
+        "통치기구",
+        "삼권분립",
+        "시민혁명",
+        "정치사상",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 7,
+      "num_weak_prerequisites": 2
+    },
+    "정치사상": {
+      "topic": "정치사상",
+      "prerequisites": [
+        "시민혁명",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": null,
+      "num_prerequisites": 3,
+      "num_weak_prerequisites": 0
+    },
+    "안전보장·방위": {
+      "topic": "안전보장·방위",
+      "prerequisites": [
+        "국제정치·국제기구",
+        "냉전",
+        "세계대전",
+        "제국주의·식민지",
+        "민족주의",
+        "산업혁명·자본주의",
+        "시민혁명"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 7,
+      "num_weak_prerequisites": 3
+    },
+    "시민혁명": {
+      "topic": "시민혁명",
+      "prerequisites": [
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": null,
+      "num_prerequisites": 2,
+      "num_weak_prerequisites": 0
+    },
+    "산업혁명·자본주의": {
+      "topic": "산업혁명·자본주의",
+      "prerequisites": [
+        "시민혁명",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": null,
+      "num_prerequisites": 3,
+      "num_weak_prerequisites": 0
+    },
+    "제국주의·식민지": {
+      "topic": "제국주의·식민지",
+      "prerequisites": [
+        "산업혁명·자본주의",
+        "시민혁명",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": null,
+      "num_prerequisites": 4,
+      "num_weak_prerequisites": 0
+    },
+    "세계대전": {
+      "topic": "세계대전",
+      "prerequisites": [
+        "제국주의·식민지",
+        "민족주의",
+        "산업혁명·자본주의",
+        "시민혁명",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": null,
+      "num_prerequisites": 6,
+      "num_weak_prerequisites": 0
+    },
+    "냉전": {
+      "topic": "냉전",
+      "prerequisites": [
+        "세계대전",
+        "제국주의·식민지",
+        "민족주의",
+        "산업혁명·자본주의",
+        "시민혁명",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 7,
+      "num_weak_prerequisites": 1
+    },
+    "일본근대사": {
+      "topic": "일본근대사",
+      "prerequisites": [
+        "제국주의·식민지",
+        "시민혁명",
+        "산업혁명·자본주의",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": null,
+      "num_prerequisites": 5,
+      "num_weak_prerequisites": 0
+    },
+    "전후세계질서": {
+      "topic": "전후세계질서",
+      "prerequisites": [
+        "세계대전",
+        "냉전",
+        "제국주의·식민지",
+        "민족주의",
+        "산업혁명·자본주의",
+        "시민혁명",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 8,
+      "num_weak_prerequisites": 2
+    },
+    "세계화·지역통합": {
+      "topic": "세계화·지역통합",
+      "prerequisites": [
+        "냉전",
+        "전후세계질서",
+        "세계대전",
+        "제국주의·식민지",
+        "민족주의",
+        "산업혁명·자본주의",
+        "시민혁명"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 7,
+      "num_weak_prerequisites": 2
+    },
+    "러시아혁명·소련": {
+      "topic": "러시아혁명·소련",
+      "prerequisites": [
+        "세계대전",
+        "제국주의·식민지",
+        "민족주의",
+        "산업혁명·자본주의",
+        "시민혁명",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 7,
+      "num_weak_prerequisites": 1
+    },
+    "대공황": {
+      "topic": "대공황",
+      "prerequisites": [
+        "세계대전",
+        "금융·통화정책",
+        "제국주의·식민지",
+        "민족주의",
+        "산업혁명·자본주의",
+        "시민혁명",
+        "계몽사상",
+        "근대사회",
+        "수요·공급과 시장균형",
+        "GDP·국민소득",
+        "경제학 기초"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 11,
+      "num_weak_prerequisites": 4
+    },
+    "기후·케펜구분": {
+      "topic": "기후·케펜구분",
+      "prerequisites": [
+        "지리 기초"
+      ],
+      "avg_prerequisite_mastery": null,
+      "num_prerequisites": 1,
+      "num_weak_prerequisites": 0
+    },
+    "지형·판구조": {
+      "topic": "지형·판구조",
+      "prerequisites": [
+        "지리 기초"
+      ],
+      "avg_prerequisite_mastery": null,
+      "num_prerequisites": 1,
+      "num_weak_prerequisites": 0
+    },
+    "인구·도시화": {
+      "topic": "인구·도시화",
+      "prerequisites": [
+        "지리 기초"
+      ],
+      "avg_prerequisite_mastery": null,
+      "num_prerequisites": 1,
+      "num_weak_prerequisites": 0
+    },
+    "자원·농업": {
+      "topic": "자원·농업",
+      "prerequisites": [
+        "기후·케펜구분",
+        "지형·판구조",
+        "지리 기초"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 3,
+      "num_weak_prerequisites": 1
+    },
+    "지도·GIS": {
+      "topic": "지도·GIS",
+      "prerequisites": [
+        "지리 기초"
+      ],
+      "avg_prerequisite_mastery": null,
+      "num_prerequisites": 1,
+      "num_weak_prerequisites": 0
+    },
+    "환경·생태": {
+      "topic": "환경·생태",
+      "prerequisites": [
+        "기후·케펜구분",
+        "지리 기초"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 2,
+      "num_weak_prerequisites": 1
+    },
+    "산업·교통": {
+      "topic": "산업·교통",
+      "prerequisites": [
+        "인구·도시화",
+        "자원·농업",
+        "지리 기초",
+        "기후·케펜구분",
+        "지형·판구조"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 5,
+      "num_weak_prerequisites": 2
+    },
+    "환경문제": {
+      "topic": "환경문제",
+      "prerequisites": [
+        "산업혁명·자본주의",
+        "환경·생태",
+        "시민혁명",
+        "계몽사상",
+        "근대사회",
+        "기후·케펜구분",
+        "지리 기초"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 7,
+      "num_weak_prerequisites": 1
+    },
+    "사회보장·복지": {
+      "topic": "사회보장·복지",
+      "prerequisites": [
+        "경제성장·경기변동",
+        "고용·노동",
+        "GDP·국민소득",
+        "금융·통화정책",
+        "수요·공급과 시장균형",
+        "경제학 기초"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 6,
+      "num_weak_prerequisites": 4
+    },
+    "저출산·고령화": {
+      "topic": "저출산·고령화",
+      "prerequisites": [
+        "사회보장·복지",
+        "인구·도시화",
+        "경제성장·경기변동",
+        "고용·노동",
+        "GDP·국민소득",
+        "금융·통화정책",
+        "수요·공급과 시장균형",
+        "경제학 기초",
+        "지리 기초"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 9,
+      "num_weak_prerequisites": 4
+    },
+    "정보화사회": {
+      "topic": "정보화사회",
+      "prerequisites": [
+        "세계화·지역통합",
+        "냉전",
+        "전후세계질서",
+        "세계대전",
+        "제국주의·식민지",
+        "민족주의",
+        "산업혁명·자본주의"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 7,
+      "num_weak_prerequisites": 2
+    },
+    "젠더·평등": {
+      "topic": "젠더·평등",
+      "prerequisites": [
+        "시민혁명",
+        "정치사상",
+        "인권선언",
+        "계몽사상",
+        "근대사회"
+      ],
+      "avg_prerequisite_mastery": null,
+      "num_prerequisites": 5,
+      "num_weak_prerequisites": 0
+    },
+    "다문화사회": {
+      "topic": "다문화사회",
+      "prerequisites": [
+        "세계화·지역통합",
+        "정보화사회",
+        "냉전",
+        "전후세계질서",
+        "세계대전",
+        "제국주의·식민지",
+        "민족주의",
+        "산업혁명·자본주의"
+      ],
+      "avg_prerequisite_mastery": 0.0,
+      "num_prerequisites": 8,
+      "num_weak_prerequisites": 2
+    }
+  },
+  "mastery_estimates": {
+    "수요·공급과 시장균형": {
+      "topic": "수요·공급과 시장균형",
+      "mastery": 0.286,
+      "mastery_90ci_lower": 0.023,
+      "mastery_90ci_upper": 0.548,
+      "data_available": true
+    },
+    "GDP·국민소득": {
+      "topic": "GDP·국민소득",
+      "mastery": 0.286,
+      "mastery_90ci_lower": 0.023,
+      "mastery_90ci_upper": 0.548,
+      "data_available": true
+    },
+    "환율·국제수지": {
+      "topic": "환율·국제수지",
+      "mastery": 0.286,
+      "mastery_90ci_lower": 0.023,
+      "mastery_90ci_upper": 0.548,
+      "data_available": true
+    },
+    "금융·통화정책": {
+      "topic": "금융·통화정책",
+      "mastery": 0.333,
+      "mastery_90ci_lower": 0.04,
+      "mastery_90ci_upper": 0.626,
+      "data_available": true
+    },
+    "재정·조세정책": {
+      "topic": "재정·조세정책",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "국제무역": {
+      "topic": "국제무역",
+      "mastery": 0.286,
+      "mastery_90ci_lower": 0.023,
+      "mastery_90ci_upper": 0.548,
+      "data_available": true
+    },
+    "고용·노동": {
+      "topic": "고용·노동",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "경제성장·경기변동": {
+      "topic": "경제성장·경기변동",
+      "mastery": 0.286,
+      "mastery_90ci_lower": 0.023,
+      "mastery_90ci_upper": 0.548,
+      "data_available": true
+    },
+    "소득분배·지니계수": {
+      "topic": "소득분배·지니계수",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "일본경제사": {
+      "topic": "일본경제사",
+      "mastery": 0.333,
+      "mastery_90ci_lower": 0.04,
+      "mastery_90ci_upper": 0.626,
+      "data_available": true
+    },
+    "헌법·기본권": {
+      "topic": "헌법·기본권",
+      "mastery": 0.333,
+      "mastery_90ci_lower": 0.04,
+      "mastery_90ci_upper": 0.626,
+      "data_available": true
+    },
+    "통치기구": {
+      "topic": "통치기구",
+      "mastery": 0.286,
+      "mastery_90ci_lower": 0.023,
+      "mastery_90ci_upper": 0.548,
+      "data_available": true
+    },
+    "선거·정당": {
+      "topic": "선거·정당",
+      "mastery": 0.333,
+      "mastery_90ci_lower": 0.04,
+      "mastery_90ci_upper": 0.626,
+      "data_available": true
+    },
+    "국제정치·국제기구": {
+      "topic": "국제정치·국제기구",
+      "mastery": 0.286,
+      "mastery_90ci_lower": 0.023,
+      "mastery_90ci_upper": 0.548,
+      "data_available": true
+    },
+    "지방자치": {
+      "topic": "지방자치",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "사법·재판": {
+      "topic": "사법·재판",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "정치사상": {
+      "topic": "정치사상",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "안전보장·방위": {
+      "topic": "안전보장·방위",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "시민혁명": {
+      "topic": "시민혁명",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "산업혁명·자본주의": {
+      "topic": "산업혁명·자본주의",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "제국주의·식민지": {
+      "topic": "제국주의·식민지",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "세계대전": {
+      "topic": "세계대전",
+      "mastery": 0.286,
+      "mastery_90ci_lower": 0.023,
+      "mastery_90ci_upper": 0.548,
+      "data_available": true
+    },
+    "냉전": {
+      "topic": "냉전",
+      "mastery": 0.286,
+      "mastery_90ci_lower": 0.023,
+      "mastery_90ci_upper": 0.548,
+      "data_available": true
+    },
+    "일본근대사": {
+      "topic": "일본근대사",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "전후세계질서": {
+      "topic": "전후세계질서",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "세계화·지역통합": {
+      "topic": "세계화·지역통합",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "러시아혁명·소련": {
+      "topic": "러시아혁명·소련",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "대공황": {
+      "topic": "대공황",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "기후·케펜구분": {
+      "topic": "기후·케펜구분",
+      "mastery": 0.286,
+      "mastery_90ci_lower": 0.023,
+      "mastery_90ci_upper": 0.548,
+      "data_available": true
+    },
+    "지형·판구조": {
+      "topic": "지형·판구조",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "인구·도시화": {
+      "topic": "인구·도시화",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "자원·농업": {
+      "topic": "자원·농업",
+      "mastery": 0.333,
+      "mastery_90ci_lower": 0.04,
+      "mastery_90ci_upper": 0.626,
+      "data_available": true
+    },
+    "지도·GIS": {
+      "topic": "지도·GIS",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "환경·생태": {
+      "topic": "환경·생태",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "산업·교통": {
+      "topic": "산업·교통",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "환경문제": {
+      "topic": "환경문제",
+      "mastery": 0.333,
+      "mastery_90ci_lower": 0.04,
+      "mastery_90ci_upper": 0.626,
+      "data_available": true
+    },
+    "사회보장·복지": {
+      "topic": "사회보장·복지",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "저출산·고령화": {
+      "topic": "저출산·고령화",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "정보화사회": {
+      "topic": "정보화사회",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "젠더·평등": {
+      "topic": "젠더·평등",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    },
+    "다문화사회": {
+      "topic": "다문화사회",
+      "mastery": 0.5,
+      "mastery_90ci_lower": 0.05,
+      "mastery_90ci_upper": 0.8,
+      "data_available": false
+    }
+  },
+  "risk_predictions": {
+    "수요·공급과 시장균형": {
+      "topic": "수요·공급과 시장균형",
+      "risk_score": 0.636,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.714,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.857
+      }
+    },
+    "GDP·국민소득": {
+      "topic": "GDP·국민소득",
+      "risk_score": 0.636,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.714,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.857
+      }
+    },
+    "환율·국제수지": {
+      "topic": "환율·국제수지",
+      "risk_score": 0.636,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.714,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.857
+      }
+    },
+    "금융·통화정책": {
+      "topic": "금융·통화정책",
+      "risk_score": 0.617,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.667,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.833
+      }
+    },
+    "재정·조세정책": {
+      "topic": "재정·조세정책",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "국제무역": {
+      "topic": "국제무역",
+      "risk_score": 0.636,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.714,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.857
+      }
+    },
+    "고용·노동": {
+      "topic": "고용·노동",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "경제성장·경기변동": {
+      "topic": "경제성장·경기변동",
+      "risk_score": 0.636,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.714,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.857
+      }
+    },
+    "소득분배·지니계수": {
+      "topic": "소득분배·지니계수",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "일본경제사": {
+      "topic": "일본경제사",
+      "risk_score": 0.617,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.667,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.833
+      }
+    },
+    "헌법·기본권": {
+      "topic": "헌법·기본권",
+      "risk_score": 0.617,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.667,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.833
+      }
+    },
+    "통치기구": {
+      "topic": "통치기구",
+      "risk_score": 0.636,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.714,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.857
+      }
+    },
+    "선거·정당": {
+      "topic": "선거·정당",
+      "risk_score": 0.617,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.667,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.833
+      }
+    },
+    "국제정치·국제기구": {
+      "topic": "국제정치·국제기구",
+      "risk_score": 0.636,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.714,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.857
+      }
+    },
+    "지방자치": {
+      "topic": "지방자치",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "사법·재판": {
+      "topic": "사법·재판",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "정치사상": {
+      "topic": "정치사상",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "안전보장·방위": {
+      "topic": "안전보장·방위",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "시민혁명": {
+      "topic": "시민혁명",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "산업혁명·자본주의": {
+      "topic": "산업혁명·자본주의",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "제국주의·식민지": {
+      "topic": "제국주의·식민지",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "세계대전": {
+      "topic": "세계대전",
+      "risk_score": 0.636,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.714,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.857
+      }
+    },
+    "냉전": {
+      "topic": "냉전",
+      "risk_score": 0.636,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.714,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.857
+      }
+    },
+    "일본근대사": {
+      "topic": "일본근대사",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "전후세계질서": {
+      "topic": "전후세계질서",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "세계화·지역통합": {
+      "topic": "세계화·지역통합",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "러시아혁명·소련": {
+      "topic": "러시아혁명·소련",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "대공황": {
+      "topic": "대공황",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "기후·케펜구분": {
+      "topic": "기후·케펜구분",
+      "risk_score": 0.636,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.714,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.857
+      }
+    },
+    "지형·판구조": {
+      "topic": "지형·판구조",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "인구·도시화": {
+      "topic": "인구·도시화",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "자원·농업": {
+      "topic": "자원·농업",
+      "risk_score": 0.617,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.667,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.833
+      }
+    },
+    "지도·GIS": {
+      "topic": "지도·GIS",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "환경·생태": {
+      "topic": "환경·생태",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "산업·교통": {
+      "topic": "산업·교통",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "환경문제": {
+      "topic": "환경문제",
+      "risk_score": 0.617,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.667,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.833
+      }
+    },
+    "사회보장·복지": {
+      "topic": "사회보장·복지",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "저출산·고령화": {
+      "topic": "저출산·고령화",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "정보화사회": {
+      "topic": "정보화사회",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "젠더·평등": {
+      "topic": "젠더·평등",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    },
+    "다문화사회": {
+      "topic": "다문화사회",
+      "risk_score": 0.55,
+      "risk_category": "high",
+      "recommended_action": "집중 학습 권장 — 주 3회 이상 복습",
+      "factors": {
+        "mastery_gap": 0.5,
+        "exam_probability_amplification": 0.5,
+        "prerequisite_weakness": 0.5,
+        "difficulty_challenge": 0.5,
+        "forgetting_projection": 0.749
+      }
+    }
+  },
+  "root_causes": [
+    {
+      "topic": "환율·국제수지",
+      "root_cause": "prerequisite_deficit",
+      "description": "'환율·국제수지' 오답의 근본 원인은 선행 개념 부족",
+      "weak_prerequisites": [
+        "GDP·국민소득",
+        "금융·통화정책",
+        "수요·공급과 시장균형"
+      ],
+      "severity": "high"
+    },
+    {
+      "topic": "국제무역",
+      "root_cause": "prerequisite_deficit",
+      "description": "'국제무역' 오답의 근본 원인은 선행 개념 부족",
+      "weak_prerequisites": [
+        "환율·국제수지",
+        "GDP·국민소득",
+        "국제정치·국제기구",
+        "금융·통화정책",
+        "수요·공급과 시장균형",
+        "세계대전",
+        "냉전"
+      ],
+      "severity": "high"
+    },
+    {
+      "topic": "국제정치·국제기구",
+      "root_cause": "prerequisite_deficit",
+      "description": "'국제정치·국제기구' 오답의 근본 원인은 선행 개념 부족",
+      "weak_prerequisites": [
+        "세계대전",
+        "냉전"
+      ],
+      "severity": "high"
+    },
+    {
+      "topic": "경제성장·경기변동",
+      "root_cause": "prerequisite_deficit",
+      "description": "'경제성장·경기변동' 오답의 근본 원인은 선행 개념 부족",
+      "weak_prerequisites": [
+        "GDP·국민소득",
+        "금융·통화정책",
+        "수요·공급과 시장균형"
+      ],
+      "severity": "high"
+    },
+    {
+      "topic": "선거·정당",
+      "root_cause": "prerequisite_deficit",
+      "description": "'선거·정당' 오답의 근본 원인은 선행 개념 부족",
+      "weak_prerequisites": [
+        "헌법·기본권",
+        "통치기구"
+      ],
+      "severity": "high"
+    },
+    {
+      "topic": "일본경제사",
+      "root_cause": "prerequisite_deficit",
+      "description": "'일본경제사' 오답의 근본 원인은 선행 개념 부족",
+      "weak_prerequisites": [
+        "경제성장·경기변동",
+        "GDP·국민소득",
+        "금융·통화정책",
+        "수요·공급과 시장균형"
+      ],
+      "severity": "high"
+    },
+    {
+      "topic": "근대일본",
+      "root_cause": "foundational_knowledge_gap",
+      "description": "'근대일본'은(는) 기초 개념 — 처음부터 학습 필요",
+      "weak_prerequisites": [],
+      "severity": "high"
+    },
+    {
+      "topic": "금융·통화정책",
+      "root_cause": "prerequisite_deficit",
+      "description": "'금융·통화정책' 오답의 근본 원인은 선행 개념 부족",
+      "weak_prerequisites": [
+        "수요·공급과 시장균형",
+        "GDP·국민소득"
+      ],
+      "severity": "high"
+    },
+    {
+      "topic": "수요·공급과 시장균형",
+      "root_cause": "insufficient_practice",
+      "description": "'수요·공급과 시장균형' 반복 학습 및 문제 풀이 필요",
+      "weak_prerequisites": [],
+      "severity": "medium"
+    },
+    {
+      "topic": "세계대전",
+      "root_cause": "insufficient_practice",
+      "description": "'세계대전' 반복 학습 및 문제 풀이 필요",
+      "weak_prerequisites": [],
+      "severity": "medium"
+    },
+    {
+      "topic": "기후·케펜구분",
+      "root_cause": "insufficient_practice",
+      "description": "'기후·케펜구분' 반복 학습 및 문제 풀이 필요",
+      "weak_prerequisites": [],
+      "severity": "medium"
+    },
+    {
+      "topic": "통치기구",
+      "root_cause": "prerequisite_deficit",
+      "description": "'통치기구' 오답의 근본 원인은 선행 개념 부족",
+      "weak_prerequisites": [
+        "헌법·기본권"
+      ],
+      "severity": "medium"
+    },
+    {
+      "topic": "냉전",
+      "root_cause": "prerequisite_deficit",
+      "description": "'냉전' 오답의 근본 원인은 선행 개념 부족",
+      "weak_prerequisites": [
+        "세계대전"
+      ],
+      "severity": "medium"
+    },
+    {
+      "topic": "GDP·국민소득",
+      "root_cause": "prerequisite_deficit",
+      "description": "'GDP·국민소득' 오답의 근본 원인은 선행 개념 부족",
+      "weak_prerequisites": [
+        "수요·공급과 시장균형"
+      ],
+      "severity": "medium"
+    },
+    {
+      "topic": "자원·농업",
+      "root_cause": "prerequisite_deficit",
+      "description": "'자원·농업' 오답의 근본 원인은 선행 개념 부족",
+      "weak_prerequisites": [
+        "기후·케펜구분"
+      ],
+      "severity": "medium"
+    },
+    {
+      "topic": "헌법·기본권",
+      "root_cause": "insufficient_practice",
+      "description": "'헌법·기본권' 반복 학습 및 문제 풀이 필요",
+      "weak_prerequisites": [],
+      "severity": "medium"
+    },
+    {
+      "topic": "환경문제",
+      "root_cause": "prerequisite_deficit",
+      "description": "'환경문제' 오답의 근본 원인은 선행 개념 부족",
+      "weak_prerequisites": [
+        "기후·케펜구분"
+      ],
+      "severity": "medium"
+    }
+  ]
+}

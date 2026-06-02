@@ -1,0 +1,20 @@
+{
+  "pdf": "2018平成30年第2回文数.pdf",
+  "pages": 17,
+  "questions": 16,
+  "tables": 17,
+  "graphs": 0,
+  "maps": 0,
+  "diagrams": 0,
+  "timelines": 0,
+  "confidence_average": 0.7728,
+  "confidence_min": 0.5945,
+  "confidence_max": 0.8811,
+  "low_confidence_count": 9,
+  "validation": "FAIL",
+  "warnings": [],
+  "errors": [
+    "Over 30% of questions have low confidence"
+  ],
+  "timestamp": "2026-06-02T08:01:52.451459"
+}

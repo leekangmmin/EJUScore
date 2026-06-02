@@ -1,0 +1,63 @@
+{
+  "audit": "Difficulty Engine",
+  "version": "1.0.0",
+  "generated_at": "2026-06-02T05:30:13.688863",
+  "total_questions_analyzed": 1052,
+  "distribution": {
+    "easy": 138,
+    "medium": 897,
+    "hard": 17,
+    "avg_score": 40.0
+  },
+  "checks_performed": 4,
+  "issues_found": 2,
+  "issues": [
+    {
+      "check": "topic_rarity_correlation",
+      "severity": "INFO",
+      "count": 0,
+      "details": [
+        {
+          "rare_topics_avg_difficulty": 46.44,
+          "common_topics_avg_difficulty": 38.06,
+          "rare_topic_count": 27,
+          "common_topic_count": 775,
+          "expected": "Rare topics should have higher difficulty (higher score = harder)",
+          "observed": "Correlation holds"
+        }
+      ]
+    },
+    {
+      "check": "gold_standard_correlation",
+      "severity": "INFO",
+      "count": 0,
+      "details": [
+        {
+          "correlation_summary": {
+            "gold_diff_3": {
+              "count": 258,
+              "avg_predicted": 37.0,
+              "min_predicted": 29,
+              "max_predicted": 54
+            },
+            "gold_diff_4": {
+              "count": 309,
+              "avg_predicted": 43.3,
+              "min_predicted": 37,
+              "max_predicted": 65
+            },
+            "gold_diff_5": {
+              "count": 41,
+              "avg_predicted": 57.1,
+              "min_predicted": 47,
+              "max_predicted": 67
+            }
+          },
+          "note": "Predicted scores should increase with gold difficulty level"
+        }
+      ]
+    }
+  ],
+  "score": 100,
+  "deductions": []
+}

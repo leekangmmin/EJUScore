@@ -13,7 +13,7 @@ import { BarChart2, Plus, Calculator, GitBranch, TrendingDown, PieChart as PieIc
 const CARD = { background: 'var(--card-bg)', border: '1px solid var(--bd0)', borderRadius: 18, padding: 24, boxShadow: 'var(--card-shadow)' };
 
 const ERROR_COLORS = { '실수': 'var(--yellow)', '정보부족': 'var(--red)', '연계사고부족': 'var(--purple)' };
-const ERROR_COLORS_HEX = { '실수': '#f59e0b', '정보부족': '#ef4444', '연계사고부족': '#a855f7' };
+const ERROR_COLORS_HEX = { '실수': '#f59e0b', '정보부족': '#ef4444', '연계사고부족': '#1B64DA' };
 const ERROR_WEIGHT  = { '정보부족': 3, '연계사고부족': 2, '실수': 1 };
 const ERROR_DESC    = {
   '실수': '알고 있지만 실수로 틀린 문제 — 빠르게 해결 가능',
@@ -69,7 +69,7 @@ function AllowedWrongCalc({ currentScore }) {
         {[
           { label: '허용 오답', value: allowedWrong, unit: '문제', color: 'var(--red)', bg: 'rgba(239,68,68,0.08)' },
           { label: '필요 정답', value: correctNeeded, unit: '문제', color: 'var(--green)', bg: 'rgba(16,185,129,0.08)' },
-          { label: '정답률 목표', value: `${pct}%`, unit: '', color: 'var(--blue)', bg: 'rgba(79,142,247,0.08)' },
+          { label: '정답률 목표', value: `${pct}%`, unit: '', color: 'var(--blue)', bg: 'rgba(49,130,246,0.08)' },
         ].map(s => (
           <div key={s.label} style={{ background: s.bg, borderRadius: 12, padding: '12px 16px', textAlign: 'center', border: `1px solid ${s.color}22` }}>
             <div style={{ fontSize: 10, color: 'var(--t2)', fontWeight: 700, marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{s.label}</div>
@@ -127,7 +127,7 @@ function UnitTrendChart({ exams, topUnits }) {
 
   if (data.length < 2) return null;
 
-  const COLORS = ['#ef4444', '#f59e0b', '#a855f7', '#4f8ef7'];
+  const COLORS = ['#ef4444', '#f59e0b', '#1B64DA', '#1B64DA'];
 
   return (
     <div style={{ ...CARD }}>
@@ -279,7 +279,7 @@ export default function ComprehensiveAnalysis({ exams, settings, onAddNew }) {
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', gap: 18, padding: '40px 20px', textAlign: 'center' }}>
         <div style={{
           width: 88, height: 88, borderRadius: 24,
-          background: 'linear-gradient(135deg, rgba(52,217,141,0.1), rgba(107,163,255,0.1))',
+          background: 'linear-gradient(135deg, rgba(52,217,141,0.1), rgba(49,130,246,0.1))',
           border: '1px solid rgba(52,217,141,0.2)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
@@ -345,9 +345,9 @@ export default function ComprehensiveAnalysis({ exams, settings, onAddNew }) {
           const active = filterRecordType === opt.id;
           return (
             <button key={opt.id} onClick={() => setFilterRecordType(opt.id)} style={{
-              background: active ? 'rgba(79,142,247,0.15)' : 'var(--bg3)',
+              background: active ? 'rgba(49,130,246,0.15)' : 'var(--bg3)',
               color: active ? 'var(--blue)' : 'var(--t2)',
-              border: active ? '1.5px solid rgba(79,142,247,0.5)' : '1.5px solid var(--bd1)',
+              border: active ? '1.5px solid rgba(49,130,246,0.5)' : '1.5px solid var(--bd1)',
               borderRadius: 10, padding: '7px 16px', fontSize: 12, fontWeight: active ? 700 : 500,
               cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.2s',
             }}>{opt.label}</button>
@@ -514,7 +514,7 @@ export default function ComprehensiveAnalysis({ exams, settings, onAddNew }) {
                 <Tooltip content={<CustomTooltip />} />
                 <Bar dataKey="count" radius={[0, 7, 7, 0]}>
                   {unitCounts.map((_, i) => {
-                    const cs = ['#ef4444','#f59e0b','#a855f7','#4f8ef7','#10b981','#ec4899'];
+                    const cs = ['#ef4444','#f59e0b','#1B64DA','#1B64DA','#10b981','#1B64DA'];
                     return <Cell key={i} fill={cs[i % cs.length]} />;
                   })}
                 </Bar>

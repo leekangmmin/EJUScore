@@ -97,8 +97,8 @@ export default function JapaneseAnalysis({ exams, onAddNew }) {
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', gap: 18, padding: '40px 20px', textAlign: 'center' }}>
         <div style={{
           width: 88, height: 88, borderRadius: 24,
-          background: 'linear-gradient(135deg, rgba(107,163,255,0.12), rgba(164,110,245,0.12))',
-          border: '1px solid rgba(107,163,255,0.18)',
+          background: 'linear-gradient(135deg, rgba(49,130,246,0.12), rgba(164,110,245,0.12))',
+          border: '1px solid rgba(49,130,246,0.18)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
           <Target size={38} color="var(--blue)" strokeWidth={1.5} style={{ opacity: 0.75 }} />
@@ -117,7 +117,7 @@ export default function JapaneseAnalysis({ exams, onAddNew }) {
             color: '#fff', border: 'none', borderRadius: 12,
             padding: '11px 22px', fontSize: 14, fontWeight: 700,
             cursor: 'pointer', fontFamily: 'inherit',
-            boxShadow: '0 4px 16px rgba(107,163,255,0.3)',
+            boxShadow: '0 4px 16px rgba(49,130,246,0.3)',
           }}
         >
           <Plus size={16} strokeWidth={2.5} />
@@ -160,8 +160,8 @@ export default function JapaneseAnalysis({ exams, onAddNew }) {
       {(worstR || worstL) && (
         <div className="grid-2-mobile" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
           {worstR && (
-            <div style={{ ...CARD, display: 'flex', gap: 14, alignItems: 'center', borderColor: 'rgba(168,85,247,0.3)', background: 'rgba(168,85,247,0.05)' }}>
-              <div style={{ width: 40, height: 40, borderRadius: 11, background: 'rgba(168,85,247,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+            <div style={{ ...CARD, display: 'flex', gap: 14, alignItems: 'center', borderColor: 'rgba(49,130,246,0.3)', background: 'rgba(49,130,246,0.05)' }}>
+              <div style={{ width: 40, height: 40, borderRadius: 11, background: 'rgba(49,130,246,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <AlertTriangle size={18} color="var(--purple)" strokeWidth={2} />
               </div>
               <div>
@@ -172,8 +172,8 @@ export default function JapaneseAnalysis({ exams, onAddNew }) {
             </div>
           )}
           {worstL && (
-            <div style={{ ...CARD, display: 'flex', gap: 14, alignItems: 'center', borderColor: 'rgba(236,72,153,0.3)', background: 'rgba(236,72,153,0.05)' }}>
-              <div style={{ width: 40, height: 40, borderRadius: 11, background: 'rgba(236,72,153,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+            <div style={{ ...CARD, display: 'flex', gap: 14, alignItems: 'center', borderColor: 'rgba(49,130,246,0.3)', background: 'rgba(49,130,246,0.05)' }}>
+              <div style={{ width: 40, height: 40, borderRadius: 11, background: 'rgba(49,130,246,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <AlertTriangle size={18} color="var(--pink)" strokeWidth={2} />
               </div>
               <div>
@@ -190,11 +190,11 @@ export default function JapaneseAnalysis({ exams, onAddNew }) {
       <div className="grid-2-mobile" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
         <div style={{ ...CARD }}>
           <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--t0)', marginBottom: 18 }}>독해 오답 히트맵</div>
-          <Heatmap title="문제별 오답 횟수 (독해)" color="#a855f7" questions={allR} maxQ={maxRQ} />
+          <Heatmap title="문제별 오답 횟수 (독해)" color="#1B64DA" questions={allR} maxQ={maxRQ} />
         </div>
         <div style={{ ...CARD }}>
           <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--t0)', marginBottom: 18 }}>청해 오답 히트맵</div>
-          <Heatmap title="문제별 오답 횟수 (청해)" color="#ec4899" questions={allL} maxQ={maxLQ} />
+          <Heatmap title="문제별 오답 횟수 (청해)" color="#1B64DA" questions={allL} maxQ={maxLQ} />
         </div>
       </div>
 
@@ -211,7 +211,7 @@ export default function JapaneseAnalysis({ exams, onAddNew }) {
                   <YAxis tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} allowDecimals={false} />
                   <Tooltip content={<CustomTooltip />} />
                   <Bar dataKey="count" radius={[5, 5, 0, 0]}>
-                    {topR.map((_, i) => <Cell key={i} fill={i === 0 ? '#ef4444' : i === 1 ? '#f59e0b' : '#a855f7'} />)}
+                    {topR.map((_, i) => <Cell key={i} fill={i === 0 ? '#ef4444' : i === 1 ? '#f59e0b' : '#1B64DA'} />)}
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
@@ -227,7 +227,7 @@ export default function JapaneseAnalysis({ exams, onAddNew }) {
                   <YAxis tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} allowDecimals={false} />
                   <Tooltip content={<CustomTooltip />} />
                   <Bar dataKey="count" radius={[5, 5, 0, 0]}>
-                    {topL.map((_, i) => <Cell key={i} fill={i === 0 ? '#ef4444' : i === 1 ? '#f59e0b' : '#ec4899'} />)}
+                    {topL.map((_, i) => <Cell key={i} fill={i === 0 ? '#ef4444' : i === 1 ? '#f59e0b' : '#1B64DA'} />)}
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
@@ -254,7 +254,7 @@ export default function JapaneseAnalysis({ exams, onAddNew }) {
                   <td style={{ padding: '10px 12px' }}>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
                       {(e.japanese?.wrongQuestions?.reading || []).map(q => (
-                        <span key={q} style={{ background: 'rgba(168,85,247,0.12)', color: 'var(--purple)', padding: '2px 7px', borderRadius: 5, fontSize: 11 }}>{q}번</span>
+                        <span key={q} style={{ background: 'rgba(49,130,246,0.12)', color: 'var(--purple)', padding: '2px 7px', borderRadius: 5, fontSize: 11 }}>{q}번</span>
                       ))}
                       {!(e.japanese?.wrongQuestions?.reading?.length) && <span style={{ color: 'var(--t3)' }}>없음</span>}
                     </div>
@@ -262,7 +262,7 @@ export default function JapaneseAnalysis({ exams, onAddNew }) {
                   <td style={{ padding: '10px 12px' }}>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
                       {(e.japanese?.wrongQuestions?.listening || []).map(q => (
-                        <span key={q} style={{ background: 'rgba(236,72,153,0.12)', color: 'var(--pink)', padding: '2px 7px', borderRadius: 5, fontSize: 11 }}>{q}번</span>
+                        <span key={q} style={{ background: 'rgba(49,130,246,0.12)', color: 'var(--pink)', padding: '2px 7px', borderRadius: 5, fontSize: 11 }}>{q}번</span>
                       ))}
                       {!(e.japanese?.wrongQuestions?.listening?.length) && <span style={{ color: 'var(--t3)' }}>없음</span>}
                     </div>

@@ -84,13 +84,23 @@ function difficultyDeduction(baseDeduction, correctRate) {
 
 // ── 가중 오답 계산 (독해) ─────────────────────────────
 // wrongItems: [{ q: number, correctRate?: number, teacherHard?: boolean }] 또는 단순 숫자 배열
+function getItemQ(item) {
+  if (item == null) return NaN; // null, undefined → invalid
+  if (typeof item === 'object') return Number(item.q ?? item);
+  return Number(item);
+}
+
+function isObjectItem(item) {
+  return item != null && typeof item === 'object';
+}
+
 export function weightedWrongReading(arr = [], difficultyOverrides = {}) {
   return arr.reduce((sum, item) => {
-    const q = typeof item === 'object' ? Number(item.q ?? item) : Number(item);
+    const q = getItemQ(item);
     if (!Number.isInteger(q) || q <= 0) return sum;
 
-    const correctRate = typeof item === 'object' ? (item.correctRate ?? null) : null;
-    const teacherHard = typeof item === 'object' ? Boolean(item.teacherHard) : false;
+    const correctRate = isObjectItem(item) ? (item.correctRate ?? null) : null;
+    const teacherHard = isObjectItem(item) ? Boolean(item.teacherHard) : false;
     const overrideHard = difficultyOverrides[q] === 'hard';
 
     let baseWeight = getReadingQuestionWeight(q, difficultyOverrides);
@@ -109,11 +119,11 @@ export function weightedWrongReading(arr = [], difficultyOverrides = {}) {
 // ── 가중 오답 계산 (청해) ─────────────────────────────
 export function weightedWrongListening(arr = [], difficultyOverrides = {}) {
   return arr.reduce((sum, item) => {
-    const q = typeof item === 'object' ? Number(item.q ?? item) : Number(item);
+    const q = getItemQ(item);
     if (!Number.isInteger(q) || q <= 0) return sum;
 
-    const correctRate = typeof item === 'object' ? (item.correctRate ?? null) : null;
-    const teacherHard = typeof item === 'object' ? Boolean(item.teacherHard) : false;
+    const correctRate = isObjectItem(item) ? (item.correctRate ?? null) : null;
+    const teacherHard = isObjectItem(item) ? Boolean(item.teacherHard) : false;
     const overrideHard = difficultyOverrides[q] === 'hard';
 
     let baseWeight = getListeningQuestionWeight(q, difficultyOverrides);
@@ -131,7 +141,7 @@ export function weightedWrongListening(arr = [], difficultyOverrides = {}) {
 function setFromNumbers(arr = []) {
   return new Set(
     arr
-      .map(item => typeof item === 'object' ? Number(item.q ?? item) : Number(item))
+      .map(item => getItemQ(item))
       .filter(n => Number.isInteger(n) && n > 0)
   );
 }

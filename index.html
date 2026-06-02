@@ -9,6 +9,7 @@
 <html lang="ko" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self' blob: https://huggingface.co https://cdn-lfs.huggingface.co; worker-src 'self' blob:; media-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <!-- ════════════════════════════════════════════════
@@ -41,7 +42,7 @@
     <!-- ── Icons & PWA ── -->
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="manifest" href="./manifest.json" />
-    <meta name="theme-color" content="#f0a030" />
+    <meta name="theme-color" content="#3182F6" />
     <meta name="mobile-web-app-capable" content="yes" />
     <link rel="apple-touch-icon" href="./icon-192.png" />
     <link rel="apple-touch-icon" sizes="512x512" href="./icon-512.png" />
@@ -303,7 +304,7 @@
               <svg width="32" height="32" viewBox="0 0 30 30" fill="none">
                 <path d="M0,20 L0,10 L15,2 L30,10 L30,20" stroke="url(#splashBrand)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
                 <path d="M0,10 L15,2 L30,10" fill="url(#splashBrand)" opacity="0.15"/>
-                <path d="M30,10 L23,7 L21,20" stroke="rgba(255,255,255,0.35)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+                <path d="M30,10 L23,7 L21,20" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
               </svg>
             </div>
           </div>
@@ -321,17 +322,17 @@
         @keyframes spin { to { transform: rotate(360deg); } }
         @keyframes splashPulse { 0%,100%{opacity:0.3} 50%{opacity:0.8} }
         @keyframes splashSlide { 0%{transform:translateX(-100%)} 100%{transform:translateX(400%)} }
-        .eju-splash{display:flex;align-items:center;justify-content:center;min-height:100vh;min-height:100dvh;background:#07070e;color:#e8eaf6;font-family:'Syne',system-ui,-apple-system,sans-serif;flex-direction:column;gap:16px;background-image:radial-gradient(ellipse 55% 35% at 15% 20%,rgba(240,160,48,0.07) 0%,transparent 60%),radial-gradient(ellipse 45% 35% at 85% 80%,rgba(240,160,48,0.04) 0%,transparent 60%)}
+        .eju-splash{display:flex;align-items:center;justify-content:center;min-height:100vh;min-height:100dvh;background:#FFFFFF;color:#191F28;font-family:'Pretendard',system-ui,-apple-system,sans-serif;flex-direction:column;gap:16px;background-image:radial-gradient(ellipse 55% 35% at 15% 20%,rgba(49,130,246,0.07) 0%,transparent 60%),radial-gradient(ellipse 45% 35% at 85% 80%,rgba(49,130,246,0.04) 0%,transparent 60%)}
         .splash-inner{display:flex;flex-direction:column;align-items:center;gap:24px}
         .splash-logo-wrap{position:relative;width:72px;height:72px}
-        .splash-logo-glow{position:absolute;inset:-8px;background:linear-gradient(135deg,#f0a030,#d4880f);border-radius:24px;filter:blur(12px);opacity:0.25;animation:splashPulse 2.4s ease-in-out infinite}
-        .splash-logo{width:72px;height:72px;border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));border:1px solid #26263c;display:flex;align-items:center;justify-content:center;position:relative;backdrop-filter:blur(8px);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+        .splash-logo-glow{position:absolute;inset:-8px;background:linear-gradient(135deg,#3182F6,#1B64DA);border-radius:24px;filter:blur(12px);opacity:0.25;animation:splashPulse 2.4s ease-in-out infinite}
+        .splash-logo{width:72px;height:72px;border-radius:22px;background:linear-gradient(145deg,#3182F6,#1B64DA);border:none;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 10px 28px rgba(49,130,246,0.32)}
         .splash-brand{display:flex;flex-direction:column;align-items:center;gap:4px}
-        .splash-eju{font-size:42px;font-weight:800;letter-spacing:-2px;background:linear-gradient(135deg,#f0a030,#d4880f);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-family:'Syne',sans-serif}
-        .splash-tracker{font-size:13px;font-weight:600;letter-spacing:8px;color:rgba(255,255,255,0.3);font-family:'DM Mono',monospace}
-        .splash-loader{width:160px;height:3px;border-radius:3px;background:rgba(255,255,255,0.06);overflow:hidden;margin-top:4px}
-        .splash-loader-bar{height:100%;width:25%;border-radius:3px;background:linear-gradient(90deg,#f0a030,#d4880f);animation:splashSlide 1.2s ease-in-out infinite}
-        .splash-tag{font-size:12px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,0.15);margin-top:4px}
+        .splash-eju{font-size:42px;font-weight:800;letter-spacing:-2px;background:linear-gradient(135deg,#3182F6,#1B64DA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-family:'Pretendard',sans-serif}
+        .splash-tracker{font-size:13px;font-weight:600;letter-spacing:8px;color:#8B95A1;font-family:'Pretendard',sans-serif}
+        .splash-loader{width:160px;height:3px;border-radius:3px;background:#EAEDF0;overflow:hidden;margin-top:4px}
+        .splash-loader-bar{height:100%;width:25%;border-radius:3px;background:linear-gradient(90deg,#3182F6,#1B64DA);animation:splashSlide 1.2s ease-in-out infinite}
+        .splash-tag{font-size:12px;font-weight:400;letter-spacing:2px;color:#B0B8C1;margin-top:4px}
       </style>
     </div>
 

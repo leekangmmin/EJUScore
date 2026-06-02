@@ -1,0 +1,2147 @@
+{
+  "2026": {
+    "target_year": 2026,
+    "generated_at": "2026-06-02T08:13:50.487489",
+    "total_topics_predicted": 41,
+    "methodology": {
+      "factors": [
+        "Recency-weighted frequency (exponential decay, half-life=3yr)",
+        "Historical frequency baseline (24yr)",
+        "Topic rotation cycle detection",
+        "Markov chain transition probabilities",
+        "Bayesian Beta-Binomial posterior",
+        "Hidden trend detection (CUSUM regime shift)"
+      ],
+      "target_year": 2026
+    },
+    "predictions": [
+      {
+        "rank": 1,
+        "topic": "수요·공급과 시장균형",
+        "domain": "economy",
+        "ensemble_probability": 65.46,
+        "confidence_interval": {
+          "lower": 28.29,
+          "upper": 100
+        },
+        "overall_confidence": 0.896,
+        "top_factors": {
+          "recency_weighted_frequency": 100.0,
+          "historical_frequency_baseline": 76.12,
+          "topic_rotation_cycle": 70.0
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 2,
+        "topic": "환율·국제수지",
+        "domain": "economy",
+        "ensemble_probability": 63.04,
+        "confidence_interval": {
+          "lower": 25.59,
+          "upper": 100
+        },
+        "overall_confidence": 0.892,
+        "top_factors": {
+          "hidden_trend": 88.89,
+          "topic_rotation_cycle": 80.0,
+          "bayesian_posterior": 72.22
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 3,
+        "topic": "기후·케펜구분",
+        "domain": "geography",
+        "ensemble_probability": 55.07,
+        "confidence_interval": {
+          "lower": 16.22,
+          "upper": 93.92
+        },
+        "overall_confidence": 0.871,
+        "top_factors": {
+          "recency_weighted_frequency": 100.0,
+          "topic_rotation_cycle": 70.0,
+          "historical_frequency_baseline": 53.92
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 4,
+        "topic": "세계대전",
+        "domain": "history",
+        "ensemble_probability": 54.69,
+        "confidence_interval": {
+          "lower": 12.71,
+          "upper": 96.67
+        },
+        "overall_confidence": 0.86,
+        "top_factors": {
+          "recency_weighted_frequency": 100.0,
+          "topic_rotation_cycle": 70.0,
+          "historical_frequency_baseline": 58.61
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 5,
+        "topic": "국제무역",
+        "domain": "economy",
+        "ensemble_probability": 51.56,
+        "confidence_interval": {
+          "lower": 5.23,
+          "upper": 97.9
+        },
+        "overall_confidence": 0.836,
+        "top_factors": {
+          "hidden_trend": 99.26,
+          "topic_rotation_cycle": 70.0,
+          "bayesian_posterior": 44.44
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 6,
+        "topic": "통치기구",
+        "domain": "politics",
+        "ensemble_probability": 48.22,
+        "confidence_interval": {
+          "lower": 10.32,
+          "upper": 86.11
+        },
+        "overall_confidence": 0.857,
+        "top_factors": {
+          "recency_weighted_frequency": 89.16,
+          "topic_rotation_cycle": 70.0,
+          "bayesian_posterior": 47.22
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 7,
+        "topic": "냉전",
+        "domain": "history",
+        "ensemble_probability": 44.49,
+        "confidence_interval": {
+          "lower": 6.49,
+          "upper": 82.49
+        },
+        "overall_confidence": 0.844,
+        "top_factors": {
+          "hidden_trend": 85.71,
+          "topic_rotation_cycle": 54.0,
+          "bayesian_posterior": 38.89
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 8,
+        "topic": "국제정치·국제기구",
+        "domain": "politics",
+        "ensemble_probability": 43.49,
+        "confidence_interval": {
+          "lower": 11.24,
+          "upper": 75.74
+        },
+        "overall_confidence": 0.865,
+        "top_factors": {
+          "recency_weighted_frequency": 72.49,
+          "topic_rotation_cycle": 70.0,
+          "bayesian_posterior": 41.67
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 9,
+        "topic": "GDP·국민소득",
+        "domain": "economy",
+        "ensemble_probability": 41.57,
+        "confidence_interval": {
+          "lower": 16.01,
+          "upper": 67.13
+        },
+        "overall_confidence": 0.888,
+        "top_factors": {
+          "topic_rotation_cycle": 70.0,
+          "bayesian_posterior": 47.22,
+          "hidden_trend": 42.22
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 10,
+        "topic": "헌법·기본권",
+        "domain": "politics",
+        "ensemble_probability": 39.12,
+        "confidence_interval": {
+          "lower": 12.72,
+          "upper": 65.51
+        },
+        "overall_confidence": 0.877,
+        "top_factors": {
+          "topic_rotation_cycle": 70.0,
+          "bayesian_posterior": 44.44,
+          "recency_weighted_frequency": 43.77
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 11,
+        "topic": "일본경제사",
+        "domain": "economy",
+        "ensemble_probability": 38.48,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 95.06
+        },
+        "overall_confidence": 0.572,
+        "top_factors": {
+          "hidden_trend": 100.0,
+          "topic_rotation_cycle": 54.0,
+          "historical_frequency_baseline": 29.33
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 12,
+        "topic": "경제성장·경기변동",
+        "domain": "economy",
+        "ensemble_probability": 38.21,
+        "confidence_interval": {
+          "lower": 11.32,
+          "upper": 65.1
+        },
+        "overall_confidence": 0.872,
+        "top_factors": {
+          "topic_rotation_cycle": 70.0,
+          "bayesian_posterior": 47.22,
+          "historical_frequency_baseline": 34.07
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 13,
+        "topic": "자원·농업",
+        "domain": "geography",
+        "ensemble_probability": 37.82,
+        "confidence_interval": {
+          "lower": 8.75,
+          "upper": 66.88
+        },
+        "overall_confidence": 0.86,
+        "top_factors": {
+          "topic_rotation_cycle": 70.0,
+          "bayesian_posterior": 38.89,
+          "recency_weighted_frequency": 34.82
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 14,
+        "topic": "고용·노동",
+        "domain": "economy",
+        "ensemble_probability": 36.05,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 78.25
+        },
+        "overall_confidence": 0.666,
+        "top_factors": {
+          "topic_rotation_cycle": 74.93,
+          "hidden_trend": 59.26,
+          "bayesian_posterior": 25.0
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 15,
+        "topic": "지도·GIS",
+        "domain": "geography",
+        "ensemble_probability": 33.37,
+        "confidence_interval": {
+          "lower": 5.88,
+          "upper": 60.87
+        },
+        "overall_confidence": 0.85,
+        "top_factors": {
+          "topic_rotation_cycle": 70.0,
+          "bayesian_posterior": 36.11,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 16,
+        "topic": "환경문제",
+        "domain": "society",
+        "ensemble_probability": 31.71,
+        "confidence_interval": {
+          "lower": 16.35,
+          "upper": 47.06
+        },
+        "overall_confidence": 0.912,
+        "top_factors": {
+          "topic_rotation_cycle": 40.0,
+          "bayesian_posterior": 38.89,
+          "hidden_trend": 35.56
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 17,
+        "topic": "지방자치",
+        "domain": "politics",
+        "ensemble_probability": 31.42,
+        "confidence_interval": {
+          "lower": 2.95,
+          "upper": 59.89
+        },
+        "overall_confidence": 0.835,
+        "top_factors": {
+          "topic_rotation_cycle": 70.0,
+          "bayesian_posterior": 33.33,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 18,
+        "topic": "제국주의·식민지",
+        "domain": "history",
+        "ensemble_probability": 30.73,
+        "confidence_interval": {
+          "lower": 2.19,
+          "upper": 59.27
+        },
+        "overall_confidence": 0.791,
+        "top_factors": {
+          "topic_rotation_cycle": 70.0,
+          "bayesian_posterior": 30.56,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 19,
+        "topic": "러시아혁명·소련",
+        "domain": "history",
+        "ensemble_probability": 30.38,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 87.45
+        },
+        "overall_confidence": 0.337,
+        "top_factors": {
+          "topic_rotation_cycle": 90.0,
+          "hidden_trend": 55.56,
+          "historical_frequency_baseline": 13.33
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 20,
+        "topic": "산업혁명·자본주의",
+        "domain": "history",
+        "ensemble_probability": 30.27,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 87.49
+        },
+        "overall_confidence": 0.335,
+        "top_factors": {
+          "topic_rotation_cycle": 90.0,
+          "hidden_trend": 55.56,
+          "historical_frequency_baseline": 13.33
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 21,
+        "topic": "재정·조세정책",
+        "domain": "economy",
+        "ensemble_probability": 30.26,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 81.67
+        },
+        "overall_confidence": 0.45,
+        "top_factors": {
+          "hidden_trend": 77.78,
+          "topic_rotation_cycle": 75.86,
+          "historical_frequency_baseline": 20.67
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 22,
+        "topic": "금융·통화정책",
+        "domain": "economy",
+        "ensemble_probability": 30.07,
+        "confidence_interval": {
+          "lower": 14.37,
+          "upper": 45.78
+        },
+        "overall_confidence": 0.905,
+        "top_factors": {
+          "topic_rotation_cycle": 40.0,
+          "bayesian_posterior": 36.11,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 23,
+        "topic": "시민혁명",
+        "domain": "history",
+        "ensemble_probability": 27.19,
+        "confidence_interval": {
+          "lower": 12.18,
+          "upper": 42.19
+        },
+        "overall_confidence": 0.859,
+        "top_factors": {
+          "topic_rotation_cycle": 40.0,
+          "bayesian_posterior": 30.56,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 24,
+        "topic": "선거·정당",
+        "domain": "politics",
+        "ensemble_probability": 26.86,
+        "confidence_interval": {
+          "lower": 8.31,
+          "upper": 45.42
+        },
+        "overall_confidence": 0.874,
+        "top_factors": {
+          "topic_rotation_cycle": 40.0,
+          "bayesian_posterior": 33.33,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 25,
+        "topic": "인구·도시화",
+        "domain": "geography",
+        "ensemble_probability": 26.78,
+        "confidence_interval": {
+          "lower": 11.1,
+          "upper": 42.46
+        },
+        "overall_confidence": 0.853,
+        "top_factors": {
+          "topic_rotation_cycle": 40.0,
+          "bayesian_posterior": 30.56,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 26,
+        "topic": "지형·판구조",
+        "domain": "geography",
+        "ensemble_probability": 26.58,
+        "confidence_interval": {
+          "lower": 11.3,
+          "upper": 41.86
+        },
+        "overall_confidence": 0.815,
+        "top_factors": {
+          "topic_rotation_cycle": 40.0,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 27.78
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 27,
+        "topic": "사회보장·복지",
+        "domain": "society",
+        "ensemble_probability": 26.36,
+        "confidence_interval": {
+          "lower": 0.01,
+          "upper": 52.71
+        },
+        "overall_confidence": 0.658,
+        "top_factors": {
+          "hidden_trend": 50.0,
+          "topic_rotation_cycle": 40.0,
+          "bayesian_posterior": 22.22
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 28,
+        "topic": "전후세계질서",
+        "domain": "history",
+        "ensemble_probability": 25.89,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 80.72
+        },
+        "overall_confidence": 0.254,
+        "top_factors": {
+          "hidden_trend": 100.0,
+          "topic_rotation_cycle": 30.0,
+          "historical_frequency_baseline": 29.67
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 29,
+        "topic": "정치사상",
+        "domain": "politics",
+        "ensemble_probability": 24.54,
+        "confidence_interval": {
+          "lower": 7.51,
+          "upper": 41.57
+        },
+        "overall_confidence": 0.753,
+        "top_factors": {
+          "topic_rotation_cycle": 40.0,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 25.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 30,
+        "topic": "사법·재판",
+        "domain": "politics",
+        "ensemble_probability": 24.13,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 51.38
+        },
+        "overall_confidence": 0.594,
+        "top_factors": {
+          "topic_rotation_cycle": 60.31,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 19.44
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 31,
+        "topic": "다문화사회",
+        "domain": "society",
+        "ensemble_probability": 23.85,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 60.92
+        },
+        "overall_confidence": 0.437,
+        "top_factors": {
+          "topic_rotation_cycle": 55.33,
+          "hidden_trend": 51.85,
+          "historical_frequency_baseline": 14.33
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 32,
+        "topic": "대공황",
+        "domain": "history",
+        "ensemble_probability": 13.88,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 34.23
+        },
+        "overall_confidence": 0.413,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 11.11
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 33,
+        "topic": "소득분배·지니계수",
+        "domain": "economy",
+        "ensemble_probability": 11.79,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.94
+        },
+        "overall_confidence": 0.328,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 8.33
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 34,
+        "topic": "안전보장·방위",
+        "domain": "politics",
+        "ensemble_probability": 11.78,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.95
+        },
+        "overall_confidence": 0.328,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 8.33
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 35,
+        "topic": "일본근대사",
+        "domain": "history",
+        "ensemble_probability": 10.11,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.81
+        },
+        "overall_confidence": 0.209,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.56
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 36,
+        "topic": "세계화·지역통합",
+        "domain": "history",
+        "ensemble_probability": 10.11,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.81
+        },
+        "overall_confidence": 0.209,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.56
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 37,
+        "topic": "환경·생태",
+        "domain": "geography",
+        "ensemble_probability": 10.11,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.81
+        },
+        "overall_confidence": 0.209,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.56
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 38,
+        "topic": "산업·교통",
+        "domain": "geography",
+        "ensemble_probability": 10.11,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.81
+        },
+        "overall_confidence": 0.209,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.56
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 39,
+        "topic": "저출산·고령화",
+        "domain": "society",
+        "ensemble_probability": 10.11,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.81
+        },
+        "overall_confidence": 0.209,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.56
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 40,
+        "topic": "정보화사회",
+        "domain": "society",
+        "ensemble_probability": 10.11,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.81
+        },
+        "overall_confidence": 0.209,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.56
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 41,
+        "topic": "젠더·평등",
+        "domain": "society",
+        "ensemble_probability": 10.11,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.81
+        },
+        "overall_confidence": 0.209,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.56
+        },
+        "trend_direction": "stable"
+      }
+    ]
+  },
+  "2027": {
+    "target_year": 2027,
+    "generated_at": "2026-06-02T08:13:50.487537",
+    "total_topics_predicted": 41,
+    "methodology": {
+      "factors": [
+        "Recency-weighted frequency (exponential decay, half-life=3yr)",
+        "Historical frequency baseline (24yr)",
+        "Topic rotation cycle detection",
+        "Markov chain transition probabilities",
+        "Bayesian Beta-Binomial posterior",
+        "Hidden trend detection (CUSUM regime shift)"
+      ],
+      "target_year": 2027
+    },
+    "predictions": [
+      {
+        "rank": 1,
+        "topic": "환율·국제수지",
+        "domain": "economy",
+        "ensemble_probability": 60.56,
+        "confidence_interval": {
+          "lower": 22.63,
+          "upper": 98.5
+        },
+        "overall_confidence": 0.886,
+        "top_factors": {
+          "hidden_trend": 85.15,
+          "topic_rotation_cycle": 80.0,
+          "bayesian_posterior": 70.27
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 2,
+        "topic": "수요·공급과 시장균형",
+        "domain": "economy",
+        "ensemble_probability": 60.24,
+        "confidence_interval": {
+          "lower": 15.33,
+          "upper": 100
+        },
+        "overall_confidence": 0.864,
+        "top_factors": {
+          "recency_weighted_frequency": 100.0,
+          "topic_rotation_cycle": 79.28,
+          "historical_frequency_baseline": 76.12
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 3,
+        "topic": "세계대전",
+        "domain": "history",
+        "ensemble_probability": 54.6,
+        "confidence_interval": {
+          "lower": 13.49,
+          "upper": 95.7
+        },
+        "overall_confidence": 0.863,
+        "top_factors": {
+          "recency_weighted_frequency": 94.77,
+          "topic_rotation_cycle": 77.22,
+          "historical_frequency_baseline": 58.61
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 4,
+        "topic": "국제무역",
+        "domain": "economy",
+        "ensemble_probability": 49.23,
+        "confidence_interval": {
+          "lower": 2.35,
+          "upper": 96.12
+        },
+        "overall_confidence": 0.826,
+        "top_factors": {
+          "hidden_trend": 100.0,
+          "topic_rotation_cycle": 60.38,
+          "historical_frequency_baseline": 43.62
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 5,
+        "topic": "기후·케펜구분",
+        "domain": "geography",
+        "ensemble_probability": 47.2,
+        "confidence_interval": {
+          "lower": 13.7,
+          "upper": 80.71
+        },
+        "overall_confidence": 0.871,
+        "top_factors": {
+          "recency_weighted_frequency": 85.19,
+          "topic_rotation_cycle": 54.16,
+          "historical_frequency_baseline": 53.92
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 6,
+        "topic": "통치기구",
+        "domain": "politics",
+        "ensemble_probability": 45.23,
+        "confidence_interval": {
+          "lower": 14.35,
+          "upper": 76.11
+        },
+        "overall_confidence": 0.875,
+        "top_factors": {
+          "recency_weighted_frequency": 70.71,
+          "topic_rotation_cycle": 69.6,
+          "bayesian_posterior": 45.95
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 7,
+        "topic": "냉전",
+        "domain": "history",
+        "ensemble_probability": 39.74,
+        "confidence_interval": {
+          "lower": 10.46,
+          "upper": 69.03
+        },
+        "overall_confidence": 0.866,
+        "top_factors": {
+          "hidden_trend": 66.67,
+          "topic_rotation_cycle": 54.0,
+          "bayesian_posterior": 37.84
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 8,
+        "topic": "국제정치·국제기구",
+        "domain": "politics",
+        "ensemble_probability": 38.81,
+        "confidence_interval": {
+          "lower": 16.37,
+          "upper": 61.25
+        },
+        "overall_confidence": 0.895,
+        "top_factors": {
+          "recency_weighted_frequency": 57.49,
+          "topic_rotation_cycle": 54.0,
+          "bayesian_posterior": 40.54
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 9,
+        "topic": "일본경제사",
+        "domain": "economy",
+        "ensemble_probability": 38.25,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 95.09
+        },
+        "overall_confidence": 0.569,
+        "top_factors": {
+          "hidden_trend": 100.0,
+          "topic_rotation_cycle": 54.0,
+          "historical_frequency_baseline": 29.33
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 10,
+        "topic": "헌법·기본권",
+        "domain": "politics",
+        "ensemble_probability": 36.81,
+        "confidence_interval": {
+          "lower": 13.1,
+          "upper": 60.51
+        },
+        "overall_confidence": 0.883,
+        "top_factors": {
+          "topic_rotation_cycle": 64.88,
+          "bayesian_posterior": 43.24,
+          "recency_weighted_frequency": 34.71
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 11,
+        "topic": "경제성장·경기변동",
+        "domain": "economy",
+        "ensemble_probability": 36.48,
+        "confidence_interval": {
+          "lower": 10.72,
+          "upper": 62.24
+        },
+        "overall_confidence": 0.871,
+        "top_factors": {
+          "topic_rotation_cycle": 66.09,
+          "bayesian_posterior": 45.95,
+          "historical_frequency_baseline": 34.07
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 12,
+        "topic": "자원·농업",
+        "domain": "geography",
+        "ensemble_probability": 36.09,
+        "confidence_interval": {
+          "lower": 8.07,
+          "upper": 64.12
+        },
+        "overall_confidence": 0.858,
+        "top_factors": {
+          "topic_rotation_cycle": 67.44,
+          "bayesian_posterior": 37.84,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 13,
+        "topic": "GDP·국민소득",
+        "domain": "economy",
+        "ensemble_probability": 36.07,
+        "confidence_interval": {
+          "lower": 14.39,
+          "upper": 57.74
+        },
+        "overall_confidence": 0.89,
+        "top_factors": {
+          "topic_rotation_cycle": 57.07,
+          "bayesian_posterior": 45.95,
+          "historical_frequency_baseline": 37.27
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 14,
+        "topic": "지도·GIS",
+        "domain": "geography",
+        "ensemble_probability": 33.22,
+        "confidence_interval": {
+          "lower": 2.03,
+          "upper": 64.42
+        },
+        "overall_confidence": 0.829,
+        "top_factors": {
+          "topic_rotation_cycle": 75.9,
+          "bayesian_posterior": 35.14,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 15,
+        "topic": "고용·노동",
+        "domain": "economy",
+        "ensemble_probability": 32.31,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 71.61
+        },
+        "overall_confidence": 0.658,
+        "top_factors": {
+          "topic_rotation_cycle": 74.93,
+          "hidden_trend": 42.22,
+          "bayesian_posterior": 24.32
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 16,
+        "topic": "지방자치",
+        "domain": "politics",
+        "ensemble_probability": 31.43,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 63.67
+        },
+        "overall_confidence": 0.813,
+        "top_factors": {
+          "topic_rotation_cycle": 75.86,
+          "bayesian_posterior": 32.43,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 17,
+        "topic": "환경문제",
+        "domain": "society",
+        "ensemble_probability": 30.76,
+        "confidence_interval": {
+          "lower": 14.52,
+          "upper": 47.0
+        },
+        "overall_confidence": 0.904,
+        "top_factors": {
+          "topic_rotation_cycle": 40.0,
+          "bayesian_posterior": 37.84,
+          "hidden_trend": 35.56
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 18,
+        "topic": "선거·정당",
+        "domain": "politics",
+        "ensemble_probability": 30.67,
+        "confidence_interval": {
+          "lower": 0.35,
+          "upper": 60.99
+        },
+        "overall_confidence": 0.82,
+        "top_factors": {
+          "topic_rotation_cycle": 63.15,
+          "bayesian_posterior": 32.43,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 19,
+        "topic": "러시아혁명·소련",
+        "domain": "history",
+        "ensemble_probability": 30.27,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 87.46
+        },
+        "overall_confidence": 0.335,
+        "top_factors": {
+          "topic_rotation_cycle": 90.0,
+          "hidden_trend": 55.56,
+          "historical_frequency_baseline": 13.33
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 20,
+        "topic": "산업혁명·자본주의",
+        "domain": "history",
+        "ensemble_probability": 30.19,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 87.49
+        },
+        "overall_confidence": 0.334,
+        "top_factors": {
+          "topic_rotation_cycle": 90.0,
+          "hidden_trend": 55.56,
+          "historical_frequency_baseline": 13.33
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 21,
+        "topic": "재정·조세정책",
+        "domain": "economy",
+        "ensemble_probability": 30.09,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 81.68
+        },
+        "overall_confidence": 0.447,
+        "top_factors": {
+          "hidden_trend": 77.78,
+          "topic_rotation_cycle": 75.86,
+          "historical_frequency_baseline": 20.67
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 22,
+        "topic": "제국주의·식민지",
+        "domain": "history",
+        "ensemble_probability": 29.23,
+        "confidence_interval": {
+          "lower": 2.39,
+          "upper": 56.07
+        },
+        "overall_confidence": 0.793,
+        "top_factors": {
+          "topic_rotation_cycle": 65.58,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 29.73
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 23,
+        "topic": "금융·통화정책",
+        "domain": "economy",
+        "ensemble_probability": 29.02,
+        "confidence_interval": {
+          "lower": 13.29,
+          "upper": 44.75
+        },
+        "overall_confidence": 0.901,
+        "top_factors": {
+          "topic_rotation_cycle": 40.0,
+          "bayesian_posterior": 35.14,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 24,
+        "topic": "시민혁명",
+        "domain": "history",
+        "ensemble_probability": 26.37,
+        "confidence_interval": {
+          "lower": 10.67,
+          "upper": 42.08
+        },
+        "overall_confidence": 0.851,
+        "top_factors": {
+          "topic_rotation_cycle": 40.0,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 29.73
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 25,
+        "topic": "인구·도시화",
+        "domain": "geography",
+        "ensemble_probability": 26.01,
+        "confidence_interval": {
+          "lower": 9.52,
+          "upper": 42.5
+        },
+        "overall_confidence": 0.844,
+        "top_factors": {
+          "topic_rotation_cycle": 40.0,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 29.73
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 26,
+        "topic": "사회보장·복지",
+        "domain": "society",
+        "ensemble_probability": 25.99,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 52.83
+        },
+        "overall_confidence": 0.652,
+        "top_factors": {
+          "hidden_trend": 50.0,
+          "topic_rotation_cycle": 40.0,
+          "bayesian_posterior": 21.62
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 27,
+        "topic": "전후세계질서",
+        "domain": "history",
+        "ensemble_probability": 25.82,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 80.72
+        },
+        "overall_confidence": 0.252,
+        "top_factors": {
+          "hidden_trend": 100.0,
+          "topic_rotation_cycle": 30.0,
+          "historical_frequency_baseline": 29.67
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 28,
+        "topic": "지형·판구조",
+        "domain": "geography",
+        "ensemble_probability": 25.67,
+        "confidence_interval": {
+          "lower": 9.82,
+          "upper": 41.51
+        },
+        "overall_confidence": 0.807,
+        "top_factors": {
+          "topic_rotation_cycle": 40.0,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 27.03
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 29,
+        "topic": "정치사상",
+        "domain": "politics",
+        "ensemble_probability": 23.89,
+        "confidence_interval": {
+          "lower": 6.2,
+          "upper": 41.58
+        },
+        "overall_confidence": 0.745,
+        "top_factors": {
+          "topic_rotation_cycle": 40.0,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 24.32
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 30,
+        "topic": "다문화사회",
+        "domain": "society",
+        "ensemble_probability": 23.69,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 60.95
+        },
+        "overall_confidence": 0.433,
+        "top_factors": {
+          "topic_rotation_cycle": 55.33,
+          "hidden_trend": 51.85,
+          "historical_frequency_baseline": 14.33
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 31,
+        "topic": "사법·재판",
+        "domain": "politics",
+        "ensemble_probability": 23.3,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 51.16
+        },
+        "overall_confidence": 0.582,
+        "top_factors": {
+          "topic_rotation_cycle": 60.31,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 18.92
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 32,
+        "topic": "대공황",
+        "domain": "history",
+        "ensemble_probability": 13.78,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 34.22
+        },
+        "overall_confidence": 0.409,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 10.81
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 33,
+        "topic": "소득분배·지니계수",
+        "domain": "economy",
+        "ensemble_probability": 11.73,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.92
+        },
+        "overall_confidence": 0.326,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 8.11
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 34,
+        "topic": "안전보장·방위",
+        "domain": "politics",
+        "ensemble_probability": 11.71,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.94
+        },
+        "overall_confidence": 0.325,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "hidden_trend": 30.0,
+          "bayesian_posterior": 8.11
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 35,
+        "topic": "일본근대사",
+        "domain": "history",
+        "ensemble_probability": 10.08,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.79
+        },
+        "overall_confidence": 0.207,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.41
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 36,
+        "topic": "세계화·지역통합",
+        "domain": "history",
+        "ensemble_probability": 10.08,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.79
+        },
+        "overall_confidence": 0.207,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.41
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 37,
+        "topic": "환경·생태",
+        "domain": "geography",
+        "ensemble_probability": 10.08,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.79
+        },
+        "overall_confidence": 0.207,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.41
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 38,
+        "topic": "산업·교통",
+        "domain": "geography",
+        "ensemble_probability": 10.08,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.79
+        },
+        "overall_confidence": 0.207,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.41
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 39,
+        "topic": "저출산·고령화",
+        "domain": "society",
+        "ensemble_probability": 10.08,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.79
+        },
+        "overall_confidence": 0.207,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.41
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 40,
+        "topic": "정보화사회",
+        "domain": "society",
+        "ensemble_probability": 10.08,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.79
+        },
+        "overall_confidence": 0.207,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.41
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 41,
+        "topic": "젠더·평등",
+        "domain": "society",
+        "ensemble_probability": 10.08,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 31.79
+        },
+        "overall_confidence": 0.207,
+        "top_factors": {
+          "topic_rotation_cycle": 30.0,
+          "markov_transition": 30.0,
+          "bayesian_posterior": 5.41
+        },
+        "trend_direction": "stable"
+      }
+    ]
+  },
+  "2028": {
+    "target_year": 2028,
+    "generated_at": "2026-06-02T08:13:50.487577",
+    "total_topics_predicted": 41,
+    "methodology": {
+      "factors": [
+        "Recency-weighted frequency (exponential decay, half-life=3yr)",
+        "Historical frequency baseline (24yr)",
+        "Topic rotation cycle detection",
+        "Markov chain transition probabilities",
+        "Bayesian Beta-Binomial posterior",
+        "Hidden trend detection (CUSUM regime shift)"
+      ],
+      "target_year": 2028
+    },
+    "predictions": [
+      {
+        "rank": 1,
+        "topic": "수요·공급과 시장균형",
+        "domain": "economy",
+        "ensemble_probability": 65.72,
+        "confidence_interval": {
+          "lower": 32.69,
+          "upper": 98.75
+        },
+        "overall_confidence": 0.908,
+        "top_factors": {
+          "recency_weighted_frequency": 100.0,
+          "topic_rotation_cycle": 79.28,
+          "historical_frequency_baseline": 76.12
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 2,
+        "topic": "환율·국제수지",
+        "domain": "economy",
+        "ensemble_probability": 62.95,
+        "confidence_interval": {
+          "lower": 33.39,
+          "upper": 92.52
+        },
+        "overall_confidence": 0.914,
+        "top_factors": {
+          "hidden_trend": 82.22,
+          "topic_rotation_cycle": 80.0,
+          "bayesian_posterior": 68.42
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 3,
+        "topic": "세계대전",
+        "domain": "history",
+        "ensemble_probability": 57.07,
+        "confidence_interval": {
+          "lower": 33.38,
+          "upper": 80.77
+        },
+        "overall_confidence": 0.924,
+        "top_factors": {
+          "topic_rotation_cycle": 77.22,
+          "recency_weighted_frequency": 75.17,
+          "historical_frequency_baseline": 58.61
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 4,
+        "topic": "국제무역",
+        "domain": "economy",
+        "ensemble_probability": 53.54,
+        "confidence_interval": {
+          "lower": 11.5,
+          "upper": 95.57
+        },
+        "overall_confidence": 0.857,
+        "top_factors": {
+          "hidden_trend": 100.0,
+          "topic_rotation_cycle": 60.38,
+          "markov_transition": 50.0
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 5,
+        "topic": "기후·케펜구분",
+        "domain": "geography",
+        "ensemble_probability": 49.23,
+        "confidence_interval": {
+          "lower": 30.76,
+          "upper": 67.69
+        },
+        "overall_confidence": 0.932,
+        "top_factors": {
+          "recency_weighted_frequency": 67.57,
+          "topic_rotation_cycle": 54.16,
+          "historical_frequency_baseline": 53.92
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 6,
+        "topic": "통치기구",
+        "domain": "politics",
+        "ensemble_probability": 47.85,
+        "confidence_interval": {
+          "lower": 28.23,
+          "upper": 67.48
+        },
+        "overall_confidence": 0.925,
+        "top_factors": {
+          "topic_rotation_cycle": 69.6,
+          "recency_weighted_frequency": 56.08,
+          "markov_transition": 50.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 7,
+        "topic": "일본경제사",
+        "domain": "economy",
+        "ensemble_probability": 44.56,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 97.09
+        },
+        "overall_confidence": 0.625,
+        "top_factors": {
+          "hidden_trend": 100.0,
+          "topic_rotation_cycle": 54.0,
+          "markov_transition": 50.0
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 8,
+        "topic": "냉전",
+        "domain": "history",
+        "ensemble_probability": 44.21,
+        "confidence_interval": {
+          "lower": 19.17,
+          "upper": 69.25
+        },
+        "overall_confidence": 0.897,
+        "top_factors": {
+          "hidden_trend": 66.67,
+          "topic_rotation_cycle": 54.0,
+          "markov_transition": 50.0
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 9,
+        "topic": "국제정치·국제기구",
+        "domain": "politics",
+        "ensemble_probability": 42.0,
+        "confidence_interval": {
+          "lower": 29.02,
+          "upper": 54.97
+        },
+        "overall_confidence": 0.944,
+        "top_factors": {
+          "topic_rotation_cycle": 54.0,
+          "markov_transition": 50.0,
+          "recency_weighted_frequency": 45.6
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 10,
+        "topic": "헌법·기본권",
+        "domain": "politics",
+        "ensemble_probability": 40.6,
+        "confidence_interval": {
+          "lower": 20.14,
+          "upper": 61.06
+        },
+        "overall_confidence": 0.908,
+        "top_factors": {
+          "topic_rotation_cycle": 64.88,
+          "markov_transition": 50.0,
+          "bayesian_posterior": 42.11
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 11,
+        "topic": "경제성장·경기변동",
+        "domain": "economy",
+        "ensemble_probability": 40.51,
+        "confidence_interval": {
+          "lower": 16.97,
+          "upper": 64.04
+        },
+        "overall_confidence": 0.894,
+        "top_factors": {
+          "topic_rotation_cycle": 66.09,
+          "markov_transition": 50.0,
+          "bayesian_posterior": 44.74
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 12,
+        "topic": "자원·농업",
+        "domain": "geography",
+        "ensemble_probability": 40.43,
+        "confidence_interval": {
+          "lower": 15.16,
+          "upper": 65.69
+        },
+        "overall_confidence": 0.886,
+        "top_factors": {
+          "topic_rotation_cycle": 67.44,
+          "markov_transition": 50.0,
+          "bayesian_posterior": 36.84
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 13,
+        "topic": "GDP·국민소득",
+        "domain": "economy",
+        "ensemble_probability": 40.11,
+        "confidence_interval": {
+          "lower": 21.48,
+          "upper": 58.74
+        },
+        "overall_confidence": 0.915,
+        "top_factors": {
+          "topic_rotation_cycle": 57.07,
+          "markov_transition": 50.0,
+          "bayesian_posterior": 44.74
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 14,
+        "topic": "고용·노동",
+        "domain": "economy",
+        "ensemble_probability": 39.3,
+        "confidence_interval": {
+          "lower": 2.03,
+          "upper": 76.57
+        },
+        "overall_confidence": 0.707,
+        "top_factors": {
+          "topic_rotation_cycle": 74.93,
+          "markov_transition": 50.0,
+          "hidden_trend": 48.15
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 15,
+        "topic": "금융·통화정책",
+        "domain": "economy",
+        "ensemble_probability": 38.43,
+        "confidence_interval": {
+          "lower": 13.64,
+          "upper": 63.22
+        },
+        "overall_confidence": 0.882,
+        "top_factors": {
+          "topic_rotation_cycle": 63.81,
+          "markov_transition": 50.0,
+          "bayesian_posterior": 34.21
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 16,
+        "topic": "환경문제",
+        "domain": "society",
+        "ensemble_probability": 38.0,
+        "confidence_interval": {
+          "lower": 17.6,
+          "upper": 58.4
+        },
+        "overall_confidence": 0.902,
+        "top_factors": {
+          "topic_rotation_cycle": 54.0,
+          "markov_transition": 50.0,
+          "bayesian_posterior": 36.84
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 17,
+        "topic": "지도·GIS",
+        "domain": "geography",
+        "ensemble_probability": 37.86,
+        "confidence_interval": {
+          "lower": 8.0,
+          "upper": 67.71
+        },
+        "overall_confidence": 0.856,
+        "top_factors": {
+          "topic_rotation_cycle": 75.9,
+          "markov_transition": 50.0,
+          "bayesian_posterior": 34.21
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 18,
+        "topic": "러시아혁명·소련",
+        "domain": "history",
+        "ensemble_probability": 37.38,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 91.95
+        },
+        "overall_confidence": 0.414,
+        "top_factors": {
+          "topic_rotation_cycle": 90.0,
+          "hidden_trend": 55.56,
+          "markov_transition": 50.0
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 19,
+        "topic": "산업혁명·자본주의",
+        "domain": "history",
+        "ensemble_probability": 37.33,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 92.0
+        },
+        "overall_confidence": 0.413,
+        "top_factors": {
+          "topic_rotation_cycle": 90.0,
+          "hidden_trend": 55.56,
+          "markov_transition": 50.0
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 20,
+        "topic": "재정·조세정책",
+        "domain": "economy",
+        "ensemble_probability": 36.99,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 86.1
+        },
+        "overall_confidence": 0.518,
+        "top_factors": {
+          "hidden_trend": 77.78,
+          "topic_rotation_cycle": 75.86,
+          "markov_transition": 50.0
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 21,
+        "topic": "선거·정당",
+        "domain": "politics",
+        "ensemble_probability": 36.29,
+        "confidence_interval": {
+          "lower": 8.03,
+          "upper": 64.54
+        },
+        "overall_confidence": 0.858,
+        "top_factors": {
+          "topic_rotation_cycle": 63.15,
+          "markov_transition": 50.0,
+          "bayesian_posterior": 31.58
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 22,
+        "topic": "지방자치",
+        "domain": "politics",
+        "ensemble_probability": 36.26,
+        "confidence_interval": {
+          "lower": 4.67,
+          "upper": 67.84
+        },
+        "overall_confidence": 0.841,
+        "top_factors": {
+          "topic_rotation_cycle": 75.86,
+          "markov_transition": 50.0,
+          "bayesian_posterior": 31.58
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 23,
+        "topic": "제국주의·식민지",
+        "domain": "history",
+        "ensemble_probability": 34.12,
+        "confidence_interval": {
+          "lower": 7.16,
+          "upper": 61.09
+        },
+        "overall_confidence": 0.816,
+        "top_factors": {
+          "topic_rotation_cycle": 65.58,
+          "markov_transition": 50.0,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 24,
+        "topic": "시민혁명",
+        "domain": "history",
+        "ensemble_probability": 33.97,
+        "confidence_interval": {
+          "lower": 10.83,
+          "upper": 57.12
+        },
+        "overall_confidence": 0.836,
+        "top_factors": {
+          "topic_rotation_cycle": 54.0,
+          "markov_transition": 50.0,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 25,
+        "topic": "인구·도시화",
+        "domain": "geography",
+        "ensemble_probability": 33.8,
+        "confidence_interval": {
+          "lower": 10.17,
+          "upper": 57.42
+        },
+        "overall_confidence": 0.833,
+        "top_factors": {
+          "topic_rotation_cycle": 54.0,
+          "markov_transition": 50.0,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 26,
+        "topic": "전후세계질서",
+        "domain": "history",
+        "ensemble_probability": 33.06,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 86.66
+        },
+        "overall_confidence": 0.344,
+        "top_factors": {
+          "hidden_trend": 100.0,
+          "markov_transition": 50.0,
+          "topic_rotation_cycle": 30.0
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 27,
+        "topic": "다문화사회",
+        "domain": "society",
+        "ensemble_probability": 30.61,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 67.72
+        },
+        "overall_confidence": 0.499,
+        "top_factors": {
+          "topic_rotation_cycle": 55.33,
+          "hidden_trend": 51.85,
+          "markov_transition": 50.0
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 28,
+        "topic": "사회보장·복지",
+        "domain": "society",
+        "ensemble_probability": 30.06,
+        "confidence_interval": {
+          "lower": 4.11,
+          "upper": 56.01
+        },
+        "overall_confidence": 0.683,
+        "top_factors": {
+          "markov_transition": 50.0,
+          "hidden_trend": 50.0,
+          "topic_rotation_cycle": 30.0
+        },
+        "trend_direction": "declining"
+      },
+      {
+        "rank": 29,
+        "topic": "사법·재판",
+        "domain": "politics",
+        "ensemble_probability": 29.15,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 59.07
+        },
+        "overall_confidence": 0.613,
+        "top_factors": {
+          "topic_rotation_cycle": 60.31,
+          "markov_transition": 50.0,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 30,
+        "topic": "지형·판구조",
+        "domain": "geography",
+        "ensemble_probability": 28.91,
+        "confidence_interval": {
+          "lower": 12.45,
+          "upper": 45.36
+        },
+        "overall_confidence": 0.816,
+        "top_factors": {
+          "markov_transition": 50.0,
+          "topic_rotation_cycle": 30.0,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 31,
+        "topic": "정치사상",
+        "domain": "politics",
+        "ensemble_probability": 27.61,
+        "confidence_interval": {
+          "lower": 9.25,
+          "upper": 45.96
+        },
+        "overall_confidence": 0.759,
+        "top_factors": {
+          "markov_transition": 50.0,
+          "topic_rotation_cycle": 30.0,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 32,
+        "topic": "대공황",
+        "domain": "history",
+        "ensemble_probability": 26.93,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 64.89
+        },
+        "overall_confidence": 0.423,
+        "top_factors": {
+          "topic_rotation_cycle": 60.0,
+          "markov_transition": 50.0,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 33,
+        "topic": "소득분배·지니계수",
+        "domain": "economy",
+        "ensemble_probability": 18.97,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 47.58
+        },
+        "overall_confidence": 0.365,
+        "top_factors": {
+          "markov_transition": 50.0,
+          "topic_rotation_cycle": 30.0,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 34,
+        "topic": "안전보장·방위",
+        "domain": "politics",
+        "ensemble_probability": 18.93,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 47.61
+        },
+        "overall_confidence": 0.364,
+        "top_factors": {
+          "markov_transition": 50.0,
+          "topic_rotation_cycle": 30.0,
+          "hidden_trend": 30.0
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 35,
+        "topic": "일본근대사",
+        "domain": "history",
+        "ensemble_probability": 13.05,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 43.61
+        },
+        "overall_confidence": 0.173,
+        "top_factors": {
+          "markov_transition": 50.0,
+          "topic_rotation_cycle": 30.0,
+          "bayesian_posterior": 5.26
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 36,
+        "topic": "세계화·지역통합",
+        "domain": "history",
+        "ensemble_probability": 13.05,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 43.61
+        },
+        "overall_confidence": 0.173,
+        "top_factors": {
+          "markov_transition": 50.0,
+          "topic_rotation_cycle": 30.0,
+          "bayesian_posterior": 5.26
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 37,
+        "topic": "환경·생태",
+        "domain": "geography",
+        "ensemble_probability": 13.05,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 43.61
+        },
+        "overall_confidence": 0.173,
+        "top_factors": {
+          "markov_transition": 50.0,
+          "topic_rotation_cycle": 30.0,
+          "bayesian_posterior": 5.26
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 38,
+        "topic": "산업·교통",
+        "domain": "geography",
+        "ensemble_probability": 13.05,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 43.61
+        },
+        "overall_confidence": 0.173,
+        "top_factors": {
+          "markov_transition": 50.0,
+          "topic_rotation_cycle": 30.0,
+          "bayesian_posterior": 5.26
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 39,
+        "topic": "저출산·고령화",
+        "domain": "society",
+        "ensemble_probability": 13.05,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 43.61
+        },
+        "overall_confidence": 0.173,
+        "top_factors": {
+          "markov_transition": 50.0,
+          "topic_rotation_cycle": 30.0,
+          "bayesian_posterior": 5.26
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 40,
+        "topic": "정보화사회",
+        "domain": "society",
+        "ensemble_probability": 13.05,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 43.61
+        },
+        "overall_confidence": 0.173,
+        "top_factors": {
+          "markov_transition": 50.0,
+          "topic_rotation_cycle": 30.0,
+          "bayesian_posterior": 5.26
+        },
+        "trend_direction": "stable"
+      },
+      {
+        "rank": 41,
+        "topic": "젠더·평등",
+        "domain": "society",
+        "ensemble_probability": 13.05,
+        "confidence_interval": {
+          "lower": 0,
+          "upper": 43.61
+        },
+        "overall_confidence": 0.173,
+        "top_factors": {
+          "markov_transition": 50.0,
+          "topic_rotation_cycle": 30.0,
+          "bayesian_posterior": 5.26
+        },
+        "trend_direction": "stable"
+      }
+    ]
+  }
+}

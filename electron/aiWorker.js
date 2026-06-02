@@ -37,10 +37,10 @@ parentPort.on('message', async (msg) => {
         callback_function: (text) => send({ type: 'token', text }),
       });
       await generator(msg.messages, {
-        max_new_tokens: 220,
+        max_new_tokens: 480,
         do_sample: true,
-        temperature: 0.75,
-        repetition_penalty: 1.15,
+        temperature: 0.5,
+        repetition_penalty: 1.2,
         streamer,
       });
       send({ type: 'done' });

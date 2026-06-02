@@ -1,0 +1,20 @@
+{
+  "pdf": "2007平成19年第2回文数.pdf",
+  "pages": 13,
+  "questions": 13,
+  "tables": 13,
+  "graphs": 0,
+  "maps": 0,
+  "diagrams": 0,
+  "timelines": 0,
+  "confidence_average": 0.7897,
+  "confidence_min": 0.6392,
+  "confidence_max": 0.8834,
+  "low_confidence_count": 6,
+  "validation": "FAIL",
+  "warnings": [],
+  "errors": [
+    "Over 30% of questions have low confidence"
+  ],
+  "timestamp": "2026-06-02T08:01:52.443874"
+}

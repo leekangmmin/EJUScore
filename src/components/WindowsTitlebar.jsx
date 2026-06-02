@@ -2,10 +2,13 @@
 import { useState, useEffect } from 'react';
 import { Minus, Square, X } from 'lucide-react';
 
-const api = window.electronAPI;
+function getApi() {
+  return typeof window !== 'undefined' ? window.electronAPI : undefined;
+}
 
 export default function WindowsTitlebar() {
   const [maximized, setMaximized] = useState(false);
+  const api = getApi();
 
   useEffect(() => {
     if (!api) return;
@@ -18,7 +21,7 @@ export default function WindowsTitlebar() {
   const btnBase = {
     display: 'flex', alignItems: 'center', justifyContent: 'center',
     width: 46, height: 32, border: 'none', background: 'transparent',
-    cursor: 'pointer', color: 'rgba(255,255,255,0.65)', transition: 'background 0.15s',
+    cursor: 'pointer', color: 'var(--t2)', transition: 'background 0.15s',
     flexShrink: 0,
     WebkitAppRegion: 'no-drag',
   };
@@ -32,7 +35,7 @@ export default function WindowsTitlebar() {
       userSelect: 'none',
     }}>
       {/* 앱 이름 */}
-      <div style={{ paddingLeft: 14, fontSize: 11, fontWeight: 600, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.03em' }}>
+      <div style={{ paddingLeft: 14, fontSize: 11, fontWeight: 600, color: 'var(--t2)', letterSpacing: '0.03em' }}>
         EJU Score Tracker
       </div>
 
@@ -41,7 +44,7 @@ export default function WindowsTitlebar() {
         <button
           onClick={api.minimize}
           style={btnBase}
-          onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.08)'}
+          onMouseEnter={e => e.currentTarget.style.background = '#F2F4F6'}
           onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
         >
           <Minus size={12} strokeWidth={2} />
@@ -49,7 +52,7 @@ export default function WindowsTitlebar() {
         <button
           onClick={api.maximize}
           style={btnBase}
-          onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.08)'}
+          onMouseEnter={e => e.currentTarget.style.background = '#F2F4F6'}
           onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
         >
           {maximized
@@ -61,7 +64,7 @@ export default function WindowsTitlebar() {
           onClick={api.close}
           style={btnBase}
           onMouseEnter={e => { e.currentTarget.style.background = '#c42b1c'; e.currentTarget.style.color = '#fff'; }}
-          onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'rgba(255,255,255,0.65)'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#4E5968'; }}
         >
           <X size={13} strokeWidth={2} />
         </button>

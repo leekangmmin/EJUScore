@@ -26,7 +26,7 @@ const CARD = {
 const PRIORITY_LABEL = {
   high:   { label: '높음', bg: 'rgba(239,68,68,0.12)',   color: 'var(--red)',    border: 'rgba(239,68,68,0.3)' },
   medium: { label: '보통', bg: 'rgba(245,158,11,0.12)', color: 'var(--yellow)', border: 'rgba(245,158,11,0.3)' },
-  low:    { label: '낮음', bg: 'rgba(107,163,255,0.1)', color: 'var(--blue)',   border: 'rgba(107,163,255,0.3)' },
+  low:    { label: '낮음', bg: 'rgba(49,130,246,0.1)', color: 'var(--blue)',   border: 'rgba(49,130,246,0.3)' },
 };
 
 const DIFF_LABEL = {
@@ -60,9 +60,9 @@ function WeekHeatmap({ stats }) {
             <div style={{
               width: 28, height: 28, borderRadius: 7,
               background: active
-                ? s.count >= 3 ? 'var(--blue)' : 'rgba(107,163,255,0.4)'
+                ? s.count >= 3 ? 'var(--blue)' : 'rgba(49,130,246,0.4)'
                 : 'var(--bg3)',
-              border: i === 6 ? '1.5px solid rgba(107,163,255,0.5)' : '1px solid var(--bd0)',
+              border: i === 6 ? '1.5px solid rgba(49,130,246,0.5)' : '1px solid var(--bd0)',
               transition: 'all 0.2s',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
@@ -96,7 +96,7 @@ function TaskCard({ task, done, onToggle }) {
         display: 'flex', alignItems: 'flex-start', gap: 14,
         padding: '16px 18px',
         background: done ? 'var(--bg3)' : 'var(--card-bg)',
-        border: `1px solid ${done ? 'var(--bd0)' : hovered ? 'rgba(107,163,255,0.25)' : 'var(--card-border)'}`,
+        border: `1px solid ${done ? 'var(--bd0)' : hovered ? 'rgba(49,130,246,0.25)' : 'var(--card-border)'}`,
         borderRadius: 16,
         boxShadow: done ? 'none' : hovered ? 'var(--card-shadow-hover)' : 'var(--card-shadow)',
         cursor: 'pointer',
@@ -193,8 +193,8 @@ function InsightCard({ streak, consistency, burnout, dday }) {
   }
 
   items.push({
-    icon: Activity, color: 'var(--blue)', bg: 'rgba(107,163,255,0.08)',
-    border: 'rgba(107,163,255,0.2)',
+    icon: Activity, color: 'var(--blue)', bg: 'rgba(49,130,246,0.08)',
+    border: 'rgba(49,130,246,0.2)',
     text: `최근 3개월 학습 일관성 ${consistency}%`,
   });
 
@@ -296,8 +296,8 @@ export default function DailyTasks({ exams, settings }) {
               width: 52, height: 52, borderRadius: 14, flexShrink: 0,
               background: allDone
                 ? 'linear-gradient(135deg, rgba(16,185,129,0.2), rgba(56,204,232,0.15))'
-                : 'linear-gradient(135deg, rgba(107,163,255,0.12), rgba(164,110,245,0.12))',
-              border: `1px solid ${allDone ? 'rgba(16,185,129,0.3)' : 'rgba(107,163,255,0.2)'}`,
+                : 'linear-gradient(135deg, rgba(49,130,246,0.12), rgba(164,110,245,0.12))',
+              border: `1px solid ${allDone ? 'rgba(16,185,129,0.3)' : 'rgba(49,130,246,0.2)'}`,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
               {allDone

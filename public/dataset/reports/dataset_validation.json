@@ -1,0 +1,163 @@
+{
+  "total_exams": 28,
+  "total_questions": 840,
+  "total_pages": 0,
+  "exams_pass": 21,
+  "exams_warn": 0,
+  "exams_fail": 7,
+  "average_confidence": 0.8183,
+  "total_low_confidence": 235,
+  "domain_distribution": {
+    "unknown": 396,
+    "geography": 73,
+    "politics": 108,
+    "economy": 159,
+    "history": 72,
+    "society": 32
+  },
+  "year_distribution": {
+    "2002": 92,
+    "2003": 94,
+    "2004": 84,
+    "2005": 42,
+    "2006": 48,
+    "2007": 48,
+    "2008": 51,
+    "2009": 50,
+    "2010": 51,
+    "2011": 49,
+    "2012": 65,
+    "2013": 58,
+    "2014": 57,
+    "2015": 51
+  },
+  "difficulty_distribution": {
+    "2": 319,
+    "4": 341,
+    "3": 180
+  },
+  "validation": "PASS",
+  "timestamp": "2026-06-02T05:13:55.933641",
+  "low_confidence_items": [
+    {
+      "exam": "平成14年第1回文综_00.pdf",
+      "question_number": 1,
+      "confidence": 0.7938,
+      "text_preview": "平成 14 年度 試験 fA) ee"
+    },
+    {
+      "exam": "平成14年第1回文综_00.pdf",
+      "question_number": 1,
+      "confidence": 0.5616,
+      "text_preview": "ss St A (80 分 ) ーーブーマダブーイマダーてマママーバーバーバーバーバーバーバーバーバーバーバーバーバー1 \\ の対応する解答欄にマークしてください。 ! | lethal nat Mh"
+    },
+    {
+      "exam": "平成14年第1回文综_00.pdf",
+      "question_number": 1,
+      "confidence": 0.7173,
+      "text_preview": "総合科目一14 間 19 次のグラフを見て , 第 1 次世界大戦 (WorJd War!) が日本経済へ与えた影響につ いての説明として正しいものを。下の"
+    },
+    {
+      "exam": "平成14年第1回文综_00.pdf",
+      "question_number": 1,
+      "confidence": 0.7844,
+      "text_preview": "1 つ選びなさい。 37| ノイギリス インド中国 | | A | B | C | L"
+    },
+    {
+      "exam": "平成14年第1回文综_00.pdf",
+      "question_number": 3,
+      "confidence": 0.7635,
+      "text_preview": "3 | 4 | 癌 [17 番 18 番 19 番 20 番 43 31 1 m1 m22m Jen mst 6 [087 ate: Re faa Sag ae ad HO 1T 1|12113 ー3"
+    },
+    {
+      "exam": "平成14年第1回文综_00.pdf",
+      "question_number": 13,
+      "confidence": 0.6832,
+      "text_preview": "間 10 N1214 | | 問問 13 間 15 間 16 ral arth apy ert ot op 「) 12 ims MSM) 17 | 18 | 19 | 20 | 21 | 23 | 2"
+    },
+    {
+      "exam": "平成14年第1回文综_00.pdf",
+      "question_number": 1,
+      "confidence": 0.4589,
+      "text_preview": "CI Yo 7 eps GU ESS.) ML |) pETFIG/Hi tl JsJ[KITLCITMIN | で、 | きト -!121i |55134 . ls3|olsls |-|316 HI"
+    },
+    {
+      "exam": "平成14年第1回文综_00.pdf",
+      "question_number": 1,
+      "confidence": 0.4433,
+      "text_preview": "rem A/BiGiTOLELFi a’ H siete ー310 一"
+    },
+    {
+      "exam": "平成14年第2回文科_00.pdf",
+      "question_number": 1,
+      "confidence": 0.5278,
+      "text_preview": "(80 分 ) aes mn N ai クシート ) | i の対応する解答欄にマータしてくだきいゆい。 i レーニーニーンーニーーーー-ーニーーーー・ーンーーー・ーィーーニーーニーーーーー・ーーーニ"
+    },
+    {
+      "exam": "平成14年第2回文科_00.pdf",
+      "question_number": 1,
+      "confidence": 0.7194,
+      "text_preview": "総合科目一1 Alo ポランティア笑動は近年きまざまな年見層の関心を集めている。次のダラブフを見て。 下の間 (1) に (4] に答えなさい。 年齢別ボランティア活動参加素 (1990 年代半ば )"
+    },
+    {
+      "exam": "平成14年第2回文科_00.pdf",
+      "question_number": 1,
+      "confidence": 0.7968,
+      "text_preview": "総合科目一2 (3) ボランティア活動に最も関係の深い組織を , 次の"
+    },
+    {
+      "exam": "平成14年第2回文科_00.pdf",
+      "question_number": 1,
+      "confidence": 0.7347,
+      "text_preview": "HAH A-3 (2) 空欄 (a) にはどのようかな地域が入るか。適切なものを。 KOD-OOPrS— DH びなきい。 [6 | @ アプリカ (Africa) ( アジア (Asia)"
+    },
+    {
+      "exam": "平成14年第2回文科_00.pdf",
+      "question_number": 3,
+      "confidence": 0.6879,
+      "text_preview": "問 3 継済活動とその循環を示す次の図を見て。下の問い 1)。 (2) に答えなさい。 (1) BOA, B,C は経済活動の主体を示している。 A, B, C の内容を示す組み合 わせとして最も適切"
+    },
+    {
+      "exam": "平成14年第2回文科_00.pdf",
+      "question_number": 4,
+      "confidence": 0.7049,
+      "text_preview": "問 4 物価下落はどのような時に生じるか。正しいものを。 KOD-~-Oothms—oRY なきい。 (14) © 自要が増大して。生産が道いつかない時 @ BERYL, 生産が過剰になった時 ⑬ 回"
+    },
+    {
+      "exam": "平成14年第2回文科_00.pdf",
+      "question_number": 9,
+      "confidence": 0.5931,
+      "text_preview": "問 9 国際通貨基金 (IMF) の主な役割として最も適切なものを , 次の ①-④ の中から ーつ選びなきい。 (16| © Boo hWwRSe Rts. @ BRVSOFS ORY THREE "
+    },
+    {
+      "exam": "平成14年第2回文科_00.pdf",
+      "question_number": 14,
+      "confidence": 0.6188,
+      "text_preview": "問 14 現代の民主政治の特徴を , 次の"
+    },
+    {
+      "exam": "平成14年第2回文科_00.pdf",
+      "question_number": 1,
+      "confidence": 0.7427,
+      "text_preview": "問 1 今日議会制民主主義では法律をつくるとき , 議会への法案の提出者世政府である 政府立法と , 議員である議員立法がある。次の 問 16 次の文中の空欄 (a) ~(c) に当てはまる語句の組み"
+    },
+    {
+      "exam": "平成14年第2回文科_00.pdf",
+      "question_number": 231960,
+      "confidence": 0.7142,
+      "text_preview": "問 231960 年代から 90 年代にかけて , 東南アジア (Southeast Asia) のらくつかの国では 開発優先の政策を追求し。そのもとで特殊な政党シスチムが誕生した。その記述とし て正"
+    },
+    {
+      "exam": "平成14年第2回文科_00.pdf",
+      "question_number": 1,
+      "confidence": 0.7359,
+      "text_preview": "2 Lice @ オスマン帝国 (Ottoman Empire) tt, 027 (Russia) の支援を受けてイギリ A (United Kingdom) とブラジス (France) に騰利した"
+    },
+    {
+      "exam": "平成14年第2回文科_00.pdf",
+      "question_number": 28,
+      "confidence": 0.7339,
+      "text_preview": "問 28 第 2 次世界大戦後の日本贅治に関する記述として正しいものを , 次の ①⑪-④ の中か ら一つ選びなきい。 |38| DQ 1960 年慌の高度経済成長の中で公害が深刻化し , 60 年代"
+    }
+  ]
+}

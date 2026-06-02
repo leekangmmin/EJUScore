@@ -1,0 +1,296 @@
+{
+  "name": "EJU Mathematics Knowledge Graph",
+  "version": "1.0.0",
+  "generated_at": "2026-06-02T07:01:32.490635",
+  "nodes": [
+    {
+      "id": "section:math_1",
+      "type": "section",
+      "label": "수학Ⅰ",
+      "order": 1,
+      "course": 1
+    },
+    {
+      "id": "topic:math_1:m1_sets",
+      "type": "topic",
+      "label": "집합",
+      "section": "수학Ⅰ",
+      "difficulty_base": 35
+    },
+    {
+      "id": "topic:math_1:m1_quadratic",
+      "type": "topic",
+      "label": "이차함수",
+      "section": "수학Ⅰ",
+      "difficulty_base": 40
+    },
+    {
+      "id": "topic:math_1:m1_geometry",
+      "type": "topic",
+      "label": "도형",
+      "section": "수학Ⅰ",
+      "difficulty_base": 45
+    },
+    {
+      "id": "topic:math_1:m1_trig",
+      "type": "topic",
+      "label": "삼각비",
+      "section": "수학Ⅰ",
+      "difficulty_base": 50
+    },
+    {
+      "id": "section:math_a",
+      "type": "section",
+      "label": "수학A",
+      "order": 2,
+      "course": 1
+    },
+    {
+      "id": "topic:math_a:ma_counting",
+      "type": "topic",
+      "label": "경우의 수",
+      "section": "수학A",
+      "difficulty_base": 35
+    },
+    {
+      "id": "topic:math_a:ma_probability",
+      "type": "topic",
+      "label": "확률",
+      "section": "수학A",
+      "difficulty_base": 50
+    },
+    {
+      "id": "section:math_2",
+      "type": "section",
+      "label": "수학Ⅱ",
+      "order": 3,
+      "course": 2
+    },
+    {
+      "id": "topic:math_2:m2_exponential",
+      "type": "topic",
+      "label": "지수",
+      "section": "수학Ⅱ",
+      "difficulty_base": 40
+    },
+    {
+      "id": "topic:math_2:m2_log",
+      "type": "topic",
+      "label": "로그",
+      "section": "수학Ⅱ",
+      "difficulty_base": 50
+    },
+    {
+      "id": "topic:math_2:m2_diff",
+      "type": "topic",
+      "label": "미분",
+      "section": "수학Ⅱ",
+      "difficulty_base": 55
+    },
+    {
+      "id": "topic:math_2:m2_integral",
+      "type": "topic",
+      "label": "적분",
+      "section": "수학Ⅱ",
+      "difficulty_base": 60
+    },
+    {
+      "id": "topic:math_2:m2_sequence",
+      "type": "topic",
+      "label": "수열",
+      "section": "수학Ⅱ",
+      "difficulty_base": 55
+    },
+    {
+      "id": "section:math_b",
+      "type": "section",
+      "label": "수학B",
+      "order": 4,
+      "course": 2
+    },
+    {
+      "id": "topic:math_b:mb_vector",
+      "type": "topic",
+      "label": "벡터",
+      "section": "수학B",
+      "difficulty_base": 55
+    },
+    {
+      "id": "topic:math_b:mb_stats",
+      "type": "topic",
+      "label": "통계",
+      "section": "수학B",
+      "difficulty_base": 45
+    }
+  ],
+  "edges": [
+    {
+      "sourceId": "section:math_1",
+      "targetId": "topic:math_1:m1_sets",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "sourceId": "section:math_1",
+      "targetId": "topic:math_1:m1_quadratic",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "sourceId": "topic:math_1:m1_sets",
+      "targetId": "topic:math_1:m1_quadratic",
+      "type": "prerequisite",
+      "weight": 2
+    },
+    {
+      "sourceId": "section:math_1",
+      "targetId": "topic:math_1:m1_geometry",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "sourceId": "topic:math_1:m1_quadratic",
+      "targetId": "topic:math_1:m1_geometry",
+      "type": "prerequisite",
+      "weight": 2
+    },
+    {
+      "sourceId": "section:math_1",
+      "targetId": "topic:math_1:m1_trig",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "sourceId": "topic:math_1:m1_geometry",
+      "targetId": "topic:math_1:m1_trig",
+      "type": "prerequisite",
+      "weight": 2
+    },
+    {
+      "sourceId": "section:math_a",
+      "targetId": "topic:math_a:ma_counting",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "sourceId": "section:math_a",
+      "targetId": "topic:math_a:ma_probability",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "sourceId": "topic:math_a:ma_counting",
+      "targetId": "topic:math_a:ma_probability",
+      "type": "prerequisite",
+      "weight": 2
+    },
+    {
+      "sourceId": "section:math_2",
+      "targetId": "topic:math_2:m2_exponential",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "sourceId": "section:math_2",
+      "targetId": "topic:math_2:m2_log",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "sourceId": "topic:math_2:m2_exponential",
+      "targetId": "topic:math_2:m2_log",
+      "type": "prerequisite",
+      "weight": 2
+    },
+    {
+      "sourceId": "section:math_2",
+      "targetId": "topic:math_2:m2_diff",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "sourceId": "topic:math_2:m2_log",
+      "targetId": "topic:math_2:m2_diff",
+      "type": "prerequisite",
+      "weight": 2
+    },
+    {
+      "sourceId": "section:math_2",
+      "targetId": "topic:math_2:m2_integral",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "sourceId": "topic:math_2:m2_diff",
+      "targetId": "topic:math_2:m2_integral",
+      "type": "prerequisite",
+      "weight": 2
+    },
+    {
+      "sourceId": "section:math_2",
+      "targetId": "topic:math_2:m2_sequence",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "sourceId": "topic:math_2:m2_integral",
+      "targetId": "topic:math_2:m2_sequence",
+      "type": "prerequisite",
+      "weight": 2
+    },
+    {
+      "sourceId": "section:math_b",
+      "targetId": "topic:math_b:mb_vector",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "sourceId": "section:math_b",
+      "targetId": "topic:math_b:mb_stats",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "sourceId": "topic:math_b:mb_vector",
+      "targetId": "topic:math_b:mb_stats",
+      "type": "prerequisite",
+      "weight": 2
+    },
+    {
+      "sourceId": "topic:math_1/m1_quadratic",
+      "targetId": "topic:math_2/m2_diff",
+      "type": "prerequisite",
+      "weight": 3
+    },
+    {
+      "sourceId": "topic:math_2/m2_diff",
+      "targetId": "topic:math_2/m2_integral",
+      "type": "prerequisite",
+      "weight": 3
+    },
+    {
+      "sourceId": "topic:math_a/ma_counting",
+      "targetId": "topic:math_a/ma_probability",
+      "type": "prerequisite",
+      "weight": 3
+    },
+    {
+      "sourceId": "topic:math_1/m1_trig",
+      "targetId": "topic:math_2/m2_diff",
+      "type": "prerequisite",
+      "weight": 3
+    },
+    {
+      "sourceId": "topic:math_1/m1_geometry",
+      "targetId": "topic:math_b/mb_vector",
+      "type": "prerequisite",
+      "weight": 3
+    },
+    {
+      "sourceId": "topic:math_2/m2_sequence",
+      "targetId": "topic:math_b/mb_stats",
+      "type": "prerequisite",
+      "weight": 3
+    }
+  ]
+}

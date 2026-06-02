@@ -1,0 +1,27 @@
+{
+  "dataset_name": "EJU Comprehensive Exam Dataset",
+  "subject": "comprehensive",
+  "version": "1.0.0",
+  "generated_at": "2026-06-02T05:13:46.224839",
+  "total_exams": 2,
+  "total_questions": 49,
+  "year_range": {
+    "start": 2011,
+    "end": 2011
+  },
+  "exam_count": 2,
+  "exam_files": [
+    {
+      "year": 2011,
+      "round": 1,
+      "file": "2011/exam_2011_r1.json",
+      "questions": 27
+    },
+    {
+      "year": 2011,
+      "round": 2,
+      "file": "2011/exam_2011_r2.json",
+      "questions": 22
+    }
+  ]
+}

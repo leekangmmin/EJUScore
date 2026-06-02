@@ -13,6 +13,8 @@
 import { useState, useRef, useCallback } from 'react';
 // 과목 분류기(기출 뱅크 빌드와 공유) — 분류 기준 일관성
 import { classifySubject, carryForwardSubjects, DAEMUN_RE } from '../utils/subjectClassifier';
+// 38문항 시러버스 매칭 엔진 — 코사인 유사도 + 앙상블 신뢰도
+import { matchBatchQuestions, matchQuestionToSyllabus, computePositionConfidence } from '../utils/syllabusMatcher';
 // ⚠️ Electron(file://)에서는 동적 import() 청크 fetch가 막히므로 정적 import로 번들에 포함
 import { createWorker } from 'tesseract.js';
 // PDF 래스터화는 PDFium(WASM)로 처리한다. pdfjs 는 구형 Chromium(Electron 35)에서
@@ -482,6 +484,10 @@ async function extractFromPDF(file, { onProgress, onPhase } = {}) {
 /* ══════════════════════════════════════════════════════════════
    SECTION 3  질문 파서 (EJU 스타일)
 ══════════════════════════════════════════════════════════════ */
+/**
+ * parseQuestionFromText v2.1 — 38문항 시러버스 매칭 + 앙상블 신뢰도
+ * OCR 인식 결과에서 문항 구조를 파싱하고 syllabusMatcher 로 정밀 매칭
+ */
 function parseQuestionFromText(rawText) {
   if (!rawText || rawText.trim().length < 10) return null;
   const text = rawText.trim();
@@ -518,27 +524,42 @@ function parseQuestionFromText(rawText) {
   const answerMatch = text.match(/(?:正解|정답|답|answer|Ans)\s*[：:]\s*([①-④A-Da-d1-4])/i);
   if (answerMatch) answerKey = answerMatch[1];
 
-  // 과목 판별 (확장 키워드)
-  let subjectType = 'unknown';
-  const ft = text.toLowerCase();
-  if (/경제|수요|공급|gdp|환율|시장|무역|재정|금융|인플레이|관세|경기|소비|투자/.test(ft)) subjectType = 'economy';
-  else if (/헌법|정치|민주|선거|의회|내각|삼권|대통령|의원내각|국회|입법|행정|사법/.test(ft)) subjectType = 'politics';
-  else if (/역사|혁명|전쟁|냉전|제국|독립|메이지|프랑스|세계대전|봉건|왕조|근대|고대|식민/.test(ft)) subjectType = 'history';
-  else if (/지리|기후|지형|인구|도시|농업|자원|지도|온도|강수|산맥|평야|해류|대륙/.test(ft)) subjectType = 'geography';
-  else if (/사회|환경|복지|고령|에너지|ngo|파리|협약|저출산|이민|다문화|지속가능|인권/.test(ft)) subjectType = 'society';
-  else if (/함수|방정식|그래프|미분|적분|확률|수열|벡터|행렬|삼각|로그|극한|집합/.test(ft)) subjectType = 'math';
+  // ── v2.1: syllabusMatcher 기반 정밀 과목 분류 ──────────────────
+  //   classifySubject() (subjectClassifier.js) + matchQuestionToSyllabus() (syllabusMatcher.js)
+  const ctxText = questionText + ' ' + options.map(o => o.content).join(' ');
+  const matchResult = matchQuestionToSyllabus(ctxText, questionNumber);
+
+  //   classifySubject 를 문항 번호 힌트와 함께 사용
+  const classifiedType = classifySubject(ctxText, questionNumber);
+
+  //   앙상블: classifySubject 결과(도메인 일치도) + syllabus 유사도 → 최종 confidence
+  const domainConf = matchResult.domain !== 'unknown' && matchResult.domain === classifiedType ? 100 : 30;
+  const ensembleP3 = matchResult.number != null
+    ? computePositionConfidence(questionNumber || matchResult.number, matchResult.number)
+    : 50;
+  const ensembleConf = Math.round(
+    (matchResult.confidence || 50) * 0.30
+    + domainConf * 0.25
+    + ensembleP3 * 0.45
+  );
+
+  // 최종 과목 = syllabus 매칭 결과 우선, 없으면 classifySubject 결과
+  const subjectType = matchResult.domain !== 'unknown' ? matchResult.domain : classifiedType;
 
   return {
     questionNumber,
     questionText: questionText || text.slice(0, 200),
     options, answerKey, subjectType,
-    confidence: options.length >= 2 ? 75 : 40,
+    confidence: Math.max(options.length >= 2 ? 60 : 35, ensembleConf),
     rawLength: text.length,
+    syllabusMatch: matchResult,
+    ensembleConfidence: Math.max(0, Math.min(100, ensembleConf)),
   };
 }
 
 /* 시험지(다중 문제) 원문을 개별 문제 단위로 분할.
    EJU 종합과목: 각 문제 stem이 "…の中から一つ選びなさい。[N]" 로 끝나는 점을 앵커로 사용.
+   v2.1: 38문항 시러버스 매칭 + 앙상블 신뢰도 + 자기 교정 루프 포함.
    OCR 노이즈가 심해 完璧한 분할은 불가능 → 평균 ~34/38문항 분할(약 90%).
    지도·그래프·표 문제는 본문이 이미지라 stem이 비거나 짧을 수 있음(정상). */
 function splitIntoQuestions(rawText) {
@@ -546,21 +567,21 @@ function splitIntoQuestions(rawText) {
   // 1) 페이지 구분선/머리글/페이지번호 노이즈 제거
   const t = rawText
     .replace(/──────/g, '\n')
-    .replace(/総合科目\s*[ー\-]?\s*\d+/g, '\n')
+    .replace(/総合科目\s*[ー-]?\s*\d+/g, '\n')
     .replace(/[一ー]\s*\d{2,3}\s*[一ー]/g, '\n');
   // 2) 문제 끝 어구(選びなさい, OCR 변형 허용)로 경계 검출
   const SEL = /選び[なゥっ]{0,2}[なさきい]{1,3}/g;
   const bounds = [];
-  let m;
-  while ((m = SEL.exec(t)) !== null) bounds.push({ s: m.index, e: m.index + m[0].length });
+  let mm;
+  while ((mm = SEL.exec(t)) !== null) bounds.push({ s: mm.index, e: mm.index + mm[0].length });
   if (bounds.length < 3) return [];
 
   // 윈도에서 첫 ①②③④ 1세트만 추출, ④ 내용 끝 인덱스 반환
   function parseOpts(win) {
     const re = /[①②③④]/g;
     const hits = [];
-    let mm;
-    while ((mm = re.exec(win)) !== null) hits.push({ sym: mm[0], i: mm.index });
+    let mmm;
+    while ((mmm = re.exec(win)) !== null) hits.push({ sym: mmm[0], i: mmm.index });
     const opts = [];
     let last = 0;
     const seen = new Set();
@@ -597,19 +618,34 @@ function splitIntoQuestions(rawText) {
       questionText: stem.slice(-400),
       options: opts,
       answerBox: boxM ? parseInt(boxM[1]) : null,
-      subjectType: classifySubject(ctxText),
+      subjectType: classifySubject(ctxText, qs.length + 1),
       newDaemun: DAEMUN_RE.test(stemFull), // 이 문항 앞에 새 大問(問N) 헤더가 있는가
       confidence: opts.length >= 4 ? 80 : opts.length >= 2 ? 60 : 30,
     });
   }
-  // 大問 단위 carry-forward: 본문에서만 키워드가 나오는 短문항을 같은 大問 주제로 보정
-  const fixed = carryForwardSubjects(
-    qs.map((q) => ({ subject: q.subjectType, newDaemun: q.newDaemun }))
-  );
-  qs.forEach((q, i) => { q.subjectType = fixed[i].subject; delete q.newDaemun; });
-  return qs;
-}
 
+  // 大問 단위 carry-forward
+  const fixed = carryForwardSubjects(qs.map((q) => ({ subject: q.subjectType, newDaemun: q.newDaemun })));
+  qs.forEach((q, i) => { q.subjectType = fixed[i].subject; delete q.newDaemun; });
+
+  // ── v2.1: 38문항 시러버스 배치 매칭 + 앙상블 신뢰도 ──
+  const matchedQs = matchBatchQuestions(qs);
+
+  // 원본 confidence + ensemble confidence 병합
+  matchedQs.forEach((q) => {
+    if (q.syllabusMatch) {
+      q.syllabusMatch.ensembleConfidence = q.syllabusMatch.ensembleConfidence || q.confidence;
+      // 최종 confidence = max(OCR confidence, ensemble confidence)
+      q.confidence = Math.max(q.confidence || 30, q.syllabusMatch.ensembleConfidence || 0);
+      // 과목 = syllabus 매칭 결과 우선 (carry-forward 보다 정밀)
+      if (q.syllabusMatch.domain !== 'unknown') {
+        q.subjectType = q.syllabusMatch.domain;
+      }
+    }
+  });
+
+  return matchedQs;
+}
 /* ══════════════════════════════════════════════════════════════
    SECTION 4  과목 메타데이터
 ══════════════════════════════════════════════════════════════ */

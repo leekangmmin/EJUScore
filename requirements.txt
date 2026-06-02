@@ -1,0 +1,5 @@
+# Python dependencies for the EJU intelligence engine + README chart generation
+numpy>=1.24
+matplotlib>=3.7
+pytest>=7.0
+Pillow>=10.0

@@ -1,0 +1,284 @@
+{
+  "name": "EJU Comprehensive Knowledge Graph",
+  "version": "2.0.0",
+  "generated_at": "2026-06-02T08:01:52.459188",
+  "statistics": {
+    "total_nodes": 11,
+    "total_edges": 7,
+    "domains": 4,
+    "topics": 5,
+    "concepts": 0,
+    "edge_types": {
+      "belongs_to": 5,
+      "prerequisite": 0,
+      "related": 0,
+      "part_of": 2,
+      "related_to": 0
+    }
+  },
+  "nodes": [
+    {
+      "id": "domain:calculus",
+      "type": "domain",
+      "label": "calculus",
+      "description": "EJU calculus domain",
+      "question_count": 13,
+      "years": [
+        2005,
+        2008,
+        2009,
+        2010,
+        2015,
+        2017,
+        2018,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "avg_difficulty": 4.0,
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "domain:geometry",
+      "type": "domain",
+      "label": "geometry",
+      "description": "EJU geometry domain",
+      "question_count": 22,
+      "years": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2011,
+        2012,
+        2014,
+        2015,
+        2016,
+        2017,
+        2021,
+        2024
+      ],
+      "avg_difficulty": 2.82,
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:평면도형",
+      "type": "topic",
+      "label": "평면도형",
+      "description": "EJU topic: 평면도형",
+      "question_count": 15,
+      "years": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2011,
+        2014,
+        2017,
+        2021,
+        2024
+      ],
+      "avg_difficulty": 2.93,
+      "question_types": [
+        "geometry",
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "domain:algebra",
+      "type": "domain",
+      "label": "algebra",
+      "description": "EJU algebra domain",
+      "question_count": 39,
+      "years": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2021,
+        2023,
+        2024
+      ],
+      "avg_difficulty": 3.46,
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:방정식·부등식",
+      "type": "topic",
+      "label": "방정식·부등식",
+      "description": "EJU topic: 방정식·부등식",
+      "question_count": 20,
+      "years": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2021,
+        2023,
+        2024
+      ],
+      "avg_difficulty": 3.7,
+      "question_types": [
+        "graph_analysis",
+        "mathematical_computation",
+        "multiple_choice",
+        "optimization"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:이차함수",
+      "type": "subtopic",
+      "label": "이차함수",
+      "description": "EJU subtopic: 이차함수",
+      "question_count": 2,
+      "years": [
+        2006,
+        2019
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:삼각함수",
+      "type": "subtopic",
+      "label": "삼각함수",
+      "description": "EJU subtopic: 삼각함수",
+      "question_count": 3,
+      "years": [
+        2006,
+        2007,
+        2014
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:좌표기하",
+      "type": "topic",
+      "label": "좌표기하",
+      "description": "EJU topic: 좌표기하",
+      "question_count": 3,
+      "years": [
+        2012,
+        2016
+      ],
+      "avg_difficulty": 2.67,
+      "question_types": [
+        "graph_analysis",
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "domain:probability",
+      "type": "domain",
+      "label": "probability",
+      "description": "EJU probability domain",
+      "question_count": 1,
+      "years": [
+        2018
+      ],
+      "avg_difficulty": 4.0,
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:확률",
+      "type": "topic",
+      "label": "확률",
+      "description": "EJU topic: 확률",
+      "question_count": 1,
+      "years": [
+        2018
+      ],
+      "avg_difficulty": 4.0,
+      "question_types": [
+        "probability_statistics"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:이차함수",
+      "type": "topic",
+      "label": "이차함수",
+      "description": "EJU topic: 이차함수",
+      "question_count": 1,
+      "years": [
+        2023
+      ],
+      "avg_difficulty": 4.0,
+      "question_types": [
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_1",
+      "sourceId": "topic:평면도형",
+      "targetId": "domain:geometry",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_2",
+      "sourceId": "topic:방정식·부등식",
+      "targetId": "domain:algebra",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_3",
+      "sourceId": "subtopic:이차함수",
+      "targetId": "topic:방정식·부등식",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_4",
+      "sourceId": "subtopic:삼각함수",
+      "targetId": "topic:평면도형",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_5",
+      "sourceId": "topic:좌표기하",
+      "targetId": "domain:geometry",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_6",
+      "sourceId": "topic:확률",
+      "targetId": "domain:probability",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_7",
+      "sourceId": "topic:이차함수",
+      "targetId": "domain:algebra",
+      "type": "belongs_to",
+      "weight": 1.0
+    }
+  ]
+}

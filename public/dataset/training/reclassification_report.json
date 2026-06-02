@@ -1,0 +1,28 @@
+{
+  "total_ocr_questions": 840,
+  "domain_distribution_before": {
+    "unknown": 396,
+    "economy": 159,
+    "politics": 108,
+    "geography": 73,
+    "history": 72,
+    "society": 32
+  },
+  "domain_distribution_after": {
+    "unknown": 290,
+    "economy": 192,
+    "politics": 128,
+    "geography": 99,
+    "history": 90,
+    "society": 41
+  },
+  "reclassified_count": 106,
+  "improvement": {
+    "unknown_before": 396,
+    "unknown_after": 290,
+    "unknown_reduction": 106,
+    "unknown_before_pct": 47.1,
+    "unknown_after_pct": 34.5
+  },
+  "method": "Ensemble classifier: pattern matching (3x) + gold standard keywords (1.5x) + answer choices (1x)"
+}

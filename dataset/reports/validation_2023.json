@@ -1,0 +1,20 @@
+{
+  "pdf": "2023令和5年第2回文数.pdf",
+  "pages": 28,
+  "questions": 30,
+  "tables": 28,
+  "graphs": 0,
+  "maps": 0,
+  "diagrams": 0,
+  "timelines": 0,
+  "confidence_average": 0.774,
+  "confidence_min": 0.5578,
+  "confidence_max": 0.912,
+  "low_confidence_count": 16,
+  "validation": "FAIL",
+  "warnings": [],
+  "errors": [
+    "Over 30% of questions have low confidence"
+  ],
+  "timestamp": "2026-06-02T08:01:52.453449"
+}

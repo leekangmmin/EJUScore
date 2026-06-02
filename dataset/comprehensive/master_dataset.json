@@ -1,0 +1,323 @@
+{
+  "dataset_name": "EJU Master Exam Dataset",
+  "subject": "comprehensive",
+  "version": "2.0.0",
+  "generated_at": "2026-06-02T07:37:39.027018",
+  "total_exams": 44,
+  "total_questions": 1448,
+  "year_range": {
+    "start": 2002,
+    "end": 2025
+  },
+  "exam_count": 44,
+  "exam_files": [
+    {
+      "file": "exam_2002_r1.json",
+      "year": 2002,
+      "round": 1,
+      "questions": 24,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2002_r2.json",
+      "year": 2002,
+      "round": 2,
+      "questions": 68,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2003_r1.json",
+      "year": 2003,
+      "round": 1,
+      "questions": 32,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2003_r2.json",
+      "year": 2003,
+      "round": 2,
+      "questions": 62,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2004_r1.json",
+      "year": 2004,
+      "round": 1,
+      "questions": 24,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2004_r2.json",
+      "year": 2004,
+      "round": 2,
+      "questions": 60,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2005_r1.json",
+      "year": 2005,
+      "round": 1,
+      "questions": 22,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2005_r2.json",
+      "year": 2005,
+      "round": 2,
+      "questions": 20,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2006_r1.json",
+      "year": 2006,
+      "round": 1,
+      "questions": 25,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2006_r2.json",
+      "year": 2006,
+      "round": 2,
+      "questions": 23,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2007_r1.json",
+      "year": 2007,
+      "round": 1,
+      "questions": 23,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2007_r2.json",
+      "year": 2007,
+      "round": 2,
+      "questions": 25,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2008_r1.json",
+      "year": 2008,
+      "round": 1,
+      "questions": 28,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2008_r2.json",
+      "year": 2008,
+      "round": 2,
+      "questions": 23,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2009_r1.json",
+      "year": 2009,
+      "round": 1,
+      "questions": 26,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2009_r2.json",
+      "year": 2009,
+      "round": 2,
+      "questions": 24,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2010_r1.json",
+      "year": 2010,
+      "round": 1,
+      "questions": 28,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2010_r2.json",
+      "year": 2010,
+      "round": 2,
+      "questions": 23,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2011_r1.json",
+      "year": 2011,
+      "round": 1,
+      "questions": 27,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2011_r2.json",
+      "year": 2011,
+      "round": 2,
+      "questions": 22,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2012_r1.json",
+      "year": 2012,
+      "round": 1,
+      "questions": 33,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2012_r2.json",
+      "year": 2012,
+      "round": 2,
+      "questions": 32,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2013_r1.json",
+      "year": 2013,
+      "round": 1,
+      "questions": 32,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2013_r2.json",
+      "year": 2013,
+      "round": 2,
+      "questions": 26,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2014_r1.json",
+      "year": 2014,
+      "round": 1,
+      "questions": 30,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2014_r2.json",
+      "year": 2014,
+      "round": 2,
+      "questions": 27,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2015_r1.json",
+      "year": 2015,
+      "round": 1,
+      "questions": 26,
+      "type": "ocr"
+    },
+    {
+      "file": "exam_2015_r2.json",
+      "year": 2015,
+      "round": 2,
+      "questions": 25,
+      "type": "ocr"
+    },
+    {
+      "file": "2016-1.json",
+      "year": 2016,
+      "round": 1,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2016-2.json",
+      "year": 2016,
+      "round": 2,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2017-1.json",
+      "year": 2017,
+      "round": 1,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2017-2.json",
+      "year": 2017,
+      "round": 2,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2018-1.json",
+      "year": 2018,
+      "round": 1,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2018-2.json",
+      "year": 2018,
+      "round": 2,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2019-1.json",
+      "year": 2019,
+      "round": 1,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2020-2.json",
+      "year": 2020,
+      "round": 2,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2021-1.json",
+      "year": 2021,
+      "round": 1,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2021-2.json",
+      "year": 2021,
+      "round": 2,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2022-1.json",
+      "year": 2022,
+      "round": 1,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2022-2.json",
+      "year": 2022,
+      "round": 2,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2023-1.json",
+      "year": 2023,
+      "round": 1,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2023-2.json",
+      "year": 2023,
+      "round": 2,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2024.json",
+      "year": 2024,
+      "round": 0,
+      "questions": 38,
+      "type": "vision"
+    },
+    {
+      "file": "2025.json",
+      "year": 2025,
+      "round": 0,
+      "questions": 38,
+      "type": "vision"
+    }
+  ]
+}

@@ -1,0 +1,3249 @@
+{
+  "generated_at": "2026-06-02T08:13:50.508825",
+  "total_nodes": 86,
+  "total_edges": 130,
+  "nodes": [
+    {
+      "id": "domain_economy",
+      "type": "domain",
+      "label": "economy",
+      "domain": "",
+      "size": 50,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "domain_geography",
+      "type": "domain",
+      "label": "geography",
+      "domain": "",
+      "size": 50,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "domain_history",
+      "type": "domain",
+      "label": "history",
+      "domain": "",
+      "size": 50,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "domain_politics",
+      "type": "domain",
+      "label": "politics",
+      "domain": "",
+      "size": 50,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "domain_society",
+      "type": "domain",
+      "label": "society",
+      "domain": "",
+      "size": 44,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "topic_GDP·국민소득",
+      "type": "topic",
+      "label": "GDP·국민소득",
+      "domain": "economy",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.275,
+        "influence_score": 3.8,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_경제성장·경기변동",
+      "type": "topic",
+      "label": "경제성장·경기변동",
+      "domain": "economy",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.29,
+        "influence_score": 3.4,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_고용·노동",
+      "type": "topic",
+      "label": "고용·노동",
+      "domain": "economy",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.22,
+        "influence_score": 2.4,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_국제무역",
+      "type": "topic",
+      "label": "국제무역",
+      "domain": "economy",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.2,
+        "influence_score": 1.2,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "topic_국제정치·국제기구",
+      "type": "topic",
+      "label": "국제정치·국제기구",
+      "domain": "politics",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.22,
+        "influence_score": 2.2,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_근대일본",
+      "type": "topic",
+      "label": "근대일본",
+      "domain": "economy",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.0,
+        "influence_score": 0.1,
+        "influence_type": "isolated"
+      }
+    },
+    {
+      "id": "topic_금융·통화정책",
+      "type": "topic",
+      "label": "금융·통화정책",
+      "domain": "economy",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.255,
+        "influence_score": 3.2,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_기후·케펜구분",
+      "type": "topic",
+      "label": "기후·케펜구분",
+      "domain": "geography",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.12,
+        "influence_score": 1.6,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_냉전",
+      "type": "topic",
+      "label": "냉전",
+      "domain": "history",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.24,
+        "influence_score": 3.2,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_다문화사회",
+      "type": "topic",
+      "label": "다문화사회",
+      "domain": "society",
+      "size": 14,
+      "analysis": {
+        "centrality_score": 0.15,
+        "influence_score": 0.9,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "topic_대공황",
+      "type": "topic",
+      "label": "대공황",
+      "domain": "history",
+      "size": 4,
+      "analysis": {
+        "centrality_score": 0.15,
+        "influence_score": 0.9,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "topic_러시아혁명·소련",
+      "type": "topic",
+      "label": "러시아혁명·소련",
+      "domain": "history",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.15,
+        "influence_score": 0.9,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "topic_사법·재판",
+      "type": "topic",
+      "label": "사법·재판",
+      "domain": "politics",
+      "size": 16,
+      "analysis": {
+        "centrality_score": 0.15,
+        "influence_score": 0.9,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "topic_사회보장·복지",
+      "type": "topic",
+      "label": "사회보장·복지",
+      "domain": "society",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.185,
+        "influence_score": 1.8,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_산업혁명·자본주의",
+      "type": "topic",
+      "label": "산업혁명·자본주의",
+      "domain": "history",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.17,
+        "influence_score": 3.0,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_선거·정당",
+      "type": "topic",
+      "label": "선거·정당",
+      "domain": "politics",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.15,
+        "influence_score": 0.9,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "topic_세계대전",
+      "type": "topic",
+      "label": "세계대전",
+      "domain": "history",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.275,
+        "influence_score": 3.8,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_소득분배·지니계수",
+      "type": "topic",
+      "label": "소득분배·지니계수",
+      "domain": "economy",
+      "size": 2,
+      "analysis": {
+        "centrality_score": 0.15,
+        "influence_score": 0.9,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "topic_수요·공급과 시장균형",
+      "type": "topic",
+      "label": "수요·공급과 시장균형",
+      "domain": "economy",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.19,
+        "influence_score": 3.2,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_시민혁명",
+      "type": "topic",
+      "label": "시민혁명",
+      "domain": "history",
+      "size": 28,
+      "analysis": {
+        "centrality_score": 0.225,
+        "influence_score": 4.0,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_안전보장·방위",
+      "type": "topic",
+      "label": "안전보장·방위",
+      "domain": "politics",
+      "size": 2,
+      "analysis": {
+        "centrality_score": 0.15,
+        "influence_score": 0.9,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "topic_인구·도시화",
+      "type": "topic",
+      "label": "인구·도시화",
+      "domain": "geography",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.12,
+        "influence_score": 1.4,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_일본경제사",
+      "type": "topic",
+      "label": "일본경제사",
+      "domain": "economy",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.15,
+        "influence_score": 0.9,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "topic_자원·농업",
+      "type": "topic",
+      "label": "자원·농업",
+      "domain": "geography",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.185,
+        "influence_score": 1.8,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_재정·조세정책",
+      "type": "topic",
+      "label": "재정·조세정책",
+      "domain": "economy",
+      "size": 28,
+      "analysis": {
+        "centrality_score": 0.15,
+        "influence_score": 0.9,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "topic_전후세계질서",
+      "type": "topic",
+      "label": "전후세계질서",
+      "domain": "history",
+      "size": 14,
+      "analysis": {
+        "centrality_score": 0.185,
+        "influence_score": 2.2,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_정치사상",
+      "type": "topic",
+      "label": "정치사상",
+      "domain": "politics",
+      "size": 28,
+      "analysis": {
+        "centrality_score": 0.17,
+        "influence_score": 2.2,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_제국주의·식민지",
+      "type": "topic",
+      "label": "제국주의·식민지",
+      "domain": "history",
+      "size": 26,
+      "analysis": {
+        "centrality_score": 0.205,
+        "influence_score": 3.2,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_지도·GIS",
+      "type": "topic",
+      "label": "지도·GIS",
+      "domain": "geography",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "topic_지방자치",
+      "type": "topic",
+      "label": "지방자치",
+      "domain": "politics",
+      "size": 28,
+      "analysis": {
+        "centrality_score": 0.15,
+        "influence_score": 0.9,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "topic_지형·판구조",
+      "type": "topic",
+      "label": "지형·판구조",
+      "domain": "geography",
+      "size": 26,
+      "analysis": {
+        "centrality_score": 0.085,
+        "influence_score": 1.2,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_통치기구",
+      "type": "topic",
+      "label": "통치기구",
+      "domain": "politics",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.205,
+        "influence_score": 2.2,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_헌법·기본권",
+      "type": "topic",
+      "label": "헌법·기본권",
+      "domain": "politics",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.29,
+        "influence_score": 3.2,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "topic_환경문제",
+      "type": "topic",
+      "label": "환경문제",
+      "domain": "society",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.15,
+        "influence_score": 0.9,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "topic_환율·국제수지",
+      "type": "topic",
+      "label": "환율·국제수지",
+      "domain": "economy",
+      "size": 30,
+      "analysis": {
+        "centrality_score": 0.185,
+        "influence_score": 1.8,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "concept_계몽사상",
+      "type": "concept",
+      "label": "계몽사상",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.07,
+        "influence_score": 2.0,
+        "influence_type": "foundational"
+      }
+    },
+    {
+      "id": "concept_인권선언",
+      "type": "concept",
+      "label": "인권선언",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.105,
+        "influence_score": 1.0,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "concept_권리장전",
+      "type": "concept",
+      "label": "권리장전",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.0,
+        "influence_score": 0.1,
+        "influence_type": "isolated"
+      }
+    },
+    {
+      "id": "concept_증기기관",
+      "type": "concept",
+      "label": "증기기관",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.0,
+        "influence_score": 0.1,
+        "influence_type": "isolated"
+      }
+    },
+    {
+      "id": "concept_면방직",
+      "type": "concept",
+      "label": "면방직",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.0,
+        "influence_score": 0.1,
+        "influence_type": "isolated"
+      }
+    },
+    {
+      "id": "concept_자본주의",
+      "type": "concept",
+      "label": "자본주의",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_중앙은행",
+      "type": "concept",
+      "label": "중앙은행",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.12,
+        "influence_score": 1.4,
+        "influence_type": "bridge"
+      }
+    },
+    {
+      "id": "concept_금리",
+      "type": "concept",
+      "label": "금리",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.1,
+        "influence_score": 0.6,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_통화량",
+      "type": "concept",
+      "label": "통화량",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.1,
+        "influence_score": 0.6,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_변동환율",
+      "type": "concept",
+      "label": "변동환율",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_고정환율",
+      "type": "concept",
+      "label": "고정환율",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_경상수지",
+      "type": "concept",
+      "label": "경상수지",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_국내총생산",
+      "type": "concept",
+      "label": "국내총생산",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_1인당소득",
+      "type": "concept",
+      "label": "1인당소득",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_케펜기후구분",
+      "type": "concept",
+      "label": "케펜기후구분",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_온대",
+      "type": "concept",
+      "label": "온대",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.0,
+        "influence_score": 0.1,
+        "influence_type": "isolated"
+      }
+    },
+    {
+      "id": "concept_열대",
+      "type": "concept",
+      "label": "열대",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.0,
+        "influence_score": 0.1,
+        "influence_type": "isolated"
+      }
+    },
+    {
+      "id": "concept_건조",
+      "type": "concept",
+      "label": "건조",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.0,
+        "influence_score": 0.1,
+        "influence_type": "isolated"
+      }
+    },
+    {
+      "id": "concept_기본권",
+      "type": "concept",
+      "label": "기본권",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_삼권분립",
+      "type": "concept",
+      "label": "삼권분립",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.12,
+        "influence_score": 0.6,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_의원내각제",
+      "type": "concept",
+      "label": "의원내각제",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_제국주의",
+      "type": "concept",
+      "label": "제국주의",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_민족주의",
+      "type": "concept",
+      "label": "민족주의",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_베르사유조약",
+      "type": "concept",
+      "label": "베르사유조약",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_마셜플랜",
+      "type": "concept",
+      "label": "마셜플랜",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_NATO",
+      "type": "concept",
+      "label": "NATO",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.1,
+        "influence_score": 0.6,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_바르샤바조약",
+      "type": "concept",
+      "label": "바르샤바조약",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_수요법칙",
+      "type": "concept",
+      "label": "수요법칙",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_공급법칙",
+      "type": "concept",
+      "label": "공급법칙",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "concept_탄력성",
+      "type": "concept",
+      "label": "탄력성",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0.05,
+        "influence_score": 0.3,
+        "influence_type": "specialized"
+      }
+    },
+    {
+      "id": "domain_mathematics",
+      "type": "domain",
+      "label": "mathematics",
+      "domain": "",
+      "size": 10,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_경우의 수",
+      "type": "math_topic",
+      "label": "경우의 수",
+      "domain": "mathematics",
+      "size": 20,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_도형",
+      "type": "math_topic",
+      "label": "도형",
+      "domain": "mathematics",
+      "size": 20,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_로그",
+      "type": "math_topic",
+      "label": "로그",
+      "domain": "mathematics",
+      "size": 17,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_미분",
+      "type": "math_topic",
+      "label": "미분",
+      "domain": "mathematics",
+      "size": 18,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_방정식·부등식",
+      "type": "math_topic",
+      "label": "방정식·부등식",
+      "domain": "mathematics",
+      "size": 14,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_벡터",
+      "type": "math_topic",
+      "label": "벡터",
+      "domain": "mathematics",
+      "size": 17,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_삼각비",
+      "type": "math_topic",
+      "label": "삼각비",
+      "domain": "mathematics",
+      "size": 20,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_수열",
+      "type": "math_topic",
+      "label": "수열",
+      "domain": "mathematics",
+      "size": 18,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_이차함수",
+      "type": "math_topic",
+      "label": "이차함수",
+      "domain": "mathematics",
+      "size": 20,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_적분",
+      "type": "math_topic",
+      "label": "적분",
+      "domain": "mathematics",
+      "size": 17,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_좌표기하",
+      "type": "math_topic",
+      "label": "좌표기하",
+      "domain": "mathematics",
+      "size": 3,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_지수",
+      "type": "math_topic",
+      "label": "지수",
+      "domain": "mathematics",
+      "size": 17,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_집합",
+      "type": "math_topic",
+      "label": "집합",
+      "domain": "mathematics",
+      "size": 20,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_평면도형",
+      "type": "math_topic",
+      "label": "평면도형",
+      "domain": "mathematics",
+      "size": 6,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    },
+    {
+      "id": "math_topic_확률",
+      "type": "math_topic",
+      "label": "확률",
+      "domain": "mathematics",
+      "size": 20,
+      "analysis": {
+        "centrality_score": 0,
+        "influence_score": 0,
+        "influence_type": "unknown"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "topic_수요·공급과 시장균형",
+      "target": "topic_GDP·국민소득",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_GDP·국민소득",
+      "target": "topic_환율·국제수지",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_금융·통화정책",
+      "target": "topic_환율·국제수지",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_수요·공급과 시장균형",
+      "target": "topic_금융·통화정책",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_GDP·국민소득",
+      "target": "topic_금융·통화정책",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_GDP·국민소득",
+      "target": "topic_재정·조세정책",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_수요·공급과 시장균형",
+      "target": "topic_재정·조세정책",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_환율·국제수지",
+      "target": "topic_국제무역",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_GDP·국민소득",
+      "target": "topic_국제무역",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_국제정치·국제기구",
+      "target": "topic_국제무역",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_경제성장·경기변동",
+      "target": "topic_고용·노동",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_수요·공급과 시장균형",
+      "target": "topic_고용·노동",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_GDP·국민소득",
+      "target": "topic_경제성장·경기변동",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_금융·통화정책",
+      "target": "topic_경제성장·경기변동",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_경제성장·경기변동",
+      "target": "topic_소득분배·지니계수",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_고용·노동",
+      "target": "topic_소득분배·지니계수",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_경제성장·경기변동",
+      "target": "topic_일본경제사",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_일본근대사",
+      "target": "topic_일본경제사",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_시민혁명",
+      "target": "topic_헌법·기본권",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_정치사상",
+      "target": "topic_헌법·기본권",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_헌법·기본권",
+      "target": "topic_통치기구",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_헌법·기본권",
+      "target": "topic_선거·정당",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_통치기구",
+      "target": "topic_선거·정당",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_세계대전",
+      "target": "topic_국제정치·국제기구",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_냉전",
+      "target": "topic_국제정치·국제기구",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_통치기구",
+      "target": "topic_지방자치",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_헌법·기본권",
+      "target": "topic_지방자치",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_헌법·기본권",
+      "target": "topic_사법·재판",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_통치기구",
+      "target": "topic_사법·재판",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_시민혁명",
+      "target": "topic_정치사상",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_국제정치·국제기구",
+      "target": "topic_안전보장·방위",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_냉전",
+      "target": "topic_안전보장·방위",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_시민혁명",
+      "target": "topic_산업혁명·자본주의",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_산업혁명·자본주의",
+      "target": "topic_제국주의·식민지",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_제국주의·식민지",
+      "target": "topic_세계대전",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_세계대전",
+      "target": "topic_냉전",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_제국주의·식민지",
+      "target": "topic_일본근대사",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_시민혁명",
+      "target": "topic_일본근대사",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_세계대전",
+      "target": "topic_전후세계질서",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_냉전",
+      "target": "topic_전후세계질서",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_냉전",
+      "target": "topic_세계화·지역통합",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_전후세계질서",
+      "target": "topic_세계화·지역통합",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_세계대전",
+      "target": "topic_러시아혁명·소련",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_제국주의·식민지",
+      "target": "topic_러시아혁명·소련",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_세계대전",
+      "target": "topic_대공황",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_금융·통화정책",
+      "target": "topic_대공황",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_기후·케펜구분",
+      "target": "topic_자원·농업",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_지형·판구조",
+      "target": "topic_자원·농업",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_기후·케펜구분",
+      "target": "topic_환경·생태",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_인구·도시화",
+      "target": "topic_산업·교통",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_자원·농업",
+      "target": "topic_산업·교통",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_산업혁명·자본주의",
+      "target": "topic_환경문제",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_환경·생태",
+      "target": "topic_환경문제",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_경제성장·경기변동",
+      "target": "topic_사회보장·복지",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_고용·노동",
+      "target": "topic_사회보장·복지",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_사회보장·복지",
+      "target": "topic_저출산·고령화",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_인구·도시화",
+      "target": "topic_저출산·고령화",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_세계화·지역통합",
+      "target": "topic_정보화사회",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_시민혁명",
+      "target": "topic_젠더·평등",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_정치사상",
+      "target": "topic_젠더·평등",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_세계화·지역통합",
+      "target": "topic_다문화사회",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "topic_정보화사회",
+      "target": "topic_다문화사회",
+      "type": "requires",
+      "weight": 0.9,
+      "metadata": {
+        "dependency_strength": 0.9,
+        "prerequisite_type": "conceptual"
+      }
+    },
+    {
+      "source": "concept_계몽사상",
+      "target": "concept_인권선언",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_계몽사상",
+      "target": "concept_삼권분립",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_인권선언",
+      "target": "concept_삼권분립",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_산업혁명·자본주의",
+      "target": "concept_자본주의",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_금융·통화정책",
+      "target": "concept_중앙은행",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_중앙은행",
+      "target": "concept_금리",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_금융·통화정책",
+      "target": "concept_금리",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_중앙은행",
+      "target": "concept_통화량",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_금융·통화정책",
+      "target": "concept_통화량",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_환율·국제수지",
+      "target": "concept_변동환율",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_환율·국제수지",
+      "target": "concept_고정환율",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_환율·국제수지",
+      "target": "concept_경상수지",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_GDP·국민소득",
+      "target": "concept_국내총생산",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_GDP·국민소득",
+      "target": "concept_1인당소득",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_기후·케펜구분",
+      "target": "concept_케펜기후구분",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_수요·공급과 시장균형",
+      "target": "concept_수요법칙",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_수요·공급과 시장균형",
+      "target": "concept_공급법칙",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_수요·공급과 시장균형",
+      "target": "concept_탄력성",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_헌법·기본권",
+      "target": "concept_기본권",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_통치기구",
+      "target": "concept_의원내각제",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_제국주의·식민지",
+      "target": "concept_제국주의",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_제국주의·식민지",
+      "target": "concept_민족주의",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_세계대전",
+      "target": "concept_베르사유조약",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_냉전",
+      "target": "concept_마셜플랜",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_냉전",
+      "target": "concept_NATO",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_국제정치·국제기구",
+      "target": "concept_NATO",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "concept_냉전",
+      "target": "concept_바르샤바조약",
+      "type": "requires",
+      "weight": 0.8,
+      "metadata": {
+        "dependency_strength": 0.8,
+        "prerequisite_type": "foundational"
+      }
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_수요·공급과 시장균형",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_GDP·국민소득",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_환율·국제수지",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_금융·통화정책",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_재정·조세정책",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_국제무역",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_고용·노동",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_경제성장·경기변동",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_소득분배·지니계수",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_일본경제사",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_헌법·기본권",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_통치기구",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_선거·정당",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_국제정치·국제기구",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_지방자치",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_사법·재판",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_정치사상",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_안전보장·방위",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_시민혁명",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_산업혁명·자본주의",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_제국주의·식민지",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_세계대전",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_냉전",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_일본근대사",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_전후세계질서",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_세계화·지역통합",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_러시아혁명·소련",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_대공황",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_geography",
+      "target": "topic_기후·케펜구분",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_geography",
+      "target": "topic_지형·판구조",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_geography",
+      "target": "topic_인구·도시화",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_geography",
+      "target": "topic_자원·농업",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_geography",
+      "target": "topic_지도·GIS",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_geography",
+      "target": "topic_환경·생태",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_geography",
+      "target": "topic_산업·교통",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_society",
+      "target": "topic_환경문제",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_society",
+      "target": "topic_사회보장·복지",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_society",
+      "target": "topic_저출산·고령화",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_society",
+      "target": "topic_정보화사회",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_society",
+      "target": "topic_젠더·평등",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "domain_society",
+      "target": "topic_다문화사회",
+      "type": "contains",
+      "weight": 1.0
+    }
+  ],
+  "analysis": {
+    "centrality": {
+      "topic_GDP·국민소득": 0.275,
+      "topic_경제성장·경기변동": 0.29,
+      "topic_고용·노동": 0.22,
+      "topic_국제무역": 0.2,
+      "topic_국제정치·국제기구": 0.22,
+      "topic_근대일본": 0.0,
+      "topic_금융·통화정책": 0.255,
+      "topic_기후·케펜구분": 0.12,
+      "topic_냉전": 0.24,
+      "topic_다문화사회": 0.15,
+      "topic_대공황": 0.15,
+      "topic_러시아혁명·소련": 0.15,
+      "topic_사법·재판": 0.15,
+      "topic_사회보장·복지": 0.185,
+      "topic_산업혁명·자본주의": 0.17,
+      "topic_선거·정당": 0.15,
+      "topic_세계대전": 0.275,
+      "topic_소득분배·지니계수": 0.15,
+      "topic_수요·공급과 시장균형": 0.19,
+      "topic_시민혁명": 0.225,
+      "topic_안전보장·방위": 0.15,
+      "topic_인구·도시화": 0.12,
+      "topic_일본경제사": 0.15,
+      "topic_자원·농업": 0.185,
+      "topic_재정·조세정책": 0.15,
+      "topic_전후세계질서": 0.185,
+      "topic_정치사상": 0.17,
+      "topic_제국주의·식민지": 0.205,
+      "topic_지도·GIS": 0.05,
+      "topic_지방자치": 0.15,
+      "topic_지형·판구조": 0.085,
+      "topic_통치기구": 0.205,
+      "topic_헌법·기본권": 0.29,
+      "topic_환경문제": 0.15,
+      "topic_환율·국제수지": 0.185,
+      "concept_계몽사상": 0.07,
+      "concept_인권선언": 0.105,
+      "concept_권리장전": 0.0,
+      "concept_증기기관": 0.0,
+      "concept_면방직": 0.0,
+      "concept_자본주의": 0.05,
+      "concept_중앙은행": 0.12,
+      "concept_금리": 0.1,
+      "concept_통화량": 0.1,
+      "concept_변동환율": 0.05,
+      "concept_고정환율": 0.05,
+      "concept_경상수지": 0.05,
+      "concept_국내총생산": 0.05,
+      "concept_1인당소득": 0.05,
+      "concept_케펜기후구분": 0.05,
+      "concept_온대": 0.0,
+      "concept_열대": 0.0,
+      "concept_건조": 0.0,
+      "concept_기본권": 0.05,
+      "concept_삼권분립": 0.12,
+      "concept_의원내각제": 0.05,
+      "concept_제국주의": 0.05,
+      "concept_민족주의": 0.05,
+      "concept_베르사유조약": 0.05,
+      "concept_마셜플랜": 0.05,
+      "concept_NATO": 0.1,
+      "concept_바르샤바조약": 0.05,
+      "concept_수요법칙": 0.05,
+      "concept_공급법칙": 0.05,
+      "concept_탄력성": 0.05
+    },
+    "bottlenecks": {
+      "total_bottlenecks": 15,
+      "bottleneck_topics": [
+        {
+          "node_id": "topic_시민혁명",
+          "label": "시민혁명",
+          "type": "topic",
+          "forward_impact": 5,
+          "num_prerequisites": 1,
+          "downstream_depth": 8,
+          "bottleneck_score": 6.2,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_GDP·국민소득",
+          "label": "GDP·국민소득",
+          "type": "topic",
+          "forward_impact": 5,
+          "num_prerequisites": 2,
+          "downstream_depth": 5,
+          "bottleneck_score": 5.0,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_세계대전",
+          "label": "세계대전",
+          "type": "topic",
+          "forward_impact": 5,
+          "num_prerequisites": 2,
+          "downstream_depth": 5,
+          "bottleneck_score": 5.0,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_수요·공급과 시장균형",
+          "label": "수요·공급과 시장균형",
+          "type": "topic",
+          "forward_impact": 4,
+          "num_prerequisites": 1,
+          "downstream_depth": 6,
+          "bottleneck_score": 4.8,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_제국주의·식민지",
+          "label": "제국주의·식민지",
+          "type": "topic",
+          "forward_impact": 3,
+          "num_prerequisites": 2,
+          "downstream_depth": 6,
+          "bottleneck_score": 4.2,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_냉전",
+          "label": "냉전",
+          "type": "topic",
+          "forward_impact": 4,
+          "num_prerequisites": 2,
+          "downstream_depth": 4,
+          "bottleneck_score": 4.0,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_산업혁명·자본주의",
+          "label": "산업혁명·자본주의",
+          "type": "topic",
+          "forward_impact": 2,
+          "num_prerequisites": 2,
+          "downstream_depth": 7,
+          "bottleneck_score": 4.0,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_경제성장·경기변동",
+          "label": "경제성장·경기변동",
+          "type": "topic",
+          "forward_impact": 4,
+          "num_prerequisites": 3,
+          "downstream_depth": 3,
+          "bottleneck_score": 3.6,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_금융·통화정책",
+          "label": "금융·통화정책",
+          "type": "topic",
+          "forward_impact": 3,
+          "num_prerequisites": 3,
+          "downstream_depth": 4,
+          "bottleneck_score": 3.4,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_헌법·기본권",
+          "label": "헌법·기본권",
+          "type": "topic",
+          "forward_impact": 4,
+          "num_prerequisites": 3,
+          "downstream_depth": 2,
+          "bottleneck_score": 3.2,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_정치사상",
+          "label": "정치사상",
+          "type": "topic",
+          "forward_impact": 2,
+          "num_prerequisites": 2,
+          "downstream_depth": 3,
+          "bottleneck_score": 2.4,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_통치기구",
+          "label": "통치기구",
+          "type": "topic",
+          "forward_impact": 3,
+          "num_prerequisites": 2,
+          "downstream_depth": 1,
+          "bottleneck_score": 2.2,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_고용·노동",
+          "label": "고용·노동",
+          "type": "topic",
+          "forward_impact": 2,
+          "num_prerequisites": 3,
+          "downstream_depth": 2,
+          "bottleneck_score": 2.0,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_기후·케펜구분",
+          "label": "기후·케펜구분",
+          "type": "topic",
+          "forward_impact": 2,
+          "num_prerequisites": 1,
+          "downstream_depth": 2,
+          "bottleneck_score": 2.0,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "concept_계몽사상",
+          "label": "계몽사상",
+          "type": "concept",
+          "forward_impact": 2,
+          "num_prerequisites": 0,
+          "downstream_depth": 2,
+          "bottleneck_score": 2.0,
+          "is_bottleneck": true
+        }
+      ],
+      "all_ranked": [
+        {
+          "node_id": "topic_시민혁명",
+          "label": "시민혁명",
+          "type": "topic",
+          "forward_impact": 5,
+          "num_prerequisites": 1,
+          "downstream_depth": 8,
+          "bottleneck_score": 6.2,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_GDP·국민소득",
+          "label": "GDP·국민소득",
+          "type": "topic",
+          "forward_impact": 5,
+          "num_prerequisites": 2,
+          "downstream_depth": 5,
+          "bottleneck_score": 5.0,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_세계대전",
+          "label": "세계대전",
+          "type": "topic",
+          "forward_impact": 5,
+          "num_prerequisites": 2,
+          "downstream_depth": 5,
+          "bottleneck_score": 5.0,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_수요·공급과 시장균형",
+          "label": "수요·공급과 시장균형",
+          "type": "topic",
+          "forward_impact": 4,
+          "num_prerequisites": 1,
+          "downstream_depth": 6,
+          "bottleneck_score": 4.8,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_제국주의·식민지",
+          "label": "제국주의·식민지",
+          "type": "topic",
+          "forward_impact": 3,
+          "num_prerequisites": 2,
+          "downstream_depth": 6,
+          "bottleneck_score": 4.2,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_냉전",
+          "label": "냉전",
+          "type": "topic",
+          "forward_impact": 4,
+          "num_prerequisites": 2,
+          "downstream_depth": 4,
+          "bottleneck_score": 4.0,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_산업혁명·자본주의",
+          "label": "산업혁명·자본주의",
+          "type": "topic",
+          "forward_impact": 2,
+          "num_prerequisites": 2,
+          "downstream_depth": 7,
+          "bottleneck_score": 4.0,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_경제성장·경기변동",
+          "label": "경제성장·경기변동",
+          "type": "topic",
+          "forward_impact": 4,
+          "num_prerequisites": 3,
+          "downstream_depth": 3,
+          "bottleneck_score": 3.6,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_금융·통화정책",
+          "label": "금융·통화정책",
+          "type": "topic",
+          "forward_impact": 3,
+          "num_prerequisites": 3,
+          "downstream_depth": 4,
+          "bottleneck_score": 3.4,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_헌법·기본권",
+          "label": "헌법·기본권",
+          "type": "topic",
+          "forward_impact": 4,
+          "num_prerequisites": 3,
+          "downstream_depth": 2,
+          "bottleneck_score": 3.2,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_정치사상",
+          "label": "정치사상",
+          "type": "topic",
+          "forward_impact": 2,
+          "num_prerequisites": 2,
+          "downstream_depth": 3,
+          "bottleneck_score": 2.4,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_통치기구",
+          "label": "통치기구",
+          "type": "topic",
+          "forward_impact": 3,
+          "num_prerequisites": 2,
+          "downstream_depth": 1,
+          "bottleneck_score": 2.2,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_고용·노동",
+          "label": "고용·노동",
+          "type": "topic",
+          "forward_impact": 2,
+          "num_prerequisites": 3,
+          "downstream_depth": 2,
+          "bottleneck_score": 2.0,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_기후·케펜구분",
+          "label": "기후·케펜구분",
+          "type": "topic",
+          "forward_impact": 2,
+          "num_prerequisites": 1,
+          "downstream_depth": 2,
+          "bottleneck_score": 2.0,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "concept_계몽사상",
+          "label": "계몽사상",
+          "type": "concept",
+          "forward_impact": 2,
+          "num_prerequisites": 0,
+          "downstream_depth": 2,
+          "bottleneck_score": 2.0,
+          "is_bottleneck": true
+        },
+        {
+          "node_id": "topic_전후세계질서",
+          "label": "전후세계질서",
+          "type": "topic",
+          "forward_impact": 1,
+          "num_prerequisites": 3,
+          "downstream_depth": 3,
+          "bottleneck_score": 1.8,
+          "is_bottleneck": false
+        },
+        {
+          "node_id": "topic_국제정치·국제기구",
+          "label": "국제정치·국제기구",
+          "type": "topic",
+          "forward_impact": 2,
+          "num_prerequisites": 3,
+          "downstream_depth": 1,
+          "bottleneck_score": 1.6,
+          "is_bottleneck": false
+        },
+        {
+          "node_id": "topic_인구·도시화",
+          "label": "인구·도시화",
+          "type": "topic",
+          "forward_impact": 2,
+          "num_prerequisites": 1,
+          "downstream_depth": 1,
+          "bottleneck_score": 1.6,
+          "is_bottleneck": false
+        },
+        {
+          "node_id": "concept_중앙은행",
+          "label": "중앙은행",
+          "type": "concept",
+          "forward_impact": 2,
+          "num_prerequisites": 1,
+          "downstream_depth": 1,
+          "bottleneck_score": 1.6,
+          "is_bottleneck": false
+        },
+        {
+          "node_id": "topic_지형·판구조",
+          "label": "지형·판구조",
+          "type": "topic",
+          "forward_impact": 1,
+          "num_prerequisites": 1,
+          "downstream_depth": 2,
+          "bottleneck_score": 1.4,
+          "is_bottleneck": false
+        }
+      ]
+    },
+    "concept_influence": {
+      "foundational": [
+        {
+          "node_id": "concept_계몽사상",
+          "label": "계몽사상",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 0,
+          "downstream_dependents": 2,
+          "downstream_depth": 2,
+          "influence_score": 2.0,
+          "influence_type": "foundational"
+        }
+      ],
+      "bridge": [
+        {
+          "node_id": "topic_GDP·국민소득",
+          "label": "GDP·국민소득",
+          "type": "topic",
+          "domain": "economy",
+          "upstream_prerequisites": 2,
+          "downstream_dependents": 5,
+          "downstream_depth": 5,
+          "influence_score": 3.8,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_경제성장·경기변동",
+          "label": "경제성장·경기변동",
+          "type": "topic",
+          "domain": "economy",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 4,
+          "downstream_depth": 3,
+          "influence_score": 3.4,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_고용·노동",
+          "label": "고용·노동",
+          "type": "topic",
+          "domain": "economy",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 2,
+          "downstream_depth": 2,
+          "influence_score": 2.4,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_국제정치·국제기구",
+          "label": "국제정치·국제기구",
+          "type": "topic",
+          "domain": "politics",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 2,
+          "downstream_depth": 1,
+          "influence_score": 2.2,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_금융·통화정책",
+          "label": "금융·통화정책",
+          "type": "topic",
+          "domain": "economy",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 3,
+          "downstream_depth": 4,
+          "influence_score": 3.2,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_기후·케펜구분",
+          "label": "기후·케펜구분",
+          "type": "topic",
+          "domain": "geography",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 2,
+          "downstream_depth": 2,
+          "influence_score": 1.6,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_냉전",
+          "label": "냉전",
+          "type": "topic",
+          "domain": "history",
+          "upstream_prerequisites": 2,
+          "downstream_dependents": 4,
+          "downstream_depth": 4,
+          "influence_score": 3.2,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_사회보장·복지",
+          "label": "사회보장·복지",
+          "type": "topic",
+          "domain": "society",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 1,
+          "downstream_depth": 1,
+          "influence_score": 1.8,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_산업혁명·자본주의",
+          "label": "산업혁명·자본주의",
+          "type": "topic",
+          "domain": "history",
+          "upstream_prerequisites": 2,
+          "downstream_dependents": 2,
+          "downstream_depth": 7,
+          "influence_score": 3.0,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_세계대전",
+          "label": "세계대전",
+          "type": "topic",
+          "domain": "history",
+          "upstream_prerequisites": 2,
+          "downstream_dependents": 5,
+          "downstream_depth": 5,
+          "influence_score": 3.8,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_수요·공급과 시장균형",
+          "label": "수요·공급과 시장균형",
+          "type": "topic",
+          "domain": "economy",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 4,
+          "downstream_depth": 6,
+          "influence_score": 3.2,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_시민혁명",
+          "label": "시민혁명",
+          "type": "topic",
+          "domain": "history",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 5,
+          "downstream_depth": 8,
+          "influence_score": 4.0,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_인구·도시화",
+          "label": "인구·도시화",
+          "type": "topic",
+          "domain": "geography",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 2,
+          "downstream_depth": 1,
+          "influence_score": 1.4,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_자원·농업",
+          "label": "자원·농업",
+          "type": "topic",
+          "domain": "geography",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 1,
+          "downstream_depth": 1,
+          "influence_score": 1.8,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_전후세계질서",
+          "label": "전후세계질서",
+          "type": "topic",
+          "domain": "history",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 1,
+          "downstream_depth": 3,
+          "influence_score": 2.2,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_정치사상",
+          "label": "정치사상",
+          "type": "topic",
+          "domain": "politics",
+          "upstream_prerequisites": 2,
+          "downstream_dependents": 2,
+          "downstream_depth": 3,
+          "influence_score": 2.2,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_제국주의·식민지",
+          "label": "제국주의·식민지",
+          "type": "topic",
+          "domain": "history",
+          "upstream_prerequisites": 2,
+          "downstream_dependents": 3,
+          "downstream_depth": 6,
+          "influence_score": 3.2,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_지형·판구조",
+          "label": "지형·판구조",
+          "type": "topic",
+          "domain": "geography",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 1,
+          "downstream_depth": 2,
+          "influence_score": 1.2,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_통치기구",
+          "label": "통치기구",
+          "type": "topic",
+          "domain": "politics",
+          "upstream_prerequisites": 2,
+          "downstream_dependents": 3,
+          "downstream_depth": 1,
+          "influence_score": 2.2,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_헌법·기본권",
+          "label": "헌법·기본권",
+          "type": "topic",
+          "domain": "politics",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 4,
+          "downstream_depth": 2,
+          "influence_score": 3.2,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "topic_환율·국제수지",
+          "label": "환율·국제수지",
+          "type": "topic",
+          "domain": "economy",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 1,
+          "downstream_depth": 1,
+          "influence_score": 1.8,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "concept_인권선언",
+          "label": "인권선언",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 1,
+          "downstream_depth": 1,
+          "influence_score": 1.0,
+          "influence_type": "bridge"
+        },
+        {
+          "node_id": "concept_중앙은행",
+          "label": "중앙은행",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 2,
+          "downstream_depth": 1,
+          "influence_score": 1.4,
+          "influence_type": "bridge"
+        }
+      ],
+      "specialized": [
+        {
+          "node_id": "topic_국제무역",
+          "label": "국제무역",
+          "type": "topic",
+          "domain": "economy",
+          "upstream_prerequisites": 4,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 1.2,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "topic_다문화사회",
+          "label": "다문화사회",
+          "type": "topic",
+          "domain": "society",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.9,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "topic_대공황",
+          "label": "대공황",
+          "type": "topic",
+          "domain": "history",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.9,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "topic_러시아혁명·소련",
+          "label": "러시아혁명·소련",
+          "type": "topic",
+          "domain": "history",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.9,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "topic_사법·재판",
+          "label": "사법·재판",
+          "type": "topic",
+          "domain": "politics",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.9,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "topic_선거·정당",
+          "label": "선거·정당",
+          "type": "topic",
+          "domain": "politics",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.9,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "topic_소득분배·지니계수",
+          "label": "소득분배·지니계수",
+          "type": "topic",
+          "domain": "economy",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.9,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "topic_안전보장·방위",
+          "label": "안전보장·방위",
+          "type": "topic",
+          "domain": "politics",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.9,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "topic_일본경제사",
+          "label": "일본경제사",
+          "type": "topic",
+          "domain": "economy",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.9,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "topic_재정·조세정책",
+          "label": "재정·조세정책",
+          "type": "topic",
+          "domain": "economy",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.9,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "topic_지도·GIS",
+          "label": "지도·GIS",
+          "type": "topic",
+          "domain": "geography",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "topic_지방자치",
+          "label": "지방자치",
+          "type": "topic",
+          "domain": "politics",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.9,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "topic_환경문제",
+          "label": "환경문제",
+          "type": "topic",
+          "domain": "society",
+          "upstream_prerequisites": 3,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.9,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_자본주의",
+          "label": "자본주의",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_금리",
+          "label": "금리",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 2,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.6,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_통화량",
+          "label": "통화량",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 2,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.6,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_변동환율",
+          "label": "변동환율",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_고정환율",
+          "label": "고정환율",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_경상수지",
+          "label": "경상수지",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_국내총생산",
+          "label": "국내총생산",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_1인당소득",
+          "label": "1인당소득",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_케펜기후구분",
+          "label": "케펜기후구분",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_기본권",
+          "label": "기본권",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_삼권분립",
+          "label": "삼권분립",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 2,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.6,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_의원내각제",
+          "label": "의원내각제",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_제국주의",
+          "label": "제국주의",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_민족주의",
+          "label": "민족주의",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_베르사유조약",
+          "label": "베르사유조약",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_마셜플랜",
+          "label": "마셜플랜",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_NATO",
+          "label": "NATO",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 2,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.6,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_바르샤바조약",
+          "label": "바르샤바조약",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_수요법칙",
+          "label": "수요법칙",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_공급법칙",
+          "label": "공급법칙",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        },
+        {
+          "node_id": "concept_탄력성",
+          "label": "탄력성",
+          "type": "concept",
+          "domain": "",
+          "upstream_prerequisites": 1,
+          "downstream_dependents": 0,
+          "downstream_depth": 0,
+          "influence_score": 0.3,
+          "influence_type": "specialized"
+        }
+      ]
+    }
+  }
+}

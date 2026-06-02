@@ -6,6 +6,11 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
+// ── Engine Initialization (auto-executes on boot) ─────────────────────
+import { initializeEngine } from './intelligence/engineInitializer';
+// Start loading datasets immediately — non-blocking
+const engineInitPromise = initializeEngine();
+
 console.info(
   '%c EJU Score Tracker %c © 2025 이강민 (Lee Kangmin) %c github.com/leekangmmin/EJUScore ',
   'background:#4f8ef7;color:#fff;font-weight:700;padding:2px 6px;border-radius:4px 0 0 4px',
@@ -14,9 +19,6 @@ console.info(
 )
 
 // ── Electron 데스크톱: 서비스 워커 절대 등록 금지 ──────────────
-// SW 의 fetch 핸들러가 file:// 요청을 fetch(e.request) 로 가로채면 실패하여
-// tesseract 워커·WASM·언어데이터(.gz) 로드가 전부 막혀 OCR 이 0%에서 멈춘다.
-// (SW 는 웹/PWA 전용 기능 — 데스크톱에선 기존에 설치된 것도 제거)
 const IS_ELECTRON = typeof window !== 'undefined' && !!window.electronAPI;
 
 if (IS_ELECTRON && 'serviceWorker' in navigator) {
@@ -31,15 +33,10 @@ if (!IS_ELECTRON && 'serviceWorker' in navigator) {
     try {
       await navigator.serviceWorker.register('./sw.js');
 
-      // 알림 권한 요청 (사용자 첫 방문 또는 권한 미결정 시)
       if ('Notification' in window && Notification.permission === 'default') {
-        // 페이지 로드 후 3초 뒤에 조용히 요청
         setTimeout(async () => {
           const perm = await Notification.requestPermission();
-          if (perm === 'granted') {
-            // D-day 알림 스케줄 확인
-            scheduleDdayNotification();
-          }
+          if (perm === 'granted') scheduleDdayNotification();
         }, 3000);
       } else if (Notification.permission === 'granted') {
         scheduleDdayNotification();
@@ -61,8 +58,21 @@ function scheduleDdayNotification() {
   } catch (_) {}
 }
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+// ── Render App after datasets are loaded ──────────────────────────────
+// We wait for datasets so ExamIntelligenceCenter has data immediately.
+// If datasets fail to load, the app still renders (graceful degradation).
+engineInitPromise.then(() => {
+  console.info('[EJUScore] Engine ready — rendering app');
+}).catch(err => {
+  console.warn('[EJUScore] Engine init error (non-fatal):', err.message);
+}).finally(() => {
+  renderApp();
+});
+
+function renderApp() {
+  createRoot(document.getElementById('root')).render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+  );
+}

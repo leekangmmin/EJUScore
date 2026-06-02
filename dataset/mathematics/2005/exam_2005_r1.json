@@ -1,0 +1,168 @@
+{
+  "id": "math_2005_r1",
+  "source_file": "2005平成17年第1回文数.pdf",
+  "subject": "mathematics",
+  "year": 2005,
+  "round": 1,
+  "total_pages": 13,
+  "ocr_confidence": 0.76,
+  "total_questions": 19,
+  "questions": [
+    {
+      "number": 1,
+      "section": "math_1",
+      "topic": "이차함수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 2,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "問 2 次の命遇の [| | | から[ M | について, 最も適するものを下の 0 へ ②③ のうちから一\nつ選べ。ただし, q, は実数とする。\n(1) =0はq=ぁ=0であるための[ 1 |\n(2) ぴ+が=0はg=か= 0 であるための[ 」 |。\n(3) (e+の(eqeー-り=0はgq=6= 0 であるための Lk_l。\n(4) ウーq6+が=0はq6=0であるための[ 上 |。\n\n",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 3,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "問2 3辺の長さがAB=3, BC=v7, COA =1 の三角形 ABC に円 0 が内接している。内接円\n\nO と辺 BC, CA, AB の接点をそれぞれ D, E, F とする。\nA\n\n() ZBAC=[MN| , ZFDE = [0 P] である。\n(2) AFP=g, BD=6, CE=cとすると\n\nns Le な= 上は六\n\nLs」\nである。\nこれから c を求めて\n守\nとなる。\n\n",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 4,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 5,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 6,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 7,
+      "section": "math_a",
+      "topic": "경우의 수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 8,
+      "section": "math_1",
+      "topic": "이차함수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 9,
+      "section": "math_a",
+      "topic": "확률",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 10,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 11,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 12,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 13,
+      "section": "math_a",
+      "topic": "경우의 수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 14,
+      "section": "math_2",
+      "topic": "미분",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 15,
+      "section": "math_2",
+      "topic": "적분",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 16,
+      "section": "math_2",
+      "topic": "수열",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 17,
+      "section": "math_b",
+      "topic": "벡터",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 18,
+      "section": "math_2",
+      "topic": "지수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 19,
+      "section": "math_2",
+      "topic": "로그",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    }
+  ],
+  "metadata": {
+    "processed_at": "2026-06-02T07:01:32.452961",
+    "confidence_average": 0.76
+  }
+}

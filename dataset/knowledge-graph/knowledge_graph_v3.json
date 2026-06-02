@@ -1,0 +1,1097 @@
+{
+  "generated_at": "2026-06-02T07:37:36.610338",
+  "total_nodes": 86,
+  "total_edges": 81,
+  "nodes": [
+    {
+      "id": "domain_economy",
+      "type": "domain",
+      "label": "economy",
+      "domain": "",
+      "size": 50
+    },
+    {
+      "id": "domain_geography",
+      "type": "domain",
+      "label": "geography",
+      "domain": "",
+      "size": 50
+    },
+    {
+      "id": "domain_history",
+      "type": "domain",
+      "label": "history",
+      "domain": "",
+      "size": 50
+    },
+    {
+      "id": "domain_politics",
+      "type": "domain",
+      "label": "politics",
+      "domain": "",
+      "size": 50
+    },
+    {
+      "id": "domain_society",
+      "type": "domain",
+      "label": "society",
+      "domain": "",
+      "size": 44
+    },
+    {
+      "id": "topic_GDP·국민소득",
+      "type": "topic",
+      "label": "GDP·국민소득",
+      "domain": "economy",
+      "size": 30
+    },
+    {
+      "id": "topic_경제성장·경기변동",
+      "type": "topic",
+      "label": "경제성장·경기변동",
+      "domain": "economy",
+      "size": 30
+    },
+    {
+      "id": "topic_고용·노동",
+      "type": "topic",
+      "label": "고용·노동",
+      "domain": "economy",
+      "size": 30
+    },
+    {
+      "id": "topic_국제무역",
+      "type": "topic",
+      "label": "국제무역",
+      "domain": "economy",
+      "size": 30
+    },
+    {
+      "id": "topic_국제정치·국제기구",
+      "type": "topic",
+      "label": "국제정치·국제기구",
+      "domain": "politics",
+      "size": 30
+    },
+    {
+      "id": "topic_근대일본",
+      "type": "topic",
+      "label": "근대일본",
+      "domain": "economy",
+      "size": 30
+    },
+    {
+      "id": "topic_금융·통화정책",
+      "type": "topic",
+      "label": "금융·통화정책",
+      "domain": "economy",
+      "size": 30
+    },
+    {
+      "id": "topic_기후·케펜구분",
+      "type": "topic",
+      "label": "기후·케펜구분",
+      "domain": "geography",
+      "size": 30
+    },
+    {
+      "id": "topic_냉전",
+      "type": "topic",
+      "label": "냉전",
+      "domain": "history",
+      "size": 30
+    },
+    {
+      "id": "topic_다문화사회",
+      "type": "topic",
+      "label": "다문화사회",
+      "domain": "society",
+      "size": 14
+    },
+    {
+      "id": "topic_대공황",
+      "type": "topic",
+      "label": "대공황",
+      "domain": "history",
+      "size": 4
+    },
+    {
+      "id": "topic_러시아혁명·소련",
+      "type": "topic",
+      "label": "러시아혁명·소련",
+      "domain": "history",
+      "size": 10
+    },
+    {
+      "id": "topic_사법·재판",
+      "type": "topic",
+      "label": "사법·재판",
+      "domain": "politics",
+      "size": 16
+    },
+    {
+      "id": "topic_사회보장·복지",
+      "type": "topic",
+      "label": "사회보장·복지",
+      "domain": "society",
+      "size": 30
+    },
+    {
+      "id": "topic_산업혁명·자본주의",
+      "type": "topic",
+      "label": "산업혁명·자본주의",
+      "domain": "history",
+      "size": 10
+    },
+    {
+      "id": "topic_선거·정당",
+      "type": "topic",
+      "label": "선거·정당",
+      "domain": "politics",
+      "size": 30
+    },
+    {
+      "id": "topic_세계대전",
+      "type": "topic",
+      "label": "세계대전",
+      "domain": "history",
+      "size": 30
+    },
+    {
+      "id": "topic_소득분배·지니계수",
+      "type": "topic",
+      "label": "소득분배·지니계수",
+      "domain": "economy",
+      "size": 2
+    },
+    {
+      "id": "topic_수요·공급과 시장균형",
+      "type": "topic",
+      "label": "수요·공급과 시장균형",
+      "domain": "economy",
+      "size": 30
+    },
+    {
+      "id": "topic_시민혁명",
+      "type": "topic",
+      "label": "시민혁명",
+      "domain": "history",
+      "size": 28
+    },
+    {
+      "id": "topic_안전보장·방위",
+      "type": "topic",
+      "label": "안전보장·방위",
+      "domain": "politics",
+      "size": 2
+    },
+    {
+      "id": "topic_인구·도시화",
+      "type": "topic",
+      "label": "인구·도시화",
+      "domain": "geography",
+      "size": 30
+    },
+    {
+      "id": "topic_일본경제사",
+      "type": "topic",
+      "label": "일본경제사",
+      "domain": "economy",
+      "size": 30
+    },
+    {
+      "id": "topic_자원·농업",
+      "type": "topic",
+      "label": "자원·농업",
+      "domain": "geography",
+      "size": 30
+    },
+    {
+      "id": "topic_재정·조세정책",
+      "type": "topic",
+      "label": "재정·조세정책",
+      "domain": "economy",
+      "size": 28
+    },
+    {
+      "id": "topic_전후세계질서",
+      "type": "topic",
+      "label": "전후세계질서",
+      "domain": "history",
+      "size": 14
+    },
+    {
+      "id": "topic_정치사상",
+      "type": "topic",
+      "label": "정치사상",
+      "domain": "politics",
+      "size": 28
+    },
+    {
+      "id": "topic_제국주의·식민지",
+      "type": "topic",
+      "label": "제국주의·식민지",
+      "domain": "history",
+      "size": 26
+    },
+    {
+      "id": "topic_지도·GIS",
+      "type": "topic",
+      "label": "지도·GIS",
+      "domain": "geography",
+      "size": 30
+    },
+    {
+      "id": "topic_지방자치",
+      "type": "topic",
+      "label": "지방자치",
+      "domain": "politics",
+      "size": 28
+    },
+    {
+      "id": "topic_지형·판구조",
+      "type": "topic",
+      "label": "지형·판구조",
+      "domain": "geography",
+      "size": 26
+    },
+    {
+      "id": "topic_통치기구",
+      "type": "topic",
+      "label": "통치기구",
+      "domain": "politics",
+      "size": 30
+    },
+    {
+      "id": "topic_헌법·기본권",
+      "type": "topic",
+      "label": "헌법·기본권",
+      "domain": "politics",
+      "size": 30
+    },
+    {
+      "id": "topic_환경문제",
+      "type": "topic",
+      "label": "환경문제",
+      "domain": "society",
+      "size": 30
+    },
+    {
+      "id": "topic_환율·국제수지",
+      "type": "topic",
+      "label": "환율·국제수지",
+      "domain": "economy",
+      "size": 30
+    },
+    {
+      "id": "concept_계몽사상",
+      "type": "concept",
+      "label": "계몽사상",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_인권선언",
+      "type": "concept",
+      "label": "인권선언",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_권리장전",
+      "type": "concept",
+      "label": "권리장전",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_증기기관",
+      "type": "concept",
+      "label": "증기기관",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_면방직",
+      "type": "concept",
+      "label": "면방직",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_자본주의",
+      "type": "concept",
+      "label": "자본주의",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_중앙은행",
+      "type": "concept",
+      "label": "중앙은행",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_금리",
+      "type": "concept",
+      "label": "금리",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_통화량",
+      "type": "concept",
+      "label": "통화량",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_변동환율",
+      "type": "concept",
+      "label": "변동환율",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_고정환율",
+      "type": "concept",
+      "label": "고정환율",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_경상수지",
+      "type": "concept",
+      "label": "경상수지",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_국내총생산",
+      "type": "concept",
+      "label": "국내총생산",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_1인당소득",
+      "type": "concept",
+      "label": "1인당소득",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_케펜기후구분",
+      "type": "concept",
+      "label": "케펜기후구분",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_온대",
+      "type": "concept",
+      "label": "온대",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_열대",
+      "type": "concept",
+      "label": "열대",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_건조",
+      "type": "concept",
+      "label": "건조",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_기본권",
+      "type": "concept",
+      "label": "기본권",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_삼권분립",
+      "type": "concept",
+      "label": "삼권분립",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_의원내각제",
+      "type": "concept",
+      "label": "의원내각제",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_제국주의",
+      "type": "concept",
+      "label": "제국주의",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_민족주의",
+      "type": "concept",
+      "label": "민족주의",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_베르사유조약",
+      "type": "concept",
+      "label": "베르사유조약",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_마셜플랜",
+      "type": "concept",
+      "label": "마셜플랜",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_NATO",
+      "type": "concept",
+      "label": "NATO",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_바르샤바조약",
+      "type": "concept",
+      "label": "바르샤바조약",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_수요법칙",
+      "type": "concept",
+      "label": "수요법칙",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_공급법칙",
+      "type": "concept",
+      "label": "공급법칙",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "concept_탄력성",
+      "type": "concept",
+      "label": "탄력성",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "domain_mathematics",
+      "type": "domain",
+      "label": "mathematics",
+      "domain": "",
+      "size": 10
+    },
+    {
+      "id": "math_topic_경우의 수",
+      "type": "math_topic",
+      "label": "경우의 수",
+      "domain": "mathematics",
+      "size": 20
+    },
+    {
+      "id": "math_topic_도형",
+      "type": "math_topic",
+      "label": "도형",
+      "domain": "mathematics",
+      "size": 20
+    },
+    {
+      "id": "math_topic_로그",
+      "type": "math_topic",
+      "label": "로그",
+      "domain": "mathematics",
+      "size": 17
+    },
+    {
+      "id": "math_topic_미분",
+      "type": "math_topic",
+      "label": "미분",
+      "domain": "mathematics",
+      "size": 18
+    },
+    {
+      "id": "math_topic_방정식·부등식",
+      "type": "math_topic",
+      "label": "방정식·부등식",
+      "domain": "mathematics",
+      "size": 14
+    },
+    {
+      "id": "math_topic_벡터",
+      "type": "math_topic",
+      "label": "벡터",
+      "domain": "mathematics",
+      "size": 17
+    },
+    {
+      "id": "math_topic_삼각비",
+      "type": "math_topic",
+      "label": "삼각비",
+      "domain": "mathematics",
+      "size": 20
+    },
+    {
+      "id": "math_topic_수열",
+      "type": "math_topic",
+      "label": "수열",
+      "domain": "mathematics",
+      "size": 18
+    },
+    {
+      "id": "math_topic_이차함수",
+      "type": "math_topic",
+      "label": "이차함수",
+      "domain": "mathematics",
+      "size": 20
+    },
+    {
+      "id": "math_topic_적분",
+      "type": "math_topic",
+      "label": "적분",
+      "domain": "mathematics",
+      "size": 17
+    },
+    {
+      "id": "math_topic_좌표기하",
+      "type": "math_topic",
+      "label": "좌표기하",
+      "domain": "mathematics",
+      "size": 3
+    },
+    {
+      "id": "math_topic_지수",
+      "type": "math_topic",
+      "label": "지수",
+      "domain": "mathematics",
+      "size": 17
+    },
+    {
+      "id": "math_topic_집합",
+      "type": "math_topic",
+      "label": "집합",
+      "domain": "mathematics",
+      "size": 20
+    },
+    {
+      "id": "math_topic_평면도형",
+      "type": "math_topic",
+      "label": "평면도형",
+      "domain": "mathematics",
+      "size": 6
+    },
+    {
+      "id": "math_topic_확률",
+      "type": "math_topic",
+      "label": "확률",
+      "domain": "mathematics",
+      "size": 20
+    }
+  ],
+  "edges": [
+    {
+      "source": "domain_economy",
+      "target": "topic_근대일본",
+      "type": "contains",
+      "weight": 9
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_선거·정당",
+      "type": "contains",
+      "weight": 28
+    },
+    {
+      "source": "domain_geography",
+      "target": "topic_지형·판구조",
+      "type": "contains",
+      "weight": 13
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_대공황",
+      "type": "contains",
+      "weight": 2
+    },
+    {
+      "source": "domain_geography",
+      "target": "topic_자원·농업",
+      "type": "contains",
+      "weight": 27
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_정치사상",
+      "type": "contains",
+      "weight": 14
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_냉전",
+      "type": "contains",
+      "weight": 51
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_전후세계질서",
+      "type": "contains",
+      "weight": 7
+    },
+    {
+      "source": "domain_society",
+      "target": "topic_사회보장·복지",
+      "type": "contains",
+      "weight": 11
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_경제성장·경기변동",
+      "type": "contains",
+      "weight": 33
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_사법·재판",
+      "type": "contains",
+      "weight": 8
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_금융·통화정책",
+      "type": "contains",
+      "weight": 25
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_세계대전",
+      "type": "contains",
+      "weight": 126
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_지방자치",
+      "type": "contains",
+      "weight": 14
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_국제정치·국제기구",
+      "type": "contains",
+      "weight": 41
+    },
+    {
+      "source": "domain_society",
+      "target": "topic_다문화사회",
+      "type": "contains",
+      "weight": 7
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_산업혁명·자본주의",
+      "type": "contains",
+      "weight": 5
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_GDP·국민소득",
+      "type": "contains",
+      "weight": 44
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_헌법·기본권",
+      "type": "contains",
+      "weight": 29
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_고용·노동",
+      "type": "contains",
+      "weight": 20
+    },
+    {
+      "source": "domain_geography",
+      "target": "topic_기후·케펜구분",
+      "type": "contains",
+      "weight": 109
+    },
+    {
+      "source": "domain_society",
+      "target": "topic_환경문제",
+      "type": "contains",
+      "weight": 25
+    },
+    {
+      "source": "domain_geography",
+      "target": "topic_지도·GIS",
+      "type": "contains",
+      "weight": 20
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_소득분배·지니계수",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_안전보장·방위",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_러시아혁명·소련",
+      "type": "contains",
+      "weight": 5
+    },
+    {
+      "source": "domain_geography",
+      "target": "topic_인구·도시화",
+      "type": "contains",
+      "weight": 15
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_국제무역",
+      "type": "contains",
+      "weight": 68
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_제국주의·식민지",
+      "type": "contains",
+      "weight": 13
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_일본경제사",
+      "type": "contains",
+      "weight": 29
+    },
+    {
+      "source": "domain_politics",
+      "target": "topic_통치기구",
+      "type": "contains",
+      "weight": 74
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_재정·조세정책",
+      "type": "contains",
+      "weight": 14
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_환율·국제수지",
+      "type": "contains",
+      "weight": 116
+    },
+    {
+      "source": "domain_economy",
+      "target": "topic_수요·공급과 시장균형",
+      "type": "contains",
+      "weight": 217
+    },
+    {
+      "source": "domain_history",
+      "target": "topic_시민혁명",
+      "type": "contains",
+      "weight": 13
+    },
+    {
+      "source": "topic_시민혁명",
+      "target": "concept_계몽사상",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_시민혁명",
+      "target": "concept_인권선언",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_시민혁명",
+      "target": "concept_권리장전",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_산업혁명·자본주의",
+      "target": "concept_증기기관",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_산업혁명·자본주의",
+      "target": "concept_면방직",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_산업혁명·자본주의",
+      "target": "concept_자본주의",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_금융·통화정책",
+      "target": "concept_중앙은행",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_금융·통화정책",
+      "target": "concept_금리",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_금융·통화정책",
+      "target": "concept_통화량",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_환율·국제수지",
+      "target": "concept_변동환율",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_환율·국제수지",
+      "target": "concept_고정환율",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_환율·국제수지",
+      "target": "concept_경상수지",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_GDP·국민소득",
+      "target": "concept_국내총생산",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_GDP·국민소득",
+      "target": "concept_1인당소득",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_기후·케펜구분",
+      "target": "concept_케펜기후구분",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_기후·케펜구분",
+      "target": "concept_온대",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_기후·케펜구분",
+      "target": "concept_열대",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_기후·케펜구분",
+      "target": "concept_건조",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_헌법·기본권",
+      "target": "concept_기본권",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_헌법·기본권",
+      "target": "concept_삼권분립",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_통치기구",
+      "target": "concept_삼권분립",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_통치기구",
+      "target": "concept_의원내각제",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_세계대전",
+      "target": "concept_제국주의",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_세계대전",
+      "target": "concept_민족주의",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_세계대전",
+      "target": "concept_베르사유조약",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_냉전",
+      "target": "concept_마셜플랜",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_냉전",
+      "target": "concept_NATO",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_냉전",
+      "target": "concept_바르샤바조약",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_수요·공급과 시장균형",
+      "target": "concept_수요법칙",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_수요·공급과 시장균형",
+      "target": "concept_공급법칙",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "topic_수요·공급과 시장균형",
+      "target": "concept_탄력성",
+      "type": "requires",
+      "weight": 1
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_경우의 수",
+      "type": "contains",
+      "weight": 35
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_도형",
+      "type": "contains",
+      "weight": 41
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_로그",
+      "type": "contains",
+      "weight": 17
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_미분",
+      "type": "contains",
+      "weight": 18
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_방정식·부등식",
+      "type": "contains",
+      "weight": 14
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_벡터",
+      "type": "contains",
+      "weight": 17
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_삼각비",
+      "type": "contains",
+      "weight": 43
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_수열",
+      "type": "contains",
+      "weight": 18
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_이차함수",
+      "type": "contains",
+      "weight": 30
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_적분",
+      "type": "contains",
+      "weight": 17
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_좌표기하",
+      "type": "contains",
+      "weight": 3
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_지수",
+      "type": "contains",
+      "weight": 17
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_집합",
+      "type": "contains",
+      "weight": 42
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_평면도형",
+      "type": "contains",
+      "weight": 6
+    },
+    {
+      "source": "domain_mathematics",
+      "target": "math_topic_확률",
+      "type": "contains",
+      "weight": 31
+    }
+  ]
+}

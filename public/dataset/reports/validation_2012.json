@@ -1,0 +1,20 @@
+{
+  "pdf": "2012平成24年第2回文综.pdf",
+  "pages": 28,
+  "questions": 32,
+  "tables": 28,
+  "graphs": 0,
+  "maps": 0,
+  "diagrams": 0,
+  "timelines": 0,
+  "confidence_average": 0.8589,
+  "confidence_min": 0.6131,
+  "confidence_max": 0.9157,
+  "low_confidence_count": 4,
+  "validation": "PASS",
+  "warnings": [
+    "4 questions have low confidence"
+  ],
+  "errors": [],
+  "timestamp": "2026-06-01T23:45:15.236936"
+}

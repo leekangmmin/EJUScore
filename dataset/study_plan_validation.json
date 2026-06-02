@@ -1,0 +1,100 @@
+{
+  "audit": "Study Coach",
+  "study_plan_version": "2.0.0",
+  "weakness_profile_version": "1.0.0",
+  "generated_at": "2026-06-02T05:31:15.551437",
+  "synthetic_students": {
+    "Student_A": {
+      "student": "Kim Minho",
+      "analysis": {
+        "weak_domains": [
+          "history",
+          "geography"
+        ],
+        "strong_domains": [
+          "economy",
+          "politics"
+        ],
+        "week_topics_cover_high_frequency": 5,
+        "prerequisite_chains_present": true,
+        "has_score_improvement_path": true,
+        "has_pass_probability": true,
+        "total_week_topics": 12
+      },
+      "reasonableness_score": 100,
+      "recommendations": [
+        "기후·케펜구분 coverage: GOOD",
+        "세계대전 coverage: GOOD"
+      ]
+    },
+    "Student_B": {
+      "student": "Tanaka Yuki",
+      "analysis": {
+        "weak_domains": [
+          "economy",
+          "society"
+        ],
+        "strong_domains": [
+          "history",
+          "geography"
+        ],
+        "week_topics_cover_high_frequency": 5,
+        "prerequisite_chains_present": true,
+        "has_score_improvement_path": true,
+        "has_pass_probability": true,
+        "total_week_topics": 12
+      },
+      "reasonableness_score": 100,
+      "recommendations": [
+        "환율·국제수지 coverage: GOOD",
+        "금융·통화정책 coverage: GOOD"
+      ]
+    },
+    "Student_C": {
+      "student": "Lee Jisoo",
+      "analysis": {
+        "weak_domains": [
+          "economy",
+          "politics",
+          "history",
+          "geography",
+          "society"
+        ],
+        "strong_domains": [],
+        "week_topics_cover_high_frequency": 5,
+        "prerequisite_chains_present": true,
+        "has_score_improvement_path": true,
+        "has_pass_probability": true,
+        "total_week_topics": 12
+      },
+      "reasonableness_score": 100,
+      "recommendations": [
+        "Broad topic coverage suitable for all-level weakness: GOOD"
+      ]
+    }
+  },
+  "checks_performed": 3,
+  "issues_found": 1,
+  "issues": [
+    {
+      "check": "weakness_profile_issues",
+      "severity": "MEDIUM",
+      "count": 1,
+      "details": [
+        {
+          "tier": "tier_2_core",
+          "duplicates": [
+            "통치기구"
+          ]
+        }
+      ]
+    }
+  ],
+  "score": 95,
+  "deductions": [
+    {
+      "issue": "weakness_profile_issues",
+      "deduction": 5
+    }
+  ]
+}

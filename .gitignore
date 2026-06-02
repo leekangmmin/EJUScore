@@ -22,3 +22,19 @@ EJUScore/**/*.xccheckout
 .env.local
 # Old nested project
 모의고사 점수/
+
+# Caches / logs / build output (not source)
+__pycache__/
+*.pyc
+.pytest_cache/
+coverage/
+*.log
+release/
+main.js.old
+
+# Tooling dirs
+.claude/
+.codewhale/
+
+# Large OCR model binaries (download separately; too big for git)
+*.traineddata

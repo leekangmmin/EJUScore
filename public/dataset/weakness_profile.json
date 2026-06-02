@@ -1,0 +1,202 @@
+{
+  "id": "weakness_profile_template",
+  "generated_at": "2026-06-02T05:31:15.520753",
+  "version": "1.0.0",
+  "based_on": {
+    "knowledge_graph": "knowledge_graph_v3.json",
+    "trend_analysis": "trend_analysis_v2.json",
+    "data_range": "2002-2025"
+  },
+  "domain_structure": {
+    "economy": {
+      "label": "경제",
+      "topics": [
+        "수요·공급과 시장균형",
+        "GDP·국민소득",
+        "환율·국제수지",
+        "금융·통화정책",
+        "재정·조세정책",
+        "국제무역",
+        "고용·노동",
+        "경제성장·경기변동",
+        "소득분배·지니계수",
+        "일본경제사"
+      ],
+      "prerequisite_order": [
+        "수요·공급과 시장균형",
+        "GDP·국민소득",
+        "금융·통화정책",
+        "재정·조세정책",
+        "국제무역",
+        "환율·국제수지",
+        "고용·노동",
+        "경제성장·경기변동",
+        "소득분배·지니계수",
+        "일본경제사"
+      ]
+    },
+    "politics": {
+      "label": "정치",
+      "topics": [
+        "헌법·기본권",
+        "통치기구",
+        "선거·정당",
+        "국제정치·국제기구",
+        "지방자치",
+        "사법·재판",
+        "정치사상",
+        "안전보장·방위"
+      ],
+      "prerequisite_order": [
+        "정치사상",
+        "헌법·기본권",
+        "통치기구",
+        "선거·정당",
+        "사법·재판",
+        "지방자치",
+        "국제정치·국제기구",
+        "안전보장·방위"
+      ]
+    },
+    "history": {
+      "label": "역사",
+      "topics": [
+        "시민혁명",
+        "산업혁명·자본주의",
+        "제국주의·식민지",
+        "세계대전",
+        "냉전",
+        "일본근대사",
+        "전후세계질서",
+        "세계화·지역통합"
+      ],
+      "prerequisite_order": [
+        "시민혁명",
+        "산업혁명·자본주의",
+        "제국주의·식민지",
+        "세계대전",
+        "냉전",
+        "전후세계질서",
+        "일본근대사",
+        "세계화·지역통합"
+      ]
+    },
+    "geography": {
+      "label": "지리",
+      "topics": [
+        "기후·케펜구분",
+        "지형·판구조",
+        "인구·도시화",
+        "자원·농업",
+        "지도·GIS",
+        "환경·생태",
+        "산업·교통"
+      ],
+      "prerequisite_order": [
+        "지도·GIS",
+        "지형·판구조",
+        "기후·케펜구분",
+        "인구·도시화",
+        "자원·농업",
+        "산업·교통",
+        "환경·생태"
+      ]
+    },
+    "society": {
+      "label": "사회",
+      "topics": [
+        "환경문제",
+        "사회보장·복지",
+        "저출산·고령화",
+        "정보화사회",
+        "젠더·평등",
+        "다문화사회",
+        "윤리·현대사회"
+      ],
+      "prerequisite_order": [
+        "환경문제",
+        "저출산·고령화",
+        "사회보장·복지",
+        "정보화사회",
+        "젠더·평등",
+        "다문화사회",
+        "윤리·현대사회"
+      ]
+    }
+  },
+  "weakness_detection_framework": {
+    "method": "Prerequisite Chain Analysis",
+    "description": "Identifies weak topics by analyzing wrong answers and flagging all prerequisite topics",
+    "scoring": {
+      "correct_ratio": "Ratio of correct answers to total questions in topic (0-1)",
+      "mastery_level": "0.0 (no knowledge) to 1.0 (complete mastery)",
+      "risk_score": "Based on topic importance in exam (higher = more dangerous)",
+      "trend_risk": "How risky this weakness is given recent exam trends"
+    }
+  },
+  "example_user_weakness": {
+    "scenario": "User scored 60% on economy domain, 0/4 on GDP questions",
+    "analysis": {
+      "root_domain": "economy",
+      "critical_weakness": "GDP·국민소득",
+      "affected_downstream": [
+        "경제성장·경기변동 (prerequisite: GDP)",
+        "환율·국제수지 (related to national income)"
+      ],
+      "concept_gaps": [
+        "GDP 정의와 구성요소",
+        "명목GDP와 실질GDP 차이",
+        "3면등가의 법칙",
+        "GNP/GNI와 GDP 비교"
+      ],
+      "severity": "HIGH",
+      "recommended_priority": 1
+    }
+  },
+  "topic_analysis_framework": {
+    "tier_1_foundation": [
+      "수요·공급과 시장균형",
+      "헌법·기본권",
+      "정치사상",
+      "시민혁명",
+      "지도·GIS",
+      "기후·케펜구분",
+      "환경문제"
+    ],
+    "tier_2_core": [
+      "GDP·국민소득",
+      "통치기구",
+      "통치기구",
+      "산업혁명·자본주의",
+      "지형·판구조",
+      "저출산·고령화"
+    ],
+    "tier_3_advanced": [
+      "금융·통화정책",
+      "국제정치·국제기구",
+      "세계대전",
+      "인구·도시화",
+      "사회보장·복지"
+    ],
+    "tier_4_specialized": [
+      "환율·국제수지",
+      "사법·재판",
+      "냉전",
+      "자원·농업",
+      "정보화사회"
+    ]
+  },
+  "trend_based_risk_factors": {
+    "method": "Topics with high recent frequency + consecutive appearance = higher risk if weak",
+    "high_risk_topics": [
+      "기후·케펜구분",
+      "시민혁명",
+      "통치기구",
+      "환율·국제수지",
+      "금융·통화정책"
+    ]
+  },
+  "trend_alignment": {
+    "growing_weakness_risk": []
+  }
+}

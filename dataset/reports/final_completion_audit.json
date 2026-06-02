@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-06-02T07:37:36.618340",
+  "total_questions": 1310,
+  "total_math_questions": 641,
+  "domain_classification_rate": 99.8,
+  "topic_classification_rate": 98.2,
+  "total_topics_tracked": 35,
+  "untopicized_count": 23,
+  "trend_years": 24,
+  "trend_questions": 1310,
+  "prediction_count": 175,
+  "kg_nodes": 86,
+  "kg_edges": 81,
+  "math_topics": 16
+}

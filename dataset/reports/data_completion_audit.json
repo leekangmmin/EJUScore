@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-06-02T07:31:14.538509",
+  "pdf_count_comprehensive": 38,
+  "pdf_count_math": 38,
+  "json_count_comprehensive": 21,
+  "json_count_math": 33,
+  "total_questions": 2110,
+  "comprehensive_questions": 1448,
+  "math_questions": 662,
+  "domain_classified": 1154,
+  "domain_classification_rate": 79.7,
+  "topic_classified": 1059,
+  "topic_classification_rate": 73.1,
+  "total_topics": 616,
+  "untopicized_count": 389,
+  "trend_years": 24,
+  "trend_questions": 1448,
+  "prediction_years": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "knowledge_graph_nodes": 659,
+  "knowledge_graph_edges": 727,
+  "math_topics": 17
+}

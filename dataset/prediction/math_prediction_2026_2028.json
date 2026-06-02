@@ -1,0 +1,490 @@
+{
+  "prediction_name": "EJU Mathematics Prediction 2026-2028",
+  "subject": "mathematics",
+  "generated_at": "2026-06-02T07:01:32.489864",
+  "yearly": {
+    "2026": [
+      {
+        "topic": "이차함수",
+        "prediction_probability_pct": 86,
+        "combined_score": 86,
+        "rank": 1
+      },
+      {
+        "topic": "미분",
+        "prediction_probability_pct": 86,
+        "combined_score": 86,
+        "rank": 2
+      },
+      {
+        "topic": "수열",
+        "prediction_probability_pct": 86,
+        "combined_score": 86,
+        "rank": 3
+      },
+      {
+        "topic": "집합",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 4
+      },
+      {
+        "topic": "삼각비",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 5
+      },
+      {
+        "topic": "도형",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 6
+      },
+      {
+        "topic": "경우의 수",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 7
+      },
+      {
+        "topic": "확률",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 8
+      },
+      {
+        "topic": "적분",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 9
+      },
+      {
+        "topic": "벡터",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 10
+      },
+      {
+        "topic": "지수",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 11
+      },
+      {
+        "topic": "로그",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 12
+      }
+    ],
+    "2027": [
+      {
+        "topic": "이차함수",
+        "prediction_probability_pct": 86,
+        "combined_score": 86,
+        "rank": 1
+      },
+      {
+        "topic": "미분",
+        "prediction_probability_pct": 86,
+        "combined_score": 86,
+        "rank": 2
+      },
+      {
+        "topic": "수열",
+        "prediction_probability_pct": 86,
+        "combined_score": 86,
+        "rank": 3
+      },
+      {
+        "topic": "집합",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 4
+      },
+      {
+        "topic": "삼각비",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 5
+      },
+      {
+        "topic": "도형",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 6
+      },
+      {
+        "topic": "경우의 수",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 7
+      },
+      {
+        "topic": "확률",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 8
+      },
+      {
+        "topic": "적분",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 9
+      },
+      {
+        "topic": "벡터",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 10
+      },
+      {
+        "topic": "지수",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 11
+      },
+      {
+        "topic": "로그",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 12
+      }
+    ],
+    "2028": [
+      {
+        "topic": "이차함수",
+        "prediction_probability_pct": 86,
+        "combined_score": 86,
+        "rank": 1
+      },
+      {
+        "topic": "미분",
+        "prediction_probability_pct": 86,
+        "combined_score": 86,
+        "rank": 2
+      },
+      {
+        "topic": "수열",
+        "prediction_probability_pct": 86,
+        "combined_score": 86,
+        "rank": 3
+      },
+      {
+        "topic": "집합",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 4
+      },
+      {
+        "topic": "삼각비",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 5
+      },
+      {
+        "topic": "도형",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 6
+      },
+      {
+        "topic": "경우의 수",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 7
+      },
+      {
+        "topic": "확률",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 8
+      },
+      {
+        "topic": "적분",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 9
+      },
+      {
+        "topic": "벡터",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 10
+      },
+      {
+        "topic": "지수",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 11
+      },
+      {
+        "topic": "로그",
+        "prediction_probability_pct": 83,
+        "combined_score": 83,
+        "rank": 12
+      }
+    ]
+  },
+  "top_50_combined": [
+    {
+      "topic": "이차함수",
+      "prediction_probability_pct": 86,
+      "combined_score": 86,
+      "rank": 1,
+      "target_year": 2026
+    },
+    {
+      "topic": "미분",
+      "prediction_probability_pct": 86,
+      "combined_score": 86,
+      "rank": 2,
+      "target_year": 2026
+    },
+    {
+      "topic": "수열",
+      "prediction_probability_pct": 86,
+      "combined_score": 86,
+      "rank": 3,
+      "target_year": 2026
+    },
+    {
+      "topic": "이차함수",
+      "prediction_probability_pct": 86,
+      "combined_score": 86,
+      "rank": 1,
+      "target_year": 2027
+    },
+    {
+      "topic": "미분",
+      "prediction_probability_pct": 86,
+      "combined_score": 86,
+      "rank": 2,
+      "target_year": 2027
+    },
+    {
+      "topic": "수열",
+      "prediction_probability_pct": 86,
+      "combined_score": 86,
+      "rank": 3,
+      "target_year": 2027
+    },
+    {
+      "topic": "이차함수",
+      "prediction_probability_pct": 86,
+      "combined_score": 86,
+      "rank": 1,
+      "target_year": 2028
+    },
+    {
+      "topic": "미분",
+      "prediction_probability_pct": 86,
+      "combined_score": 86,
+      "rank": 2,
+      "target_year": 2028
+    },
+    {
+      "topic": "수열",
+      "prediction_probability_pct": 86,
+      "combined_score": 86,
+      "rank": 3,
+      "target_year": 2028
+    },
+    {
+      "topic": "집합",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 4,
+      "target_year": 2026
+    },
+    {
+      "topic": "삼각비",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 5,
+      "target_year": 2026
+    },
+    {
+      "topic": "도형",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 6,
+      "target_year": 2026
+    },
+    {
+      "topic": "경우의 수",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 7,
+      "target_year": 2026
+    },
+    {
+      "topic": "확률",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 8,
+      "target_year": 2026
+    },
+    {
+      "topic": "적분",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 9,
+      "target_year": 2026
+    },
+    {
+      "topic": "벡터",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 10,
+      "target_year": 2026
+    },
+    {
+      "topic": "지수",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 11,
+      "target_year": 2026
+    },
+    {
+      "topic": "로그",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 12,
+      "target_year": 2026
+    },
+    {
+      "topic": "집합",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 4,
+      "target_year": 2027
+    },
+    {
+      "topic": "삼각비",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 5,
+      "target_year": 2027
+    },
+    {
+      "topic": "도형",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 6,
+      "target_year": 2027
+    },
+    {
+      "topic": "경우의 수",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 7,
+      "target_year": 2027
+    },
+    {
+      "topic": "확률",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 8,
+      "target_year": 2027
+    },
+    {
+      "topic": "적분",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 9,
+      "target_year": 2027
+    },
+    {
+      "topic": "벡터",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 10,
+      "target_year": 2027
+    },
+    {
+      "topic": "지수",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 11,
+      "target_year": 2027
+    },
+    {
+      "topic": "로그",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 12,
+      "target_year": 2027
+    },
+    {
+      "topic": "집합",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 4,
+      "target_year": 2028
+    },
+    {
+      "topic": "삼각비",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 5,
+      "target_year": 2028
+    },
+    {
+      "topic": "도형",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 6,
+      "target_year": 2028
+    },
+    {
+      "topic": "경우의 수",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 7,
+      "target_year": 2028
+    },
+    {
+      "topic": "확률",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 8,
+      "target_year": 2028
+    },
+    {
+      "topic": "적분",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 9,
+      "target_year": 2028
+    },
+    {
+      "topic": "벡터",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 10,
+      "target_year": 2028
+    },
+    {
+      "topic": "지수",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 11,
+      "target_year": 2028
+    },
+    {
+      "topic": "로그",
+      "prediction_probability_pct": 83,
+      "combined_score": 83,
+      "rank": 12,
+      "target_year": 2028
+    }
+  ],
+  "insights": [
+    "2026 TOP 1: 이차함수 (86%)",
+    "이차함수: 매년 출제되는 핵심 영역",
+    "미분·적분: Course 2 변별력 문항 지속 출제",
+    "확률: 최근 출제 빈도 증가",
+    "수열: 기본 문항에서 점화식 응용으로 발전"
+  ]
+}

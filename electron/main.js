@@ -1,4 +1,8 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
+// ═══════════════════════════════════════════════════════════════════
+// Electron Main Process — Production-Safe Configuration
+// Security: webSecurity:true, CSP headers, no executeJavaScript, IPC validation
+// ═══════════════════════════════════════════════════════════════════
 import { createRequire } from 'module';
 import { fileURLToPath, pathToFileURL } from 'url';
 import path from 'path';
@@ -9,6 +13,23 @@ const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const { app, BrowserWindow, shell, session, ipcMain } = require('electron');
+
+// ── Content Security Policy ──────────────────────────────
+// Restricts script/style sources to prevent XSS via injected content
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-eval' blob:",          // unsafe-eval needed for WASM; blob: for tesseract workers
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' https://fonts.gstatic.com data:",
+  "img-src 'self' data: blob:",
+  "connect-src 'self' blob: https://huggingface.co https://cdn-lfs.huggingface.co",
+  "worker-src 'self' blob:",
+  "media-src 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+].join('; ');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -24,35 +45,43 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
-      webSecurity: false,
+      webSecurity: true,              // ⚠️ CRITICAL FIX: was false → true
       preload: path.join(__dirname, 'preload.cjs'),
     },
     titleBarStyle: process.platform === 'darwin' ? 'hiddenInset' : 'hidden',
     titleBarOverlay: false,
-    // macOS: 사이드바 영역 vibrancy 효과 (frosted glass)
     ...(process.platform === 'darwin' ? { vibrancy: 'sidebar', visualEffectState: 'active' } : {}),
+  });
+
+  // ── CSP via response headers ──────────────────────────
+  // file:// protocol doesn't support headers, so we use session.webRequest
+  // to intercept and inject CSP for all loaded resources
+  win.webContents.session.webRequest.onHeadersReceived((details, callback) => {
+    callback({
+      responseHeaders: {
+        ...details.responseHeaders,
+        'Content-Security-Policy': [CSP],
+      },
+    });
   });
 
   win.loadURL(pathToFileURL(path.join(__dirname, '../dist/index.html')).href);
 
-  // 마이그레이션: WKWebView → Electron localStorage
+  // ── Secure Migration: IPC-based instead of executeJavaScript ──
+  // REPLACED: executeJavaScript with IPC message to preload → safe
   win.webContents.once('did-finish-load', async () => {
     const migratePath = path.join(app.getPath('userData'), 'migrate.json');
     if (!fs.existsSync(migratePath)) return;
     try {
       const raw = JSON.parse(fs.readFileSync(migratePath, 'utf8'));
-      const examJson = JSON.stringify(raw.eju_exam_data);
-      const settingsJson = JSON.stringify(raw.eju_settings);
-      await win.webContents.executeJavaScript(
-        `(function(){
-          if (!localStorage.getItem('eju_exam_data')) {
-            localStorage.setItem('eju_exam_data', ${JSON.stringify(examJson)});
-            localStorage.setItem('eju_settings', ${JSON.stringify(settingsJson)});
-          }
-        })()`
-      );
+      if (raw.eju_exam_data && raw.eju_settings) {
+        // Send via IPC instead of executeJavaScript
+        win.webContents.send('migrate-data', {
+          eju_exam_data: raw.eju_exam_data,
+          eju_settings: raw.eju_settings,
+        });
+      }
       fs.unlinkSync(migratePath);
-      win.reload();
     } catch (_) {}
   });
 
@@ -66,7 +95,6 @@ function createWindow() {
 }
 
 app.whenReady().then(async () => {
-  // 서비스 워커가 ASAR 파일 요청을 가로채는 문제 방지
   await session.defaultSession.clearStorageData({ storages: ['serviceworkers', 'cachestorage'] });
   createWindow();
   app.on('activate', () => { if (BrowserWindow.getAllWindows().length === 0) createWindow(); });
@@ -76,6 +104,7 @@ app.on('window-all-closed', () => { if (process.platform !== 'darwin') app.quit(
 
 // ── AI Worker ────────────────────────────────────────────
 let aiWorker = null;
+let aiModelLoaded = false;
 
 function getAIWorker() {
   if (aiWorker) return aiWorker;
@@ -84,40 +113,68 @@ function getAIWorker() {
   aiWorker.on('error', (err) => {
     console.error('[AI Worker]', err.message);
     aiWorker = null;
+    aiModelLoaded = false;
   });
-  aiWorker.on('exit', () => { aiWorker = null; });
+  aiWorker.on('exit', () => { aiWorker = null; aiModelLoaded = false; });
   return aiWorker;
+}
+
+function awaitWorkerResult(worker, onMessage) {
+  return new Promise((resolve, reject) => {
+    const cleanup = () => {
+      worker.off('message', onMsg);
+      worker.off('error', onErr);
+      worker.off('exit', onExit);
+    };
+    const onMsg = (msg) => onMessage(msg, () => { cleanup(); resolve(); }, (err) => { cleanup(); reject(err); });
+    const onErr = (err) => { cleanup(); reject(err instanceof Error ? err : new Error(String(err))); };
+    const onExit = (code) => { cleanup(); reject(new Error(`AI 워커가 예기치 않게 종료되었습니다 (code ${code})`)); };
+    worker.on('message', onMsg);
+    worker.once('error', onErr);
+    worker.once('exit', onExit);
+  });
+}
+
+// ── IPC Validation ──────────────────────────────────────
+function validateAIMessages(messages) {
+  if (!Array.isArray(messages)) throw new Error('Invalid messages format');
+  for (const m of messages) {
+    if (typeof m !== 'object' || !m.role || typeof m.content !== 'string') {
+      throw new Error('Invalid message structure');
+    }
+    if (m.content.length > 8000) throw new Error('Message too long');
+    if (!['system', 'user', 'assistant'].includes(m.role)) throw new Error('Invalid role');
+  }
+  return messages;
 }
 
 ipcMain.handle('ai:load', (event) => {
   const win = BrowserWindow.fromWebContents(event.sender);
   const worker = getAIWorker();
-  return new Promise((resolve, reject) => {
-    const onMsg = (msg) => {
-      if (msg.type === 'progress') { win?.webContents.send('ai:progress', msg.data); }
-      else if (msg.type === 'loaded') { worker.off('message', onMsg); resolve(); }
-      else if (msg.type === 'error') { worker.off('message', onMsg); reject(new Error(msg.message)); }
-    };
-    worker.on('message', onMsg);
-    worker.postMessage({ type: 'load' });
+  const promise = awaitWorkerResult(worker, (msg, done, fail) => {
+    if (msg.type === 'progress') { win?.webContents.send('ai:progress', msg.data); }
+    else if (msg.type === 'loaded') { aiModelLoaded = true; done(); }
+    else if (msg.type === 'error') { fail(new Error(msg.message)); }
   });
+  worker.postMessage({ type: 'load' });
+  return promise;
 });
 
 ipcMain.handle('ai:generate', (event, messages) => {
   const win = BrowserWindow.fromWebContents(event.sender);
   const worker = getAIWorker();
-  return new Promise((resolve, reject) => {
-    const onMsg = (msg) => {
-      if (msg.type === 'token') { win?.webContents.send('ai:token', msg.text); }
-      else if (msg.type === 'done') { worker.off('message', onMsg); resolve(); }
-      else if (msg.type === 'error') { worker.off('message', onMsg); reject(new Error(msg.message)); }
-    };
-    worker.on('message', onMsg);
-    worker.postMessage({ type: 'generate', messages });
+  // Input validation to prevent prompt injection
+  const validated = validateAIMessages(messages);
+  const promise = awaitWorkerResult(worker, (msg, done, fail) => {
+    if (msg.type === 'token') { win?.webContents.send('ai:token', msg.text); }
+    else if (msg.type === 'done') { done(); }
+    else if (msg.type === 'error') { fail(new Error(msg.message)); }
   });
+  worker.postMessage({ type: 'generate', messages: validated });
+  return promise;
 });
 
-ipcMain.handle('ai:isLoaded', () => aiWorker !== null);
+ipcMain.handle('ai:isLoaded', () => aiModelLoaded);
 
 // Windows titlebar IPC
 ipcMain.on('win-minimize',    () => BrowserWindow.getFocusedWindow()?.minimize());

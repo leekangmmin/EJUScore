@@ -1,0 +1,46 @@
+{
+  "total_exams": 16,
+  "total_pages": 447,
+  "total_questions": 509,
+  "total_tables": 0,
+  "total_diagrams": 0,
+  "total_graphs": 0,
+  "total_maps": 0,
+  "average_questions_per_exam": 31.8,
+  "average_confidence": 0.8004,
+  "year_coverage": [
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009
+  ],
+  "domain_distribution": {
+    "unknown": 266,
+    "geography": 34,
+    "politics": 66,
+    "economy": 89,
+    "history": 32,
+    "society": 22
+  },
+  "difficulty_distribution": {
+    "2": 206,
+    "4": 199,
+    "3": 104
+  },
+  "question_type_distribution": {
+    "multiple_choice": 283,
+    "economic_analysis": 57,
+    "social_analysis": 28,
+    "graph_analysis": 20,
+    "historical_analysis": 33,
+    "probability_statistics": 6,
+    "political_analysis": 35,
+    "geographical_analysis": 26,
+    "geometry": 4,
+    "data_interpretation": 17
+  }
+}

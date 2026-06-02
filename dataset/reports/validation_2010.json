@@ -1,0 +1,20 @@
+{
+  "pdf": "2010平成22年第2回文数.pdf",
+  "pages": 15,
+  "questions": 15,
+  "tables": 15,
+  "graphs": 0,
+  "maps": 0,
+  "diagrams": 0,
+  "timelines": 0,
+  "confidence_average": 0.792,
+  "confidence_min": 0.5836,
+  "confidence_max": 0.9062,
+  "low_confidence_count": 7,
+  "validation": "FAIL",
+  "warnings": [],
+  "errors": [
+    "Over 30% of questions have low confidence"
+  ],
+  "timestamp": "2026-06-02T08:01:52.446423"
+}

@@ -1,0 +1,22 @@
+{
+  "pdf": "2022令和4年第2回文数.pdf",
+  "pages": 9,
+  "questions": 9,
+  "tables": 9,
+  "graphs": 0,
+  "maps": 0,
+  "diagrams": 0,
+  "timelines": 0,
+  "confidence_average": 0.791,
+  "confidence_min": 0.689,
+  "confidence_max": 0.8957,
+  "low_confidence_count": 5,
+  "validation": "FAIL",
+  "warnings": [
+    "Low question count: 9 (expected 30-40+)"
+  ],
+  "errors": [
+    "Over 30% of questions have low confidence"
+  ],
+  "timestamp": "2026-06-02T08:01:52.453105"
+}

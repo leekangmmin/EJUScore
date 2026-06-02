@@ -1,0 +1,135 @@
+{
+  "generated_at": "2026-06-02T07:37:36.611669",
+  "total_questions": 641,
+  "total_topics": 16,
+  "topics": [
+    {
+      "topic": "",
+      "total_count": 292,
+      "years_count": 12,
+      "recent_5yr": 52,
+      "before_5yr": 240,
+      "growth_rate": -78.3
+    },
+    {
+      "topic": "삼각비",
+      "total_count": 43,
+      "years_count": 10,
+      "recent_5yr": 10,
+      "before_5yr": 33,
+      "growth_rate": -69.7
+    },
+    {
+      "topic": "집합",
+      "total_count": 42,
+      "years_count": 10,
+      "recent_5yr": 9,
+      "before_5yr": 33,
+      "growth_rate": -72.7
+    },
+    {
+      "topic": "도형",
+      "total_count": 41,
+      "years_count": 10,
+      "recent_5yr": 12,
+      "before_5yr": 29,
+      "growth_rate": -58.6
+    },
+    {
+      "topic": "경우의 수",
+      "total_count": 35,
+      "years_count": 10,
+      "recent_5yr": 8,
+      "before_5yr": 27,
+      "growth_rate": -70.4
+    },
+    {
+      "topic": "확률",
+      "total_count": 31,
+      "years_count": 11,
+      "recent_5yr": 6,
+      "before_5yr": 25,
+      "growth_rate": -76.0
+    },
+    {
+      "topic": "이차함수",
+      "total_count": 30,
+      "years_count": 10,
+      "recent_5yr": 8,
+      "before_5yr": 22,
+      "growth_rate": -63.6
+    },
+    {
+      "topic": "미분",
+      "total_count": 18,
+      "years_count": 10,
+      "recent_5yr": 5,
+      "before_5yr": 13,
+      "growth_rate": -61.5
+    },
+    {
+      "topic": "수열",
+      "total_count": 18,
+      "years_count": 10,
+      "recent_5yr": 5,
+      "before_5yr": 13,
+      "growth_rate": -61.5
+    },
+    {
+      "topic": "적분",
+      "total_count": 17,
+      "years_count": 10,
+      "recent_5yr": 4,
+      "before_5yr": 13,
+      "growth_rate": -69.2
+    },
+    {
+      "topic": "벡터",
+      "total_count": 17,
+      "years_count": 10,
+      "recent_5yr": 4,
+      "before_5yr": 13,
+      "growth_rate": -69.2
+    },
+    {
+      "topic": "지수",
+      "total_count": 17,
+      "years_count": 10,
+      "recent_5yr": 4,
+      "before_5yr": 13,
+      "growth_rate": -69.2
+    },
+    {
+      "topic": "로그",
+      "total_count": 17,
+      "years_count": 10,
+      "recent_5yr": 4,
+      "before_5yr": 13,
+      "growth_rate": -69.2
+    },
+    {
+      "topic": "방정식·부등식",
+      "total_count": 14,
+      "years_count": 9,
+      "recent_5yr": 1,
+      "before_5yr": 13,
+      "growth_rate": -92.3
+    },
+    {
+      "topic": "평면도형",
+      "total_count": 6,
+      "years_count": 4,
+      "recent_5yr": 1,
+      "before_5yr": 5,
+      "growth_rate": -80.0
+    },
+    {
+      "topic": "좌표기하",
+      "total_count": 3,
+      "years_count": 2,
+      "recent_5yr": 0,
+      "before_5yr": 3,
+      "growth_rate": -100.0
+    }
+  ]
+}

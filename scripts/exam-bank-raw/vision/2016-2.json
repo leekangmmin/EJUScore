@@ -1,0 +1,314 @@
+{
+  "name": "2016平成28年第2回文综",
+  "year": 2016,
+  "round": 2,
+  "source": "vision",
+  "total": 38,
+  "questions": [
+    {
+      "q": 1,
+      "daimon": 1,
+      "subject": "geography",
+      "topic": "지도·GIS",
+      "material": "map",
+      "region": "중동·서아시아"
+    },
+    {
+      "q": 2,
+      "daimon": 1,
+      "subject": "history",
+      "topic": "시민혁명",
+      "material": "timeline",
+      "era": "제1차세계대전",
+      "region": "동아시아"
+    },
+    {
+      "q": 3,
+      "daimon": 1,
+      "subject": "economy",
+      "topic": "GDP·국민소득",
+      "material": "table",
+      "sub": "무역·국제수지"
+    },
+    {
+      "q": 4,
+      "daimon": 1,
+      "subject": "politics",
+      "topic": "국제정치·국제기구",
+      "material": "passage",
+      "sub": "국제정치·기구"
+    },
+    {
+      "q": 5,
+      "daimon": 2,
+      "subject": "politics",
+      "topic": "통치기구",
+      "material": "passage",
+      "sub": "통치기구"
+    },
+    {
+      "q": 6,
+      "daimon": 2,
+      "subject": "geography",
+      "topic": "인구·도시화",
+      "material": "passage"
+    },
+    {
+      "q": 7,
+      "daimon": 2,
+      "subject": "economy",
+      "topic": "수요·공급과 시장균형",
+      "material": "passage",
+      "sub": "무역·국제수지"
+    },
+    {
+      "q": 8,
+      "daimon": 2,
+      "subject": "history",
+      "topic": "근대일본",
+      "material": "passage",
+      "era": "근대일본",
+      "region": "동아시아"
+    },
+    {
+      "q": 9,
+      "daimon": 3,
+      "subject": "economy",
+      "topic": "수요·공급과 시장균형",
+      "material": "graph",
+      "sub": "시장·가격"
+    },
+    {
+      "q": 10,
+      "daimon": 4,
+      "subject": "economy",
+      "topic": "GDP·국민소득",
+      "material": "passage",
+      "sub": "경기·성장"
+    },
+    {
+      "q": 11,
+      "daimon": 5,
+      "subject": "economy",
+      "topic": "수요·공급과 시장균형",
+      "material": "passage",
+      "sub": "경기·성장"
+    },
+    {
+      "q": 12,
+      "daimon": 6,
+      "subject": "economy",
+      "topic": "수요·공급과 시장균형",
+      "material": "graph",
+      "sub": "재정·조세"
+    },
+    {
+      "q": 13,
+      "daimon": 7,
+      "subject": "economy",
+      "topic": "수요·공급과 시장균형",
+      "material": "passage",
+      "sub": "기업·노동"
+    },
+    {
+      "q": 14,
+      "daimon": 8,
+      "subject": "economy",
+      "topic": "일본경제사",
+      "material": "passage",
+      "sub": "무역·국제수지"
+    },
+    {
+      "q": 15,
+      "daimon": 9,
+      "subject": "economy",
+      "topic": "수요·공급과 시장균형",
+      "material": "passage",
+      "sub": "무역·국제수지"
+    },
+    {
+      "q": 16,
+      "daimon": 10,
+      "subject": "economy",
+      "topic": "수요·공급과 시장균형",
+      "material": "table",
+      "sub": "무역·국제수지"
+    },
+    {
+      "q": 17,
+      "daimon": 11,
+      "subject": "economy",
+      "topic": "수요·공급과 시장균형",
+      "material": "passage",
+      "sub": "무역·국제수지"
+    },
+    {
+      "q": 18,
+      "daimon": 12,
+      "subject": "economy",
+      "topic": "환경문제",
+      "material": "passage",
+      "sub": "기업·노동"
+    },
+    {
+      "q": 19,
+      "daimon": 13,
+      "subject": "geography",
+      "topic": "근대일본",
+      "material": "table"
+    },
+    {
+      "q": 20,
+      "daimon": 14,
+      "subject": "geography",
+      "topic": "지도·GIS",
+      "material": "map"
+    },
+    {
+      "q": 21,
+      "daimon": 15,
+      "subject": "geography",
+      "topic": "기후·케펜구분",
+      "material": "table"
+    },
+    {
+      "q": 22,
+      "daimon": 16,
+      "subject": "geography",
+      "topic": "지형·판구조",
+      "material": "map"
+    },
+    {
+      "q": 23,
+      "daimon": 17,
+      "subject": "geography",
+      "topic": "기후·케펜구분",
+      "material": "graph"
+    },
+    {
+      "q": 24,
+      "daimon": 18,
+      "subject": "geography",
+      "topic": "기후·케펜구분",
+      "material": "table"
+    },
+    {
+      "q": 25,
+      "daimon": 19,
+      "subject": "history",
+      "topic": "국제정치·국제기구",
+      "material": "passage",
+      "era": "제1차세계대전",
+      "region": "유럽"
+    },
+    {
+      "q": 26,
+      "daimon": 20,
+      "subject": "politics",
+      "topic": "통치기구",
+      "material": "passage",
+      "sub": "통치기구"
+    },
+    {
+      "q": 27,
+      "daimon": 21,
+      "subject": "politics",
+      "topic": "근대일본",
+      "material": "passage",
+      "sub": "통치기구"
+    },
+    {
+      "q": 28,
+      "daimon": 22,
+      "subject": "politics",
+      "topic": "근대일본",
+      "material": "passage",
+      "sub": "통치기구"
+    },
+    {
+      "q": 29,
+      "daimon": 23,
+      "subject": "politics",
+      "topic": "헌법·기본권",
+      "material": "passage",
+      "sub": "헌법·인권"
+    },
+    {
+      "q": 30,
+      "daimon": 24,
+      "subject": "politics",
+      "topic": "헌법·기본권",
+      "material": "passage",
+      "sub": "헌법·인권"
+    },
+    {
+      "q": 31,
+      "daimon": 25,
+      "subject": "politics",
+      "topic": "통치기구",
+      "material": "passage",
+      "sub": "사법·재판"
+    },
+    {
+      "q": 32,
+      "daimon": 26,
+      "subject": "history",
+      "topic": "국제정치·국제기구",
+      "material": "passage",
+      "era": "시민혁명",
+      "region": "유럽"
+    },
+    {
+      "q": 33,
+      "daimon": 27,
+      "subject": "society",
+      "topic": "환경문제",
+      "material": "timeline"
+    },
+    {
+      "q": 34,
+      "daimon": 28,
+      "subject": "history",
+      "topic": "세계대전",
+      "material": "passage",
+      "era": "산업혁명",
+      "region": "북아메리카"
+    },
+    {
+      "q": 35,
+      "daimon": 29,
+      "subject": "history",
+      "topic": "제국주의·식민지",
+      "material": "passage",
+      "era": "제국주의·식민지",
+      "region": "유럽"
+    },
+    {
+      "q": 36,
+      "daimon": 30,
+      "subject": "history",
+      "topic": "세계대전",
+      "material": "passage",
+      "era": "제1차세계대전",
+      "region": "유럽"
+    },
+    {
+      "q": 37,
+      "daimon": 31,
+      "subject": "history",
+      "topic": "세계대전",
+      "material": "timeline",
+      "era": "냉전",
+      "region": "유럽"
+    },
+    {
+      "q": 38,
+      "daimon": 32,
+      "subject": "history",
+      "topic": "냉전",
+      "material": "timeline",
+      "era": "탈냉전·현대",
+      "region": "동아시아"
+    }
+  ]
+}

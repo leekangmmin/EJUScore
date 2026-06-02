@@ -1,0 +1,12 @@
+{
+  "audit": "Trend Analysis",
+  "version": "v2",
+  "generated_at": "2026-06-02T05:32:21.192367",
+  "gold_standard_questions_used": 608,
+  "sample_size_verified": 100,
+  "checks_performed": 5,
+  "issues_found": 0,
+  "issues": [],
+  "score": 100,
+  "deductions": []
+}

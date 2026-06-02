@@ -5,43 +5,321 @@
   "source": "vision",
   "total": 38,
   "questions": [
-    { "q": 1,  "daimon": 1,  "subject": "history",   "topic": "그리스독립전쟁", "material": "passage", "era": "시민혁명", "region": "유럽" },
-    { "q": 2,  "daimon": 1,  "subject": "politics",  "topic": "EC 원가맹국(국제정치·기구)", "material": "passage", "sub": "국제정치·기구", "region": "유럽" },
-    { "q": 3,  "daimon": 1,  "subject": "economy",   "topic": "재정위기·긴축", "material": "passage", "sub": "재정·조세", "region": "유럽" },
-    { "q": 4,  "daimon": 1,  "subject": "geography", "topic": "기후(쾨펜·지중해성)", "material": "passage", "region": "유럽" },
-    { "q": 5,  "daimon": 2,  "subject": "economy",   "topic": "무역(수출 품목)", "material": "table", "sub": "무역·국제수지" },
-    { "q": 6,  "daimon": 2,  "subject": "history",   "topic": "막말 개국 무역", "material": "passage", "era": "근대일본", "region": "동아시아" },
-    { "q": 7,  "daimon": 2,  "subject": "geography", "topic": "위치(웨일스)", "material": "map", "region": "유럽" },
-    { "q": 8,  "daimon": 2,  "subject": "politics",  "topic": "국민투표(EU·영국)", "material": "passage", "sub": "국제정치·기구", "region": "유럽" },
-    { "q": 9,  "daimon": 3,  "subject": "economy",   "topic": "수요·공급(가격변동)", "material": "graph", "sub": "시장·가격" },
-    { "q": 10, "daimon": 4,  "subject": "economy",   "topic": "경제사상(뉴딜·케인즈)", "material": "passage", "sub": "경기·성장", "era": "제1차세계대전" },
-    { "q": 11, "daimon": 5,  "subject": "economy",   "topic": "자유무역의 이익", "material": "passage", "sub": "무역·국제수지" },
-    { "q": 12, "daimon": 6,  "subject": "economy",   "topic": "실질GDP 추이", "material": "graph", "sub": "경기·성장" },
-    { "q": 13, "daimon": 7,  "subject": "economy",   "topic": "금융(은행·통화공급)", "material": "passage", "sub": "금융·통화" },
-    { "q": 14, "daimon": 8,  "subject": "economy",   "topic": "재정(국채)", "material": "passage", "sub": "재정·조세" },
-    { "q": 15, "daimon": 9,  "subject": "economy",   "topic": "금융정책(물가·금리)", "material": "passage", "sub": "금융·통화" },
-    { "q": 16, "daimon": 10, "subject": "economy",   "topic": "환율 계산", "material": "passage", "sub": "금융·통화" },
-    { "q": 17, "daimon": 11, "subject": "economy",   "topic": "국제수지(다국적기업·소득수지)", "material": "passage", "sub": "무역·국제수지" },
-    { "q": 18, "daimon": 12, "subject": "economy",   "topic": "무역(GATT·WTO)", "material": "passage", "sub": "무역·국제수지" },
-    { "q": 19, "daimon": 13, "subject": "economy",   "topic": "노동법(고용균등)", "material": "passage", "sub": "기업·노동" },
-    { "q": 20, "daimon": 14, "subject": "geography", "topic": "시차·표준시", "material": "passage", "region": "북아메리카" },
-    { "q": 21, "daimon": 15, "subject": "geography", "topic": "기후(푄 현상)", "material": "map", "region": "유럽" },
-    { "q": 22, "daimon": 16, "subject": "geography", "topic": "일본지리(하천·지방)", "material": "passage", "region": "동아시아" },
-    { "q": 23, "daimon": 17, "subject": "geography", "topic": "농업(쌀 생산·수출)", "material": "table", "region": "동남아시아" },
-    { "q": 24, "daimon": 18, "subject": "geography", "topic": "인구(출산율)", "material": "graph" },
-    { "q": 25, "daimon": 19, "subject": "politics",  "topic": "통치기구(내각·행정권)", "material": "passage", "sub": "통치기구" },
-    { "q": 26, "daimon": 20, "subject": "politics",  "topic": "통치기구(의원내각제)", "material": "passage", "sub": "통치기구" },
-    { "q": 27, "daimon": 21, "subject": "history",   "topic": "다이쇼 데모크라시", "material": "passage", "era": "근대일본", "region": "동아시아" },
-    { "q": 28, "daimon": 22, "subject": "politics",  "topic": "통치기구(정치개혁·선거)", "material": "passage", "sub": "통치기구" },
-    { "q": 29, "daimon": 23, "subject": "politics",  "topic": "통치기구(일표의 격차)", "material": "passage", "sub": "통치기구" },
-    { "q": 30, "daimon": 24, "subject": "politics",  "topic": "헌법·인권(사회권)", "material": "passage", "sub": "헌법·인권" },
-    { "q": 31, "daimon": 25, "subject": "politics",  "topic": "지방자치", "material": "passage", "sub": "지방자치" },
-    { "q": 32, "daimon": 26, "subject": "politics",  "topic": "국제연합(일본 가입)", "material": "passage", "sub": "국제정치·기구" },
-    { "q": 33, "daimon": 27, "subject": "politics",  "topic": "EU·NATO(국제정치·기구)", "material": "passage", "sub": "국제정치·기구", "region": "유럽" },
-    { "q": 34, "daimon": 28, "subject": "history",   "topic": "라틴아메리카 독립(브라질)", "material": "passage", "era": "시민혁명", "region": "라틴아메리카" },
-    { "q": 35, "daimon": 29, "subject": "history",   "topic": "보어전쟁·남아프리카", "material": "passage", "era": "제국주의·식민지", "region": "아프리카" },
-    { "q": 36, "daimon": 30, "subject": "history",   "topic": "제1차대전 전후 민족국가", "material": "passage", "era": "제1차세계대전", "region": "유럽" },
-    { "q": 37, "daimon": 31, "subject": "history",   "topic": "제2차대전·냉전 연대순", "material": "timeline", "era": "냉전", "region": "유럽" },
-    { "q": 38, "daimon": 32, "subject": "history",   "topic": "일본 UN가입·일소공동선언", "material": "passage", "era": "탈냉전·현대", "region": "동아시아" }
+    {
+      "q": 1,
+      "daimon": 1,
+      "subject": "history",
+      "topic": "세계대전",
+      "material": "passage",
+      "era": "시민혁명",
+      "region": "유럽"
+    },
+    {
+      "q": 2,
+      "daimon": 1,
+      "subject": "politics",
+      "topic": "국제정치·국제기구",
+      "material": "passage",
+      "sub": "국제정치·기구",
+      "region": "유럽"
+    },
+    {
+      "q": 3,
+      "daimon": 1,
+      "subject": "economy",
+      "topic": "수요·공급과 시장균형",
+      "material": "passage",
+      "sub": "재정·조세",
+      "region": "유럽"
+    },
+    {
+      "q": 4,
+      "daimon": 1,
+      "subject": "geography",
+      "topic": "기후·케펜구분",
+      "material": "passage",
+      "region": "유럽"
+    },
+    {
+      "q": 5,
+      "daimon": 2,
+      "subject": "economy",
+      "topic": "국제무역",
+      "material": "table",
+      "sub": "무역·국제수지"
+    },
+    {
+      "q": 6,
+      "daimon": 2,
+      "subject": "history",
+      "topic": "국제무역",
+      "material": "passage",
+      "era": "근대일본",
+      "region": "동아시아"
+    },
+    {
+      "q": 7,
+      "daimon": 2,
+      "subject": "geography",
+      "topic": "기후·케펜구분",
+      "material": "map",
+      "region": "유럽"
+    },
+    {
+      "q": 8,
+      "daimon": 2,
+      "subject": "politics",
+      "topic": "통치기구",
+      "material": "passage",
+      "sub": "국제정치·기구",
+      "region": "유럽"
+    },
+    {
+      "q": 9,
+      "daimon": 3,
+      "subject": "economy",
+      "topic": "수요·공급과 시장균형",
+      "material": "graph",
+      "sub": "시장·가격"
+    },
+    {
+      "q": 10,
+      "daimon": 4,
+      "subject": "economy",
+      "topic": "경제성장·경기변동",
+      "material": "passage",
+      "sub": "경기·성장",
+      "era": "제1차세계대전"
+    },
+    {
+      "q": 11,
+      "daimon": 5,
+      "subject": "economy",
+      "topic": "국제무역",
+      "material": "passage",
+      "sub": "무역·국제수지"
+    },
+    {
+      "q": 12,
+      "daimon": 6,
+      "subject": "economy",
+      "topic": "GDP·국민소득",
+      "material": "graph",
+      "sub": "경기·성장"
+    },
+    {
+      "q": 13,
+      "daimon": 7,
+      "subject": "economy",
+      "topic": "금융·통화정책",
+      "material": "passage",
+      "sub": "금융·통화"
+    },
+    {
+      "q": 14,
+      "daimon": 8,
+      "subject": "economy",
+      "topic": "수요·공급과 시장균형",
+      "material": "passage",
+      "sub": "재정·조세"
+    },
+    {
+      "q": 15,
+      "daimon": 9,
+      "subject": "economy",
+      "topic": "금융·통화정책",
+      "material": "passage",
+      "sub": "금융·통화"
+    },
+    {
+      "q": 16,
+      "daimon": 10,
+      "subject": "economy",
+      "topic": "환율·국제수지",
+      "material": "passage",
+      "sub": "금융·통화"
+    },
+    {
+      "q": 17,
+      "daimon": 11,
+      "subject": "economy",
+      "topic": "환율·국제수지",
+      "material": "passage",
+      "sub": "무역·국제수지"
+    },
+    {
+      "q": 18,
+      "daimon": 12,
+      "subject": "economy",
+      "topic": "국제무역",
+      "material": "passage",
+      "sub": "무역·국제수지"
+    },
+    {
+      "q": 19,
+      "daimon": 13,
+      "subject": "economy",
+      "topic": "고용·노동",
+      "material": "passage",
+      "sub": "기업·노동"
+    },
+    {
+      "q": 20,
+      "daimon": 14,
+      "subject": "geography",
+      "topic": "지도·GIS",
+      "material": "passage",
+      "region": "북아메리카"
+    },
+    {
+      "q": 21,
+      "daimon": 15,
+      "subject": "geography",
+      "topic": "기후·케펜구분",
+      "material": "map",
+      "region": "유럽"
+    },
+    {
+      "q": 22,
+      "daimon": 16,
+      "subject": "geography",
+      "topic": "근대일본",
+      "material": "passage",
+      "region": "동아시아"
+    },
+    {
+      "q": 23,
+      "daimon": 17,
+      "subject": "geography",
+      "topic": "자원·농업",
+      "material": "table",
+      "region": "동남아시아"
+    },
+    {
+      "q": 24,
+      "daimon": 18,
+      "subject": "geography",
+      "topic": "인구·도시화",
+      "material": "graph"
+    },
+    {
+      "q": 25,
+      "daimon": 19,
+      "subject": "politics",
+      "topic": "통치기구",
+      "material": "passage",
+      "sub": "통치기구"
+    },
+    {
+      "q": 26,
+      "daimon": 20,
+      "subject": "politics",
+      "topic": "통치기구",
+      "material": "passage",
+      "sub": "통치기구"
+    },
+    {
+      "q": 27,
+      "daimon": 21,
+      "subject": "history",
+      "topic": "세계대전",
+      "material": "passage",
+      "era": "근대일본",
+      "region": "동아시아"
+    },
+    {
+      "q": 28,
+      "daimon": 22,
+      "subject": "politics",
+      "topic": "통치기구",
+      "material": "passage",
+      "sub": "통치기구"
+    },
+    {
+      "q": 29,
+      "daimon": 23,
+      "subject": "politics",
+      "topic": "통치기구",
+      "material": "passage",
+      "sub": "통치기구"
+    },
+    {
+      "q": 30,
+      "daimon": 24,
+      "subject": "politics",
+      "topic": "헌법·기본권",
+      "material": "passage",
+      "sub": "헌법·인권"
+    },
+    {
+      "q": 31,
+      "daimon": 25,
+      "subject": "politics",
+      "topic": "지방자치",
+      "material": "passage",
+      "sub": "지방자치"
+    },
+    {
+      "q": 32,
+      "daimon": 26,
+      "subject": "politics",
+      "topic": "근대일본",
+      "material": "passage",
+      "sub": "국제정치·기구"
+    },
+    {
+      "q": 33,
+      "daimon": 27,
+      "subject": "politics",
+      "topic": "국제정치·국제기구",
+      "material": "passage",
+      "sub": "국제정치·기구",
+      "region": "유럽"
+    },
+    {
+      "q": 34,
+      "daimon": 28,
+      "subject": "history",
+      "topic": "세계대전",
+      "material": "passage",
+      "era": "시민혁명",
+      "region": "라틴아메리카"
+    },
+    {
+      "q": 35,
+      "daimon": 29,
+      "subject": "history",
+      "topic": "세계대전",
+      "material": "passage",
+      "era": "제국주의·식민지",
+      "region": "아프리카"
+    },
+    {
+      "q": 36,
+      "daimon": 30,
+      "subject": "history",
+      "topic": "세계대전",
+      "material": "passage",
+      "era": "제1차세계대전",
+      "region": "유럽"
+    },
+    {
+      "q": 37,
+      "daimon": 31,
+      "subject": "history",
+      "topic": "냉전",
+      "material": "timeline",
+      "era": "냉전",
+      "region": "유럽"
+    },
+    {
+      "q": 38,
+      "daimon": 32,
+      "subject": "history",
+      "topic": "근대일본",
+      "material": "passage",
+      "era": "탈냉전·현대",
+      "region": "동아시아"
+    }
   ]
 }

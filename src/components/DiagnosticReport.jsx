@@ -10,6 +10,7 @@ import {
    EJU 종합과목 38문항 DB — 개별 문항 독립 노드
    ═══════════════════════════════════════════════════════════════════ */
 
+/* ╚═══ shared with syllabusMatcher.js ═══╝ */
 const EJU_38_QUESTIONS = [
   // ── GEOGRAPHY Q1~Q8 ──
   { number: 1, domain: 'geography', domainName: '지리', syllabusId: 'geography-natural', name: '자연환경 및 지형', subTopic: '자연환경 (기후구/지형/판구조론)', keywords: ['자연환경','지형','판의경계','화산','지진대','판구조론','조산대','해구','열점','대륙이동','습곡산맥','단층','지각변동'], hasVisual: true, visualType: '지형도' },
@@ -59,10 +60,10 @@ const EJU_38_QUESTIONS = [
 /* ── Domain metadata ── */
 const DOMAIN_META = {
   geography: { label: '지리', icon: '🌍', range: 'Q1~Q8', color: '#10b981', gradient: 'linear-gradient(135deg, rgba(16,185,129,0.12), rgba(16,185,129,0.04))' },
-  history:   { label: '역사', icon: '📜', range: 'Q9~Q16', color: '#8b5cf6', gradient: 'linear-gradient(135deg, rgba(139,92,246,0.12), rgba(139,92,246,0.04))' },
-  politics:  { label: '정치', icon: '🏛', range: 'Q17~Q24', color: '#3b82f6', gradient: 'linear-gradient(135deg, rgba(59,130,246,0.12), rgba(59,130,246,0.04))' },
+  history:   { label: '역사', icon: '📜', range: 'Q9~Q16', color: '#1B64DA', gradient: 'linear-gradient(135deg, rgba(49,130,246,0.12), rgba(49,130,246,0.04))' },
+  politics:  { label: '정치', icon: '🏛', range: 'Q17~Q24', color: '#1B64DA', gradient: 'linear-gradient(135deg, rgba(49,130,246,0.12), rgba(49,130,246,0.04))' },
   economy:   { label: '경제', icon: '📊', range: 'Q25~Q32', color: '#f59e0b', gradient: 'linear-gradient(135deg, rgba(245,158,11,0.12), rgba(245,158,11,0.04))' },
-  society:   { label: '사회', icon: '🤝', range: 'Q33~Q38', color: '#ec4899', gradient: 'linear-gradient(135deg, rgba(236,72,153,0.12), rgba(236,72,153,0.04))' },
+  society:   { label: '사회', icon: '🤝', range: 'Q33~Q38', color: '#1B64DA', gradient: 'linear-gradient(135deg, rgba(49,130,246,0.12), rgba(49,130,246,0.04))' },
 };
 
 /* ── Error type classification ── */
@@ -214,8 +215,8 @@ function generateSummary(weakDomains, totalWrong, errorTypeCounts, wrongItems) {
 
 function SummaryCard({ summary }) {
   return (
-    <div style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.06))', border: '1px solid rgba(99,102,241,0.2)', borderRadius: 24, padding: 24, display: 'flex', alignItems: 'flex-start', gap: 14 }}>
-      <div style={{ width: 44, height: 44, borderRadius: 14, background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+    <div style={{ background: 'linear-gradient(135deg, rgba(49,130,246,0.1), rgba(49,130,246,0.06))', border: '1px solid rgba(49,130,246,0.2)', borderRadius: 24, padding: 24, display: 'flex', alignItems: 'flex-start', gap: 14 }}>
+      <div style={{ width: 44, height: 44, borderRadius: 14, background: 'linear-gradient(135deg, #1B64DA, #1B64DA)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
         <Brain size={22} color="#fff" strokeWidth={1.8} />
       </div>
       <div>
@@ -272,7 +273,7 @@ function DetailedTable({ wrongItems }) {
                         <td style={{ padding: '8px 10px', color: '#ef4444' }}>{item.chosenAnswer || '-'}</td>
                         <td style={{ padding: '8px 10px', color: '#10b981', fontWeight: 600 }}>{item.correctAnswer || '-'}</td>
                         <td style={{ padding: '8px 10px', whiteSpace: 'nowrap' }}>
-                          <span style={{ padding: '2px 7px', borderRadius: 5, fontSize: 10, fontWeight: 600, background: item.errorType === 'graph' ? 'rgba(245,158,11,0.12)' : item.errorType === 'source' ? 'rgba(139,92,246,0.12)' : item.errorType === 'system' ? 'rgba(59,130,246,0.12)' : 'rgba(239,68,68,0.12)', color: item.errorType === 'graph' ? '#f59e0b' : item.errorType === 'source' ? '#8b5cf6' : item.errorType === 'system' ? '#3b82f6' : '#ef4444' }}>{et?.label || item.errorType}</span>
+                          <span style={{ padding: '2px 7px', borderRadius: 5, fontSize: 10, fontWeight: 600, background: item.errorType === 'graph' ? 'rgba(245,158,11,0.12)' : item.errorType === 'source' ? 'rgba(49,130,246,0.12)' : item.errorType === 'system' ? 'rgba(49,130,246,0.12)' : 'rgba(239,68,68,0.12)', color: item.errorType === 'graph' ? '#f59e0b' : item.errorType === 'source' ? '#1B64DA' : item.errorType === 'system' ? '#1B64DA' : '#ef4444' }}>{et?.label || item.errorType}</span>
                         </td>
                         <td style={{ padding: '8px 10px', color: 'var(--t3)', maxWidth: 200, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item.reason || '-'}</td>
                       </tr>
@@ -306,7 +307,7 @@ function MindMapTree({ tree }) {
               {node.errorTypes.map(et => {
                 const etMeta = ERROR_TYPES.find(e => e.id === et);
                 return etMeta ? (
-                  <span key={et} style={{ marginLeft: 6, fontSize: 10, padding: '2px 7px', borderRadius: 5, background: 'rgba(255,255,255,0.06)', color: 'var(--t2)', fontWeight: 500 }}>{etMeta.label}</span>
+                  <span key={et} style={{ marginLeft: 6, fontSize: 10, padding: '2px 7px', borderRadius: 5, background: 'rgba(0,27,55,0.045)', color: 'var(--t2)', fontWeight: 500 }}>{etMeta.label}</span>
                 ) : null;
               })}
             </div>
@@ -328,7 +329,7 @@ function MindMapTree({ tree }) {
 
 function PriorityList({ priorities }) {
   if (priorities.length === 0) return null;
-  const rankColors = ['#6366f1', '#3b82f6', '#10b981'];
+  const rankColors = ['#1B64DA', '#1B64DA', '#10b981'];
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -346,8 +347,8 @@ function PriorityList({ priorities }) {
                   <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--t0)' }}>{p.title}</span>
                 </div>
                 <div style={{ fontSize: 12, color: 'var(--t2)', marginTop: 6, lineHeight: 1.6 }}>{p.detail}</div>
-                <div style={{ marginTop: 10, padding: '10px 14px', borderRadius: 12, background: 'rgba(99,102,241,0.06)', border: '1px solid rgba(99,102,241,0.12)' }}>
-                  <div style={{ fontSize: 11, fontWeight: 600, color: '#6366f1', letterSpacing: '-0.01em' }}>실행 액션</div>
+                <div style={{ marginTop: 10, padding: '10px 14px', borderRadius: 12, background: 'rgba(49,130,246,0.06)', border: '1px solid rgba(49,130,246,0.12)' }}>
+                  <div style={{ fontSize: 11, fontWeight: 600, color: '#1B64DA', letterSpacing: '-0.01em' }}>실행 액션</div>
                   <div style={{ fontSize: 12, color: 'var(--t1)', marginTop: 4, lineHeight: 1.6 }}>{p.action}</div>
                 </div>
               </div>
@@ -458,7 +459,7 @@ export default function DiagnosticReport({ exams = [] }) {
 
       {/* ═══ HEADER ═══ */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-        <div style={{ width: 48, height: 48, borderRadius: 16, background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 24px rgba(99,102,241,0.25)' }}>
+        <div style={{ width: 48, height: 48, borderRadius: 16, background: 'linear-gradient(135deg, #1B64DA, #1B64DA)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 24px rgba(49,130,246,0.25)' }}>
           <ClipboardList size={22} color="#fff" strokeWidth={1.8} />
         </div>
         <div>
@@ -470,7 +471,7 @@ export default function DiagnosticReport({ exams = [] }) {
       {/* ═══ INPUT FORM ═══ */}
       <div style={TOSS_CARD}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-          <div style={{ width: 32, height: 32, borderRadius: 10, background: 'rgba(99,102,241,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Search size={16} color="#6366f1" strokeWidth={2} /></div>
+          <div style={{ width: 32, height: 32, borderRadius: 10, background: 'rgba(49,130,246,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Search size={16} color="#1B64DA" strokeWidth={2} /></div>
           <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)' }}>오답 입력</span>
           {exams.length > 0 && (
             <button onClick={extractFromExams} style={{ marginLeft: 'auto', fontSize: 11, padding: '6px 12px', borderRadius: 9, border: '1px solid var(--bd1)', background: 'transparent', color: 'var(--t2)', cursor: 'pointer', fontFamily: 'inherit', fontWeight: 500 }}>
@@ -524,14 +525,14 @@ export default function DiagnosticReport({ exams = [] }) {
           <button onClick={addRow} style={{ padding: '9px 16px', borderRadius: 12, border: '1px solid var(--bd1)', background: 'transparent', color: 'var(--t2)', cursor: 'pointer', fontSize: 12, fontFamily: 'inherit', fontWeight: 500 }}>
             + 문항 추가
           </button>
-          <button onClick={runDiagnosis} className="btn-toss-bounce" style={{ padding: '9px 20px', borderRadius: 12, border: 'none', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', color: '#fff', cursor: 'pointer', fontSize: 12, fontWeight: 600, fontFamily: 'inherit', boxShadow: '0 4px 12px rgba(99,102,241,0.25)' }}>
+          <button onClick={runDiagnosis} className="btn-toss-bounce" style={{ padding: '9px 20px', borderRadius: 12, border: 'none', background: 'linear-gradient(135deg, #1B64DA, #1B64DA)', color: '#fff', cursor: 'pointer', fontSize: 12, fontWeight: 600, fontFamily: 'inherit', boxShadow: '0 4px 12px rgba(49,130,246,0.25)' }}>
             <Zap size={14} style={{ display: 'inline', marginRight: 5, verticalAlign: 'middle' }} />
             진단 시작
           </button>
         </div>
 
-        <div style={{ marginTop: 12, padding: '10px 14px', borderRadius: 12, background: 'rgba(99,102,241,0.06)', border: '1px solid rgba(99,102,241,0.12)', fontSize: 11, color: 'var(--t3)', lineHeight: 1.6 }}>
-          <strong style={{ color: '#6366f1' }}>진단 대상:</strong> 종합과목 38문항 전범위 (지리 Q1~8, 역사 Q9~16, 정치 Q17~24, 경제 Q25~32, 사회 Q33~38)
+        <div style={{ marginTop: 12, padding: '10px 14px', borderRadius: 12, background: 'rgba(49,130,246,0.06)', border: '1px solid rgba(49,130,246,0.12)', fontSize: 11, color: 'var(--t3)', lineHeight: 1.6 }}>
+          <strong style={{ color: '#1B64DA' }}>진단 대상:</strong> 종합과목 38문항 전범위 (지리 Q1~8, 역사 Q9~16, 정치 Q17~24, 경제 Q25~32, 사회 Q33~38)
         </div>
       </div>
 
@@ -553,7 +554,7 @@ export default function DiagnosticReport({ exams = [] }) {
                       <div style={{ fontSize: 11, color: 'var(--t3)', fontWeight: 500 }}>{et.icon} {et.label}</div>
                       <div style={{ fontSize: 20, fontWeight: 700, color: 'var(--t0)', letterSpacing: '-0.02em' }}>{et.count}<span style={{ fontSize: 11, color: 'var(--t3)', fontWeight: 400, marginLeft: 4 }}>/{results.totalWrong}</span></div>
                       <div style={{ height: 4, borderRadius: 3, background: 'var(--bd0)', overflow: 'hidden' }}>
-                        <div style={{ height: '100%', width: `${pct}%`, borderRadius: 3, background: 'linear-gradient(90deg, #6366f1, #8b5cf6)', transition: 'width 0.6s ease' }} />
+                        <div style={{ height: '100%', width: `${pct}%`, borderRadius: 3, background: 'linear-gradient(90deg, #1B64DA, #1B64DA)', transition: 'width 0.6s ease' }} />
                       </div>
                     </div>
                   );
@@ -590,8 +591,8 @@ export default function DiagnosticReport({ exams = [] }) {
           {/* Priority review list */}
           <div style={TOSS_CARD}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-              <div style={{ width: 32, height: 32, borderRadius: 10, background: 'rgba(236,72,153,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Target size={16} color="#ec4899" strokeWidth={2} />
+              <div style={{ width: 32, height: 32, borderRadius: 10, background: 'rgba(49,130,246,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Target size={16} color="#1B64DA" strokeWidth={2} />
               </div>
               <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)' }}>다음 학습을 위한 우선순위</span>
             </div>
@@ -610,8 +611,8 @@ export default function DiagnosticReport({ exams = [] }) {
       {/* ═══ EMPTY STATE (no results yet) ═══ */}
       {!results && (
         <div style={{ ...TOSS_CARD, textAlign: 'center', padding: '48px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-          <div style={{ width: 64, height: 64, borderRadius: 20, background: 'rgba(99,102,241,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <ClipboardList size={28} color="#6366f1" strokeWidth={1.5} style={{ opacity: 0.5 }} />
+          <div style={{ width: 64, height: 64, borderRadius: 20, background: 'rgba(49,130,246,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <ClipboardList size={28} color="#1B64DA" strokeWidth={1.5} style={{ opacity: 0.5 }} />
           </div>
           <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--t0)', marginTop: 4 }}>오답 데이터를 입력해주세요</div>
           <div style={{ fontSize: 12, color: 'var(--t3)', lineHeight: 1.6, maxWidth: 320 }}>

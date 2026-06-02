@@ -29,7 +29,7 @@ function Toast({ message, type = 'info', onClose }) {
     return () => clearTimeout(t);
   }, [onClose]);
   const colors = {
-    info:    { bg: 'rgba(79,142,247,0.15)',  border: 'rgba(79,142,247,0.4)',  color: '#4f8ef7' },
+    info:    { bg: 'rgba(49,130,246,0.15)',  border: 'rgba(49,130,246,0.4)',  color: '#1B64DA' },
     success: { bg: 'rgba(16,185,129,0.15)',  border: 'rgba(16,185,129,0.4)',  color: '#10b981' },
     error:   { bg: 'rgba(239,68,68,0.15)',   border: 'rgba(239,68,68,0.4)',   color: '#ef4444' },
     warning: { bg: 'rgba(245,158,11,0.15)',  border: 'rgba(245,158,11,0.4)',  color: '#f59e0b' },
@@ -260,9 +260,9 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
                 type="button"
                 onClick={() => setEntryMode(opt.id)}
                 style={{
-                  background: active ? 'linear-gradient(135deg, rgba(79,142,247,0.2), rgba(168,85,247,0.2))' : 'var(--bg3)',
+                  background: active ? 'linear-gradient(135deg, rgba(49,130,246,0.2), rgba(49,130,246,0.2))' : 'var(--bg3)',
                   color: active ? 'var(--blue)' : 'var(--t1)',
-                  border: active ? '1.5px solid rgba(79,142,247,0.6)' : '1.5px solid var(--bd1)',
+                  border: active ? '1.5px solid rgba(49,130,246,0.6)' : '1.5px solid var(--bd1)',
                   borderRadius: 12,
                   padding: '10px 16px',
                   fontSize: 13,
@@ -270,7 +270,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
                   cursor: 'pointer',
                   fontFamily: 'inherit',
                   transition: 'all 0.2s',
-                  boxShadow: active ? '0 2px 12px rgba(79,142,247,0.2)' : 'none',
+                  boxShadow: active ? '0 2px 12px rgba(49,130,246,0.2)' : 'none',
                 }}
               >
                 {opt.label}
@@ -289,9 +289,9 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
               const active = recordType === opt.id;
               return (
                 <button key={opt.id} type="button" onClick={() => setRecordType(opt.id)} style={{
-                  background: active ? 'rgba(79,142,247,0.15)' : 'var(--bg3)',
+                  background: active ? 'rgba(49,130,246,0.15)' : 'var(--bg3)',
                   color: active ? 'var(--blue)' : 'var(--t2)',
-                  border: active ? '1.5px solid rgba(79,142,247,0.5)' : '1.5px solid var(--bd1)',
+                  border: active ? '1.5px solid rgba(49,130,246,0.5)' : '1.5px solid var(--bd1)',
                   borderRadius: 10, padding: '7px 16px', fontSize: 12, fontWeight: active ? 700 : 500,
                   cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.2s',
                 }}>{opt.label}</button>
@@ -303,22 +303,22 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
             <div>
               <label style={LABEL}>시험 날짜</label>
               <input type="date" value={date} onChange={e => setDate(e.target.value)} style={INPUT}
-                onFocus={e => { e.target.style.borderColor = 'var(--blue)'; e.target.style.boxShadow = '0 0 0 3px rgba(79,142,247,0.15)'; }}
+                onFocus={e => { e.target.style.borderColor = 'var(--blue)'; e.target.style.boxShadow = '0 0 0 3px rgba(49,130,246,0.15)'; }}
                 onBlur={e => { e.target.style.borderColor = 'var(--bd1)'; e.target.style.boxShadow = 'none'; }} />
             </div>
             <div>
               <label style={LABEL}>시험 이름</label>
               <input type="text" value={examName} onChange={e => setExamName(e.target.value)}
                 placeholder="예: 1월 EJU 모의고사 1회" style={INPUT}
-                onFocus={e => { e.target.style.borderColor = 'var(--blue)'; e.target.style.boxShadow = '0 0 0 3px rgba(79,142,247,0.15)'; }}
+                onFocus={e => { e.target.style.borderColor = 'var(--blue)'; e.target.style.boxShadow = '0 0 0 3px rgba(49,130,246,0.15)'; }}
                 onBlur={e => { e.target.style.borderColor = 'var(--bd1)'; e.target.style.boxShadow = 'none'; }} />
             </div>
           </div>
           {!editingExam && latestExam && (
             <div style={{ marginTop: 14 }}>
               <button type="button" onClick={copyLatest} style={{
-                background: 'rgba(79,142,247,0.1)', color: 'var(--blue)',
-                border: '1px solid rgba(79,142,247,0.3)', borderRadius: 10,
+                background: 'rgba(49,130,246,0.1)', color: 'var(--blue)',
+                border: '1px solid rgba(49,130,246,0.3)', borderRadius: 10,
                 padding: '7px 14px', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit',
                 transition: 'all 0.2s',
               }}>
@@ -337,8 +337,8 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
               </div>
               <div style={{
                 fontSize: 22, fontWeight: 800, color: 'var(--blue)',
-                background: 'rgba(79,142,247,0.1)', padding: '6px 16px', borderRadius: 12,
-                border: '1px solid rgba(79,142,247,0.25)',
+                background: 'rgba(49,130,246,0.1)', padding: '6px 16px', borderRadius: 12,
+                border: '1px solid rgba(49,130,246,0.25)',
               }}>
                 {recordType === 'workbook'
                   ? <><span style={{ fontSize: 14 }}>{effectiveReading}/{readMax} + {effectiveListening}/{listenMax}</span></>
@@ -348,7 +348,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
             </div>
 
             {recordType === 'workbook' && (
-              <div style={{ fontSize: 12, color: 'var(--purple)', background: 'rgba(168,85,247,0.07)', border: '1px solid rgba(168,85,247,0.2)', borderRadius: 10, padding: '8px 14px', marginBottom: 16 }}>
+              <div style={{ fontSize: 12, color: 'var(--purple)', background: 'rgba(49,130,246,0.07)', border: '1px solid rgba(49,130,246,0.2)', borderRadius: 10, padding: '8px 14px', marginBottom: 16 }}>
                 문제집 원점수 입력 — 독해 /25문항, 청해 /40문항 (차트에서 득점등화 점수로 환산됩니다)
               </div>
             )}
@@ -371,7 +371,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
               </label>
             )}
             {useEstimatedJapanese && (
-              <div style={{ background: 'rgba(79,142,247,0.08)', border: '1px solid rgba(79,142,247,0.3)', borderRadius: 12, padding: '12px 16px', marginBottom: 16 }}>
+              <div style={{ background: 'rgba(49,130,246,0.08)', border: '1px solid rgba(49,130,246,0.3)', borderRadius: 12, padding: '12px 16px', marginBottom: 16 }}>
                 <div style={{ fontSize: 13, color: 'var(--blue)', fontWeight: 700 }}>
                   예측 점수: 독해 {japaneseEstimate.reading} / 청해 {japaneseEstimate.listening} (합계 {japaneseEstimate.total})
                 </div>
@@ -387,7 +387,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
                 <label style={LABEL}>독해 틀린 번호</label>
                 <input type="text" value={wrongReading} onChange={e => setWrongReading(e.target.value)}
                   placeholder="예: 3, 7, 12, 18, 25" style={INPUT}
-                  onFocus={e => { e.target.style.borderColor = 'var(--purple)'; e.target.style.boxShadow = '0 0 0 3px rgba(168,85,247,0.12)'; }}
+                  onFocus={e => { e.target.style.borderColor = 'var(--purple)'; e.target.style.boxShadow = '0 0 0 3px rgba(49,130,246,0.12)'; }}
                   onBlur={e => { e.target.style.borderColor = 'var(--bd1)'; e.target.style.boxShadow = 'none'; }} />
                 <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 5 }}>쉼표 또는 공백으로 구분</div>
               </div>
@@ -395,7 +395,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
                 <label style={LABEL}>청해 틀린 번호</label>
                 <input type="text" value={wrongListening} onChange={e => setWrongListening(e.target.value)}
                   placeholder="예: 2, 8, 15, 22" style={INPUT}
-                  onFocus={e => { e.target.style.borderColor = 'var(--pink)'; e.target.style.boxShadow = '0 0 0 3px rgba(236,72,153,0.12)'; }}
+                  onFocus={e => { e.target.style.borderColor = 'var(--pink)'; e.target.style.boxShadow = '0 0 0 3px rgba(49,130,246,0.12)'; }}
                   onBlur={e => { e.target.style.borderColor = 'var(--bd1)'; e.target.style.boxShadow = 'none'; }} />
                 <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 5 }}>쉼표 또는 공백으로 구분</div>
               </div>
@@ -422,7 +422,7 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
                         <span style={{
                           fontSize: 11, fontWeight: 700, minWidth: 64,
                           color: key.startsWith('독해') ? 'var(--purple)' : 'var(--pink)',
-                          background: key.startsWith('독해') ? 'rgba(168,85,247,0.1)' : 'rgba(236,72,153,0.1)',
+                          background: key.startsWith('독해') ? 'rgba(49,130,246,0.1)' : 'rgba(49,130,246,0.1)',
                           padding: '3px 8px', borderRadius: 6,
                         }}>{label}</span>
                         <input
@@ -483,8 +483,8 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
                 <label style={{ ...LABEL, marginBottom: 0 }}>오답 분석</label>
                 <button type="button" onClick={addMistake} style={{
-                  background: 'rgba(79,142,247,0.1)', color: 'var(--blue)',
-                  border: '1px solid rgba(79,142,247,0.3)', borderRadius: 10,
+                  background: 'rgba(49,130,246,0.1)', color: 'var(--blue)',
+                  border: '1px solid rgba(49,130,246,0.3)', borderRadius: 10,
                   padding: '7px 15px', fontSize: 12, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit',
                   transition: 'all 0.2s',
                 }}>+ 오답 추가</button>
@@ -564,11 +564,11 @@ export default function ScoreForm({ editingExam, onSave, onCancel }) {
             background: 'linear-gradient(135deg, var(--blue), var(--purple))', color: '#fff',
             border: 'none', borderRadius: 14, padding: '14px 36px',
             fontSize: 15, fontWeight: 700, fontFamily: 'inherit', cursor: 'pointer',
-            boxShadow: '0 6px 24px rgba(79,142,247,0.35)',
+            boxShadow: '0 6px 24px rgba(49,130,246,0.35)',
             transition: 'all 0.2s',
           }}
-            onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 10px 32px rgba(79,142,247,0.45)'; }}
-            onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 6px 24px rgba(79,142,247,0.35)'; }}
+            onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 10px 32px rgba(49,130,246,0.45)'; }}
+            onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 6px 24px rgba(49,130,246,0.35)'; }}
           >
             {editingExam ? '수정 완료' : '저장'}
           </button>

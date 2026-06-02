@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-06-02T07:01:32.490402",
+  "subject": "mathematics",
+  "domains": {
+    "math_1": {
+      "name": "수학Ⅰ",
+      "order": 1,
+      "course": 1,
+      "topics": [
+        {
+          "topic": "삼각비",
+          "total": 90,
+          "recent_5yr": 20,
+          "prediction_2026_pct": 83,
+          "difficulty_base": 50,
+          "per_exam_prob": 0.65,
+          "priority": "A"
+        },
+        {
+          "topic": "집합",
+          "total": 88,
+          "recent_5yr": 17,
+          "prediction_2026_pct": 83,
+          "difficulty_base": 35,
+          "per_exam_prob": 0.6,
+          "priority": "A"
+        },
+        {
+          "topic": "도형",
+          "total": 87,
+          "recent_5yr": 20,
+          "prediction_2026_pct": 83,
+          "difficulty_base": 45,
+          "per_exam_prob": 0.55,
+          "priority": "A"
+        },
+        {
+          "topic": "이차함수",
+          "total": 77,
+          "recent_5yr": 16,
+          "prediction_2026_pct": 86,
+          "difficulty_base": 40,
+          "per_exam_prob": 0.9,
+          "priority": "A"
+        }
+      ]
+    },
+    "math_a": {
+      "name": "수학A",
+      "order": 2,
+      "course": 1,
+      "topics": [
+        {
+          "topic": "경우의 수",
+          "total": 75,
+          "recent_5yr": 16,
+          "prediction_2026_pct": 83,
+          "difficulty_base": 35,
+          "per_exam_prob": 0.55,
+          "priority": "A"
+        },
+        {
+          "topic": "확률",
+          "total": 64,
+          "recent_5yr": 13,
+          "prediction_2026_pct": 83,
+          "difficulty_base": 50,
+          "per_exam_prob": 0.7,
+          "priority": "A"
+        }
+      ]
+    },
+    "math_2": {
+      "name": "수학Ⅱ",
+      "order": 3,
+      "course": 2,
+      "topics": [
+        {
+          "topic": "미분",
+          "total": 39,
+          "recent_5yr": 9,
+          "prediction_2026_pct": 86,
+          "difficulty_base": 55,
+          "per_exam_prob": 0.75,
+          "priority": "B"
+        },
+        {
+          "topic": "수열",
+          "total": 39,
+          "recent_5yr": 9,
+          "prediction_2026_pct": 86,
+          "difficulty_base": 55,
+          "per_exam_prob": 0.6,
+          "priority": "B"
+        },
+        {
+          "topic": "지수",
+          "total": 38,
+          "recent_5yr": 8,
+          "prediction_2026_pct": 83,
+          "difficulty_base": 40,
+          "per_exam_prob": 0.45,
+          "priority": "B"
+        },
+        {
+          "topic": "로그",
+          "total": 38,
+          "recent_5yr": 8,
+          "prediction_2026_pct": 83,
+          "difficulty_base": 50,
+          "per_exam_prob": 0.45,
+          "priority": "B"
+        },
+        {
+          "topic": "적분",
+          "total": 38,
+          "recent_5yr": 8,
+          "prediction_2026_pct": 83,
+          "difficulty_base": 60,
+          "per_exam_prob": 0.6,
+          "priority": "B"
+        }
+      ]
+    },
+    "math_b": {
+      "name": "수학B",
+      "order": 4,
+      "course": 2,
+      "topics": [
+        {
+          "topic": "벡터",
+          "total": 38,
+          "recent_5yr": 8,
+          "prediction_2026_pct": 83,
+          "difficulty_base": 55,
+          "per_exam_prob": 0.5,
+          "priority": "B"
+        },
+        {
+          "topic": "통계",
+          "total": 0,
+          "recent_5yr": 0,
+          "prediction_2026_pct": 0,
+          "difficulty_base": 45,
+          "per_exam_prob": 0.45,
+          "priority": "C"
+        }
+      ]
+    }
+  }
+}

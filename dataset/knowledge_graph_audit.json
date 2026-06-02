@@ -1,0 +1,17 @@
+{
+  "audit": "Knowledge Graph",
+  "version": "3.0.0",
+  "generated_at": "2026-06-02T05:29:34.591982",
+  "statistics": {
+    "total_nodes": 86,
+    "total_edges": 116,
+    "domain_count": 5,
+    "topic_count": 40,
+    "subtopic_count": 41
+  },
+  "checks_performed": 6,
+  "issues_found": 0,
+  "issues": [],
+  "score": 100,
+  "deductions": []
+}

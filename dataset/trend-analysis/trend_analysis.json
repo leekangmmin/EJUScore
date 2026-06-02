@@ -1,0 +1,345 @@
+{
+  "analysis": {
+    "growing_topics": [
+      {
+        "topic": "방정식·부등식",
+        "slope": 0.57,
+        "frequencies": {
+          "2005": 0,
+          "2006": 1,
+          "2007": 1,
+          "2008": 1,
+          "2009": 1,
+          "2011": 1,
+          "2012": 1,
+          "2013": 1,
+          "2014": 2,
+          "2015": 2,
+          "2016": 0,
+          "2017": 4,
+          "2018": 1,
+          "2019": 1,
+          "2021": 1,
+          "2023": 1,
+          "2024": 1
+        }
+      }
+    ],
+    "declining_topics": [],
+    "stable_topics": [
+      {
+        "topic": "평면도형",
+        "frequencies": {
+          "2005": 1,
+          "2006": 2,
+          "2007": 3,
+          "2008": 1,
+          "2009": 0,
+          "2011": 2,
+          "2012": 0,
+          "2013": 0,
+          "2014": 2,
+          "2015": 0,
+          "2016": 0,
+          "2017": 2,
+          "2018": 0,
+          "2019": 0,
+          "2021": 1,
+          "2023": 0,
+          "2024": 1
+        }
+      },
+      {
+        "topic": "좌표기하",
+        "frequencies": {
+          "2005": 0,
+          "2006": 0,
+          "2007": 0,
+          "2008": 0,
+          "2009": 0,
+          "2011": 0,
+          "2012": 1,
+          "2013": 0,
+          "2014": 0,
+          "2015": 0,
+          "2016": 2,
+          "2017": 0,
+          "2018": 0,
+          "2019": 0,
+          "2021": 0,
+          "2023": 0,
+          "2024": 0
+        }
+      },
+      {
+        "topic": "확률",
+        "frequencies": {
+          "2005": 0,
+          "2006": 0,
+          "2007": 0,
+          "2008": 0,
+          "2009": 0,
+          "2011": 0,
+          "2012": 0,
+          "2013": 0,
+          "2014": 0,
+          "2015": 0,
+          "2016": 0,
+          "2017": 0,
+          "2018": 1,
+          "2019": 0,
+          "2021": 0,
+          "2023": 0,
+          "2024": 0
+        }
+      },
+      {
+        "topic": "이차함수",
+        "frequencies": {
+          "2005": 0,
+          "2006": 0,
+          "2007": 0,
+          "2008": 0,
+          "2009": 0,
+          "2011": 0,
+          "2012": 0,
+          "2013": 0,
+          "2014": 0,
+          "2015": 0,
+          "2016": 0,
+          "2017": 0,
+          "2018": 0,
+          "2019": 0,
+          "2021": 0,
+          "2023": 1,
+          "2024": 0
+        }
+      }
+    ],
+    "new_appearances": [
+      {
+        "topic": "이차함수",
+        "first_appeared": 2023
+      }
+    ],
+    "disappearances": [
+      {
+        "topic": "좌표기하",
+        "last_appeared": 2016
+      },
+      {
+        "topic": "확률",
+        "last_appeared": 2018
+      }
+    ],
+    "difficulty_trend": {
+      "2005": {
+        "mean": 2.5,
+        "count": 26
+      },
+      "2006": {
+        "mean": 2.33,
+        "count": 24
+      },
+      "2007": {
+        "mean": 2.65,
+        "count": 26
+      },
+      "2008": {
+        "mean": 2.59,
+        "count": 22
+      },
+      "2009": {
+        "mean": 2.9,
+        "count": 30
+      },
+      "2010": {
+        "mean": 2.87,
+        "count": 30
+      },
+      "2011": {
+        "mean": 3.1,
+        "count": 31
+      },
+      "2012": {
+        "mean": 3.07,
+        "count": 30
+      },
+      "2013": {
+        "mean": 3.07,
+        "count": 30
+      },
+      "2014": {
+        "mean": 3.23,
+        "count": 31
+      },
+      "2015": {
+        "mean": 2.94,
+        "count": 31
+      },
+      "2016": {
+        "mean": 2.9,
+        "count": 30
+      },
+      "2017": {
+        "mean": 3.19,
+        "count": 31
+      },
+      "2018": {
+        "mean": 3.16,
+        "count": 32
+      },
+      "2019": {
+        "mean": 2.75,
+        "count": 16
+      },
+      "2020": {
+        "mean": 2.94,
+        "count": 16
+      },
+      "2021": {
+        "mean": 2.93,
+        "count": 30
+      },
+      "2022": {
+        "mean": 2.58,
+        "count": 24
+      },
+      "2023": {
+        "mean": 2.93,
+        "count": 44
+      },
+      "2024": {
+        "mean": 2.84,
+        "count": 31
+      },
+      "2025": {
+        "mean": 2.22,
+        "count": 9
+      }
+    },
+    "question_type_trends": {
+      "2005": {
+        "multiple_choice": 22,
+        "geometry": 2,
+        "graph_analysis": 2
+      },
+      "2006": {
+        "multiple_choice": 21,
+        "graph_analysis": 1,
+        "mathematical_computation": 1,
+        "geometry": 1
+      },
+      "2007": {
+        "multiple_choice": 19,
+        "mathematical_computation": 6,
+        "geometry": 1
+      },
+      "2008": {
+        "multiple_choice": 16,
+        "mathematical_computation": 5,
+        "geometry": 1
+      },
+      "2009": {
+        "multiple_choice": 18,
+        "mathematical_computation": 11,
+        "geometry": 1
+      },
+      "2010": {
+        "multiple_choice": 17,
+        "mathematical_computation": 13
+      },
+      "2011": {
+        "multiple_choice": 15,
+        "mathematical_computation": 15,
+        "optimization": 1
+      },
+      "2012": {
+        "multiple_choice": 14,
+        "mathematical_computation": 15,
+        "graph_analysis": 1
+      },
+      "2013": {
+        "multiple_choice": 14,
+        "mathematical_computation": 14,
+        "graph_analysis": 1,
+        "geometry": 1
+      },
+      "2014": {
+        "multiple_choice": 14,
+        "mathematical_computation": 16,
+        "geometry": 1
+      },
+      "2015": {
+        "multiple_choice": 17,
+        "mathematical_computation": 13,
+        "optimization": 1
+      },
+      "2016": {
+        "multiple_choice": 17,
+        "mathematical_computation": 12,
+        "graph_analysis": 1
+      },
+      "2017": {
+        "multiple_choice": 14,
+        "graph_analysis": 3,
+        "mathematical_computation": 12,
+        "geometry": 2
+      },
+      "2018": {
+        "multiple_choice": 15,
+        "mathematical_computation": 14,
+        "geometry": 1,
+        "graph_analysis": 1,
+        "probability_statistics": 1
+      },
+      "2019": {
+        "multiple_choice": 11,
+        "mathematical_computation": 5
+      },
+      "2020": {
+        "multiple_choice": 9,
+        "mathematical_computation": 7
+      },
+      "2021": {
+        "multiple_choice": 18,
+        "mathematical_computation": 12
+      },
+      "2022": {
+        "multiple_choice": 17,
+        "mathematical_computation": 7
+      },
+      "2023": {
+        "multiple_choice": 27,
+        "mathematical_computation": 16,
+        "optimization": 1
+      },
+      "2024": {
+        "multiple_choice": 19,
+        "optimization": 1,
+        "mathematical_computation": 10,
+        "geometry": 1
+      },
+      "2025": {
+        "multiple_choice": 8,
+        "mathematical_computation": 1
+      }
+    }
+  },
+  "predictions": {
+    "평면도형": {
+      "predicted_year": 2025,
+      "predicted_count": 1,
+      "recent_average": 1.3,
+      "confidence": 0.48
+    },
+    "방정식·부등식": {
+      "predicted_year": 2025,
+      "predicted_count": 1,
+      "recent_average": 1.0,
+      "confidence": 0.6
+    }
+  },
+  "generated_at": "2026-06-02T08:01:52.439899",
+  "total_exams_analyzed": 21
+}

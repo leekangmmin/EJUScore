@@ -1,0 +1,1168 @@
+{
+  "report_type": "comprehensive_evaluation",
+  "generated_at": "2026-06-02T08:13:50.536967",
+  "version": "2.0.0",
+  "details": {
+    "prediction_accuracy": {
+      "evaluation_type": "prediction_accuracy",
+      "generated_at": "2026-06-02T08:13:50.532540",
+      "methodology": "Ensemble predictor with 6 factors backtested on historical data. For each test year, trained on data before that year and predicted topic appearances. Compared against actual gold standard data.",
+      "backtest_results": {
+        "methodology": "Ensemble predictor backtested on historical data (2015-2025)",
+        "aggregate_metrics": {
+          "avg_precision": 0.7979,
+          "avg_recall": 0.4589,
+          "avg_f1": 0.5772,
+          "total_test_years": 11
+        },
+        "per_year_metrics": [
+          {
+            "test_year": 2015,
+            "n_predicted": 10,
+            "n_actual": 11,
+            "true_positives": 5,
+            "false_positives": 5,
+            "false_negatives": 6,
+            "precision": 0.5,
+            "recall": 0.4545,
+            "f1_score": 0.4762,
+            "avg_prob_actual": 36.56,
+            "avg_prob_nonactual": 24.15
+          },
+          {
+            "test_year": 2016,
+            "n_predicted": 10,
+            "n_actual": 21,
+            "true_positives": 8,
+            "false_positives": 2,
+            "false_negatives": 13,
+            "precision": 0.8,
+            "recall": 0.381,
+            "f1_score": 0.5161,
+            "avg_prob_actual": 35.33,
+            "avg_prob_nonactual": 19.63
+          },
+          {
+            "test_year": 2017,
+            "n_predicted": 10,
+            "n_actual": 25,
+            "true_positives": 10,
+            "false_positives": 0,
+            "false_negatives": 15,
+            "precision": 1.0,
+            "recall": 0.4,
+            "f1_score": 0.5714,
+            "avg_prob_actual": 36.35,
+            "avg_prob_nonactual": 18.94
+          },
+          {
+            "test_year": 2018,
+            "n_predicted": 10,
+            "n_actual": 20,
+            "true_positives": 9,
+            "false_positives": 1,
+            "false_negatives": 11,
+            "precision": 0.9,
+            "recall": 0.45,
+            "f1_score": 0.6,
+            "avg_prob_actual": 39.18,
+            "avg_prob_nonactual": 20.69
+          },
+          {
+            "test_year": 2019,
+            "n_predicted": 11,
+            "n_actual": 17,
+            "true_positives": 8,
+            "false_positives": 3,
+            "false_negatives": 9,
+            "precision": 0.7273,
+            "recall": 0.4706,
+            "f1_score": 0.5714,
+            "avg_prob_actual": 42.22,
+            "avg_prob_nonactual": 22.34
+          },
+          {
+            "test_year": 2020,
+            "n_predicted": 11,
+            "n_actual": 18,
+            "true_positives": 8,
+            "false_positives": 3,
+            "false_negatives": 10,
+            "precision": 0.7273,
+            "recall": 0.4444,
+            "f1_score": 0.5517,
+            "avg_prob_actual": 41.31,
+            "avg_prob_nonactual": 21.73
+          },
+          {
+            "test_year": 2021,
+            "n_predicted": 12,
+            "n_actual": 23,
+            "true_positives": 9,
+            "false_positives": 3,
+            "false_negatives": 14,
+            "precision": 0.75,
+            "recall": 0.3913,
+            "f1_score": 0.5143,
+            "avg_prob_actual": 36.57,
+            "avg_prob_nonactual": 21.76
+          },
+          {
+            "test_year": 2022,
+            "n_predicted": 12,
+            "n_actual": 22,
+            "true_positives": 10,
+            "false_positives": 2,
+            "false_negatives": 12,
+            "precision": 0.8333,
+            "recall": 0.4545,
+            "f1_score": 0.5882,
+            "avg_prob_actual": 37.98,
+            "avg_prob_nonactual": 20.82
+          },
+          {
+            "test_year": 2023,
+            "n_predicted": 13,
+            "n_actual": 22,
+            "true_positives": 12,
+            "false_positives": 1,
+            "false_negatives": 10,
+            "precision": 0.9231,
+            "recall": 0.5455,
+            "f1_score": 0.6857,
+            "avg_prob_actual": 39.36,
+            "avg_prob_nonactual": 21.22
+          },
+          {
+            "test_year": 2024,
+            "n_predicted": 13,
+            "n_actual": 18,
+            "true_positives": 10,
+            "false_positives": 3,
+            "false_negatives": 8,
+            "precision": 0.7692,
+            "recall": 0.5556,
+            "f1_score": 0.6452,
+            "avg_prob_actual": 42.13,
+            "avg_prob_nonactual": 22.57
+          },
+          {
+            "test_year": 2025,
+            "n_predicted": 13,
+            "n_actual": 22,
+            "true_positives": 11,
+            "false_positives": 2,
+            "false_negatives": 11,
+            "precision": 0.8462,
+            "recall": 0.5,
+            "f1_score": 0.6286,
+            "avg_prob_actual": 38.8,
+            "avg_prob_nonactual": 21.27
+          }
+        ],
+        "predictions": [
+          {
+            "year": 2015,
+            "predictions": [
+              {
+                "topic": "세계대전",
+                "prob": 63.9
+              },
+              {
+                "topic": "환율·국제수지",
+                "prob": 57.92
+              },
+              {
+                "topic": "수요·공급과 시장균형",
+                "prob": 55.56
+              },
+              {
+                "topic": "GDP·국민소득",
+                "prob": 48.18
+              },
+              {
+                "topic": "기후·케펜구분",
+                "prob": 44.52
+              },
+              {
+                "topic": "국제무역",
+                "prob": 44.43
+              },
+              {
+                "topic": "선거·정당",
+                "prob": 40.61
+              },
+              {
+                "topic": "일본경제사",
+                "prob": 40.27
+              },
+              {
+                "topic": "경제성장·경기변동",
+                "prob": 40.1
+              },
+              {
+                "topic": "냉전",
+                "prob": 39.69
+              }
+            ]
+          },
+          {
+            "year": 2016,
+            "predictions": [
+              {
+                "topic": "세계대전",
+                "prob": 63.61
+              },
+              {
+                "topic": "환율·국제수지",
+                "prob": 58.36
+              },
+              {
+                "topic": "수요·공급과 시장균형",
+                "prob": 56.35
+              },
+              {
+                "topic": "기후·케펜구분",
+                "prob": 49.44
+              },
+              {
+                "topic": "선거·정당",
+                "prob": 47.97
+              },
+              {
+                "topic": "국제무역",
+                "prob": 46.69
+              },
+              {
+                "topic": "재정·조세정책",
+                "prob": 38.73
+              },
+              {
+                "topic": "GDP·국민소득",
+                "prob": 37.0
+              },
+              {
+                "topic": "국제정치·국제기구",
+                "prob": 36.31
+              },
+              {
+                "topic": "사회보장·복지",
+                "prob": 36.09
+              }
+            ]
+          },
+          {
+            "year": 2017,
+            "predictions": [
+              {
+                "topic": "세계대전",
+                "prob": 63.02
+              },
+              {
+                "topic": "환율·국제수지",
+                "prob": 60.99
+              },
+              {
+                "topic": "기후·케펜구분",
+                "prob": 58.0
+              },
+              {
+                "topic": "수요·공급과 시장균형",
+                "prob": 57.87
+              },
+              {
+                "topic": "국제무역",
+                "prob": 46.26
+              },
+              {
+                "topic": "선거·정당",
+                "prob": 43.39
+              },
+              {
+                "topic": "냉전",
+                "prob": 40.41
+              },
+              {
+                "topic": "경제성장·경기변동",
+                "prob": 39.44
+              },
+              {
+                "topic": "국제정치·국제기구",
+                "prob": 39.38
+              },
+              {
+                "topic": "GDP·국민소득",
+                "prob": 38.93
+              }
+            ]
+          },
+          {
+            "year": 2018,
+            "predictions": [
+              {
+                "topic": "세계대전",
+                "prob": 63.48
+              },
+              {
+                "topic": "환율·국제수지",
+                "prob": 60.07
+              },
+              {
+                "topic": "수요·공급과 시장균형",
+                "prob": 57.8
+              },
+              {
+                "topic": "기후·케펜구분",
+                "prob": 55.11
+              },
+              {
+                "topic": "통치기구",
+                "prob": 49.73
+              },
+              {
+                "topic": "GDP·국민소득",
+                "prob": 47.81
+              },
+              {
+                "topic": "국제무역",
+                "prob": 45.92
+              },
+              {
+                "topic": "냉전",
+                "prob": 41.04
+              },
+              {
+                "topic": "일본경제사",
+                "prob": 40.89
+              },
+              {
+                "topic": "선거·정당",
+                "prob": 37.74
+              }
+            ]
+          },
+          {
+            "year": 2019,
+            "predictions": [
+              {
+                "topic": "환율·국제수지",
+                "prob": 67.97
+              },
+              {
+                "topic": "세계대전",
+                "prob": 64.25
+              },
+              {
+                "topic": "수요·공급과 시장균형",
+                "prob": 62.65
+              },
+              {
+                "topic": "통치기구",
+                "prob": 58.31
+              },
+              {
+                "topic": "국제무역",
+                "prob": 51.72
+              },
+              {
+                "topic": "기후·케펜구분",
+                "prob": 50.28
+              },
+              {
+                "topic": "GDP·국민소득",
+                "prob": 43.59
+              },
+              {
+                "topic": "냉전",
+                "prob": 43.24
+              },
+              {
+                "topic": "환경문제",
+                "prob": 40.54
+              },
+              {
+                "topic": "일본경제사",
+                "prob": 39.77
+              },
+              {
+                "topic": "선거·정당",
+                "prob": 39.35
+              }
+            ]
+          },
+          {
+            "year": 2020,
+            "predictions": [
+              {
+                "topic": "환율·국제수지",
+                "prob": 67.19
+              },
+              {
+                "topic": "세계대전",
+                "prob": 64.94
+              },
+              {
+                "topic": "통치기구",
+                "prob": 59.28
+              },
+              {
+                "topic": "수요·공급과 시장균형",
+                "prob": 57.8
+              },
+              {
+                "topic": "기후·케펜구분",
+                "prob": 48.61
+              },
+              {
+                "topic": "국제무역",
+                "prob": 48.14
+              },
+              {
+                "topic": "냉전",
+                "prob": 43.3
+              },
+              {
+                "topic": "일본경제사",
+                "prob": 41.49
+              },
+              {
+                "topic": "환경문제",
+                "prob": 41.2
+              },
+              {
+                "topic": "선거·정당",
+                "prob": 40.36
+              },
+              {
+                "topic": "GDP·국민소득",
+                "prob": 39.65
+              }
+            ]
+          },
+          {
+            "year": 2021,
+            "predictions": [
+              {
+                "topic": "환율·국제수지",
+                "prob": 66.7
+              },
+              {
+                "topic": "수요·공급과 시장균형",
+                "prob": 60.43
+              },
+              {
+                "topic": "통치기구",
+                "prob": 60.1
+              },
+              {
+                "topic": "국제무역",
+                "prob": 52.62
+              },
+              {
+                "topic": "세계대전",
+                "prob": 52.22
+              },
+              {
+                "topic": "기후·케펜구분",
+                "prob": 49.11
+              },
+              {
+                "topic": "GDP·국민소득",
+                "prob": 44.87
+              },
+              {
+                "topic": "냉전",
+                "prob": 43.5
+              },
+              {
+                "topic": "일본경제사",
+                "prob": 40.81
+              },
+              {
+                "topic": "환경문제",
+                "prob": 40.04
+              },
+              {
+                "topic": "선거·정당",
+                "prob": 39.1
+              },
+              {
+                "topic": "국제정치·국제기구",
+                "prob": 37.81
+              }
+            ]
+          },
+          {
+            "year": 2022,
+            "predictions": [
+              {
+                "topic": "환율·국제수지",
+                "prob": 66.16
+              },
+              {
+                "topic": "통치기구",
+                "prob": 60.67
+              },
+              {
+                "topic": "수요·공급과 시장균형",
+                "prob": 60.53
+              },
+              {
+                "topic": "세계대전",
+                "prob": 52.75
+              },
+              {
+                "topic": "국제무역",
+                "prob": 52.66
+              },
+              {
+                "topic": "기후·케펜구분",
+                "prob": 49.56
+              },
+              {
+                "topic": "냉전",
+                "prob": 45.02
+              },
+              {
+                "topic": "GDP·국민소득",
+                "prob": 40.96
+              },
+              {
+                "topic": "일본경제사",
+                "prob": 40.14
+              },
+              {
+                "topic": "국제정치·국제기구",
+                "prob": 38.65
+              },
+              {
+                "topic": "선거·정당",
+                "prob": 38.01
+              },
+              {
+                "topic": "환경문제",
+                "prob": 36.76
+              }
+            ]
+          },
+          {
+            "year": 2023,
+            "predictions": [
+              {
+                "topic": "환율·국제수지",
+                "prob": 65.21
+              },
+              {
+                "topic": "수요·공급과 시장균형",
+                "prob": 64.75
+              },
+              {
+                "topic": "통치기구",
+                "prob": 59.29
+              },
+              {
+                "topic": "세계대전",
+                "prob": 53.22
+              },
+              {
+                "topic": "국제무역",
+                "prob": 52.43
+              },
+              {
+                "topic": "기후·케펜구분",
+                "prob": 50.41
+              },
+              {
+                "topic": "냉전",
+                "prob": 45.75
+              },
+              {
+                "topic": "GDP·국민소득",
+                "prob": 43.74
+              },
+              {
+                "topic": "일본경제사",
+                "prob": 39.61
+              },
+              {
+                "topic": "헌법·기본권",
+                "prob": 38.48
+              },
+              {
+                "topic": "국제정치·국제기구",
+                "prob": 38.16
+              },
+              {
+                "topic": "경제성장·경기변동",
+                "prob": 37.95
+              },
+              {
+                "topic": "환경문제",
+                "prob": 36.86
+              }
+            ]
+          },
+          {
+            "year": 2024,
+            "predictions": [
+              {
+                "topic": "환율·국제수지",
+                "prob": 64.02
+              },
+              {
+                "topic": "수요·공급과 시장균형",
+                "prob": 63.5
+              },
+              {
+                "topic": "세계대전",
+                "prob": 53.84
+              },
+              {
+                "topic": "통치기구",
+                "prob": 53.68
+              },
+              {
+                "topic": "국제무역",
+                "prob": 53.03
+              },
+              {
+                "topic": "냉전",
+                "prob": 52.75
+              },
+              {
+                "topic": "기후·케펜구분",
+                "prob": 51.04
+              },
+              {
+                "topic": "국제정치·국제기구",
+                "prob": 44.56
+              },
+              {
+                "topic": "GDP·국민소득",
+                "prob": 41.69
+              },
+              {
+                "topic": "일본경제사",
+                "prob": 39.17
+              },
+              {
+                "topic": "헌법·기본권",
+                "prob": 38.14
+              },
+              {
+                "topic": "경제성장·경기변동",
+                "prob": 37.94
+              },
+              {
+                "topic": "자원·농업",
+                "prob": 37.7
+              }
+            ]
+          },
+          {
+            "year": 2025,
+            "predictions": [
+              {
+                "topic": "수요·공급과 시장균형",
+                "prob": 66.76
+              },
+              {
+                "topic": "환율·국제수지",
+                "prob": 63.92
+              },
+              {
+                "topic": "세계대전",
+                "prob": 54.27
+              },
+              {
+                "topic": "기후·케펜구분",
+                "prob": 51.56
+              },
+              {
+                "topic": "냉전",
+                "prob": 51.04
+              },
+              {
+                "topic": "국제무역",
+                "prob": 48.56
+              },
+              {
+                "topic": "통치기구",
+                "prob": 47.99
+              },
+              {
+                "topic": "국제정치·국제기구",
+                "prob": 44.95
+              },
+              {
+                "topic": "GDP·국민소득",
+                "prob": 42.92
+              },
+              {
+                "topic": "일본경제사",
+                "prob": 38.8
+              },
+              {
+                "topic": "헌법·기본권",
+                "prob": 38.64
+              },
+              {
+                "topic": "경제성장·경기변동",
+                "prob": 38.02
+              },
+              {
+                "topic": "자원·농업",
+                "prob": 35.54
+              }
+            ]
+          }
+        ],
+        "actuals": [
+          {
+            "year": 2015,
+            "actual_topics": [
+              "일본경제사",
+              "통치기구",
+              "환경문제",
+              "국제정치·국제기구",
+              "환율·국제수지",
+              "국제무역",
+              "기후·케펜구분",
+              "수요·공급과 시장균형",
+              "지도·GIS",
+              "금융·통화정책",
+              "지방자치"
+            ]
+          },
+          {
+            "year": 2016,
+            "actual_topics": [
+              "통치기구",
+              "인구·도시화",
+              "시민혁명",
+              "경제성장·경기변동",
+              "세계대전",
+              "제국주의·식민지",
+              "기후·케펜구분",
+              "근대일본",
+              "수요·공급과 시장균형",
+              "자원·농업",
+              "지도·GIS",
+              "냉전",
+              "지형·판구조",
+              "일본경제사",
+              "환율·국제수지",
+              "선거·정당",
+              "환경문제",
+              "국제정치·국제기구",
+              "국제무역",
+              "GDP·국민소득",
+              "헌법·기본권"
+            ]
+          },
+          {
+            "year": 2017,
+            "actual_topics": [
+              "통치기구",
+              "인구·도시화",
+              "시민혁명",
+              "다문화사회",
+              "사회보장·복지",
+              "경제성장·경기변동",
+              "세계대전",
+              "제국주의·식민지",
+              "기후·케펜구분",
+              "근대일본",
+              "수요·공급과 시장균형",
+              "지도·GIS",
+              "냉전",
+              "사법·재판",
+              "지방자치",
+              "일본경제사",
+              "고용·노동",
+              "환율·국제수지",
+              "선거·정당",
+              "환경문제",
+              "국제정치·국제기구",
+              "국제무역",
+              "헌법·기본권",
+              "대공황",
+              "GDP·국민소득"
+            ]
+          },
+          {
+            "year": 2018,
+            "actual_topics": [
+              "통치기구",
+              "인구·도시화",
+              "시민혁명",
+              "다문화사회",
+              "경제성장·경기변동",
+              "세계대전",
+              "제국주의·식민지",
+              "기후·케펜구분",
+              "근대일본",
+              "수요·공급과 시장균형",
+              "자원·농업",
+              "지도·GIS",
+              "냉전",
+              "환율·국제수지",
+              "선거·정당",
+              "환경문제",
+              "국제정치·국제기구",
+              "국제무역",
+              "GDP·국민소득",
+              "헌법·기본권"
+            ]
+          },
+          {
+            "year": 2019,
+            "actual_topics": [
+              "제국주의·식민지",
+              "통치기구",
+              "환경문제",
+              "국제정치·국제기구",
+              "환율·국제수지",
+              "기후·케펜구분",
+              "근대일본",
+              "시민혁명",
+              "수요·공급과 시장균형",
+              "자원·농업",
+              "사회보장·복지",
+              "냉전",
+              "헌법·기본권",
+              "경제성장·경기변동",
+              "지방자치",
+              "GDP·국민소득",
+              "세계대전"
+            ]
+          },
+          {
+            "year": 2020,
+            "actual_topics": [
+              "통치기구",
+              "기후·케펜구분",
+              "국제정치·국제기구",
+              "환율·국제수지",
+              "국제무역",
+              "인구·도시화",
+              "고용·노동",
+              "근대일본",
+              "수요·공급과 시장균형",
+              "자원·농업",
+              "헌법·기본권",
+              "냉전",
+              "지도·GIS",
+              "경제성장·경기변동",
+              "금융·통화정책",
+              "지방자치",
+              "GDP·국민소득",
+              "세계대전"
+            ]
+          },
+          {
+            "year": 2021,
+            "actual_topics": [
+              "통치기구",
+              "인구·도시화",
+              "시민혁명",
+              "경제성장·경기변동",
+              "세계대전",
+              "제국주의·식민지",
+              "기후·케펜구분",
+              "근대일본",
+              "수요·공급과 시장균형",
+              "자원·농업",
+              "지도·GIS",
+              "정치사상",
+              "냉전",
+              "사법·재판",
+              "지방자치",
+              "지형·판구조",
+              "고용·노동",
+              "환율·국제수지",
+              "금융·통화정책",
+              "환경문제",
+              "국제정치·국제기구",
+              "국제무역",
+              "헌법·기본권"
+            ]
+          },
+          {
+            "year": 2022,
+            "actual_topics": [
+              "통치기구",
+              "시민혁명",
+              "사회보장·복지",
+              "경제성장·경기변동",
+              "세계대전",
+              "제국주의·식민지",
+              "기후·케펜구분",
+              "수요·공급과 시장균형",
+              "자원·농업",
+              "지도·GIS",
+              "정치사상",
+              "냉전",
+              "사법·재판",
+              "지방자치",
+              "지형·판구조",
+              "환율·국제수지",
+              "금융·통화정책",
+              "환경문제",
+              "국제정치·국제기구",
+              "국제무역",
+              "GDP·국민소득",
+              "헌법·기본권"
+            ]
+          },
+          {
+            "year": 2023,
+            "actual_topics": [
+              "통치기구",
+              "인구·도시화",
+              "시민혁명",
+              "경제성장·경기변동",
+              "세계대전",
+              "기후·케펜구분",
+              "근대일본",
+              "수요·공급과 시장균형",
+              "자원·농업",
+              "정치사상",
+              "냉전",
+              "사법·재판",
+              "지방자치",
+              "지형·판구조",
+              "고용·노동",
+              "환율·국제수지",
+              "금융·통화정책",
+              "환경문제",
+              "국제정치·국제기구",
+              "국제무역",
+              "GDP·국민소득",
+              "헌법·기본권"
+            ]
+          },
+          {
+            "year": 2024,
+            "actual_topics": [
+              "제국주의·식민지",
+              "통치기구",
+              "환경문제",
+              "국제정치·국제기구",
+              "환율·국제수지",
+              "기후·케펜구분",
+              "근대일본",
+              "수요·공급과 시장균형",
+              "헌법·기본권",
+              "지도·GIS",
+              "냉전",
+              "경제성장·경기변동",
+              "선거·정당",
+              "사법·재판",
+              "지방자치",
+              "지형·판구조",
+              "GDP·국민소득",
+              "세계대전"
+            ]
+          },
+          {
+            "year": 2025,
+            "actual_topics": [
+              "통치기구",
+              "인구·도시화",
+              "시민혁명",
+              "사회보장·복지",
+              "경제성장·경기변동",
+              "세계대전",
+              "제국주의·식민지",
+              "기후·케펜구분",
+              "근대일본",
+              "수요·공급과 시장균형",
+              "자원·농업",
+              "지도·GIS",
+              "정치사상",
+              "지방자치",
+              "지형·판구조",
+              "환율·국제수지",
+              "금융·통화정책",
+              "환경문제",
+              "국제정치·국제기구",
+              "국제무역",
+              "GDP·국민소득",
+              "헌법·기본권"
+            ]
+          }
+        ]
+      },
+      "comparison_with_existing": {
+        "existing_system_available": true,
+        "existing_top_predictions_count": 30,
+        "new_top_predictions_count": 41,
+        "avg_rank_change_from_existing": 7.448275862068965,
+        "topics_added": [
+          "국제무역",
+          "냉전",
+          "GDP·국민소득"
+        ],
+        "topics_removed": [
+          "경제성장·경기변동",
+          "시민혁명",
+          "금융·통화정책"
+        ]
+      },
+      "final_metrics": {
+        "mean_precision": 0.7979,
+        "mean_recall": 0.4589,
+        "mean_f1": 0.5772,
+        "test_years": [
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "num_test_years": 11
+      }
+    },
+    "recommendation_accuracy": {
+      "evaluation_type": "recommendation_accuracy",
+      "generated_at": "2026-06-02T08:13:50.534308",
+      "metrics": {
+        "frequency_alignment": 0.6333,
+        "domain_diversity": 1.0,
+        "prerequisite_awareness": 0.7667,
+        "explainability_score": 0.85
+      },
+      "details": {
+        "num_recommended_topics": 30,
+        "recommended_topics": [
+          "GDP·국민소득",
+          "경제성장·경기변동",
+          "고용·노동",
+          "국제무역",
+          "국제정치·국제기구",
+          "근대일본",
+          "금융·통화정책",
+          "기후·케펜구분",
+          "냉전",
+          "다문화사회",
+          "사법·재판",
+          "사회보장·복지",
+          "선거·정당",
+          "세계대전",
+          "수요·공급과 시장균형",
+          "시민혁명",
+          "인구·도시화",
+          "일본경제사",
+          "자원·농업",
+          "재정·조세정책",
+          "전후세계질서",
+          "정치사상",
+          "제국주의·식민지",
+          "지도·GIS",
+          "지방자치",
+          "지형·판구조",
+          "통치기구",
+          "헌법·기본권",
+          "환경문제",
+          "환율·국제수지"
+        ],
+        "top_frequency_topics": [
+          "수요·공급과 시장균형",
+          "세계대전",
+          "환율·국제수지",
+          "기후·케펜구분",
+          "통치기구",
+          "국제무역",
+          "국제정치·국제기구",
+          "냉전",
+          "GDP·국민소득",
+          "경제성장·경기변동",
+          "선거·정당",
+          "일본경제사",
+          "자원·농업",
+          "헌법·기본권",
+          "근대일본"
+        ],
+        "domains_covered": [
+          "economy",
+          "politics",
+          "geography",
+          "society",
+          "history"
+        ],
+        "total_domains": 5
+      }
+    },
+    "weakness_detection": {
+      "metric": "weakness_detection_coverage",
+      "prerequisite_coverage": 1.0,
+      "topics_covered": 41,
+      "total_topics": 41,
+      "prerequisite_relationships_defined": 74
+    },
+    "knowledge_graph_quality": {
+      "metric": "knowledge_graph_quality",
+      "node_coverage": 0.8293,
+      "edge_density": 0.021394,
+      "total_prerequisite_edges": 89,
+      "total_contains_edges": 41,
+      "has_cycles": false,
+      "avg_learning_path_length": 3.44,
+      "total_topic_nodes": 65,
+      "covered_topics": 34,
+      "known_topics": 41
+    },
+    "study_outcome": {
+      "metric": "study_outcome_correlation",
+      "model_consistency": {
+        "valid_priors": true,
+        "forgetting_curve_valid": true,
+        "review_timing_valid": true,
+        "score_projection_valid": true
+      },
+      "model_params": {
+        "num_topics_tracked": 41,
+        "prior_alpha": 2.0,
+        "prior_beta": 2.0,
+        "default_half_life_days": 7,
+        "initial_ease_factor": 2.5
+      },
+      "measurement_approach": "Bayesian student model validated for internal consistency. Individual student data required for full outcome correlation study."
+    },
+    "student_model": {
+      "topics_tracked": 41,
+      "avg_mastery": 0.5,
+      "avg_confidence": 0.553,
+      "topics_with_few_attempts": 41
+    }
+  },
+  "overall_score": {
+    "weighted_score": 80.9,
+    "grade": "A",
+    "component_scores": {
+      "prediction": 61.8,
+      "recommendation": 79.8,
+      "weakness_detection": 100.0,
+      "knowledge_graph": 93.2,
+      "student_model": 55.3,
+      "study_outcome": 100.0
+    },
+    "weights": {
+      "prediction": 0.25,
+      "recommendation": 0.2,
+      "weakness_detection": 0.2,
+      "knowledge_graph": 0.15,
+      "student_model": 0.1,
+      "study_outcome": 0.1
+    }
+  },
+  "intelligence_score": 80.9,
+  "grade": "A"
+}

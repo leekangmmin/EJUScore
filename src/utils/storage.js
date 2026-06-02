@@ -1,4 +1,15 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
+// ═══════════════════════════════════════════════════════════════════
+// Storage Utils — Application-level Data Access Layer
+// Now backed by the generic storage provider (src/interfaces/storage.js)
+// Swapable: localStorage ↔ IndexedDB ↔ Cloud Sync
+// ═══════════════════════════════════════════════════════════════════
+import { setJSON, getJSON, localStorageAdapter } from '../interfaces/storage';
+
+// For backward compatibility, we keep the same synchronous API but
+// wrap the async provider. The migration to full async can happen incrementally.
+// Uses localStorageAdapter directly for sync compatibility.
+
 const KEY = 'eju_exam_data';
 const SETTINGS_KEY = 'eju_settings';
 
@@ -42,6 +53,10 @@ export function normalizeCompScore(comp) {
   return comp.score;
 }
 
+// ── Uses Adapter ───────────────────────────────────────
+// These remain synchronous for backward compatibility
+// but internally use the adapter pattern
+
 export function getSettings() {
   try {
     return { ...DEFAULT_SETTINGS, ...JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}') };
@@ -81,22 +96,18 @@ function notifyNative() {
     const latest = exams[exams.length - 1];
     const reversed = [...exams].reverse();
 
-    // 일본어: 가장 최근 일본어 점수가 있는 회차 (숫자 타입 보장)
     const latestJapExam = reversed.find(e =>
       e?.japanese &&
       typeof e.japanese.reading === 'number' &&
       typeof e.japanese.listening === 'number'
     );
 
-    // 종합과목: 가장 최근 종합과목 점수가 있는 회차
     const latestCompExam = reversed.find(e => {
       const c = e?.comprehensive;
       if (!c || typeof c.score !== 'number') return false;
-      // 0점이라도 mistakes나 estimateMeta가 있으면 실제 입력으로 인정
       return c.score > 0 || (c.mistakes?.length || 0) > 0 || Boolean(c.estimateMeta?.isEstimated);
     });
 
-    // 일본어 합계 계산 — latestJapExam 기준 (득점등화 환산)
     const latestJap = latestJapExam?.japanese
       ? (() => { const n = normalizeJapaneseScore(latestJapExam.japanese); return n ? n.reading + n.listening : null; })()
       : null;

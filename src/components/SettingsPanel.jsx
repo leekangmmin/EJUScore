@@ -190,8 +190,8 @@ export default function SettingsPanel({ settings, onClose, onSave, onExport, onI
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {onExport && (
                 <button onClick={onExport} style={{
-                  background: 'rgba(79,142,247,0.12)', color: 'var(--blue)',
-                  border: '1px solid rgba(79,142,247,0.35)', borderRadius: 10,
+                  background: 'rgba(49,130,246,0.12)', color: 'var(--blue)',
+                  border: '1px solid rgba(49,130,246,0.35)', borderRadius: 10,
                   padding: '9px 18px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit',
                   transition: 'all 0.18s', display: 'inline-flex', alignItems: 'center', gap: 6,
                 }}>
@@ -236,7 +236,7 @@ export default function SettingsPanel({ settings, onClose, onSave, onExport, onI
             background: 'linear-gradient(135deg, var(--blue), var(--purple))',
             color: '#fff', border: 'none', borderRadius: 10,
             padding: '10px 24px', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit',
-            boxShadow: '0 4px 16px rgba(79,142,247,0.35)',
+            boxShadow: '0 4px 16px rgba(49,130,246,0.35)',
           }}>저장</button>
         </div>
       </div>

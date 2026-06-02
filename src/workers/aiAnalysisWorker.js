@@ -37,10 +37,10 @@ self.addEventListener('message', async ({ data }) => {
         callback_function: (text) => self.postMessage({ type: 'token', text }),
       });
       await generator(messages, {
-        max_new_tokens: 250,
+        max_new_tokens: 480,
         do_sample: true,
-        temperature: 0.7,
-        repetition_penalty: 1.1,
+        temperature: 0.5,
+        repetition_penalty: 1.2,
         streamer,
       });
       self.postMessage({ type: 'done' });

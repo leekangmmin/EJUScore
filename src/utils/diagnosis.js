@@ -90,5 +90,6 @@ export function generateDiagnosis(exams) {
 export function getDday(nextExamDate) {
   if (!nextExamDate) return null;
   const diff = Math.ceil((new Date(nextExamDate) - new Date()) / 86400000);
-  return diff;
+  // Math.ceil can produce -0 which fails Object.is equality
+  return diff === 0 ? 0 : diff;
 }
