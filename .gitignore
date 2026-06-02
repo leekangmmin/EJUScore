@@ -38,3 +38,10 @@ main.js.old
 
 # Large OCR model binaries (download separately; too big for git)
 *.traineddata
+
+# Stray root-level dataset copies (canonical lives under dataset/)
+/gold_standard.json
+/insights_v2.json
+
+# Pre-dedup dataset backups (not source of truth)
+dataset/_backup_pre_dedup/

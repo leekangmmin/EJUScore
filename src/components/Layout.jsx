@@ -1,9 +1,9 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import {
   LayoutDashboard, BookOpen, Layers, Plus, Zap,
   Settings, Sun, Moon, GraduationCap, Sparkles, CalendarCheck,
-  ClipboardList, BarChartBig, Camera, BrainCircuit,
+  ClipboardList, BarChartBig, Camera, BrainCircuit, MoreHorizontal, X,
 } from 'lucide-react';
 import { getExams, getSettings, normalizeJapaneseScore, normalizeCompScore } from '../utils/storage';
 import { getDday } from '../utils/diagnosis';
@@ -23,6 +23,16 @@ const NAV = [
   { id: 'trend-insights', Icon: BarChartBig,      label: '출제 경향' },
   { id: 'photo-question', Icon: Camera,           label: '사진 변환' },
 ];
+
+// Mobile bottom nav: 4 primary tabs + a "더보기" sheet for the rest (Toss/Linear pattern).
+const NAV_BY_ID = Object.fromEntries(NAV.map((n) => [n.id, n]));
+const BOTTOM_PRIMARY = ['dashboard', 'comprehensive', 'trend-insights', 'ai'].map((id) => NAV_BY_ID[id]);
+const MORE_IDS = ['tasks', 'japanese', 'diagnosis', 'exam-intelligence', 'photo-question'];
+const MORE_ITEMS = MORE_IDS.map((id) => NAV_BY_ID[id]);
+// Shorter labels for the cramped bottom bar.
+const SHORT_LABEL = {
+  dashboard: '대시보드', comprehensive: '종합과목', 'trend-insights': '출제경향', ai: 'AI 코치',
+};
 
 function SidebarMiniStats() {
   const exams = useMemo(() => getExams(), []);
@@ -88,6 +98,8 @@ function SidebarMiniStats() {
 
 export default function Layout({ currentPage, onNavigate, onAddNew, onOpenQuickInput, onOpenSettings, onToggleTheme, theme, children }) {
   const isWindows = typeof window !== 'undefined' && window.electronAPI?.platform === 'win32';
+  const [moreOpen, setMoreOpen] = useState(false);
+  const go = (id) => { onNavigate(id); setMoreOpen(false); };
 
   return (
     <div className="app-shell" style={isWindows ? { paddingTop: 32 } : undefined}>
@@ -194,27 +206,51 @@ export default function Layout({ currentPage, onNavigate, onAddNew, onOpenQuickI
         </div>
       </main>
 
+      {/* ── "더보기" sheet (mobile) ── */}
+      {moreOpen && (
+        <>
+          <div className="more-sheet-backdrop" onClick={() => setMoreOpen(false)} />
+          <div className="more-sheet" role="dialog" aria-label="더보기 메뉴">
+            <div className="more-sheet-handle" />
+            <div className="more-sheet-head">
+              <span>전체 메뉴</span>
+              <button className="btn-icon" onClick={() => setMoreOpen(false)} aria-label="닫기"><X size={16} /></button>
+            </div>
+            <div className="more-sheet-grid">
+              {MORE_ITEMS.map(({ id, Icon, label }) => (
+                <button
+                  key={id}
+                  onClick={() => go(id)}
+                  className={`more-sheet-item${currentPage === id ? ' active' : ''}`}
+                >
+                  <Icon size={22} strokeWidth={1.7} />
+                  <span>{label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
+
       {/* ── Bottom nav (mobile) ── */}
       <nav className="bottom-nav">
-        {NAV.map(({ id, Icon, label }) => (
+        {BOTTOM_PRIMARY.map(({ id, Icon, label }) => (
           <button
             key={id}
-            onClick={() => onNavigate(id)}
+            onClick={() => go(id)}
             className={`bottom-tab${currentPage === id ? ' active' : ''}`}
           >
             <Icon size={20} strokeWidth={1.6} />
-            <span>{label.replace(' 분석', '').replace('Intelligence', 'ExamI').slice(0, 8)}</span>
+            <span>{SHORT_LABEL[id] || label}</span>
           </button>
         ))}
-        <button onClick={onAddNew} className="bottom-tab" style={{ color: 'var(--accent)' }}>
-          <div style={{
-            width: 36, height: 36, borderRadius: '50%',
-            background: GOLD_GRADIENT, display: 'flex', alignItems: 'center', justifyContent: 'center',
-            boxShadow: '0 0 20px rgba(49,130,246,0.25)',
-          }}>
-            <Plus size={18} color="#07070e" strokeWidth={2.5} />
-          </div>
-          <span>입력</span>
+        <button
+          onClick={() => setMoreOpen((v) => !v)}
+          className={`bottom-tab${moreOpen || MORE_IDS.includes(currentPage) ? ' active' : ''}`}
+          aria-label="더보기"
+        >
+          <MoreHorizontal size={20} strokeWidth={1.6} />
+          <span>더보기</span>
         </button>
       </nav>
     </div>

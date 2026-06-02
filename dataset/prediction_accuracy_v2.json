@@ -1,0 +1,104 @@
+{
+  "method": "leave-future-out (train year<=Y-1, predict Y)",
+  "engine": "Bayesian(30%)+Markov(20%)+Trend(20%)+Momentum(15%)+Recency(15%)",
+  "threshold": 0.5,
+  "test_years": "2016-2025",
+  "folds": 10,
+  "avg_precision": 0.831,
+  "avg_recall": 0.762,
+  "avg_f1": 0.779,
+  "per_year": [
+    {
+      "year": 2016,
+      "TP": 8,
+      "FP": 2,
+      "FN": 13,
+      "precision": 0.8,
+      "recall": 0.381,
+      "f1": 0.516
+    },
+    {
+      "year": 2017,
+      "TP": 15,
+      "FP": 0,
+      "FN": 10,
+      "precision": 1,
+      "recall": 0.6,
+      "f1": 0.75
+    },
+    {
+      "year": 2018,
+      "TP": 19,
+      "FP": 5,
+      "FN": 1,
+      "precision": 0.792,
+      "recall": 0.95,
+      "f1": 0.864
+    },
+    {
+      "year": 2019,
+      "TP": 15,
+      "FP": 5,
+      "FN": 2,
+      "precision": 0.75,
+      "recall": 0.882,
+      "f1": 0.811
+    },
+    {
+      "year": 2020,
+      "TP": 12,
+      "FP": 5,
+      "FN": 6,
+      "precision": 0.706,
+      "recall": 0.667,
+      "f1": 0.686
+    },
+    {
+      "year": 2021,
+      "TP": 16,
+      "FP": 1,
+      "FN": 7,
+      "precision": 0.941,
+      "recall": 0.696,
+      "f1": 0.8
+    },
+    {
+      "year": 2022,
+      "TP": 19,
+      "FP": 3,
+      "FN": 3,
+      "precision": 0.864,
+      "recall": 0.864,
+      "f1": 0.864
+    },
+    {
+      "year": 2023,
+      "TP": 20,
+      "FP": 2,
+      "FN": 2,
+      "precision": 0.909,
+      "recall": 0.909,
+      "f1": 0.909
+    },
+    {
+      "year": 2024,
+      "TP": 17,
+      "FP": 7,
+      "FN": 1,
+      "precision": 0.708,
+      "recall": 0.944,
+      "f1": 0.81
+    },
+    {
+      "year": 2025,
+      "TP": 16,
+      "FP": 3,
+      "FN": 6,
+      "precision": 0.842,
+      "recall": 0.727,
+      "f1": 0.78
+    }
+  ],
+  "generated_at": "2026-06-02T09:10:53.896Z",
+  "note": "Task = predict which of the 35 standard topics appear (>=1 question) in the target year, using only prior-year data. No data leakage."
+}

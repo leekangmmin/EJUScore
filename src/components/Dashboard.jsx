@@ -475,7 +475,7 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
                 <span style={{ width: 12, height: 2, background: 'var(--green)', display: 'inline-block', borderRadius: 1 }} /> 종합과목
               </span>
               <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-                <span style={{ width: 12, height: 2, background: 'var(--text-tertiary)', display: 'inline-block', borderRadius: 1, borderTop: '1px dashed var(--text-tertiary)', height: 0 }} /> 예측
+                <span style={{ width: 12, height: 0, display: 'inline-block', borderTop: '1px dashed var(--text-tertiary)' }} /> 예측
               </span>
             </div>
           </div>

@@ -9,12 +9,14 @@ import { PAST_EXAM_BANK } from '../data/ejuPastExamBank';
 import trendCompleteData from '../../dataset/trend-analysis/trend_analysis_complete.json';
 import prediction2026_2028 from '../../dataset/prediction/prediction_2026_2028.json';
 import weaknessConnector from '../../dataset/prediction/weakness_connector.json';
+import insightsV2 from '../../dataset/insights/insights_v2.json';
 
 const COMPLETE_TREND = trendCompleteData;
 const PREDICTION = prediction2026_2028;
 const WEAKNESS = weaknessConnector;
+const INSIGHTS = insightsV2;
 
-export { COMPLETE_TREND, PREDICTION, WEAKNESS };
+export { COMPLETE_TREND, PREDICTION, WEAKNESS, INSIGHTS };
 
 /**
  * Build enhanced model that combines PAST_EXAM_BANK with complete trend data
@@ -166,5 +168,6 @@ export function buildEnhancedModel() {
     math,
     SUBJECT_MAP,
     COMP_KEYS,
+    insights: INSIGHTS,
   };
 }

@@ -3,17 +3,18 @@
   "version": "2.0.0",
   "generated_at": "2026-06-02T07:37:36.613635",
   "source": "Enhanced classification (1310 questions)",
-  "total_questions": 1310,
+  "total_questions": 1121,
   "year_range": {
     "start": 2002,
     "end": 2025
   },
   "domain_distribution": {
-    "economy": 590,
-    "history": 248,
-    "politics": 226,
-    "geography": 200,
-    "society": 44
+    "society": 29,
+    "economy": 507,
+    "politics": 210,
+    "history": 197,
+    "geography": 176,
+    "unclassified": 2
   },
   "questions": [
     {
@@ -27,31 +28,7 @@
     {
       "year": 2002,
       "round": 1,
-      "question_number": 1,
-      "domain": "society",
-      "topic": "환경문제",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 1,
-      "question_number": 1,
-      "domain": "society",
-      "topic": "환경문제",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 1,
       "question_number": 3,
-      "domain": "society",
-      "topic": "환경문제",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 1,
-      "question_number": 1,
       "domain": "society",
       "topic": "환경문제",
       "source": "ocr"
@@ -99,22 +76,6 @@
     {
       "year": 2002,
       "round": 1,
-      "question_number": 1,
-      "domain": "society",
-      "topic": "환경문제",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 1,
-      "question_number": 1,
-      "domain": "society",
-      "topic": "환경문제",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 1,
       "question_number": 14,
       "domain": "economy",
       "topic": "환율·국제수지",
@@ -131,49 +92,9 @@
     {
       "year": 2002,
       "round": 1,
-      "question_number": 1,
-      "domain": "society",
-      "topic": "환경문제",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 1,
-      "question_number": 1,
-      "domain": "society",
-      "topic": "환경문제",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 1,
       "question_number": 13,
       "domain": "economy",
       "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
       "source": "ocr"
     },
     {
@@ -203,14 +124,6 @@
     {
       "year": 2002,
       "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
       "question_number": 9,
       "domain": "economy",
       "topic": "국제무역",
@@ -227,25 +140,9 @@
     {
       "year": 2002,
       "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
       "question_number": 14,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
       "source": "ocr"
     },
     {
@@ -267,25 +164,9 @@
     {
       "year": 2002,
       "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
       "question_number": 28,
       "domain": "politics",
       "topic": "안전보장·방위",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
       "source": "ocr"
     },
     {
@@ -300,46 +181,6 @@
       "year": 2002,
       "round": 2,
       "question_number": 5,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 2,
       "domain": "economy",
       "topic": "국제무역",
       "source": "ocr"
@@ -355,22 +196,6 @@
     {
       "year": 2002,
       "round": 2,
-      "question_number": 2,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 9,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
       "question_number": 10,
       "domain": "economy",
       "topic": "국제무역",
@@ -379,79 +204,7 @@
     {
       "year": 2002,
       "round": 2,
-      "question_number": 5,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 2,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
       "question_number": 8,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 2,
       "domain": "economy",
       "topic": "국제무역",
       "source": "ocr"
@@ -467,41 +220,9 @@
     {
       "year": 2002,
       "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 8,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 10,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
       "question_number": 12,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 2,
-      "domain": "economy",
-      "topic": "국제무역",
       "source": "ocr"
     },
     {
@@ -516,46 +237,6 @@
       "year": 2002,
       "round": 2,
       "question_number": 17,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 12,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 15,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2002,
-      "round": 2,
-      "question_number": 19,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
       "source": "ocr"
@@ -635,22 +316,6 @@
     {
       "year": 2003,
       "round": 1,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "국제정치·국제기구",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 1,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "국제정치·국제기구",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 1,
       "question_number": 12,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
@@ -691,14 +356,6 @@
     {
       "year": 2003,
       "round": 1,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "국제정치·국제기구",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 1,
       "question_number": 20,
       "domain": "economy",
       "topic": "일본경제사",
@@ -723,41 +380,9 @@
     {
       "year": 2003,
       "round": 1,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "국제정치·국제기구",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 1,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "국제정치·국제기구",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 1,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "국제정치·국제기구",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 1,
       "question_number": 16,
       "domain": "economy",
       "topic": "일본경제사",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
       "source": "ocr"
     },
     {
@@ -779,14 +404,6 @@
     {
       "year": 2003,
       "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
       "question_number": 3,
       "domain": "history",
       "topic": "냉전",
@@ -798,14 +415,6 @@
       "question_number": 6,
       "domain": "society",
       "topic": "다문화사회",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
       "source": "ocr"
     },
     {
@@ -843,22 +452,6 @@
     {
       "year": 2003,
       "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 6,
-      "domain": "society",
-      "topic": "다문화사회",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
       "question_number": 13,
       "domain": "economy",
       "topic": "GDP·국민소득",
@@ -875,33 +468,9 @@
     {
       "year": 2003,
       "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
       "question_number": 18,
       "domain": "economy",
       "topic": "GDP·국민소득",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
       "source": "ocr"
     },
     {
@@ -923,41 +492,9 @@
     {
       "year": 2003,
       "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 2,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
       "question_number": 4,
       "domain": "society",
       "topic": "다문화사회",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
       "source": "ocr"
     },
     {
@@ -971,46 +508,6 @@
     {
       "year": 2003,
       "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 2,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 6,
-      "domain": "society",
-      "topic": "다문화사회",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 9,
-      "domain": "economy",
-      "topic": "GDP·국민소득",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
       "question_number": 5,
       "domain": "society",
       "topic": "다문화사회",
@@ -1019,55 +516,7 @@
     {
       "year": 2003,
       "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
       "question_number": 8,
-      "domain": "economy",
-      "topic": "GDP·국민소득",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 9,
-      "domain": "economy",
-      "topic": "GDP·국민소득",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 10,
       "domain": "economy",
       "topic": "GDP·국민소득",
       "source": "ocr"
@@ -1086,38 +535,6 @@
       "question_number": 15,
       "domain": "economy",
       "topic": "GDP·국민소득",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 17,
-      "domain": "economy",
-      "topic": "GDP·국민소득",
-      "source": "ocr"
-    },
-    {
-      "year": 2003,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 1,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "전후세계질서",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 1,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "전후세계질서",
       "source": "ocr"
     },
     {
@@ -1187,14 +604,6 @@
     {
       "year": 2004,
       "round": 1,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "전후세계질서",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 1,
       "question_number": 13,
       "domain": "economy",
       "topic": "국제무역",
@@ -1219,14 +628,6 @@
     {
       "year": 2004,
       "round": 1,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "전후세계질서",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 1,
       "question_number": 20,
       "domain": "economy",
       "topic": "환율·국제수지",
@@ -1238,22 +639,6 @@
       "question_number": 21,
       "domain": "economy",
       "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 1,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "전후세계질서",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
       "source": "ocr"
     },
     {
@@ -1270,22 +655,6 @@
       "question_number": 8,
       "domain": "economy",
       "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
       "source": "ocr"
     },
     {
@@ -1302,22 +671,6 @@
       "question_number": 6,
       "domain": "economy",
       "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 8,
-      "domain": "economy",
-      "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
       "source": "ocr"
     },
     {
@@ -1358,14 +711,6 @@
       "question_number": 21,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
       "source": "ocr"
     },
     {
@@ -1395,22 +740,6 @@
     {
       "year": 2004,
       "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 2,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
       "question_number": 4,
       "domain": "economy",
       "topic": "환율·국제수지",
@@ -1419,87 +748,7 @@
     {
       "year": 2004,
       "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 8,
-      "domain": "economy",
-      "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 2,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 6,
-      "domain": "economy",
-      "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 6,
-      "domain": "economy",
-      "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
       "question_number": 9,
-      "domain": "economy",
-      "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 8,
       "domain": "economy",
       "topic": "환율·국제수지",
       "source": "ocr"
@@ -1515,81 +764,9 @@
     {
       "year": 2004,
       "round": 2,
-      "question_number": 4,
-      "domain": "economy",
-      "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
       "question_number": 3,
       "domain": "geography",
       "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 9,
-      "domain": "economy",
-      "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 12,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 15,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2004,
-      "round": 2,
-      "question_number": 16,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
       "source": "ocr"
     },
     {
@@ -1598,14 +775,6 @@
       "question_number": 15,
       "domain": "politics",
       "topic": "통치기구",
-      "source": "ocr"
-    },
-    {
-      "year": 2005,
-      "round": 1,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "일본경제사",
       "source": "ocr"
     },
     {
@@ -1683,23 +852,7 @@
     {
       "year": 2005,
       "round": 1,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "일본경제사",
-      "source": "ocr"
-    },
-    {
-      "year": 2005,
-      "round": 1,
       "question_number": 17,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2005,
-      "round": 1,
-      "question_number": 18,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
       "source": "ocr"
@@ -1763,23 +916,7 @@
     {
       "year": 2005,
       "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "일본경제사",
-      "source": "ocr"
-    },
-    {
-      "year": 2005,
-      "round": 2,
       "question_number": 2,
-      "domain": "economy",
-      "topic": "일본경제사",
-      "source": "ocr"
-    },
-    {
-      "year": 2005,
-      "round": 2,
-      "question_number": 1,
       "domain": "economy",
       "topic": "일본경제사",
       "source": "ocr"
@@ -1883,25 +1020,9 @@
     {
       "year": 2005,
       "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "일본경제사",
-      "source": "ocr"
-    },
-    {
-      "year": 2005,
-      "round": 2,
       "question_number": 24,
       "domain": "economy",
       "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2006,
-      "round": 1,
-      "question_number": 1,
-      "domain": "society",
-      "topic": "사회보장·복지",
       "source": "ocr"
     },
     {
@@ -1971,22 +1092,6 @@
     {
       "year": 2006,
       "round": 1,
-      "question_number": 12,
-      "domain": "economy",
-      "topic": "경제성장·경기변동",
-      "source": "ocr"
-    },
-    {
-      "year": 2006,
-      "round": 1,
-      "question_number": 1,
-      "domain": "society",
-      "topic": "사회보장·복지",
-      "source": "ocr"
-    },
-    {
-      "year": 2006,
-      "round": 1,
       "question_number": 13,
       "domain": "economy",
       "topic": "경제성장·경기변동",
@@ -2035,14 +1140,6 @@
     {
       "year": 2006,
       "round": 1,
-      "question_number": 1,
-      "domain": "society",
-      "topic": "사회보장·복지",
-      "source": "ocr"
-    },
-    {
-      "year": 2006,
-      "round": 1,
       "question_number": 23,
       "domain": "economy",
       "topic": "경제성장·경기변동",
@@ -2067,31 +1164,7 @@
     {
       "year": 2006,
       "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2006,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2006,
-      "round": 2,
       "question_number": 2,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2006,
-      "round": 2,
-      "question_number": 1,
       "domain": "history",
       "topic": "냉전",
       "source": "ocr"
@@ -2243,14 +1316,6 @@
     {
       "year": 2007,
       "round": 1,
-      "question_number": 2,
-      "domain": "history",
-      "topic": "산업혁명·자본주의",
-      "source": "ocr"
-    },
-    {
-      "year": 2007,
-      "round": 1,
       "question_number": 3,
       "domain": "economy",
       "topic": "재정·조세정책",
@@ -2294,14 +1359,6 @@
       "question_number": 11,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2007,
-      "round": 1,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "산업혁명·자본주의",
       "source": "ocr"
     },
     {
@@ -2403,30 +1460,6 @@
     {
       "year": 2007,
       "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2007,
-      "round": 2,
-      "question_number": 2,
-      "domain": "economy",
-      "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2007,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2007,
-      "round": 2,
       "question_number": 3,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
@@ -2459,14 +1492,6 @@
     {
       "year": 2007,
       "round": 2,
-      "question_number": 2,
-      "domain": "economy",
-      "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2007,
-      "round": 2,
       "question_number": 11,
       "domain": "society",
       "topic": "사회보장·복지",
@@ -2486,14 +1511,6 @@
       "question_number": 13,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2007,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "환율·국제수지",
       "source": "ocr"
     },
     {
@@ -2547,41 +1564,9 @@
     {
       "year": 2007,
       "round": 2,
-      "question_number": 30,
-      "domain": "economy",
-      "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2007,
-      "round": 2,
-      "question_number": 19,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2007,
-      "round": 2,
       "question_number": 1,
       "domain": "history",
       "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2008,
-      "round": 1,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "선거·정당",
-      "source": "ocr"
-    },
-    {
-      "year": 2008,
-      "round": 1,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "선거·정당",
       "source": "ocr"
     },
     {
@@ -2598,14 +1583,6 @@
       "question_number": 2,
       "domain": "history",
       "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2008,
-      "round": 1,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "선거·정당",
       "source": "ocr"
     },
     {
@@ -2779,33 +1756,9 @@
     {
       "year": 2008,
       "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "",
-      "source": "ocr"
-    },
-    {
-      "year": 2008,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "",
-      "source": "ocr"
-    },
-    {
-      "year": 2008,
-      "round": 2,
       "question_number": 2,
       "domain": "history",
       "topic": "러시아혁명·소련",
-      "source": "ocr"
-    },
-    {
-      "year": 2008,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "",
       "source": "ocr"
     },
     {
@@ -2838,14 +1791,6 @@
       "question_number": 10,
       "domain": "economy",
       "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2008,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "",
       "source": "ocr"
     },
     {
@@ -2949,22 +1894,6 @@
       "round": 1,
       "question_number": 1,
       "domain": "economy",
-      "topic": "고용·노동",
-      "source": "ocr"
-    },
-    {
-      "year": 2009,
-      "round": 1,
-      "question_number": 2,
-      "domain": "economy",
-      "topic": "고용·노동",
-      "source": "ocr"
-    },
-    {
-      "year": 2009,
-      "round": 1,
-      "question_number": 1,
-      "domain": "economy",
       "topic": "경제성장·경기변동",
       "source": "ocr"
     },
@@ -3003,25 +1932,9 @@
     {
       "year": 2009,
       "round": 1,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "고용·노동",
-      "source": "ocr"
-    },
-    {
-      "year": 2009,
-      "round": 1,
       "question_number": 12,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2009,
-      "round": 1,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "고용·노동",
       "source": "ocr"
     },
     {
@@ -3115,14 +2028,6 @@
     {
       "year": 2009,
       "round": 1,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "고용·노동",
-      "source": "ocr"
-    },
-    {
-      "year": 2009,
-      "round": 1,
       "question_number": 271929,
       "domain": "politics",
       "topic": "헌법·기본권",
@@ -3147,39 +2052,7 @@
     {
       "year": 2009,
       "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "재정·조세정책",
-      "source": "ocr"
-    },
-    {
-      "year": 2009,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "재정·조세정책",
-      "source": "ocr"
-    },
-    {
-      "year": 2009,
-      "round": 2,
       "question_number": 3,
-      "domain": "economy",
-      "topic": "재정·조세정책",
-      "source": "ocr"
-    },
-    {
-      "year": 2009,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "재정·조세정책",
-      "source": "ocr"
-    },
-    {
-      "year": 2009,
-      "round": 2,
-      "question_number": 5,
       "domain": "economy",
       "topic": "재정·조세정책",
       "source": "ocr"
@@ -3214,14 +2087,6 @@
       "question_number": 11,
       "domain": "politics",
       "topic": "선거·정당",
-      "source": "ocr"
-    },
-    {
-      "year": 2009,
-      "round": 2,
-      "question_number": 12,
-      "domain": "economy",
-      "topic": "재정·조세정책",
       "source": "ocr"
     },
     {
@@ -3300,22 +2165,6 @@
       "year": 2010,
       "round": 1,
       "question_number": 2,
-      "domain": "politics",
-      "topic": "",
-      "source": "ocr"
-    },
-    {
-      "year": 2010,
-      "round": 1,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "",
-      "source": "ocr"
-    },
-    {
-      "year": 2010,
-      "round": 1,
-      "question_number": 1,
       "domain": "politics",
       "topic": "",
       "source": "ocr"
@@ -3491,22 +2340,6 @@
     {
       "year": 2010,
       "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2010,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2010,
-      "round": 2,
       "question_number": 2,
       "domain": "history",
       "topic": "세계대전",
@@ -3627,14 +2460,6 @@
     {
       "year": 2010,
       "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2010,
-      "round": 2,
       "question_number": 26,
       "domain": "economy",
       "topic": "환율·국제수지",
@@ -3654,30 +2479,6 @@
       "question_number": 30,
       "domain": "economy",
       "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2011,
-      "round": 1,
-      "question_number": 2,
-      "domain": "geography",
-      "topic": "자원·농업",
-      "source": "ocr"
-    },
-    {
-      "year": 2011,
-      "round": 1,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "자원·농업",
-      "source": "ocr"
-    },
-    {
-      "year": 2011,
-      "round": 1,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "자원·농업",
       "source": "ocr"
     },
     {
@@ -3867,25 +2668,9 @@
     {
       "year": 2011,
       "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2011,
-      "round": 2,
       "question_number": 2,
       "domain": "geography",
       "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2011,
-      "round": 2,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "국제무역",
       "source": "ocr"
     },
     {
@@ -3908,14 +2693,6 @@
       "year": 2011,
       "round": 2,
       "question_number": 7,
-      "domain": "economy",
-      "topic": "국제무역",
-      "source": "ocr"
-    },
-    {
-      "year": 2011,
-      "round": 2,
-      "question_number": 1,
       "domain": "economy",
       "topic": "국제무역",
       "source": "ocr"
@@ -4019,38 +2796,6 @@
     {
       "year": 2012,
       "round": 1,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2012,
-      "round": 1,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2012,
-      "round": 1,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2012,
-      "round": 1,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2012,
-      "round": 1,
       "question_number": 3,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
@@ -4099,14 +2844,6 @@
     {
       "year": 2012,
       "round": 1,
-      "question_number": 3,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2012,
-      "round": 1,
       "question_number": 11,
       "domain": "economy",
       "topic": "환율·국제수지",
@@ -4139,14 +2876,6 @@
     {
       "year": 2012,
       "round": 1,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2012,
-      "round": 1,
       "question_number": 15,
       "domain": "economy",
       "topic": "환율·국제수지",
@@ -4156,22 +2885,6 @@
       "year": 2012,
       "round": 1,
       "question_number": 16,
-      "domain": "economy",
-      "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2012,
-      "round": 1,
-      "question_number": 1,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2012,
-      "round": 1,
-      "question_number": 4,
       "domain": "economy",
       "topic": "환율·국제수지",
       "source": "ocr"
@@ -4244,14 +2957,6 @@
       "year": 2012,
       "round": 2,
       "question_number": 1,
-      "domain": "society",
-      "topic": "환경문제",
-      "source": "ocr"
-    },
-    {
-      "year": 2012,
-      "round": 2,
-      "question_number": 1,
       "domain": "politics",
       "topic": "통치기구",
       "source": "ocr"
@@ -4260,14 +2965,6 @@
       "year": 2012,
       "round": 2,
       "question_number": 2,
-      "domain": "society",
-      "topic": "환경문제",
-      "source": "ocr"
-    },
-    {
-      "year": 2012,
-      "round": 2,
-      "question_number": 1,
       "domain": "society",
       "topic": "환경문제",
       "source": "ocr"
@@ -4331,25 +3028,9 @@
     {
       "year": 2012,
       "round": 2,
-      "question_number": 9,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2012,
-      "round": 2,
       "question_number": 10,
       "domain": "geography",
       "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2012,
-      "round": 2,
-      "question_number": 1,
-      "domain": "society",
-      "topic": "환경문제",
       "source": "ocr"
     },
     {
@@ -4366,14 +3047,6 @@
       "question_number": 1,
       "domain": "history",
       "topic": "산업혁명·자본주의",
-      "source": "ocr"
-    },
-    {
-      "year": 2012,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "지도·GIS",
       "source": "ocr"
     },
     {
@@ -4475,14 +3148,6 @@
     {
       "year": 2013,
       "round": 1,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2013,
-      "round": 1,
       "question_number": 44,
       "domain": "geography",
       "topic": "인구·도시화",
@@ -4571,14 +3236,6 @@
     {
       "year": 2013,
       "round": 1,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "냉전",
-      "source": "ocr"
-    },
-    {
-      "year": 2013,
-      "round": 1,
       "question_number": 14,
       "domain": "history",
       "topic": "세계대전",
@@ -4596,14 +3253,6 @@
       "year": 2013,
       "round": 1,
       "question_number": 17,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2013,
-      "round": 1,
-      "question_number": 9,
       "domain": "history",
       "topic": "세계대전",
       "source": "ocr"
@@ -4643,14 +3292,6 @@
     {
       "year": 2013,
       "round": 1,
-      "question_number": 20,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2013,
-      "round": 1,
       "question_number": 25,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
@@ -4678,46 +3319,6 @@
       "question_number": 32,
       "domain": "economy",
       "topic": "환율·국제수지",
-      "source": "ocr"
-    },
-    {
-      "year": 2013,
-      "round": 2,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "선거·정당",
-      "source": "ocr"
-    },
-    {
-      "year": 2013,
-      "round": 2,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "선거·정당",
-      "source": "ocr"
-    },
-    {
-      "year": 2013,
-      "round": 2,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "선거·정당",
-      "source": "ocr"
-    },
-    {
-      "year": 2013,
-      "round": 2,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "선거·정당",
-      "source": "ocr"
-    },
-    {
-      "year": 2013,
-      "round": 2,
-      "question_number": 1,
-      "domain": "politics",
-      "topic": "선거·정당",
       "source": "ocr"
     },
     {
@@ -4955,23 +3556,7 @@
     {
       "year": 2014,
       "round": 1,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2014,
-      "round": 1,
       "question_number": 4,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2014,
-      "round": 1,
-      "question_number": 6,
       "domain": "history",
       "topic": "세계대전",
       "source": "ocr"
@@ -4982,14 +3567,6 @@
       "question_number": 11,
       "domain": "economy",
       "topic": "금융·통화정책",
-      "source": "ocr"
-    },
-    {
-      "year": 2014,
-      "round": 1,
-      "question_number": 12,
-      "domain": "economy",
-      "topic": "수요·공급과 시장균형",
       "source": "ocr"
     },
     {
@@ -5014,22 +3591,6 @@
       "question_number": 16,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
-      "source": "ocr"
-    },
-    {
-      "year": 2014,
-      "round": 1,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2014,
-      "round": 1,
-      "question_number": 6,
-      "domain": "history",
-      "topic": "세계대전",
       "source": "ocr"
     },
     {
@@ -5107,31 +3668,7 @@
     {
       "year": 2014,
       "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2014,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2014,
-      "round": 2,
       "question_number": 3,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2014,
-      "round": 2,
-      "question_number": 5,
       "domain": "history",
       "topic": "세계대전",
       "source": "ocr"
@@ -5171,41 +3708,9 @@
     {
       "year": 2014,
       "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2014,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2014,
-      "round": 2,
       "question_number": 14,
       "domain": "economy",
       "topic": "GDP·국민소득",
-      "source": "ocr"
-    },
-    {
-      "year": 2014,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "세계대전",
-      "source": "ocr"
-    },
-    {
-      "year": 2014,
-      "round": 2,
-      "question_number": 1,
-      "domain": "history",
-      "topic": "세계대전",
       "source": "ocr"
     },
     {
@@ -5459,25 +3964,9 @@
     {
       "year": 2015,
       "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
-      "source": "ocr"
-    },
-    {
-      "year": 2015,
-      "round": 2,
       "question_number": 2,
       "domain": "politics",
       "topic": "국제정치·국제기구",
-      "source": "ocr"
-    },
-    {
-      "year": 2015,
-      "round": 2,
-      "question_number": 1,
-      "domain": "geography",
-      "topic": "기후·케펜구분",
       "source": "ocr"
     },
     {
@@ -10496,5 +8985,10 @@
       "topic": "세계대전",
       "source": "vision"
     }
-  ]
+  ],
+  "deduplicated": true,
+  "dedup_method": "exact full-row (year,round,question_number,domain,topic,source)",
+  "raw_row_count": 1310,
+  "duplicates_removed": 189,
+  "regenerated_at": "2026-06-02T08:04:16.987Z"
 }

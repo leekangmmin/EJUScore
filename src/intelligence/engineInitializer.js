@@ -33,6 +33,7 @@ const DATASET_PATHS = {
   prediction2026_2028: './dataset/prediction/prediction_2026_2028.json',
   weakProfile: './dataset/weakness_profile.json',
   studyPlan: './dataset/study_plan.json',
+  insights: './dataset/insights/insights_v2.json',
 };
 
 // Storage keys for caching datasets in localStorage
@@ -46,6 +47,7 @@ const STORAGE_KEYS = {
   prediction2026_2028: 'eju_prediction_2026_2028',
   weakProfile: 'eju_weakness_profile',
   studyPlan: 'eju_study_plan',
+  insights: 'eju_insights_v2',
 };
 
 /**

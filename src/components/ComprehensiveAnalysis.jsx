@@ -433,7 +433,7 @@ export default function ComprehensiveAnalysis({ exams, settings, onAddNew }) {
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <PieChart width={190} height={170}>
-                <Pie data={errorTypeCounts} cx={95} cy={80} outerRadius={66} innerRadius={32} dataKey="value" paddingAngle={3}>
+                <Pie data={errorTypeCounts} cx={95} cy={80} outerRadius={66} innerRadius={32} dataKey="value" paddingAngle={3} isAnimationActive={false}>
                   {errorTypeCounts.map(e => <Cell key={e.name} fill={ERROR_COLORS_HEX[e.name]} />)}
                 </Pie>
                 <Tooltip formatter={(v, n) => [`${v}건`, n]} contentStyle={{ background: 'var(--tooltip-bg)', border: '1px solid var(--bd1)', borderRadius: 10, fontSize: 12 }} />

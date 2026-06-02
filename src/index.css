@@ -465,6 +465,57 @@ img, canvas, svg, iframe, video {
   }
   .bottom-tab.active { color: var(--accent); }
   .bottom-tab:active { opacity: 0.7; }
+  .bottom-tab span {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* ── "더보기" bottom sheet ── */
+  .more-sheet-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 110;
+    animation: more-fade 0.15s ease;
+  }
+  .more-sheet {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    z-index: 120;
+    background: var(--bg-elevated);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.18);
+    padding: 8px 16px calc(20px + env(safe-area-inset-bottom, 0px));
+    animation: more-slide 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .more-sheet-handle {
+    width: 36px; height: 4px; border-radius: 2px;
+    background: var(--border); margin: 6px auto 10px;
+  }
+  .more-sheet-head {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; font-weight: 700; color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+  .more-sheet-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  }
+  .more-sheet-item {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; padding: 16px 6px; min-height: 76px;
+    border-radius: 14px; border: 1px solid var(--border);
+    background: var(--bg-hover);
+    color: var(--text-secondary); font-family: inherit; font-size: 11px; font-weight: 600;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .more-sheet-item:active { transform: scale(0.97); }
+  .more-sheet-item.active {
+    color: var(--accent); border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+  }
+  @keyframes more-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes more-slide { from { transform: translateY(100%); } to { transform: translateY(0); } }
 }
 
 /* ── Tablet (769~1024px) ───────────────────────── */

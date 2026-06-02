@@ -770,7 +770,7 @@ function TrendAnalysisPanel({ datasets }) {
           <h3><PieChartIcon size={14} /> 도메인별 비중</h3>
           <ResponsiveContainer width="100%" height={250}>
             <PieChart>
-              <Pie data={domainProportion} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}>
+              <Pie data={domainProportion} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} isAnimationActive={false} label={({ name, percent }) => `${name} ${Math.round((percent || 0) * 100)}%`}>
                 {domainProportion.map((entry, i) => (
                   <Cell key={i} fill={COLORS[i % COLORS.length]} />
                 ))}
