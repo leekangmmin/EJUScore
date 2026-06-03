@@ -7058,7 +7058,7 @@
             "回",
             ")"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7066,7 +7066,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7074,11 +7074,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "f24d263b-adac-48dd-9371-aae45cb06d67",
-      "number": 1,
+      "number": null,
       "raw_text": "(80 分 ) TEER ER REE ERE EERIE ES 1 i 1. 係員の許可なしに , 部屋の外に出ることはできません。 i i てください。 \\ にンーンーンーンーンーンーンフンンーンーンーンーン - ー105 一",
       "text": "(80 分 ) TEER ER REE ERE EERIE ES 1 i 1. 係員の許可なしに , 部屋の外に出ることはできません。 i i てください。 \\ にンーンーンーンーンーンーンフンンーンーンーンーン - ー105 一",
       "answer_choices": [],
@@ -7382,7 +7386,7 @@
             "105",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7390,7 +7394,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7405,11 +7409,16 @@
       ],
       "concepts": [],
       "year": 2006,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "aa2abebe-f2b0-41bd-9874-603d4027e2c7",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の会話を読み ,、下の問い (1) て (4) に答えなさい。 よし子 : 昨年の春にビくなったローマ法王ヨハネ・パウロ 2 世 (John Paul Il) は多 先生 : そうですね。宗教的活動以外にも , 冷戦期における [| a ] の民主化運動を支 よし子 : また , 17 世紀に地動説を唱え , 宗教寺判にかけられた [| b | の名準回復も表 先生 : そうです。しかしヨハネ・パウロ 2 世は , Ce ] 的には [ d 1 的で , 安楽死や くの業績を残していますね。 援したことでも有名です。 明しましたね。 人工中絶には反対の立場をとっていました。 (1) 下線部に関して , ローマ法王と最も関係が深い宗派は何か。正しいものを , 次の ① て ④ の中から一つ選びなさい。 11 | ① カトリック ② ギリシャ正教 ③ プロテスタント ④ ロシア正教 (2) 上の会話中の空欄 [ a ] に当てはまる地域名を , 次のて ④ の中から一つ選びなさ ① 東アジア (Asia) @ 東ヨーロッパ (Europe) ④ 西アフリカ (Africa) ③ 中東 (Middle East) ー107 一",
       "text": "問 1 次の会話を読み ,、下の問い (1) て (4) に答えなさい。 よし子 : 昨年の春にビくなったローマ法王ヨハネ・パウロ 2 世 (John Paul Il) は多 先生 : そうですね。宗教的活動以外にも , 冷戦期における [| a ] の民主化運動を支 よし子 : また , 17 世紀に地動説を唱え , 宗教寺判にかけられた [| b | の名準回復も表 先生 : そうです。しかしヨハネ・パウロ 2 世は , Ce ] 的には [ d 1 的で , 安楽死や くの業績を残していますね。 援したことでも有名です。 明しましたね。 人工中絶には反対の立場をとっていました。 (1) 下線部に関して , ローマ法王と最も関係が深い宗派は何か。正しいものを , 次の",
       "answer_choices": [
@@ -7733,7 +7742,7 @@
             "107",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7753,11 +7762,14 @@
         "냉전"
       ],
       "year": 2006,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "4281366f-f180-4fa0-a879-0cb978169e4b",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (3) 会話中の空欄 | b ] に当てはまる人名を , 次の ① て ④ の中から一つ選びなさい。 ① アイザック・ニュートン (Isaac Newton) @Q@ アルベルト・アインシュタイン (Albert Einstein) (〈④① レオナルド・ダ・ヴィンチ (Leonardo da Vinci) ⑧⑬ がガリレオ・ガリンレイ Galileo Galilei) (4) 会話中の空材 [ c | | d | に当てはまる語の組み合わせとして最も適当なものを , 次の ①ー④ の中から一つ選びなさい。 4 @ | 政治 | 革新 @ | 科学 | 保守 — 108 一",
       "text": "総合科目一2 (3) 会話中の空欄 | b ] に当てはまる人名を , 次の",
       "answer_choices": [
@@ -7921,7 +7933,7 @@
             "108",
             "—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7929,7 +7941,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7937,7 +7949,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "d19f1a65-bfc9-4eee-98ab-e53d72866659",
@@ -8270,7 +8287,7 @@
             "109",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8294,7 +8311,7 @@
     },
     {
       "id": "aa26cd4f-eed5-425d-893a-af944a585190",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一4 (3) 下線部 2 は具体的にはどのような事柄を指すか。最も適当なものを , KOO~O の中から一つ選びなさい。 17 ① 他国と比べて安かった法人税率が , 引き上げられるような事態 @ 他国と比べて短かった法定労働時問が延長されるような事態 @ 他国と比べて緩かった環境保護基準が。厳しくなるような事態 ④ 他国と比べて多かった外国人労働者の入国が , 制限されるような事態 (4) 次の表中の A て D は , EU, BA, ASEAN, NAFTA のいずれかを表している。 最も適当な組み合わせを , 下の ①~④ の中から一つ選びなさい。 8 Ag GDP RAG (KV) (BAA) ( 億ドル ) 輸出輸入 A 12843,0094,720 | 3,831 B 5377,1134,480 | 3,854 C 455 | 110.01730,247 | 29,645 D 425 | 124.31210,738 | 16,269 A B C D ① 日本 ASEAN EU NAFTA @ | ASEAN EU NAFTA 日本 ® EU NAFTA 日本 ASEAN ④| NAFTA 日本 ASEAN EU ー110 —",
       "text": "総合科目一4 (3) 下線部 2 は具体的にはどのような事柄を指すか。最も適当なものを , KOO~O の中から一つ選びなさい。 17",
       "answer_choices": [
@@ -8532,7 +8549,7 @@
             "ー110",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8540,7 +8557,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8550,7 +8567,12 @@
       ],
       "concepts": [],
       "year": 2006,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "b20d6325-4e02-4444-8003-6d679958e5a6",
@@ -8962,7 +8984,7 @@
             "ー111",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9328,7 +9350,7 @@
             "ー112",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9711,7 +9733,7 @@
             "ー113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10182,7 +10204,7 @@
             "114",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10205,7 +10227,7 @@
     },
     {
       "id": "01d0cd19-af7e-4b62-b458-52ddf5b9a283",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一9 (2) 次のグラフは , AR, FAY (Germany)、アメリカの経常収支の推移を示したも のである。グラフ中の AーC に当てはまる国名の組み合わせとして最も適当なものを。, 下の ① て ④ の中から一つ選びなさい。 A7 (1048 EYL) 19939495969798992000 O01020304 総務省統計局 HP より作成 A B | C ①| 日本ドイツ | アメリカ @| 日本アメリカ | ドイツ ③| ドイッ | 日本アメリカ @, ドイツアメリカ | 日本 ー115 一",
       "text": "総合科目一9 (2) 次のグラフは , AR, FAY (Germany)、アメリカの経常収支の推移を示したも のである。グラフ中の AーC に当てはまる国名の組み合わせとして最も適当なものを。, 下の",
       "answer_choices": [
@@ -10402,7 +10424,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10410,7 +10432,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "graph_analysis",
@@ -10421,11 +10443,16 @@
       ],
       "concepts": [],
       "year": 2006,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "3e908162-87c3-477f-9325-5e2161f076d5",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 比較生産費に関する次の文剖を読み , 表中の X と Y に当てはまる数値の組み合わせ として最も適当なものを , 下の ①~④ の中から一つ選びなさい。 8| 貿易前には , ワイン 1 単位を生産するのに A 国は 120 人 , B 国は 80 人を , 毛織物 1 単位 を生産するのに A 国は 100 人 , B 国は 90 人を必要とした。A 国。 B 国ともに , ワイン 1 単 位 , 毛織物 1 単位を国内で生産していたとしよう。いま, A 国は比較優位のある毛織物に , また B 国は同じくワインに生産を特化し , 二国間で禄易がおこなわれたとすると , HAR の生産芝は次の表のようになる。 貿易の前 BADE ワイン | 毛織物 | ワィン | 毛織物 A 国 120 人 | 100 人 | 一一220 人 B 国 80 人 90 人 170 人 2 ヵ国の総生産量 2 単位 2 単位 | X 単位 | Y 単位 ①| 2.2941.833 @| 2.1252.2 @]|_ 1.8882.444 [@[ 1.72.75 — 116 一",
       "text": "問 ",
       "answer_choices": [
@@ -10669,7 +10696,7 @@
             "116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10677,7 +10704,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10685,11 +10712,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "69bf719e-27d4-4ba7-afa0-a21f4aefd252",
-      "number": 12,
+      "number": null,
       "raw_text": "問 12 日本の気師に関して述べたものとして正しくないものを , 次の ① て ④ の中から一つ 選びなさい。 19 ① 世界的に見て日本は降水量の多い国であるが , 降水は年間にわたって分布し , HZ © VWROIMBMMAS AMM be ST Meld, LILLITKHEOVS BIT, ③ 日本の商西部は夏から秋にかけてしばしば台風に翼われるが , 北海道に及ぶこと ④ 日本の北東部の気師は太平洋側を南下する失流と , 日本海側を北上する暖流の影 EEL SN.» は少ない。 MAST TS 問 13 世界の地理に関して述べたものとして正しくないものを , 次の ①ー④ の中から一つ 選びなさい。 20) ① サハラ (Sahara) WHOMBROVAW (Sahel) では砂漠化が進んでいるが , そ ® ソ連 (USSR) 時代に農業開発が進められた中央アジアのアラル海 (Aral Sea) ⑬ アフリカなどの安定陸了とちがい , 日本は太平洋を取り巻く新期造山帯に位置す ④ 地球温暖化に伴う海面上昇は。2004 年のスマトラ島 (Sumatra) 西方大地震の際 の原因の一つは敵耕作・過放牧などの人間活動である。 は , 過剰な溢光水の収得によって縮小しつづけている。 るので地震が多い。 に大津波を引き起こす要因となった。 ー117 一",
       "text": "問 12 日本の気師に関して述べたものとして正しくないものを , 次の 問 13 世界の地理に関して述べたものとして正しくないものを , 次の",
       "answer_choices": [
@@ -11045,7 +11077,7 @@
             "117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11053,7 +11085,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11061,7 +11093,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "27faa66f-2f5e-4703-8ce3-f71afe1dab4c",
@@ -11234,7 +11271,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11242,7 +11279,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11250,7 +11287,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "3074b910-8896-4f19-bca9-0c9cc44caa88",
@@ -11637,7 +11678,7 @@
             "119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11862,7 +11903,7 @@
             "120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11870,7 +11911,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11878,7 +11919,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ba275f68-10d2-43e4-ba69-e28d66093eca",
@@ -12343,7 +12388,7 @@
             "121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12351,7 +12396,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "historical_analysis",
@@ -12359,7 +12404,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "0ea7d898-d82d-415e-8057-778a7b79610e",
@@ -12739,7 +12788,7 @@
             "122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13100,7 +13149,7 @@
             "123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13510,7 +13559,7 @@
             "124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13807,7 +13856,7 @@
             "125",
             "—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13815,7 +13864,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "historical_analysis",
@@ -13823,7 +13872,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "512ad27f-52ef-4545-9cf0-c19de7db3a0f",
@@ -14160,7 +14213,7 @@
             "126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],

@@ -6673,7 +6673,7 @@
             "試験",
             "問題"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6681,7 +6681,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -6689,11 +6689,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "533c9462-8a1e-4623-bc03-78debdf9568d",
-      "number": 1,
+      "number": null,
       "raw_text": "1 BSE MS 3 i 5, MFI, メモや計算などを書いてもいいです。 {Wl SANT BER i ! てください。 \\ レレーレニーンーンーンーンーンーンーンーンーンーンーンーンー とフフプクフフフクフクアクアククアフフアクプクフクアフアク 2 see PTTL ー113 一",
       "text": "",
       "answer_choices": [
@@ -7046,7 +7050,7 @@
             "ー113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7054,7 +7058,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7062,11 +7066,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "e4af5dc3-fbd7-47c8-89bb-84b9e4d1ab59",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の会話を読み , 下の問い (1)^(4) に答えなさい。 よし子 : 先日アメリカ (USA) と , キューバ (Cuba) が国交を回復したという報道 先生 : キューバにおいて 1959 年に起こった革命の影響で、アメリカは 1961 年にキュー よし子 : 。1962 年のキューバ危機では , 世界中が事態の推移を緊張して見守ったと聞 先生: そうですね。当時は柱戦争一歩手前でした。今回の国交回復は , 外交問題 がありました。 バとの国交を断絶しました。 , キューバが同年に社会主義宣言をして以来, いています。 で成果を出したいアメリカ , 経済状況を改善きせたいキューバ , それぞれの 両国は半世紀以上も。冷湿を背景に敵対してきました。 利害が一致した結果だと言えるでしょう。 (1) 下線部 1 に関して , 次の文章中の空杉 [ a ], [ b ] に当てはまる諾の組み合わせと して最も適当なものを , 下の ①~④ の中から一つ選びなさい。 [1 | キューバは [ a ] に位置する島国であり , その首都は島の北西部に位置するハバ + (Havana) である。熟帯気候に属し , 年間を通じて気温の差はほとんどないが , 雨季と乾季が存在する。伝統的な主要産物に [ b |, ニッケル ,。海産物等がある。 Ta ye] | @ | ax ew [wat bo a ie [ne | 注 ) カスピ海 (Caspian Sea), カリブ海 (Caribbean Sea) ー115 一",
       "text": "問",
       "answer_choices": [
@@ -7466,7 +7475,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7474,7 +7483,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7482,11 +7491,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "489045e8-81b5-46d1-a508-96d035ecadf6",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (2) 下線部 2 に関して , キューバの社会主義化に関する記述として最も適当なものを。 次の ① て ④ の中から一つ選びなさい。 | 4 | ① 農地改革の一環として大地主や外国資本の所有する土地を接収した。 @ 自動車産業などの重工業の工業化を 3 か年計画に基づき推進した。 @ 自主管理に基づく独自の社会主義建設を目指した。 ④ 資源ナショナリズムを唱え , イギリス (UK) 資本の支配下にあった石油資源を 国有化した。 (3) 下線部 3 に関して , この状態を西側諸国と東側諸国の間に 「 鉄のカーテン 」 がひか れていると表現した人物は誰か。正しいものを , 次の ①ー④ の中から一つ選びなさい。 ① スターリン (Stalin) ⑫ ウィンストン・チャーチル (Winston Churchill) ⑧ マーがガレット・サッチャー(Margaret Thatcher) @ フランクリン・ローズベルト (Franklin D. Roosevelt) (4) 下線部 4 に関して , キューバ危機に関する記述として最も適当なものを , 次の ①~④ の中から一つ選びなさい。 [4 | DO ハバナ港においてアメリカの軍艦が爆発沈没したことをきっかけに , アメリカが @ キューバでの核兵器の存在をめぐって , アメリカとソ連 (USSR) の両国は鋭く @ 危機をきっかけに , 非常時にアメリカとソ連の首脳問で直接対話できるようホッ ④ 危機以降 , キューバはソ連との同盟関係を強化して経済の復興に専念し , RE キューバにミサイル攻撃を加えた。 対立したが , 両国が拒否権を持つので国連安全保障理事会 (UNSC) は開かれな トライン (直通回線 ) が設置された。 諸国の優等生 」 と呼ばれた。 ー116 一",
       "text": "総合科目一2 (2) 下線部 2 に関して , キューバの社会主義化に関する記述として最も適当なものを。 次の",
       "answer_choices": [
@@ -7951,7 +7965,7 @@
             "ー116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7967,7 +7981,10 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "c4fe1f13-ef12-4db2-b436-0413c5a50cd2",
@@ -8398,7 +8415,7 @@
             "ー117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8424,7 +8441,7 @@
     },
     {
       "id": "c05480c1-fa27-4c0d-b7b7-8117e427eb95",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一4 (2) LOSRbOAM a ] に当てはまる語として正しいものを , 次の ①ー④ の中から ーつ選びなさい。 16 | ① 治安維持 ② 情報通信技術 ③ 感染症の予防 ④ テロリズムの防止 (3) 下線部 2 に関して , 日本において知る権利と同様に , 現代の社会生活の変容に伴っ て主張されるようになった 「 新しいぃ人権 」 として登場した権利として最も適当なもの を。次の ① て ④ の中から一つ選びなさい。 7 | ① 学習権 ② 請求権 @ 環境権 ④ 争議権 (4) 下線部 3 に関して , 日本の所得税の性質に関する記述として正しいものを , 次の ①~④ の中から一つ選びなさい。 ① 国税であり , 税率は一定である。 @ 国税であり , 税率は累進的である。 @ 地方税であり , 税率は一定である。 ④ 地方税であり , 税率は累進的である。 ー118 一",
       "text": "総合科目一4 (2) LOSRbOAM a ] に当てはまる語として正しいものを , 次の",
       "answer_choices": [
@@ -8690,7 +8707,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8698,7 +8715,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8706,7 +8723,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "6915ed6c-c6aa-4f69-83e2-3304953dd8be",
@@ -8848,7 +8870,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9236,7 +9258,7 @@
             "ー120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9473,7 +9495,7 @@
             "ー121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9861,7 +9883,7 @@
             "ー122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10079,7 +10101,7 @@
             "ー123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10102,7 +10124,7 @@
     },
     {
       "id": "8dedb21a-98d1-41bc-a1a1-2d71e0458c8d",
-      "number": 2,
+      "number": null,
       "raw_text": "2.500 2.00 レーーー* トーーーーーーーーB 1,000 1980198519901995200020052010 年 OECD ウェブサイトより作成 ーーデラーー | 韓国。 | 日本ーーフランス | ラジシネー[oa lg [x77 ④ | スウェーデン | フランス —123—",
       "text": "2.500 2.00 レーーー* トーーーーーーーーB 1,000 1980198519901995200020052010 年 OECD ウェブサイトより作成 ーーデラーー | 韓国。 | 日本ーーフランス | ラジシネー[oa lg [x77 ④ | スウェーデン | フランス —123—",
       "answer_choices": [],
@@ -10124,7 +10146,10 @@
       ],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "4ad835d5-f7d5-4cd4-add3-4656336a3f1b",
@@ -10256,7 +10281,7 @@
             "ー124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10264,7 +10289,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "graph_analysis",
@@ -10274,7 +10299,11 @@
       ],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ac041d5c-29c5-4359-8262-a05f89fffd18",
@@ -10426,7 +10455,7 @@
             "ー125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10434,7 +10463,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "probability_statistics",
@@ -10446,7 +10475,11 @@
       ],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.667
     },
     {
       "id": "4c9979cc-678f-452e-b50c-3f23ff567cb2",
@@ -10737,7 +10770,7 @@
             "(Spain)",
             "—126—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10759,7 +10792,7 @@
     },
     {
       "id": "75350584-b2c8-48bc-bae4-c0a5eb0d207e",
-      "number": 40,
+      "number": null,
       "raw_text": "40 - 30 - 問 15 南回帰線が通過している地域には乾燥気候が見られることが多い。南回帰線が通過 している国として正しいものを , 次の ① て ④ の中から一つ選びなさい。 21 ① オーストラリア @ ケニア (Kenya) コロンビア (Colombia) @ サウジアラビア (Saudi Arabia) 問 16 カリブ海のケイマン諸島 (Cayman Islands) や北大西洋のバミューダ諸島 (Bermuda) はある国の海外領土でもる。タックス・ヘイプブン (tax haven) として 知られているこれらの海外領土を領有するのはどの国か。正しいものを , KOO~O の中から一つ選びなさい。 22 ① アメリカ @ イギリス @ フランス ④ スペイン (Spain) —126—",
       "text": "40 - 30 - 問 15 南回帰線が通過している地域には乾燥気候が見られることが多い。南回帰線が通過 している国として正しいものを , 次の 問 16 カリブ海のケイマン諸島 (Cayman Islands) や北大西洋のバミューダ諸島 (Bermuda) はある国の海外領土でもる。タックス・ヘイプブン (tax haven) として 知られているこれらの海外領土を領有するのはどの国か。正しいものを , KOO~O の中から一つ選びなさい。 22 ① アメリカ @ イギリス @ フランス ④ スペイン (Spain) —126—",
       "answer_choices": [],
@@ -10781,7 +10814,10 @@
       ],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "42d0d120-122f-4aca-8864-9b9da2c53ea4",
@@ -10959,7 +10995,7 @@
             "ー127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11199,7 +11235,7 @@
             "ー128",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11680,7 +11716,7 @@
             "ー129",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11688,7 +11724,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "politics",
       "topic": "",
       "subtopic": "",
       "question_type": "political_analysis",
@@ -11698,11 +11734,15 @@
       ],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_recovered"
+      ],
+      "domain_confidence": 1
     },
     {
       "id": "0f62160b-62c7-4ce0-9187-e5651f763107",
-      "number": 2220,
+      "number": null,
       "raw_text": "問 2220 世紀に入ると。すべての人に人間らしいら生活を保障するために。政府による積極 的な働きかけを要求することも権利の問題と考えられるようになった。そのような筑 極的な要求をする権利のことを社会権と呼ぶ。社会権の例として最も適当なものを , 次の ① て ④ の中から一つ選びなさい。 ① 職業選択の自由 ⑨ 労働基本権 《④ プライバシーの権利 ②⑨ 学問の自由 問 23 日本国憲法における地方自治に関する規定として適当でないものを , KOO~@OO 中から一つ選びなさい。 ① 地方公共団体の長は ,。その地方公共団体の住民が , 直接これを選挙する。 ②@ 地方公共団体は。韻法の館囲内で法律を制定することができる。 @ 地方公共団体には , 法律の定めるところにより , その議事機関として議会を設置 ④ 地方公共団体の組織及び運営に関する事項は , 地方自治の本旨に基づいて , 法律 でこれを定める。 ー130 一",
       "text": "問 2220 世紀に入ると。すべての人に人間らしいら生活を保障するために。政府による積極 的な働きかけを要求することも権利の問題と考えられるようになった。そのような筑 極的な要求をする権利のことを社会権と呼ぶ。社会権の例として最も適当なものを , 次の 問 23 日本国憲法における地方自治に関する規定として適当でないものを , KOO~@OO 中から一つ選びなさい。",
       "answer_choices": [
@@ -11988,7 +12028,7 @@
             "ー130",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12009,7 +12049,10 @@
       ],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "71e942b0-c9fe-4d62-b567-971cf1747fbb",
@@ -12243,7 +12286,7 @@
             "ー131",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12263,7 +12306,7 @@
     },
     {
       "id": "79a12976-ee58-4a5b-9234-0bd332ab779c",
-      "number": 271992,
+      "number": null,
       "raw_text": "問 271992 年に , 地球環境問題に取り組むための国際会議である国連環境開発会議 (地球 サミット ) が開かれた。この会議に関する記述として最も適当なものを , KOO~O の中から一つ選びなさい。 |33| ① 地球環境問題に関する初めての国際会議であり , 国連環境計画の設立が決まった。 @ 地球温暖化防止のために気候変動枠組条約の署名が開始された。 ⑬ 環境問題をめぐる先進国と発展途上国の問の意見の対立は , この会議で解消され ④ 南アフリカのヨハネスプブルグ (Johannesburg) で開かれたので ,「 ヨハネスプブル グ・サミット 」 とも呼ばれる。 ー132 一",
       "text": "問 271992 年に , 地球環境問題に取り組むための国際会議である国連環境開発会議 (地球 サミット ) が開かれた。この会議に関する記述として最も適当なものを , KOO~O の中から一つ選びなさい。 |33| ① 地球環境問題に関する初めての国際会議であり , 国連環境計画の設立が決まった。 @ 地球温暖化防止のために気候変動枠組条約の署名が開始された。 ⑬ 環境問題をめぐる先進国と発展途上国の問の意見の対立は , この会議で解消され ④ 南アフリカのヨハネスプブルグ (Johannesburg) で開かれたので ,「 ヨハネスプブル グ・サミット 」 とも呼ばれる。 ー132 一",
       "answer_choices": [],
@@ -12637,7 +12680,7 @@
             "ー132",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12656,11 +12699,14 @@
       ],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "6a7bc7df-d3cc-4888-8767-f14aec77c244",
-      "number": 2919,
+      "number": null,
       "raw_text": "問 2919 世紀後半のヨーロッパ (Europe) に関する記述として最も適当なものを , KO ①~④ の中から一つ選びなさい。 (35) ① プロイセン (Prussia) はフランスとの戦争に勝利し , ドイツ帝国を成立させた。 @ イギリスは各国と同盟を結ぶことで , 自国の安全を図ろうとした。 @® ロシアはクリミア戦争 (Crimean War) によってクリミア半島を獲得し , 南下 ④ イタリア (Italy) では , サルデーニャ (Sardinia) を中心に統一が進み , HB 政策を進めた。 ローマ帝国 (Holy Roman Empire) が復活した。 ー133 一",
       "text": "問 2919 世紀後半のヨーロッパ (Europe) に関する記述として最も適当なものを , KO",
       "answer_choices": [
@@ -12953,7 +12999,7 @@
             "。",
             "—133—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12961,7 +13007,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "historical_analysis",
@@ -12971,7 +13017,12 @@
       ],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "7db123ab-1c3e-4cd7-a190-f0b5f669fb48",
@@ -13314,7 +13365,7 @@
             "。",
             "—134—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13338,7 +13389,7 @@
     },
     {
       "id": "b8a59a44-eac1-4803-ab8b-b8d645285d8b",
-      "number": 321970,
+      "number": null,
       "raw_text": "問 321970 年代の二度の石油危機 (oil crisis) に関する記述として最も適当なものを , 炊の ① こ ④ の中から一つ選びなきい。 ① 第一次石油危機は , WR (Gulf War) の勤発による原油供給の減少を契機 @ 第二次石油危機は , 新たな油田の発見による原油の増産によって起こった。 @ 第一次石油危機による不況に対処するため , 第一回先進国首脳会議が開催きれた。 ④ 第二次石油危機の結果 , 原油価格が暴落し先進国はデフレーションに陥った。 として起こった。 総合科目の問題はこれで終わりです。 MEMO [39] ~ はマークしないでくだ この問題冊子を持ち帰ることはできません。 ー135 一",
       "text": "問 321970 年代の二度の石油危機 (oil crisis) に関する記述として最も適当なものを , 炊の",
       "answer_choices": [
@@ -13535,7 +13586,7 @@
             "ー135",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13543,7 +13594,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -13551,7 +13602,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     }
   ],
   "metadata": {

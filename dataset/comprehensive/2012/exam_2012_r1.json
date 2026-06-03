@@ -7335,7 +7335,7 @@
             "試験",
             "問題"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7343,7 +7343,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7351,11 +7351,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "8a3de22c-9a0e-4a08-8dfd-d46e8966610d",
-      "number": 1,
+      "number": null,
       "raw_text": "(80 分 ) \"バーバーーメーンーンーメーンーッーーンーッーッーッーッーッーッーッーッーッーーンーンーンーンーィい i 1. 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題冊子を持ち帰ることはできません。 \\ \\ 5. 問題冊子には , メモや計算などを書いてもいいです。い i てください。 i レーレーレーレーレーレーレーレーレーレーレーレーレーレーレーンーンーレーンーレーンーレーンーンーンーンーンーンーi ー109 一",
       "text": "(80 分 ) \"バーバーーメーンーンーメーンーッーーンーッーッーッーッーッーッーッーッーッーーンーンーンーンーィい i 1. 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題冊子を持ち帰ることはできません。 \\ \\ 5. 問題冊子には , メモや計算などを書いてもいいです。い i てください。 i レーレーレーレーレーレーレーレーレーレーレーレーレーレーレーンーンーレーンーレーンーレーンーンーンーンーンーンーi ー109 一",
       "answer_choices": [],
@@ -7745,7 +7749,7 @@
             "ー109",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7753,7 +7757,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -7761,11 +7765,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "6f8bd8b5-ae60-468a-95ca-2cdff9323ae9",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の文章を読み , 下の問い 1) て (4) に答えなさい。 現在の日本には , 緊縮財政派と積極財政派との間に経済政策上の論争がある。 緊縮財政派は , 日本政府の国債および借入金の債務残高は , 2011 年末現在 , 900 兆円を これに対し積極財政派は日本が , 財政破綻に陥る可能性はほとんどないので , 国債 超えているため , (a | を悪化させる恐れは確かにあるものの , 早急に [ b | の必要がある を発行してでも , 。公共事業を積極的に展開し , 需要を創出する必要があると述べる。そ と述べる。また , 。」 公共事業や公務員の数を削減し , 政府支出を減らすことが必要だと主 してその方が , (a ] が回復し , [| c ] も増え , 中長期的には国債の発行額も減らすことが できると主張する。 (1) 上の文章中の空欄 [ a ]~[ c ] に当てはまる語の組み合わせとして最も適当なもの を , 次の ①ー④ の中から一つ選びなさい。 1 a b ! c | ①| 治安 | 増税 ES @ | 景気 | 増税 | 税収 @ | 治安 | 減税 | He ④ | 景気 | 減税 | 税収 ー111 一",
       "text": "問 1 次の文章を読み , 下の問い 1) て (4) に答えなさい。 現在の日本には , 緊縮財政派と積極財政派との間に経済政策上の論争がある。 緊縮財政派は , 日本政府の国債および借入金の債務残高は , 2011 年末現在 , 900 兆円を これに対し積極財政派は日本が , 財政破綻に陥る可能性はほとんどないので , 国債 超えているため , (a | を悪化させる恐れは確かにあるものの , 早急に [ b | の必要がある を発行してでも , 。公共事業を積極的に展開し , 需要を創出する必要があると述べる。そ と述べる。また , 。」 公共事業や公務員の数を削減し , 政府支出を減らすことが必要だと主 してその方が , (a ] が回復し , [| c ] も増え , 中長期的には国債の発行額も減らすことが できると主張する。 (1) 上の文章中の空欄 [ a ]~[ c ] に当てはまる語の組み合わせとして最も適当なもの を , 次の",
       "answer_choices": [
@@ -8086,7 +8095,7 @@
             "ー111",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8105,11 +8114,14 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "5730bb9c-49f0-4c01-ba81-de6fb0e644fd",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (2) 下線部 1 に関して , 日本を含む OECD 諸国の国際比較のグラフから読みとれること として最も適当なものを , 下の ①~ て ④ の中から一つ選びなさい。 2 還 GDP 比で見た政府支出 (2006-2008 年平均 ) 口労働力人口に占める政府による雇用の割合 (2005 年 ) } A \\ クノーA wk oo まさ > 「 ¥ 0 ve ail x at eat res 3 vee Nv SPN RN KE QZ a TAT の & Ay < を 3 - Ss + ^ ん Pe あざ OECD ウェブサイトより作成 注 ) フランス (France), スウェーデン (Sweden), ハンガリー(Hungary), オーストリア (Austria)、ベルギー(Belgium)、イタリア (Italy)、フィンランド (Finland), ポルトガル (Portugal), オランダ (Netherlands), イギリス (UK), ギリシャ (Greece), ドイツ (Germany), ポーランド (Poland), チェコ (Czech Republic)、ノルウェー(Norway), スペイン (Spain), カナダ (Canada), アイルランド (Ireland), アメリカ (USA), スロパキア (Slovakia), オーストラリア (Australia), A4 A (Switzerland), 韓国 (South Korea) ① 日本は ,「 小さな政府 」 を有する。 @ 北欧諸国 (Nordic countries) は ,「 小さな政府 」 を有する。 ④ GDP が大きい国ほど ,「 大きな政府 」 を有する。 ③ 人口が多い国ほど ,「 大きな政府 」 を有する。 ー112 一",
       "text": "総合科目一2 (2) 下線部 1 に関して , 日本を含む OECD 諸国の国際比較のグラフから読みとれること として最も適当なものを , 下の",
       "answer_choices": [
@@ -8422,7 +8434,7 @@
             "ー112",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8430,7 +8442,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "graph_analysis",
@@ -8440,11 +8452,16 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ea7cc0be-26a6-4ad4-a021-1e2ae8a5c10a",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一3 (3) 下線部 2 の主張の論拠として最も適当なものを , 次の ① て ④ の中から一つ選びなさ ① 日本の国債は大部分が円建てで , 国内の金融機関や個人が保有している。 ⑬③ 日本の経常収支は赤字であるが , 資本収支は黒字である。 ④ 通貨価値が下落するデフレーション下では , 実質的な政府債務が減少する。 @ 円高が進んだため , 日本政府が保有する外貨資産に含み益が出ている。 (4) 下線部 3 に関して公共事業を筑極的におこない , 堆要を創出するという経済政策 の重要性を訴えた経済学者 , およびその考え方に基づく政策の組み合わせとして最も 適当なものを , 次の ①ー④ の中から一つ選びなさい。 4 経済学者代表的政策 ① | スミス自由放任 ⑨② | ケインズニューディール ⑨ | ハイエクサッチャリズム ④ | フリードマン | レーガノミクス 注 ) スミス (Adam Smith)、ケインズ (John Maynard Keynes), ハイエク (Friedrich von Hayek), サッチャリズム (Thatcherism) フリードマン (Milton Friedman)、レーガノミクス (Reaganomics) ー113 一",
       "text": "総合科目一3 (3) 下線部 2 の主張の論拠として最も適当なものを , 次の",
       "answer_choices": [
@@ -8716,7 +8733,7 @@
             "ー113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8724,7 +8741,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8732,7 +8749,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "b8fcfd8a-fb88-48e7-a6a4-22acd89a7314",
@@ -8895,7 +8917,7 @@
             "ー114",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8903,7 +8925,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8911,11 +8933,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "22737de0-ab07-42a0-bb97-cbab3114da65",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一5 (2) 下線部 2 に関して , 温暖湿潤気候は。四季の変化が明 BEC, 夏に高温多雨となる ことが特徴である。温暖湿潤気候に属する都市として最も適当なものを , KOO~O の中から一つ選びなさい。 16 @ ローマ (Rome) @ モスクワ (Moscow) ④ シンガポール (Singapore) (3) 下線部 3 に関して下院議員数は , 各州の人口に比例して配分される。議員数が最 も多く配分きれている州を。次の ①~ こ ④ の中から一つ選びなさい。 7 ① ワシントン州 (Washington) ③ テキサス州 (Texas) ④ カリフォルニア州 (California) @ フロリダ州 (Florida) (4) 下線部 4 に関して , IMF における主要な業務として適当でないものを , KOO~ ④ の中から一つ選びなさい。 8 ① 国際通貨問題に関する協力の推進 ② 外国為替相場安定の促進 @ 加盟国に対する外貨の貸し付け ④ 途上国に対する開発投資資金の貸し付け ー115 一",
       "text": "総合科目一5 (2) 下線部 2 に関して , 温暖湿潤気候は。四季の変化が明 BEC, 夏に高温多雨となる ことが特徴である。温暖湿潤気候に属する都市として最も適当なものを , KOO~O の中から一つ選びなさい。 16 @ ローマ (Rome) @ モスクワ (Moscow)",
       "answer_choices": [
@@ -9178,7 +9204,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9198,7 +9224,10 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "487ec30e-6bc8-40d3-a244-a95eea5b4271",
@@ -9496,7 +9525,7 @@
             "ー116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9792,7 +9821,7 @@
             "ー117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9800,7 +9829,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -9808,7 +9837,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "98856b72-4899-4a61-b309-5e59a224d676",
@@ -10195,7 +10228,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10413,7 +10446,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10606,7 +10639,7 @@
             "頃",
             "—120-"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10907,7 +10940,7 @@
             "ー121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10929,7 +10962,7 @@
     },
     {
       "id": "7fbb2b19-2eb8-4b4b-be8c-42b53d91a490",
-      "number": 3,
+      "number": null,
       "raw_text": "3 位 | カナダ | 1.0 | 8.6 | 中国 16.1 | アメリカ | 8.6 注 ) 中国 (China) A B C D ① | オーストラリア | タィ | フィリピンフランス @| タイフィリピンフランスオーストラリア |⑧ | フィリピンフランスオーストラリア | タイ ④ | フランスオーストラリア | タイフィリピン 注 ) タイ (Thailand), フィリピン (Philippines) ー121 一",
       "text": "3 位 | カナダ | 1.0 | 8.6 | 中国 16.1 | アメリカ | 8.6 注 ) 中国 (China) A B C D",
       "answer_choices": [
@@ -10945,7 +10978,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10953,7 +10986,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "29061821-38f4-46d0-9a14-4fc73643108a",
@@ -11114,7 +11152,7 @@
             "ー122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11122,7 +11160,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11132,7 +11170,11 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "8e4c6c88-8911-4499-9f7b-e0aeae08dbb2",
@@ -11332,7 +11374,7 @@
             "ー123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11514,7 +11556,7 @@
             "ー124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11536,7 +11578,7 @@
     },
     {
       "id": "32db5ae4-ffe1-422c-ae8e-08ea93fee788",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一15 0* 180* 0° 180° —125—",
       "text": "総合科目一15 0* 180* 0° 180° —125—",
       "answer_choices": [],
@@ -11602,7 +11644,7 @@
             "A",
             "—125-"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11610,7 +11652,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11618,7 +11660,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "b3422f1d-feac-4448-aa42-49bcc9a43911",
@@ -11785,7 +11832,7 @@
             "ー126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11807,7 +11854,7 @@
     },
     {
       "id": "4b055e4e-1a5b-4166-bec5-713292952c17",
-      "number": 6,
+      "number": null,
       "raw_text": "6.000 — ンーへ、ー 4,000 — = 2.000 — = ee a : B m_ oo _ 4,000 — = 2,000 — = gv ll com 人キ _ 4,000 — = 2,000 — = yy Vre ー126 一",
       "text": "6.000 — ンーへ、ー 4,000 — = 2.000 — = ee a : B m_ oo _ 4,000 — = 2,000 — = gv ll com 人キ _ 4,000 — = 2,000 — = yy Vre ー126 一",
       "answer_choices": [],
@@ -11819,7 +11866,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11827,11 +11874,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "5d204988-825f-45a3-8025-f8e0d0eae3bd",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一17 (1) 上の図 A て C に当てはまる大陸名の組み合わせとして正しいものを , KOO~OO 中から一つ選びなさい。 21 A | B | C | ① | アフリカ大陸 | 南アメリカ大陸 | 北アメリカ大陸 | ⑨ | アフリカ大陸 | 北アメリカ大陸 | 南アメリカ大陸 ⑧ | 南アメリカ大陸 | 北アメリカ大陸 | アフリカ大陸 北アメリカ大陸 (2) それぞれの図には , 矢印 LL) のところに広大な山地や高原が描かれている。これ らの中で , 新期造山帯が描かれている図の組み合わせとして正しいものを , ROO~ ④ の中から一つ選びなさい。 (22! ® A,B @ A, C ① A,B,C ー127 一",
       "text": "総合科目一17 (1) 上の図 A て C に当てはまる大陸名の組み合わせとして正しいものを , KOO~OO 中から一つ選びなさい。 21 A | B | C |",
       "answer_choices": [
@@ -11989,7 +12041,7 @@
             "ー127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11997,7 +12049,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -12008,7 +12060,12 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "d4d2d258-f349-4ac0-a257-d76a5019dbb6",
@@ -12206,7 +12263,7 @@
             "ー128",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12374,7 +12431,7 @@
             "ー129",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12396,7 +12453,7 @@
     },
     {
       "id": "1c86a21b-bf78-45c6-9dc5-a1f475461750",
-      "number": 1,
+      "number": null,
       "raw_text": "1 位 | 機械類 | 鋼原油 2 位 | 鉄鉱石 | 銅鉱石油製品 3 位 | 肉類 | 野菜・果実 | 鉄鋼",
       "text": "1 位 | 機械類 | 鋼原油 2 位 | 鉄鉱石 | 銅鉱石油製品 3 位 | 肉類 | 野菜・果実 | 鉄鋼",
       "answer_choices": [],
@@ -12408,7 +12465,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -12416,11 +12473,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.75
     },
     {
       "id": "45a3d0eb-2527-429e-8462-2bd792a0630b",
-      "number": 4,
+      "number": null,
       "raw_text": "4 位 | 大豆 | 魚介類アルミニッム A B C 5 位 | 原油 | パルプ・古紙 | 鉄鉱石 A B C ① | プラジルチリべベネズエラ ⑨ | アルゼンチン | チリブラジル | ⑨ | ベネズェラ | プラジルアルゼンチン [@| #9 アルゼンチン | RRALF 注 ) ブラジル (Brazil), チリ (Chile), ベネズエラ (Venezuela), アルゼンチン (Argentina) —129-",
       "text": "4 位 | 大豆 | 魚介類アルミニッム A B C 5 位 | 原油 | パルプ・古紙 | 鉄鉱石 A B C",
       "answer_choices": [],
@@ -12432,7 +12494,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -12440,7 +12502,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.75
     },
     {
       "id": "d5309f7b-6004-42a3-8f5e-70fc6d14cf10",
@@ -12685,7 +12752,7 @@
             "ー130",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12693,7 +12760,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "political_analysis",
@@ -12703,7 +12770,11 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "10220cd0-06d3-444f-a396-91aeb5243fa3",
@@ -13236,7 +13307,7 @@
             "ー131",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13361,7 +13432,7 @@
             "ー132",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13764,7 +13835,7 @@
             "ー133",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14163,7 +14234,7 @@
             "ー134",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14171,7 +14242,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -14179,7 +14250,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "bd232a1c-43e8-4120-9131-c9b4ecd2a9c1",
@@ -14565,7 +14640,7 @@
             "ー135",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14978,7 +15053,7 @@
             "ー136",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -15016,7 +15091,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -15024,7 +15099,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     }
   ],
   "metadata": {

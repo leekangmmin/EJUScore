@@ -6611,7 +6611,7 @@
             "験",
             "問題"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6619,7 +6619,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -6627,7 +6627,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "a4728f4b-a1e6-4bf3-a2ae-00713d6abfd8",
@@ -6976,7 +6980,7 @@
             "103",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6984,7 +6988,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -6992,11 +6996,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "2e2e8650-96da-446c-a5b7-7eecae51453a",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の会話を読み、下の問い (1) て (4) に答えなさい。 太 BB: 日本は , 非常に多くのエネルギーを外国からの輸入に頼っているのですね。 よし子 : 特に , 原油は , 8 割以上を。中東地域から輸入しています。産油国の政情 BREE, 日本経済にも非常に大きな影響を及ぼします。 K 郎 : でも GDP に対する貿易の割合では , 日本は意外に低いですね。 よし子 : そうですね。逆に , 』 シンガポール (Singapore) は非常に高くなっていま (1) 下線部 1 に関して , 各国のエネルギー輸入依存度を表す次の図中に示された A 一C の国名として適当な組み合わせを , 下の ①~④ の中から一つ選びなさい。 [1 | 各国のエネルギー輸入依存度 * AB] 日本ドイツ B 国 ca カナダ go |- - ーーーーー 60 -- ーーーーーーーー| ! 40 に一| ーーーーーーーーー一| ! | ーーOO fF) -40 トーーーーーーーーーーー- ーーーーーーー| 出典 :Energy Balances of OECD Countries, 1999-2000 イギリスイタリア イタリアアメリカイギリス イギリスアメリカイタリア イタリアイギリスアメリカ 注 ) ドイツ (Germany), カナダ (Canada)、アメリカ (USA), イギリス (UK), イタリア (Italy) — 105 一",
       "text": "問 40 に一| ーーーーーーーーー一| ! | ーーOO fF) -40 トーーーーーーーーーーー- ーーーーーーー| 出典 :Energy Balances of OECD Countries, 1999-2000 イギリスイタリア イタリアアメリカイギリス イギリスアメリカイタリア イタリアイギリスアメリカ 注 ) ドイツ (Germany), カナダ (Canada)、アメリカ (USA), イギリス (UK), イタリア (Italy) — 105 一",
       "answer_choices": [
@@ -7331,7 +7339,7 @@
             "105",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7339,7 +7347,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7351,11 +7359,16 @@
       ],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.75
     },
     {
       "id": "1d5cdd87-7661-4324-83eb-bb7578a10a0e",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (2) 下線部 2 の中東地域にある次の ①~ て ④ の国の中からイスラム教徒が少数派である国 を , 一つ選びなさい。 2 ① ヨルダン (Jordan) ③ イラン (iran) ④ イスラェル (Israel) @ シリア (Syria) (3) 下線部 3 の状態を避けるために , 日本は中東地域からの原油輸入に頼りすぎる傾 向を是正するように努めている。是正策として適切な勃果を持たないと考えられるも DE, 次の ① て ④ の中から一つ選びなさい。 [3 | D 中東地域以外の産油国からの原油輸入を増やす。 Q 原子力や天然がスなどの利用を促進する。 OQ 中東地域の国々 への投資を促進する。 ④ 社会のさまざまな場面で省エネルギー政策を推進する。 (4) 次の表は , 各国の貿易依存度を表したものである。下線部 4 にあるように , YUH ポールの数値が他国と比べて非常に高いのはなぜか。その理由として最も適当なもの を , 次買の ①~ て ④ の中から一つ選びなさい。 4 | 日本 10.48.4 HE] (South Korea) 34.131.9 中国 (China) 26.323.9 シンがポール 143.8133.8 イギリス 17.621.4 フランス (France) 21.521.4 アメリカ 6.611.5 総務省統計局 HP より作成 注 ) 輸出 (輸入 ) 依存度 =GDP に対する輸出 (輸入 ) 額の百分率 ー106 一",
       "text": "総合科目一2 (2) 下線部 2 の中東地域にある次の",
       "answer_choices": [
@@ -7683,7 +7696,7 @@
             "106",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7691,7 +7704,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "geographical_analysis",
@@ -7699,7 +7712,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "0e6cce55-dbee-49bf-88c6-6c9303c7e006",
@@ -8156,7 +8174,7 @@
             "107",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8596,7 +8614,7 @@
             "108",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8604,7 +8622,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8612,7 +8630,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.75
     },
     {
       "id": "d4b6ff94-8976-455c-9642-68e8a5d35cce",
@@ -8628,7 +8650,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8638,7 +8660,11 @@
       ],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "16534c20-6c28-44be-9b4d-d1f69171137b",
@@ -8886,7 +8912,7 @@
             "109",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9413,7 +9439,7 @@
             "ー110",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9786,7 +9812,7 @@
             "111",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10134,7 +10160,7 @@
             "ー112",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10490,7 +10516,7 @@
             "113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10498,7 +10524,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10506,7 +10532,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "e25c7f49-a9f5-4995-98da-50df0d4a282c",
@@ -10798,7 +10828,7 @@
             "114",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10818,7 +10848,7 @@
     },
     {
       "id": "13a918a0-6bbf-4179-9ae9-2688f1508bee",
-      "number": 2,
+      "number": null,
       "raw_text": "2) he 北海道 ® 京都東京 ⑳ 千葉鹿児島 ー114 一",
       "text": "2) he 北海道 ® 京都東京 ⑳ 千葉鹿児島 ー114 一",
       "answer_choices": [],
@@ -10830,7 +10860,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10838,11 +10868,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "0becd5cf-2cd1-479c-a10a-60ce0d151175",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一11 間 16 次の文を読み、下の問い (1) (2) に答えなさい。 次の地図で , 最も濃く塗られているヨーロッパの国々 は 200】 年末現在 , EU (European Union) に加盟している 25 カ国である。 (1) 次の国の中で現在までのところ EU に加盟していない国を , 次の ① て ④ の中から一 @Q@ ルクセンプルク (Luxembourg) つ選びなさい。 23 ③ オーストリア (Austria) ① 。ノルウェー(Norway) @M スロベニア (Slovenia) (2) 200』 年末現在、EU 域内では統一通貨として ,、ユーロが用いられている。次の EU 加 盟国 ①~-④ の中でユーロを通貨として用いていない国を , 一つ選びなさい。 |24| ① フランス @ ドイツ @ イギリス ④ アイルランド (jreland) ー115 一",
       "text": "総合科目一11 間 16 次の文を読み、下の問い (1) (2) に答えなさい。 次の地図で , 最も濃く塗られているヨーロッパの国々 は 200】 年末現在 , EU (European Union) に加盟している 25 カ国である。 (1) 次の国の中で現在までのところ EU に加盟していない国を , 次の",
       "answer_choices": [
@@ -11070,7 +11105,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11089,7 +11124,10 @@
       ],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "128a48f5-adf7-43a5-a043-be74bee78d35",
@@ -11424,7 +11462,7 @@
             "ー116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11432,7 +11470,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "political_analysis",
@@ -11440,11 +11478,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.5
     },
     {
       "id": "1f79f862-92f0-473b-8952-250061a09b0c",
-      "number": 18,
+      "number": null,
       "raw_text": "問 18 次の文章を読み。下の問い (1)。 (2) に答えなさい。 「 戦争は人の心の中で生まれるものであるから , 人の心の中に平和のとりでを築かなけれ これは , 国連 (UN) の中に設置されたある機関の憲章の中で述べられている有名な言 ばならない。 (Since wars begin in the minds of men, it is in the minds of men that the 葉である。 defenses of peace must be constructed.) 」 (1) この機関の名称は何か。正しいものを , 次の ①ー④ の中から一つ選びなさい。 | 27| ① 国連大学 (UNU) ② eH (UNDC) ③ 国連安全保障理事会 (UNSC ④ 国連教育科学文化機関 (UNESCO) (2) この機関が .「 人の心の中に平和のとりでを築く 」 ための手段として最も重視して いることを , 次の ① て ④ の中から一つ選びなさい。 [28 ① キリスト教における隣人愛思想の世界的規模での普及 ③⑬ 教育による , 異なる文化や風習についての相互理解 ② 国連軍の増強と国際刑事裁判所 (ICC) の設立 OQ テロリストを保護する国家に対する制裁の強化 ー117 一",
       "text": "問 18 次の文章を読み。下の問い (1)。 (2) に答えなさい。 「 戦争は人の心の中で生まれるものであるから , 人の心の中に平和のとりでを築かなけれ これは , 国連 (UN) の中に設置されたある機関の憲章の中で述べられている有名な言 ばならない。 (Since wars begin in the minds of men, it is in the minds of men that the 葉である。 defenses of peace must be constructed.) 」 (1) この機関の名称は何か。正しいものを , 次の",
       "answer_choices": [
@@ -11750,7 +11792,7 @@
             "ー117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11769,7 +11811,10 @@
       ],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "e33e25f7-284a-41ec-b1cf-5284b1b98ad7",
@@ -12172,7 +12217,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12198,7 +12243,7 @@
     },
     {
       "id": "50be2322-e272-4bf2-bebd-ebc7988b7841",
-      "number": 22,
+      "number": null,
       "raw_text": "問 22 次の文章中の下線部 ac に関係する基本的人権の組み合わちせとして正しいものを , 下の ①~④ の中から一つ選びなさい。 32 インターネットの普及に伴い , 生活が便利になっただけでなく , さまざまな問題点も生 e 著作物を勝手に引用きれる , などである。 a b c ®| 知る権利肖像権知的財産権 @| プライバシー権 | 知的財産権知る権利 ③| プライバシー権 | 肖像権知的財産権 ④| 知る権利プライバシー権 | 肖像権 問 23 次の文中の空欄 [A 1 | B |] に当てはまる国名の組み合わせとして正しいものを , 下の ①~ こ ④ の中から一つ選びなきい。 |33|",
       "text": "問 22 次の文章中の下線部 ac に関係する基本的人権の組み合わちせとして正しいものを , 下の 問 23 次の文中の空欄 [A 1 | B |] に当てはまる国名の組み合わせとして正しいものを , 下の ①~ こ ④ の中から一つ選びなきい。 |33|",
       "answer_choices": [
@@ -12516,7 +12561,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12534,11 +12579,14 @@
       ],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "e265b8ff-6e53-4062-ba62-e0ce21d93c52",
-      "number": 19,
+      "number": null,
       "raw_text": "19 世紀には , それまで有力であったポルトガル (Portugal), [AA ] にかわって , フラン A, FAVA, ドイツ , | B | などが太平洋の諸地域を分割していった。 A B | ①| スペイン | vii @| イタリア | vit | スペイン | イギリス ④ | イタリア | イギリス 注 ) スペイン (Spain), ソ連 (USSR) ー119 一",
       "text": "19 世紀には , それまで有力であったポルトガル (Portugal), [AA ] にかわって , フラン A, FAVA, ドイツ , | B | などが太平洋の諸地域を分割していった。 A B | ①| スペイン | vii @| イタリア | vit | スペイン | イギリス ④ | イタリア | イギリス 注 ) スペイン (Spain), ソ連 (USSR) ー119 一",
       "answer_choices": [],
@@ -12550,7 +12598,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "historical_analysis",
@@ -12562,7 +12610,12 @@
       ],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "4bcce09f-0a58-4751-9ca9-e8c80cf849be",
@@ -12851,7 +12904,7 @@
             "120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13088,7 +13141,7 @@
             "121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13096,7 +13149,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "political_analysis",
@@ -13104,7 +13157,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2005,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     }
   ],
   "metadata": {

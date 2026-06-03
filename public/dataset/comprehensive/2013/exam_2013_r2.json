@@ -7016,7 +7016,7 @@
             "試験",
             "問題"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7024,7 +7024,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7032,11 +7032,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "20ee4eb4-a8a6-4f94-909d-71407525f4cb",
-      "number": 1,
+      "number": null,
       "raw_text": "平成 25 年度 (2013 年度 ) 日本匂学試験 hea Et Al (80 分 ) \"ーーーー・ー<ーィーー<ー<ー<ーィーッーッーッーッーッーッーッーッーッーッーッーッーッーッーッーッーース i 1. 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題冊子を持ち帰ることはできません。 (5, MBIT, メモや計算などを書いてもいいです。 N \\ てください。 \\ ンーンー<ーィーィーィニーンーンーンーィ <ー<ー<ー<ー<ー<ー<ー<ー<ー<ー<ーィーーーィメーズバ ー113 一",
       "text": "平成 25 年度 (2013 年度 ) 日本匂学試験 hea Et Al (80 分 ) \"ーーーー・ー<ーィーー<ー<ー<ーィーッーッーッーッーッーッーッーッーッーッーッーッーッーッーッーッーース i 1. 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題冊子を持ち帰ることはできません。 (5, MBIT, メモや計算などを書いてもいいです。 N \\ てください。 \\ ンーンー<ーィーィーィニーンーンーンーィ <ー<ー<ー<ー<ー<ー<ー<ー<ー<ー<ーィーーーィメーズバ ー113 一",
       "answer_choices": [],
@@ -7382,7 +7386,7 @@
             "ef",
             "—113—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7400,11 +7404,14 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "137185ef-3ecf-49b4-813e-f36d769fd853",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の会話を読み、下の問い (1)(⑳ に答えなさい。 よし子 :「 鉄の女 」 と呼ばれたイギリス (UK) のサッチャー(Margaret Thatcher) 先生 : ,1925 年生まれで , 87 歳でした。 、よし子 : なぜ 「 鉄の女 」 と呼ばれんたのでしょうか。 先生 : ソ連 (USSR) など当時の共産主義諸国に対して厳しい態度をとったからで よし子 : 日本でも , 女性の社会進出がもっと進み , 早く女性首相が生まれるといいで 元首相が亡くなりましたよね。おいくつだったのですか。 しょう。その後の , アルゼンチン (Argentina) とのフォークランド (マル EFA) 紛争でも一歩も引かず ,「 鉄の女 」 のイメージが強まりました。政 RAC, サッチャー元首相は ,「 サッチャリズム 」(Thatcherism) と呼ば れる。新自由主義的改革をおこなった政治家として知られています。 注 ) フォークランド (Falklands)、マルビナス (Malvinas) (1) 下線部 1 に関して , 1925 年は日本で選挙制度の改革がおこなわれた年である。この 改革に関する記述として最も適当なものを , 次の ①ー④ の中から一つ選びなさい。 ① 全国を一つの選挙区とした比例代表制が採用された。 ② 選挙権に出身地や居住に関する条件が設定された。 @ 25 歳以上の男性に選挙権が与えられた。 ④ 貴族院が廃止きれて , 民選議員からなる参議院が設置された。 ー115 一",
       "text": "問 1 次の会話を読み、下の問い (1)(⑳ に答えなさい。 よし子 :「 鉄の女 」 と呼ばれたイギリス (UK) のサッチャー(Margaret Thatcher) 先生 : ,1925 年生まれで , 87 歳でした。 、よし子 : なぜ 「 鉄の女 」 と呼ばれんたのでしょうか。 先生 : ソ連 (USSR) など当時の共産主義諸国に対して厳しい態度をとったからで よし子 : 日本でも , 女性の社会進出がもっと進み , 早く女性首相が生まれるといいで 元首相が亡くなりましたよね。おいくつだったのですか。 しょう。その後の , アルゼンチン (Argentina) とのフォークランド (マル EFA) 紛争でも一歩も引かず ,「 鉄の女 」 のイメージが強まりました。政 RAC, サッチャー元首相は ,「 サッチャリズム 」(Thatcherism) と呼ば れる。新自由主義的改革をおこなった政治家として知られています。 注 ) フォークランド (Falklands)、マルビナス (Malvinas) (1) 下線部 1 に関して , 1925 年は日本で選挙制度の改革がおこなわれた年である。この 改革に関する記述として最も適当なものを , 次の",
       "answer_choices": [
@@ -7808,7 +7815,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7830,11 +7837,14 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "1cb82d94-be31-4e1c-93ca-cd6e6ef355d5",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (2) 下線部 2 に関して , アルゼンチンはどこか。正しい位置を , 次の地図中の ①~ て ④ の 中から一つ選びなさい。 [2 | (3) 下線部 3 に関して , サッチャー首相のおこなった新自由主義的改革はどれか。最も 適当なものを , 次の ①ー④ の中から一つ選びなさい。 3 ① 経済活性化のため , 国営企業を民営化し , 競争原理を導入した。 ②⑨ 法人税や所得税を引き上げ , 財政の再建を進めた。 ③ 労働組合法を成立させ , 労働者の生活状況の改善に努めた。 ④ 共通カリキュラムや全国共通学カテストを廃止し , 教育分野の規制を緩和した。 ー116 一",
       "text": "総合科目一2 (2) 下線部 2 に関して , アルゼンチンはどこか。正しい位置を , 次の地図中の",
       "answer_choices": [
@@ -8046,7 +8056,7 @@
             "ー116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8064,11 +8074,14 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "a827fb50-ef3a-4691-97cf-d0dce4d89f1e",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一3 (4) 下線部 4 に関して , KF RAMI AITO IC PSS (UN) の総会で採択 れた。 AAI, これを 1985 年に批准し。それに伴い国内法を整備した。この国内法に 関する記述として最も適当なものを。次の ①ー④ の中から一つ選びなさぃ。 [4] ① 就職や昇進の機会における男女の平等化を企業に求めた。 ② 国会の議席の一定数を女性に割り当てた。 ③ 婚如に際して夫婦別姓を選択できるようにした。 ④ 出産した女性従業員に 3 年間の育児休暇を与えることを企業に義務づけた。 ー117 一",
       "text": "総合科目一3 (4) 下線部 4 に関して , KF RAMI AITO IC PSS (UN) の総会で採択 れた。 AAI, これを 1985 年に批准し。それに伴い国内法を整備した。この国内法に 関する記述として最も適当なものを。次の",
       "answer_choices": [
@@ -8249,7 +8262,7 @@
             "ー117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8273,11 +8286,14 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "b85522aa-5ea3-487c-9b8b-d019dac9f387",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一4 , イラン (Iran) は , 中東 (Middle East) に位置する ,. イスラム共和制 (slamic 間 2 次の文章を読み , 下の問い (1)^(4) に答えなさい。 republic) の国家である。1979 年に。イラン革命が起き , パーレビ (Pahlavi) 国王が国 外に逃亡し , 現在の体制になった。エネルギー資源にも恵まれ世界屈指の , 石油生産量や 天然ガス埋蔵量で注目されている。 (1) 下線部 1 に関して。イランはどこか。正しい位置を , 次の地図中の ① て ④ の中から ーつ選びなさい。 [5 | ー118 一",
       "text": "総合科目一4 , イラン (Iran) は , 中東 (Middle East) に位置する ,. イスラム共和制 (slamic 間",
       "answer_choices": [
@@ -8447,7 +8463,7 @@
             "ae",
             "-118—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8455,7 +8471,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "geographical_analysis",
@@ -8463,11 +8479,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "89f52ec2-8127-4911-b9be-85738ec1d7d7",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一5 (2) 下線部 2 に関して , 次の文章中の空欄 [ a ]~[ c ] に当てはまる語の組み合わせと して最も適当なものを , 下の ① て ④ の中から一つ選びなさい。 16 | イスラム教 (slam) tt, Ca |] を型典とし , [ b | を徹底している。イスラム教は。 主に二つの宗派に分かれるが , イランは [ c |] が多数を占める。 a b c | ① | コーラン Gu7—y) | カースト制度 | シーア派 @| コーラン (ウルアーン ) | BWR | | aT IR ⑨ | リグ・ヴェーダカースト制度 | スンニ派 ④ | リグ・ヴェーダ偶像崇拝の禁止 | スンニ派 注 ) コーラン (Koran), クルアーン (Qur'an), カースト制度 (caste), シーア派 (Shia), リグ・ヴェーダ (Rig Veda), スンニ派 (Sunni) (3) 下線部 3 に関して , イラン草命と同じ年に始まった出来事として正しいものを , 次 の ①~ て ④ の中から一つ選びなさい。 7 ① WRK (Gulf War) @ b+ AK (Vietnam War) @ キューバ危機 (Cuban Missile Crisis) ④ ソ連のアフガニスタン (Afghanistan) 侵攻 ー119 一",
       "text": "総合科目一5 (2) 下線部 2 に関して , 次の文章中の空欄 [ a ]~[ c ] に当てはまる語の組み合わせと して最も適当なものを , 下の",
       "answer_choices": [
@@ -8745,7 +8766,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8753,7 +8774,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8761,7 +8782,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "d58e974a-22ff-4660-9bd7-8bc6aa050090",
@@ -9114,7 +9140,7 @@
             "ー120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9122,7 +9148,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "economic_analysis",
@@ -9130,7 +9156,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "e645ac0f-5192-4f9f-8224-c37bf49818ff",
@@ -9428,7 +9458,7 @@
             "ー121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9605,7 +9635,7 @@
             "ー122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9829,7 +9859,7 @@
             "125%",
             "—123-"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9852,7 +9882,7 @@
     },
     {
       "id": "fc529fb2-d8a8-4674-adce-b5809aba53d0",
-      "number": 45,
+      "number": null,
       "raw_text": "45.0 al 40.0 ーー一 35.0 ーーレーの NN ーー, 15.0 . mx 30.0 — Cz",
       "text": "45.0 al 40.0 ーー一 35.0 ーーレーの NN ーー, 15.0 . mx 30.0 — Cz",
       "answer_choices": [],
@@ -9992,7 +10022,7 @@
             "ー124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10000,7 +10030,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10010,7 +10040,12 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "d322bd14-449b-4166-b8bf-2a7abf05b902",
@@ -10453,7 +10488,7 @@
             "ー125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10640,7 +10675,7 @@
             "ー126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10648,7 +10683,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10658,7 +10693,11 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "df20ae1a-1939-41b3-9cda-20a36d6dcf68",
@@ -10674,7 +10713,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10682,7 +10721,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "dcd1c7ea-69c3-45d5-a67a-55004776072c",
@@ -11039,7 +11082,7 @@
             "ー127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11187,7 +11230,7 @@
             "D",
             "—128-"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11660,7 +11703,7 @@
             "ー129",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12001,7 +12044,7 @@
             "保障",
             "—130—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12366,7 +12409,7 @@
             "ー131",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12719,7 +12762,7 @@
             "ー132",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12727,7 +12770,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -12735,11 +12778,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "762d133e-9652-45fc-9f9b-51f50d17555a",
-      "number": 221950,
+      "number": null,
       "raw_text": "問 221950 年代後半 , 日本の外務省が発表した日本外交の三原則に含まれないものを , 次 の ①~ て ④ の中から一つ選びなさい。 31 ① 自由主義諸国との協調 ② 国連中心主義 @ 武器輸出の禁止 ④ アジア (Asia) O-ALL TOUBO BS 問 23 人道的介入 (humanitarian intervention) とは , 一般的に , 他国で生じている国 内・民族紛争に対して , 国家や地域機構などの国際社会が主体となって , 人権侵害を 阻止するために軍事的に介入することであるとされている。人道的介入がおこなわれ た紛争事例として最も適当なものを , 次の ①ー④ の中から一つ選びなさい。 32 ① チェチェン紛争 (Chechen Wars) @ コソボ紛争 (Kosovo War) ③ カシミール紛争 (Kashmir conflict) ④ 北アイルランド紛争 (Civil disturbances in Northern Ireland) 問 24 国際連盟 (League of Nations) は , 第一次世界大戦後のパリ講和会議 (Paris Peace Conference) に基づき 1920 年に発足した , 集団安全保障制度を備えた世界的 平和機構である。この国際連盟に , 発足後一度も加盟しなかった国家を , 次の ①ー④ の中から一つ選びなさい。 133 @ vii @ アメリカ ④ イタリア (Italy) —133—",
       "text": "問 221950 年代後半 , 日本の外務省が発表した日本外交の三原則に含まれないものを , 次 の 問 23 人道的介入 (humanitarian intervention) とは , 一般的に , 他国で生じている国 内・民族紛争に対して , 国家や地域機構などの国際社会が主体となって , 人権侵害を 阻止するために軍事的に介入することであるとされている。人道的介入がおこなわれ た紛争事例として最も適当なものを , 次の 問 24 国際連盟 (League of Nations) は , 第一次世界大戦後のパリ講和会議 (Paris Peace Conference) に基づき 1920 年に発足した , 集団安全保障制度を備えた世界的 平和機構である。この国際連盟に , 発足後一度も加盟しなかった国家を , 次の",
       "answer_choices": [
@@ -13065,7 +13112,7 @@
             "(Italy)",
             "—133-—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13081,11 +13128,14 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "ebcfe1e3-23f7-4122-a8af-dc76d537ebb6",
-      "number": 25,
+      "number": null,
       "raw_text": "問 25 イギリスは 19 世紀半ば , 世界の工場と呼ばれた。当時のイギリスの主要な輸出品と して最も適当なものを , 次の ① て ④ の中から一つ選びなさい。 34 ① 綿製品 ② 毛織物 @ 麻織物 ④ 生糸 (raw silk and silk yarn) 問 26 フランス革命とナポレオン戦争 (Napoleonic Wars) 後の混乱を処理するために 開かれたウィーン会議 (Congress of Vienna) の結果に関する記述として最も適当な ものを。次の ①~ て ④ の中から一つ選びなさい。 35 OQ スペイン (Spain) の革命政府が承認され , 共和政体が国際的に認められた。 @ オーストリア (Austria) やプロイセン (Prussia) の領土にまたがるドイツ連邦 @ ローマ教皇領 (Papal States) がイタリア王国に併合され , イタリアの統一が達 @ オランダ (Netherlands) とスイス (Switzerland) がフランスからの独立を認 (German Confederation) が生まれた。 成された。 められた。 問 27 日本で 1920 年代に起こった出来事として最も適当なものを , 次の ①ー④ の中から一 つ選びなさい。 36 ① ドイツ , イタリアと日独伊三国同盟 (Tripartite Pact) を締結した。 ② ソ連との関係改善を果たし , 条約を結んで , ソ連と国交を樹立した。 @ 日英同盟 (Anglo-Japanese Alliance) に基づき , 第一次世界大戦に参戦した。 ④ 日清戦争 (First Sino-Japanese War) で得た遼東半島 (Liaodong Peninsula) を三国干渉の結果中国に返還した。 ー134 一",
       "text": "問 25 イギリスは 19 世紀半ば , 世界の工場と呼ばれた。当時のイギリスの主要な輸出品と して最も適当なものを , 次の 問 26 フランス革命とナポレオン戦争 (Napoleonic Wars) 後の混乱を処理するために 開かれたウィーン会議 (Congress of Vienna) の結果に関する記述として最も適当な ものを。次の ①~ て ④ の中から一つ選びなさい。 35 OQ スペイン (Spain) の革命政府が承認され , 共和政体が国際的に認められた。 @ オーストリア (Austria) やプロイセン (Prussia) の領土にまたがるドイツ連邦 @ ローマ教皇領 (Papal States) がイタリア王国に併合され , イタリアの統一が達 @ オランダ (Netherlands) とスイス (Switzerland) がフランスからの独立を認 (German Confederation) が生まれた。 成された。 められた。 問 27 日本で 1920 年代に起こった出来事として最も適当なものを , 次の",
       "answer_choices": [
@@ -13461,7 +13511,7 @@
             "ー134",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13483,7 +13533,10 @@
         "프랑스혁명"
       ],
       "year": 2013,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "ca97ff0c-e60b-4385-b6e6-3c6388a116eb",
@@ -13824,7 +13877,7 @@
             "ー135",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],

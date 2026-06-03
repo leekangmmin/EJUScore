@@ -6705,7 +6705,7 @@
             "回",
             ")"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6713,7 +6713,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -6721,11 +6721,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "84da0452-999b-45c3-8535-724808e9a3af",
-      "number": 1,
+      "number": null,
       "raw_text": "(80 分 ) i 1 . 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題冊子を持ち帰ることはできません。 ) 5. 問題冊子には , メモや計算などを書いてもいいです。 N \\ てください。 \\ ティーィンーィーーンーィーィーーンーンーンーンーィーィンーィメーンーーィーー<ー<ー<ー<ー<ー<ー<ー<ーィーーで ssl | |・| | | | | | — 107 一",
       "text": "(80 分 ) i 1 . 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題冊子を持ち帰ることはできません。 ) 5. 問題冊子には , メモや計算などを書いてもいいです。 N \\ てください。 \\ ティーィンーィーーンーィーィーーンーンーンーンーィーィンーィメーンーーィーー<ー<ー<ー<ー<ー<ー<ー<ーィーーで ssl | |・| | | | | | — 107 一",
       "answer_choices": [],
@@ -7066,7 +7070,7 @@
             "107",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7074,7 +7078,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -7082,11 +7086,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "59c821d2-1a62-4c42-9b87-8c62d5a8e824",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の会話を読み , 下の問い (1)^-(4) に答えなさい。 よし子 : いま , アメリカ (USA) の人種問題の歴史についてレポートを書いている 父 : 1950 年代にキング牧師 (Martin Luther King, Jr.) らが進めた。公民権運動 についても , 書かなければいけないね。工業化に遅れも, 人種問の平等があま よし子 : それに加えて , 4 アファーマティブ・アクション (affirmative action) に の。リンカーン (Abraham Lincoln) の時代の。奴隷解放について調べ り進展していなかった地域における人種分見政策への非暴力的な抗議運動を , 代表きれるそれ以降の傾向についても言及しなくてはならないかしら。 ているのよ。 彼が主導したんだ。 (1) 下線部 1 に関して。リンカーンは , 1863 年にゲティスバーグ (Gettysburg) でお こなった演説の 「 人民の , 人民による , 人民のための政治 (government of the people, by the people, for the people) 」 という一節でよく知られている。この一節が , 簡潔 に表している政治理念として最も適当なものを , 次の ①ー④ の中から一つ選びなさい。 ① 法の支配 ②⑨ 国民主権 ③ 両性問の平等 ④ 多文化主義 (2) 下線部 2 に関して , 奴隷解放の願いが込められているアメリカの文学作品として正 しいものを , 次の ①ー④ の中から一つ選びなさい。 2 ① ストウ 『 アンクル・トムの小屋 」(Uncle Tom's Cabin) へミングウェイ 『 老人と海 』(The Old Man and the Sea) ⑧ メルヴィル 『 白鯨 』」(Moby Dick) 〈④ ミッチェル 「『 風とともに去りぬ 』(Gone with the Wind) 注 ) ストウ (Harriet Beecher Stowe), メルヴィル (IIerman Melville), へミングウェイ (Ernest Hemingway), ミッチェル (Margaret Mitchell) — 109 一",
       "text": "問 1 次の会話を読み , 下の問い (1)^-(4) に答えなさい。 よし子 : いま , アメリカ (USA) の人種問題の歴史についてレポートを書いている 父 : 1950 年代にキング牧師 (Martin Luther King, Jr.) らが進めた。公民権運動 についても , 書かなければいけないね。工業化に遅れも, 人種問の平等があま よし子 : それに加えて , 4 アファーマティブ・アクション (affirmative action) に の。リンカーン (Abraham Lincoln) の時代の。奴隷解放について調べ り進展していなかった地域における人種分見政策への非暴力的な抗議運動を , 代表きれるそれ以降の傾向についても言及しなくてはならないかしら。 ているのよ。 彼が主導したんだ。 (1) 下線部 1 に関して。リンカーンは , 1863 年にゲティスバーグ (Gettysburg) でお こなった演説の 「 人民の , 人民による , 人民のための政治 (government of the people, by the people, for the people) 」 という一節でよく知られている。この一節が , 簡潔 に表している政治理念として最も適当なものを , 次の",
       "answer_choices": [
@@ -7560,7 +7569,7 @@
             "109",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7578,11 +7587,14 @@
       ],
       "concepts": [],
       "year": 2008,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "77c6dffc-5dd3-4804-86f5-7f8eb939085e",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (3) 下線部 3 に関して , 公民権運動の発端となったいわゆる 「 バス・ボイコット事件 」 が起こったアメリカの都市の位置はどこか。正しいものを , 次の地図中の ①~④ の中 から一つ選びなさい。 3 (4) 下線部 4 の 「 傾向 」 として最も適当なものを , 次の ①^④ の中から一つ選びなさい。 ① 万人が自分の人種をまったく意識しなくなるような社会を目指す傾向 @ 人種的平等を否定しようとする傾向 @ 差別されてきた少数集団に優遇措置を与える傾向 ④ 社会の主流派であるアングロサクソン (Anglo-Saxon) の文化の普及を目指す ー110 一",
       "text": "総合科目一2 (3) 下線部 3 に関して , 公民権運動の発端となったいわゆる 「 バス・ボイコット事件 」 が起こったアメリカの都市の位置はどこか。正しいものを , 次の地図中の",
       "answer_choices": [
@@ -7796,7 +7808,7 @@
             "ー110",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7814,7 +7826,10 @@
       ],
       "concepts": [],
       "year": 2008,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "d3ea4adf-e121-453d-81cf-c3ba7f9c7c35",
@@ -8133,7 +8148,7 @@
             "111",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8160,7 +8175,7 @@
     },
     {
       "id": "0c169880-efba-432f-ad2f-f524efe4ffee",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一4 (4) 下線部 4 に関して ,。コソボは 「 ヨーロッパ (Europe) の火薬庫 」 と呼ばれてきた バルカン (Balkan) 半島にある。バルカン半島の位置はどこか。正しいものを ,。次 の地図中の ①~ て ④ の中から一つ選びなさい。 8 — 112 一",
       "text": "総合科目一4 (4) 下線部 4 に関して ,。コソボは 「 ヨーロッパ (Europe) の火薬庫 」 と呼ばれてきた バルカン (Balkan) 半島にある。バルカン半島の位置はどこか。正しいものを ,。次 の地図中の ①~ て ④ の中から一つ選びなさい。 8 — 112 一",
       "answer_choices": [],
@@ -8264,7 +8279,7 @@
             "112",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8282,7 +8297,10 @@
       ],
       "concepts": [],
       "year": 2008,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "dbcaa0b8-7fcf-4092-b012-fc078535a01a",
@@ -8552,7 +8570,7 @@
             "113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8560,7 +8578,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8568,7 +8586,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.75
     },
     {
       "id": "74294e29-b147-44b2-82db-41519d1c95c7",
@@ -8797,7 +8819,7 @@
             "114",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8805,7 +8827,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8813,7 +8835,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "3d13a3c2-8c03-4575-8e56-f2266ba2a5bf",
@@ -9181,7 +9207,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9549,7 +9575,7 @@
             "116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9735,7 +9761,7 @@
             "117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9760,7 +9786,7 @@
     },
     {
       "id": "ae01bef5-f070-4643-a38a-b5c47ab530bd",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一10 間 11 次の 2 つのグラフは , 2007 年における ODA の実績 (支出純額 ) 上位 15 か国とそれ らの国々 の ODA の GNI (Gross National Income) に対する比率を示したものである。 これに関して , 下の問い (1)。 (2) に答えなさい。 2007 F ODA REAM (10075 KL) 25,000 20,000 15,000 10,000 5,000 DD オーサーあーャマーワーダグ 3 ブ prs 63 ok sy が at ef OR だ fo eo ra Ria のだの wh と ma ) ノ x 2007 年 ODA 対 GNI 比 (%) -。 a q i | Pp yt Or os 3 ° Rae ブ yh Bg 2 ® if ポ Ka ae ) A a x x 外務省 「ODA」 ウェブサイトより作成 注 ) ドイツ (Germany), フランス (France), イギリス (UK), スペイン (Spain), スウェーデン (Sweden) , イタリア (Italy), カナダ (Canada), ノルウェー(Norway)、オーストラリア (Australia), ベルギー(Belgium), オーストリア (Austria) ー118 一",
       "text": "総合科目一10 間 11 次の",
       "answer_choices": [
@@ -10000,7 +10026,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10008,7 +10034,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10016,11 +10042,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "41a3bc4b-3218-47cb-b7c0-f2899e788ced",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一11 (1) ODA に関する説明として最も適当なものを , 次の ①②④ の中から一つ選びなさい。 ① 資金協力だけでなく , 技術協力も含まれる。 ② 支出総額が大きな国ほど , 対 GNI 比率も高い。 @ 返済の義務のない , 無償の贈与だけからなっている。 ④ 対象地域での協力活動は。すべて NGO によっておこなわれる。 (2) グラフ中の A に当てはまる国名を , 次の ①ー④ の中から一つ選びなさい。 19 ① オランダ (the Netherlands) ③ ポルトガル (Portugal) ④ ロシア (Russia) @ スイス ー119 一",
       "text": "総合科目一11 (1) ODA に関する説明として最も適当なものを , 次の",
       "answer_choices": [
@@ -10200,7 +10231,7 @@
             "119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10208,7 +10239,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "society",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10218,7 +10249,12 @@
       ],
       "concepts": [],
       "year": 2008,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_recovered"
+      ],
+      "domain_confidence": 1
     },
     {
       "id": "c5df6ba5-2caf-4954-8fec-3a6f9eb0e18b",
@@ -10364,7 +10400,7 @@
             "120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10538,7 +10574,7 @@
             "121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10783,7 +10819,7 @@
             "122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10791,7 +10827,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10802,7 +10838,11 @@
       ],
       "concepts": [],
       "year": 2008,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "bdfaa6ca-b85f-4586-be3f-6e7b424d6b73",
@@ -11258,7 +11298,7 @@
             "123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11506,7 +11546,7 @@
             "ー124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11774,7 +11814,7 @@
             "ー125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12033,7 +12073,7 @@
             "126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12345,7 +12385,7 @@
             "127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12353,7 +12393,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "historical_analysis",
@@ -12361,11 +12401,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "9d70b3ba-2c32-4c75-9ac1-d2c1c0f0ad2b",
-      "number": 251889,
+      "number": null,
       "raw_text": "問 251889 年に発布きれた大日本帝国憲法は , プロイセン (Prussia) の憲法理論を参考 とした。その理由として最も適当なものを , 次の ①ー④ の中から一つ選びなさい。 ① 厳格な権力分離を規定した憲法だったから @ 二院制を規定していた憲法だったから ④ 世界で初めて社会権を認めた憲法だったから @Q 君主の権限が強い憲法だったから 問 26 第一次世界大戦 (WW 1 ) の影響に関する記述として最も適当なものを , 次の ① て ④ の中から一つ選びなさい。 35 ① 4907S CHRMBEL, その後ファシズムがヨーロッパに広まった。 @ ベルサイュ (Versailles) 条約により , ドイツは東西に二分され , これが第二次 @ FAY, オーストリア・ハンガリー(Austria-Hungary), モンゴル (Mongolia), ④ ベルサイュ条約締結後 , ロカルノ (Locarno) 条約の締結やパリ (Paris) 不戦 世界大戦の遠因になった。 ロシアの 4 大帝国が崩壊し, 特に東欧地域に多くの独立国家が誕生した。 条約の締結など , 国際協調が目指された。 ー128 一",
       "text": "問 251889 年に発布きれた大日本帝国憲法は , プロイセン (Prussia) の憲法理論を参考 とした。その理由として最も適当なものを , 次の 問 26 第一次世界大戦 (WW 1 ) の影響に関する記述として最も適当なものを , 次の",
       "answer_choices": [
@@ -12666,7 +12710,7 @@
             "128",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12685,7 +12729,10 @@
       ],
       "concepts": [],
       "year": 2008,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "0058b381-ca71-470c-a381-d5308f9b099e",
@@ -12846,7 +12893,7 @@
             "129",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],

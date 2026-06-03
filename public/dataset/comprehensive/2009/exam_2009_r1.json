@@ -6446,7 +6446,7 @@
             "験",
             "問題"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6454,7 +6454,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -6462,7 +6462,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "8aa22794-f6f4-452f-85ba-ab54778cfad8",
@@ -6810,7 +6814,7 @@
             "107",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6818,7 +6822,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -6832,11 +6836,15 @@
       ],
       "concepts": [],
       "year": 2009,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "77e70e22-bee4-4acd-832f-4d14f7bfb4fb",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の文章を読み , 下の問い (1) て (4) に答えなさい。 セオドア・ローズベルト (Theodore Roosevelt) は , A ##K4 (Russo-Japanese War) の和平交渉を仲介し , ノーベル (Nobel) 平和賞を受賞した。彼は , マッキン リー(William McKinley) 大統領の暗殺後 , 副大統領から史上最年少で大統領に就任し た。また , 経済面では 』 反トラスト法 (antitrust laws) の発動外交面では HAPRIZE (Big Stick Diplomacy) の展開で知られている。 (1) 下線部 1 に関して, セオドア・ローズベルトに続いて , ノーベル平和賞を受賞した アメリカ (USA) 大統領は , 国際連盟 (League of Nations) の設立を提唱した。こ ① ウッドロー・ウィルソン (Woodrow Wilson) @ ジミー・カーター(Jimmy Carter) @ ハーバート・フーバー(Herbert Hoover) @ フランクリン・ローズベルト (Franklin Roosevelt) (2) 下線部 2 に関して, マッキンリー大統領時代に .、アメリカが米西戦争 次の ①~④ の中から一つ選びなさい。 | 2 | ① ハワイ (Hawaii) @ パナマ (Panama) ③ フロリダ (Florida) ®@ プエルトリコ (Puerto Rico) — 109 —",
       "text": "問 1 次の文章を読み , 下の問い (1) て (4) に答えなさい。 セオドア・ローズベルト (Theodore Roosevelt) は , A ##K4 (Russo-Japanese War) の和平交渉を仲介し , ノーベル (Nobel) 平和賞を受賞した。彼は , マッキン リー(William McKinley) 大統領の暗殺後 , 副大統領から史上最年少で大統領に就任し た。また , 経済面では 』 反トラスト法 (antitrust laws) の発動外交面では HAPRIZE (Big Stick Diplomacy) の展開で知られている。 (1) 下線部 1 に関して, セオドア・ローズベルトに続いて , ノーベル平和賞を受賞した アメリカ (USA) 大統領は , 国際連盟 (League of Nations) の設立を提唱した。こ",
       "answer_choices": [
@@ -7170,7 +7178,7 @@
             "109",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7189,11 +7197,14 @@
       ],
       "concepts": [],
       "year": 2009,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "abd60dc2-e760-499f-8d31-a52d3e4ff85c",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (3) 下線部 3 に関して , 最初の反トラスト法は 19 世紀末に成立した。これは , 建国以来, 自由放任主義をとってきたアメリカにおいて , 独占企業が出現し , 様々 な弊害があら われたからである。これらの人英害に関する説明として最も適当なものを , ROO~O の中から一つ選びなさい。 3 ① 低賃金の移民労働力のみを活用し , 白人労働者の失業増を招いた。 ③ 市場原理によらず価格を設定し , 不当な利益をあげることができた。 ② 海外に工場を移し , 産業の空洞化を招いた。 ④ 納税の義務がなく , すべての利益を自分のものとすることができた。 (4) 下線部 4 に関して , 西半球の国々 に積極的に干渉していった梶棒外交を正当化する ROW, アメリカは伝統的外交方針としてヨーロッパ (Europe) 諸国とアメリカ大 陸諸国との相互不介入を主張した。この外交方針を示すものとして最も適当なものを , 次の ①ー④ の中から一つ選びなさい。 |4 | ① 門戸開放宣言 @ モンロー(Monroe) 宣言 @ バルフォア (Balfour) 宣言 ④ トルーマン (Truman) #3 ー110 一",
       "text": "総合科目一2 (3) 下線部 3 に関して , 最初の反トラスト法は 19 世紀末に成立した。これは , 建国以来, 自由放任主義をとってきたアメリカにおいて , 独占企業が出現し , 様々 な弊害があら われたからである。これらの人英害に関する説明として最も適当なものを , ROO~O の中から一つ選びなさい。 3",
       "answer_choices": [
@@ -7533,7 +7544,7 @@
             "110",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7541,7 +7552,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "economy",
       "topic": "",
       "subtopic": "",
       "question_type": "historical_analysis",
@@ -7551,11 +7562,16 @@
       ],
       "concepts": [],
       "year": 2009,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_recovered"
+      ],
+      "domain_confidence": 1
     },
     {
       "id": "986ad89b-9c14-4612-9c8c-14d56f67c5db",
-      "number": 2,
+      "number": null,
       "raw_text": "問 2 次の文章を読み , 下の問い (1)ー(4) に答えなさい。 1 横浜港は 2009 年に開港 150 周年を迎えた。この間, 。横浜と新橋を結ぶ日本初の鉄道 が開業したり , 日本の経済発展に伴って。公害問題が発生したりといった出来事を経なが ら , 4, 横浜港は国際禄易港として大きく発展してきた。 (1) 下線部 1 に関して , 横浜は 1858 年の日米修好通商条約 (The Treaty of Amity and Commerce between the United States and Japan) に基づいて開港された。この条 約で定められた内容として最も適当なものを , 次の ①ー④ の中から一つ選びなさい。 DQ アメリカに領事裁判権を認めた。 ③ 農産物の輸入自由化を認めた。 ④ 相互に平等な最恵国待遇を導入した。 Q アヘンの輸入を認めた。 (2) 下線部 2 に関して , 開業当初 , 横浜と新橋の間の運任は 0.375 円で , 当時の米 15kg とほぼ同じ値段であった。現在の米 1kg の値段が 420 円とすると , 米の値段を基準に して現在の価値に換算した当時の運任は現在の横浜と新橋の間の運賃 450 円の何倍 にあたるか。正しい値を , 次の ①ー④ の中から一つ選びなさい。 6 ① 9 倍 @ 12 倍 ③ 14 倍 ® 17 倍 ー111 一",
       "text": "問 1 横浜港は 2009 年に開港 150 周年を迎えた。この間, 。横浜と新橋を結ぶ日本初の鉄道 が開業したり , 日本の経済発展に伴って。公害問題が発生したりといった出来事を経なが ら , 4, 横浜港は国際禄易港として大きく発展してきた。 (1) 下線部 1 に関して , 横浜は 1858 年の日米修好通商条約 (The Treaty of Amity and Commerce between the United States and Japan) に基づいて開港された。この条 約で定められた内容として最も適当なものを , 次の",
       "answer_choices": [
@@ -7907,7 +7923,7 @@
             "111",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7923,11 +7939,14 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "36847661-1755-44c2-a666-0c938f68a017",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一4 (3) 下線部 3 に関して , 日本の高度経済成長期に横浜で深刻な問題となった公害として 最も適当なものを , 次の ①ー④ の中から一つ選びなさい。 7 ① 硫黄酸化物による汚染 ② 水銀による汚染 @ 放射能による汚染 ④ ひ素による汚染 (4) 下線部 4 に関して , KOA, B の品目の組み合わせとして最も適当なものを , FO ①~ て ④ の中から一つ選びなさい。 8 A : 横浜港の開港以来。100 年近く首位であった輸出品目 B : 横浜港において現在首位となっている輸出品 ⑨| 茶鉄鋼 @| 生 % | 鉄鋼 @| 茶 | 自動車 | ④ | £% | 自動車 ー112 一",
       "text": "総合科目一4 (3) 下線部 3 に関して , 日本の高度経済成長期に横浜で深刻な問題となった公害として 最も適当なものを , 次の",
       "answer_choices": [
@@ -8107,7 +8126,7 @@
             "|",
             "—112-"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8123,7 +8142,10 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "1c5ece72-0141-4ec3-beae-f16403ec4f46",
@@ -8426,7 +8448,7 @@
             "113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8683,7 +8705,7 @@
             "114",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9037,7 +9059,7 @@
             "115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9250,7 +9272,7 @@
             "116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9273,7 +9295,7 @@
     },
     {
       "id": "e409b05b-e079-4305-b92a-6d241ca0e3ab",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一9 間 11 次の図は , BUH, 企業 , 家計の 3 つの経済主体の相互関係を示したものである。図 中の A て C に当てはまる語の組み合わせとして最も適当なものを , 下の ① て ④ の中か らゥ一つ選びなさい。 [47| 賃金利子・財 | A B | C ① | 補助金・サービス | 公共投資労働力・資本 @ | 公共投資投資・利油補助金・′ サービス O | Ra - Ah 社会保障・サービ ④ 補 > ッ 助金・サービス | 労働力・資本 | 社会保障・サービス ー117 一",
       "text": "総合科目一9 間 11 次の図は , BUH, 企業 , 家計の 3 つの経済主体の相互関係を示したものである。図 中の A て C に当てはまる語の組み合わせとして最も適当なものを , 下の",
       "answer_choices": [
@@ -9396,7 +9418,7 @@
             "ー117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9404,7 +9426,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "economic_analysis",
@@ -9414,7 +9436,12 @@
       ],
       "concepts": [],
       "year": 2009,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.5
     },
     {
       "id": "2210bbd4-1315-4f52-a336-30799cef900f",
@@ -9586,7 +9613,7 @@
             "118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9608,7 +9635,7 @@
     },
     {
       "id": "c8226c21-78bf-433f-b190-141bef321638",
-      "number": 1,
+      "number": null,
       "raw_text": "1.900 1.800 1.700 1.600 1.500 19952000 年 厚生労働省ウェプサイトより作成 A B C D ① | フランス | ドイツ日本アメリカ ② | アメリカ | フランス | ドイツ日本 ③ | 日本アメリカ | フランス | ドイツ ④| ドイツ | 日本 | アメリカ | フランス ー118 一",
       "text": "1.900 1.800 1.700 1.600 1.500 19952000 年 厚生労働省ウェプサイトより作成 A B C D",
       "answer_choices": [
@@ -9633,7 +9660,10 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "28d1909a-cb95-45d9-8f1e-87964353c46f",
@@ -9779,7 +9809,7 @@
             "119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9993,7 +10023,7 @@
             "120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10140,7 +10170,7 @@
             "121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10491,7 +10521,7 @@
             "122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10788,7 +10818,7 @@
             "123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11153,7 +11183,7 @@
             "124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11628,7 +11658,7 @@
             "125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11893,7 +11923,7 @@
             "126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12149,7 +12179,7 @@
             "127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12326,7 +12356,7 @@
             "128",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12353,7 +12383,7 @@
     },
     {
       "id": "ea811405-9fe6-4659-9e02-607c12605968",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一21 (2) A 国とイギリスとの協商で , イギリスの勢力圏であることが合意された地域の現在 の国名として最も適当なものを , 次の ①ー④ の中から一つ選びなさい。 35 ① インドネシア (Indonesia) @ エジプト ③ ミャンマー(Myanmar) ®@ アフガニスタン (Afghanistan) (3) 第一次世界大戦芝発後。 B 国を含む同盟国側に加わって参戦した国名として最も敵 当なものを , 次の ①ー④ の中から一つ選びなさい。 [36] ① ベルギー(Belgium) @ ギリシャ (Greece) ④ オスマン (Ottoman) 帝国 ー129 一",
       "text": "総合科目一21 (2) A 国とイギリスとの協商で , イギリスの勢力圏であることが合意された地域の現在 の国名として最も適当なものを , 次の",
       "answer_choices": [
@@ -12515,7 +12545,7 @@
             "129",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12523,7 +12553,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "geographical_analysis",
@@ -12531,11 +12561,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "d758415c-d7d3-4e84-9577-73ff6b6cd8fb",
-      "number": 271929,
+      "number": null,
       "raw_text": "問 271929 年にはじまった大恐慌に対する各国の対策に関する記述として最も適当なもの を , 次の ① て ④ の中から一つ選びなさい。 37 ① フランスは罰易を制限し , 輸入削減によって経済の立て直しを図った。 @ アメリカは大規模な公共事業をおこなって失業者の救済を図った。 〈④ イギリスは関税を引き下げ , 貿易の拡大によって経済の立て直しを図った。 @ ドイツは植民地との間にプロック経済体制を築いた。 問 28 次に示す第二次世界大戦 (WW II) 後の日本に関する出来事 AD を年代順に並べ たものとして正しいものを , 下の ①~ て ④ の中から一つ選びなさい。 A : 沖縄返還協定調印 B : 国連加盟 C : 日本国憲法公布 D : サンフランシスコ (San Francisco) 平和条約調印 総合科目の問題はこれで終わりです。 MEO |39| ~ (60) は空棚にしてください。 この問題冊子を持ち帰ることはできません。 ー130 一",
       "text": "問 271929 年にはじまった大恐慌に対する各国の対策に関する記述として最も適当なもの を , 次の 問 28 次に示す第二次世界大戦 (WW II) 後の日本に関する出来事 AD を年代順に並べ たものとして正しいものを , 下の ①~ て ④ の中から一つ選びなさい。 A : 沖縄返還協定調印 B : 国連加盟 C : 日本国憲法公布 D : サンフランシスコ (San Francisco) 平和条約調印 総合科目の問題はこれで終わりです。 MEO |39| ~ (60) は空棚にしてください。 この問題冊子を持ち帰ることはできません。 ー130 一",
       "answer_choices": [
@@ -12831,7 +12866,7 @@
             "130",
             "—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12854,7 +12889,10 @@
       ],
       "concepts": [],
       "year": 2009,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     }
   ],
   "metadata": {

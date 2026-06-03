@@ -6822,7 +6822,7 @@
             "回",
             ")"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6830,7 +6830,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -6838,11 +6838,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2010,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "04590e5d-46d4-483f-afc9-7ee494188643",
-      "number": 1,
+      "number": null,
       "raw_text": "(80 分 ) i 1 . 係員の許可なしに , 部屋の外に出ることはできません。 i t 2. この問題冊子を持ち帰ることはできません。 N 15, 問題由子には , メモや計算などを書いてもいいです。 N \\ てください。 \\ 3, APSARA ML C5 SIONS TBA TC REE Ig ー107 一",
       "text": "(80 分 ) i 1 . 係員の許可なしに , 部屋の外に出ることはできません。 i t 2. この問題冊子を持ち帰ることはできません。 N 15, 問題由子には , メモや計算などを書いてもいいです。 N \\ てください。 \\ 3, APSARA ML C5 SIONS TBA TC REE Ig ー107 一",
       "answer_choices": [],
@@ -7166,7 +7170,7 @@
             "av",
             "—107—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7174,7 +7178,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -7189,11 +7193,16 @@
       ],
       "concepts": [],
       "year": 2010,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "da37f96a-4aaf-4d83-9c77-cd55f329390e",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の文章を読み , 下の問い (1) て (4) に答えなさい。 トルコ (Turkey) la, アジア (Asia) とヨーロッパ (Europe) にまたがって位置し , a | 海峡とダーダネルス海峡 (the Dardanelles) によって隔てられている。国土の大半 は | b | が占めている。ローマ帝国 (Roman Empire) 以来この地域の中心都市であった ュイスタンプブール (Istanbul) は , 現在もトルコ最大の都市である。第一次世界大戦 (WWI) 後トルコは , Le | が主導したトルコ草命により , | d | から [| e | へ移行した。 2 治的には欧米諸国との関係を重視している (1) 上の文章中の空欄 [ a | | b | に当てはまる地名の組み合わせとして最も適当なも DE, 次の ①ー④ の中から一つ選びなさい。 11 | ① | ポボスポラス | バルカン半島 ⑨ | ジブラルタル | バルカン半島 ③ | ボスポラスアナトリア ③④ | ジブラルタル | アナトリア 注 ) ボスポラス (Bosporus), . バルカン半島 (Balkan Peninsula), ジプラルタル (Gibraltar), アナトリア (Anatolia) (2) 下線部 1 に関して。イスタンプブールの位置として正しいものを , 次の地図中の ① て ④ の中から一つ選びなさい。 12 | ー109 一",
       "text": "問 2 治的には欧米諸国との関係を重視している (1) 上の文章中の空欄 [ a | | b | に当てはまる地名の組み合わせとして最も適当なも DE, 次の",
       "answer_choices": [
@@ -7530,7 +7539,7 @@
             "109",
             "—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7538,7 +7547,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7548,11 +7557,16 @@
       ],
       "concepts": [],
       "year": 2010,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "5e0bd863-50e8-42c7-90ed-6ef8f7134927",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (3) 上の文章中の空欄 [ c ] [| e ] に当てはまる語の組み合わせとして正しいものを , 次の ①ー④ の中から一つ選びなさい。 3 d e | ミドハト・パシャスルタン制 | 立憲君主制 ⑨ | ムスタファ・ケマル | スルタン制 | 共和制 ミドハト・パシャ | 絶対王政 | 共和制 rm fl 注 ) ミドハト・パシャ (Midhat Pasha), ムスタファ・ケマル (Mustafa Kemal) (4) 下線部 2 に関して , トルコが加盟している国際機関として正しいものを , KOO て ④ の中から一つ選びなさい。 4 ① APEC ® NATO @ OPEC ー110 一",
       "text": "総合科目一2 (3) 上の文章中の空欄 [ c ] [| e ] に当てはまる語の組み合わせとして正しいものを , 次の",
       "answer_choices": [
@@ -7713,7 +7727,7 @@
             "ー110",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7721,7 +7735,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7729,7 +7743,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2010,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "4439da50-23be-437a-897e-6089e6fea574",
@@ -8104,7 +8123,7 @@
             "ー111",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8473,7 +8492,7 @@
             "ー112",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8749,7 +8768,7 @@
             "ー113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8994,7 +9013,7 @@
             "ー114",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9376,7 +9395,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9384,7 +9403,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "probability_statistics",
@@ -9392,7 +9411,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2010,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "54709337-56b5-48f2-8506-49083344143e",
@@ -9794,7 +9817,7 @@
             "ー116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9802,7 +9825,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -9812,7 +9835,11 @@
       ],
       "concepts": [],
       "year": 2010,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ca738789-a297-4e8e-ae80-71ce11508339",
@@ -9979,7 +10006,7 @@
             "ー117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10322,7 +10349,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10663,7 +10690,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11069,7 +11096,7 @@
             "ー120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11271,7 +11298,7 @@
             "ー121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11687,7 +11714,7 @@
             "ー122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11979,7 +12006,7 @@
             "ー123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12302,7 +12329,7 @@
             "ー124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12774,7 +12801,7 @@
             "ー125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12801,7 +12828,7 @@
     },
     {
       "id": "b17019bc-43c2-44dd-8e08-4f4f83896ee7",
-      "number": 1,
+      "number": null,
       "raw_text": "1) 下線部の 「 モノカルチャー経済 」 の上弊害の説明として最も適当なものを , 次の ① ー④ の中から一つ選びなさい。 |31. ① 外国から誘致した製造企業に依存し , 自国の製造業が発展しない傾向がある。 ②⑫ 第三次産業のみに特化し , 第一次産業が発展しない傾向がある。 ⑨ 自給自足型の国内経済が作られ , 輸出産業が発展しない傾向がある。 ④ 国際市場での価格変動の影響を受け , 安定した外貨収入につながらない傾向があ (⑫) 上の文章中の空棚 [ a ] [| c ] に当てはまる語の組み合わせとして最も適当なもの を , 次の ①ー④ の中からーつ選びなさい。 132 a b Cc ① | アジア・アフリカ会議 | OPEC | UNESCO © | 経済相互援助会議 WTO | WHO @ | 経済社会理事会 GATT | UNHCR @ | 非同盟諸国首脳会議 | OECD | UNCTAD 注 ) アジア・アフリカ会議 (Asian-African Conference) ー125 一",
       "text": "1) 下線部の 「 モノカルチャー経済 」 の上弊害の説明として最も適当なものを , 次の",
       "answer_choices": [
@@ -12823,7 +12850,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "economic_analysis",
@@ -12831,7 +12858,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2010,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "c49d2bb3-3b69-4d6e-9cb3-68d59b766d3b",
@@ -13068,7 +13100,7 @@
             "ー126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13424,7 +13456,7 @@
             "ー127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13686,7 +13718,7 @@
             "ー128",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],

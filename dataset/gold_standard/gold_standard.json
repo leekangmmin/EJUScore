@@ -156,10 +156,13 @@
     {
       "year": 2002,
       "round": 2,
-      "question_number": 231960,
+      "question_number": null,
       "domain": "politics",
       "topic": "선거·정당",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2002,
@@ -212,10 +215,13 @@
     {
       "year": 2002,
       "round": 2,
-      "question_number": 3,
+      "question_number": null,
       "domain": "politics",
       "topic": "정치사상",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2002,
@@ -284,10 +290,13 @@
     {
       "year": 2003,
       "round": 1,
-      "question_number": 51930,
+      "question_number": null,
       "domain": "history",
       "topic": "대공황",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2003,
@@ -420,10 +429,13 @@
     {
       "year": 2003,
       "round": 2,
-      "question_number": 1,
+      "question_number": null,
       "domain": "economy",
       "topic": "환율·국제수지",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2003,
@@ -500,10 +512,13 @@
     {
       "year": 2003,
       "round": 2,
-      "question_number": 1,
+      "question_number": null,
       "domain": "geography",
       "topic": "자원·농업",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2003,
@@ -580,10 +595,13 @@
     {
       "year": 2004,
       "round": 1,
-      "question_number": 1,
+      "question_number": null,
       "domain": "economy",
       "topic": "환율·국제수지",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2004,
@@ -596,10 +614,13 @@
     {
       "year": 2004,
       "round": 1,
-      "question_number": 112,
+      "question_number": null,
       "domain": "geography",
       "topic": "인구·도시화",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2004,
@@ -676,10 +697,13 @@
     {
       "year": 2004,
       "round": 2,
-      "question_number": 1,
+      "question_number": null,
       "domain": "economy",
       "topic": "환율·국제수지",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2004,
@@ -764,10 +788,13 @@
     {
       "year": 2004,
       "round": 2,
-      "question_number": 3,
+      "question_number": null,
       "domain": "geography",
       "topic": "기후·케펜구분",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2005,
@@ -876,10 +903,13 @@
     {
       "year": 2005,
       "round": 1,
-      "question_number": 19,
+      "question_number": null,
       "domain": "economy",
       "topic": "수요·공급과 시장균형",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2005,
@@ -1212,18 +1242,24 @@
     {
       "year": 2006,
       "round": 2,
-      "question_number": 1,
+      "question_number": null,
       "domain": "economy",
       "topic": "환율·국제수지",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2006,
       "round": 2,
-      "question_number": 12,
+      "question_number": null,
       "domain": "history",
       "topic": "세계대전",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2006,
@@ -1380,10 +1416,13 @@
     {
       "year": 2007,
       "round": 1,
-      "question_number": 1,
+      "question_number": null,
       "domain": "geography",
       "topic": "자원·농업",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2007,
@@ -1564,10 +1603,13 @@
     {
       "year": 2007,
       "round": 2,
-      "question_number": 1,
+      "question_number": null,
       "domain": "history",
       "topic": "세계대전",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2008,
@@ -1596,10 +1638,13 @@
     {
       "year": 2008,
       "round": 1,
-      "question_number": 1,
+      "question_number": null,
       "domain": "economy",
       "topic": "",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2008,
@@ -1684,10 +1729,13 @@
     {
       "year": 2008,
       "round": 1,
-      "question_number": 1918,
+      "question_number": null,
       "domain": "politics",
       "topic": "헌법·기본권",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2008,
@@ -1716,10 +1764,13 @@
     {
       "year": 2008,
       "round": 1,
-      "question_number": 2719,
+      "question_number": null,
       "domain": "politics",
       "topic": "통치기구",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2008,
@@ -1732,10 +1783,13 @@
     {
       "year": 2008,
       "round": 1,
-      "question_number": 3,
+      "question_number": null,
       "domain": "economy",
       "topic": "환율·국제수지",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2008,
@@ -1860,10 +1914,13 @@
     {
       "year": 2008,
       "round": 2,
-      "question_number": 251889,
+      "question_number": null,
       "domain": "history",
       "topic": "세계대전",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2008,
@@ -1892,10 +1949,13 @@
     {
       "year": 2009,
       "round": 1,
-      "question_number": 1,
+      "question_number": null,
       "domain": "economy",
       "topic": "경제성장·경기변동",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2009,
@@ -2028,10 +2088,13 @@
     {
       "year": 2009,
       "round": 1,
-      "question_number": 271929,
+      "question_number": null,
       "domain": "politics",
       "topic": "헌법·기본권",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2009,
@@ -2180,18 +2243,24 @@
     {
       "year": 2010,
       "round": 1,
-      "question_number": 2,
+      "question_number": null,
       "domain": "politics",
       "topic": "선거·정당",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2010,
       "round": 1,
-      "question_number": 50,
+      "question_number": null,
       "domain": "geography",
       "topic": "기후·케펜구분",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2010,
@@ -2644,10 +2713,13 @@
     {
       "year": 2011,
       "round": 1,
-      "question_number": 2619,
+      "question_number": null,
       "domain": "history",
       "topic": "세계대전",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2011,
@@ -2748,10 +2820,13 @@
     {
       "year": 2011,
       "round": 2,
-      "question_number": 202002,
+      "question_number": null,
       "domain": "politics",
       "topic": "헌법·기본권",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2011,
@@ -2764,10 +2839,13 @@
     {
       "year": 2011,
       "round": 2,
-      "question_number": 241993,
+      "question_number": null,
       "domain": "politics",
       "topic": "국제정치·국제기구",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2011,
@@ -2956,10 +3034,13 @@
     {
       "year": 2012,
       "round": 2,
-      "question_number": 1,
+      "question_number": null,
       "domain": "politics",
       "topic": "통치기구",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2012,
@@ -2988,10 +3069,13 @@
     {
       "year": 2012,
       "round": 2,
-      "question_number": 1,
+      "question_number": null,
       "domain": "geography",
       "topic": "지도·GIS",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2012,
@@ -3020,10 +3104,13 @@
     {
       "year": 2012,
       "round": 2,
-      "question_number": 8,
+      "question_number": null,
       "domain": "economy",
       "topic": "경제성장·경기변동",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2012,
@@ -3044,10 +3131,13 @@
     {
       "year": 2012,
       "round": 2,
-      "question_number": 1,
+      "question_number": null,
       "domain": "history",
       "topic": "산업혁명·자본주의",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2012,
@@ -3068,10 +3158,13 @@
     {
       "year": 2012,
       "round": 2,
-      "question_number": 6,
+      "question_number": null,
       "domain": "politics",
       "topic": "통치기구",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2012,
@@ -3116,18 +3209,24 @@
     {
       "year": 2012,
       "round": 2,
-      "question_number": 261814,
+      "question_number": null,
       "domain": "politics",
       "topic": "헌법·기본권",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2012,
       "round": 2,
-      "question_number": 2819,
+      "question_number": null,
       "domain": "history",
       "topic": "세계대전",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2012,
@@ -3148,10 +3247,13 @@
     {
       "year": 2013,
       "round": 1,
-      "question_number": 44,
+      "question_number": null,
       "domain": "geography",
       "topic": "인구·도시화",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2013,
@@ -3172,10 +3274,13 @@
     {
       "year": 2013,
       "round": 1,
-      "question_number": 1,
+      "question_number": null,
       "domain": "history",
       "topic": "세계대전",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2013,
@@ -3212,10 +3317,13 @@
     {
       "year": 2013,
       "round": 1,
-      "question_number": 91970,
+      "question_number": null,
       "domain": "economy",
       "topic": "",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2013,
@@ -3276,18 +3384,24 @@
     {
       "year": 2013,
       "round": 1,
-      "question_number": 2119,
+      "question_number": null,
       "domain": "politics",
       "topic": "지방자치",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2013,
       "round": 1,
-      "question_number": 50,
+      "question_number": null,
       "domain": "politics",
       "topic": "선거·정당",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2013,
@@ -3308,10 +3422,13 @@
     {
       "year": 2013,
       "round": 1,
-      "question_number": 3020,
+      "question_number": null,
       "domain": "history",
       "topic": "세계대전",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2013,
@@ -3364,10 +3481,13 @@
     {
       "year": 2013,
       "round": 2,
-      "question_number": 45,
+      "question_number": null,
       "domain": "economy",
       "topic": "국제무역",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2013,
@@ -3460,18 +3580,24 @@
     {
       "year": 2013,
       "round": 2,
-      "question_number": 221950,
+      "question_number": null,
       "domain": "history",
       "topic": "세계대전",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2013,
       "round": 2,
-      "question_number": 25,
+      "question_number": null,
       "domain": "history",
       "topic": "세계대전",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2013,
@@ -3540,10 +3666,13 @@
     {
       "year": 2014,
       "round": 1,
-      "question_number": 82014,
+      "question_number": null,
       "domain": "geography",
       "topic": "지도·GIS",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2014,
@@ -3556,10 +3685,13 @@
     {
       "year": 2014,
       "round": 1,
-      "question_number": 4,
+      "question_number": null,
       "domain": "history",
       "topic": "세계대전",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2014,
@@ -3620,10 +3752,13 @@
     {
       "year": 2014,
       "round": 1,
-      "question_number": 235,
+      "question_number": null,
       "domain": "politics",
       "topic": "",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2014,
@@ -3804,10 +3939,13 @@
     {
       "year": 2015,
       "round": 1,
-      "question_number": 1,
+      "question_number": null,
       "domain": "geography",
       "topic": "지도·GIS",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2015,
@@ -3820,10 +3958,13 @@
     {
       "year": 2015,
       "round": 1,
-      "question_number": 51980,
+      "question_number": null,
       "domain": "economy",
       "topic": "일본경제사",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2015,
@@ -3900,10 +4041,13 @@
     {
       "year": 2015,
       "round": 1,
-      "question_number": 191789,
+      "question_number": null,
       "domain": "history",
       "topic": "",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2015,
@@ -3932,10 +4076,13 @@
     {
       "year": 2015,
       "round": 1,
-      "question_number": 2818,
+      "question_number": null,
       "domain": "history",
       "topic": "",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2015,
@@ -3948,10 +4095,13 @@
     {
       "year": 2015,
       "round": 1,
-      "question_number": 321980,
+      "question_number": null,
       "domain": "unclassified",
       "topic": "",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2015,
@@ -4012,10 +4162,13 @@
     {
       "year": 2015,
       "round": 2,
-      "question_number": 2,
+      "question_number": null,
       "domain": "geography",
       "topic": "기후·케펜구분",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2015,
@@ -4044,10 +4197,13 @@
     {
       "year": 2015,
       "round": 2,
-      "question_number": 40,
+      "question_number": null,
       "domain": "geography",
       "topic": "기후·케펜구분",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2015,
@@ -4076,10 +4232,13 @@
     {
       "year": 2015,
       "round": 2,
-      "question_number": 2220,
+      "question_number": null,
       "domain": "politics",
       "topic": "지방자치",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2015,
@@ -4092,18 +4251,24 @@
     {
       "year": 2015,
       "round": 2,
-      "question_number": 271992,
+      "question_number": null,
       "domain": "society",
       "topic": "환경문제",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2015,
       "round": 2,
-      "question_number": 2919,
+      "question_number": null,
       "domain": "unclassified",
       "topic": "",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2015,
@@ -4116,10 +4281,13 @@
     {
       "year": 2015,
       "round": 2,
-      "question_number": 321970,
+      "question_number": null,
       "domain": "geography",
       "topic": "",
-      "source": "ocr"
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "year": 2016,

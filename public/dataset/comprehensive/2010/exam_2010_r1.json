@@ -7241,7 +7241,7 @@
             "回",
             ")"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7249,7 +7249,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7257,7 +7257,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2010,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "51fbbd80-0ffe-49f1-bb26-18e5609764f5",
@@ -7623,7 +7627,7 @@
             "ー113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7631,7 +7635,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7639,11 +7643,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2010,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "335e9d94-7b88-4131-ab12-ab4c491ec302",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の会話を読み , 下の問い (1)ー(4) に答えなさい。 Se 生 :2009 年に .。アメリカ (USA) のオバマ (Barack Obama) 大統領が , BH よし子 : 。被爆国である日本としては , 核軍縮への流れは大和歓迎ですね。 先生 : そうですね。 』 核軍縮の国際協調体制を維持し , それをいっそう進めていく よし子 : 4 核兵器以外の軍縮も , ぜひ進めていくべきですね。 器のない世界に向けての姿勢と努力が評価され , ノーベル平和賞を受賞し 努力が必要です。 ましたね。 (1) 下線部 1 に関して。オバマ大統領と同じように , 核兵器廃旨への努力が評価され , 1995 年にノーベル平和賞を受賞した組織として正しいものを , 次の ①ー④ の中から一 つっ選びなさい。 [1 ① グリーンピース (Greenpeace) @ 赤十字国際委員会 @ バンドン (Bandung) Bi @ パグウォッシュ (Pugwash) 会議 ー115 一",
       "text": "問 1 次の会話を読み , 下の問い (1)ー(4) に答えなさい。 Se 生 :2009 年に .。アメリカ (USA) のオバマ (Barack Obama) 大統領が , BH よし子 : 。被爆国である日本としては , 核軍縮への流れは大和歓迎ですね。 先生 : そうですね。 』 核軍縮の国際協調体制を維持し , それをいっそう進めていく よし子 : 4 核兵器以外の軍縮も , ぜひ進めていくべきですね。 器のない世界に向けての姿勢と努力が評価され , ノーベル平和賞を受賞し 努力が必要です。 ましたね。 (1) 下線部 1 に関して。オバマ大統領と同じように , 核兵器廃旨への努力が評価され , 1995 年にノーベル平和賞を受賞した組織として正しいものを , 次の",
       "answer_choices": [
@@ -7901,7 +7909,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7909,7 +7917,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7920,11 +7928,16 @@
       ],
       "concepts": [],
       "year": 2010,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.75
     },
     {
       "id": "720f1936-7606-4232-8f12-b60de891d0a6",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (2) 下線部 2 に関して , 被爆地の一つである広島の場所はどこか。正しい位置を , 次の 地図中の ① て ④ の中から一つ選びなさい。 2 (3) 下線部 3 に関して , 次の文章中の空欄 [ a | [| b ] に当てはまる語の組み合わせと して最も適当なものを , 下の ①~④ の中から一つ選びなさい。 13 a | は 1968 年に署名が始まり , 1970 年に発効した。これは , 既に核兵器を製造してい たアメリカ , ツソ連 (USSR), イギリス (UK), PE (China), および [b ] の 5 か国の みに核兵器の保有を認め , それ以外の国への核兵器の拡散を防止しとようとするものであっ ① | NPT | インド @|NPT | フランス ③ | PTBT | インド ④ | PTBT | フランス 注 ) インド (India), フランス (France) ー116 一",
       "text": "総合科目一2 (2) 下線部 2 に関して , 被爆地の一つである広島の場所はどこか。正しい位置を , 次の 地図中の",
       "answer_choices": [
@@ -8149,7 +8162,7 @@
             "ー116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8167,11 +8180,14 @@
       ],
       "concepts": [],
       "year": 2010,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "0ed440e0-cc28-44c0-976c-b1af2e8c7569",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一3 (4) 下線部 4 に関して , 次の表は , 各国の軍事費の推移を表したものである。表中の A て D の国名の組み合わせとして正しいものを , 下の ①~ て ④ の中から一つ選びなさい。 各国の軍事費の推移 単位 : 100 万ドル 1990 年 | 1993 年 | 1996 年 | 1999 年 2002% | | 2005 年 | 2008 年 A | 457,641 | 402,369 | 337,941 | 329,416387,297 | 503,353 | 548,531 B | 13,147] 15,331) 16,606! 21,62633,436| 44,911] 63,643 日本 | 39,515 | 41,850! 43,329) 43,484] 44,725] 44,165 | 42,751 C | 171,322] 37,563] 19,145! 14,042) 23.601 | 28,488 | 38,238 ID | 58,464] 47,139] 42,395) 41.82240.604| 38,060] 37,237 ストックホルム国際平和研究所ウェブサイトより作成 | A B c | p 注 ) ロシアの 1990 年はソ連 ①| ロシアァ [ety | アメリカ | 中 ⑨ | ロシア | アメリカ | ドイツ | 中国 | アメリカ | ロシア | 中国ドイツ ④ | アメリカ | 中国 ee 注 ) ロシア (Russia), K 4 (Germany) ー117 一",
       "text": "総合科目一3 (4) 下線部 4 に関して , 次の表は , 各国の軍事費の推移を表したものである。表中の A て D の国名の組み合わせとして正しいものを , 下の",
       "answer_choices": [
@@ -8386,7 +8402,7 @@
             "ー117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8394,7 +8410,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8402,11 +8418,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2010,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "837d8640-edae-430a-b72d-a83c7cf2453a",
-      "number": 2,
+      "number": null,
       "raw_text": "問 2 次の会話を読み ,、下の問い (1) て (3) に答えなさい。 父 : 最近の日本の選挙では , 中高年よりも若い世代の投票率が [| a |。このよう な状態だと , 政治への無関心が広がり , [| b |] が健全に形成されにくく , 民 主主義はうまく機能しなくなってしまう。若者は新聞もあまり読まないみた よし子・そうかしら。若い世代の情報を集める方法が変わってきていることにお父 さんが気づかないだけよ。 父 : そうかな。いずれにしても , 政府やマスコミは , もっと国民の。知る権利を 満たすように努める必要があるね。 (1) 上の会話中の空杜 [ a | [ b ] に当てはまる語の組み合わせとして最も適当なもの を , 次の ①ー④ の中から一つ選びなさい。 5 ① | 高い | 世論 ⑧ | 高いぃ | 愛国心 @ | 低い | 世論 @ | 低い | KE ー118 一",
       "text": "問 2 次の会話を読み ,、下の問い (1) て (3) に答えなさい。 父 : 最近の日本の選挙では , 中高年よりも若い世代の投票率が [| a |。このよう な状態だと , 政治への無関心が広がり , [| b |] が健全に形成されにくく , 民 主主義はうまく機能しなくなってしまう。若者は新聞もあまり読まないみた よし子・そうかしら。若い世代の情報を集める方法が変わってきていることにお父 さんが気づかないだけよ。 父 : そうかな。いずれにしても , 政府やマスコミは , もっと国民の。知る権利を 満たすように努める必要があるね。 (1) 上の会話中の空杜 [ a | [ b ] に当てはまる語の組み合わせとして最も適当なもの を , 次の",
       "answer_choices": [
@@ -8665,7 +8686,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8683,7 +8704,10 @@
       ],
       "concepts": [],
       "year": 2010,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "3e6f631a-9ed2-4f6d-8c48-1be569eb8cb8",
@@ -9058,7 +9082,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9066,7 +9090,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -9074,7 +9098,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2010,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "459fa7b3-6f4e-4ef2-84b9-d7c67abeeca6",
@@ -9090,7 +9118,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -9098,11 +9126,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2010,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "e4d9b570-5141-4241-90e0-dc960d0b32c5",
-      "number": 50,
+      "number": null,
       "raw_text": "50 代 94.7 | 86.1 | 26.6 | 22.2 | 91.2 | 87.59.027.4 60 歳以上 | 89.3 | 87.0 | 16.8 | 13.2 | 93.3 | 90.11.08.6 文化店 「 国語に関する世論調査 」 平成 20 年度より作成 ① 新聞や雑誌を利用しなくなった割合は , 若い世代の方が高年齢層よりも高い。 ③ 最近でも高年齢層は , テレビよりも新聞の方をよく利用している。 ④ 年齢が若いほど , インターネットを利用する割合が高くなっている。 @ 年齢が若いほど , テレビを利用し続けている割合は高い。 (3) 下線部 2 に関して ,「 知る権利 」 を支える制度 , および 「 知る権利と対立する恐 れのある権利の組み合わせとして最も適当なものを , 次の ①ー④ の中から一つ選びな きい。 17. 支える制度対立する恐れのある権利 ① | 情報公開制度プライバシー権 @ | 情報公開制度報道の自 @| オンプズマン制度 | 報道の自 | ④ | オォンプズマン制度 | プライバシー権 ー119 一",
       "text": "50 代 94.7 | 86.1 | 26.6 | 22.2 | 91.2 | 87.59.027.4 60 歳以上 | 89.3 | 87.0 | 16.8 | 13.2 | 93.3 | 90.11.08.6 文化店 「 国語に関する世論調査 」 平成 20 年度より作成",
       "answer_choices": [
@@ -9122,7 +9154,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "social_analysis",
@@ -9130,7 +9162,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2010,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ef223a9a-b52c-4e52-8a03-274d06c060b5",
@@ -9480,7 +9517,7 @@
             "ー120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9733,7 +9770,7 @@
             "ー121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9925,7 +9962,7 @@
             "ー122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10362,7 +10399,7 @@
             "ー123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10737,7 +10774,7 @@
             "ー124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10968,7 +11005,7 @@
             "ー125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11105,7 +11142,7 @@
             "126",
             "—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11252,7 +11289,7 @@
             "ー127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11274,7 +11311,7 @@
     },
     {
       "id": "abdc1744-45d2-490e-abc5-b6096490c30f",
-      "number": 20,
+      "number": null,
       "raw_text": "20 で 20 154 15 10 wa + 10 5 “t 5 0 しーー・ーー。 0 01002003000 100200300 Weez}c Sit (mm) RéeaAcdit (mm) ー127 一",
       "text": "20 で 20 154 15 10 wa + 10 5 “t 5 0 しーー・ーー。 0 01002003000 100200300 Weez}c Sit (mm) RéeaAcdit (mm) ー127 一",
       "answer_choices": [],
@@ -11286,7 +11323,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11294,7 +11331,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2010,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "8d4b60fb-6562-47d3-9deb-c8d395ff7ed5",
@@ -11559,7 +11601,7 @@
             "ー128",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11884,7 +11926,7 @@
             "ー129",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12356,7 +12398,7 @@
             "ー130",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12787,7 +12829,7 @@
             "ー131",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13134,7 +13176,7 @@
             "一",
             "."
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13435,7 +13477,7 @@
             "ー133",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13855,7 +13897,7 @@
             "ー134",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13863,7 +13905,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -13871,7 +13913,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2010,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "569938a8-24ce-478f-af65-55aeb331d450",
@@ -13891,7 +13937,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "historical_analysis",
@@ -13899,7 +13945,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2010,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "db8fa7a6-1cae-418d-b5f0-41807391e5f9",
@@ -14256,7 +14306,7 @@
             "ー135",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14467,7 +14517,7 @@
             "ー136",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],

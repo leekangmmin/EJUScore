@@ -1,0 +1,176 @@
+{
+  "id": "math_2006_r2",
+  "source_file": "2006平成18年第2回文数.pdf",
+  "subject": "mathematics",
+  "year": 2006,
+  "round": 2,
+  "total_pages": 11,
+  "ocr_confidence": 0.75,
+  "total_questions": 20,
+  "questions": [
+    {
+      "number": 1,
+      "section": "math_1",
+      "topic": "이차함수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 2,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "問 2 次の問題文中の [| H ]」 [し | に対して, それぞれの選択肢の中から当てはまるもの\nを一つ選びなさい。\n(1) 。 数直線上の部分集合 A,B,C をA={z13<く<<6】,B=ニ{イェ11 <z*<く1\n\nCO ={ェ| -3 <と*<く5}とするとき\n\nAuB=[LH, (AuBnc=[ Ti\n\nである。ただし, (AUB)はAUB の補集合を表す。\n\n⑩ {zl-3<=<",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 3,
+      "section": "math_a",
+      "topic": "확률",
+      "text_snippet": "問 2 12 本のくじがある。そのうち当たりくじが 3 本入っている。\n\n(1) この中から同時に 2 本のくじを引くとき, 少なくとも1 本が当たりくじである確率は\n\nLe 」]\nLi  である。\n\n(2) この中から同時に 2 本のくじを引く試行を 2 回続ける。ただし, 引いたくじは元に戻さ\nない。このとさき, 1 回目には当たりくじがなく, 2 回目には少なくとも 1 本の当たりくじが\n\n",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 4,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "問2 方程式\n才キ5zッー5zー159y+6=ニ|ほー6y1 Km)\n\nを満たす正の整数 z,w の組のうちで, ェ が最小の偶数であるものを求めたい。\n\n方程式 〇 は\n\n(ーーLH出e+L1 jj-しJ出= sel\n\nと変形できる。 < とjは正の整数であるから\n\nz+[し1 bb-[ 7 >\n\nである。 したがって, 求める正の整数 z,w は\n\nーーロロ =ヒロ\n\nである。\n\n[vV] の",
+      "confidence": 0,
+      "source": "position_fallback"
+    },
+    {
+      "number": 5,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 6,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 7,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 8,
+      "section": "math_a",
+      "topic": "경우의 수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 9,
+      "section": "math_1",
+      "topic": "이차함수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 10,
+      "section": "math_a",
+      "topic": "확률",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 11,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 12,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 13,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 14,
+      "section": "math_a",
+      "topic": "경우의 수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 15,
+      "section": "math_2",
+      "topic": "미분",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 16,
+      "section": "math_2",
+      "topic": "적분",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 17,
+      "section": "math_2",
+      "topic": "수열",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 18,
+      "section": "math_b",
+      "topic": "벡터",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 19,
+      "section": "math_2",
+      "topic": "지수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 20,
+      "section": "math_2",
+      "topic": "로그",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    }
+  ],
+  "metadata": {
+    "processed_at": "2026-06-02T07:01:32.453765",
+    "confidence_average": 0.75
+  }
+}

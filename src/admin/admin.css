@@ -1,0 +1,85 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Admin design tokens — Toss-inspired (clean, airy, soft-blue primary).
+   All tokens are SCOPED under `.admin-scope` so they never leak into the
+   existing app. Dark mode follows the app's `data-theme="dark"` on <html>.
+   ═══════════════════════════════════════════════════════════════════ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.admin-scope {
+  /* radius */
+  --admin-radius: 0.875rem;
+
+  /* light theme */
+  --admin-background: 210 20% 98%;        /* #f7f9fb page */
+  --admin-foreground: 222 20% 14%;        /* near-black text */
+  --admin-card: 0 0% 100%;
+  --admin-card-foreground: 222 20% 14%;
+  --admin-popover: 0 0% 100%;
+  --admin-popover-foreground: 222 20% 14%;
+  --admin-primary: 217 91% 58%;           /* Toss blue #3182f6 */
+  --admin-primary-foreground: 0 0% 100%;
+  --admin-secondary: 214 32% 95%;
+  --admin-secondary-foreground: 222 20% 20%;
+  --admin-muted: 214 28% 95%;
+  --admin-muted-foreground: 220 9% 46%;
+  --admin-accent: 214 32% 95%;
+  --admin-accent-foreground: 222 20% 20%;
+  --admin-destructive: 0 72% 51%;
+  --admin-destructive-foreground: 0 0% 100%;
+  --admin-success: 152 62% 40%;
+  --admin-success-foreground: 0 0% 100%;
+  --admin-warning: 38 92% 50%;
+  --admin-warning-foreground: 38 92% 12%;
+  --admin-border: 220 16% 90%;
+  --admin-input: 220 16% 88%;
+  --admin-ring: 217 91% 58%;
+
+  font-family: 'Pretendard', 'Pretendard Variable', system-ui, sans-serif;
+  color: hsl(var(--admin-foreground));
+  background: hsl(var(--admin-background));
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+[data-theme='dark'] .admin-scope {
+  --admin-background: 222 24% 8%;          /* deep slate page */
+  --admin-foreground: 210 20% 92%;
+  --admin-card: 222 22% 11%;
+  --admin-card-foreground: 210 20% 92%;
+  --admin-popover: 222 22% 11%;
+  --admin-popover-foreground: 210 20% 92%;
+  --admin-primary: 217 91% 62%;
+  --admin-primary-foreground: 222 47% 8%;
+  --admin-secondary: 217 19% 18%;
+  --admin-secondary-foreground: 210 20% 92%;
+  --admin-muted: 217 19% 16%;
+  --admin-muted-foreground: 218 11% 60%;
+  --admin-accent: 217 19% 18%;
+  --admin-accent-foreground: 210 20% 92%;
+  --admin-destructive: 0 63% 50%;
+  --admin-destructive-foreground: 0 0% 100%;
+  --admin-success: 152 52% 46%;
+  --admin-success-foreground: 152 60% 8%;
+  --admin-warning: 38 92% 55%;
+  --admin-warning-foreground: 38 92% 10%;
+  --admin-border: 217 19% 20%;
+  --admin-input: 217 19% 22%;
+  --admin-ring: 217 91% 62%;
+}
+
+/* Scoped, minimal box-sizing safety (preflight is globally disabled). */
+.admin-scope *,
+.admin-scope *::before,
+.admin-scope *::after {
+  box-sizing: border-box;
+}
+
+/* Thin, unobtrusive scrollbars inside admin surfaces. */
+.admin-scope ::-webkit-scrollbar { width: 8px; height: 8px; }
+.admin-scope ::-webkit-scrollbar-thumb {
+  background: hsl(var(--admin-border));
+  border-radius: 8px;
+}
+.admin-scope ::-webkit-scrollbar-track { background: transparent; }

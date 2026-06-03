@@ -7917,7 +7917,7 @@
             "試験",
             "問題"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7925,7 +7925,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7933,11 +7933,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "4ff1b26d-4fcf-4760-8439-1f00540f7b59",
-      "number": 1,
+      "number": null,
       "raw_text": "fala tT (80 分 ) i 1, 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題冊子を持ち帰ることはできません。 N (RF CRATER i \\ 5. 問題昌子には、メモや計算などを書いてもいいです。 \\ \\ てください。 \\ \\ 3, ARASAIREIC ALC SEBO OT REA TK RSL, verre remem mimi \\ ー107 一",
       "text": "fala tT (80 分 ) i 1, 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題冊子を持ち帰ることはできません。 N (RF CRATER i \\ 5. 問題昌子には、メモや計算などを書いてもいいです。 \\ \\ てください。 \\ \\ 3, ARASAIREIC ALC SEBO OT REA TK RSL, verre remem mimi \\ ー107 一",
       "answer_choices": [],
@@ -8312,7 +8316,7 @@
             "ー107",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8320,7 +8324,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -8338,11 +8342,16 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "2db51739-dce4-45f4-9601-c837e53e29e2",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の会話を読み , 下の問い (1)^ て (4) に答えなさい。 よし子 : 冬休みに九州旅行に行こうと思っています。特に鹿児島に行ってみたいで 先生: 鹿児島ならば商古集成館という歴史博物館を見てきたらどうでしょうか。 [DHE OREO AZ ih, 西洋の科学技術を熱心に学び , 身に付けま した。その成果を見ることができますよ。たとえば , 近代的な製鉄技術を利 よし子 : 典味深いですね。また , 。鹿児島には桜島に火山がありますね。温泉もたく 先生: その機会に沖縄も訪れてみたらどうでしょうか。今年はちょうど , 沖縄の 用して作った大砲などが展示されています。 さんありますから , 楽しみです。 本土復帰 40 周年に当たりますし。 (1) 下線部 1 に関して , 鹿児島県はどこか。正しい位置を , 次の地図中の ①~ て ④ の中か ら一つ選びなさい。 1 ー109 一",
       "text": "問",
       "answer_choices": [
@@ -8634,7 +8643,7 @@
             "0",
             "—109—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8642,7 +8651,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8650,11 +8659,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "75a1ab1f-fefe-4445-8f25-91a7776050ab",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (2) 下線部 2 に関して , 薩摩藩の人 々 が熱心に西洋の科学技術を学んだのは , 当時の国 際情勢に危機感を覚え , 国防の必要性を強く感じていたからである。そうした危機感 をもたらすきっかけとなった戦争として最も適当なものを , 次の ① て ④ の中から一つ 選びなさい。 2 ① 南北戦争 (American Civil War) ③ アヘン戦争 (Opium War) ④ 普仏戦争 (Franco-Prussian War) @® クリミア戦争 (Crimean War) (3) 下線部 3 のような自然環境を活かし , 鹿児島では地熱発電がおこなわれている。日 本における地熱発電の長所や短所を述べた文の組み合わせとして最も適当なものを , 次の ①~ て ④ の中から一つ選びなさい。 3 @ | 発電量当たりの単価が比較的安い。 | 処理の難しい有寄な廃棄物を発生さき @ | 自然に依拠した再生可能エネルギー| 適した土地の多くが国立公園内にあ を利用している。り , 開発に制約が多い。 @ | 纏国産エネルギーで海外からの虹響 | 雪や雨の量によって , 発電量が一定 を受けにくい。しない恐れがある。 ④ 発電量を燃料によって調整できるの | 地球温暖化の原因である温室効果か | で需要への対応が容易である。スを大量に排出する。 ー110 一",
       "text": "総合科目一2 (2) 下線部 2 に関して , 薩摩藩の人 々 が熱心に西洋の科学技術を学んだのは , 当時の国 際情勢に危機感を覚え , 国防の必要性を強く感じていたからである。そうした危機感 をもたらすきっかけとなった戦争として最も適当なものを , 次の",
       "answer_choices": [
@@ -9025,7 +9039,7 @@
             "ー110",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9033,7 +9047,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -9041,11 +9055,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "003222fe-3b94-4057-af84-f179c675193d",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一3 (4) 下線部 4 に関して , 沖縄の本土復帰が実現した当時の佐藤栄作首相は , ノーベル平 和賞を受賞している。次に挙げる人 々 はそれぞれノーベル平和賞を受賞しているが , その受賞年順に並べたものとして正しいものを , 次の ①②④ の中から一つ選びなさい。 ① キング牧師 > 佐藤栄作 O ミハイル・ゴルバチョフつつバラク・オバマ ② 佐藤栄作ミハイル・ゴルバチョフ … キング牧師一バラク・オバマ @ ミハイル・ゴルバチョフ > 佐藤栄作 OP バラク・オバマつキング牧師 ④ キング牧似一ミハイル・ゴルバチョフ > 佐藤栄作一バラク・オバマ 注 ) キング牧師 (Martin Luther King, Jr.) ミハイル・ゴルバチョブフ (Mikhail Gorbachev) バラク・オバマ (Barack Obama) ー111 一",
       "text": "総合科目一3 (4) 下線部 4 に関して , 沖縄の本土復帰が実現した当時の佐藤栄作首相は , ノーベル平 和賞を受賞している。次に挙げる人 々 はそれぞれノーベル平和賞を受賞しているが , その受賞年順に並べたものとして正しいものを , 次の",
       "answer_choices": [
@@ -9279,7 +9298,7 @@
             "ー111",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9295,7 +9314,10 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "47b2ee3c-d1db-4dc4-b7bb-32a337b933f0",
@@ -9543,7 +9565,7 @@
             "ー112",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9551,7 +9573,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "historical_analysis",
@@ -9559,11 +9581,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "e7aa4ce9-ede9-49a8-8aa0-12e401813cc1",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一5 (2) 下線部 2 に関して , 現代のカナダ政治に関する記述として最も適当なものを , KO ①~④ の中から一つ選びなさい。 16 | ① 元首はイギリス (UK) 国王で , 名代として総督が形式的に置かれている。 @ カナダは英連邦 (Commonwealth of Nations) の一員であるため米州機構 QD アメリカへの経済的依存を低下させるために , アメリカと自由貿易協定を結ばな ④ 先住民であるイヌイット (Inuit) の権利を尊重し , 先住民による自治州の設立 (Organization of American States) には参加していない。 い政策を採っている。 を相次いで認めた。 (3) 下線部 3 に関して , カナダのケベック州に関する記述として最も適当なものを , 次 の ① て ④ の中から一つ選びなさい。 7 ① オランダ (Netherlands) 系の住民が多く , プロテスタントが多数を占めている。 @ 経済が発達しており , カナダの GDP の約半分を占めている。 ⑬ アジア (Asia) 系の移民が多く , 他の州との文化的な摩擦が起きている。 ④ もともとフランス (France) の植民地であったので , フランス語を話す住民が ー113 一",
       "text": "総合科目一5 (2) 下線部 2 に関して , 現代のカナダ政治に関する記述として最も適当なものを , KO",
       "answer_choices": [
@@ -9888,7 +9914,7 @@
             "ー113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9896,7 +9922,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "political_analysis",
@@ -9906,7 +9932,12 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "e6fe15dd-89d6-47b8-8974-ba138f00e2c1",
@@ -10045,7 +10076,7 @@
             "ー114",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10053,7 +10084,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10063,7 +10094,11 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "1a8c4435-967a-4595-afa3-e7c92b169615",
@@ -10079,7 +10114,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10089,11 +10124,15 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "4017db99-3b92-4891-bb79-08ce69b489d6",
-      "number": 1,
+      "number": null,
       "raw_text": "1 fiz | 機械頻 2 fiz | 野菜・果実 3 位 | 石油製品 ① A @ B @c @ D ー114 一",
       "text": "1 fiz | 機械頻 2 fiz | 野菜・果実 3 位 | 石油製品 ① A @ B @c @ D ー114 一",
       "answer_choices": [],
@@ -10105,7 +10144,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10113,7 +10152,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "4f922b60-3f1d-4207-b13b-d2f553aea54e",
@@ -10493,7 +10537,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10690,7 +10734,7 @@
             "ー116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10918,7 +10962,7 @@
             "ー117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10940,7 +10984,7 @@
     },
     {
       "id": "533d8235-38a0-4fb6-a0eb-25e48dc2328a",
-      "number": 8,
+      "number": null,
       "raw_text": "問 8 次の文章は , 国民経済の成長と資本形成の関係について述べたものであり , また下 の図は。イギリス, インドネシア (Indonesia), オーストラリア (Australia), 中国 (China) それぞれの投資率の推移を示したものである。ここでいう投資率とは , GDP に対する総固定資本形成の割合である。文章を参考にして , オーストラリアを 示したグラフを ,。下の ①~ こ ④ の中から一つ選びなさい。 114 国民経済の成長は。おおよそ以下のように進行する。経済成長の初期の段階では通常 , 資本が相対的に不足している。このため , 資本から得られる利潤は高く , 投資需要も大き く , 国内だけでなく海外からの投資を必要とする場合ちある。しかしながら , そうした投 資によって国内に資本が順調に形成・蓄積されていくと, 経済成長の過程で利潤率は低下 していく傾向がある。その結果 , 国内だけでなく , 海外にも投資が向かうようになる。 1995200020052008 年 『 図表でみる世界の主要統計 : OECD ファクトブック (2010 年版 )」 より作成 ー118 一",
       "text": "問 8 次の文章は , 国民経済の成長と資本形成の関係について述べたものであり , また下 の図は。イギリス, インドネシア (Indonesia), オーストラリア (Australia), 中国 (China) それぞれの投資率の推移を示したものである。ここでいう投資率とは , GDP に対する総固定資本形成の割合である。文章を参考にして , オーストラリアを 示したグラフを ,。下の ①~ こ ④ の中から一つ選びなさい。 114 国民経済の成長は。おおよそ以下のように進行する。経済成長の初期の段階では通常 , 資本が相対的に不足している。このため , 資本から得られる利潤は高く , 投資需要も大き く , 国内だけでなく海外からの投資を必要とする場合ちある。しかしながら , そうした投 資によって国内に資本が順調に形成・蓄積されていくと, 経済成長の過程で利潤率は低下 していく傾向がある。その結果 , 国内だけでなく , 海外にも投資が向かうようになる。 1995200020052008 年 『 図表でみる世界の主要統計 : OECD ファクトブック (2010 年版 )」 より作成 ー118 一",
       "answer_choices": [],
@@ -11267,7 +11311,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11287,11 +11331,14 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "db330642-66cd-4a1f-a0ae-d3bf7544e689",
-      "number": 9,
+      "number": null,
       "raw_text": "問 9 KOR, 日本における企業数 , 従業者数。製造業付加価値人のそれぞれについて 大企業と中小企業の割合をがしたものである。表中の A-ーC に当てはまるものの組み 合わせとして正しいものを , 下の ① て ④ の中から一つ選びなさい。 15 単位 :% 大企業の割合 0.3| 30.6 中小企業の割合 | 99.7| 69.4| 47.7 『 中小金業自演 (2011 年版 )。より作成 注 ) 企業数 , 従業者数は 2006 年 , 製造薬付加仙値額は 2008 年。 A B C ① | 企業数製造業付加価値額 | 従業者数 © | 製造業付加価値額 | 従業者数企業数 @ | 企業数従業者数製造業付加価値額 ー119 一",
       "text": "問 9 KOR, 日本における企業数 , 従業者数。製造業付加価値人のそれぞれについて 大企業と中小企業の割合をがしたものである。表中の A-ーC に当てはまるものの組み 合わせとして正しいものを , 下の",
       "answer_choices": [
@@ -11459,7 +11506,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11467,7 +11514,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11477,7 +11524,12 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "4845195d-bf1b-436c-b61d-da24e051a443",
@@ -11653,7 +11705,7 @@
             "ー120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11678,7 +11730,7 @@
     },
     {
       "id": "1d1cf2be-7a05-4244-80d1-19c425ba38c4",
-      "number": 1,
+      "number": null,
       "raw_text": "1 ⑨ | ベトナム | アメリカ | タイ ④ | タイアメリカ | ベトナム 注 ) タイ (Thailand), ベトナム (Vietnam) ー120 一",
       "text": "1 ⑨ | ベトナム | アメリカ | タイ ④ | タイアメリカ | ベトナム 注 ) タイ (Thailand), ベトナム (Vietnam) ー120 一",
       "answer_choices": [],
@@ -11690,7 +11742,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11698,7 +11750,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "1fbd4953-0233-42d2-9c82-b0c41f7c9f30",
@@ -11927,7 +11984,7 @@
             "ー121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11950,7 +12007,7 @@
     },
     {
       "id": "dffc585c-fdb4-488b-9d36-e4259679f05c",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一14 間 12 次の文章は , ある EU (欧州連合 ) 加盟国について述べたものである。文章中の空 欄 [| a | | c | に当てはまる語の組み合わせとして最も適当なものを , FOO~@O 中から一つ選びなさい。 18 [La ] は使用される言語を基準に南北におおよそ二分することができる。さらに , その 二地域は , 経済や政治の面でも対照をなしていると言える。この国は , 19 世紀の独立以来 , 石炭や鉄鉱石たといった天然資源に恵まれる [ b ] を中心に工業化が進みヨーロッパ (Europe) 大陸で最初の産業革命を成し遂げばた。しかしながら , 重厚長大型産業が衰退す るにつれ , [ b ] の経済力は衰え , 代わって , 港湾整備や情報産業の成長を背景に [ c | が [La | 経済の中心となっており , 近年は分離独立の要求を強めている。さらに , EU の本部 が置かれているこの国の首都は , 地理的には [ c |] に位置しているものの , 周辺地域と異 なりその住民のほとんどは。 [ b | と同じ言語を使用しており , 一層複雑な状態となって | a b c Re タリア南部地域 | 北部地域 ⑨⑧ | イタリア北部地域 | 南部地域 ® | ベルギー(Belgium) | 南部地域 | 北部地域 ④ | ベルギー北部地域 | 南部地域 ー122 一",
       "text": "総合科目一14 間 12 次の文章は , ある EU (欧州連合 ) 加盟国について述べたものである。文章中の空 欄 [| a | | c | に当てはまる語の組み合わせとして最も適当なものを , FOO~@O 中から一つ選びなさい。 18 [La ] は使用される言語を基準に南北におおよそ二分することができる。さらに , その 二地域は , 経済や政治の面でも対照をなしていると言える。この国は , 19 世紀の独立以来 , 石炭や鉄鉱石たといった天然資源に恵まれる [ b ] を中心に工業化が進みヨーロッパ (Europe) 大陸で最初の産業革命を成し遂げばた。しかしながら , 重厚長大型産業が衰退す るにつれ , [ b ] の経済力は衰え , 代わって , 港湾整備や情報産業の成長を背景に [ c | が [La | 経済の中心となっており , 近年は分離独立の要求を強めている。さらに , EU の本部 が置かれているこの国の首都は , 地理的には [ c |] に位置しているものの , 周辺地域と異 なりその住民のほとんどは。 [ b | と同じ言語を使用しており , 一層複雑な状態となって | a b c Re タリア南部地域 | 北部地域",
       "answer_choices": [
@@ -12293,7 +12350,7 @@
             "ー122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12317,11 +12374,14 @@
         "산업혁명"
       ],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "804591cc-db86-4fdb-88c5-8c88fbe8b513",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一15 間 13 次の地図は陸半球を示している。地図の中心 0 点のおおよその経緯度について , 最 も適当なものを , 下の ①ー④ の中から一つ選びなさい。 19 ① | 東経 0 度 | 北緯 48 度 @ | 東経 0 度 | 南緯 18 度 ③ | 東経 30 度 | 南緯 18 度 ④ | 東経 30 度 | 北緯 48 度 ー123 一",
       "text": "総合科目一15 間 13 次の地図は陸半球を示している。地図の中心 0 点のおおよその経緯度について , 最 も適当なものを , 下の",
       "answer_choices": [
@@ -12442,7 +12502,7 @@
             "ー123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12460,7 +12520,10 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "162bcd8e-49b8-4dee-882b-5d85260036af",
@@ -12721,7 +12784,7 @@
             "2」",
             "—124—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12729,7 +12792,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -12737,7 +12800,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.75
     },
     {
       "id": "25b56717-edf6-437d-b51e-8d3ee717160b",
@@ -13075,7 +13142,7 @@
             "ー125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13098,7 +13165,7 @@
     },
     {
       "id": "cbb016fc-5e79-4334-94f8-37a75688d9f7",
-      "number": 6,
+      "number": null,
       "raw_text": "6) やくしま | たねがしま BASS | 種子島 ④ | 種子島 | BAG ー126 一",
       "text": "6) やくしま | たねがしま BASS | 種子島 ④ | 種子島 | BAG ー126 一",
       "answer_choices": [],
@@ -13329,7 +13396,7 @@
             "ー126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13337,7 +13404,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -13348,7 +13415,12 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "acbb4bc2-1e1f-42da-a728-7e7f76a0f58e",
@@ -13712,7 +13784,7 @@
             "ー127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13734,7 +13806,7 @@
     },
     {
       "id": "4cb410e7-7894-43a5-ab31-e46f63c623db",
-      "number": 9,
+      "number": null,
       "raw_text": "9 % 『 データブックオブ・ザ・ワールド 2011 年版 』 より作成 ー127 一",
       "text": "9 % 『 データブックオブ・ザ・ワールド 2011 年版 』 より作成 ー127 一",
       "answer_choices": [],
@@ -13746,7 +13818,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -13754,7 +13826,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "c72e3d29-389d-4321-970b-019f80bcd72e",
@@ -14077,7 +14154,7 @@
             "ー128",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14335,7 +14412,7 @@
             "ー129",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14343,7 +14420,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "economic_analysis",
@@ -14353,7 +14430,11 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "25762f09-61ba-4616-baf7-752cb7cef999",
@@ -14637,7 +14718,7 @@
             "ー130",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14645,7 +14726,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "politics",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -14655,7 +14736,11 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_recovered"
+      ],
+      "domain_confidence": 1
     },
     {
       "id": "48d6fdc1-7c1e-4175-a023-25880bae9f96",
@@ -14812,7 +14897,7 @@
             "ー131",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14836,7 +14921,7 @@
     },
     {
       "id": "2c72565e-a330-47c4-b4e2-364128fe16a0",
-      "number": 261814,
+      "number": null,
       "raw_text": "問 261814 年から 1815 年にかけて開催されたウィーン会議 (Congress of Vienna) とその 帰結に関する記述として最も適当なものを , 次の ①~ て ④ の中から一つ選びなさい。 QD 現在のオーストリア (Austria) からイタリアにかけての地域に , 神聖ローマ帝 国 (Holy Roman Empire) が再建された。 @ フランス草命 (French Revolution) 以前の領土や主権を正統なものとする正統 主義が基本原則とさきされ, ヨーロッパの大国の勢力均衡が図られた。 ③ 小国が分立していたドイツは , プロイセン (Prussia) を中心とするドイツ帝国 として統一された。 ④ ナポレオン (Napoleon Bonaparte) が開催した会議であり , オランダやスペイ ンをフランス領とすることを他のヨーロッパ諸国に認めさせた。 問 2719 世紀末から 20 世紀初めこにかけての日本に関する出来事 AーD を年代順に並べたも のとして正しいものを ,。下の ① て ④ の中から一つ選びなさい。 34 A: 日英同盟 (Anglo-Japanese Alliance) の締結 B : 日清戦争 (First Sino-Japanese War) の開戦 C : 三国千渉 D : 大日本帝国憲法の発布 ー132 一",
       "text": "問 261814 年から 1815 年にかけて開催されたウィーン会議 (Congress of Vienna) とその 帰結に関する記述として最も適当なものを , 次の 問 2719 世紀末から 20 世紀初めこにかけての日本に関する出来事 AーD を年代順に並べたも のとして正しいものを ,。下の ① て ④ の中から一つ選びなさい。 34 A: 日英同盟 (Anglo-Japanese Alliance) の締結 B : 日清戦争 (First Sino-Japanese War) の開戦 C : 三国千渉 D : 大日本帝国憲法の発布 ー132 一",
       "answer_choices": [
@@ -15178,7 +15263,7 @@
             "ー132",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -15196,11 +15281,14 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "f93010ca-4cba-49d5-b02e-57b7ac7457bf",
-      "number": 2819,
+      "number": null,
       "raw_text": "問 2819 世紀末から 20 世紀初めあこにかけてのアフリカ (Africa) の植民地化に関する記述と して最も適当なものを , 次の ①ー④ の中から一つ選びなさい。 35 ① コンゴ自由国 (Congo Free State) lt, ベルギー政府直轄の植民地となり , ベル @ 南アフリカ (South Africa) は , 南アフリカ戦争 * (South African War) の結 @ エチオピア (Ethiopia) は , ファショダ事件 (Fashoda Incident) の結果 , オス ® チュニジア (Tunisia), アルジェリア (Algeria) は相次いでイタリアの植民地 ギー領コンゴ (Belgian Congo) となった。 KR, フランスの植民地となった。 マン帝国 (Ottoman Empire) の植民地となった。 となった。 ※ 別名、ブール戦争 (Boer War) 問 29 第一次世界大戦後の国際社会に関する記述として最も適当なものを , 次の ①ー④ の 中から一つ選びなさい。 36 ① ロシア (Russia) では 「 血の日曜日事件 」 をきっかけに革命が起きた。 @Q@ ベルサイュ条約 (Treaty of Versailles) で , 戦勝国側の海軍の軍備を制限する ⑬ アメリカのウィルソン (Woodrow Wilson) 大統領の提唱により , 国際連盟 ® ドイツとソ連 (USSR) の間で相互不可侵を定めたロカルノ条約 (Locarno ことが合意きれた。 (League of Nations) が設立された。 Pact) が締結された。 ー133 一",
       "text": "問 2819 世紀末から 20 世紀初めあこにかけてのアフリカ (Africa) の植民地化に関する記述と して最も適当なものを , 次の 問 29 第一次世界大戦後の国際社会に関する記述として最も適当なものを , 次の",
       "answer_choices": [
@@ -15540,7 +15628,7 @@
             "。",
             "—133—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -15558,7 +15646,10 @@
       ],
       "concepts": [],
       "year": 2012,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "61e90c9d-b2ab-4da9-9ea8-ae403dfedb92",
@@ -15792,7 +15883,7 @@
             "。",
             "—134—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],

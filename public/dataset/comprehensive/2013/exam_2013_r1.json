@@ -6791,7 +6791,7 @@
             "回",
             ")"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6799,7 +6799,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -6807,11 +6807,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "d3d982c5-8704-47bc-a4dc-b0655305d07f",
-      "number": 1,
+      "number": null,
       "raw_text": "(80 分 ) i 1 . 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題周子を持ち帰ることはできません。 \\ (RBS Bay oie (5, MFC, メモや計算などを書いてもいいです。 \\ \\ てください。 i \\ 3, BSAC CH SEMI THAT KS 20 ー115 一",
       "text": "(80 分 ) i 1 . 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題周子を持ち帰ることはできません。 \\ (RBS Bay oie (5, MFC, メモや計算などを書いてもいいです。 \\ \\ てください。 i \\ 3, BSAC CH SEMI THAT KS 20 ー115 一",
       "answer_choices": [],
@@ -7178,7 +7182,7 @@
             "om",
             "—115—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7186,7 +7190,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -7202,11 +7206,16 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "dda6f665-9d1c-4300-a7c4-43322ebab22a",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の会話を読み。下の問い (1)-(4) に答えなさい。 よし子 : 今日の 「 政治学 」 の授業は , 」 マルクス (Karl Marx) の 『 資本論 」 (Capital) についての話でしたね。 先生 : はい。 , マルクスの思想は , 学問的にも社会的にも非常に大きな影響を与え よし子 : 国際政治に対してもそうですよね。20 世紀後半の国際政治は , 。社会主義陣 先生 : そうですね。 METH, グローバル化などのため , 。労働環境の悪化が生じ 営と自由主義陣営が対立する 「 冷戦 」 の時代が長かったわけですから。 ている国が多いので , マルクスの思想の意義はまだ失われていませんよ。 (1) 下線部 1 に関して , マルクスは 『 資本論 』 をロンドン (London) の大英図書館で 執筆したと言われている。ロンドンの位置として正しいものを , 次の地図中の ①~④ の中から一つ選びなさい。 1! ー117 一",
       "text": "問",
       "answer_choices": [
@@ -7500,7 +7509,7 @@
             "e",
             "-117-"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7508,7 +7517,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7516,11 +7525,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "4fb5a332-c290-4ba9-abbf-fb2b02a02820",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (2) 下線部 2 に関して , 次の文章中の空欄 [| a |, | b | に当てはまる語の組み合わせと して最も適当なものを , 下の ① て ④ の中から一つ選びなさい。 2 マルクスは , 資本主義社会では , 資本家と労働者の問に [| a | が存在し , 資本家 しかし社会保険や公的扶助などの社会保障制度が定着し , また , [| b | などのケ が労働者を搾取し , 労働者の貧困化が進むと指摘した。 インズ主義的政策がおこなわれるようになり , 20 世紀後半の先進資本主義国では , 労働者の状況はむしろ改善された。 ① | 労資協調 | 財政引き締めや貿易自由化 @ | 労資協調 | 積極的な公共投資や失業対策 ③ | 階級対立 | 財政引き締めや貿易自由化 @ | 階級対立 | 積極的な公共投資や失業対策 (3) 下線部 3 に関して , 冷戦期の東西陣営が対立した出来事を年代順に並べたものとし て最も適当なものを , 次の ①ー④ の中から一つ選びなさい。 3 ① ベルリン封鎖朝鮮戦争の勤発つキューバ危機ベトナス戦争の終結 ② 朝鮮戦争の勃発つベルリン封鎖 > ベトナム戦争の終結つキューバ危機 @ ベルリン封鎖 > 朝鮮戦争の孝発つベトナム戦争の終結一キューバ危機 ④ 朝鮮戦争の勤発つキューバ危機つベルリン封鎖ベトナム戦争の終結 注 ) ベルリン封鎖 (Berlin Blockade)、朝鮮戦争 (Korean War), キューバ危機 (Cuban Missile Crisis), ベトナム戦争 (Vietnam War) ー118 一",
       "text": "総合科目一2 (2) 下線部 2 に関して , 次の文章中の空欄 [| a |, | b | に当てはまる語の組み合わせと して最も適当なものを , 下の",
       "answer_choices": [
@@ -7922,7 +7936,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7930,7 +7944,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7938,7 +7952,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "31fb03b2-8322-4a73-a61f-be35044c6247",
@@ -8274,7 +8293,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8282,7 +8301,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8290,11 +8309,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "420dd030-b06b-4dd1-ac7e-ccb42775cada",
-      "number": 44,
+      "number": null,
       "raw_text": "44.312.96.98.47 44.414.28.28.09 47.815.88.48.432.368.7 日本の男性非正規雇用者比率の推移単位 :% 年 | 全年齢居 | 15-24 歳 | 2534 歳 | 35-44 歳 | 45-54 歳 | 55-64 歳 | 65 歳以上 1990 | 8.819.93.23.34.322.750.9",
       "text": "44.312.96.98.47 44.414.28.28.09 47.815.88.48.432.368.7 日本の男性非正規雇用者比率の推移単位 :% 年 | 全年齢居 | 15-24 歳 | 2534 歳 | 35-44 歳 | 45-54 歳 | 55-64 歳 | 65 歳以上 1990 | 8.819.93.23.34.322.750.9",
       "answer_choices": [],
@@ -8316,7 +8339,10 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "9891da74-44a0-422b-9d5d-a2c474c9352b",
@@ -8641,7 +8667,7 @@
             "ー120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8664,7 +8690,7 @@
     },
     {
       "id": "ac6264ec-bf30-41c5-afe7-81fda0bf0d09",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一5 (3) 下線部 3 に関して , 第一次世界大戦後に制定された和仁法では , 国民が国家によって 最低限の生活を保障される権利を有するという規定が盛り込まれた。こうした権利を 包括して何と呼ぶか。正しいものを , 次の ① て ④ の中から一つ選びなさい。 7 ① Bente ③ 社会権 (4) 下線部 4 に関して , 第二次世界大戦で疲幣したヨーロッパ経済を復興させるため。 アメリカ (USA) は大規模な援助を実行した。その援助の名称を , 次の ①ー④ の中 から一つ選びなさい。 8 ① フーヴァー・モラトリアム (Hoover Moratorium) @ ニューディール (New Deal) ③ マーシャル・デプラン (Marshall Plan) @®@ ニューフロンティア (New Frontier) ー121 一",
       "text": "総合科目一5 (3) 下線部 3 に関して , 第一次世界大戦後に制定された和仁法では , 国民が国家によって 最低限の生活を保障される権利を有するという規定が盛り込まれた。こうした権利を 包括して何と呼ぶか。正しいものを , 次の",
       "answer_choices": [
@@ -8894,7 +8920,7 @@
             "ー121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8912,7 +8938,10 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "297074c5-828a-47b2-a553-52ead74a12c2",
@@ -9100,7 +9129,7 @@
             "ー122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9562,7 +9591,7 @@
             "ー123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9881,7 +9910,7 @@
             "ー124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9996,7 +10025,7 @@
             "ー125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10016,7 +10045,7 @@
     },
     {
       "id": "2f0fd8ee-0ff9-4f3d-896a-dc1cc8d3918a",
-      "number": 6,
+      "number": null,
       "raw_text": "6 ® Bi Bi ー125 一",
       "text": "6 ® Bi Bi ー125 一",
       "answer_choices": [],
@@ -10028,7 +10057,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10036,11 +10065,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "dd7a0d1b-5ea4-437d-935d-93b16bd8d25a",
-      "number": 91970,
+      "number": null,
       "raw_text": "問 91970 年代から 1990 年代にかけて日本の経済は劇的な変化を経験した。この時期の日 本の経済政策に関する記述として最も適当なものを , 次の ①ー④ の中から一つ選びな さい。 15 ① 第一次石油危機 (Oil Crisis) 後の深刻な不況に際して , 政府は赤字国債の発行 @ プラザ合意 (Plaza Accord) 後の円高不況に対して , 日本銀行は金利を引き上 ③ 1980 年代後半に始まる好景気の中 , 株価や地価が急激に上昇したことを受け , 日 ④ バブル経済崩壊後の 1990 年代の平成不況に対して , 政府は景気を刺激するために を一時停止することによって景気の回復を図った。 げることによって , 輸出の不振を打開しようとした。 本銀行は金融引き締め策に転換した。 消費税の税率を引き下げた。 問 10 EU における通貨統合や経済政策に関する記述として最も適当なものを , KOO て ④ の中から一つ選びなさい。 16 ① ユーロ賠では欧州中央銀行 (BCB) OF, 統一的な金融政策が実施されている。 @ ユーロ圏各国の中央銀行は通貨統合によりその機能を失ったため解散した。 © 財政赤字国はユーロに参加できないため , イギリスはユーロに参加していない。 ④ ユーロ圏各国は , 自国の予算案を欧州議会 (European Parliament) に提出して , 承認を受けなければならない。 ー126 一",
       "text": "問 91970 年代から 1990 年代にかけて日本の経済は劇的な変化を経験した。この時期の日 本の経済政策に関する記述として最も適当なものを , 次の 問 10 EU における通貨統合や経済政策に関する記述として最も適当なものを , KOO て",
       "answer_choices": [
@@ -10432,7 +10466,7 @@
             "ー126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10440,7 +10474,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "economic_analysis",
@@ -10451,7 +10485,12 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "c8393113-4581-411c-8f66-42e8a5fb0ae0",
@@ -10686,7 +10725,7 @@
             "ー127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10987,7 +11026,7 @@
             "(Chins)",
             "—128-"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11009,7 +11048,7 @@
     },
     {
       "id": "53aeb045-8e0e-47cd-a248-ab61d2beb607",
-      "number": 1,
+      "number": null,
       "raw_text": "1 ⑧ | 中国 | 韓国 | 日本 @ | 韓国 | 中国 | 日本 注 ) 韓国 (South Korea), 中国 (China) ー128 一",
       "text": "1 ⑧ | 中国 | 韓国 | 日本 @ | 韓国 | 中国 | 日本 注 ) 韓国 (South Korea), 中国 (China) ー128 一",
       "answer_choices": [],
@@ -11021,7 +11060,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11029,7 +11068,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "d31dae89-15f8-4c5f-888c-5f79469049ab",
@@ -11111,7 +11155,7 @@
             "ー129",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11133,7 +11177,7 @@
     },
     {
       "id": "680bb8ae-4804-466e-a891-7b66c9f2289e",
-      "number": 2,
+      "number": null,
       "raw_text": "2) ー129 一",
       "text": "2) ー129 一",
       "answer_choices": [],
@@ -11145,7 +11189,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11153,7 +11197,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "81ca02fe-d9c8-41fb-8fa8-28f49fd29b7b",
@@ -11541,7 +11590,7 @@
             "ー130",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11549,7 +11598,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11557,7 +11606,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "673b51e2-90d6-41f7-ba67-2113ab396093",
@@ -11711,7 +11764,7 @@
             "ー131",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11719,7 +11772,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11727,11 +11780,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "b3fb30d1-3f3d-4c11-90eb-581f293d0899",
-      "number": 9,
+      "number": null,
       "raw_text": "9 | パナマ | フランス一 注 ) メキシコ (Mexico), スペイン (Spain), パナマ (Panama) —131-",
       "text": "9 | パナマ | フランス一 注 ) メキシコ (Mexico), スペイン (Spain), パナマ (Panama) —131-",
       "answer_choices": [],
@@ -11751,7 +11808,10 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "e4faf7c2-0ff9-4170-a95e-a735c81674a5",
@@ -11842,7 +11902,7 @@
             "ー132",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12146,7 +12206,7 @@
             "Understanding)",
             "—133—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12154,7 +12214,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -12162,11 +12222,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "39a951ae-a8c6-4f69-a96b-85cebcd339cd",
-      "number": 2119,
+      "number": null,
       "raw_text": "問 2119 世紀のドイツの社会主義者であるラッサール (Ferdinand Lassalle) は , 当時の 自由放任主義的な近代国家を指して ,「 夜警国家 」 と呼んだ。「 夜警国家 」 と最も意味 の近い語を , 次の ①ー④ の中から一つ選びなさい。 27 ① 戦争国家 ② 福祉国家 @ 小さな政府 ④ 大きな政府 問 22 日本の地方自治制度においては , 重要事項に関して住民の意思を地方自治に反映き せるために , 直接請求権が認められている。直接請求権によって要求できないものを , 次の ① て ④ の中から一つ選びなさい。 |28 @ 所得税の減免 @ 事務の監査 ① 地方議会の解散 ④ 条例の制定・改廃 問 23 政治的自由の拡大に関する記述として最も適当なものを , 次の ①ー④ の中から一つ 選びなさい。 29 ① アメリカでは , 南北戦争 (American Civil War) Piz, ワシントン (George ② 19 世紀の昌貫、イギリスで起こったチャーティスト運動 (Chartism) は。労作 ⑬ フランスでは , 20 世紀の中頃に黒人によるバス乗車拒否事件が生じ , 公民権法の ④ 日本では , 第二次世界大戦前に。性別や財産による参政権の制限が , 憲法上 , 撤 ー134 一 Washington) が奴隷解放家言出すことによって , BRL, 奴隷にも自由が保 者を中心に組織され , 普通選挙の実現を要求した。 制定を要求する運動が高まった。 廃きれた。 障された。",
       "text": "問 2119 世紀のドイツの社会主義者であるラッサール (Ferdinand Lassalle) は , 当時の 自由放任主義的な近代国家を指して ,「 夜警国家 」 と呼んだ。「 夜警国家 」 と最も意味 の近い語を , 次の 問 22 日本の地方自治制度においては , 重要事項に関して住民の意思を地方自治に反映き せるために , 直接請求権が認められている。直接請求権によって要求できないものを , 次の 問 23 政治的自由の拡大に関する記述として最も適当なものを , 次の",
       "answer_choices": [
@@ -12561,7 +12625,7 @@
             "ー134",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12579,11 +12643,14 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "98f329af-04bf-48e2-ae25-e7b1d90bc12e",
-      "number": 50,
+      "number": null,
       "raw_text": "50 の ききしている政党はない (無党派層 ) ム 40 ュスネーーーーの 30 x = ae ee se . “NY a",
       "text": "50 の ききしている政党はない (無党派層 ) ム 40 ュスネーーーーの 30 x = ae ee se . “NY a",
       "answer_choices": [],
@@ -12849,7 +12916,7 @@
             "ー135",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12868,11 +12935,14 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "cbec2968-f551-4dca-9c91-3363d0ede01d",
-      "number": 20,
+      "number": null,
       "raw_text": "20 a — ーー mse レス oe? x 10 x 01 11 11 11 1 19731978198319881993199820032008 年 NHK 放送文化研究所 『 現代日本人の意識構造 」 (第七版 ) より作成 ① 自民党の支持率が下がれば , 野党の支持率は上がるという関係が常に見られる。 ® 1993 年と 2003 年を比較すると , 自民党の支持率は低下したが , 無党派層の比率は @ 1998 年以降 , 自民党は支持率をある程度回復させることができた。 ④ 2003 年と 2008 年を比較すると , 無党派層の支持を取り込んだのは , 主に民主党で ー135 一",
       "text": "20 a — ーー mse レス oe? x 10 x 01 11 11 11 1 19731978198319881993199820032008 年 NHK 放送文化研究所 『 現代日本人の意識構造 」 (第七版 ) より作成 ① 自民党の支持率が下がれば , 野党の支持率は上がるという関係が常に見られる。 ® 1993 年と 2003 年を比較すると , 自民党の支持率は低下したが , 無党派層の比率は @ 1998 年以降 , 自民党は支持率をある程度回復させることができた。 ④ 2003 年と 2008 年を比較すると , 無党派層の支持を取り込んだのは , 主に民主党で ー135 一",
       "answer_choices": [],
@@ -12884,7 +12954,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "social_analysis",
@@ -12894,11 +12964,16 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "0bf5f5b6-dc59-4ed5-a9e7-a0924987c873",
-      "number": 25,
+      "number": null,
       "raw_text": "問 25 経済 , 社会文化, 教育保健等の分野において , 国際連合 (UN) と連携関係を 持つ国際機関を専門機関という。専門機関の例として正しいものを , 次の ①ー④ の中 から一つ選びなさい。 31 ① tH ARE (WTO) ② 世界保健機関 (WHO) @ 北大西洋条約機構 (NATO) ④ 国際オリンピック委員会 (IOC) 問 261945 年の連邦人民共和国の建国当初から多民族国家であり , 1990 年代前半に民族間 で武力衝突が起き , その結果解体した社会主義国を , 次の ①ー④ の中から一つ選びな さい。 32 ① ハイチ (Haiti) @ ルワンダ (Rwanda) @ ユーゴスラビア (Yugoslavia) (《④ チェコスロバキア (Czechoslovakia) 問 27 サミット (G8) の起源について説明した内容として最も適当なものを , KOO て ④ の中から一つ選びなさい。 33 ① 貿易・援助・経済開発分野で南北交渉をおこなうための首脳会議として始まった。 ②⑨ 非同盟主義を外交方針とする国々 の首脳会議として始まった。 ③ 石油危機以降の経済危機に対処する先進資本主義国問の首脳会議として始まった。 @® ナセル (Gamal Abdel Nasser) の提案によりアラブ (Arab) 諸国間の首脳会議 として始まった。",
       "text": "問 25 経済 , 社会文化, 教育保健等の分野において , 国際連合 (UN) と連携関係を 持つ国際機関を専門機関という。専門機関の例として正しいものを , 次の 問 261945 年の連邦人民共和国の建国当初から多民族国家であり , 1990 年代前半に民族間 で武力衝突が起き , その結果解体した社会主義国を , 次の 問 27 サミット (G8) の起源について説明した内容として最も適当なものを , KOO て",
       "answer_choices": [
@@ -13246,7 +13321,7 @@
             "ー136",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13265,7 +13340,10 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "5c381a46-a125-44b3-b35d-3f6d3f3de762",
@@ -13591,7 +13669,7 @@
             "ー137",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13614,7 +13692,7 @@
     },
     {
       "id": "4d665f18-dbbc-460d-8280-a35e48389037",
-      "number": 3020,
+      "number": null,
       "raw_text": "問 3020 世紀初頭から第一次世界大戦にかけての国際関係に関する記述として最も適当な SDE, 次の ①ー④ の中から一つ選びなさい。 36 ① イギリスは第一次世界大戦勃発まで 「 光栄ある孤立 」 を保ち。いずれの国とも同 @ アメリカとロシアの対立が深まり、ヨーロッパ諸国はアメリカの同盟国とロシア @ イタリア (Italy) とオーストリア (Austria) は同盟関係にあったが , 両国間に ®@ ドイツとフランスは両国の国境地域における資源の共同管理を通じて友好関係を 盟を結ばなかった。 の同盟国に二分された。 は領土をめぐる対立があった。 深めていった。 問 31 第二炊世界大戦後の核軍縮に関する次の条約ムーD を年代順に並び替えたものとし て正しいものを , 下の ① て ④ の中から一つ選びなさい。 (37, A 部分的核実験禁止条約 (PTBT) D : 包括的核実験禁止条約 (CTBT) B : 中距離核戦力 (INF) 全廃条約 C : 核拡散防止条約 (NPT) ー138 一",
       "text": "問 3020 世紀初頭から第一次世界大戦にかけての国際関係に関する記述として最も適当な SDE, 次の 問 31 第二炊世界大戦後の核軍縮に関する次の条約ムーD を年代順に並び替えたものとし て正しいものを , 下の ① て ④ の中から一つ選びなさい。 (37, A 部分的核実験禁止条約 (PTBT) D : 包括的核実験禁止条約 (CTBT) B : 中距離核戦力 (INF) 全廃条約 C : 核拡散防止条約 (NPT) ー138 一",
       "answer_choices": [
@@ -13933,7 +14011,7 @@
             "ー138",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13955,7 +14033,10 @@
       ],
       "concepts": [],
       "year": 2013,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "36f96eed-962c-4010-bceb-e8b7237bc6c1",
@@ -14128,7 +14209,7 @@
             "ー139",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],

@@ -12925,7 +12925,7 @@
             "回",
             ")"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12933,7 +12933,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -12941,11 +12941,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "8d461dcf-c072-4116-90d7-b51eea555056",
-      "number": 1,
+      "number": null,
       "raw_text": "平成 15 年度 (2003 年度 ) AAR aie (80 分 ) ee i 1 \\ : i \\ 5 . 監督者の許可なしに , 部屋の外に出るととはできません。 \\ , ag 2, eee gy i | 1. 名問題には , <omeenas street]. [2], [8].-2ow | の対応する解答欄にマークしてください。",
       "text": "平成 15 年度 (2003 年度 ) AAR aie (80 分 ) ee i",
       "answer_choices": [
@@ -13251,7 +13255,7 @@
             "一",
             "|"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13259,7 +13263,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -13269,11 +13273,16 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "324cf563-4fe7-404d-b9d3-68c0c542d363",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一1 Fill 戦後の日本社会の変化に関するある日本人の父と息子の次の会話を読んで , 下の問 い (1 に (4) に答えなさい。 Bi BREADS, SIT CREA, 父 : そうか , 故郷の農村を出て , 会社に就職したのが 1962 年だった。 息子 : お父さんが就職した会社は , ? 高度成長を担った当時の花形輸出産業の会社だった 父 : まあな。ところで , 仕事は順調かい ? 息子 : 結構 , 大変だよ。 』 僕の業界は最近 , 東京市場をウォール街 (Wall Street) PY ティ (the City) のようにしようと緩和が急速に進んで国際的な競争が激し くなってきたんだ。だから , すごく忙しくなったよ。 4 結婚はまだ先だな。 んだよね。 (1) 下線部 1 について , 当時 ,。この父のように ,。農村から就職のために都市に出る若者が 非常に多かった。これによって生じた問題は何か。最も適当なものを ,。 KOO~OOH から一つ選びなさい。 [4 | ① 米の自給率の低下 ② 農業人口の低年齢化 @ ドーナツ化現象 (doughnut phenomenon) @ 農村の過疎化 (depopulation) (2) 下線部 2 について , この父が就職した会社の業種は何か。最も適当なものを , 次の ① て ④ の中から一つ選びなきい。 [2] ① 航空産業 ② 情報産業 ③ 繊維産業 ④ AEX (3) 下線部 3 について。この息子の勤めている会社の業種は何か。最も適当なものを , 次 の ① こ ④ の中から一つ選びなさい。 [3 | ① 自動車 ② 電器 ③ 金融 ④ コンピュータ・ソフト",
       "text": "総合科目一1 Fill 戦後の日本社会の変化に関するある日本人の父と息子の次の会話を読んで , 下の問 い (1 に (4) に答えなさい。 Bi BREADS, SIT CREA, 父 : そうか , 故郷の農村を出て , 会社に就職したのが 1962 年だった。 息子 : お父さんが就職した会社は , ? 高度成長を担った当時の花形輸出産業の会社だった 父 : まあな。ところで , 仕事は順調かい ? 息子 : 結構 , 大変だよ。 』 僕の業界は最近 , 東京市場をウォール街 (Wall Street) PY ティ (the City) のようにしようと緩和が急速に進んで国際的な競争が激し くなってきたんだ。だから , すごく忙しくなったよ。 4 結婚はまだ先だな。 んだよね。 (1) 下線部 1 について , 当時 ,。この父のように ,。農村から就職のために都市に出る若者が 非常に多かった。これによって生じた問題は何か。最も適当なものを ,。 KOO~OOH から一つ選びなさい。 [4 |",
       "answer_choices": [
@@ -13726,7 +13735,7 @@
             "ソ",
             "フト"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13750,7 +13759,10 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "c5141aa4-0198-4ff1-bfa5-f51b10b1eb5d",
@@ -14236,7 +14248,7 @@
             "98",
             "—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14712,7 +14724,7 @@
             "ーーB",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14720,7 +14732,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -14730,7 +14742,11 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "f576439f-e87b-4b06-8631-b05eb96da7ef",
@@ -15171,7 +15187,7 @@
             "100",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -15191,7 +15207,7 @@
     },
     {
       "id": "6cc9b208-c1db-4899-98e1-9a5e6fb87be7",
-      "number": 51930,
+      "number": null,
       "raw_text": "問 51930 年代のニューディール (New Deal) 政策と最も密接に関係する人物はだれか。 次の ① て ④ の中から一つ選びなさい。 112| ① アダム・スミス (Adam Smith) Q@ ジョセフ・シュンペーター(Joseph A. Schumpeter) ⑧③ ミルトン・フリードマン (Milton Friedman) ④ ジョン・メイナード・ケインズ (John Maynard Keynes) 問 6 需要と供給に関する次の文章中の空欄 (a) ~(c) に当てはまる語の組み合わせ として正しいもゃのを , 下の ①~ー④ の中から一つ選びなさい。 |13| 生活必需品は , (a) や (bd) が変わっても , ( Cc ) は変化しにくい。その一方で , 装飾品や娯楽品などは , ( a ) が増加して ( b ) が下がれば ,。それにつれて (< ) は増加する。 ot wet ete |⑨| 価格 | 電要 | 供給 | O| me | 価格 | 供給 |⑧| 供給 | 需要 | 価格 |④| 供給 | 価格 | 需要 —7o 一",
       "text": "問 51930 年代のニューディール (New Deal) 政策と最も密接に関係する人物はだれか。 次の 問 6 需要と供給に関する次の文章中の空欄 (a) ~(c) に当てはまる語の組み合わせ として正しいもゃのを , 下の",
       "answer_choices": [
@@ -15590,7 +15606,7 @@
             "需要",
             "="
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -15609,7 +15625,10 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "63d6a7dc-afb6-4689-85e0-0b4221a0ffa9",
@@ -16071,7 +16090,7 @@
             "102",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -16556,7 +16575,7 @@
             "ほ",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -17013,7 +17032,7 @@
             "Od",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -17037,7 +17056,7 @@
     },
     {
       "id": "ee5670f8-edce-4489-94db-25200a4c9b8d",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一9 eae pa sar 2 ; MB メルカ 注 ) アテネ (Athens), ナイロビ (Nairobi), ロンドン (London)、ニューヨーク (New York), プエノスアイレス (Buenos Aires) (1) RA, B の説明として正しいものを。次の ①~④ の中から一つ選びなさきぃ。 [19] ① MATH, 任意の 2 地点を結ぶ直線は最短コースを示している。 ②) MATH, 東京と任意の地点を結ぶ直線は最短コースを示している。 ③ 図 B では。高緯度地域に比べ , 低緯度地域の面積は拡大されている。 ④ 図 B では , 大陸の形にはゆがみがあるが , 面積は正しく表現されている。 (2) 図 B において , 東京ーロンドン間の最短コースを示す線を , 図中の ① ひて ④ の中から一 っ選びなさい。 20| (3) 東京から見た方位がほぼ東になる都市を。次の ①~④ の中から一つ選びなさい。 QD ずチ才 @ ナイロビ @ ニューヨーク @ プエノメメアイレスえ",
       "text": "総合科目一9 eae pa sar 2 ; MB メルカ 注 ) アテネ (Athens), ナイロビ (Nairobi), ロンドン (London)、ニューヨーク (New York), プエノスアイレス (Buenos Aires) (1) RA, B の説明として正しいものを。次の",
       "answer_choices": [
@@ -17413,7 +17432,7 @@
             "105",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -17421,7 +17440,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -17432,11 +17451,16 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "34720d4d-6dd3-4f71-a27e-4e4eb6a65c4f",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一10 間 11 日本の中部地方に関する次の文章を読んで , 下の問い (1)^-(3) に答えなさい。 中部地方は , 中央部の高い山々 が連なる中央高地。太平洋側の東海地方日本海側の 東海地方には , この地域の最大の都市である ( a ) 市を中心に中京工業地帯が作られ 北陸地方の三つの地域に分けられる。 ている。この工業地帯の町の一つである ( b ) 市は自動車産業が盛んであり , ここには 多くの工場がある。しかし , 近年では , 日本の自動車会社は。 ( c ) などの問題への対 策として , 海外に工場を移転する傾向がある。 (1) 下線部 1 に関して , 東海地方 , 北陸地方の気候を表すグラフの組み合わせとして最も 適当なものはどれか。次の ① こ ④ の中から一つ選びなさい。 (2) 上の文章中の空欄 (a), (b) に当てはまる都市名の組み合わせとして最も適当なも のを , 次の ① つ ④ の中から一つ選びなさい。 |23| | | a | b",
       "text": "総合科目一10 間 11 日本の中部地方に関する次の文章を読んで , 下の問い (1)^-(3) に答えなさい。 中部地方は , 中央部の高い山々 が連なる中央高地。太平洋側の東海地方日本海側の 東海地方には , この地域の最大の都市である ( a ) 市を中心に中京工業地帯が作られ 北陸地方の三つの地域に分けられる。 ている。この工業地帯の町の一つである ( b ) 市は自動車産業が盛んであり , ここには 多くの工場がある。しかし , 近年では , 日本の自動車会社は。 ( c ) などの問題への対 策として , 海外に工場を移転する傾向がある。 (1) 下線部 1 に関して , 東海地方 , 北陸地方の気候を表すグラフの組み合わせとして最も 適当なものはどれか。次の",
       "answer_choices": [
@@ -17812,7 +17836,7 @@
             "106",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -17831,7 +17855,10 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "56a52a93-a6e0-4947-90d5-89873084d378",
@@ -18082,7 +18109,7 @@
             "107",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -18104,7 +18131,7 @@
     },
     {
       "id": "5b7ec07a-d1b7-4afe-a321-4dde2bca9de6",
-      "number": 2,
+      "number": null,
       "raw_text": "2. アメリカ (United States of America), イギリス (United Kingdom) — 107 一",
       "text": "2. アメリカ (United States of America), イギリス (United Kingdom) — 107 一",
       "answer_choices": [],
@@ -18116,7 +18143,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -18124,7 +18151,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.75
     },
     {
       "id": "6357a749-d47f-45f8-bbb1-64cc4c843afd",
@@ -18539,7 +18571,7 @@
             "108",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -19032,7 +19064,7 @@
             "109",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -19344,7 +19376,7 @@
             "110",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -19741,7 +19773,7 @@
             "111",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -19764,7 +19796,7 @@
     },
     {
       "id": "2d8cde13-f6c5-4b5f-96e4-610fbd56689d",
-      "number": 1,
+      "number": null,
       "raw_text": "29.517.2 = Em 16.52.05.1 59] 28.1 」 (PHI \"HIGKIEMORR, 東京大学出版会による ) 注 ) 比率は , 日本・アメリカとも。それぞれの輸出総額・輸入総額に対するものである。 アメリカ向け | アメリカから 軸出比率の輸入比率 ① 互いの視易の相互依存度は , 第 1 次世界大戦 (World War 1) 期以降に高まった。 @ 日本のアメリカへの輸出比率は , 世界恐慌期にも , ほとんど減らなかった。 (④① アメリカにとって日本は , 常に最大の貿易相手国だった。 ② 日本もアメリカも , 互いの貿易の相互依存度は常に高かった。 問 19 次の表は , 日本の 1960 年から 1975 年までの産業にかかわる数値を示したものである。 この表から推測できる内容として最も適当なものを , 下の ① て ④ の中から一つ選びな 次産業就業人口比 | 輸入エネルギー依存率 | きい。 (35) (「 国勢調査報告 』) — Fie",
       "text": "29.517.2 = Em 16.52.05.1 59] 28.1 」 (PHI \"HIGKIEMORR, 東京大学出版会による ) 注 ) 比率は , 日本・アメリカとも。それぞれの輸出総額・輸入総額に対するものである。 アメリカ向け | アメリカから 軸出比率の輸入比率 問 19 次の表は , 日本の 1960 年から 1975 年までの産業にかかわる数値を示したものである。 この表から推測できる内容として最も適当なものを , 下の ① て ④ の中から一つ選びな 次産業就業人口比 | 輸入エネルギー依存率 | きい。 (35) (「 国勢調査報告 』) — Fie",
       "answer_choices": [
@@ -20172,7 +20204,7 @@
             "112",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -20192,7 +20224,10 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "a37914d2-31da-4a98-8cf1-1c7df6e0f579",
@@ -20635,7 +20670,7 @@
             "113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -21130,7 +21165,7 @@
             "—114",
             "="
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -21182,7 +21217,7 @@
     },
     {
       "id": "2e20ce94-5f2f-40f0-bb75-f8dc731ad89e",
-      "number": 1,
+      "number": null,
       "raw_text": "平成 15 年度",
       "text": "平成 15 年度",
       "answer_choices": [],
@@ -21210,7 +21245,7 @@
             "表",
             "|"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -21218,7 +21253,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -21226,11 +21261,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "8c591f41-985b-4313-bdad-7c39995be9af",
-      "number": 12,
+      "number": null,
       "raw_text": "12 番 | 3 番 | 4 番 | 5 番 | 6 番 | 7 Bl 8 番 | 9 番 10 番 11 番 [12 番 13 番 |14 番 15 番 16 番 E3PPPitmElimParlrlrlPlPPra 1414121213|1412|11|3|ils — 269 一",
       "text": "12 番 |",
       "answer_choices": [
@@ -21386,7 +21426,7 @@
             "259",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -21394,7 +21434,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -21402,11 +21442,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "1a389812-fd19-4d99-b9b1-bfdcb85e3a03",
-      "number": 1,
+      "number": null,
       "raw_text": "〈 総合科目 〉 Hm Ei ga 5iEumarisrmrisrlrs PPMHHitiiiniiiriuiHiuii —290'—",
       "text": "〈 総合科目 〉 Hm Ei ga 5iEumarisrmrisrlrs PPMHHitiiiniiiriuiHiuii —290'—",
       "answer_choices": [],
@@ -21520,7 +21565,7 @@
             "250",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -21528,7 +21573,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -21536,11 +21581,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "70ea992a-8a92-494d-ba52-aced96c3994b",
-      "number": 1,
+      "number": null,
       "raw_text": "< 数学 > eS aa ae br Ba fi ab ee は earns ~251-=",
       "text": "< 数学 > eS aa ae br Ba fi ab ee は earns ~251-=",
       "answer_choices": [],
@@ -21591,7 +21641,7 @@
             "13190|2|3|212l5Milelslzlslzlsl4ls|",
             "ーー"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -21599,7 +21649,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -21607,11 +21657,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "96bb8928-35ef-4b07-a22a-c3358016d634",
-      "number": 1,
+      "number": null,
       "raw_text": "— 292 一",
       "text": "— 292 一",
       "answer_choices": [],
@@ -21650,7 +21705,7 @@
             "292",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -21658,7 +21713,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -21666,11 +21721,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "09817b7e-219c-480f-a03e-ac0aa6fc8067",
-      "number": 1,
+      "number": null,
       "raw_text": "[acu | 問題解答例 学生は , いろいろな経験をしたほうがいいという意見に私は賛成する。 確かに , 一つのことだけを道求した方が , 時間を効率的に使うことはできるだろう。 LAL, 一つのことに専念するということは , 一つの立場からしか物事を考えられなく なってしまうという危険ももっている。それは , 自分とは違う立場の人を傷つけてしまっ たり , 物事の行き詰まりから抜け出せなくなってしまったりする原因になるだろう。 違う立場から物事を考えてみるためもっともよい方法は , 「 いろいろな経験をする 」 と いうことだと私は思う。自分自身がさまざまな立場に立ってみることで , そのとき感じ たこと , 思ったこと , などが心の中にたまっていく。おそらくこうした蓄積は , 「 今ま で経験したこともないような立場におかれたとき , どう感じるか | を想像するための手 がかりになるはずだ。一見無駄なように思える経験であっても , 想像力を豊かにすると いう役割は , 十分に果たすことができるのである。 マンションに住むとしたら私は下の階に住みたいと思う。 上の階に住むとエレベーターを使わなければならないので外に出るときは不便だし , 火事や災害があった場合は危険である。また , エレベーターが故障した場合はすぐ生活 に支障をきたす。 そのほかにも上の階に住む子供と下の階に住む子供には違いあるという報告を読んだ ことがある。それによると , 下の階の子供のほうが遊び友達も多く活発でもるという結 果だったそうだ。やはり , 外に出るためにエレベーターを使わなければならないか , 自 分の足で気軽に外に出られるかは子供の社会性を育てる上でも問題になるということだ。 その点一階はエレベーターの必要がないから , 以上のような問題はない。また , 最近 は庭付きの一階のマンションやアパートが人気があるようだ。庭があって , 土や木や花 などの自然と触れ合える環境は人間にとって大事なのではないだろうか。 以上のような理由で私は下の階に住むせほうがいいという考えだ。 ー253 一",
       "text": "[acu | 問題解答例 学生は , いろいろな経験をしたほうがいいという意見に私は賛成する。 確かに , 一つのことだけを道求した方が , 時間を効率的に使うことはできるだろう。 LAL, 一つのことに専念するということは , 一つの立場からしか物事を考えられなく なってしまうという危険ももっている。それは , 自分とは違う立場の人を傷つけてしまっ たり , 物事の行き詰まりから抜け出せなくなってしまったりする原因になるだろう。 違う立場から物事を考えてみるためもっともよい方法は , 「 いろいろな経験をする 」 と いうことだと私は思う。自分自身がさまざまな立場に立ってみることで , そのとき感じ たこと , 思ったこと , などが心の中にたまっていく。おそらくこうした蓄積は , 「 今ま で経験したこともないような立場におかれたとき , どう感じるか | を想像するための手 がかりになるはずだ。一見無駄なように思える経験であっても , 想像力を豊かにすると いう役割は , 十分に果たすことができるのである。 マンションに住むとしたら私は下の階に住みたいと思う。 上の階に住むとエレベーターを使わなければならないので外に出るときは不便だし , 火事や災害があった場合は危険である。また , エレベーターが故障した場合はすぐ生活 に支障をきたす。 そのほかにも上の階に住む子供と下の階に住む子供には違いあるという報告を読んだ ことがある。それによると , 下の階の子供のほうが遊び友達も多く活発でもるという結 果だったそうだ。やはり , 外に出るためにエレベーターを使わなければならないか , 自 分の足で気軽に外に出られるかは子供の社会性を育てる上でも問題になるということだ。 その点一階はエレベーターの必要がないから , 以上のような問題はない。また , 最近 は庭付きの一階のマンションやアパートが人気があるようだ。庭があって , 土や木や花 などの自然と触れ合える環境は人間にとって大事なのではないだろうか。 以上のような理由で私は下の階に住むせほうがいいという考えだ。 ー253 一",
       "answer_choices": [],
@@ -22316,7 +22376,7 @@
             "293",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -22334,11 +22394,14 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "7f45c1e2-68ec-4c45-be1e-3cff6fd5b1b2",
-      "number": 1,
+      "number": null,
       "raw_text": "| 記述 ] 採点虹準 「 記述 ] の採点に当たっては , 文法的能力及び座理的能力のそれぞれについて , 以下の 基準に基づき採点し , その含計点 (0 一6 点 ) を表示する。 (1) 文法的能力 (0 一3 点 ) 〇 個々 の文についても , 文章全体についても , 執筆者の意図が明快に理解可能であるも の (文法・表記上の軽微な誤りや文体上やや不自然な点は許容する。) oe 〇 文法・表記上明らかに適功でない点を含むが , 文章全体から執筆者の意図は明快に理 蟹能であるもの上ーーポトーツーードド < eymoee emo pea eee ee se 〇 文法・表記上明らかに適切でない点がかなり目立つが , 文章全体から執筆者の意図を 想像することは可能であるもの 〇 意味不明の文が多く , 文章全体から執筆者の意図を理解することが不可能又は極めて 困難なもの (2 ) 論理的能力 (0 一3 点 ) 〇 主張に根拠が示されており , PO, 主張と根拠との間に十分な論理的関係があり , 巴 盾が認められないもの oo 3 点 〇 主張に根拠が示されており , 概ね論理的な関係が認められるが , 一部に論理的矛盾や 非整合性も存在するもの Oo 2 i 〇 主張は示されているが , その根拠が示されていない , Mid, 根拠が示されていても , 論理性・客観性を著しく欠いているもの ooo 1 jet 〇 筆者自身の主張が示されていない , 又は , Ae ER LEDER CHASED err 0 点 — 294 一",
       "text": "| 記述 ] 採点虹準 「 記述 ] の採点に当たっては , 文法的能力及び座理的能力のそれぞれについて , 以下の 基準に基づき採点し , その含計点 (0 一6 点 ) を表示する。 (1) 文法的能力 (0 一3 点 ) 〇 個々 の文についても , 文章全体についても , 執筆者の意図が明快に理解可能であるも の (文法・表記上の軽微な誤りや文体上やや不自然な点は許容する。) oe 〇 文法・表記上明らかに適功でない点を含むが , 文章全体から執筆者の意図は明快に理 蟹能であるもの上ーーポトーツーードド < eymoee emo pea eee ee se 〇 文法・表記上明らかに適切でない点がかなり目立つが , 文章全体から執筆者の意図を 想像することは可能であるもの 〇 意味不明の文が多く , 文章全体から執筆者の意図を理解することが不可能又は極めて 困難なもの (2 ) 論理的能力 (0 一3 点 ) 〇 主張に根拠が示されており , PO, 主張と根拠との間に十分な論理的関係があり , 巴 盾が認められないもの oo",
       "answer_choices": [
@@ -22737,7 +22800,7 @@
             "294",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -22745,7 +22808,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -22755,11 +22818,16 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "14e066c6-3710-4b32-8580-53d45ceead85",
-      "number": 1,
+      "number": null,
       "raw_text": "( 聴解・聴読解問題 CD ft) FETT 日でのの me 2003 年 8 月 15 日初版第 1 inl 編著者 ………… 財団法人日本国際教育協会 発行者エンテと松居克彦 ERB] FIT のでで om 株式会社桐原コム 製本所 …… のの …… 株式会社越後堂製本 発行所 ………… 株式会社桐原書店 〒153-8503 東京都目黒区駒場 45-29 電話 03-5454-5215 〒166-0003 東京都秒並区高円寺南 2-44-5 TEL 03-3314-8181 (販売 ) 振夫 00160-1-55244 (©2003 Association of International Education, Japan Printed in Japan",
       "text": "( 聴解・聴読解問題 CD ft) FETT 日でのの me 2003 年 8 月 15 日初版第 1 inl 編著者 ………… 財団法人日本国際教育協会 発行者エンテと松居克彦 ERB] FIT のでで om 株式会社桐原コム 製本所 …… のの …… 株式会社越後堂製本 発行所 ………… 株式会社桐原書店 〒153-8503 東京都目黒区駒場 45-29 電話 03-5454-5215 〒166-0003 東京都秒並区高円寺南 2-44-5 TEL 03-3314-8181 (販売 ) 振夫 00160-1-55244 (©2003 Association of International Education, Japan Printed in Japan",
       "answer_choices": [],
@@ -22894,7 +22962,7 @@
             "in",
             "Japan"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -22916,7 +22984,10 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "bd875fe4-79fa-4e67-8549-ff7f4a34d4da",
@@ -22997,7 +23068,7 @@
             "|",
             "|"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -23005,7 +23076,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -23015,11 +23086,15 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ad51d055-390f-4fd4-9edd-2711810ef880",
-      "number": 2,
+      "number": null,
       "raw_text": "2 | amos | 65 | Rm | ちち] mm | |",
       "text": "2 | amos | 65 | Rm | ちち] mm | |",
       "answer_choices": [],
@@ -23031,7 +23106,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -23039,7 +23114,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     }
   ],
   "metadata": {

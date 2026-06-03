@@ -6554,7 +6554,7 @@
             "試験",
             "問題"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6562,7 +6562,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -6570,7 +6570,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2011,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "32b6df3e-0124-4450-96a4-3ddea144f248",
@@ -6954,7 +6958,7 @@
             "ー107",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6962,7 +6966,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -6973,11 +6977,15 @@
       ],
       "concepts": [],
       "year": 2011,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "727efdcd-d7ce-40f3-8e89-298280fe7971",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の会話を読み , 下の問い (1) て (4 に答えなさい。 よし子 : 今日の授業では , エマニュエル・トッド (Emmanuel Todd) というフラン 先生 : トッドは , 現代のフランスを代表する知識人で , かつてソ連 (USSR) の LUFF, 日本をはじめとする先進各国は。深刻なデフクレーションに陥っている 先生 : そうです。さらに, トッドは経済のグローバル化の進展とデフレーション A (France) の学者のことに独れていらっしゃいましたね。 崩壊を予想して有名になった人です。最近は , グローバルな | 自由貿頑の行 と , トッドは分析しているのですね。 との関係を指摘しています。 き過ぎを批判しています。 ー109 一",
       "text": "問",
       "answer_choices": [
@@ -7192,7 +7200,7 @@
             "。",
             "—109-"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7200,7 +7208,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7208,11 +7216,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2011,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "b03187a4-5118-430b-b61e-d50945ee0865",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (1) 下線部 1 に関して , ソ連の崩壊を巡る次の出来事 A て D を年代順に並べたものとし て正しいものを , 下の ①~ て ④ の中から一つ選びなさい。 1 AA: ベルリン (Berlin) の壁の崩壊 B : ペレストロイカの開始 C : 独立国家共同体 (CIS) の創設 D : ゴルバチョフ (Mikhail Gorbachev) の共産党書記長就任 ③ C-D-A->B ④ D っ B っっ A っ C (2) 下線部 2 に関して , 自由貿易の利点の理論的根拠を提示したといわれる人物とその 人物の著作の組み合わせとして最も適当なものを , 次の ①ー④ の中から一つ選びなさ ① | マルクス (Karl Marx) 『 資本論 』 @| リカード (David Ricardo) 『 経済学および課税の原理 @| リスト (Friedrich List) 「 政治経済学の国民的体系 』 | ④ | ケインズ (John Maynard Keynes) | 『 雇用・利子および貨幣の一般理論 」 ー110 一",
       "text": "総合科目一2 (1) 下線部 1 に関して , ソ連の崩壊を巡る次の出来事 A て D を年代順に並べたものとし て正しいものを , 下の",
       "answer_choices": [
@@ -7423,7 +7436,7 @@
             "ー110",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7431,7 +7444,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7439,11 +7452,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2011,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "4bce7ec2-8913-452e-a104-d0f0aa0eb7f7",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一3 (3) 下線部 3 に関して , 日本ではデフレ・スパイラルと呼ばれる現象が生じたと指摘さき れている。デフレ・スパイラルを説明した次の図を見て , 図中の空欄 A-C に当ては まる語の組み合わせとして最も適当なものを , 下の ① て ④ の中から一つ選びなさい。 物価の下落 。企業の売上げの 物価の下落 A > oF 企業の売上げの [LC ] の減少 A = a 企業による MM 従業員の解雇企業による ee 賃金の削減, 家計の所香の = ーー®RROWTE A B C ① | 増大 | 増大需要 @ 増大 | 減少供給 ⑧ | 減少 | 増大 | 供給 | ④ BD By BH (4) 下線部 4 に関して , トッドが指摘している経済のグローバル化の進展と先進国のデ フレーションとの関係の説明として最も適当なものを , 次の ①ー④ の中からゥ一つ選び なさい。 (4) ① 新興国への投資が増大し , 国内の地価や人件費が急激に上昇する。 @Q 新興国から大勢の移民が入国し , 国内の需要が大幅に増大する。 @ 新興較から安い物品が大量に輸入され , 国内の物価が下落する。 ④ 新興国への輸出が大幅に増大し , 国内への農産物や工業製品の供給が不足する。 ー111 一",
       "text": "総合科目一3 (3) 下線部 3 に関して , 日本ではデフレ・スパイラルと呼ばれる現象が生じたと指摘さき れている。デフレ・スパイラルを説明した次の図を見て , 図中の空欄 A-C に当ては まる語の組み合わせとして最も適当なものを , 下の",
       "answer_choices": [
@@ -7798,7 +7816,7 @@
             "ー111",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7814,11 +7832,14 @@
       "keywords": [],
       "concepts": [],
       "year": 2011,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "3c08975b-88c5-4b77-bac2-e90c9dce0795",
-      "number": 2,
+      "number": null,
       "raw_text": "問 2 次の文章を読み , 下の問い (1) て (4) に答えなさい。 アフリカ (Africa) の西岸に位置するりベリア (Liberia) は , アメリカ (USA) から の解放奴泊が 1847 年に建国した共和国である。そのため , 政治制度などは , アメリカの HOME ZN TOS, 年間を通して気温は高く , 季節風の影響で旗水芝の多い季節がある。 気候区分は , La | 気似とサバナ気候に分かれる。リベリアは天然資源が豊富な国であり , また , 便宮寺鏡国としても知られている。 (1) リベリアはアフリカ各地が列強の植民地となった 20 世紀初めにも独立を維持した国 である。この時期にリベリアとともに独立を維持した国はどこか。その国名として最 も適当なものを , 次の ①~ー④ の中から一つ選びなさい。 5 ① エチオピア (Ethiopia) @ エジプト (Egypt) @ モロッコ (Morocco) @® カメルーン (Cameroon) (2) 下線部 1 に関して , リベリアが参考にしたアメリカの政治制度の説明として最も適 当なものを , 次の ① て ④ の中から一つ選びなさい。 | 6 | ① 一院制の議会が設置され , 大統領制が採用きれている。 ② 二院制の議会が設置され , 大統領制が採用きれている。 @ 一院制の議会が設置され , 議院内閣制が採用きれている。 ④ 二院制の議会が設置され , 議院内閣制が採用されている。 ー112 一",
       "text": "問 2 次の文章を読み , 下の問い (1) て (4) に答えなさい。 アフリカ (Africa) の西岸に位置するりベリア (Liberia) は , アメリカ (USA) から の解放奴泊が 1847 年に建国した共和国である。そのため , 政治制度などは , アメリカの HOME ZN TOS, 年間を通して気温は高く , 季節風の影響で旗水芝の多い季節がある。 気候区分は , La | 気似とサバナ気候に分かれる。リベリアは天然資源が豊富な国であり , また , 便宮寺鏡国としても知られている。 (1) リベリアはアフリカ各地が列強の植民地となった 20 世紀初めにも独立を維持した国 である。この時期にリベリアとともに独立を維持した国はどこか。その国名として最 も適当なものを , 次の",
       "answer_choices": [
@@ -8208,7 +8229,7 @@
             "ー112",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8231,11 +8252,14 @@
       ],
       "concepts": [],
       "year": 2011,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "ace44e06-1262-44f7-bcda-cc6ce35689e4",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一5 (3) 上の文章中の空欄 [ a ] に当てはまる気候区分として最も適当なものを , KOO て ④ の中から一つ選びなさい。 7 | ① ステップ @ 熱帯雨林 @ 地中海性 ④ 西岸海洋性 (4) 下線部 2 に関して , 特に先進国の船主は節税などを目的に , 優遇税制を採っていた り規制が少なかったりする国に船籍を置くことが多い。このように事実上の船主の国 籍と異なる国に船籍が置かれた船舶を便宜置籍船といい , 船舶の誘致を図っている国 を便宜置籍国という。便宜置籍国として知られる外航船舶保有量が最大の国として最 も適当なものを。次の ① て ④ の中から一つ選びなさい。 8) ① ノルウェー(Norway) @ イギリス (UK) @® パナマ (Panama) (④① シンがガポール (Singapore) ー113 一",
       "text": "総合科目一5 (3) 上の文章中の空欄 [ a ] に当てはまる気候区分として最も適当なものを , KOO て",
       "answer_choices": [
@@ -8476,7 +8500,7 @@
             "ー113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8495,7 +8519,10 @@
       ],
       "concepts": [],
       "year": 2011,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "b429e395-1756-473c-a5e9-2286db69ff43",
@@ -8807,7 +8834,7 @@
             "ー114",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9071,7 +9098,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9458,7 +9485,7 @@
             "ー116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9478,7 +9505,7 @@
     },
     {
       "id": "04dc5b48-41fb-4ded-a0e6-35bce573d827",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一9 間 10 次のグラフは , AA, インド (India), 韓国 (South Korea), 中国 (China) それ ぞれの一人当たりエネルギー消費量の推移を示したものである。グラフ中の AD に 当てはまる国名の組み合わせとして正しいものを , 下の ①~ て ④ の中から一つ選びなさ い。 16 5,000 4,500 4,000 3,500 3,000 2,500 += 2,000 1,500 1,000 19711975198019851990199520002005 年 世界銀行のウェブサイトより作成 注 ) エネルギー消費量は石油換算したもの LA B C D ① | 日本 | 中国 | インド | 韓国 ⑨ | 韓国 | 日本 | インド | 中国 [© | 韓国日本 「 ⑨ | 日本 | 韓国 | 中国 | インド ④ | 韓国 | 中国 | 日本 | インド ー117 一",
       "text": "総合科目一9 間 10 次のグラフは , AA, インド (India), 韓国 (South Korea), 中国 (China) それ ぞれの一人当たりエネルギー消費量の推移を示したものである。グラフ中の AD に 当てはまる国名の組み合わせとして正しいものを , 下の",
       "answer_choices": [
@@ -9636,7 +9663,7 @@
             "|",
             "-117-"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9655,7 +9682,10 @@
       ],
       "concepts": [],
       "year": 2011,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "be3f809d-1962-4197-9b1a-0a9941fbfbaa",
@@ -9885,7 +9915,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10069,7 +10099,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10077,7 +10107,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "geographical_analysis",
@@ -10085,7 +10115,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2011,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "9ad03b13-83b6-497a-888f-91f2182d20d1",
@@ -10515,7 +10549,7 @@
             "ー120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10523,7 +10557,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "geographical_analysis",
@@ -10531,7 +10565,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2011,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.75
     },
     {
       "id": "ba1055e7-e18d-4001-87f9-113c260b1e0f",
@@ -10712,7 +10750,7 @@
             "ー121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10927,7 +10965,7 @@
             "ー122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10935,7 +10973,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10943,7 +10981,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2011,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ad57ebd8-97e3-489f-9cd9-de53164e2226",
@@ -11221,7 +11263,7 @@
             "ー123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11247,7 +11289,7 @@
     },
     {
       "id": "0f79d7b2-5a8e-4fe7-8dc6-8f4b7a017b93",
-      "number": 202002,
+      "number": null,
       "raw_text": "問 202002 年に日本で制定された知的財産基本法の目的として最も適当なものを , 次の ① て ④ の中から一つ選びなさい。 27 ① 新しいぃ技術や製品 , 創作の複製を自由化し , それらが国家の枠を超えて世界中で @ 新しい技術や製品創作を国家が管理し , さまざまな開発や創造が国家の利益に @ 知的財産の保護を図り , さまざまな開発や創造が活発におこなわれるようにする。 ④ 著作権者による知的財産の占有をなくし , 新しい技術や製品。創作が広く社会に 容易に利用さきれるようにする。 つながるようにする。 共有されるようにする。 問 21 日本における基本的人権や国民の権利に関する記述として最も適当なものを , 次の ①~ て ④ の中から一つ選びなさい。 28 ① 思想や言論の自由は自由権に , 財産権や職業選択の自由は社会権に属する。 ② 環境権やプライバシー権。知る権利など , 憲法に規定されていない諸権利は , 新 @ 日本国憲法では , 団結権・団体交渉権は認められているが , 団体行動権は認めら ④ 日本国憲法は子どもに教育を受けさせることを国民の義務としているが , 教育 しい人権と呼ばれる。 れていない。 を受ける権利については規定していない。 ー124 一",
       "text": "問 202002 年に日本で制定された知的財産基本法の目的として最も適当なものを , 次の 問 21 日本における基本的人権や国民の権利に関する記述として最も適当なものを , 次の",
       "answer_choices": [
@@ -11615,7 +11657,7 @@
             "ー124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11633,7 +11675,10 @@
       ],
       "concepts": [],
       "year": 2011,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "11bd4a8c-1f65-452a-b700-02e9e32eb263",
@@ -11936,7 +11981,7 @@
             "ー125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11958,7 +12003,7 @@
     },
     {
       "id": "a0b1dd9f-f1f8-4b39-b517-ed2ec8b9b546",
-      "number": 241993,
+      "number": null,
       "raw_text": "問 241993 年に発効したマーストリヒト条約 (Maastricht Treaty) によって , EU が誕 生した。これによって実施されたこととして最も適当なものを , 次の ①ー④ の中から ーつ選びなさい。 31 ① EU 市民権の創設 @ EU 軍の創設 @ 共通農業政策 ④ 域内諸国間の関税の搬廃 問 251994 年に発効した国連海洋法条約では , 領海や排他的経済水域などに関する取り決 めが明文化された。これに関する説明として最も適当なものを , 次の ①ー④ の中から ーつ選びなさい。 32 ① 基線から 200 海里の範囲は領海と定められ , 領海には沿岸国の主権が及ぶ。 ② 領海外は公海とされ , 各国が自由に使用 , 航行できる。 ⑬ 排他的経済水域の航行には沿岸国の許可が必要である。 ® 排他的経済水域では沿岸国が漁業や天然資源開発などの経済的主権を有する。 ー126 一",
       "text": "問 241993 年に発効したマーストリヒト条約 (Maastricht Treaty) によって , EU が誕 生した。これによって実施されたこととして最も適当なものを , 次の 問 251994 年に発効した国連海洋法条約では , 領海や排他的経済水域などに関する取り決 めが明文化された。これに関する説明として最も適当なものを , 次の",
       "answer_choices": [
@@ -12216,7 +12261,7 @@
             "。",
             "—126—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12235,7 +12280,10 @@
       ],
       "concepts": [],
       "year": 2011,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "992cc844-0bec-4ca9-905e-dc4e02cd38ce",
@@ -12643,7 +12691,7 @@
             "ー127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12879,7 +12927,7 @@
             "。",
             "—128—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],

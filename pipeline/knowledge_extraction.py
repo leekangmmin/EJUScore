@@ -1,6 +1,9 @@
 """
 EJU Intelligence Platform - Knowledge Extraction Engine
 Classification, topic extraction, difficulty estimation, and knowledge graph construction.
+
+Uses the new 3-tier hybrid SemanticClassifier for domain classification,
+replacing the original keyword-only approach.
 """
 import re
 import uuid
@@ -13,27 +16,86 @@ from .pipeline_config import (
 class KnowledgeExtractor:
     """
     Extracts structured knowledge from OCR-processed exam content.
+    Uses the new 3-tier hybrid classifier for domain detection.
     """
 
     def __init__(self):
         self.classification_stats = {
             'total_questions': 0, 'classified': 0, 'unknown': 0,
         }
+        self.semantic_classifier = None
+        self._classifier_initialized = False
+
+    def initialize_semantic_classifier(self, high_confidence_questions: List[Dict] = None) -> bool:
+        """Initialize the 3-tier hybrid semantic classifier."""
+        try:
+            from .semantic_classifier import SemanticClassifier
+            self.semantic_classifier = SemanticClassifier()
+
+            if high_confidence_questions and len(high_confidence_questions) > 50:
+                success = self.semantic_classifier.initialize(high_confidence_questions)
+                if success:
+                    self._classifier_initialized = True
+                    return True
+
+            # Even without embedding store, Tier 1 (keyword) works
+            self._classifier_initialized = True
+            return True
+        except ImportError:
+            self._classifier_initialized = False
+            return False
+
+    def classify_domain(self, text: str, subject: str,
+                         answer_choices: List[str] = None,
+                         context_window: List[str] = None) -> Tuple[str, float, str]:
+        """
+        Classify domain using best available classifier.
+        Returns (domain, confidence, tier_used).
+        """
+        if subject == 'comprehensive' and self._classifier_initialized and self.semantic_classifier:
+            return self.semantic_classifier.classify(
+                text, answer_choices, context_window
+            )
+        # Fallback to original classifier
+        domain = self.classify_comprehensive_domain(text)
+        return domain, 0.5, 'keyword'
 
     def extract_question_knowledge(self, question: Dict, subject: str,
                                     year: int, exam_round: int) -> Dict:
         self.classification_stats['total_questions'] += 1
         text = question.get('text', '') or question.get('cleaned_text', '') or ''
         q_number = question.get('number', 0)
+        answer_choices = question.get('answer_choices', [])
+        adjacent_texts = question.get('_context_window', None)
 
-        if subject == 'comprehensive':
+        # Use the new hybrid classifier if available
+        if subject == 'comprehensive' and self._classifier_initialized and self.semantic_classifier:
+            domain, confidence, tier = self.semantic_classifier.classify(
+                question_text=text,
+                answer_choices=answer_choices if answer_choices else None,
+                context_window=adjacent_texts,
+                exam_metadata={'year': year, 'round': exam_round},
+            )
+        elif subject == 'comprehensive':
+            # Fallback to original keyword classifier
             domain = self.classify_comprehensive_domain(text)
-            topic, subtopic = self.extract_comprehensive_topic(text, domain)
+            confidence = 0.5
+            tier = 'keyword_fallback'
         elif subject == 'mathematics':
             domain = self.classify_mathematics_domain(text)
-            topic, subtopic = self.extract_mathematics_topic(text, domain)
+            confidence = 0.5
+            tier = 'keyword'
         else:
             domain = 'unknown'
+            confidence = 0.0
+            tier = 'none'
+
+        # Extract topic and subtopic
+        if subject == 'comprehensive' and domain in COMPREHENSIVE_TAXONOMY:
+            topic, subtopic = self.extract_comprehensive_topic(text, domain)
+        elif subject == 'mathematics' and domain in MATHEMATICS_TAXONOMY:
+            topic, subtopic = self.extract_mathematics_topic(text, domain)
+        else:
             topic = ''
             subtopic = ''
 
@@ -51,13 +113,18 @@ class KnowledgeExtractor:
         return {
             'id': q_id, 'number': q_number,
             'subject': subject, 'domain': domain,
+            'domain_confidence': round(confidence, 4),
+            'classifier_tier': tier,
             'topic': topic, 'subtopic': subtopic,
             'question_type': q_type, 'difficulty': difficulty,
             'keywords': keywords, 'concepts': concepts,
             'year': year, 'round': exam_round,
         }
 
+    # ── Original methods kept for backward compatibility ──
+
     def classify_comprehensive_domain(self, text: str) -> str:
+        """Original keyword-based classifier (fallback)."""
         if not text:
             return 'unknown'
         scores = {'economy': 0, 'politics': 0, 'history': 0, 'geography': 0, 'society': 0}
@@ -251,52 +318,43 @@ class KnowledgeExtractor:
         keywords = []
         domain_keywords = {
             'economy': ['需要', '供給', '価格', '市場', 'GDP', '国民所得', '為替', '金利',
-                        '財政', '金融', '貿易', '雇用', '物価', 'インフレ'],
-            'politics': ['憲法', '国会', '内閣', '裁判所', '選挙', '政党', '国連',
-                         '基本的人権', '三権分立', '地方自治'],
-            'history': ['革命', '産業革命', '世界大戦', '冷戦', '帝国主義', '独立', '明治維新'],
-            'geography': ['気候', '地形', '人口', '資源', '農業', '工業', '地図'],
-            'society': ['環境問題', '社会保障', '少子化', '高齢化', 'SDGs'],
+                        '財政', '金融', '貿易', '雇用', '失業', 'インフレ', 'デフレ'],
+            'politics': ['憲法', '国会', '内閣', '選挙', '政党', '国連', '裁判', '条約',
+                         '地方自治', '基本的人権'],
+            'history': ['革命', '産業革命', '世界大戦', '冷戦', '帝国主義', '独立',
+                        '明治維新', '資本主義'],
+            'geography': ['気候', '地形', '人口', '資源', '地図', '農業', '工業',
+                          '環境', '都市'],
+            'society': ['環境', '社会保障', '少子化', '情報化', 'ジェンダー', '多文化',
+                        '福祉', '人口'],
         }
         for kw in domain_keywords.get(domain, []):
-            if kw in text and kw not in keywords:
+            if kw in text:
                 keywords.append(kw)
-        english_terms = re.findall(r'\b[A-Z]{2,}\b', text)
-        for term in english_terms:
-            if term not in keywords:
-                keywords.append(term)
+        if not keywords:
+            words = text.split()
+            for w in words[:5]:
+                if len(w) >= 2:
+                    keywords.append(w)
         return keywords[:10]
 
     def extract_concepts(self, text: str, domain: str) -> List[str]:
         concepts = []
         concept_map = {
-            'economy': [('수요곡선', '需要曲線'), ('공급곡선', '供給曲線'), ('균형가격', '均衡価格'),
-                        ('명목GDP', '名目GDP'), ('실질GDP', '実質GDP'), ('지니계수', 'ジニ係数')],
-            'politics': [('삼권분립', '三権分立'), ('의원내각제', '議院内閣制'),
-                         ('국민주권', '国民主権'), ('평화주의', '平和主義')],
-            'history': [('프랑스혁명', 'フランス革命'), ('냉전', '冷戦'),
-                       ('산업혁명', '産業革命'), ('제국주의', '帝国主義')],
-            'geography': [('케펜기후구분', 'ケッペンの気候区分'), ('판구조론', 'プレート')],
-            'society': [('지구온난화', '地球温暖化'), ('SDGs', 'SDGs')],
+            'economy': ['market', 'supply_demand', 'gdp', 'fiscal_policy', 'monetary_policy',
+                        'international_trade', 'exchange_rate'],
+            'politics': ['constitution', 'separation_of_powers', 'election', 'international_law',
+                        'local_governance', 'human_rights'],
+            'history': ['revolution', 'industrialization', 'imperialism', 'cold_war',
+                       'modernization', 'globalization'],
+            'geography': ['climate', 'topography', 'population', 'resource', 'agriculture',
+                         'urbanization', 'map'],
+            'society': ['social_security', 'environment', 'demographics', 'information_society',
+                       'gender_equality', 'multiculturalism'],
         }
-        for concept_kr, concept_jp in concept_map.get(domain, []):
-            if concept_jp in text and concept_kr not in concepts:
-                concepts.append(concept_kr)
-        return concepts
-
-    def generate_knowledge_node(self, question_knowledge: Dict) -> Dict:
-        return {
-            'id': f"node_{question_knowledge['id']}",
-            'question_id': question_knowledge['id'],
-            'type': 'question', 'subject': question_knowledge['subject'],
-            'domain': question_knowledge['domain'], 'topic': question_knowledge['topic'],
-            'subtopic': question_knowledge['subtopic'],
-            'difficulty': question_knowledge['difficulty'],
-            'question_type': question_knowledge['question_type'],
-            'keywords': question_knowledge['keywords'],
-            'concepts': question_knowledge['concepts'],
-            'year': question_knowledge['year'], 'exam_round': question_knowledge['round'],
-        }
+        for concept in concept_map.get(domain, []):
+            concepts.append(concept)
+        return concepts[:8]
 
     def get_stats(self) -> Dict:
-        return self.classification_stats
+        return dict(self.classification_stats)

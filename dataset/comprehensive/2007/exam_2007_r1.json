@@ -6749,7 +6749,7 @@
             "回",
             ")"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6757,7 +6757,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -6765,7 +6765,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2007,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "e93f4961-5cdd-4602-866d-718f85ef671f",
@@ -7099,7 +7103,7 @@
             "109",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7107,7 +7111,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -7118,11 +7122,15 @@
       ],
       "concepts": [],
       "year": 2007,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "3fd4d218-e7a0-4bc5-9f37-48f18ad5fb4c",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の会話を読み ,。下の問い (1) て (3) に答えなさい。 よし子 : 冷戦終結後 , 多くの人 々 は平和の到来を期待しましたね。 先生 : そうです。つまり , (a ] に勝利した [| b ] が , 世界中ですんなりと受け入れ よし子 : 実際のところは , 1990 年代には , 東欧などで [ c | に基づく対立に悩まされ 先生 : ええ。それに 「9・11 事件 」 以降。アフガニスタン (Afghanistan) や られるだろうという期待を持ったのです。 ましたね。 3 イラク (Iraq) における武力衝突が生じました。 (1) 下線部 1 に関して , 冷戦とは , 主として何に基づく対立だったと言えるか。正しい ものを , 次の ① て ④ の中から一つ選びなさい。 [1 | ① Aff ②⑨ 宗孝 ③ 文化 @ イデオロギー (2) 上の会話中の空欄 La ]…[ て ] に当てはまる語の組み合わせとして最も適当なもの を , 次の ①~④ の中から一つ選びなさい。 [2 | a b C | ® | 社会主義 | 資本主義 | 民族主義 @ | 民族主義 | 資本主義 | 社会主義 @ | 資本主義 | 民族主義 | 社会主義 ④ | 社会主義 | 民族主義 | 資本主義 ー111 一",
       "text": "問 3 イラク (Iraq) における武力衝突が生じました。 (1) 下線部 1 に関して , 冷戦とは , 主として何に基づく対立だったと言えるか。正しい ものを , 次の",
       "answer_choices": [
@@ -7424,7 +7432,7 @@
             "111",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7444,11 +7452,14 @@
         "냉전"
       ],
       "year": 2007,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "ef21b575-dfa8-4c47-82ff-0627d73dbe76",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (3) 下線部 2 , および下線部 3 に関して , アフガニスタンとイラクの位置は次の地図中 のどこか。正しい組み合わせを , 下の ①~④ の中から一つ選びなさい。 13 ララタミタントィラター |@| s |pl ー11 の 9 一",
       "text": "総合科目一2 (3) 下線部",
       "answer_choices": [
@@ -7554,7 +7565,7 @@
             "—119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7562,7 +7573,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7570,11 +7581,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2007,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "bb625fdc-b50d-4d26-91cc-f07e94d2632f",
-      "number": 2,
+      "number": null,
       "raw_text": "問 2 次の会話を読み , 下の問い (1)^(4) に答えなさい。 太郎 : 今日の授業では , 自由主義と 1 民主主義について勉強しました。自由主義的な 先生 : 自由主義と民主主義は , 通常 , 相互に支る合っています。しかし相互に対立す 太郎 : 最近 , 日本では 「 格差社会 」 という言葉をよく聞きます。平等という理念も , 先生 : そうです。経済的効率性も大切ですが , 社会的格差の是正もまた大切です。 理念として | a | と [ b | 民主主義的な理念として | c |] についても習いまし る場合もあります。両者のバランスが大切です。 大切ですね。 (1) 上の会話中の空欄 [ a | 一[| c ] に当てはまる語の組み合わせとして最も適当なもの を , 次の ①ー④ の中から一つ選びなさい。 [4] | の | 国民主権 [ser | 法の支配 | (2) 下線部 1 に関して , 民主主義的な政治制度に不可欠な条件は何か。最も適当なもの を , 次の ①②④ の中から一つ選びなさい。 5 | ① 被選挙権が 20 歳以上の成人全員に与えられていること ② 野党の設立や活動が認められていること @ 立法府が一院制で組織されていること ④ 表現の自由が与党の裁量で制限できるようになっていること ー113 一",
       "text": "問 2 次の会話を読み , 下の問い (1)^(4) に答えなさい。 太郎 : 今日の授業では , 自由主義と 1 民主主義について勉強しました。自由主義的な 先生 : 自由主義と民主主義は , 通常 , 相互に支る合っています。しかし相互に対立す 太郎 : 最近 , 日本では 「 格差社会 」 という言葉をよく聞きます。平等という理念も , 先生 : そうです。経済的効率性も大切ですが , 社会的格差の是正もまた大切です。 理念として | a | と [ b | 民主主義的な理念として | c |] についても習いまし る場合もあります。両者のバランスが大切です。 大切ですね。 (1) 上の会話中の空欄 [ a | 一[| c ] に当てはまる語の組み合わせとして最も適当なもの を , 次の",
       "answer_choices": [
@@ -7990,7 +8006,7 @@
             "113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8006,7 +8022,10 @@
       "keywords": [],
       "concepts": [],
       "year": 2007,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "3ce84a05-7286-4d92-94bf-0f58ac8f8f87",
@@ -8504,7 +8523,7 @@
             "一",
             "|"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8882,7 +8901,7 @@
             "一",
             "i"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8890,7 +8909,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "economy",
       "topic": "",
       "subtopic": "",
       "question_type": "economic_analysis",
@@ -8898,7 +8917,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2007,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_recovered"
+      ],
+      "domain_confidence": 1
     },
     {
       "id": "ea847bfe-5090-4a42-9ced-862b391e8493",
@@ -9161,7 +9184,7 @@
             "116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9432,7 +9455,7 @@
             "ー117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9890,7 +9913,7 @@
             "118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10323,7 +10346,7 @@
             "|",
             "|"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10343,7 +10366,7 @@
     },
     {
       "id": "f76bcb23-945b-4e3c-8120-835501e142b3",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一10 Allg 次のグラフは , AA, アメリカ (USA), イタリア (Italy) の合計特殊出生率 * の 推移を示したものである。図中の A て C に対応する国名の組み合わせとして最も適当 なものを , 下の ①~④ の中から一つ選びなさい。 * 合計特殊出生率は女性の年齢別出生率を合計した値 出典 : 少子化社会白書 2005 年版より作成 | | a | B | c | |①| 日本 | イタリア | アメリカ | | ⑨| イタリア | 日本 | アメリカ | 1⑨| アメリカ | イタリア | 日本 ー120 一",
       "text": "総合科目一10 Allg 次のグラフは , AA, アメリカ (USA), イタリア (Italy) の合計特殊出生率 * の 推移を示したものである。図中の A て C に対応する国名の組み合わせとして最も適当 なものを , 下の",
       "answer_choices": [
@@ -10519,7 +10542,7 @@
             "120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10538,7 +10561,10 @@
       ],
       "concepts": [],
       "year": 2007,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "52308ecc-2d4b-47e6-94fd-ebfeda7ddff4",
@@ -10816,7 +10842,7 @@
             "121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10824,7 +10850,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10835,7 +10861,11 @@
       ],
       "concepts": [],
       "year": 2007,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "7be744d6-7601-43ac-8d92-9d61f80b47dd",
@@ -11171,7 +11201,7 @@
             "122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11179,7 +11209,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11189,11 +11219,15 @@
       ],
       "concepts": [],
       "year": 2007,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "a03077f2-0771-457f-8a70-b160287a315d",
-      "number": 1,
+      "number": null,
       "raw_text": "1 ⑨ | ウズベキスタン | 黒海 注 ) カザフスタン (Kazakhstan), カスピ海 (the Caspian Sea), トルコ (Turkey), 黒海 (Black Sea), ウズベキスタン (Uzbekistan) 問 17 ROA~Cld, 周囲を海で囲まれた国の特徴を示したものである。AーC の特徴を 持つ国の組み合わせとして最も適当なものを , 下の ① て ④ の中から一つ選びなさい。 AL 多くの火山や温泉がある。地表の約 10% は氷河に覆われている。 B : 米と三大プランテーション作物が主要産物。近年は工業化が進展する。 C : 南太平洋に位置し , 鉱物資源が豊富。羊毛の生産は世界一。 | | ょ | ぉ sm | < Ope ロンドネジァ 注 ) インドネシア (Indonesia), アイスランド (Iceland), ニュージーランド (New Zealand), . スリランカヵカ (Sri Lanka) ー122 一",
       "text": "1 ⑨ | ウズベキスタン | 黒海 注 ) カザフスタン (Kazakhstan), カスピ海 (the Caspian Sea), トルコ (Turkey), 黒海 (Black Sea), ウズベキスタン (Uzbekistan) 問 17 ROA~Cld, 周囲を海で囲まれた国の特徴を示したものである。AーC の特徴を 持つ国の組み合わせとして最も適当なものを , 下の ① て ④ の中から一つ選びなさい。 AL 多くの火山や温泉がある。地表の約 10% は氷河に覆われている。 B : 米と三大プランテーション作物が主要産物。近年は工業化が進展する。 C : 南太平洋に位置し , 鉱物資源が豊富。羊毛の生産は世界一。 | | ょ | ぉ sm | < Ope ロンドネジァ 注 ) インドネシア (Indonesia), アイスランド (Iceland), ニュージーランド (New Zealand), . スリランカヵカ (Sri Lanka) ー122 一",
       "answer_choices": [],
@@ -11218,7 +11252,10 @@
       ],
       "concepts": [],
       "year": 2007,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "623fd761-eb9c-409f-b75f-efc099285ea4",
@@ -11501,7 +11538,7 @@
             "123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11509,7 +11546,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11520,7 +11557,11 @@
       ],
       "concepts": [],
       "year": 2007,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.75
     },
     {
       "id": "98bd7d96-444d-4bc0-a36a-b611b2a12cc7",
@@ -11897,7 +11938,7 @@
             "124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11905,7 +11946,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11913,7 +11954,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2007,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "63ce0f3c-be0f-4dac-8bf3-ca388d33bd25",
@@ -12216,7 +12261,7 @@
             "125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12737,7 +12782,7 @@
             "126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13084,7 +13129,7 @@
             "127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13377,7 +13422,7 @@
             "128",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13723,7 +13768,7 @@
             "129",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],

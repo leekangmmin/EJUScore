@@ -6972,7 +6972,7 @@
             "試験",
             "問題"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6980,7 +6980,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -6988,11 +6988,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "87e98e4d-fcc8-4da1-abf9-c701e40a30ea",
-      "number": 1,
+      "number": null,
       "raw_text": "1 . 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題冊子を持ち帰ることはできません。",
       "text": "1 . 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題冊子を持ち帰ることはできません。",
       "answer_choices": [],
@@ -7337,7 +7341,7 @@
             "S~SY",
             "—113—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7345,7 +7349,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7353,7 +7357,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "a95eb331-24c7-4b55-97ff-090a056fbf6f",
@@ -7369,7 +7378,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -7379,11 +7388,15 @@
       ],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "a90e9d07-9c63-4b21-a083-77afd6c72ba9",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の文章を読み , 下の問い (1)ー(4) に答えなさい。 ロシア連邦 (Russian Federation) は , 世界最大の国土面積を有する連邦国家である。 ロシア連邦では , , 首相も存在するが , 権限のより大きな大統領を持つ制度が採用されて いる。また, , ロシア革命でロマノフ (Romanov) 王朝が倒された後に建国されたソビ エト連邦 (USSR) の継承国とされる。第二次世界大戦後 , ソ連とアメリカ (USA) は 冷戦状態にあったが , 1989 年 12 月に , La | のマルタ (Malta) BMT, ミハイル・ゴ ルバチョブフ (Mikhail Gorbachev) がジョージ H.W. ブッシュ (George H.W.Bush) と会 RL, 冷戦の終結が宣言された。現在のロシア連邦は , 市場経済移行後の経済発展や天然 ガスなどの豊富なエネルギー資源を背景に , 再び影響力を拡大している。 (1) 下線部 1 に関して。ロシア連邦のような制度を採用している国として正しいものを , 次の ①ー④ の中から一つ選びなさい。 1 | ① フランス (France) @ イギリス (UK) @ カナダ (Canada) @ オーストラリア (Australia) ー115 一",
       "text": "問 1 次の文章を読み , 下の問い (1)ー(4) に答えなさい。 ロシア連邦 (Russian Federation) は , 世界最大の国土面積を有する連邦国家である。 ロシア連邦では , , 首相も存在するが , 権限のより大きな大統領を持つ制度が採用されて いる。また, , ロシア革命でロマノフ (Romanov) 王朝が倒された後に建国されたソビ エト連邦 (USSR) の継承国とされる。第二次世界大戦後 , ソ連とアメリカ (USA) は 冷戦状態にあったが , 1989 年 12 月に , La | のマルタ (Malta) BMT, ミハイル・ゴ ルバチョブフ (Mikhail Gorbachev) がジョージ H.W. ブッシュ (George H.W.Bush) と会 RL, 冷戦の終結が宣言された。現在のロシア連邦は , 市場経済移行後の経済発展や天然 ガスなどの豊富なエネルギー資源を背景に , 再び影響力を拡大している。 (1) 下線部 1 に関して。ロシア連邦のような制度を採用している国として正しいものを , 次の",
       "answer_choices": [
@@ -7670,7 +7683,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7696,11 +7709,14 @@
         "냉전"
       ],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "3bd2e74b-bc46-49cc-a15a-ff4e2689a9f4",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (2) 下線部 2 に関して , ロシア革命に関する記述として最も適当なものを , KOO~O の中から一つ選びなさい。 [2 | ① 革命後に発布された 「 権利の章典 」 は , 王権を制限し , 議会政治の基礎を作った。 © 革命の基本原則とされる自由や平等 , 所有権の不可侵を明記した 「 人権宣言 」 を ③ レーニン (Lenin) を指導者とする。世界で初めての本格的な社会主義革命で ④ スターリン (Stalin) が提唱した民族独立・民権伸張・民生安定を掲げる革命で 採択した。 (3) 下線部 3 に関して , 冷戦中に起こった出来事を年代順に並べたものとして正しいも DE, 次の ①~④ の中から一つ選びなさい。 [3 | ① 朝鮮戦争の勤発ベルリン封鎖一キューバ危機 7908 ④ 朝鮮戦争の勃発つキューバ危機一ベルリン封鎖プラハの春 ③ ベルリン封鎖朝鮮戦争の勃発つキューバ危機 SIO ④ ベルリン封鎖 > プラハの春 > 朝鮮戦争の勃発つつキューバ危機 注 ) 朝鮮戦争 (Korean War), ベルリン封鎖 (Berlin Blockade), キューバ危機 (Cuban Missile Crisis), プラハの春 (Prague Spring) (4) 上の文章中の空材 [ a ] に当てはまる海域として正しいものを , 次の ① て ④ の中か ら一つ選びなさい。 [4 | ① 地中海 @ バルト海 ④ ヵリブ海 ー116 一",
       "text": "総合科目一2 (2) 下線部 2 に関して , ロシア革命に関する記述として最も適当なものを , KOO~O の中から一つ選びなさい。 [2 |",
       "answer_choices": [
@@ -8077,7 +8093,7 @@
             "ー116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8096,7 +8112,10 @@
       ],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "80b5d8b2-bf6b-4198-a488-85270e89fe68",
@@ -8336,7 +8355,7 @@
             "ー117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8344,7 +8363,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8352,11 +8371,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "62ed68a3-ae0b-4af6-bebd-e6b31c22b114",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一4 (2) 下線部 2 に関して , 今日のドイツは連邦制の国家である。ドイツの隣国も , 国内の 言語対立から 1993 年に連邦制へと移行した。この国として正しいものを。次の ①ー④ の中から一つ選びなさい。 [6 | ① フランス @ ベルギー(Belgium) @® ポーランド (Poland) @ デンマーク (Denmark) (3) 下線部 3 に関して。ドイツ連邦に関する記述として最も適当なものを , ROO~O の中から一つ選びなさい。 [7 © 神聖ローマ帝国の後継国家であり , 皇帝はハンガリー(Hungary) 国王を兼ね @ プロイセン (Prussia) 国王が , ドイツ連邦の皇帝を兼ねた。 @ 世界で初めて社会権を保障した窟法を持つ民主国家であった。 (〈④ ナポレオン戦争 (Napoleonic Wars) 後のウィーン会議 (Congress of Vienna) の結果 , 新たに組織された。 (4) 下線部 4 に関して , 欧州中央銀行に関する記述として最も適当なものを , KOO ー④ の中から一つ選びなさい。 ① 財政赤字に陥った EU (欧州連合 ) 域内の国に対して , 短期的な融資をおこなっ Q 欧州議会の勧告に基づき , EU 加盟各国の課税制度の調整をおこなっている。 @ 物価の安定を目的とし , ユーロ圏の金融政策を策定している。 ④ 経営危機に陥った EU 域内の金融機関に対して , 直接融資をおこなう義務を負っ ー118 一",
       "text": "総合科目一4 (2) 下線部 2 に関して , 今日のドイツは連邦制の国家である。ドイツの隣国も , 国内の 言語対立から 1993 年に連邦制へと移行した。この国として正しいものを。次の",
       "answer_choices": [
@@ -8740,7 +8763,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8748,7 +8771,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8756,7 +8779,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.75
     },
     {
       "id": "4138b284-1990-4d68-b397-4fbfca7f7b86",
@@ -9051,7 +9079,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9075,7 +9103,7 @@
     },
     {
       "id": "6e42a5e9-30e5-4011-8d07-d11b08093334",
-      "number": 5,
+      "number": null,
       "raw_text": "問 5 下の文章は , 次のグラフが示すような失業率と物価上昇率の負の関係を説明するも のである。文章中の空材 [| a |~Le ] に当てはまる語の組み合わせとして最も適当な DDE, 下の ① て ④ の中から一つ選びなさい。 [11| 物価上昇率 (%) 0 RI (%) 失業率の [ a lt, 労働力の不足を意味する。これは。供給面においては賃金の [ b ] か ら生産コストが高くなることを意味し。それにより物価上昇圧力となる。他方 , FRAC は所得のを通じて吉要が増大し , これが物価上昇圧力となる。 | [a |b |e | | | 上昇 | 低下 | > | | ⑨ | 低下 | 低下 | 増加 | L@ | 上昇 | 上昇 | te | ー120 一",
       "text": "問 5 下の文章は , 次のグラフが示すような失業率と物価上昇率の負の関係を説明するも のである。文章中の空材 [| a |~Le ] に当てはまる語の組み合わせとして最も適当な DDE, 下の",
       "answer_choices": [
@@ -9301,7 +9329,7 @@
             "ー120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9320,7 +9348,10 @@
       ],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "3958b92c-84af-429a-9b9f-fc2f9c1ad84a",
@@ -9619,7 +9650,7 @@
             "ー121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10138,7 +10169,7 @@
             "ー122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10398,7 +10429,7 @@
             "ー123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10616,7 +10647,7 @@
             "ー124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10636,7 +10667,7 @@
     },
     {
       "id": "dc683b90-93b9-474b-bc04-4f1d84477a6e",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一11 (Ta [-s [<73 |@ | フルタェー| 昌本 | 時画 | ララァシス |@ | 本 ZEEE ー125 一",
       "text": "総合科目一11 (Ta [-s [<73 |@ | フルタェー| 昌本 | 時画 | ララァシス |@ | 本 ZEEE ー125 一",
       "answer_choices": [],
@@ -10676,7 +10707,7 @@
             "ー125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10684,7 +10715,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10694,11 +10725,16 @@
       ],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ca183b89-1084-4a1e-867c-d46a7462ad0e",
-      "number": 1,
+      "number": null,
       "raw_text": "1 A | sosl il ss | 5 | so0| gsl so 5 | sl wl て誠 二宮書店編集部 『 データブックオブ・ザ・ワールド 2014 年版 』 二宮午店より作成 ー126 一",
       "text": "1 A | sosl il ss | 5 | so0| gsl so 5 | sl wl て誠 二宮書店編集部 『 データブックオブ・ザ・ワールド 2014 年版 』 二宮午店より作成 ー126 一",
       "answer_choices": [],
@@ -10897,7 +10933,7 @@
             "ー126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10905,7 +10941,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -10913,7 +10949,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "3e6aa32b-6b21-4583-811a-ffb4da394a6c",
@@ -11067,7 +11108,7 @@
             "ー127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11090,7 +11131,7 @@
     },
     {
       "id": "f88c778d-653b-4f81-9a34-91b5e489500f",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一14 間 15 次の地図は ,。ケッペン (Wladimir Peter Koppen) の気候区分に従って温帯に見ら れる四つの気候 (温暖夏雨気候温暖湿潤気候, 西岸海洋性気修 , 地中海性気候 ) の 範囲を大まかに示したものである。ただし , 日本の部分については気候区の着色がな されていない。これらの地図に関する下の問い 1)。 (2) に答えなさい。 —128—",
       "text": "総合科目一14 間 15 次の地図は ,。ケッペン (Wladimir Peter Koppen) の気候区分に従って温帯に見ら れる四つの気候 (温暖夏雨気候温暖湿潤気候, 西岸海洋性気修 , 地中海性気候 ) の 範囲を大まかに示したものである。ただし , 日本の部分については気候区の着色がな されていない。これらの地図に関する下の問い 1)。 (2) に答えなさい。 —128—",
       "answer_choices": [],
@@ -11260,7 +11301,7 @@
             "ー128",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11279,11 +11320,14 @@
       ],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "21395d55-cddd-438b-86aa-6bd50dc04f96",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一15 (1) 日本 (北海道を除く ) の気候は地図中の AD の中のどの気候区分に属するか。最 も適当なものを , 次の ① ひて ④ の中から一つ選びなさい。 [24] (2) HORA vied, HEIR AY TRIVIA Ye LOMEROE Oi る気候区分は地図中の AD のどれか。最も適当なものを , 次の ① て ④ の中からーつ 選びなさい。 |22| AIG 「 エジプトはナイルの賜物 (Egypt is the gift of the Nile) 」 と言われるが , ナイル 川流域にある国を , 次の ① て ④ の中から一つっ選びなさい。 [23| ① アルジェリア (Algeria) ⑧ エチオピア (Ethiopia) @ ザンビア (Zambia) ®@ ナイジェリア (Nigeria) ー129 一",
       "text": "総合科目一15 (1) 日本 (北海道を除く ) の気候は地図中の AD の中のどの気候区分に属するか。最 も適当なものを , 次の",
       "answer_choices": [
@@ -11491,7 +11535,7 @@
             "(Nigeria)",
             "—129—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11511,7 +11555,10 @@
       ],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "05a54623-62ab-4382-ad5b-3d62738ef4bd",
@@ -11733,7 +11780,7 @@
             "ー130",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11741,7 +11788,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11751,7 +11798,11 @@
       ],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "9cbeec44-e1af-480d-8e0f-b6c5746bb7c5",
@@ -12041,7 +12092,7 @@
             "ー131",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12049,7 +12100,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "politics",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -12063,7 +12114,11 @@
       ],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_recovered"
+      ],
+      "domain_confidence": 1
     },
     {
       "id": "8591d06f-5b61-4ebd-986d-33c782842e05",
@@ -12267,7 +12322,7 @@
             "ー132",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12562,7 +12617,7 @@
             "ー133",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12570,7 +12625,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -12578,7 +12633,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "df8f4009-629f-41f6-87c6-30773aa6a795",
@@ -12736,7 +12795,7 @@
             "ー134",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12759,7 +12818,7 @@
     },
     {
       "id": "60021df2-9ced-4c43-b822-5e795612467d",
-      "number": 2,
+      "number": null,
       "raw_text": "2 な rae te 矢 | Pipe より作成 @ 原子カ ④ 地熱・新エネルギー ー134 一",
       "text": "2 な rae te 矢 | Pipe より作成 @ 原子カ ④ 地熱・新エネルギー ー134 一",
       "answer_choices": [],
@@ -12779,7 +12838,10 @@
       "keywords": [],
       "concepts": [],
       "year": 2014,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "2244dc74-d012-4cdc-b778-d85a0fcffa19",
@@ -13198,7 +13260,7 @@
             "ー135",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13601,7 +13663,7 @@
             "ー136",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13922,7 +13984,7 @@
             "ー137",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],

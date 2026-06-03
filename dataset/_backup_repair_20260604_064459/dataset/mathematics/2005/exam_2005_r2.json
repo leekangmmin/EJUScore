@@ -1,0 +1,176 @@
+{
+  "id": "math_2005_r2",
+  "source_file": "2005平成17年第2回文数.pdf",
+  "subject": "mathematics",
+  "year": 2005,
+  "round": 2,
+  "total_pages": 13,
+  "ocr_confidence": 0.77,
+  "total_questions": 20,
+  "questions": [
+    {
+      "number": 1,
+      "section": "math_1",
+      "topic": "이차함수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 2,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "問2 次の文中の [ N ] [LR | について, 最も適するものを下の 0⑩ へ ⑨ のうちからーつ\nずつ選べ。 ただし q, ゎもは実数とする。\n(1) q22かつっ6>2はq+6>4 かつっaq6>さ4 であるための[ N | 。\n(2) 2=ぴはgq+6=0 であるための[ O | 。\n(3) laql+回=0は2+が=0 であるための[LP | 。\n(4) >る1はsq>0であるための",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 3,
+      "section": "math_a",
+      "topic": "확률",
+      "text_snippet": "問2 Aの袋には白球7個と赤球3個, B の袋には自球3個と赤球6個が入っている。A, Bの袋\nからそれぞれ 1 個ずつ球を取り出す。\n\n(1) Aから取り出した球が赤球で, B から取り出した球が白球である確率は しL」 である。\n\n(2) 過り出した2つの球が同じ色である確率は Lo可 である。\n\nIIに\n\n(3) 取り出した2 つの球の色が同じときの得点を 4, 異なるときの得点を -3 と",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 4,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "問 2 _ 右の図のように, 互いに交わる2 つの円の交点\nをA, B とする。 直線 AB 上に点P をとり, Pを\n通ってそれぞれの円と交わる上直線 PCD, PEF を\nひく。 次に2点C, E および2点 D, F をそれぞ\nれ結ぶ。\n\n(1) PCO=EF=2, PA=AB=3 のとき, PP=ェとすると,ぇは\n\nァ+ォし>-[MN =\nを満たす。これから z が求まる。したがって, 線",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 5,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 6,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 7,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 8,
+      "section": "math_a",
+      "topic": "경우의 수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 9,
+      "section": "math_1",
+      "topic": "이차함수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 10,
+      "section": "math_a",
+      "topic": "확률",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 11,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 12,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 13,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 14,
+      "section": "math_a",
+      "topic": "경우의 수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 15,
+      "section": "math_2",
+      "topic": "미분",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 16,
+      "section": "math_2",
+      "topic": "적분",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 17,
+      "section": "math_2",
+      "topic": "수열",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 18,
+      "section": "math_b",
+      "topic": "벡터",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 19,
+      "section": "math_2",
+      "topic": "지수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 20,
+      "section": "math_2",
+      "topic": "로그",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    }
+  ],
+  "metadata": {
+    "processed_at": "2026-06-02T07:01:32.453242",
+    "confidence_average": 0.77
+  }
+}

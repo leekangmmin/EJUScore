@@ -1,0 +1,176 @@
+{
+  "id": "math_2007_r2",
+  "source_file": "2007平成19年第2回文数.pdf",
+  "subject": "mathematics",
+  "year": 2007,
+  "round": 2,
+  "total_pages": 13,
+  "ocr_confidence": 0.76,
+  "total_questions": 20,
+  "questions": [
+    {
+      "number": 1,
+      "section": "math_1",
+      "topic": "이차함수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 2,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "問2 gi&ょを実数とする。次の不等式を考える。\n\n放上がる21をー38 me の\n\n(1) qa=6=0 のとき, ① が成り立つようなょの値の範囲は\nロロisビロコ\nである。\n\n(2) ょ> 0 とする。g=か=0 であることが, ① が成り立つための必要十分条件となるのは\n\nょ= K のときでぁる。\n\n(3) qa=5=0 であることが, ① が成り立つための十分条件であって必要条件ではない",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 3,
+      "section": "math_a",
+      "topic": "확률",
+      "text_snippet": "問2 0.,1.3.5,7 の中の異なる 3 つの数字を使って 3 移の整数をっつくる。このとき, 3 桁の整数は\n全部で[ JK | 個できる。そのうち, 依数は [LM | 個ある。ただし, 013 などは3 桁の整数\nでない。\n\nいま, これら [ JK |] 個の整数をそれぞれ1 つずつカードに記入して, 箱の中に入れる。\nよくかき混ぜて, 箱の中から1枚のカードを取り出す。\n\n(1) 取",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 4,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "問2 3辺の長さが\nAB=5, BC=12, CA=13\n\nである直角三角形 ABC の内接円の中心を1 とする。\n\nG) ZAIC = [LKLM]\" である。また, 内接円1の半径は [ _N | でぁる。\n\n(2) BI の延長線と, 辺 AC との交点を D とすると\nApipc=Lo]:[Pa」, gumimp=[Rs]:[Tu]\nである。ただし, 比は最も人簡単な整数の比で表しなさい。",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 5,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 6,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 7,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 8,
+      "section": "math_a",
+      "topic": "경우의 수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 9,
+      "section": "math_1",
+      "topic": "이차함수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 10,
+      "section": "math_a",
+      "topic": "확률",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 11,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 12,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 13,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 14,
+      "section": "math_a",
+      "topic": "경우의 수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 15,
+      "section": "math_2",
+      "topic": "미분",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 16,
+      "section": "math_2",
+      "topic": "적분",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 17,
+      "section": "math_2",
+      "topic": "수열",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 18,
+      "section": "math_b",
+      "topic": "벡터",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 19,
+      "section": "math_2",
+      "topic": "지수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 20,
+      "section": "math_2",
+      "topic": "로그",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    }
+  ],
+  "metadata": {
+    "processed_at": "2026-06-02T07:01:32.454418",
+    "confidence_average": 0.76
+  }
+}

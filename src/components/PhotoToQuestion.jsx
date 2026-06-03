@@ -28,6 +28,7 @@ import {
   HelpCircle, BookOpen, Image, Brain,
   ChevronRight, BarChart2, Zap, FileText, Trash2,
 } from 'lucide-react';
+import useIsMobile from '../hooks/useIsMobile';
 
 const CARD = {
   background: 'var(--bg2)',
@@ -1229,6 +1230,7 @@ async function processOneFile(file, onProgress) {
    SECTION 7  메인 컴포넌트
 ══════════════════════════════════════════════════════════════ */
 export default function PhotoToQuestion({ onSaved }) {
+  const isMobile = useIsMobile();  // ≤768px → render MobilePhotoToQuestion (desktop untouched)
   const [photo, setPhoto]             = useState(null);         // { file, dataUrl }
   const [isProcessing, setIsProcessing] = useState(false);
   const [ocrPhase, setOcrPhase]       = useState('');           // preprocessing|ocr|parsing
@@ -1594,6 +1596,23 @@ export default function PhotoToQuestion({ onSaved }) {
   /* ══════════════════════════════════════════════
      RENDER
   ══════════════════════════════════════════════ */
+  // Mobile (≤768px): dedicated single-column view, ≥44px touch targets.
+  // Desktop JSX below is unchanged; mobile reuses the SAME state/handlers/sub-components.
+  if (isMobile) {
+    return (
+      <MobilePhotoToQuestion ctx={{
+        photo, isProcessing, ocrPhase, progress, ocrConfidence, parsed,
+        editing, setEditing, editForm, setEditForm, mode,
+        savedQuestions, batchActive, batchQueue, batchCurrent,
+        aiStreamText, aiLoading, aiLoadProgress, aiError,
+        fileInputRef, cameraInputRef,
+        resetAll, handleFiles, handleFile, handleDragOver, handleDragLeave, handleDrop,
+        handleSaveEdit, handleSaveAsWrong, handleDeleteAllSaved, startAIAnalysis,
+        ocrPhaseLabel, confColor, isDragging,
+      }} />
+    );
+  }
+
   return (
     <div style={{ maxWidth: 720, margin: '0 auto' }}>
 
@@ -2059,3 +2078,335 @@ const inputStyle = {
   padding: '8px 10px', color: 'var(--t0)', fontSize: 13,
   fontFamily: 'inherit', width: '100%', outline: 'none',
 };
+
+/* ══════════════════════════════════════════════════════════════
+   MOBILE (≤768px) — dedicated single-column view.
+   Reuses the SAME state/handlers (via ctx) and the SAME module-scope
+   sub-components (ScanLoader, MultiQuestionView, ImagePreview,
+   OptionBlock, ConceptAnalysisPanel). Differences vs desktop:
+     • full-bleed width (no maxWidth:720 cap)
+     • every button ≥44px touch target, primary actions full-width
+     • subject chips ≥44px, larger tap spacing
+   No desktop JSX is shared/mutated — desktop path returns before this.
+══════════════════════════════════════════════════════════════ */
+const M_CARD = { ...CARD, padding: 16, borderRadius: 14, marginBottom: 12 };
+// ≥44px touch targets
+const mBtnPrimary = {
+  background: 'linear-gradient(135deg, var(--blue), var(--purple))',
+  color: '#fff', border: 'none', borderRadius: 12, padding: '13px 18px',
+  fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit',
+  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7,
+  minHeight: 44, width: '100%',
+};
+const mBtnSecondary = {
+  background: 'transparent', color: 'var(--t2)', border: '1px solid var(--bd1)',
+  borderRadius: 12, padding: '13px 16px', fontSize: 14, fontWeight: 600,
+  cursor: 'pointer', fontFamily: 'inherit', display: 'flex', alignItems: 'center',
+  justifyContent: 'center', gap: 6, minHeight: 44, width: '100%',
+};
+
+function MobilePhotoToQuestion({ ctx }) {
+  const {
+    photo, isProcessing, ocrPhase, progress, ocrConfidence, parsed,
+    editing, setEditing, editForm, setEditForm, mode,
+    savedQuestions, batchActive, batchQueue, batchCurrent,
+    aiStreamText, aiLoading, aiLoadProgress, aiError,
+    fileInputRef, cameraInputRef,
+    resetAll, handleFiles, handleFile, handleDragOver, handleDragLeave, handleDrop,
+    handleSaveEdit, handleSaveAsWrong, handleDeleteAllSaved, startAIAnalysis,
+    ocrPhaseLabel, confColor, isDragging,
+  } = ctx;
+
+  const mDropzone = {
+    border: `2px dashed ${isDragging ? '#3182F6' : 'var(--bd1)'}`,
+    borderRadius: 14, padding: '32px 16px', textAlign: 'center', cursor: 'pointer',
+    background: isDragging ? 'rgba(49,130,246,0.05)' : 'var(--bg2)', transition: 'all 0.2s',
+    marginBottom: 12,
+  };
+
+  return (
+    <div style={{ width: '100%' }}>
+      {/* ── 헤더 ── */}
+      <div style={{ ...M_CARD, padding: 16 }}>
+        <div style={{ fontSize: 17, fontWeight: 700, color: 'var(--t0)', marginBottom: 4 }}>
+          <Camera size={19} style={{ verticalAlign: 'middle', marginRight: 8, color: 'var(--blue)' }} />
+          사진 → 문제 변환
+        </div>
+        <div style={{ fontSize: 12, color: 'var(--t2)', lineHeight: 1.5 }}>
+          사진/PDF → 정밀 전처리 → tessdata_best OCR → 유형 분류 + 선택지별 AI 해설
+        </div>
+      </div>
+
+      {/* ── OCR 진행 상태 ── */}
+      {isProcessing && <ScanLoader phase={ocrPhase} label={ocrPhaseLabel} progress={progress} />}
+
+      {/* ══ 대량 업로드 진행/결과 ══ */}
+      {mode === 'batch' && (
+        <div style={M_CARD}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+            <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)' }}>
+              <FileText size={16} style={{ verticalAlign: 'middle', marginRight: 6, color: 'var(--blue)' }} />
+              대량 업로드 {batchActive ? '처리 중' : '완료'}
+            </div>
+            <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--blue)' }}>
+              {batchQueue.filter(b => b.status === 'done' || b.status === 'error').length} / {batchQueue.length}
+            </span>
+          </div>
+          <div style={{ height: 6, background: 'rgba(0,27,55,0.045)', borderRadius: 3, overflow: 'hidden', marginBottom: 4 }}>
+            <div style={{
+              width: `${batchQueue.length ? Math.round((batchQueue.filter(b => b.status === 'done' || b.status === 'error').length + (batchActive ? progress / 100 : 0)) / batchQueue.length * 100) : 0}%`,
+              height: '100%', background: 'linear-gradient(90deg, var(--blue), var(--purple))',
+              borderRadius: 3, transition: 'width 0.3s',
+            }} />
+          </div>
+          {batchActive && (
+            <>
+              <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 6, marginBottom: 2 }}>
+                현재: {batchQueue[batchCurrent]?.name}
+              </div>
+              <ScanLoader embedded
+                phase={progress < 20 ? 'preprocessing' : progress < 88 ? 'ocr' : 'parsing'}
+                label={progress < 20 ? 'PDF 페이지 래스터화 · 전처리 중' : progress < 88 ? '정밀 OCR 인식 중 (tessdata_best)' : '문제 구조 분할 중'}
+                progress={progress} />
+            </>
+          )}
+          <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 6, maxHeight: 320, overflow: 'auto' }}>
+            {batchQueue.map((b, i) => {
+              const subj = b.subject ? (SUBJECT_MAP[b.subject] || SUBJECT_MAP.unknown) : null;
+              const statusMeta = {
+                pending: { c: 'var(--t3)', t: '대기' }, processing: { c: 'var(--blue)', t: '인식 중…' },
+                done: { c: 'var(--green)', t: '완료' }, error: { c: 'var(--red)', t: '실패' },
+              }[b.status];
+              return (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '11px 12px', background: 'var(--bg1)', borderRadius: 10, border: '1px solid var(--bd0)' }}>
+                  {b.isPdf ? <FileText size={16} color="var(--blue)" style={{ flexShrink: 0 }} /> : <Image size={16} color="var(--t3)" style={{ flexShrink: 0 }} />}
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: 12.5, color: 'var(--t0)', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{b.name}</div>
+                    {b.status === 'done' && subj && (
+                      <div style={{ fontSize: 10.5, color: 'var(--t3)', marginTop: 2 }}>
+                        <span style={{ color: subj.color, fontWeight: 600 }}>{subj.icon} {subj.name}</span>
+                        {b.conf != null && <> · 신뢰도 {b.conf}%</>}
+                      </div>
+                    )}
+                    {b.status === 'error' && (
+                      <div style={{ fontSize: 10.5, color: 'var(--red)', marginTop: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{b.error}</div>
+                    )}
+                  </div>
+                  <span style={{ fontSize: 11, fontWeight: 600, color: statusMeta.c, flexShrink: 0 }}>
+                    {b.status === 'processing' ? <ScanLine size={13} style={{ verticalAlign: 'middle', animation: 'spin 1.5s linear infinite' }} /> : statusMeta.t}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+          {!batchActive && (
+            <div style={{ marginTop: 14 }}>
+              <button onClick={resetAll} style={mBtnPrimary}><Upload size={15} /> 더 업로드하기</button>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* ══ 업로드 영역 ══ */}
+      {mode === 'upload' && !isProcessing && (
+        <>
+          <div style={mDropzone} onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}
+            onClick={() => fileInputRef.current?.click()}>
+            <Upload size={34} color="var(--t2)" style={{ marginBottom: 12 }} />
+            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--t0)', marginBottom: 6 }}>탭하여 이미지·PDF 업로드</div>
+            <div style={{ fontSize: 11, color: 'var(--t3)', marginBottom: 14, lineHeight: 1.5 }}>JPG · PNG · WebP · PDF · 여러 PDF 한 번에 선택 가능</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              <button onClick={e => { e.stopPropagation(); cameraInputRef.current?.click(); }} style={mBtnSecondary}><Camera size={15} /> 카메라 촬영</button>
+              <button onClick={e => { e.stopPropagation(); fileInputRef.current?.click(); }} style={mBtnPrimary}><FileImage size={15} /> 파일 / PDF 선택 (다중)</button>
+            </div>
+          </div>
+
+          <input ref={fileInputRef} type="file" multiple accept="image/*,application/pdf,.pdf" style={{ display: 'none' }}
+            onChange={e => { if (e.target.files?.length) handleFiles(e.target.files); e.target.value = ''; }} />
+          <input ref={cameraInputRef} type="file" accept="image/*" capture="environment" style={{ display: 'none' }}
+            onChange={e => { if (e.target.files[0]) handleFile(e.target.files[0]); e.target.value = ''; }} />
+
+          {/* OCR 파이프라인 */}
+          <div style={{ ...M_CARD, padding: 14, background: 'rgba(0,27,55,0.045)' }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--t2)', marginBottom: 8 }}>
+              <BarChart2 size={12} style={{ verticalAlign: 'middle', marginRight: 4 }} /> OCR 처리 파이프라인
+            </div>
+            <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap', alignItems: 'center' }}>
+              {['해상도정규화', '디노이즈', '기울기보정', 'Sauvola 이진화', 'best 다중PSM OCR', 'AI 유형·해설'].map((step, i) => (
+                <span key={i} style={{ fontSize: 10.5, padding: '4px 9px', borderRadius: 5, background: 'var(--bg2)', border: '1px solid var(--bd0)', color: 'var(--t2)' }}>{step}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* 저장된 문제 목록 */}
+          {savedQuestions.length > 0 && (
+            <div style={M_CARD}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10, gap: 8 }}>
+                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--t0)' }}>
+                  <BookOpen size={14} style={{ verticalAlign: 'middle', marginRight: 6, color: '#f59e0b' }} /> 최근 변환 문제 ({savedQuestions.length}개)
+                </div>
+                <button onClick={handleDeleteAllSaved} style={{
+                  background: 'transparent', border: '1px solid var(--bd1)', color: 'var(--red)', borderRadius: 10,
+                  padding: '10px 12px', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit',
+                  display: 'flex', alignItems: 'center', gap: 4, minHeight: 44, flexShrink: 0,
+                }}><Trash2 size={13} /> 전체 삭제</button>
+              </div>
+              {savedQuestions.slice(0, 5).map((q) => {
+                const subj = SUBJECT_MAP[q.parsed?.subjectType] || SUBJECT_MAP.unknown;
+                return (
+                  <div key={q.id} style={{ display: 'flex', gap: 10, padding: '11px 12px', background: 'rgba(0,27,55,0.045)', borderRadius: 10, marginBottom: 6, border: '1px solid rgba(0,27,55,0.045)' }}>
+                    {q.photoDataUrl ? <img src={q.photoDataUrl} alt="thumb" style={{ width: 44, height: 44, borderRadius: 6, objectFit: 'cover', flexShrink: 0 }} /> : <Image size={20} color="var(--t3)" style={{ margin: 12 }} />}
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontSize: 12.5, color: 'var(--t0)', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{q.parsed?.questionText?.slice(0, 60)}...</div>
+                      <div style={{ display: 'flex', gap: 8, marginTop: 4, flexWrap: 'wrap' }}>
+                        <span style={{ fontSize: 10.5, color: subj.color, fontWeight: 600 }}>{subj.icon} {subj.name}</span>
+                        <span style={{ fontSize: 10.5, color: 'var(--t3)' }}>{q.date}</span>
+                        {q.parsed?.numQuestions >= 3 && <span style={{ fontSize: 10.5, color: 'var(--blue)', fontWeight: 600 }}>📝 {q.parsed.numQuestions}문제</span>}
+                        {q.aiAnalysis && <span style={{ fontSize: 10.5, color: '#8b5cf6', fontWeight: 600 }}><Sparkles size={9} style={{ verticalAlign: 'middle', marginRight: 2 }} />AI 분석</span>}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </>
+      )}
+
+      {/* ══ 결과 화면 ══ */}
+      {mode === 'result' && parsed && !isProcessing && (
+        <>
+          {/* 원본 이미지 / PDF */}
+          <div style={{ ...M_CARD, padding: 14 }}>
+            <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--t2)', marginBottom: 8 }}>
+              {photo?.isPdf ? <><FileText size={13} style={{ verticalAlign: 'middle', marginRight: 4 }} /> 원본 PDF</> : <><Image size={13} style={{ verticalAlign: 'middle', marginRight: 4 }} /> 원본 이미지</>}
+            </div>
+            {photo?.isPdf ? (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px', background: 'rgba(49,130,246,0.06)', border: '1px solid rgba(49,130,246,0.18)', borderRadius: 12 }}>
+                <FileText size={28} color="var(--blue)" />
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--t0)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{photo.name}</div>
+                  <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 2 }}>{parsed.pdfMeta?.numPages ?? '?'}페이지 · {parsed.pdfMeta?.ocrUsed ? '스캔본 OCR' : '디지털 텍스트층 추출'}</div>
+                </div>
+                <button onClick={resetAll} style={{ background: 'transparent', border: '1px solid var(--bd1)', color: 'var(--t2)', borderRadius: 10, padding: '11px 14px', fontSize: 12, cursor: 'pointer', fontFamily: 'inherit', minHeight: 44, flexShrink: 0 }}>다시</button>
+              </div>
+            ) : (photo?.dataUrl && <ImagePreview src={photo.dataUrl} onRemove={resetAll} />)}
+          </div>
+
+          {/* OCR 신뢰도 배너 */}
+          {ocrConfidence !== null && (
+            <div style={{ ...M_CARD, padding: '12px 14px', background: `${confColor}0d`, border: `1px solid ${confColor}30` }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                <BarChart2 size={13} color={confColor} />
+                <span style={{ fontSize: 12.5, fontWeight: 700, color: confColor }}>OCR 신뢰도 {ocrConfidence}%</span>
+                <span style={{ fontSize: 11.5, color: 'var(--t2)', width: '100%' }}>
+                  {ocrConfidence >= 70 ? '✓ 고정밀 — 변환 결과를 신뢰할 수 있습니다' : ocrConfidence >= 40 ? '△ 보통 — 수정 모드로 검토를 권장합니다' : '✗ 저정밀 — 수동 입력 권장 (사진 화질 개선 후 재시도)'}
+                </span>
+              </div>
+            </div>
+          )}
+
+          {/* 파싱된 문제 */}
+          <div style={M_CARD}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, gap: 8 }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t0)' }}>
+                <ScanLine size={16} style={{ verticalAlign: 'middle', marginRight: 6, color: 'var(--blue)' }} /> 변환된 문제
+              </div>
+              <button onClick={() => setEditing(!editing)} style={{ background: 'transparent', color: 'var(--t2)', border: '1px solid var(--bd1)', borderRadius: 10, padding: '10px 14px', fontSize: 12.5, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: 5, minHeight: 44, flexShrink: 0 }}>
+                <Edit3 size={13} /> {editing ? '완료' : '수정'}
+              </button>
+            </div>
+
+            {/* 과목 태그 */}
+            <div style={{ marginBottom: 10 }}>
+              {(() => {
+                const subj = SUBJECT_MAP[editForm?.subjectType || parsed.subjectType] || SUBJECT_MAP.unknown;
+                return <span style={{ fontSize: 11, fontWeight: 600, color: subj.color, background: `${subj.color}18`, padding: '4px 11px', borderRadius: 6 }}>{subj.icon} {subj.name}</span>;
+              })()}
+            </div>
+
+            {editing && editForm ? (
+              <div>
+                <div style={{ marginBottom: 12 }}>
+                  <div style={{ fontSize: 11.5, color: 'var(--t2)', marginBottom: 4 }}>문제 번호</div>
+                  <input value={editForm.questionNumber} onChange={e => setEditForm({ ...editForm, questionNumber: e.target.value })} style={{ ...inputStyle, padding: '11px 12px', fontSize: 14 }} placeholder="예: 15" />
+                </div>
+                <div style={{ marginBottom: 12 }}>
+                  <div style={{ fontSize: 11.5, color: 'var(--t2)', marginBottom: 4 }}>문제 본문</div>
+                  <textarea value={editForm.questionText} onChange={e => setEditForm({ ...editForm, questionText: e.target.value })} style={{ ...inputStyle, padding: '11px 12px', fontSize: 14, minHeight: 96, resize: 'vertical' }} />
+                </div>
+                <div style={{ marginBottom: 12 }}>
+                  <div style={{ fontSize: 11.5, color: 'var(--t2)', marginBottom: 4 }}>선택지</div>
+                  {editForm.options.map((opt, i) => (
+                    <div key={i} style={{ display: 'flex', gap: 6, marginBottom: 6 }}>
+                      <span style={{ width: 36, minHeight: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 700, background: 'rgba(49,130,246,0.1)', borderRadius: 8, color: '#1B64DA', flexShrink: 0 }}>{opt.label}</span>
+                      <input value={opt.content} onChange={e => { const n = [...editForm.options]; n[i] = { ...n[i], content: e.target.value }; setEditForm({ ...editForm, options: n }); }} style={{ ...inputStyle, padding: '11px 12px', fontSize: 14, flex: 1 }} />
+                    </div>
+                  ))}
+                </div>
+                <div style={{ marginBottom: 12 }}>
+                  <div style={{ fontSize: 11.5, color: 'var(--t2)', marginBottom: 4 }}>정답</div>
+                  <input value={editForm.answerKey} onChange={e => setEditForm({ ...editForm, answerKey: e.target.value })} style={{ ...inputStyle, padding: '11px 12px', fontSize: 14 }} placeholder="예: ① 또는 1" />
+                </div>
+                <div style={{ marginBottom: 12 }}>
+                  <div style={{ fontSize: 11.5, color: 'var(--t2)', marginBottom: 6 }}>과목 수정</div>
+                  <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                    {Object.entries(SUBJECT_MAP).map(([key, val]) => (
+                      <button key={key} onClick={() => setEditForm({ ...editForm, subjectType: key })} style={{
+                        background: editForm.subjectType === key ? `${val.color}22` : 'transparent',
+                        color: editForm.subjectType === key ? val.color : 'var(--t2)',
+                        border: `1px solid ${editForm.subjectType === key ? val.color : 'var(--bd1)'}`,
+                        borderRadius: 10, padding: '11px 14px', fontSize: 12.5, cursor: 'pointer', fontFamily: 'inherit', minHeight: 44,
+                      }}>{val.icon} {val.name}</button>
+                    ))}
+                  </div>
+                </div>
+                <div style={{ marginBottom: 14 }}>
+                  <div style={{ fontSize: 11.5, color: 'var(--t2)', marginBottom: 4 }}>메모 (선택)</div>
+                  <input value={editForm.memo} onChange={e => setEditForm({ ...editForm, memo: e.target.value })} style={{ ...inputStyle, padding: '11px 12px', fontSize: 14 }} placeholder="이 문제에서 틀린 이유를 기록하세요" />
+                </div>
+                <button onClick={handleSaveEdit} style={mBtnPrimary}><Check size={15} /> 수정 완료</button>
+              </div>
+            ) : parsed.questions?.length >= 3 ? (
+              <MultiQuestionView questions={parsed.questions} parsed={parsed} />
+            ) : (
+              <div>
+                {parsed.questionNumber && (
+                  <div style={{ fontSize: 12, color: 'var(--t2)', marginBottom: 6 }}>
+                    <HelpCircle size={12} style={{ verticalAlign: 'middle', marginRight: 4 }} /> 문제 #{parsed.questionNumber}
+                  </div>
+                )}
+                <div style={{ fontSize: 14.5, color: 'var(--t0)', lineHeight: 1.7, padding: '12px 14px', background: 'rgba(0,27,55,0.045)', borderRadius: 10, marginBottom: 10 }}>{parsed.questionText}</div>
+                {parsed.options.length >= 2 && <div style={{ marginBottom: 10 }}>{parsed.options.map((opt, i) => <OptionBlock key={i} opt={opt} />)}</div>}
+                {parsed.answerKey && (
+                  <div style={{ padding: '10px 12px', background: 'rgba(16,185,129,0.08)', borderRadius: 8, fontSize: 12.5, color: '#10b981', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <Check size={14} /> 정답: {parsed.answerKey}
+                  </div>
+                )}
+                <div style={{ fontSize: 10.5, color: 'var(--t3)', marginTop: 8 }}>
+                  OCR 신뢰도 {parsed.confidence}% · 원문 {parsed.rawLength}자{parsed.options.length < 2 && ' · 선택지 미검출 — 수정 모드로 직접 입력 가능'}
+                </div>
+              </div>
+            )}
+
+            {!editing && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 14 }}>
+                <button onClick={handleSaveAsWrong} style={mBtnPrimary}><Save size={15} /> 틀린 문제로 저장</button>
+                <button onClick={resetAll} style={mBtnSecondary}><RefreshCw size={14} /> 새로 찍기</button>
+              </div>
+            )}
+          </div>
+
+          {/* AI 개념 분석 패널 */}
+          <ConceptAnalysisPanel streamText={aiStreamText} loading={aiLoading} loadProgress={aiLoadProgress} error={aiError} onStart={startAIAnalysis} hasParsed={!!parsed} />
+
+          {/* OCR 원문 */}
+          <details style={{ ...M_CARD, padding: 14 }}>
+            <summary style={{ fontSize: 12.5, fontWeight: 600, color: 'var(--t2)', cursor: 'pointer', minHeight: 24, padding: '6px 0' }}>OCR 원문 보기</summary>
+            <div style={{ fontSize: 11, color: 'var(--t3)', lineHeight: 1.6, marginTop: 10, whiteSpace: 'pre-wrap', fontFamily: 'monospace', padding: 10, background: 'rgba(0,0,0,0.2)', borderRadius: 8, maxHeight: 200, overflowY: 'auto' }}>{parsed.rawText || '원문 없음'}</div>
+          </details>
+        </>
+      )}
+    </div>
+  );
+}

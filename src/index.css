@@ -525,6 +525,15 @@ img, canvas, svg, iframe, video {
   .page-body { padding: 24px 28px; }
 }
 
+/* ── Mobile safety layer (≤768px) — non-structural only ──
+   Per project rule: NO global grid overrides, NO forced 1-column.
+   Per-screen layout is handled by dedicated Mobile* components.
+   Only stray-width containment + responsive media remain here.   */
+@media (max-width: 768px) {
+  .page-body { overflow-x: hidden; }
+  .page-body img { max-width: 100%; height: auto; }
+}
+
 /* ── Extra small (≤430px) ─────────────────────── */
 @media (max-width: 430px) {
   .page-body { padding: 12px 12px 100px; }

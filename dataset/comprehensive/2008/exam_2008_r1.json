@@ -7241,7 +7241,7 @@
             "1",
             "回)"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7249,7 +7249,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7257,11 +7257,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "e065ca20-62a3-4973-8b52-5a35c536860e",
-      "number": 1,
+      "number": null,
       "raw_text": "(80 分 ) i 1 . 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題冊子を持ち帰ることはできません。 i 4, 問題冊子には , メモや計算などを書いてもいいです。 \\ es es ee a a maa ー111 一",
       "text": "(80 分 ) i 1 . 係員の許可なしに , 部屋の外に出ることはできません。 i 2, この問題冊子を持ち帰ることはできません。 i 4, 問題冊子には , メモや計算などを書いてもいいです。 \\ es es ee a a maa ー111 一",
       "answer_choices": [],
@@ -7586,7 +7590,7 @@
             "111",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7594,7 +7598,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -7602,11 +7606,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "40423a7b-1ade-4d71-99af-f32eb0862967",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の文章を読み。下の問い (1)ー(4) に答えなさい。 1 アメリカ (USA) では , 政治の中心はワシントン (Washington, D.C.) にあり , ホ ワイトハウスや連邦議会議事堂がある。それに対して , 経済の中心はニューヨーク (New York) 市にあり , ウォール街に , ニューヨーク証券取引所がある。ワシントンは , 3 首都機能をもつ都市として設計された。ニューヨーク市については , 4 入植者がウォー ル街のあるマンハッタン (Manhattan) 島を先住民から購入したことが知られている。 (1) 下線部 1 に関して , アメリカ政治の特徴として最も適当なものを , 次の ①ー④ の中 から一つ選びなさい。 [1 | ① 上下両院のそれぞれ 3 分の 2 以上の賛成で大統領不信任案を可決できる。 @ 大統領は , 連邦議会議員による間接選挙によって選出される。 @ 権力分立が徹底きれているので , 議員が開僚を兼任することはできない。 ④ 上院議員は大統領によって任命されていたが , 近年の改革の結果 , 選挙によって 選出されるようになった。 (2) 下線部 2 に関して , ニューヨーク証券取引所の取引開始時刻は午前 9 時 30 分である。 アメリカがサマータイムで時刻を 1 時間早めている場合 , この時刻は日本では午後 10 時 30 分にあたる。日本の標準時が東経 135 度を基準にしていることから判断して , = ューヨークの経度に最も近い値を , 次の ①~④ の中から一つ選びなさい。 12 」 ① 東経 120 度 @ 西経 75 度 @ 西経 105 度 ④ 西経 120 度 ー113 一",
       "text": "問 3 首都機能をもつ都市として設計された。ニューヨーク市については , 4 入植者がウォー ル街のあるマンハッタン (Manhattan) 島を先住民から購入したことが知られている。 (1) 下線部 1 に関して , アメリカ政治の特徴として最も適当なものを , 次の",
       "answer_choices": [
@@ -8057,7 +8066,7 @@
             "113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8073,11 +8082,14 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "c6a9f939-7b20-4c59-8057-8ce40b2fccee",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (3) 下線部 3 に関して , 首都ワシシントンの最初の設計に携わったのは , 当時アメリカの 独立を支援し。アメリカ建国 100 年に友好のしるしとして自由の女神像を贈っている 国の出身者である。この人物の出身国として正しいものを , 次の ①ー④ の中から一つ 選びなさい。 [3] ① イギリス (UK) @ フランス (France) @® ドイツ (Germany) ④ イタリア (Italy) (4) 下線部 4 に関して , この地はニューヨークと呼ばれる前は , 最初に入植した人たち からニューアムステルダム (New Amsterdam) と呼ばれていた。最初に入植したの はどこの国の人たちであったか。最も適当な国名を , 次の ①~ー④ の中から一つ選びな きい。 (4 ① アイルランド (Ireland) @ スペイン (Spain) ③ ベルギー(Belgium) ®@ オランダ (the Netherlands) ー114 一",
       "text": "総合科目一2 (3) 下線部 3 に関して , 首都ワシシントンの最初の設計に携わったのは , 当時アメリカの 独立を支援し。アメリカ建国 100 年に友好のしるしとして自由の女神像を贈っている 国の出身者である。この人物の出身国として正しいものを , 次の",
       "answer_choices": [
@@ -8317,7 +8329,7 @@
             "114",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8335,7 +8347,10 @@
       ],
       "concepts": [],
       "year": 2008,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "027ccb02-62a5-4def-a726-4c78d1fd16de",
@@ -8703,7 +8718,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8726,7 +8741,7 @@
     },
     {
       "id": "39a29ac9-3f24-46ad-bc81-f0872d8d5480",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一4 (3) 下線部 3 に関して , 学生としてボン大学に学び , 後に 『 資本論 (The Capital)』 を 著した人物を , 次の ①~ て ④ の中から一つ選びなさい。 [7] ① マルティン・ハイデガー(Martin Heidegger) @ ハインリッヒ・ハイネ (Heinrich Heine) @ カール・マルクス (Karl Marx) (〈④ フリードリッヒ・ニーチェ (Friedrich Nietzsche) (4) 下線部 4 に関して。シュンペーターは , 「 新結合 」 によって経済発展が可能になる とした。そのための資金は , 銀行の貸出による通貨供給量の増加によって生み出され ることになる。銀行のこの機能の名称として最も適当なものを , 次の ①ー④ の中から ーつ選びなさい。 8 ① 信用創造 @ Ayes AE @ 売りオペレーション ④ 直接金融 ー116 一",
       "text": "総合科目一4 (3) 下線部 3 に関して , 学生としてボン大学に学び , 後に 『 資本論 (The Capital)』 を 著した人物を , 次の",
       "answer_choices": [
@@ -8954,7 +8969,7 @@
             "ー116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8962,7 +8977,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8970,7 +8985,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "3b5e6db7-b487-48f5-8fe0-bfcd295aae84",
@@ -9260,7 +9280,7 @@
             "117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9268,7 +9288,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -9276,11 +9296,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "0a81366f-cc1b-4bea-bbe0-c0928e56a92b",
-      "number": 1,
+      "number": null,
       "raw_text": "1 ドル =200 円から 1 ドル =100 円になると , ドルに対する円の価値が [ a | ことになる から , Alb | なってドルが [ c ] なったことを意味する。日本製品の価格競争を考えた A, Ld | は, 円が安くなると有利になり , 高くなると不利になる。 a b C d ① | 上がる | 高く | 安く | 輸出 ⑧| 下がる | 安く | 高く | 輸出 @| 上がる | 安く | 高く | 輸入 @| 下がる | 高く | 安く | 輸入 問 4 次の A と B の政策をそれぞれ主張した人物の組み合わせとして最も適当なものを。 下の ①~④ の中から一つ選びなさい。 10| A : 政府による市場介入 B : 小さな政府と自由放任主義 L A B ] @ | スミス (Adam Smith) サミュエルソン (Paul Samuelson) ① | リヵード (David Ricardo) | マルサス (Thomas Malthus) | ® | J.S. ミル (John Stuart Mill) リスト (Friedrich List) @ | ケインズ (John Maynard Keynes) | フリードマン (Milton Friedman) ー117 一",
       "text": "1 ドル =200 円から 1 ドル =100 円になると , ドルに対する円の価値が [ a | ことになる から , Alb | なってドルが [ c ] なったことを意味する。日本製品の価格競争を考えた A, Ld | は, 円が安くなると有利になり , 高くなると不利になる。 a b C d ① | 上がる | 高く | 安く | 輸出 ⑧| 下がる | 安く | 高く | 輸出 @| 上がる | 安く | 高く | 輸入 @| 下がる | 高く | 安く | 輸入 問 4 次の A と B の政策をそれぞれ主張した人物の組み合わせとして最も適当なものを。 下の",
       "answer_choices": [],
@@ -9302,7 +9326,10 @@
       ],
       "concepts": [],
       "year": 2008,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "69a6cadd-2478-4747-9512-e5a175bbd4f7",
@@ -9560,7 +9587,7 @@
             "118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9968,7 +9995,7 @@
             "119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10135,7 +10162,7 @@
             "120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10368,7 +10395,7 @@
             "121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10713,7 +10740,7 @@
             "122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10736,7 +10763,7 @@
     },
     {
       "id": "a15ff6f2-26b3-42e5-9b09-fe2bb351deb6",
-      "number": 2,
+      "number": null,
       "raw_text": "2 カ国の総生産量 | 2 単位 | 2 単位 | 2 単位 | 2 単位 ①| 160 | 200 | ⑨②| 170 | 220 @| 180 | 210 ④| 200 | 190 ー122 一",
       "text": "2 カ国の総生産量 | 2 単位 | 2 単位 | 2 単位 | 2 単位",
       "answer_choices": [
@@ -10753,7 +10780,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10761,7 +10788,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "29d5791e-45e1-4490-ad81-374ea82c7f1a",
@@ -11035,7 +11067,7 @@
             "123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11258,7 +11290,7 @@
             "ー124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11266,7 +11298,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11274,7 +11306,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "fc2bc796-3826-40d9-b8f3-36129f75d54b",
@@ -11465,7 +11501,7 @@
             "125",
             "—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11778,7 +11814,7 @@
             "126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12171,7 +12207,7 @@
             "127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12191,7 +12227,7 @@
     },
     {
       "id": "9a6a2e42-8b0d-47c7-91fa-33e9786117a3",
-      "number": 1,
+      "number": null,
       "raw_text": "1 a b で ① | 国王に対する法の優位名准権利章典 @ | 国王に対する法の優位 | 清教徒 ANAS ③ | 法に対する国王の優位 AH | 権利章典 ④ | 法に対する国王の優位 | 清教徒 ANAS (2) 下線部の [ b | 革命の頃の著名な政治思想家とその著作の組み合わせとして正しい ものを , 次の ① こ ④ の中から一つ選びなさい。 27 ① | ロック (John Locke) 『 統治二論 」 @ | ホップズ (Thomas Hobbes) 『 リヴァイアサン 』 @ | モンテスキュー(Charles de Montesquieu) |『 法の精神 』 ④ | ルソー(Jean-Jacques Rousseau) 「 人間不平等起源論 』 思想家著作 ー127 一",
       "text": "1 a b で",
       "answer_choices": [
@@ -12211,7 +12247,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -12219,11 +12255,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2008,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "05d12bb4-bc04-49d5-b45d-a0403da26661",
-      "number": 1918,
+      "number": null,
       "raw_text": "問 1918 世紀ヨーロッパ (Europe) においては , 古典的自由主義と経済的自由主義の論 理が結合され ,「 夜警国家 」 を理想の国家像として主張する考え方が生まれた。「 和夜警 国家 」 の意味として最も適当なものを , 次の ①ー④ の中から一つっ選びなさい。 (2B ① 治安の維持を主として警察力に頼り , 国民を夜も昼も日常的に監視する国家 @ 国民が安心して生活できるように , 国民生活全般に対して介入をおこなう国家 ③ 治安の維持と防衛だけを主たる仕事とし , 市民の自由を最大限認めようとする国 © 国民に対する処罰をおこなう際に , 時間のかかる裁判手続きを簡略化し , 警察が 処分を決定する国家 問 201919 年に制定されたワイマール (Weimar) 憲法の歴史的意義として最も適当なも DE, 次の ①~④ の中から一つ選びなさい。 29 ① 立憲君主制を明記した最初の憲法であった。 ② 国民の社会権的基本権を保障した最初の憲法であった。 ③ 国民の自由権的基本権を保障した最初の憲法であった。 ④ 侵略戦争をおこなわないことを明記した最初の憲法であった。 — 128 一",
       "text": "問 1918 世紀ヨーロッパ (Europe) においては , 古典的自由主義と経済的自由主義の論 理が結合され ,「 夜警国家 」 を理想の国家像として主張する考え方が生まれた。「 和夜警 国家 」 の意味として最も適当なものを , 次の 問 201919 年に制定されたワイマール (Weimar) 憲法の歴史的意義として最も適当なも DE, 次の",
       "answer_choices": [
@@ -12559,7 +12600,7 @@
             "128",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12578,7 +12619,10 @@
       ],
       "concepts": [],
       "year": 2008,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "3c948a51-8fb8-40e3-8efa-a82a27e46f47",
@@ -12957,7 +13001,7 @@
             "129",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13251,7 +13295,7 @@
             "130",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13533,7 +13577,7 @@
             "131",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13556,7 +13600,7 @@
     },
     {
       "id": "61a401ff-959f-459a-81f2-ec6af2a870cf",
-      "number": 2719,
+      "number": null,
       "raw_text": "問 2719 世紀に起きた次の出来事 A て D を年代順に並べたものとして正しいものを ,。 FO ① てこ ④ の中から一つ選びなさい。 36 A : アヘへン戦争 B : 南北戦争 C: ドイツ帝国の成立 D : 日米修好通商条約の締結 注 ) アヘン戦争 (Opium War), 南北戦争 (Civil War), 日米修好通商条約 (The Treaty of Amity and Commerce between the United States and Japan) ① A>C>+D>B @ A>~D>+=BC @® C>B-D-A ④ C っ AB っっ D 問 28 日本最初の政党内閣は , 1898 年に成立した大隈内閣といわれている。この内閣が政 党内閣と呼ばれる理由として最も適当なものを , 次の ①ー④ の中から一つ選びなさい。 ① 衆議院の指名に基づいて成立した。 ②⑧ 内閣総理大臣が政党に属していた。 ③ 軍部大臣を除く関僚が政党に属していた。 ④ 軍部大臣を除く開僚が衆議院議員であった。 — 132 一",
       "text": "問 2719 世紀に起きた次の出来事 A て D を年代順に並べたものとして正しいものを ,。 FO 問 28 日本最初の政党内閣は , 1898 年に成立した大隈内閣といわれている。この内閣が政 党内閣と呼ばれる理由として最も適当なものを , 次の",
       "answer_choices": [
@@ -13810,7 +13854,7 @@
             "132",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13830,7 +13874,10 @@
       ],
       "concepts": [],
       "year": 2008,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "d4bed842-7d03-4f7c-b0ec-8fc425a7c587",
@@ -14079,7 +14126,7 @@
             "133",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14107,7 +14154,7 @@
     },
     {
       "id": "e8265abb-f5e5-4a4e-9da0-32c203bd9c75",
-      "number": 3,
+      "number": null,
       "raw_text": "25 トーーーーーー- 一- ーー4350 ーー消費者物価指款上昇率 〈⑳6、対前年度 〉 為替相場円ボル 〉 『 数字で見る日本の 100 年改訂第 3 版 』 より作成 | A _ B ーー _ ③ | 第二次石油危機 | プラザ合意 @ | 第二次石油危機 | アジア通貨危機 ” 1① | 第一次石油危機 | アジア (Asia) 通貨危機 注 ) 石油危機 (Oil Crisis), プラザ合意 (Plaza Accord) . ⑨ | 第一次石油危機 | プラザ合意 ー133 一",
       "text": "25 トーーーーーー- 一- ーー4350 ーー消費者物価指款上昇率 〈⑳6、対前年度 〉 為替相場円ボル 〉 『 数字で見る日本の 100 年改訂第 3 版 』 より作成 | A _ B ーー _",
       "answer_choices": [
@@ -14134,7 +14181,10 @@
       ],
       "concepts": [],
       "year": 2008,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "abfd3e30-db91-4ad8-ab4d-0c13fb531128",
@@ -14363,7 +14413,7 @@
             "せん",
             "。"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],

@@ -7337,7 +7337,7 @@
             "1",
             "回)"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7345,7 +7345,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7353,11 +7353,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "2f8a7423-d3a7-499a-a2a1-cbdecd964ae8",
-      "number": 1,
+      "number": null,
       "raw_text": "(80 分 ) | 」 ge wR i 5. 監督者の許可なしに , 部屋の外に出ることはできません。 1 \\ の対応する解符楓にマークしてください。 ーーンーンーンー\\ — 105 一",
       "text": "(80 分 ) | 」 ge wR i 5. 監督者の許可なしに , 部屋の外に出ることはできません。 1 \\ の対応する解符楓にマークしてください。 ーーンーンーンー\\ — 105 一",
       "answer_choices": [],
@@ -7669,7 +7673,7 @@
             "105",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7677,7 +7681,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7685,11 +7689,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "aed21fb2-edec-46e2-a64e-c46181000e6a",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の会話を読み , 下の問い (1)ー(3) に答えなさい。 よし子 : おはよう。はい, 新聞。 父 : ありがとう。そうか, もうすぐ国政選挙だ。今回の選挙では , 特に, ? ここ よし子 : 3 インターネット上の情報も参考にしてみるわ。 Ro : しっかり情報を集めて , 望ましい候補者をきちんと選ぶ必要がある。 数年深刻な問題になっている年金問題が争点になりそうだ。 (1) 下線部 1 に関して , 各国の日刊新聞発行部数を表す次の表を参考にして正しいもの を , 下の ① て ④ の中から一つ選びなさい。 1 発行部数 (単位千部 ) 新聞数 2000 年 | 2001 年 | 2002 年 | 2003 年 | (2003 年 ) 日本。 | 71.896 | 71,694 | 70,815 | 70,339105 中国 75,603 | 82,047 | 85,470 ー1.007* イギリス | 19,159 | 19,117 | 19,186 | 18,591107 ドイッ 23,946 | 23,838 | 23,267 | 22,571372 アメリカ | 55,773 | 55,578 | 55,186 | 55,1851,456 * 中国の新聞数は , 2002 年の時点でのもの 注 ) 中国 (China), 449% (UK)、ドイツ (Germany), アメリカ (USA) ① 若者の活字見れは , 各国で非常に深刻な社会問題となっている。 ③ 日本では , 読者数の多い新聞が複数ある。 ④ 新聞の発行部数は , どの国においても年 々 増加の傾向にある。 OQ 各国の新聞発行部数は , ほぼ人口に比例している。 ー107 一",
       "text": "問 1 次の会話を読み , 下の問い (1)ー(3) に答えなさい。 よし子 : おはよう。はい, 新聞。 父 : ありがとう。そうか, もうすぐ国政選挙だ。今回の選挙では , 特に, ? ここ よし子 : 3 インターネット上の情報も参考にしてみるわ。 Ro : しっかり情報を集めて , 望ましい候補者をきちんと選ぶ必要がある。 数年深刻な問題になっている年金問題が争点になりそうだ。 (1) 下線部 1 に関して , 各国の日刊新聞発行部数を表す次の表を参考にして正しいもの を , 下の",
       "answer_choices": [
@@ -8049,7 +8058,7 @@
             "107",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8065,7 +8074,10 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "cf3cfe75-31ac-42aa-9baa-f295ed654132",
@@ -8384,7 +8396,7 @@
             "108",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8700,7 +8712,7 @@
             "109",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8708,7 +8720,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8716,11 +8728,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "5103403e-93af-43d3-a702-9feb389f5596",
-      "number": 1,
+      "number": null,
       "raw_text": "1 次 2 次 3 次 (時間週 ) ① 4.629.366.14.743.1 ® 1.323.275.52.741.0 ® 4.725.669.710.036.5 ® 18.125.956.03.744.4 注 ) 失業率は 2004 年 ,。その他は 2003 年の時点でのもの (3) 上の会話中の空欄 [3 ] に当てはまる地域名を。次の ①ー④ の中から一つ選びなさ ① 東ヨーロッパ @ 南アジア @ 南アメリカ ④ 北アフリカ 注 ) ヨーロッパ (Europe), アジア (Asia), アメリカ (America), アフリカ (Africa) (4) 下線部に関して , アメリカ合衆国ではアファーマティブ・アクション (affirmative action) と呼ばれる方策が採らんている。この方策の事例として最も適当なものを , 次の ①~ て ④ の中から一つ選びなさい。 7 ① 大学が一定割合の少数者を優先的に入学させるなどの措置を採る。 Q 少数者に多数者の宗教へ改宗するための教育プログラムの受講を促す。 @ 少数者を保護するために , 一定地域に集団で生活するようにさせる。 ④ 社会への同化を促すために , 多数者との結婚を奨励する。 — 110 一",
       "text": "1 次 2 次 3 次 (時間週 )",
       "answer_choices": [
@@ -9078,7 +9094,7 @@
             "ー110",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9086,7 +9102,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -9094,7 +9110,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "f0da06d9-6238-4130-9963-ed3d8e4574ca",
@@ -9478,7 +9499,7 @@
             "111",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9729,7 +9750,7 @@
             "ー112",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10100,7 +10121,7 @@
             "113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10108,7 +10129,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10116,7 +10137,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "d5adf551-f4d2-498b-8016-3994709beb8b",
@@ -10313,7 +10338,7 @@
             "114",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10680,7 +10705,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10910,7 +10935,7 @@
             "116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10946,7 +10971,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10957,7 +10982,11 @@
       ],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "6eb4ce1e-d4a5-4f65-b24e-04718c92159b",
@@ -11114,7 +11143,7 @@
             "117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11122,7 +11151,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11130,11 +11159,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "e6df24d3-929d-483b-9826-2aa2970889e7",
-      "number": 12,
+      "number": null,
       "raw_text": "問 12 金本位制では , 各国が金の法定価格を定め。それをもとに各国通貨の為替平価が決 定される。例えば, イギリスと串本が金本位制を採用していて , イギリスでは , 1 オ ンス = 5 ポンド , 日本では , 1 オンスニ 1000 円となっているとする。これらを前提と して下の問い (1) て (3) に答えなさい。 (1) この場合為替平価は 1 ポンドニ = 何円となるか。正しい値を , 次の ①~ て ④ の中から ーつ選びなきい。 118 | ① 50 円 @ 100 円 ® 200 円 ④ 500 円 (2) 次の文章中の空欄 [ 4 ] [| c | に当てはまる値の組み合わせとして最も適当なもの を ,。下の ① て ④ の中から一つ選びなさい。 19) S, 為替相場が , 為替平価と比較して 1 ポンドあたり 40 円円高になったとする。この場 合 , イギリスで金 1 オンスを購入し , 日本へ運び売却すれば | a | 円を得ることができる。 これを為替相場によってポンドに交換すれば [ b | ポンドとなり [ c | ポンドの利益を得る ことができる。 a b C ① 2005.75 | 0.75 ® 2006.250.75 ® 10005.751,25 ® 10006.251.25 — 118 一",
       "text": "問 12 金本位制では , 各国が金の法定価格を定め。それをもとに各国通貨の為替平価が決 定される。例えば, イギリスと串本が金本位制を採用していて , イギリスでは , 1 オ ンス = 5 ポンド , 日本では , 1 オンスニ 1000 円となっているとする。これらを前提と して下の問い (1) て (3) に答えなさい。 (1) この場合為替平価は 1 ポンドニ = 何円となるか。正しい値を , 次の",
       "answer_choices": [
@@ -11468,7 +11501,7 @@
             "118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11487,11 +11520,14 @@
       ],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "ac66c79f-36a0-4e44-8edb-f4295f8f46f2",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一13 (3) (⑫ を前提として , 次の文章中の空欄 [d |] | f ] に当てはまる語の組み合わせとし て最も適当なものを , 下の ①~ て ④ の中から一つ選びなさい。 20 イギリスと日本との間の金輸送には器用がかかる。その金輸送綿が 1 オンスあたり 100 f | を買おうとする動きが活発になるであろう。したがって , 為替相場は 1 ポンド = 円とする。この場合。金をイギリスから日本へ輸送して利益を得るためには為替相場が 1 [a ] 円以下には大きく下がらない。 RYE SEO d | 円以下である必要がある。これ以下の場合日本へ金を輸送し [e | で d e f ® 220 円ポンド @| 10 | ポンド | A ③| 180 円ポンド ④| 220 ポンド円 ー119 一",
       "text": "総合科目一13 (3) (⑫ を前提として , 次の文章中の空欄 [d |] | f ] に当てはまる語の組み合わせとし て最も適当なものを , 下の",
       "answer_choices": [
@@ -11707,7 +11743,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11715,7 +11751,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11723,7 +11759,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "9565abec-e7a9-4777-bab5-1daad5d73b0e",
@@ -12125,7 +12166,7 @@
             "120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12497,7 +12538,7 @@
             "121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12505,7 +12546,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -12513,7 +12554,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "723f805e-568c-41e0-b245-0bc6b65f3b23",
@@ -12879,7 +12924,7 @@
             "ー122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13211,7 +13256,7 @@
             "123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13515,7 +13560,7 @@
             "124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13768,7 +13813,7 @@
             "125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13776,7 +13821,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -13784,11 +13829,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.75
     },
     {
       "id": "68423d2f-6cc6-4571-9d7f-9979df4a68c8",
-      "number": 1,
+      "number": null,
       "raw_text": "1) 国際連盟の設立に関する説明として最も適当なものを , 次の ①ー④ の中から一つ選 びなさい。 34 ① 植民地の再分割を協議・実行するために設立された。 @ 世界初の国際平和機関として設立された。 ③ 南北問題の解決を図るために設立された。 ® ウィーン (Vienna) 体制の強化を目的として設立された。 2) 国際連盟の組織の説明として最も適当なちのを、次の ① こ ④ の中から一つ選びなさ ① 本部はニューヨークに置かれた。 ② 平和維持のための常設の軍隊を持っていた。 ④ 理事国の首脳会議が最高意思決定機関であった。 ⑬ 総会も理事会も全会一致が原則であった。 — 125 —",
       "text": "1) 国際連盟の設立に関する説明として最も適当なものを , 次の 2) 国際連盟の組織の説明として最も適当なちのを、次の",
       "answer_choices": [
@@ -13805,7 +13854,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -13813,7 +13862,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "05b545b4-7c5e-4ce8-8da3-e4202e4c33d7",
@@ -14158,7 +14212,7 @@
             "126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14166,7 +14220,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -14174,11 +14228,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "1b048621-67c0-4378-ba75-04afb6c11b59",
-      "number": 25,
+      "number": null,
       "raw_text": "問 25 次の文章を読み , 下の問い (1)、(2) に答えなさい。 日本においては , 1881 年に国家建設の方向をめぐる政府エリート間の意見対立が重大な 事件に発展した。それは , 政府内で [ a ] 型議会政治を早期に導入することを求めた勢力 が敗れ , Lb | 中心の国家建設を主張した勢力が勝ったことである。そして , KAMAE 法調査のためにヨーロッパに派遣され , 10 年後に | c | を開設するという政府の方針を受 けて , 政党が結成された。 (1) 上の文章中の空欄 [ a | 一| c | に当てはまる語の組み合わせとして最も適当なもの を。次の ① て ④ の中から一つ選びなさい。 |38 a b て ①| イギリス | 官僚会 ②| イギリス | BA 内閣 | アメリヵ | 官僚 AIS ④ | アメリカ | BA 会 (2) 下線部に関して調査団が参考にした国として最も適当なものを , 次の ①ー④ の中か ゥーつっ選びなさい。 139 ① スイス (Switzerland) @ フランス ③ プロシア (Prussia) ④ ロシア (Russia) 総合科目の問題はこれで終わりです。解答欄の 40 ~ 60 は空欄にしてください。 ー127 一",
       "text": "問 25 次の文章を読み , 下の問い (1)、(2) に答えなさい。 日本においては , 1881 年に国家建設の方向をめぐる政府エリート間の意見対立が重大な 事件に発展した。それは , 政府内で [ a ] 型議会政治を早期に導入することを求めた勢力 が敗れ , Lb | 中心の国家建設を主張した勢力が勝ったことである。そして , KAMAE 法調査のためにヨーロッパに派遣され , 10 年後に | c | を開設するという政府の方針を受 けて , 政党が結成された。 (1) 上の文章中の空欄 [ a | 一| c | に当てはまる語の組み合わせとして最も適当なもの を。次の",
       "answer_choices": [
@@ -14503,7 +14561,7 @@
             "127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14522,7 +14580,10 @@
       ],
       "concepts": [],
       "year": 2006,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     }
   ],
   "metadata": {

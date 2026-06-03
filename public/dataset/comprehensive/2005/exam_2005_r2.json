@@ -6230,7 +6230,7 @@
             "回",
             ")"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6238,7 +6238,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -6246,7 +6246,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2005,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "9af8f432-42bc-4ecd-8d81-d04e2f4c3528",
@@ -6578,7 +6582,7 @@
             "101",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6586,7 +6590,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -6599,11 +6603,15 @@
       ],
       "concepts": [],
       "year": 2005,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "3abda7d7-6571-4dfa-94a1-45df575da9e9",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の会話を読み下の問い (1)ー(4) に答えなさい。 A 郎 : 近年、外国から日本への直接投資が増え , 2004 年度に初めて日本の対外投資 よし子 : 外国企業の日本市場への参入が難しいと批判された状況も , だいぶ変化した K 郎 : 外国からの投資が増えると , 一般に , [| a ] が下がったり , [ b ] が上がった よし子 : 。外国が積極的に投資できる環境を作り出すことは , 政府の大事な仕事の一 を上回った。 ね。貿易摩擦に続いて , 投資摩擦も解決したということかな。 りするといわれるなど , 日本経済にとってよい点が多いと思う。 (1) 次のグラフは日本の対外直接投資 , 対内直接投資を示したものである。グラフの説明 として正しいものを , 下の ① て ④ の中から一つ選びなさい。 11 億ドル日本の対内対外直接投資 800 ーーーーーーー 1997989920001 | 200 | 100 | 財務省 HP より ① 1997 年度以降、。外国からの日本への直接投資は一貫して増え続けている。 @ 1999 年度にピークであった日本の対外直接投資は、 2 年でほぼ半減した。 @ 2004 年度に日本の対外直接投資が急減したから直接投資収支が黒字になった。 ④ 日本の外国への直接投資が最も多い年は、200 年度である。 — 103 一",
       "text": "問 1 次の会話を読み下の問い (1)ー(4) に答えなさい。 A 郎 : 近年、外国から日本への直接投資が増え , 2004 年度に初めて日本の対外投資 よし子 : 外国企業の日本市場への参入が難しいと批判された状況も , だいぶ変化した K 郎 : 外国からの投資が増えると , 一般に , [| a ] が下がったり , [ b ] が上がった よし子 : 。外国が積極的に投資できる環境を作り出すことは , 政府の大事な仕事の一 を上回った。 ね。貿易摩擦に続いて , 投資摩擦も解決したということかな。 りするといわれるなど , 日本経済にとってよい点が多いと思う。 (1) 次のグラフは日本の対外直接投資 , 対内直接投資を示したものである。グラフの説明 として正しいものを , 下の",
       "answer_choices": [
@@ -7008,7 +7016,7 @@
             "103",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7027,11 +7035,14 @@
       ],
       "concepts": [],
       "year": 2005,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "ab084df9-c4c8-4f37-9e93-82ca558ce4fe",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (2) 下線部 1 は ,。主にアメリカ (USA) との間に生じたものである。第二次世界大戦 (WWII) 後の日本経済の成長にともなって , 特に深刻な問題として協議された摩擦品 目は変化した。問題となった摩擦品目の推移を示したものとして最も適当なものを , 次 の ①~ て ④ の中から一つ選びなさい。 2 摩擦品目の推移 | 織維一自動車半導体 | 自動車 > HMR 線維 @ | 半導体 > 繊維一自動車 ④ | 機維半導体自動車 (3) 会話中の空欄 [ a | [ b ] に当てはまる語の組み合わせとして最も適当なものを , 次 の ① て ④ の中から一つ選びなさい。 3 ① | 平均利潤率 | 為替相場 | © | 平均株価 | 失業率 | ⑨ | 為替相場 | 平均利油率 ④ | 失業率 | 平均株価 (4) 下線部 2 に関して , ある国の政府が , 外国からの投資を呼び込むために採る政策とし て一般的に正しいものを , 次の ① て ④ の中から一つ選びなさい。 4 ① 為夫相場の切り下げ ② 移民政策の緩和 ③ 社会資本の整備 ④ 法人税の引き上げ",
       "text": "総合科目一2 (2) 下線部 1 は ,。主にアメリカ (USA) との間に生じたものである。第二次世界大戦 (WWII) 後の日本経済の成長にともなって , 特に深刻な問題として協議された摩擦品 目は変化した。問題となった摩擦品目の推移を示したものとして最も適当なものを , 次 の",
       "answer_choices": [
@@ -7369,7 +7380,7 @@
             "上",
             "げ"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7389,7 +7400,10 @@
       ],
       "concepts": [],
       "year": 2005,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "aef57f44-6c7f-4a4e-8415-15786890b8a7",
@@ -7689,7 +7703,7 @@
             "105",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7697,7 +7711,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7705,11 +7719,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2005,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "138b046a-479c-4976-9fda-22f7f57685dd",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一4 (3) 下線部 2 に関して , トルコで最も信者の多い宗教は何か。正しいものを , 次の ①~ て ④ の中から一つ選びなさい。 7 ① イスラム教 ② ギリシア正教カトリック ④ プロテスタント (4) 下線部 3 に関して , EU 諸国が恐れているのは , 具体的にはどういう問題か。最も敵 当なものを , 次の ① て ④ の中から一つ選びなさい。 [3 | ① トルコから資本が流入し , 企業が買い占められるという恐れ ③ EU 諸国の人材が流出し , 労働力不足になるという恐れ ④ EU 諸国の天然資源が流出し ,。エネルギー不足になるという恐れ Q トルコから労働者が流入し , 失業率が高まるという恐れ ー106 一",
       "text": "総合科目一4 (3) 下線部 2 に関して , トルコで最も信者の多い宗教は何か。正しいものを , 次の",
       "answer_choices": [
@@ -7929,7 +7947,7 @@
             "106",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7937,7 +7955,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7945,7 +7963,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2005,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "9c4f08e5-b85e-4f6a-9c75-cfc52404cfba",
@@ -8181,7 +8204,7 @@
             "107",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8525,7 +8548,7 @@
             "108",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8746,7 +8769,7 @@
             "109",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8998,7 +9021,7 @@
             "110",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9006,7 +9029,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -9016,7 +9039,11 @@
       ],
       "concepts": [],
       "year": 2005,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "e6e487f0-6ba7-43f0-aa55-841a7b08aa94",
@@ -9399,7 +9426,7 @@
             "ー111",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9407,7 +9434,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -9415,7 +9442,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2005,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "f76a889d-a447-4ea1-93ef-c7ff3303cdcc",
@@ -9854,7 +9885,7 @@
             "112",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10245,7 +10276,7 @@
             "113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10253,7 +10284,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "geographical_analysis",
@@ -10263,7 +10294,11 @@
       ],
       "concepts": [],
       "year": 2005,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "a5f9b328-ec7e-49ea-b082-6a00d0a8bb78",
@@ -10584,7 +10619,7 @@
             "114",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11025,7 +11060,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11470,7 +11505,7 @@
             "ー116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11859,7 +11894,7 @@
             "117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12124,7 +12159,7 @@
             "118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12146,7 +12181,7 @@
     },
     {
       "id": "d2ffe5d6-5aca-4f74-8cde-f2ed1066e243",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一17 間 23 三角貿易に関する次の問い (1), (2) に答えなさい。 (1) 次の図は 18 世紀に大西涯でおこなわれた三角貿易を示している。取引されたもの (A)~(C) の組み合わせとして最も適当なものを , 下の ①~ て ④ の中から一つ選びなさ い。 135 イギリスアメリカ捕民地 A B C ① | whee + HELE 綿花綿織物 @ | hae - MELT 奴隷砂糖 ⑧ | 銀 ey 綿織物 @ | 銀綿花砂精 (2) 次の図は 19 世紀におこなわれた三角貿易を示している。国名 (D) て (F) の組み合わ せとして最も適当なものを , 下の ① て ④ の中から一つ選びなさい。 36 (0) (F) ue | (e) デン D E | F ①| イギリス | インドシナ | Aa ② | オランダインドシナ | 中国 ③ | イギリスインド中国 ④ | オランダインド日本 注 ) インドシナ (Indochina)、オランダ (the Netherlands) ー119 一",
       "text": "総合科目一17 間 23 三角貿易に関する次の問い (1), (2) に答えなさい。 (1) 次の図は 18 世紀に大西涯でおこなわれた三角貿易を示している。取引されたもの (A)~(C) の組み合わせとして最も適当なものを , 下の",
       "answer_choices": [
@@ -12381,7 +12416,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12399,7 +12434,10 @@
       ],
       "concepts": [],
       "year": 2005,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "25733719-38c8-4960-b912-4940b3cb0e1f",
@@ -12582,7 +12620,7 @@
             "120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],

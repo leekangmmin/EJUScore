@@ -76,14 +76,13 @@ function explainTopic(t) {
   const growth5 = prev5 > 0 ? Math.round((recent5 - prev5) / prev5 * 100) : (recent5 > 0 ? 100 : 0);
   const growth10 = prev10 > 0 ? Math.round((recent10 - prev10) / prev10 * 100) : (recent10 > 0 ? 100 : 0);
 
-  // natural-language interpretation (numbers only, no fabricated qualitative claims)
-  const dirWord = growth5 > 15 ? '뚜렷한 상승세' : growth5 < -15 ? '하락세' : '안정적인 출제 빈도';
-  let story = `${t}은(는) ${first}년 이후 총 ${total}회 출제되었으며, 최근 5년간 ${growth5 >= 0 ? '+' : ''}${growth5}%의 변화를 보이며 ${dirWord}를 나타냅니다.`;
-  if (avgPeriod !== null) story += ` 평균 ${avgPeriod}년 주기로 등장하고`;
-  if (best >= 3) story += `, 최대 ${best}년 연속 출제된 핵심 빈출 주제입니다.`;
-  else if (gapNow >= 3) story += `, 최근 ${last}년 이후 ${gapNow}년간 공백 상태로 재출제 가능성을 주시해야 합니다.`;
-  else story += `, 가장 최근 출제는 ${last}년입니다.`;
-  if (comebackGap >= 4 && comebackYear) story += ` 과거 ${comebackGap}년 공백 후 ${comebackYear}년에 재등장한 이력이 있어 장기 공백이 출제 종료를 의미하지 않습니다.`;
+  // Evidence-only summary: dataset facts and computed values, no qualitative claims
+  const dirWord = growth5 > 15 ? '증가' : growth5 < -15 ? '감소' : '변동 ±15% 이내';
+  let story = `${first}년 첫 출제 · 총 ${total}회 · 최근5년 ${growth5 >= 0 ? '+' : ''}${growth5}%(${dirWord}).`;
+  if (avgPeriod !== null) story += ` 평균 출제간격 ${avgPeriod}년.`;
+  if (best >= 3) story += ` 최장 ${best}년 연속 출제.`;
+  story += gapNow >= 1 ? ` 최근 출제 ${last}년 · 현재공백 ${gapNow}년.` : ` 최근 출제 ${last}년.`;
+  if (comebackGap >= 4 && comebackYear) story += ` 과거 ${comebackGap}년 공백 후 ${comebackYear}년 재출제 이력.`;
 
   return {
     topic: t, domain: majorityDomain(t), domain_ko: DOMAIN_KO[majorityDomain(t)] || majorityDomain(t),
@@ -263,10 +262,10 @@ const actionPlan = actionRaw.map((a, i) => {
   const hours = +(a.importance / impSum * TOTAL_STUDY_HOURS).toFixed(1);
   const contribution = +(a.total / totalQ * 100).toFixed(1);   // expected score share %
   let advice;
-  if (tier === 'S') advice = `최우선 정복 대상. 핵심 개념 암기 + 자료/그래프 해석까지 완성하세요.`;
-  else if (tier === 'A') advice = `고빈출 핵심군. 기출 회독으로 안정적 득점원으로 만드세요.`;
-  else if (tier === 'B') advice = a.growth5 > 0 ? `상승세 주의 영역. 최소 정의·핵심 개념은 확보하세요.` : `기본 개념 위주로 효율 학습하세요.`;
-  else advice = `저빈도. 시간 대비 효율이 낮아 후순위로 두되 정의 수준은 점검하세요.`;
+  if (tier === 'S') advice = `S등급(우선도 ${a.importance}/100, 출제 ${a.total}회). 개념 암기 + 자료·그래프 해석까지 학습.`;
+  else if (tier === 'A') advice = `A등급(우선도 ${a.importance}/100, 출제 ${a.total}회). 기출 회독.`;
+  else if (tier === 'B') advice = `B등급(우선도 ${a.importance}/100).${a.growth5 > 0 ? ` 최근5년 +${a.growth5}%.` : ''} 정의·기본 개념 확보.`;
+  else advice = `C등급(우선도 ${a.importance}/100, 출제 ${a.total}회). 후순위 · 정의 점검.`;
   return {
     priority: i + 1, tier, topic: a.topic, domain_ko: a.domain_ko,
     importance: a.importance, total: a.total, prediction_pct: a.prob,
@@ -317,7 +316,7 @@ const cycleIntel = topicExplain.map(e => {
   else if (avg_gap != null && current_gap <= avg_gap) status = '정상';
   else if (max_gap && current_gap <= max_gap) status = '주의';
   else status = '고위험';
-  // 복귀가능성: REAL 수치(current_gap≥avg_gap) + 과거 comeback 이력 有일 때만. 확률 날조 금지.
+  // return_possible: REAL 수치(current_gap≥avg_gap) + 과거 comeback 이력 有일 때만. 확률 날조 금지.
   const return_possible = current_gap > 0 && avg_gap != null && current_gap >= avg_gap && had_comeback;
   return {
     topic: e.topic, domain_ko: e.domain_ko,
@@ -385,7 +384,7 @@ function topicConfidence(e) {
 
 // ════════════════════════════════════════════════════════════════
 // [1] TOPIC INTELLIGENCE — merge explain + addon + action + prediction
-//     + 3 auto blocks (왜 중요 / 어떤 형태 / 무엇을 공부). 수치 우선.
+//     + 3 auto blocks (출제근거 / 어떤 형태 / 무엇을 공부). 수치 우선.
 // ════════════════════════════════════════════════════════════════
 const addonByTopic = new Map(predictiveAddons.map(a => [a.topic, a]));
 const actionByTopic = new Map(actionPlan.map(a => [a.topic, a]));
@@ -395,17 +394,17 @@ const topicIntelligence = topicExplain.map((e, i) => {
   const prob = predProb.get(e.topic) ?? null;
   const conf = topicConfidence(e);
   const freqRank = i + 1;                      // topicExplain is sorted by total desc
-  const why_important = `전체 ${e.total}회 출제(빈도 ${freqRank}위/35) · 2026 예측확률 ${prob ?? '데이터 없음'}${prob != null ? '%' : ''} · 예상 점수기여 ${ac.score_contribution_pct ?? 'N/A'}% · 중요도 ${ac.importance ?? 'N/A'}(${ac.tier ?? '-'}등급)`;
+  const why_important = `전체 ${e.total}회 출제(빈도 ${freqRank}위/35) · 2026 예측확률 ${prob ?? '데이터 없음'}${prob != null ? '%' : ''} · 예상 점수기여 ${ac.score_contribution_pct ?? 'N/A'}% · 우선도 ${ac.importance ?? 'N/A'}(${ac.tier ?? '-'}등급)`;
   const how_asked = ad.expected_format
     ? `2002-2015 OCR 원문 기준 최빈 형식: ${ad.expected_format} (난이도 ${ad.difficulty_label ?? '데이터 없음'}${ad.expected_difficulty != null ? ` · ${ad.expected_difficulty}/4` : ''})`
     : '데이터 없음 (2016+ 원문 OCR 부재로 형식 분류 불가)';
   const what_to_study = (ad.key_concepts && ad.key_concepts.length)
-    ? `핵심 개념(기출 추출 키워드): ${ad.key_concepts.join(', ')} — ${ac.advice ?? ''}`
-    : `키워드 데이터 없음 — ${ac.advice ?? '기출 회독으로 핵심 개념을 직접 정리하세요.'}`;
+    ? `기출 키워드: ${ad.key_concepts.join(', ')} — ${ac.advice ?? ''}`
+    : `키워드 데이터 없음 — ${ac.advice ?? '기출 회독으로 키워드를 직접 정리.'}`;
   const cyc = cycleByTopic.get(e.topic);
   const risk = riskByTopic.get(e.topic) || { score: null, grade: null };
   const ev = evByTopic.get(e.topic) ?? null;
-  const recent_change = `최근5년 ${e.recent5}회(직전5년 ${e.prev5}회 대비 ${e.growth5_pct >= 0 ? '+' : ''}${e.growth5_pct}%) · 현재공백 ${e.gap_now}년 · 주기상태 ${cyc?.status ?? '데이터 없음'}${cyc?.return_possible ? ' · 복귀가능성있음' : ''}`;
+  const recent_change = `최근5년 ${e.recent5}회(직전5년 ${e.prev5}회 대비 ${e.growth5_pct >= 0 ? '+' : ''}${e.growth5_pct}%) · 현재공백 ${e.gap_now}년 · 주기상태 ${cyc?.status ?? '데이터 없음'}${cyc?.return_possible ? ' · 복귀이력있음(공백≥평균주기)' : ''}`;
   return {
     rank: freqRank, topic: e.topic, domain: e.domain, domain_ko: e.domain_ko,
     total: e.total, recent5: e.recent5, recent10: e.recent10,
@@ -540,7 +539,7 @@ const executiveSummary = {
   top_return: topReturn ? { topic: topReturn.topic, current_gap: topReturn.current_gap, avg_gap: topReturn.avg_gap } : null,
   lines: [
     topFreq ? `출제빈도 상위: ${topFreq.topic} (총 ${topFreq.total}회·최근5년 ${topFreq.recent5}회)` : '데이터 없음',
-    topRising ? `상승세: ${topRising.topic} (직전5년 대비 +${topRising.growth5_pct}%)` : '상승세: 데이터 없음',
+    topRising ? `최근5년 증가율 최상위: ${topRising.topic} (직전5년 대비 +${topRising.growth5_pct}%)` : '증가율: 데이터 없음',
     topReturn ? `복귀 가능: ${topReturn.topic} (현재공백 ${topReturn.current_gap}년·평균주기 ${topReturn.avg_gap}년)` : '복귀 가능: 해당 없음',
   ],
   basis: 'top_frequency·top_rising=topicExplain(DERIVED) · top_return=cycleIntel return_possible(REAL 수치 기반)',

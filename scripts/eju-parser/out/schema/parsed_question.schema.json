@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "examId": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string",
+      "enum": [
+        "comprehensive",
+        "mathematics",
+        "japanese",
+        "unknown"
+      ]
+    },
+    "year": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "round": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "questionNumber": {
+      "type": "integer",
+      "minimum": -9007199254740991,
+      "maximum": 9007199254740991
+    },
+    "body": {
+      "type": "string"
+    },
+    "subQuestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "choices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "marker": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "marker",
+                "text"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "label",
+          "text",
+          "choices"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "choices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "marker": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "marker",
+          "text"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "answer": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "answerStatus": {
+      "type": "string",
+      "enum": [
+        "linked",
+        "missing",
+        "unmatched",
+        "no_answer_doc"
+      ]
+    },
+    "sourceFile": {
+      "type": "string"
+    },
+    "ocrSuspect": {
+      "type": "boolean"
+    },
+    "ocrSuspectReasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "examId",
+    "subject",
+    "year",
+    "round",
+    "questionNumber",
+    "body",
+    "subQuestions",
+    "choices",
+    "answer",
+    "answerStatus",
+    "sourceFile",
+    "ocrSuspect",
+    "ocrSuspectReasons"
+  ],
+  "additionalProperties": false
+}

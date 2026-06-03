@@ -34,10 +34,11 @@ export default defineConfig(({ mode }) => ({
           if (id.includes('node_modules/@huggingface/transformers') || id.includes('node_modules/onnxruntime')) {
             return 'vendor-transformers';
           }
-          // PDFium — PDF processing
-          if (id.includes('node_modules/@hyzyla/pdfium') || id.includes('node_modules/pdfjs')) {
-            return 'vendor-pdf';
-          }
+          // PDFium / pdfjs intentionally NOT given a shared vendor chunk:
+          // their only static importer is the lazy PhotoToQuestion route, so
+          // letting them bundle into that route's chunk keeps the 5.4 MB out of
+          // the eager entry graph (the shared __vitePreload helper was otherwise
+          // co-located into a 'vendor-pdf' chunk and dragged into initial load).
           // KaTeX — math rendering (lazy)
           if (id.includes('node_modules/katex')) {
             return 'vendor-katex';

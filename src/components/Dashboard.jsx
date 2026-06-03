@@ -17,6 +17,7 @@ import {
   AlertCircle, Info, ClipboardList, FileText,
   Search, Globe, Layers, GraduationCap,
 } from 'lucide-react';
+import useIsMobile from '../hooks/useIsMobile';
 
 function linearPredict(values, ahead = 3) {
   const n = values.length;
@@ -333,6 +334,7 @@ function ExamListItem({ exam, onEdit, onDelete, isPendingDelete, onConfirmStart,
 
 // ── Main Dashboard ─────────────────────────────────
 export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddNew, settings }) {
+  const isMobile = useIsMobile();
   const [confirmDelete, setConfirmDelete] = useState(null);
   const [ocrAnalysis, setOcrAnalysis] = useState(() => {
     try { const d = localStorage.getItem('eju_ocr_analysis'); return d ? JSON.parse(d) : null; }
@@ -423,6 +425,28 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
           첫 점수 입력하기
         </button>
       </div>
+    );
+  }
+
+  if (isMobile) {
+    return (
+      <MobileDashboard
+        exams={exams}
+        onEdit={onEdit}
+        onDelete={onDelete}
+        onDeleteAll={onDeleteAll}
+        onAddNew={onAddNew}
+        settings={settings}
+        ocrAnalysis={ocrAnalysis}
+        setOcrAnalysis={setOcrAnalysis}
+        confirmDelete={confirmDelete}
+        setConfirmDelete={setConfirmDelete}
+        data={{
+          tJap, tComp, dday, diagnosis,
+          latestJap, prevJap, latestComp, prevComp,
+          streak, consistency, burnout, achProb, insight, chartData,
+        }}
+      />
     );
   }
 
@@ -535,6 +559,177 @@ export default function Dashboard({ exams, onEdit, onDelete, onDeleteAll, onAddN
               onDelete={() => { onDelete(exam.id); setConfirmDelete(null); }}
               isPendingDelete={confirmDelete === exam.id}
               onConfirmStart={() => setConfirmDelete(exam.id)}
+              onConfirmCancel={() => setConfirmDelete(null)}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// MOBILE (≤768px) — dedicated component. Desktop JSX is untouched.
+// Stat grid → single column · exam rows → cards · touch targets ≥44px
+// ═══════════════════════════════════════════════════════════════════
+const mdashStyles = `
+.mdash { display: flex; flex-direction: column; gap: 14px; padding: 0 2px 28px; }
+.mdash-h1 { font-size: 22px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.3px; }
+.mdash-sub { font-size: 12px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5; }
+.mdash-stats { display: flex; flex-direction: column; gap: 12px; }
+.mdash-examitem { display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; border-radius: var(--radius-sm); background: var(--bg-hover); }
+.mdash-btn { min-height: 44px; flex: 1; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 13px; font-weight: 600; border-radius: var(--radius-sm); }
+.mdash-addbtn { min-height: 44px; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 14px; }
+`;
+
+function MExamItem({ exam, onEdit, isPendingDelete, onConfirmStart, onConfirmCancel }) {
+  const japNorm = exam.japanese ? normalizeJapaneseScore(exam.japanese) : null;
+  const jap = japNorm ? japNorm.reading + japNorm.listening : null;
+  const comp = exam.comprehensive ? normalizeCompScore(exam.comprehensive) : null;
+
+  return (
+    <div className="mdash-examitem" style={{ border: `1px solid ${isPendingDelete ? 'rgba(239,68,68,0.25)' : 'transparent'}` }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10 }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontSize: 13, color: 'var(--text-primary)', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {exam.examName}
+          </div>
+          <div style={{ fontSize: 11, color: 'var(--text-tertiary)', fontWeight: 600, marginTop: 2 }}>{exam.date}</div>
+        </div>
+        <div style={{ display: 'flex', gap: 6, flexShrink: 0 }}>
+          {jap != null && (
+            <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--accent)', background: 'var(--accent-subtle)', padding: '3px 9px', borderRadius: 5 }}>일어 {jap}</span>
+          )}
+          {comp != null && (
+            <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--green)', background: 'rgba(34,197,94,0.1)', padding: '3px 9px', borderRadius: 5 }}>종합 {comp}</span>
+          )}
+        </div>
+      </div>
+      <div style={{ display: 'flex', gap: 8 }}>
+        {isPendingDelete ? (
+          <>
+            <button onClick={onConfirmCancel} className="btn btn-ghost mdash-btn">취소</button>
+            <button onClick={onConfirmStart} className="btn btn-ghost mdash-btn" style={{ color: 'var(--red)' }}>삭제 확인</button>
+          </>
+        ) : (
+          <>
+            <button onClick={onEdit} className="btn btn-secondary mdash-btn">수정</button>
+            <button onClick={onConfirmStart} className="btn btn-ghost mdash-btn" style={{ color: 'var(--red)' }}>삭제</button>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function MobileDashboard({ exams, onEdit, onDelete, onDeleteAll, onAddNew, settings, ocrAnalysis, setOcrAnalysis, confirmDelete, setConfirmDelete, data }) {
+  const {
+    tJap, tComp, dday, diagnosis,
+    latestJap, prevJap, latestComp, prevComp,
+    streak, consistency, burnout, achProb, insight, chartData,
+  } = data;
+
+  return (
+    <div className="mdash">
+      <style>{mdashStyles}</style>
+
+      {/* Header */}
+      <div>
+        <h1 className="mdash-h1">대시보드</h1>
+        <p className="mdash-sub">총 {exams.length}회 기록 · 목표 일어 {tJap}/370 · 종합 {tComp}/{COMP_MAX}</p>
+      </div>
+
+      {/* OCR Analysis */}
+      <OcrSummary
+        data={ocrAnalysis}
+        onDismiss={() => { setOcrAnalysis(null); try { localStorage.removeItem('eju_ocr_analysis'); } catch {} }}
+      />
+
+      {/* D-day */}
+      <DdayBanner dday={dday} nextDate={settings.nextExamDate} />
+
+      {/* Core Stats — single column */}
+      <div className="mdash-stats">
+        <StatRow label="일본어 합계" value={latestJap} max={370} prevValue={prevJap} />
+        <StatRow label="종합과목" value={latestComp} max={COMP_MAX} prevValue={prevComp} />
+      </div>
+
+      {/* Insight + Diagnosis */}
+      <InsightCard
+        insight={insight} diagnosis={diagnosis}
+        streak={streak} consistency={consistency}
+        burnout={burnout} achProb={achProb}
+      />
+
+      {/* Chart */}
+      {exams.length >= 2 && (
+        <div className="card" style={{ padding: '14px 14px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12, flexWrap: 'wrap', gap: 6 }}>
+            <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-primary)' }}>점수 추이</div>
+            <div style={{ display: 'flex', gap: 10, fontSize: 10, color: 'var(--text-tertiary)' }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                <span style={{ width: 12, height: 2, background: 'var(--accent)', display: 'inline-block', borderRadius: 1 }} /> 일본어
+              </span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                <span style={{ width: 12, height: 2, background: 'var(--green)', display: 'inline-block', borderRadius: 1 }} /> 종합
+              </span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                <span style={{ width: 12, height: 0, display: 'inline-block', borderTop: '1px dashed var(--text-tertiary)' }} /> 예측
+              </span>
+            </div>
+          </div>
+          <ResponsiveContainer width="100%" height={200}>
+            <LineChart data={chartData} margin={{ top: 4, right: 8, left: -22, bottom: 0 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" vertical={false} />
+              <XAxis dataKey="name" tick={{ fill: 'var(--text-tertiary)', fontSize: 9 }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fill: 'var(--text-tertiary)', fontSize: 9 }} axisLine={false} tickLine={false} />
+              <Tooltip
+                contentStyle={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', borderRadius: 8, fontSize: 12, boxShadow: 'var(--shadow-elevated)' }}
+                labelStyle={{ color: 'var(--text-secondary)', marginBottom: 4, fontWeight: 600 }}
+              />
+              <ReferenceLine y={tJap} stroke="var(--accent)" strokeDasharray="4 3" strokeWidth={1}
+                label={{ value: `목표 ${tJap}`, fill: 'var(--accent)', fontSize: 9 }} />
+              <ReferenceLine y={tComp} stroke="var(--green)" strokeDasharray="4 3" strokeWidth={1}
+                label={{ value: `목표 ${tComp}`, fill: 'var(--green)', fontSize: 9 }} />
+              <Line type="monotone" dataKey="일본어" stroke="var(--accent)" strokeWidth={2}
+                dot={{ r: 2.5, fill: 'var(--accent)' }} activeDot={{ r: 4 }} connectNulls />
+              <Line type="monotone" dataKey="종합과목" stroke="var(--green)" strokeWidth={2}
+                dot={{ r: 2.5, fill: 'var(--green)' }} activeDot={{ r: 4 }} connectNulls />
+              <Line type="monotone" dataKey="pred_jap" stroke="var(--accent)" strokeWidth={1.5}
+                strokeDasharray="5 3" dot={false} connectNulls />
+              <Line type="monotone" dataKey="pred_comp" stroke="var(--green)" strokeWidth={1.5}
+                strokeDasharray="5 3" dot={false} connectNulls />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      )}
+
+      {/* Recent exam list */}
+      <div className="card" style={{ padding: '14px 14px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+          <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: 6 }}>
+            <ClipboardList size={14} color="var(--text-secondary)" strokeWidth={1.6} /> 시험 기록
+          </div>
+          {exams.length > 0 && (
+            <button onClick={onDeleteAll} className="btn btn-ghost" style={{ fontSize: 11, padding: '6px 10px', minHeight: 36, color: 'var(--red)' }}>
+              전체 삭제
+            </button>
+          )}
+        </div>
+        <button onClick={onAddNew} className="btn btn-primary mdash-addbtn" style={{ width: '100%', marginBottom: 12 }}>
+          <Plus size={15} strokeWidth={2.5} /> 점수 추가
+        </button>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          {[...exams].reverse().map(exam => (
+            <MExamItem
+              key={exam.id}
+              exam={exam}
+              onEdit={() => onEdit(exam)}
+              isPendingDelete={confirmDelete === exam.id}
+              onConfirmStart={() => {
+                if (confirmDelete === exam.id) { onDelete(exam.id); setConfirmDelete(null); }
+                else setConfirmDelete(exam.id);
+              }}
               onConfirmCancel={() => setConfirmDelete(null)}
             />
           ))}

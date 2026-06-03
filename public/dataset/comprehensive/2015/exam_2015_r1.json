@@ -7074,7 +7074,7 @@
             "試験",
             "問題"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7082,7 +7082,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7090,7 +7090,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "65194d18-f4b9-41cf-b10f-e8212636c917",
@@ -7456,7 +7460,7 @@
             "ー113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7464,7 +7468,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -7477,11 +7481,15 @@
       ],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "b2dfadfe-8c64-40ee-bf42-b2387de98d98",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一1 間 1 次の会話を読み , 下の問い (1) て (4) に答えなさい。 よし子 : 2014 年 9 月。 . スコットランド (Scotland) の独立の是非を問う , 住民投 先生 : はい。結果は反対が約 55% を占め , 独立は否定されました。しかし, 事前の 票が実施きれましたね。 世論調査では区成派が反対派を上回るほど。分離独立運動は大いに盛り上が りました。 よし子 : スコットランドはかつて独立国でしたね。 KH 生 : そうです。しかし , 1707 年に事 よし子 : 分離独立運動の背景には , こうした歴史的経緯の他に , 経済や産業 , 通貨 先生 : その通りです。さまざまな要因が関係しているのです。 かたちになりました。 の問題などもあると聞きました。 実上イングランド (England) に併合される (1) 下線部 1 に関して, スコットランドに該当する地域として正しいものを , 次の地図 中の ①~ て ④ の中から一つ選びなさい。 1 =lis=",
       "text": "総合科目一1 間",
       "answer_choices": [
@@ -7778,7 +7786,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7786,7 +7794,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7794,11 +7802,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "a377e2a0-88fe-4652-a88c-c4160a0cbd9c",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (2) 下線部 2 に関して , 次の文章中の空棚 [ a |, [| b ] に当てはまる語の組み合わせと して最も適当なものを , 下の ①~④ の中から一つ選びなさい。 [2 | 日本における住民投票は地方自治における [ a | の一形態である。地方自治法 では , 例えば , 有権者から一定数以上の署名を集めることによって首長の解職を請 求できるという [ b | が規定されている。 Joa | b | 直接民主制 | イニシアティブ 直接民主制 | リコール 間接民主制 | イニシアティブ | © | 間接民主制 | リュール (3) 下線部 3 に関して。イギリス (UK) と同様分離独立の問題を抱える国と地域の 組み合わせとして正しいものを , 次の ①~④ の中から一つ選びなさい。 [3] | | ee | lolary | タテベック | [olan tan | バスク | YE) フランス (France), フランドル (Flanders), カナダ (Canada), ケベック (Quebec), ポルトガル (Portugal), パスク (Basque), オーストリア (Austria), カタルーニャ (Catalonia) ー116 一",
       "text": "総合科目一2 (2) 下線部 2 に関して , 次の文章中の空棚 [ a |, [| b ] に当てはまる語の組み合わせと して最も適当なものを , 下の",
       "answer_choices": [
@@ -8057,7 +8070,7 @@
             "ー116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8065,7 +8078,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8073,11 +8086,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "81a95f43-9aba-4c68-a055-c7789e57fac6",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一3 (4) 下線部 4 に関して , 次の表は 2012 年におけるイギリス , AA, ニュージーランド (New Zealand), チリ (Chile) 4 か国の輸出額上位 5 品目を示したものである。イ ギリスを示しているものを , 下の ①~ て ④ の中から一つ選びなさい。 | | A 男 | 8 画 | C 画 | 5 画 | ー117 一",
       "text": "総合科目一3 (4) 下線部",
       "answer_choices": [
@@ -8223,7 +8241,7 @@
             "ー117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8231,7 +8249,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8239,11 +8257,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "c1f04592-3bcf-4a29-8550-68335c7b325e",
-      "number": 2,
+      "number": null,
       "raw_text": "問 2 次の会話を読み , 下の問い (1)^(4) に答えなさい。 よし子 : 今日の講義は , グローバル化についてでしたね。 先生 : はい。グローバル化と , CORR HS 」「 新自由主義 」 と言われる市場重 よし子 : それによる影響にはどのようなことがありますか。 先生 : 各国政府は。外国の企業や資本をすき付けるための政策をとろうとします。 視の思想について話しました。近年 , 巨額の資本が , 国境を越えて移動する そうした政策が。国内の労働者の生活を悪化させる場合あります。これは , ようになりましたが , そうした現象もグローバル化の表れの一つです。 。社会権的基本権に影響を及ぼす可能性があります。 (1) 下線部 1 に関して , 次の文章中の空棚 [ a ], [ b | に当てはまる人名の組み合わせ として正しいものを ,。下の ① て ④ の中から一つ選びなさい。 [5 | 1OTO4E AIC IZ Lit FY AOLa | 政権は , 新自由主義に基づく政策をおこ なった。日本では , 1980 年代に [ b ] 政権の下で同様の改革がおこなわれ , HAR 道の民営化などが実現した。 マーガレット・サッチャー| 小泉純一郎 注 ) トニー・プレア (Tony Blair), マーガレット・サッチャー(Margaret Thatcher) ー118 一",
       "text": "問",
       "answer_choices": [
@@ -8639,7 +8662,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8647,7 +8670,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8655,11 +8678,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "e469cf33-d526-4280-bc37-e16d59976791",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一5 (2) 下線部 2 に関して , 国境は河川や山脈などに沿って設定される自然的国境と , 紳線 や経線によって設定される人為的国境に区分される。自然的国境の例である山脈とそ れによって分けられる二つの国の組み合わせとして正しいものを , 次の ① て ④ の中か ら一つ選びなさい。 [6 | ① | ウラル山脈 (Ural Mountains) ロシアとフィンランド @| ピレネー山脈 (Pyrenees) フランスとスペイン アパラチア山脈 (Appalachian Mountains) 注 ) ロシア (Russia), フィンランド (Finland), スペイン (Spain), プラジル (Brazil), アルゼンチン (Argentina), アメリカ (USA) (3) 下線部 3 の政策の例として最も適当なものを , 次の ①ー④ の中から一つ選びなさい。 @ 法人税の税率を引き下げる。 @ 高齢者向けの福祉を充実きせる。 ④ 外国人労働者の受け入れを制限する。 ① 有害物質の排出規制を強化する。 (4) 下線部 4 の 「 社会権的基本権 」 を世界で最初に定めた窓法として正しいものを , 次 の ①~④ の中から一つ選びなさい。 ① フランスの 1791 年窟法 @ AAR @ アメリカ合衆国憲法 ④ ワイマール憲法 (Weimar Constitution) ー119 一",
       "text": "総合科目一5 (2) 下線部 2 に関して , 国境は河川や山脈などに沿って設定される自然的国境と , 紳線 や経線によって設定される人為的国境に区分される。自然的国境の例である山脈とそ れによって分けられる二つの国の組み合わせとして正しいものを , 次の",
       "answer_choices": [
@@ -8984,7 +9012,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9000,7 +9028,10 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "8d0803c9-b684-4c63-9fd7-f3e9c005fbac",
@@ -9306,7 +9337,7 @@
             "ー120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9334,7 +9365,7 @@
     },
     {
       "id": "b7b483a1-ea32-4551-a6ce-d58f386e7a6c",
-      "number": 51980,
+      "number": null,
       "raw_text": "問 51980 年代の日本経済に関する次の文章中の空棚 [ a |, | b | に当てはまる語の組み 合わせとして最も適当なものを , 下の ①~ て ④ の中から一つ選びなさい。 [1 プラザ合意 (Plaza Accord) を受け , 急激な円高が進行した。その結果 , 日本経済は (aD, その後不況となった。そのため , 日本銀行は公定歩合を段階的に [ b | など, 景気回復を図った。このことが , 後に 「 バブル景気 」 と呼ばれる好景気の始まりとなった。 | ① | 輸入 | 引き上げる | ⑨ | 輸入 | 引き下げる | ⑨ | 輸出 | 引き上げる @ | 輸出 | 引き下げる 問 6 日本の銀行制度に関する記述として最も適当なものを , 次の ①ー④ の中から一つ選 びなきい。 [12] ① 日本銀行は , 市中銀行からだけでなく , 大企業からも預金を受け入れている。 ④ 市中銀行は , 貸し出し以外にも国償や株式を発買して資金を運用している。 ⑧ 日本で流通している紙幣は日本銀行だけでなく市中銀行によっても発行されて ④ 赤字国債の多くは直接日本銀行によって購入され , その後 , 市中銀行に売却され ー121 一",
       "text": "問 51980 年代の日本経済に関する次の文章中の空棚 [ a |, | b | に当てはまる語の組み 合わせとして最も適当なものを , 下の 問 6 日本の銀行制度に関する記述として最も適当なものを , 次の",
       "answer_choices": [
@@ -9680,7 +9711,7 @@
             "ー121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9688,7 +9719,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "economic_analysis",
@@ -9696,7 +9727,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "abf729b6-8a2b-42d0-a894-223ebec8b43e",
@@ -9975,7 +10011,7 @@
             "ー122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10309,7 +10345,7 @@
             "成",
             "—123—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10343,7 +10379,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10351,7 +10387,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "1f56ec2e-7232-4a01-b7a4-5b440f400fce",
@@ -10690,7 +10730,7 @@
             "。",
             "—124—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10889,7 +10929,7 @@
             "ー125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10924,7 +10964,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10932,7 +10972,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "44c25426-9c35-41a8-b77e-d39f80e8497b",
@@ -11097,7 +11141,7 @@
             "ー126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11105,7 +11149,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "geography",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11113,7 +11157,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_recovered"
+      ],
+      "domain_confidence": 1
     },
     {
       "id": "e1fc91ef-c488-4ac9-8867-178575c515ce",
@@ -11303,7 +11351,7 @@
             "ー127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11470,7 +11518,7 @@
             "ー128",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11723,7 +11771,7 @@
             "ー129",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11746,7 +11794,7 @@
     },
     {
       "id": "b4dc0713-1858-4007-9ec5-66530056a171",
-      "number": 191789,
+      "number": null,
       "raw_text": "問 191789 年のフランス人権宣言の内容に含まれていない事柄を , 次の ① て ④ の中から一 つ選びなさい。 [25| ① 所有権 @ 立憲主義 ③ 男女平等 ④ 国民主権 問 20 議決方式には , 過半数の賛成を必要とするもの , 3 分の 2 以上の牧成を必要とする ものなど , さまざまなものがある。その中で , 全員に拒否権があるのと同じ結果にな る議決方式が採用された機関として最も適当なものを , 次の ①ー④ の中から一つ選び ① 国際連合の安全保障理事会 @ 国際連合の総会 ③ 国際通貨基金の理事会 ④ 国際連盟 (League of Nations) の総会 問 21 議院内賠制に関する説明として最も適当なものを , 次の ①ー④ の中から一つ選びな きい。 27| ① 原則として , 立法府の多数派が内閣を組織して行政を担う。 ② 議会の議長が闘僚を指名して内閣を組織する。 @ 選挙で第一覚になった政党によってのみ内閣を組織する。 ④ 内閣は , 議会から不信任された場合 , 必ず総辞職しなければならない。 ー130 一",
       "text": "問 191789 年のフランス人権宣言の内容に含まれていない事柄を , 次の 問 20 議決方式には , 過半数の賛成を必要とするもの , 3 分の 2 以上の牧成を必要とする ものなど , さまざまなものがある。その中で , 全員に拒否権があるのと同じ結果にな る議決方式が採用された機関として最も適当なものを , 次の 問 21 議院内賠制に関する説明として最も適当なものを , 次の",
       "answer_choices": [
@@ -12064,7 +12112,7 @@
             "ー130",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12080,7 +12128,10 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "920fcf32-2508-4ce6-8fbe-f98fb715bbea",
@@ -12345,7 +12396,7 @@
             "ー131",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12663,7 +12714,7 @@
             "ー132",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12671,7 +12722,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -12679,7 +12730,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.75
     },
     {
       "id": "1b5a27a2-8d26-4118-ae0e-259cd17ebf53",
@@ -12952,7 +13007,7 @@
             "ー133",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12974,7 +13029,7 @@
     },
     {
       "id": "aaa00c0f-a7c1-47d8-8650-15085c312f86",
-      "number": 2818,
+      "number": null,
       "raw_text": "問 2818 世紀末のフランス社会は , 第一身分 , 第二身分第三身分で構成されていたと言 われる。第三身分の説明として最も適当なものを , 次の ① て ④ の中から一つ選びなさ ① 総人口の 9 割以上を占め , 納税義務がなかった。 ② 総人口の 9 割以上を占め , 納税義務を負っていた。 ③ 総人口の 1 割以下であり , 納税義務がなかった。 ④ 総人口の 1 割以下であり , 納税義務を負っていた。 問 29 「 諸国民の春 」 とも呼ばれる 1848 年の諸革命に関する記述として最も適当なものを , 次の ① て ④ の中から一つ選びなさい。 |3 引 ① イギリスでは , 議会が専制政治をおこなう国王を追放し , 国民の諸権利を認める @ ドイツでは , 軍備増強を要求する水兵が反乱を起こし , 皇帝は退位し。ドイツ共 フランスでは , パリ (Paris) 民衆の区起により市街戦が起こった後 , 国王が退 ®@ ロシアでは , 農民の蜂起をきっかけとして共産党が武装蜂起し , ソ連 (USSR) 新しい国王が迎えられた。 和国が成立した。 位し , 共和派が臨時政府を樹立した。 が成立した。 ー134 一",
       "text": "問 2818 世紀末のフランス社会は , 第一身分 , 第二身分第三身分で構成されていたと言 われる。第三身分の説明として最も適当なものを , 次の 問 29 「 諸国民の春 」 とも呼ばれる 1848 年の諸革命に関する記述として最も適当なものを , 次の",
       "answer_choices": [
@@ -13321,7 +13376,7 @@
             "ー134",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13339,7 +13394,10 @@
       ],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "98775235-f62e-439d-ba2d-60cdb8a7c82e",
@@ -13575,7 +13633,7 @@
             "ー135",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13598,7 +13656,7 @@
     },
     {
       "id": "2de2206d-5e22-44c8-baec-36c0d1ac98ea",
-      "number": 321980,
+      "number": null,
       "raw_text": "問 321980 年代に起こった社会主義体制の崩壊に関する記述として最も適当なものを。次 の ①~④ の中から一つ選びなさい。 ① ハンガリー(Hungary) では独裁者が処刑され , その結果共産党支配が終わっ @ ユーゴスラビア (Yugoslavia) では , ティトー(Tito) の指導の下で複数政党 制が導入された。 @ ポーランド (Poland) では民主的な選挙が実施され , その結果共産党支配が終 ④ ソ連ではクーデターにより権力を握ったエリツィン (Boris Yeltsin) が共産党 を非合法化した。 総合科目の問題はこれで終わりです。解答杉の [39] ~ [60| はマークしないでくだ この問題民子を持ち帰ることはできません。 | ー136 一",
       "text": "問 321980 年代に起こった社会主義体制の崩壊に関する記述として最も適当なものを。次 の",
       "answer_choices": [
@@ -13806,7 +13864,7 @@
             "ー136",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13822,7 +13880,10 @@
       "keywords": [],
       "concepts": [],
       "year": 2015,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     }
   ],
   "metadata": {

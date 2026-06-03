@@ -69,8 +69,27 @@ engineInitPromise.then(() => {
   renderApp();
 });
 
+// ── Admin route detection (additive — existing app untouched) ─────────
+// The admin console is a self-contained SPA mounted at #/admin/*.
+// Entering it requires a page load at a #/admin URL, so the main app's
+// state-based navigation and styling are never affected.
+function isAdminRoute() {
+  try {
+    return (window.location.hash || '').replace(/^#/, '').startsWith('/admin');
+  } catch {
+    return false;
+  }
+}
+
 function renderApp() {
-  createRoot(document.getElementById('root')).render(
+  const root = createRoot(document.getElementById('root'));
+  if (isAdminRoute()) {
+    import('./admin/AdminApp.jsx').then(({ default: AdminApp }) => {
+      root.render(<StrictMode><AdminApp /></StrictMode>);
+    });
+    return;
+  }
+  root.render(
     <StrictMode>
       <App />
     </StrictMode>,

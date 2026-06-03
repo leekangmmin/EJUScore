@@ -117,7 +117,7 @@ export function semanticReconstruct(ocrBlockResult, index, options = {}) {
  * Extract mathematical formulas from text.
  * Detects: equations, expressions, scientific notation.
  */
-function extractFormulas(text) {
+export function extractFormulas(text) {
   if (!text) return [];
   const formulas = [];
 
@@ -149,7 +149,7 @@ function extractFormulas(text) {
 /**
  * Detect question type from text patterns.
  */
-function detectQuestionType(text) {
+export function detectQuestionType(text) {
   if (!text) return 'multiple_choice';
 
   // EJU typical question patterns

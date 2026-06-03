@@ -1,0 +1,160 @@
+{
+  "id": "math_2008_r1",
+  "source_file": "2008平成20年第1回文数.pdf",
+  "subject": "mathematics",
+  "year": 2008,
+  "round": 1,
+  "total_pages": 12,
+  "ocr_confidence": 0.78,
+  "total_questions": 18,
+  "questions": [
+    {
+      "number": 1,
+      "section": "math_1",
+      "topic": "이차함수",
+      "text_snippet": "問1\n\n数学一3\n\n放物線ッッニ2zィ+オ4ェ+5 を+ 轄方向に4, v 輸方向こにもだけ平行移動して得られる放物線\nをでご とする。z の値の範囲が ceくzz ぐ2 のとき, ひびV をグラブフとする2次関数の最小優が 1 で\n最大値が 49 となるような定数 ge,も を求めよう。\nリッニー22+エ4z+5 は\ny=2(+LAT+Ls」\nと変形できる。したがって, て をグラフとする2次関",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 2,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "問2 整式ア=eg4ー2g2+1 に対して, 整式のは\n3ア+20=3g7+6a-9\n\nを満たす。このとをき\n\n() 9=しJJg+[Lk_ ja-L てし] でぁる。\n\n(2) ア, 0 はそれぞれ\n\n6=G-LM TerLw 7 o=-Lo]e-[L5 je+[ga\n\nと因数分解できる。\n\n(3) 集合 4. 5 をそれぞれ\n\n4=(k-LWJL kr) 9- fk-ロEL kr Le\n\nとす",
+      "confidence": 0.95,
+      "source": "ocr"
+    },
+    {
+      "number": 3,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 4,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 5,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 6,
+      "section": "math_a",
+      "topic": "경우의 수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 7,
+      "section": "math_1",
+      "topic": "이차함수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 8,
+      "section": "math_a",
+      "topic": "확률",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 9,
+      "section": "math_1",
+      "topic": "삼각비",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 10,
+      "section": "math_1",
+      "topic": "집합",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 11,
+      "section": "math_1",
+      "topic": "도형",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 12,
+      "section": "math_a",
+      "topic": "경우의 수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 13,
+      "section": "math_2",
+      "topic": "미분",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 14,
+      "section": "math_2",
+      "topic": "적분",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 15,
+      "section": "math_2",
+      "topic": "수열",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 16,
+      "section": "math_b",
+      "topic": "벡터",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 17,
+      "section": "math_2",
+      "topic": "지수",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    },
+    {
+      "number": 18,
+      "section": "math_2",
+      "topic": "로그",
+      "text_snippet": "",
+      "confidence": 0.7,
+      "source": "curriculum"
+    }
+  ],
+  "metadata": {
+    "processed_at": "2026-06-02T07:01:32.454757",
+    "confidence_average": 0.78
+  }
+}

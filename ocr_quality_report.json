@@ -1,0 +1,364 @@
+{
+  "generated_at": "2026-06-04T06:14:04.551464",
+  "system_version": "2.0.0",
+  "subjects": {
+    "comprehensive": {
+      "subject": "comprehensive",
+      "exams_count": 28,
+      "questions_count": 840,
+      "overall_score": 75.16,
+      "dimension_scores": {
+        "ocr_confidence": 81.83,
+        "text_quality": 33.304,
+        "separation_quality": 32.76,
+        "schema_completeness": 100
+      },
+      "bonuses": {
+        "formula": 10,
+        "language": 5
+      },
+      "confidence": {
+        "count": 840,
+        "mean": 0.8183,
+        "median": 0.8575,
+        "std": 0.1101,
+        "min": 0.2662,
+        "max": 0.938,
+        "distribution": {
+          "high_0.9+": 134,
+          "good_0.8+": 471,
+          "fair_0.6+": 188,
+          "poor_0.4+": 38,
+          "bad_<0.4": 9
+        },
+        "risky_count": 47,
+        "risky_ratio": 0.056
+      },
+      "text_quality": {
+        "total_documents": 1570,
+        "total_chars": 486297,
+        "broken_chars": 0,
+        "broken_ratio": 0.0,
+        "garbage_sequences": 23,
+        "normalization_errors": 36,
+        "avg_meaningful_ratio": 0.7326,
+        "very_short_docs": 93,
+        "empty_docs": 14,
+        "quality_score": "C"
+      },
+      "language": {
+        "total_chars": 487866,
+        "japanese_chars": 289421,
+        "japanese_ratio": 0.5932,
+        "english_chars": 49017,
+        "english_ratio": 0.1005,
+        "digit_chars": 29289,
+        "digit_ratio": 0.06,
+        "korean_chars": 0,
+        "korean_ratio": 0.0
+      },
+      "separation": {
+        "extracted_count": 840,
+        "expected_range": [
+          35,
+          42
+        ],
+        "numbering_gaps": 214,
+        "duplicate_numbers": 336,
+        "sub_question_markers": {
+          "numeric_paren": 1314,
+          "alpha_paren": 153,
+          "circle_markers": 4087
+        },
+        "separation_quality_score": 0.3276,
+        "grade": "D",
+        "exam_count": 28
+      },
+      "formula_tables": {
+        "detected_tables": 742,
+        "detected_graphs": 0,
+        "detected_diagrams": 0,
+        "formula_hits": {
+          "equations": 25,
+          "integrals": 0,
+          "derivatives": 2,
+          "fractions": 0,
+          "greek_letters": 0,
+          "math_symbols": 0
+        },
+        "total_formula_markers": 27
+      },
+      "schema": {
+        "completeness_score": 1.0,
+        "total_questions": 840,
+        "field_stats": {
+          "id": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "number": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "text": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "domain": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "topic": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "question_type": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "difficulty": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "ocr_confidence": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "year": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "round": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "subtopic": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "keywords": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "concepts": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "answer_choices": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "tables": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "graphs": {
+            "present": 840,
+            "ratio": 1.0
+          },
+          "diagrams": {
+            "present": 840,
+            "ratio": 1.0
+          }
+        },
+        "missing_required": []
+      }
+    },
+    "mathematics": {
+      "subject": "mathematics",
+      "exams_count": 39,
+      "questions_count": 646,
+      "overall_score": 76.1,
+      "dimension_scores": {
+        "ocr_confidence": 78.61,
+        "text_quality": 62.912000000000006,
+        "separation_quality": 31.09,
+        "schema_completeness": 67.25
+      },
+      "bonuses": {
+        "formula": 10,
+        "language": 5
+      },
+      "confidence": {
+        "count": 400,
+        "mean": 0.7861,
+        "median": 0.7935,
+        "std": 0.0896,
+        "min": 0.2967,
+        "max": 0.9262,
+        "distribution": {
+          "high_0.9+": 31,
+          "good_0.8+": 162,
+          "fair_0.6+": 191,
+          "poor_0.4+": 15,
+          "bad_<0.4": 1
+        },
+        "risky_count": 16,
+        "risky_ratio": 0.04
+      },
+      "text_quality": {
+        "total_documents": 775,
+        "total_chars": 145752,
+        "broken_chars": 0,
+        "broken_ratio": 0.0,
+        "garbage_sequences": 1,
+        "normalization_errors": 0,
+        "avg_meaningful_ratio": 0.6728,
+        "very_short_docs": 117,
+        "empty_docs": 1,
+        "quality_score": "A"
+      },
+      "language": {
+        "total_chars": 146526,
+        "japanese_chars": 66905,
+        "japanese_ratio": 0.4566,
+        "english_chars": 20612,
+        "english_ratio": 0.1407,
+        "digit_chars": 9741,
+        "digit_ratio": 0.0665,
+        "korean_chars": 0,
+        "korean_ratio": 0.0
+      },
+      "separation": {
+        "extracted_count": 646,
+        "expected_range": [
+          30,
+          40
+        ],
+        "numbering_gaps": 38,
+        "duplicate_numbers": 299,
+        "sub_question_markers": {
+          "numeric_paren": 407,
+          "alpha_paren": 56,
+          "circle_markers": 162
+        },
+        "separation_quality_score": 0.3109,
+        "grade": "D",
+        "exam_count": 38
+      },
+      "formula_tables": {
+        "detected_tables": 389,
+        "detected_graphs": 0,
+        "detected_diagrams": 0,
+        "formula_hits": {
+          "equations": 263,
+          "integrals": 0,
+          "derivatives": 2,
+          "fractions": 0,
+          "greek_letters": 0,
+          "math_symbols": 0
+        },
+        "total_formula_markers": 265
+      },
+      "schema": {
+        "completeness_score": 0.6725,
+        "total_questions": 646,
+        "field_stats": {
+          "id": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "number": {
+            "present": 646,
+            "ratio": 1.0
+          },
+          "text": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "domain": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "topic": {
+            "present": 646,
+            "ratio": 1.0
+          },
+          "question_type": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "difficulty": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "ocr_confidence": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "year": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "round": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "subtopic": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "keywords": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "concepts": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "answer_choices": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "tables": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "graphs": {
+            "present": 400,
+            "ratio": 0.6192
+          },
+          "diagrams": {
+            "present": 400,
+            "ratio": 0.6192
+          }
+        },
+        "missing_required": [
+          "id",
+          "text",
+          "domain",
+          "question_type",
+          "difficulty",
+          "ocr_confidence",
+          "year",
+          "round"
+        ]
+      }
+    }
+  },
+  "cross_subject": {
+    "overall_system_score": 75.63,
+    "stronger_subject": "mathematics",
+    "score_gap": 0.94,
+    "combined_questions": 1486,
+    "combined_exams": 67
+  },
+  "summary": {
+    "verdict": "GOOD - Usable with minor corrections",
+    "overall_system_score": 75.63,
+    "highlights": [
+      "종합과목: 840문항, 75.16점",
+      "수학: 646문항, 76.1점",
+      "통합: 1486문항, 67개 시험지 분석"
+    ],
+    "critical_issues": [
+      "종합과목: 문제 분리 정확도 낮음 (grade D)",
+      "수학: 문제 분리 정확도 낮음 (grade D)",
+      "수학: 필수 필드 누락: ['id', 'text', 'domain', 'question_type', 'difficulty', 'ocr_confidence', 'year', 'round']"
+    ],
+    "recommendations": [
+      "종합과목: 문제 분리 정규식 개선 필요 (점수 0.33)",
+      "수학: 문제 분리 정규식 개선 필요 (점수 0.31)"
+    ]
+  }
+}

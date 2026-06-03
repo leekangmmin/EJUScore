@@ -6226,7 +6226,7 @@
             "回",
             ")"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6234,7 +6234,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -6242,7 +6242,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "173d9dd5-cc1b-406d-8ea2-374647fbec0c",
@@ -6596,7 +6600,7 @@
             "113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6604,7 +6608,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -6612,11 +6616,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "faee1ed1-9e10-44eb-bc63-16d138f1a7f4",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一1 間 1 次の会話を読み , 下の問い (1) て (4) に答えなさい。 よし子 : アメリカ (USA) のサブプライムローンの問題から始まった金融危機は , 先生 : 世界各地で信用 | a | が生じ , 産業に資金が回らみなくなりました。そのため よし子 : アメリカではどのような対策がとられたのですか。 先生 : i オバマ (Barack Obama) 大統領は , 財政支出の拡大や ? 基和幹産業の救済 よし子 : sIMF などによる国際的な対策も求められますね。 先生 : そうですね。国際的協調が大切です。 世界に大きな影響を与えましたね。 各国の中央銀行は , 政策金利を [ b ] ました。 BE, さまざまな経済政策に取り組んでいます。 (1) 上の会話中の空欄 [ a | Lb | に当てはまる語の組み合わせとして最も適当なもの を , 次の ①~ て ④ の中から一つ選びなさい。 1 ① | 拡張 | 引き上げ @ | 収縮 | 引き上げ @ | thik | 引き下げ @ | 収縮 | 引き下げ ー115 一",
       "text": "総合科目一1 間 1 次の会話を読み , 下の問い (1) て (4) に答えなさい。 よし子 : アメリカ (USA) のサブプライムローンの問題から始まった金融危機は , 先生 : 世界各地で信用 | a | が生じ , 産業に資金が回らみなくなりました。そのため よし子 : アメリカではどのような対策がとられたのですか。 先生 : i オバマ (Barack Obama) 大統領は , 財政支出の拡大や ? 基和幹産業の救済 よし子 : sIMF などによる国際的な対策も求められますね。 先生 : そうですね。国際的協調が大切です。 世界に大きな影響を与えましたね。 各国の中央銀行は , 政策金利を [ b ] ました。 BE, さまざまな経済政策に取り組んでいます。 (1) 上の会話中の空欄 [ a | Lb | に当てはまる語の組み合わせとして最も適当なもの を , 次の",
       "answer_choices": [
@@ -6908,7 +6916,7 @@
             "115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -6930,11 +6938,14 @@
       ],
       "concepts": [],
       "year": 2009,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "f2eceebe-b921-4435-9382-231fc27110bf",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (2) 下線部 1 に関して , オバマ大統領と同じ政党に所属し , 20 世紀前半の大恐慌に対処 次の ①ー④ の中から一つ選びなさい。 2 大統領名 | 政党名 ① | フーバー| 民主党 @| フーバー共和党 | ⑨ | ローズベルト | 民主党 ④ | ローズベルト | 共和党 注 ) フーバー(Herbert Hoover)。ローズベルト (Franklin Roosevelt) (3) 下線部 2 の産業として最も適当なものを , 次の ①②④ の中から一つ選びなさい。 ① 出版業 ② Ree ④ 自動車産業 (4) 下線部 3 に関して , IMF の設立が決められた国際協定と, IMF の本部のある都市 の組み合わせとして正しいものを , 次の ① て ④ の中から一つ選びなさい。 [4] | | 国際協定都市 ①」 スミソニアン (Smithsonian) 協定ジュネープ (Geneva) ⑨② | プレトン・ウッズ (Bretton Woods) 協定 | ワシントン (Washington) D.C. ⑨ | スミソニアン協定ワシントン DC. ④ | プレトン・ウッズ協定ジュネーブ ー116 一",
       "text": "総合科目一2 (2) 下線部 1 に関して , オバマ大統領と同じ政党に所属し , 20 世紀前半の大恐慌に対処 次の",
       "answer_choices": [
@@ -7183,7 +7194,7 @@
             "116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7201,7 +7212,10 @@
       ],
       "concepts": [],
       "year": 2009,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "8fb831e3-36cf-4b98-b2d2-c0775ce4d321",
@@ -7494,7 +7508,7 @@
             "117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7502,7 +7516,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7510,11 +7524,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "006de239-fe84-410d-a81b-af641dee1879",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一4 (2) 下線部 1 に関して , 温暖化の主な原因と , 対策を取り決めた文書の名称の組み合わ せとして正しいものを , 次の ①ー④ の中から一つ選びなさい。 [6 | 主な原因文書名 ① | 二酸化炭素の排出 VA (Rio) 宣言 ② | 二酸化炭素の排出 | 京都議定書 @| フロンの排出リオ宣言 ④ | フロンの排出 Bre ie eck (3) 下線部 2 の国際機関として正しいものを , 次の ①ー④ の中から一つ選びなさい。 ① FAO @ ILO @ WHO ④ WTO ー118 一",
       "text": "総合科目一4 (2) 下線部 1 に関して , 温暖化の主な原因と , 対策を取り決めた文書の名称の組み合わ せとして正しいものを , 次の",
       "answer_choices": [
@@ -7664,7 +7682,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7680,7 +7698,10 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "e748e406-6d94-4cc3-a6cb-b02f47b0b116",
@@ -7953,7 +7974,7 @@
             "119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7976,7 +7997,7 @@
     },
     {
       "id": "e9dac17c-17d1-42cd-be57-ec35f5d36592",
-      "number": 1,
+      "number": null,
       "raw_text": "1 ① | 固定資産税 | 所得 © | 所得税相続税 @ | 均等割地方税 | 固定資産税 @ | 相続税均等害地方税 ー119 一",
       "text": "1 ① | 固定資産税 | 所得 © | 所得税相続税 @ | 均等割地方税 | 固定資産税 @ | 相続税均等害地方税 ー119 一",
       "answer_choices": [],
@@ -7996,11 +8017,14 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "1660d717-174e-4636-a5e9-16fa27c6fbfd",
-      "number": 5,
+      "number": null,
       "raw_text": "問 5 次のグラフに関して , FOR), (2) に答えなさい。 Es Eo Ez Ei 雇用量 (1) 次の文章中の空欄 [ a ]-[| c ] に当てはまる記号の組み合わせとして最も適当なも のを、下の ①~④ の中から一つ選びなさい。 (10) 上のグラフは , AECMAMICT SBR (D,, D2) と供給曲線 (Si, S。) を示 している。当初, 賃金と雇用量の均衡点が X にあったとする。供給曲線が賃金に対して完 全に弾力的な場合 , 需要曲線の D」 から D。への移動によって , 均衡点々 は [ a ] へ移動し , 雇用基は | b liz, 賃金は | c | になる。 ③①|VIE Wl ④1| Z 1 Ez |Wi — 120 一",
       "text": "問 5 次のグラフに関して , FOR), (2) に答えなさい。 Es Eo Ez Ei 雇用量 (1) 次の文章中の空欄 [ a ]-[| c ] に当てはまる記号の組み合わせとして最も適当なも のを、下の",
       "answer_choices": [
@@ -8218,7 +8242,7 @@
             "120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8237,7 +8261,10 @@
       ],
       "concepts": [],
       "year": 2009,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "8a38baa9-0316-4ec1-b67b-4952370a3501",
@@ -8563,7 +8590,7 @@
             "121",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8833,7 +8860,7 @@
             "122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8841,7 +8868,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8849,7 +8876,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ef3ca9bb-c314-4545-b8be-0ef2bf7b4624",
@@ -9240,7 +9271,7 @@
             "123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9248,7 +9279,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "economic_analysis",
@@ -9256,7 +9287,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "8dc627a2-f8fe-4d7d-9297-0651bfcda456",
@@ -9456,7 +9491,7 @@
             "124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9507,7 +9542,7 @@
     },
     {
       "id": "cff8180e-c82c-4bdd-83e0-a23dda56ea8d",
-      "number": 12,
+      "number": null,
       "raw_text": "問 12 地図は球面である地球の表面を平面に投影したものであり , BURT ko TINH 正角図などに分けられる。 図法や円筒図法などに分けられる。また , その特徴によって正積鐘正中図 , 方位区 次の地図は , メルカトル図法で描あめれている。メルカトル図法の投影方法と特徴の 組み合わせとして最も適当なものを , 下の ① こ ④ の中から一つ選びなきぃ。 |20| 投影方法特徴 ① | A | TERE © | FASB TEREES | '@| 円筒図法 wie ④ | 円筒図法 | 正角図 | ー125 一",
       "text": "問 12 地図は球面である地球の表面を平面に投影したものであり , BURT ko TINH 正角図などに分けられる。 図法や円筒図法などに分けられる。また , その特徴によって正積鐘正中図 , 方位区 次の地図は , メルカトル図法で描あめれている。メルカトル図法の投影方法と特徴の 組み合わせとして最も適当なものを , 下の",
       "answer_choices": [
@@ -9907,7 +9942,7 @@
             "125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9927,7 +9962,10 @@
       ],
       "concepts": [],
       "year": 2009,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "feb0d47e-7d5f-4423-901b-5522ef23365e",
@@ -10096,7 +10134,7 @@
             "ー126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10134,7 +10172,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10142,7 +10180,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "62e317a6-237d-4e01-b5b3-b9c6d21a2049",
@@ -10392,7 +10434,7 @@
             "127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10713,7 +10755,7 @@
             "128",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11071,7 +11113,7 @@
             "129",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11603,7 +11645,7 @@
             "130",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11871,7 +11913,7 @@
             "131",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12201,7 +12243,7 @@
             "132",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12596,7 +12638,7 @@
             "133",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12604,7 +12646,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -12612,7 +12654,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2009,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     }
   ],
   "metadata": {

@@ -14029,7 +14029,7 @@
             "[eal",
             "題"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14037,7 +14037,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -14045,11 +14045,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ed0c81b0-b962-4f8d-8e4d-9b6765671eea",
-      "number": 1,
+      "number": null,
       "raw_text": "(80 分 ) (Prete ester rrrtrtr rr: tren fer tee tree rer “4 i 5, 監督者の許可なしに , 部屋の外に出ることはできません。 i ! 6, 試験が終わっても , COMMAREHSHS CLUTCH RUA, ! の対応する解答拉にマータしてください。 (Ee eeBee ー可 7 一",
       "text": "(80 分 ) (Prete ester rrrtrtr rr: tren fer tee tree rer “4 i 5, 監督者の許可なしに , 部屋の外に出ることはできません。 i ! 6, 試験が終わっても , COMMAREHSHS CLUTCH RUA, ! の対応する解答拉にマータしてください。 (Ee eeBee ー可 7 一",
       "answer_choices": [],
@@ -14319,7 +14323,7 @@
             "o7",
             "ーー"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14327,7 +14331,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -14339,11 +14343,16 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "fdda607e-2c7b-492a-ad27-35d08f7324bd",
-      "number": 1,
+      "number": null,
       "raw_text": "堆合科目一1 間 1 オリンジピックタクに関する次の会話を読か。下の間い (ロー4) に答えなさい。 AL 92004 年にコアテネ (Athemns) ですオリンピックが開催きれるんだね。 B : 近代オリンピックが最初に開かれたのがアテネなんだ。それから : きまぎざまな者 Al 政治的問題で。 』 ボイコットが生じたけり, 』 傘加を認められない国もあったよね。 HH : アテチネ・オリンピックが某しみだ。 市で開催きれたが 」 また戻ったんだ。 (1) 下線部 1 についてこの都市の場所はどこか。正しい位置を , 交の地図中の ③④ の 中から一つ選びなきい。 1 | (2】 下線部 2 について, オリンピックがまだ開催きれていない地域ががある。それはどこ か。正しいものを , 次の ① 一の中から一つ選びなきい。 [2 @ アジア (Asia) @ cheek (Central & South America) @ アフリカ (Africa) オセアニア (Oceania)",
       "text": "堆合科目一1 間 1 オリンジピックタクに関する次の会話を読か。下の間い (ロー4) に答えなさい。 AL 92004 年にコアテネ (Athemns) ですオリンピックが開催きれるんだね。 B : 近代オリンピックが最初に開かれたのがアテネなんだ。それから : きまぎざまな者 Al 政治的問題で。 』 ボイコットが生じたけり, 』 傘加を認められない国もあったよね。 HH : アテチネ・オリンピックが某しみだ。 市で開催きれたが 」 また戻ったんだ。 (1) 下線部 1 についてこの都市の場所はどこか。正しい位置を , 交の地図中の",
       "answer_choices": [
@@ -14610,7 +14619,7 @@
             "リカ",
             "(Africa)"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14630,7 +14639,10 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "65a9ce92-8787-4085-94b6-b307960a042d",
@@ -14965,7 +14977,7 @@
             "100",
             "—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14973,7 +14985,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -14981,11 +14993,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "409977be-b682-44a5-b634-ab2bf26bf238",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一3 (1) 下線部 1 の 「 文化相対主義 」 の考え方として最も適当なものを , 次の ①ー⑧ の中か らーつ選びなさい。 [5 | @ 現存する文化は。進化の過程で生き残った優秀な文化である。 ⑧ すべての文化は。その優劣を単一の尺度で滑ることはできない。 @ すべての文化は。互いに接触するなかで一つの文化に統合される。 @ すべての文化は。経済的な観点から説明することができる。 (2) 下線部 2 について。カナダでは二つの言語尋公用語として認められている。一つは 英語であるが。もう一つは何か。次の ①-④ の中から一つ選びなさい。 16 | ① えスペイシ語 (Spamish) @ 9732285 (French) @ 47076 (Italian) @ ドイツ語 (German) (3) 下線部 3 について。オーストラリアは 1970 年代の移民政策の転換をつうじて多支化 主義を採用するようになった。この政策転換によって , どの地域からの移民が急増し たか。正しいものを次の ③④ の中から一つ選びなさい。 [7] @ アジアァ (Asia) @ アフリカ (Africa) @ Wsa—uy-t (Eastern Europe) @ 南アメリカ (South America) ー101 一",
       "text": "総合科目一3 (1) 下線部 1 の 「 文化相対主義 」 の考え方として最も適当なものを , 次の",
       "answer_choices": [
@@ -15310,7 +15326,7 @@
             "(South",
             "America)"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -15318,7 +15334,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "social_analysis",
@@ -15326,7 +15342,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ff23471d-4872-4928-865b-b2157ea840fd",
@@ -15757,7 +15778,7 @@
             "ー102",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -16017,7 +16038,7 @@
             "きる",
             "。"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -16025,7 +16046,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -16033,11 +16054,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "5a41108e-e1ad-4a86-b393-2be199ab26e9",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一6 問 ? 産業構造について , KORA), (2) に管えなきい。 (1) 皿業別人人口構成を示す実の表中の和 A 一じに当てはまる国名の組み合わせとして最も 適当なものを , 下の ①-④ の中から一つ選びなさい。 1144| | _ | Aa | B C A B C 単位 : 9% 農林水産業。狩猟 49.3| 210| 92.6 鉱業 , 採石業 1.10.30.4 mes 12.318.815.0 Baw A KR | 0.4 | 0.51.1] 建設業 4.95.56.7 商業 6.921.520.7 運輸。倉庫 , 通信業 3.04.46.1 金融 FRM, PE 0.63.712.0 公務 , サービス業 | 2.9| 24135.4 分類不能 18.50.0 ー 計 100.0} 100.0| 100.0| ① | 中国メキジコ | アメリカ @⑳ | 中国日本 Fay ⑳ | アメリカ | 日本中国 ⑳ | アメリカ | $e メキジコ | 注 ) PE) (China), メキジコ (Mexico) 7 AU% (USA), Ft Y (Germany) (2) 産業構造の変化に関する説明として最も適当なものを , 次の員一の中から一つ選 ぜなきい。 (15) ® TT 革命などの情報通信技術の革新が進行すると労働力に余裕刀でき , BORE @ 先進諸国では , 工場の機械化の進行により , 第二次産業への労働者の流入がなおも ⑧ 機械化などで農業の生産性がが上昇すると労働力に奈挫おでき , PLKERORR ⑪ 多くの先進諸国では食料自給率を維圭するために。政策によって第一玖産業の就 業の就業者割合が増加する。 も拡大している。 者割合が増加する。 業者割合を 3 宙程度に保っている。",
       "text": "総合科目一6 問 ? 産業構造について , KORA), (2) に管えなきい。 (1) 皿業別人人口構成を示す実の表中の和 A 一じに当てはまる国名の組み合わせとして最も 適当なものを , 下の",
       "answer_choices": [
@@ -16408,7 +16433,7 @@
             "いる",
             "。"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -16427,11 +16452,14 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "5dc96657-cbe4-416d-900b-e22a530dd5cb",
-      "number": 1,
+      "number": null,
       "raw_text": "輸合科目一7 Me 次の文章を読み ,、下の問い 1 に答えなきい。 1985 年 9 月の先進 5 か国 (G5) によるプラザ合意 (Plaza Accord) tt, 円安ドル高か ら円高ドル安への転換の契機となった。 TOR, 日本は 「 円高不況 」 や 「 産業の空洞化 」 (hollowing out of industry) の問題に直面した。 (1) プラザ合窟の時期ヒして正しいものを。次の円ドル相場の推移のグラブフ中の ③④ の中から一つ選びなきい。 デーーーーーーーーーーーーーーーーーーーーーーー 円ドル相場 (9) 上の文章中の 「 円高不況 」 の生じた理由として正しいものを。次の ①ー④ の中から ーつ選びなさい。 [7 輸入価格の上昇 ⑳ 輸出産業の鱗争力低下 @ エネルギー価格の上昇 @ HHTSo be — 105 —",
       "text": "輸合科目一7 Me 次の文章を読み ,、下の問い 1 に答えなきい。 1985 年 9 月の先進 5 か国 (G5) によるプラザ合意 (Plaza Accord) tt, 円安ドル高か ら円高ドル安への転換の契機となった。 TOR, 日本は 「 円高不況 」 や 「 産業の空洞化 」 (hollowing out of industry) の問題に直面した。 (1) プラザ合窟の時期ヒして正しいものを。次の円ドル相場の推移のグラブフ中の",
       "answer_choices": [
@@ -16645,7 +16673,7 @@
             "105",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -16663,7 +16691,10 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "d6e6105a-c0b1-47dd-be8e-aa3289e924d3",
@@ -16975,7 +17006,7 @@
             "ある",
             "。"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -17205,7 +17236,7 @@
             "107",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -17213,7 +17244,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -17221,7 +17252,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "159e46ad-cd71-4800-b228-7b3ea912d00b",
@@ -17256,7 +17291,7 @@
     },
     {
       "id": "5d4e8738-b0da-4a08-adc2-0f3125beccde",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一10 間 11 次の図は , 日本のある地方の扇状地 (alluvial fan) を示したものである。 COR 状地について。下の問いロ 2 に答えなきい。 2HSFHO LE A, 国導地理甘 (1) この扇状地と , 地図の右下隅から溢れでい大川との関係につコぃての正しい説明を。 次の ①-④ の中から一つ選びなさい。 @ 現在 , この扇状地は川による著しい侵食 (erosion) を受けて , 扇状地面上は起 @ この扇状地は。川によって山地から運搬された土砂が堆積してできた地形である。 屋頂部で川から農業用水を取水することによって , この扇状地の中央部分では稲 © この扇状地では。川の池沙による被害を避けるために , 扇茶部に人家が分布して 伏が大きくなりつつづつある。 作ががおこなわれている。 (2) 図中に描かれた線分 PQ ( 図中では 6cm) 問の対配 (傾きの度合い ) として最も適 当なものを , 次の ①-④ の中から一つ選びなさい。 ① 10 分の 1 @ 20 分の 1 @ 50401 @ 100401 — 108 一",
       "text": "総合科目一10 間 11 次の図は , 日本のある地方の扇状地 (alluvial fan) を示したものである。 COR 状地について。下の問いロ 2 に答えなきい。 2HSFHO LE A, 国導地理甘 (1) この扇状地と , 地図の右下隅から溢れでい大川との関係につコぃての正しい説明を。 次の",
       "answer_choices": [
@@ -17609,7 +17644,7 @@
             "@",
             "100401"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -17629,11 +17664,14 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "3160f46b-3a81-4dee-b6e2-b5bac996ffc4",
-      "number": 6,
+      "number": null,
       "raw_text": "6 | 原 im _12 a 5 | 液化がス 4 魚介類 : 20 アメリカ 19 ul E 5 x ee: (aE 2002) 他 i) アメリカ (USA), 中国 (China), 韓国 (South Korea), 7% (Taiwan) (1) 相手国・地域上メービの組み合わせとして正しいもののを。次の Cm- の中から一つ選 ぴなきい。 [23| | ① | サウジアラビピアイラオーストラリア 人ゆ | インドネシア中国マレーシア ③ | サウアラビア中国インド | インドネシア En オォオーストラリア A B - 回 ) サウジアラビピア (Saudi Arabia), 47> (Iran), オーストラリア (Australia), インドネシア (indgnmesia), PH (China), 7 — 27 (Malaysia), -¢ > F (India)」 カナダ (Canada) (2) 輸入品目 X に当てはまるものを , 次の ①~④ の中から一つ選びなさい。 © 石油製品 ” ② Re @ MH © AM (3) 輸入品目 Y に当てはまるものを , KOOD~OOhHS—oBUe Svs, O aS @ GR @ me @ 衣類 ー109 一",
       "text": "6 | 原 im _12 a 5 | 液化がス 4 魚介類 : 20 アメリカ 19 ul E 5 x ee: (aE 2002) 他 i) アメリカ (USA), 中国 (China), 韓国 (South Korea), 7% (Taiwan) (1) 相手国・地域上メービの組み合わせとして正しいもののを。次の Cm- の中から一つ選 ぴなきい。 [23| |",
       "answer_choices": [],
@@ -17932,7 +17970,7 @@
             "109",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -17940,7 +17978,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "geographical_analysis",
@@ -17950,7 +17988,12 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "15bf41c2-2860-4f6e-8c97-a7d45306a628",
@@ -18357,7 +18400,7 @@
             "ー110",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -18741,7 +18784,7 @@
             "=",
             "="
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -18764,7 +18807,7 @@
     },
     {
       "id": "efaf9bce-5d4c-4608-9260-a504ab872624",
-      "number": 1,
+      "number": null,
       "raw_text": "1 下線部 1 について。経済活動の自由を保障した権利として正しいもゃのを。状の ① ー④ の中から一つ選びなさい。 |30| Q Wee @ 生存権 @ 動労権 @ 選挙権 (2) 下線部 2? の 『「 志法に明記されていなゅい人権 」 を , 次の ①ー③④ の中から一つ選びなき RR ACHE @® 身体の自由 プライバシーの権利 ® 教育を受ける権利",
       "text": "1 下線部 1 について。経済活動の自由を保障した権利として正しいもゃのを。状の",
       "answer_choices": [
@@ -18782,7 +18825,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "economic_analysis",
@@ -18790,7 +18833,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "db993f87-ebea-4cf4-9ef3-c4c9ee762d6e",
@@ -19134,7 +19182,7 @@
             "【(Netherlands)",
             "ie"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -19158,7 +19206,7 @@
     },
     {
       "id": "789db04a-7e4a-4e1c-8738-583887e1b9b7",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一15 PNG 次の問い一(3) に答えなきい。 (1) 下の文章中の空欄 (2), (b) に入る語句の組み合わせとして最も適当な組み合わ HE, 次の ①-ー④ の中から一つ選びなきい。 (35) イギリス産業革命では ( a ), Mec ( b ) 記重要な役割を果たした。一方 アジアの場合。( a ) と共に製系業 (silk reeling industry) も , 同じ役割を果たし た。なぜなら。特に日本は , 生糸 (raw silk) などを欧米に輸出して得た外貨で , 工業 化に必要な各種機械類を欧洋から輸入したからである。 a b | ① | mre | 自動車工業 [| Came | 鉄道工業 | @ | 綿工業鉄鋼業 @ | 毛織物工業 | 機械工業",
       "text": "総合科目一15 PNG 次の問い一(3) に答えなきい。 (1) 下の文章中の空欄 (2), (b) に入る語句の組み合わせとして最も適当な組み合わ HE, 次の",
       "answer_choices": [
@@ -19358,7 +19406,7 @@
             "ー113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -19366,7 +19414,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -19377,11 +19425,16 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "5ad04f75-63db-4760-bc0c-9c0032dd53ec",
-      "number": 1,
+      "number": null,
       "raw_text": "ORE —16 (2) KROFFT EAT, DUM CE RANE AMS UME, EC TOAR EMA した国として適当な組み合わせを。下の ⑪--④ の中から一つ選びなきい。 |36| 生系輸出 EMA ee syev on Oo ER ーーテテリカ 120040 に BD OO 20 Federica, Giovanni, Av economic history of the silk industry, 1830-1930, Cambridge University Press, 注 ) 中国 (China), 4379 % (United Kingdom), 792A (France), アメリカ (USA) mine | 輸入国 | QD) 中国 | イギリス @| 日本 | フランス @ 忠国フラシス | 日本 | アメリカ | ー114 一",
       "text": "ORE —16 (2) KROFFT EAT, DUM CE RANE AMS UME, EC TOAR EMA した国として適当な組み合わせを。下の ⑪--④ の中から一つ選びなきい。 |36| 生系輸出 EMA ee syev on Oo ER ーーテテリカ 120040 に BD OO 20 Federica, Giovanni, Av economic history of the silk industry, 1830-1930, Cambridge University Press, 注 ) 中国 (China), 4379 % (United Kingdom), 792A (France), アメリカ (USA) mine | 輸入国 | QD) 中国 | イギリス @| 日本 | フランス @ 忠国フラシス | 日本 | アメリカ | ー114 一",
       "answer_choices": [],
@@ -19556,7 +19609,7 @@
             "ー114",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -19583,7 +19636,10 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "5291e611-a796-4e45-bac2-95c71750169b",
@@ -19793,7 +19849,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -19801,7 +19857,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -19809,7 +19865,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.125
     },
     {
       "id": "9c2dc0b6-f3c0-45b5-9376-4a1a06c2655e",
@@ -20219,7 +20279,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -20245,7 +20305,7 @@
     },
     {
       "id": "ac7ac061-730d-4b17-bdf2-25276660e952",
-      "number": 1,
+      "number": null,
       "raw_text": "平成 15 年度",
       "text": "平成 15 年度",
       "answer_choices": [],
@@ -20273,7 +20333,7 @@
             ")",
             "|"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -20281,7 +20341,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -20289,11 +20349,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ac4aa501-890f-4143-aefa-d51ead0186a2",
-      "number": 1,
+      "number": null,
       "raw_text": "1. 目的 外国人留学生として , 我が国の大学 (学部 ) 等に入学を希望する者について , 日本語力入 び基礎学力の評価を行う。",
       "text": "1. 目的 外国人留学生として , 我が国の大学 (学部 ) 等に入学を希望する者について , 日本語力入 び基礎学力の評価を行う。",
       "answer_choices": [],
@@ -20732,7 +20797,7 @@
             "学力",
             "="
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -20740,7 +20805,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -20748,11 +20813,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "0a775d76-b895-4d6c-bcdd-66942e53c99c",
-      "number": 2,
+      "number": null,
       "raw_text": "2. 実施者 時団法人日本国際教育協会 (以下 「 本会 」] という。) が文部科学者、外務省。大学及び国 肉外の関係機関の協力を得て実施する。 3. 試験の方法 , ABS (1) 対 ROAR ARPREE LT, 我が国の大学等に入学を希望する者 (2) 試験日 : 第 1 回平成 15 年 (2008 年 ) 6 月 15 日 (日 ) 第 8 回平成 15 年 (2003 年 ) 11 月 16 A (A) 人 ⑬ 実施地 : 国内北海道 , 宮城県。群馬県。埼玉県。千葉県東京都。神奈川県 , AG, 愛知県 , WAT MISA, ART, 兵庫県 , 広島県 SUSI, Fa A Oa 外インドネシア (ジャカルタダタ肥ばびスラバパヤ )。 AbPALI 4 RU ホーナチミン )。韓国 (ソウル穫びプサン ), シンガボール (シンガ ポボール) ダイ (バンコク), BCI), フィリビン (マニラ ), マレーシア (クアラルンプール ) 及びばモンゴル ( ウランパートル ) [備考 ] ベトナムのホーチミシンについては , 第 2 同から実用 (4) 出題科目等 受験者は , 受験希望の大学等の指定に基づき , 以下の科目の中から選択して受験する。 日本の大学等での旬学に対応できる日本語力 (アカ デアミック・ジャパニーズメ ) を測定する。 190 分 | 0 一400 点 日本の大学等の理系学部での旬学に必要な理科 ( 物 | 理・化学・生物 ) の基傘的な学力を測定する。 a | Ses 日本の大学等での船学に必要な支承の基礎的な学力 , 特に思考力 , 論理的能力を副定する。 80 分 | 0~200 at 日本の大学等での勉学に必要な数学の基礎的な学力 を測定する。 er | 800 点",
       "text": "2. 実施者 時団法人日本国際教育協会 (以下 「 本会 」] という。) が文部科学者、外務省。大学及び国 肉外の関係機関の協力を得て実施する。  第",
       "answer_choices": [],
@@ -20764,7 +20834,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -20772,7 +20842,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "22c13983-14ae-469f-b4dc-6e96d5b3a10f",
@@ -21204,7 +21279,7 @@
             "ダル",
             "ダグ"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -21212,7 +21287,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -21220,11 +21295,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0.25
     },
     {
       "id": "4008e5be-e434-45b4-ae45-1d130a0b8cee",
-      "number": 1,
+      "number": null,
       "raw_text": "第 1 回平成 15 年 (2003 年 ) 5 月 23 日 ( 金 ) 第 2 回平成 15 年 (2008 年 )10 月 24 A (a) 国外 : 各国・地域の現地機関と調整のうえ , 決定する。 5. 結果の通知等 (1) 愛験者への通知 次に掲げる期日 (予定 ) に , 試験の成績を通知する。 第 1 回平成 15 年 (2003 年 ) 7 月 2 日 ( 火 ) 第 2 回平成 15 年 (2003 年 )12 月 22 日 (月 ) (2) 大学等への通知 第 1 回については 7 月下旬から , 第 2 回については 12 月下旬から , 大学等からの 成績曲合への対応を開始する。 〒153-8503 HAA BMH 4 - 5 — 29 財団法人 PARRA 事業部試験課 電話 03-5454-5338 FAX 03-5454-5339 E-Mail eju@aiej.or.jp",
       "text": "第 1 回平成 15 年 (2003 年 ) 5 月 23 日 ( 金 ) 第 2 回平成 15 年 (2008 年 )10 月 24 A (a) 国外 : 各国・地域の現地機関と調整のうえ , 決定する。 ",
       "answer_choices": [],
@@ -21650,7 +21729,7 @@
             "233",
             "—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -21658,7 +21737,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "geographical_analysis",
@@ -21666,11 +21745,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "67992568-492b-4923-beb3-5b052a07058f",
-      "number": 1,
+      "number": null,
       "raw_text": "実施国・地域 | 実施都道府県・都市 | 応募者数 (人 ) | 受験者数 (人 ) 20, 270 ジャカルタ ホーチミン インドネシア シンガポール タイバンコク BF 台北 フィリピジン 1 Ta マレーシア | クアラルンプール モンゴルウランバートル 28 nt trict wee 1, 307 - 総合 it 25, 78521,577 ー234 一",
       "text": "実施国・地域 | 実施都道府県・都市 | 応募者数 (人 ) | 受験者数 (人 ) 20, 270 ジャカルタ ホーチミン インドネシア シンガポール タイバンコク BF 台北 フィリピジン 1 Ta マレーシア | クアラルンプール モンゴルウランバートル 28 nt trict wee 1, 307 - 総合 it 25, 78521,577 ー234 一",
       "answer_choices": [],
@@ -21789,7 +21873,7 @@
             "234",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -21807,11 +21891,14 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "e81a46cb-9e1d-4779-84c2-868b746f40a7",
-      "number": 1,
+      "number": null,
       "raw_text": "国・地域 | 都道府県又は都市試験会場 北海道文教大学 宮城仙台大学 群馬群馬大学荒牧地区 埼玉猛協大学 + 葉千葉大学西千葉地区 拓殖大学文京キャンパス | 目白大学新宿キャンパス BERKS 東京早稲田大学 _ 7 電気通信大学 | 査林大学八王子キャンパス 明星大学日野キャンパス 神奈川横浜市立大学金択八景キャンパス 石川北陸大学太陽が丘キャンパス 愛知名古屋工業大学 zk 賀立命館大学ばわこ・くさつキャンパス 大阪大阪大学豊中キャンパス 兵庫園田学園女子大学 倉敷芸術科学大学 a 美作大学 福岡九州大学六本松地区 沖縄沖縄キリスト教短期大学 スラバヤ日本・インドネシア文化交流センター パンコクタイ国元日本留学生協会 台北語言訓練測験中心 ジャカルタ | インドネシア大学 ハノイ | ハノイ質星大学 (ベトナム日本人材協力センター) _ フィリピンマニラデラサール大学 ホーチミン | ホーチミン市社会科学人文大学 マレーシア | クアラルンプール | 帝京マレーシア日本語学院 - ソウル豊文女子高投 モンゴルウランバートル | モンゴル・日本センター プサンプサンデザイン高校 シンガポール日本文化協会 インドネシア ペベトナム",
       "text": "国・地域 | 都道府県又は都市試験会場 北海道文教大学 宮城仙台大学 群馬群馬大学荒牧地区 埼玉猛協大学 + 葉千葉大学西千葉地区 拓殖大学文京キャンパス | 目白大学新宿キャンパス BERKS 東京早稲田大学 _ 7 電気通信大学 | 査林大学八王子キャンパス 明星大学日野キャンパス 神奈川横浜市立大学金択八景キャンパス 石川北陸大学太陽が丘キャンパス 愛知名古屋工業大学 zk 賀立命館大学ばわこ・くさつキャンパス 大阪大阪大学豊中キャンパス 兵庫園田学園女子大学 倉敷芸術科学大学 a 美作大学 福岡九州大学六本松地区 沖縄沖縄キリスト教短期大学 スラバヤ日本・インドネシア文化交流センター パンコクタイ国元日本留学生協会 台北語言訓練測験中心 ジャカルタ | インドネシア大学 ハノイ | ハノイ質星大学 (ベトナム日本人材協力センター) _ フィリピンマニラデラサール大学 ホーチミン | ホーチミン市社会科学人文大学 マレーシア | クアラルンプール | 帝京マレーシア日本語学院 - ソウル豊文女子高投 モンゴルウランバートル | モンゴル・日本センター プサンプサンデザイン高校 シンガポール日本文化協会 インドネシア ペベトナム",
       "answer_choices": [],
@@ -22097,7 +22184,7 @@
             "セン",
             "ター"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -22116,11 +22203,14 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "816d688b-dafb-4a37-9ab5-d1cdfb1f4499",
-      "number": 1,
+      "number": null,
       "raw_text": "日本語シラバス 試験の目的 この試験は , 外国人禄学生として日本の高等教育機関特に大学学部に留学を希望する者が , 日 23, 試験は , Be, BRR, 読解及び記述により出題する。 本の大学での提学に対応できる日本語力 (アカデミック・ジャパニーズ ) をどの程度習得している かをシングルスケールで測定することを目的とする。",
       "text": "日本語シラバス 試験の目的 この試験は , 外国人禄学生として日本の高等教育機関特に大学学部に留学を希望する者が , 日 23, 試験は , Be, BRR, 読解及び記述により出題する。 本の大学での提学に対応できる日本語力 (アカデミック・ジャパニーズ ) をどの程度習得している かをシングルスケールで測定することを目的とする。",
       "answer_choices": [],
@@ -22239,7 +22329,7 @@
             "する",
             "。"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -22247,7 +22337,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -22257,11 +22347,16 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "e94daf29-f853-4eaa-82e7-4daf35fb80fd",
-      "number": 1,
+      "number": null,
       "raw_text": "日本語シラバパス T 測定対魚能力 CORAM TEP SRD, 下記概念図の網かけ部分である。 この試験は , 単に日本語に関する知識の有無や知識の量を測定するアチープメント・テストでは この試験は , 日本での留学生活をおくる上で , 日本語によるコミュニケーション能力があるかど ない。また , 日本での生活能力があるかを油る人人格テストでもない。 うかまた , 自国での初等・中等教育柳了までに習得した知識を前提としながら , 日本の大学で学 習・研究活動を行うたぬの日本語能力があるかどうかを測定する言語テストであり , かつ , 標準テ ストである。 生活スキル 日常生活・留学生活 に必要をなスキル 日辻生活・罰学生活 に必要な知識 (1) Sapa (L) ASR HALAS 17 SHAE 大学組織 (事務・教員・学中 コミュニテーションー・ネトラ地ーーAse (学則, Nile) カりキュラム (2) SERENE? (2) FLOR Deaid Sire eae 0 a) #2 ENM - Roce 生活中応人能力。 ERR fre PP ede 中 | BCA aa BP i) x (2) Semata “SOOT |e) 理系 (3) 研究活動スキル At: 2B MARR | MY 92 — te 学習スキル SHARE KBE As",
       "text": "日本語シラバパス T 測定対魚能力 CORAM TEP SRD, 下記概念図の網かけ部分である。 この試験は , 単に日本語に関する知識の有無や知識の量を測定するアチープメント・テストでは この試験は , 日本での留学生活をおくる上で , 日本語によるコミュニケーション能力があるかど ない。また , 日本での生活能力があるかを油る人人格テストでもない。 うかまた , 自国での初等・中等教育柳了までに習得した知識を前提としながら , 日本の大学で学 習・研究活動を行うたぬの日本語能力があるかどうかを測定する言語テストであり , かつ , 標準テ ストである。 生活スキル 日常生活・留学生活 に必要をなスキル 日辻生活・罰学生活 に必要な知識 (1) Sapa (L) ASR HALAS 17 SHAE 大学組織 (事務・教員・学中 コミュニテーションー・ネトラ地ーーAse (学則, Nile) カりキュラム (2) SERENE? (2) FLOR Deaid Sire eae",
       "answer_choices": [
@@ -22624,7 +22719,7 @@
             "As",
             "Keone"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -22632,7 +22727,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -22649,11 +22744,16 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "bba51188-b561-42bf-8311-b36aaaef5744",
-      "number": 2,
+      "number": null,
       "raw_text": "2 . 事物を特定する。 3 . 事物を捕写する。 4 . 事物を比較・配列する。 5 . 物事の推移・展開を予測する。",
       "text": "2 . 事物を特定する。 3 . 事物を捕写する。 4 . 事物を比較・配列する。 5 . 物事の推移・展開を予測する。",
       "answer_choices": [],
@@ -23032,7 +23132,7 @@
             "6.",
             "toh"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -23040,7 +23140,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -23048,11 +23148,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "5e1afea7-7d29-407c-9863-092510be3741",
-      "number": 6,
+      "number": null,
       "raw_text": "6 . 物事の背景や意図を把握する。 7. 物事を構造化し , 法則性を発見する。 8. その他 試験で要求きれる言語技能 日本での留学生活の中で適遇する諸課題を解決するために必要となる言語技能を以下に示す Ce 「 語す 」「 翻訳する ] については部分的ないし間接的削定となる。)。 1. BAS 2. 話す * 3. 読む 4. 書く 5. 翻訳する * NV 試験で要求きれる言語下位技能 EROS つの言語技能の下位接能として , 以下の類型が考えられる。 1 情報の全体の流れをとらえるゐ。 2. 情報の全体をある判断や評価をしながらとらえる。 4. 推測しながら情報をとらえる。 5. 予測しながら博報をとらえる。 6. toh 3. 特定の情報を抽出してとちらえる。",
       "text": "6 . 物事の背景や意図を把握する。 7. 物事を構造化し , 法則性を発見する。 8. その他 試験で要求きれる言語技能 日本での留学生活の中で適遇する諸課題を解決するために必要となる言語技能を以下に示す Ce 「 語す 」「 翻訳する ] については部分的ないし間接的削定となる。)。 ",
       "answer_choices": [],
@@ -23064,7 +23169,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -23072,11 +23177,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "0d91a310-9aef-40a9-a9f4-0c533ff2b32c",
-      "number": 2,
+      "number": null,
       "raw_text": "2. 話しことば 1) 対信岡係作り・継持に関するもの (3) 事物や人物の記述・メタ言語に関するもの (4) 机空の世界に関するもの (5) 放送メディア (ラジオ・テレビなど ) に関するもの (6) 公共アナウンスに関するもの (7) 街頭アナオウンスに関するもの (3) 2v-—>F (9) SME RR: 74 FIFE SILO 2 その他 Oo 打合せ・待府 (会議。シンポジウム , 意見変換など ) に関するるの i) 面接・インタビューに関するもの — 239 一",
       "text": "2. 話しことば ",
       "answer_choices": [],
@@ -23527,7 +23637,7 @@
             "239",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -23535,7 +23645,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -23543,11 +23653,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "cec5b45e-20b2-4c74-91dd-6d565d16cad1",
-      "number": 1,
+      "number": null,
       "raw_text": "1. fdr e ee 2. 大学・学習環境 3. fhe 4. FEO RAS 5. aod et",
       "text": "1. fdr e ee 2. 大学・学習環境 3. fhe 4. FEO RAS 5. aod et",
       "answer_choices": [],
@@ -24177,7 +24292,7 @@
             "ど",
             ")"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -24196,11 +24311,14 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "45a1a588-ea82-4b04-9a9c-ee6c0c6aef73",
-      "number": 6,
+      "number": null,
       "raw_text": "6. SERRE 7. MAM LT (Rik, Hew, 学習的側面 , eM, be i, Re ど )",
       "text": "6. SERRE 7. MAM LT (Rik, Hew, 学習的側面 , eM, be i, Re ど )",
       "answer_choices": [],
@@ -24212,7 +24330,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -24224,11 +24342,16 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "c906f0aa-35b6-4110-a86d-8f727562930a",
-      "number": 9,
+      "number": null,
       "raw_text": "9. 自国と日本の社会・文化との差異 ( 選上に挙げたもるのについて , FORMAL AA) 10. 言語表現の差異 (時刻の表現。曜日, AS, RRL SR, 安全対策 , Wt, KAS, RE, 8. HECHFL OUR MR, BO, ダローバルな国際関係 通貨 , 7Lf, 同意 , 不同意 , He, Ha, 興奮 , 豆びなどを表わす定型表現など } Wo 試験にあらわれる場面 (場所, 時間, SARE, WATER, 媒体など ) 場面はコミュニケーションが行われる場所 , 時間 , 形式 , 対人関係 , 話題なたどによって複合的 1 . 場所 2. 時間・時期 3. 対人関係 (1) 個人的属性 (性, 年齢世代。言語 , 国籍 , 職業 , 職種。地位など ) (2) {MAIR LAE ERY, 相互信存的、若・老年志向 , 男女平等 , 民主主義・権威主義的など ) 4) 心理的関係 【 親硬め関係 , ] 寧な関係。緊張・恐情感。散意を感じる関係など ) 4. 対人形態 (1) FRRUBRE ( 必希・個籍受動前・能動的 , 定期前・不定期前 , 損益など ) (2) 対人人形態 (1 対 11 対特定多 , 1 対不特定多 , 多対多をど ) に構成きれるものである。 (3) 社会的関係 【 上・下の関係、ウチ・ットの関係。公私の関係など )",
       "text": "9. 自国と日本の社会・文化との差異 ( 選上に挙げたもるのについて , FORMAL AA) 10. 言語表現の差異 (時刻の表現。曜日, AS, RRL SR, 安全対策 , Wt, KAS, RE, ",
       "answer_choices": [],
@@ -24240,7 +24363,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "social_analysis",
@@ -24256,7 +24379,12 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "a3333486-9f02-4a12-8389-5e541d15ebc7",
@@ -24609,7 +24737,7 @@
             "241",
             "ーー"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -24617,7 +24745,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -24625,11 +24753,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "5bee6eaa-eb33-4aaf-94cb-85cf73693c53",
-      "number": 1,
+      "number": null,
       "raw_text": "基礎学力 (理科 ) シラバス 試験の目的 この試験は , 外国からの留学生が日本の大学の学部において各学するに当たり必要ときれる理科 試験は , 物理・化学・生物で材成きれ , そのうちから 2 科目を選択するものとする。 出題の内容は , それぞれの科目において , 項目ごとに分類きされ, それぞれの項目は , 当該項目の 科目の基礎的な学力を測定することを目的とする。 主題叉は主要な術語によって提示きれている。 ー242 —",
       "text": "基礎学力 (理科 ) シラバス 試験の目的 この試験は , 外国からの留学生が日本の大学の学部において各学するに当たり必要ときれる理科 試験は , 物理・化学・生物で材成きれ , そのうちから 2 科目を選択するものとする。 出題の内容は , それぞれの科目において , 項目ごとに分類きされ, それぞれの項目は , 当該項目の 科目の基礎的な学力を測定することを目的とする。 主題叉は主要な術語によって提示きれている。 ー242 —",
       "answer_choices": [],
@@ -24778,7 +24910,7 @@
             "242",
             "—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -24786,7 +24918,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -24794,11 +24926,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "aad4d5ee-113c-461e-a16d-92a030cb2bc6",
-      "number": 1,
+      "number": null,
       "raw_text": "1. 力学 …| (le) TB, (a), belt phy (1) 運動の基礎要念 [ 速き , 等速直線運動速度 , DRE, 重力加速度 , A Fh, Bi (2) 運動の 3 法則 【 慣性の法則 , 運動の医則 , 運動方程式 , 作用反作用の法則 , 内力と外力 】 (3) D(A, 力の合成と分解 , カカのつり合い , 重力 , 弾性力 , フックタ (Hooke) の法則 , 張力 (4) 回転と力のモーメント 【 力のモーメント , 剛体のつり合い。個力 , 重心 】 (5) HAAR [Seok RUE Bee CH, 国際単位系 ] (6) 運動量 (RH, DA, TEE RR, MAR] (7) 衛界 【 はねかえり係数 , EER EER) (8) 力学的エネルギー【 仕事 , PE, 重力による位置エネルギー, 弾性力による位置エネルギー, (9) FAs) [Sse sa), EE, A, ey Ee] fo) 単振動 [復元力 , 単振動 , 位相と振幅 , 振動数と周期 , 吉速訟。エネルギー, ばね振り子 , On) 万有引力 [天動説と地動説 , ケプラテー(Kepler) の法則 , ニュートン (Newton) の万有引 a) 圧力と知力 【 鞍体の深きと圧力 , パスカル (Pascal) OHH, I] と抗力。 MILER, MEHR) 仕事と運動エネルギー, 力学前エネルギー, 力学的エネルギーの保存則 , 摩擦によるエネルギー 単振り子 】 HOE, 万有引力による位置エキネルギー] 2. 熱学 …| (Q)ー2) は物理 B、(3)-(5) は物理 (3) 触と温度 【 物質の 3 つの形態。熱運動 , 温度と温度計 MOP, BOAR, MT] (2) 分子運動 【 圧力。ポイル・シャルル (BoyleCharles) の法則 , 総計温度 】 (3) 気体の圧力 【 モル。気体定数 , 状能方程式, 理相気体, 分子運動と圧力 】 (4) 内痢エネルギー【 ジュール Joule) DMR, 内部エネルギー, MOM 1 法則。 AE 化と定圧変化 ,pーV グラフ , Wim, IAL) (5) エネルギーの変名 【 不可逆な現象 AMO, MIMIC LE) (1) ROMER, (MET, 振動振幅. 振動数、周期 , 波長 , MS, HS, MRR, sei, ie (2) 濾の伝わり方 [重ね合わせの原理 , Fe, 定常渋 , MER, 波面 ,、ホイヘンス (Huygens) (3) 音 【 音波 , 音の 3 要素 [高き , WS, 音色 ]。空気中の音速 . うなり , MOMMA) + he (4) 死 【 光濾、光の遠き偏光 , HORNER, bY A, 焦点と焦点距離。実像と虚像白色 の原理 , ARE RAR, 反射の法則 , Bi, 屈折の法則 , 回折 】 Hh, 気柱の同才振動。気柱の共鳴と共振ドップラー(Doppler) 効果 ]】 光と単色光 . スペタトル , DHE PB, +> (Young) の実験 , 回折格子",
       "text": " ",
       "answer_choices": [
@@ -25440,7 +25577,7 @@
             "子",
             "】"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -25448,7 +25585,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -25456,11 +25593,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "9255be67-8e09-4897-8e51-f5ee602025c9",
-      "number": 1,
+      "number": null,
       "raw_text": "4. 電磁気学 …| (に 7) は物理 1 B,( 引 …(⑧ は物理 | Q) 電気力 【 摩擦と帯電 , 静電気力 , 電荷 , ターロン (Coulomb) の法則 , 導体と絶縁体 , 自 由電子 , 伝導電子 , 静電誘導 】 (2) 電場 (電界 ) (RM, AORN ORM, 重ね合わせの原理 , UAB) (3) 電層と電位差 【 電位と電位差 , 電圧, 電位差と電気力のする仕事 , 電気力による位置エネル ギー, 一様な電場がする仕事 , 点電荷による電位 , 等電位面、等電位線 ] (4) 電場中の遵体 [導体の等電位性。静電遮蔽 , 接地 ] (5) コンデンサー【 コンデンサー。電気容量 , 誘電体 , 誘電率 , コンデンサーの接続 , 合成容量 , コンデンサーに蓄えられるエネルギー] (6) 電流 【 電流 , 電圧 , HAH, 抵抗 , オーム (Ohm) の法則 , 電流と仕事 , 電力 , 抵抗の接 om, 直流回略。キルビヒホップ (Kirchhoff の第 1, 第 ? 法則, 電流計と電圧計 】 (7) 半導体 【 半導体ダイオード , 整流作用 . トランジスター】 (8) 磁場 (磁界 ) A, AR, 磁極 , RL, RE, 磁場と電流の間の力 , RS 円電渡の作る磁場単位系 BRE] (9) 電磁誘導 【 ファラデー(Faraday) の実験。 THEM, RRR, RRB, Zit 電圧・ Wei, 電磁波 ] 5. 電子と原子 …| (1 (4) は物理 B, (2), (3), (5), (6$] は物理 (i) 電子 【 放電管 , 陰極線。電子 , 電場中の電子の運動、電気素量 ] (2) 原子の構造 [原子楼 , 原子番号。ポボーア (Bohr) 模型定常状態 , エネルギー装位 ] (3】 FROMM [ET] (4) 放射線と放射能。 Bia — [, 放射能 , Bt —, 原子炉 , Bat eA) (5) 電子の波動性 【 電子渋 , 物質波 ] (6) OMT DEMIR, 光子、仕事関数 , BO! et, XM, 32> 7h» (Compton) it",
       "text": " ",
       "answer_choices": [
@@ -25843,7 +25985,7 @@
             "it",
             "il)"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -25851,7 +25993,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -25859,11 +26001,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "1a0b47ec-0aa2-430a-92a3-4e2cee5b326b",
-      "number": 1,
+      "number": null,
       "raw_text": "1. 無機物質 (1) 単体 典型元素の性質と周期表 第 3 周期までと KRK, Ca (2) 化合物 典型元素とその化合物 BRILL EOS Ag, Cu, Zn, Fe, Ni, Mn, Cr. Rei ey (3) イオンの確認 Ag*, Cu, Zn**, Ba\", Ca’, Sr*, Mg, Na’, K’, Al’*, Pb**, Fe’*, Fe’*, Cl, SO HCO,”, I-. 代表前なイオンの反応 fi Rb, DORE BOS 2. 有機物質 0) 有機化合物の特徴 (2) BR, 水素 , MRP oe Sika (3) 窒素を含む化合物 脂肪衣 , 芳香旗 アルコール , エーテル 有機化合物の組成。分子式の決定 アルデビド , ケトン 芳香族アミン , 芳香族ニトロ化合物 有機化合物の構造と分類 カルボン酸 構造式と異性体 ブェメー上ル 3. 天然有機化合物と高分子化合物 (1) RA MES 農水化物 , He",
       "text": "1. 無機物質 (1) 単体 典型元素の性質と周期表 第 ",
       "answer_choices": [],
@@ -26083,7 +26230,7 @@
             "。",
             "糖"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -26091,7 +26238,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -26099,11 +26246,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "f490b336-74d6-4949-9972-c96837b7d85d",
-      "number": 4,
+      "number": null,
       "raw_text": "4. 有機化合物の反応 (1) 置操展応 (2) 付加反応 (3] 重合反応 II WB OARE--| 化学 I B 1. 純物質 1) 物質の三態 (2) BANE, ARSE EMS, HS (3) 気体の状態式 2. ke Q) 気体の分圧 (2) 3 3) SROKA (4) 204 FRR iE FEAR ri Lt コロイド潜湊の性質 北園点隆下 相 {EAR | 1 と 3 は化学 1、2。 4, 5 は性学 1B 1. ROMS (定性的にのみ取り扱う }) (1) tv Bs & a Be (g) pee",
       "text": "  2. ke Q) 気体の分圧 (2) 3 ",
       "answer_choices": [
@@ -26273,7 +26425,7 @@
             "(2)",
             "pba"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -26281,7 +26433,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -26289,11 +26441,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "8a9a49bf-0863-4c38-bd8b-beb197ddd19c",
-      "number": 2,
+      "number": null,
       "raw_text": "2. 化学反応と熱 (1) BREGRR (2) 熱化学方程式 3. 化学平衡 (1) Ws Be (2) {Eee ae ih 4. ARESIEO boi (2) 中和 (3) RMA + PRE (1) 酸 , 塩基 5. 醸化 , 居元反応 (1) Pk, 還元 (2) WSR (3) @Bo4 + >it (4) 電池 TV 物質の構造 …| 化学 rg| 1. 原子の構造 (1) 原子の構造モデル [g) 原子の電子配置 (3) 原子の構造と元素の周期表 2. 化学結合 Ql) イオンッ結合 (2) 共有結合 (3) 物質の橋造と性質 ー247 一",
       "text": "    ",
       "answer_choices": [
@@ -26418,7 +26575,7 @@
             "247",
             "ーー"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -26426,7 +26583,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -26434,11 +26591,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "f9ad3a20-5fa8-4c70-8d8d-f7cb534ebbdf",
-      "number": 1,
+      "number": null,
       "raw_text": "1 生物体の構造と機能 …| 生物 1 B (ただし 3 は生物を含む。) 1. 細胞 (1) 綱胞の構造と機能 (2) 細胞膜の性質 2. aos (1) RMD (2) BALE (3) 多細胞生物 (4) 組織及び器官 3. TE (1) 酵素の働き (2) 酵素の性質 (3) 民放とエネルギー (5) ATP の利用 (4) ATP の生成 4。賠北上異化 Q) Steet (2) 化学合成 (3) 窒素同化 (4) 時気呼吸 (5) 謙気呼吸 II 生命の連続性 … 1 一3 は生物 1 B, 4 と 5 は生物 | 1. £0425 (1) aptEASae ESE AE 人 a) 受精 (5) AME AR [2) RASH (3) 減数分製 2. 発生 (1) 初期発生 ー248 一",
       "text": "  ",
       "answer_choices": [
@@ -26619,7 +26781,7 @@
             "初期",
             "発生"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -26627,7 +26789,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -26635,11 +26797,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "899a9138-3f7f-45ef-a69b-9cc9bacc7c33",
-      "number": 3,
+      "number": null,
       "raw_text": "3. 遺伝変異 Ql) メンデルの実験 (2) defee eel) (3) UE & Bete tk (4) PEERS (5) ERE PERER 4. HRT ORK (3) DNA FR (1) eee (4) 遺伝障号 (2) phe 5. 形質発現のしく避 (1) 一遺伝子一酵素説 (4) 形台形万 (2) タッパタ質の生成 (3) HRS HE I 生物と環境 …| 1, 2, 4、5 は生物 TB。 3 は生物 T 1. 生物の反応と調節 は 3) 受容体 (4) 作動体 (5) Shao tray (1) Hie see (2) BREA 2. 恒常性 1) 内部環境 (2) 体溢の恒常性 (3) ホルモンと自律神継との協調 (5) OM (4) 内部環境とその恒常性 3. 生体肪御とタンバタ質 (1) SUGAR BS (2) Biko",
       "text": "    ",
       "answer_choices": [
@@ -26788,7 +26955,7 @@
             "(2)",
             "Biko"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -26796,7 +26963,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -26804,11 +26971,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "6d1d83d3-8d97-4735-af35-13095d37da6c",
-      "number": 3,
+      "number": null,
       "raw_text": "3) Suge 4 。植物の反応と調節 (3) 花芽形成 (4) 植物ホルモン (1) 植物の反応 tg) 成長運動 5. RAE DORM () 動物の集団 (2) HRA L Be (3) ERRORS (4) EH ODE (5) SRRODA LOR (6s) 自然界の平衡と環境の保全 TV 生物の進化と系続 …| 生物 』 | 1. 生物の追化 1) 生命の起源 (2) 生物罪の変遷 (3) 進化の証抑 (4) 進化謗 2. Ayo Fee + (1) 生物の分類 (2) 分類の単位としての 「[ 種 」 (4) Fatt (3) 生物の系統",
       "text": "3) Suge    ",
       "answer_choices": [],
@@ -26962,7 +27134,7 @@
             "(4)",
             "FRc"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -26970,7 +27142,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -26978,11 +27150,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "76d51e99-64ce-44cb-a088-c2a586bbff0a",
-      "number": 1,
+      "number": null,
       "raw_text": "基礎学力 (総合科目 ) シラバス 試験科目 「 総合科目 ] は , 多支化理解の視野からみた現代の世界と日本についてのテーマが中心 具体的には , 公民を中心として地理 , 歴史の 3 分野から門合的に出題される。出題の男囲は , 以 となる。その目的は , 禄学生が日本の大学で勉学に必要と考えられる現代日本についての基本前知 下の各分野における項目からなり , それぞれの項目は関連する主要な用語で示きれている。 識をもち , あわせて , CACOMMLSOLAHMA OW TRHMILFA, 判断する能力がある かを判定することにある。 — 251 一",
       "text": "基礎学力 (総合科目 ) シラバス 試験科目 「 総合科目 ] は , 多支化理解の視野からみた現代の世界と日本についてのテーマが中心 具体的には , 公民を中心として地理 , 歴史の 3 分野から門合的に出題される。出題の男囲は , 以 となる。その目的は , 禄学生が日本の大学で勉学に必要と考えられる現代日本についての基本前知 下の各分野における項目からなり , それぞれの項目は関連する主要な用語で示きれている。 識をもち , あわせて , CACOMMLSOLAHMA OW TRHMILFA, 判断する能力がある かを判定することにある。 — 251 一",
       "answer_choices": [],
@@ -27173,7 +27350,7 @@
             "“el",
             "—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -27181,7 +27358,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "historical_analysis",
@@ -27193,11 +27370,16 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "1c6ec4fd-d214-49c5-9aa9-081f040d3d78",
-      "number": 1,
+      "number": null,
       "raw_text": "1. Hhotetis 2. ARORA 4. 現代の政党 民主主義 , 政治参加 , 政党・選挙。 MRAMML ARM, 憲法 , 行政国家化 , 人権 4. ARORRRS 都市化。情報化 , 高齢化 , AMS, 多文化理解 , eae, Ae 市場経済体制。 NE, 経済成長 , Bete A, インフレーション , 経済危機 RULER, 国民国家体制地球環境問題 , 国連と国際機構 , 南北問題 , 開発援助民族韻 + SHA 4. #4, NPO- NGO I # # 1. 地理的技能 地球 , 地図と図法 , 標準時 , 空中写真。GIS (地理情報システム ) 気候。地形。植生 , 地震 , 火山 3. 日本の上人をと産業 RARER, 商工業 , AO, 交通と通信 , AB 2. 日本の国土と自然 1. 近代の世界 イギリス産業革命 , アメリカ独立革命 , ブランス革命 , アジアの征民地北帝国主義 2. 現代の世界 BRERA, TR, 第二光世界大戦 」 冷戦、アジアとアフリカ諸民歳の独立運動 3. 近現代の日本 inte, 近代日本の立憲政治と産業革命 , 戦俊改革 , 経済成長 , 公害問題 ー25g 一",
       "text": "1. Hhotetis 2. ARORA  ",
       "answer_choices": [],
@@ -27461,7 +27643,7 @@
             "foe",
             "—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -27469,7 +27651,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -27479,11 +27661,16 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "c3232d6c-5075-4791-80ac-10dba302c101",
-      "number": 1,
+      "number": null,
       "raw_text": "基礎学力 (数学 ) シラバス 試験の目的 | CORBIS, 外国からの留学生が日本の大学の学部において勉学するに当たり必要ときれる基礎 試験は , 文系学部及び理系学部のどちらにも必要な慕礎的知識を測定する。試験は , LRERR 出題の内容は , 項目ごとに分類きされ, それぞれの項目は。当鼓項目の主症双は主要な術語によっ 的なな学力を測定することを目的とす放。 び数学を必要とする程訂世比較的少ない理系学部用 (コース 1 ) と数学を高度に必要とする学部 , て提示されている。 例えば , 理工系学部用 (コース 2 ) とを用意してあり , 志望学部によって , そのいずれかを選択す るものとする。",
       "text": "基礎学力 (数学 ) シラバス 試験の目的 | CORBIS, 外国からの留学生が日本の大学の学部において勉学するに当たり必要ときれる基礎 試験は , 文系学部及び理系学部のどちらにも必要な慕礎的知識を測定する。試験は , LRERR 出題の内容は , 項目ごとに分類きされ, それぞれの項目は。当鼓項目の主症双は主要な術語によっ 的なな学力を測定することを目的とす放。 び数学を必要とする程訂世比較的少ない理系学部用 (コース 1 ) と数学を高度に必要とする学部 , て提示されている。 例えば , 理工系学部用 (コース 2 ) とを用意してあり , 志望学部によって , そのいずれかを選択す るものとする。",
       "answer_choices": [],
@@ -27685,7 +27872,7 @@
             "THAR",
             "EHTS,"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -27693,7 +27880,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -27704,11 +27891,16 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ada0da98-71bd-4712-9901-db82ea960340",
-      "number": 1,
+      "number": null,
       "raw_text": "1. Rest [BA EEL, AOR) は数学 B、「 不等式の表す額域 」 は数学 T) | (1) 実数 【 自的数 , 整数 , 有有理数 , 無理数 , Se, Heat] (2) EB EGFR, MAN, 極形式 (St), 模案平面・ド・モアァブル (de Moivre) の 定理 , 1 のぁ Het] (3] 多項式 ( 整式 )【 央数分解 , 剰祭定理と因数定理二項定理 】 (4) 午式と不等式 【 全等式 , 方程式と不等式の解 , 不等式の表す領域 】 (5】 連立方程式と連立不等式 (6) 恒等式と不等式の証明 【 例 : 相加平均 = 相生平均] 2. 集合と論理 …| 数学 1 と数学 A QO) 24 (rsp) Stee (2) 集合についての基本的事項 *【 和集合と共通部分。守集合, ド・モルガン (deMorgan) の 3. 関数とグラフ …| 数学と数学 (ただし ,「 逆関数 」 は数学和 ) QO) 関数についての差本的概念 【 定義域と値域。周期関数 , 合成関数道関数 *] (2] 関数のダラブフ 【 関数とゲラフの関係、ダラフの平行移動 】 4. 8 次関数 …| FL ERB hh) 2 丈関教のゲラブ 【 放物線の頂点と軸 】 (2) 2 次方程式 【 解の公式 , 判別式 , 解と係数の関係虚数 ] (3) 2 次不等式 5. 分数関数 (分母は 1 次式 ) 【 反比例 , ャーーのグラフ 】 | 一般の 「 分数開数 ] は数学本 (TIT CHEE 1 EOS に制限する。) 6. 指数関数と対数関数 …| 数学 (1) 指数の拡張 【 負の指数 , 有理数の指数 , 無理数の指数 】 (2) 指数関数 【 指数法則 , y= a7 のグラフ] (3) 対数関数 【 常用対数と自称対数対数法則 , y log, 2 のグラフ 】 7. 三角関数 …| AL と数学 I (ただし。「 弧度法 | は数学息 ) ーーSin サ gs 29= ) Sik ARM (tand cosa’ SI @+cos? @=1)] (2) SAO DERE, REM, 図形の性質 , 多角形の耐積 ] (3) 三角関数 *【 加法定理 , 三角関数の合成。積と和の変換公式 MIE, 797)",
       "text": "  3. 関数とグラフ …| 数学と数学 (ただし ,「 逆関数 」 は数学和 ) QO) 関数についての差本的概念 【 定義域と値域。周期関数 , 合成関数道関数 *] (2] 関数のダラブフ 【 関数とゲラフの関係、ダラフの平行移動 】    ",
       "answer_choices": [
@@ -28174,7 +28366,7 @@
             "フ",
             "】"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -28182,7 +28374,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "graph_analysis",
@@ -28192,7 +28384,12 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "983e14a8-08a2-432b-85fd-b6a98cebda64",
@@ -28654,7 +28851,7 @@
             "凹凸",
             "]"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -28662,7 +28859,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -28670,11 +28867,15 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "250f2dbc-1a75-46c3-b79d-4120907740be",
-      "number": 9,
+      "number": null,
       "raw_text": "9. 平面図形 …| RAT (一部は中学 , 数学 A に含まれる。 | 極座標 」 は数学 C) 1) 護標承 [直交座標 , 極肉標 *】 (2) See (2AMORM, 線分の内分点と外分点 , GROAHA, ? RHO ET - SHAE, AL aOR) (3) 三角形 【 三角比の応用 , 重心・外心・内心 , ビタゴラス (Pythagoras) の定理 】 (4) 円 【 円とその接線の方程式 , 円周角と中心角 , 円と直線の位置関係。 2 円の位置剛係 ]",
       "text": "9. 平面図形 …| RAT (一部は中学 , 数学 A に含まれる。 | 極座標 」 は数学 C) ",
       "answer_choices": [],
@@ -28686,7 +28887,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "geometry",
@@ -28696,11 +28897,16 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "3f3f07f4-9597-4597-b812-6356089d25b1",
-      "number": 10,
+      "number": null,
       "raw_text": "10. 空間図形 【 球・円名・角多等の体積と表面積 ] …| 中学 | ll. ポみトル\"…| BSB (1) 平面ペタトルと空間ベタトル 【 和とスカラー憶 , 内積 , 二つのペタトルのなす角 ] (2) ペクトルの応用 【 線分上の点の倍置ベタトル , 直線のベタトル方程式 ]",
       "text": "10. 空間図形 【 球・円名・角多等の体積と表面積 ] …| 中学 | ll. ポみトル\"…| BSB (1) 平面ペタトルと空間ベタトル 【 和とスカラー憶 , 内積 , 二つのペタトルのなす角 ] (2) ペクトルの応用 【 線分上の点の倍置ベタトル , 直線のベタトル方程式 ]",
       "answer_choices": [],
@@ -28712,7 +28918,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -28722,7 +28928,12 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "741cd1c2-cdec-476a-8ad6-f5bb1281643a",
@@ -28747,7 +28958,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -28765,7 +28976,11 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "68cbe698-4958-4c30-bd33-a234209be446",
@@ -29099,7 +29314,7 @@
             "ある",
             "。"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -29107,7 +29322,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -29117,11 +29332,15 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "46ff1250-cced-4c2b-9569-eb4f55a5d289",
-      "number": 17,
+      "number": null,
       "raw_text": "17. 確率 …| SAT (ただし ,「 箇件付き確率 」 は数学 B (1) 試行と事銀 【 独立試行と反復試行 , 和 ( 積 ) BR, HEM, HBR) (2) 確率の基本性質 【 確率の加法定理 , 反復試行の確率。条件付き確率 *] (3) 期待値 注 1 : 数学の試験は ,「 文系及び数学をそれほど必要としない理氷対象 ]」 のコーネス 1 と 「 数学を かなり必要とする理系対象 ]」 のゴーヌ 2 に分けて行う。 HE2 : 上記に掲げた項目のり申で * 印が付いているものは , コース 2 のみで出題きれる委野である。 ES (HERO [ 】 Alt, その項目内で扱われる内容叉は例示である。",
       "text": "17. 確率 …| SAT (ただし ,「 箇件付き確率 」 は数学 B (1) 試行と事銀 【 独立試行と反復試行 , 和 ( 積 ) BR, HEM, HBR) (2) 確率の基本性質 【 確率の加法定理 , 反復試行の確率。条件付き確率 *] (3) 期待値 注",
       "answer_choices": [
@@ -29155,11 +29374,14 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "3d51ceb3-0fcd-49ab-b8f5-f10ce8cc48ae",
-      "number": 1,
+      "number": null,
       "raw_text": "平成 15 年度",
       "text": "平成 15 年度",
       "answer_choices": [],
@@ -29187,7 +29409,7 @@
             "表",
             "|"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -29195,7 +29417,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -29203,11 +29425,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "9d4367f5-6dce-4f0c-ae2a-dead5646b35d",
-      "number": 3,
+      "number": null,
       "raw_text": "3) 4] 4 B | 2 imate Cor rea cea 間 a er Na ns eae WT NY Sg] 72181 HAO Li",
       "text": "",
       "answer_choices": [
@@ -29311,7 +29538,7 @@
             "(=",
             "{2[3]3]5{2[3]3]3|"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -29319,7 +29546,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -29327,11 +29554,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "36940209-7885-466e-9709-51c2881a2577",
-      "number": 1,
+      "number": null,
       "raw_text": "— 282 一",
       "text": "— 282 一",
       "answer_choices": [],
@@ -29425,7 +29657,7 @@
             "282",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -29433,7 +29665,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -29441,11 +29673,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "321f8b6e-a2f5-429f-96ff-5da223b35fd0",
-      "number": 1,
+      "number": null,
       "raw_text": "< 数学 > REAM RACHA THOS EOL TH, 囲まれているものが全て合っている場合のみ正解となる。 コーネズ 1 ー383 一",
       "text": "< 数学 > REAM RACHA THOS EOL TH, 囲まれているものが全て合っている場合のみ正解となる。 コーネズ 1 ー383 一",
       "answer_choices": [],
@@ -29517,7 +29754,7 @@
             "os",
             "|"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -29525,7 +29762,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -29539,11 +29776,16 @@
       ],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "30a57f3b-c45d-454c-9c53-5d0362729f16",
-      "number": 1,
+      "number": null,
       "raw_text": "— 284 一",
       "text": "— 284 一",
       "answer_choices": [],
@@ -29593,7 +29835,7 @@
             "2B4",
             "—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -29601,7 +29843,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -29609,7 +29851,12 @@
       "keywords": [],
       "concepts": [],
       "year": 2003,
-      "round": 2
+      "round": 2,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     }
   ],
   "metadata": {

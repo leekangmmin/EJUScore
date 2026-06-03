@@ -7465,7 +7465,7 @@
             "試験",
             "問題"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7473,7 +7473,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -7481,7 +7481,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2011,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "ecbba1e0-4b6d-4231-a63b-7487b686607a",
@@ -7854,7 +7858,7 @@
             "ー113",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -7862,7 +7866,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "data_interpretation",
@@ -7872,11 +7876,15 @@
       ],
       "concepts": [],
       "year": 2011,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "fd259415-3d29-452a-a0f6-b35f6109d9bf",
-      "number": 1,
+      "number": null,
       "raw_text": "問 1 次の会話を読み , 下の問い (1) て (4) に答えなさい。 よし子 : 2010 年に , , 名古屋で環境に関する大きな国際会議が開かれましたね。 先生: 生物多様性条約第 10 回締約国会識ですね。最近は , 世界的に , 環境保護への よし子 : 。オゾン層の破壊や地球温暖化などのさまざまな環境問題が深刻化していく 先生 : 経済成長が一段落した先進国と , 現在まさに経済成長が著しい発展途上国と 関心の高まりが見られますね。 中 , 人 々 の関心が高まっているのはよいことだと思います。 の間には利害の相違もあります。しかし , 二酸化炭素 (COy 排出量の削 減など , 各国が協力して取り組むべき課題はまだまだたくさんありますね。 (1) 下線部 1 に関して , 会議の開催地である名古屋の場所を , 次の地図中の ①~ て ④ の中 から一つ選びなさい。 1 ー115 一",
       "text": "問",
       "answer_choices": [
@@ -8151,7 +8159,7 @@
             "ー115",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8159,7 +8167,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -8167,11 +8175,16 @@
       "keywords": [],
       "concepts": [],
       "year": 2011,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number",
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "a3913695-155c-4160-9096-461d28a473cb",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一2 (2) 下線部 2 に関して , 環境保護への関心を高める上で大きな役割を果たした人物とそ の人物の著作の組み合わせとして最も適当なものを , 次の ①ー④ の中から一つ選びな さい。 2 ① | キルケゴール 「 死に至る病 』 @⑨ レダィ - ストロース | 『 悲しき熱帯 」 『 永遠平和のために 』 注 ) キルケゴール (Soren Aabye Kierkegaard), レヴィ - ストロース (Claude Lévi-Strauss), カント (Immanuel Kant), カーソン (Rachel Carson) (3) 下線部 3 に関して , 環境問題とその主な原因の組み合わせとして最も適当なものを , 次の ①~ て ④ の中から一つ選びなさい。 3 ① | 酸性二家畜の過放牧や焼き畑農業 @ | 砂漠化硫黄酸化物 (SOx) の排出 @ | 地球温暖化海面の上昇 ④ | オゾン層の破壊 | フロンガスの排出 ー116 一",
       "text": "総合科目一2 (2) 下線部 2 に関して , 環境保護への関心を高める上で大きな役割を果たした人物とそ の人物の著作の組み合わせとして最も適当なものを , 次の",
       "answer_choices": [
@@ -8374,7 +8387,7 @@
             "ー116",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8390,11 +8403,14 @@
       "keywords": [],
       "concepts": [],
       "year": 2011,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "577ff25a-9e92-437b-84b8-e44ed48dbc23",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一3 (4) 下線部 4 に関して , 次の表は , AA, アメリカ (USA), イギリス (UK), 韓国 (South Korea), 中国 (China), ドイツ (Germany), ベトナム (Viet Nam) の 7 か国の二酸化炭素排出量を示したものである。表中の AD に当てはまる国名の組み 合わせとして正しいものを , 下の ①~ て ④ の中から一つ選びなさい。 [4 | 単位 : 100 万トン 国名 | 1990 年 | 2007 年 A 2,244 | 6,071 B 4,863 | 5,769 AA 1,065 | 1,236 C 950798 イギリス | 553 D 229 ベトナム 1794 | 『 世界統計白書 2010 年版 』 より作成 A B C D ① | +H アメリカ | ドイツ | 韓国 ⑨ | アメリカ | 中国ドイツ | 韓国 ③ | アメリカ | 中国韓国ドイツ @ | +H 韓国アメリカ | ドイツ ー117 一",
       "text": "総合科目一3 (4) 下線部 4 に関して , 次の表は , AA, アメリカ (USA), イギリス (UK), 韓国 (South Korea), 中国 (China), ドイツ (Germany), ベトナム (Viet Nam) の 7 か国の二酸化炭素排出量を示したものである。表中の AD に当てはまる国名の組み 合わせとして正しいものを , 下の",
       "answer_choices": [
@@ -8534,7 +8550,7 @@
             "ー117",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8555,11 +8571,14 @@
       ],
       "concepts": [],
       "year": 2011,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "48dcae24-2bc1-4197-8f26-5722d7a6b302",
-      "number": 2,
+      "number": null,
       "raw_text": "問 2 次の会話を読み , 下の問い (1)^(4) に答えなさい。 よし子 : 2010 年に横浜で開かれた APEC (アジア太平洋経済協力 ) の首脳会議で , TPP (Trans-Pacific Partnership) も話題になっていたわね。 父 : 最近 , , 自由禄易協定を結ぼうという動きが多いね。 よし子 : RAIL って各国の経済が活発化するのはよいことよね。経済的な国境が 取り払われ , ボーダーレスな経済が実現するといいわね。 父 : ボーダーレス経済にはもちろん望ましい面もある。だが。自由貿易の行き過 ぎには批判も多い。経済はなかなか複雑なものだよ。 (1) 下線部 1 に関して , APEC に参加していない国を , 次の ① て ④ の中から一つ選びな さい。 5 ① オーストラリア (Australia) @ チリ (Chile) ④ アメリカ @ ブラジル (Brazil) (2) 下線部 2 に関して自由貿易の推進を目的とする国際機関と地域貿易協定との組み 合わせとして正しいものを。次の ① て ④ の中から一つ選びなさい。 6 国際機関 | 地域貿易協定 @ | IBRD AFTA @ | IMF NATO @|wto NAFTA [@| UNCTAD | ASEAN ー118 一",
       "text": "問 2 次の会話を読み , 下の問い (1)^(4) に答えなさい。 よし子 : 2010 年に横浜で開かれた APEC (アジア太平洋経済協力 ) の首脳会議で , TPP (Trans-Pacific Partnership) も話題になっていたわね。 父 : 最近 , , 自由禄易協定を結ぼうという動きが多いね。 よし子 : RAIL って各国の経済が活発化するのはよいことよね。経済的な国境が 取り払われ , ボーダーレスな経済が実現するといいわね。 父 : ボーダーレス経済にはもちろん望ましい面もある。だが。自由貿易の行き過 ぎには批判も多い。経済はなかなか複雑なものだよ。 (1) 下線部 1 に関して , APEC に参加していない国を , 次の",
       "answer_choices": [
@@ -8860,7 +8879,7 @@
             "ー118",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -8881,11 +8900,14 @@
       ],
       "concepts": [],
       "year": 2011,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "87eab073-4763-4e45-995b-6c90f958e5cd",
-      "number": 1,
+      "number": null,
       "raw_text": "総合科目一5 (3) 下線部 3 に関して , 次の表は , 4 か国 A て D の貿易収支の推移を示したものである。 表中の AD に当てはまる国名の組み合わせとして正しいものを , 下の ① て ④ の中か ゥ一つ選びなさい。 17 | 単位 : 億ドル 2000 年 | 2005 年 | 2007 年 | 2008 年 国名 | 1995 年 A 1,072.3997.4 | 790.8920.8194.6 B 167.0241.1 | 1,020.0] 2,624.82,958.4 C | 一1.861.1 —8.316.2 | 一8,722.0 | 一8,820.5 | 1,938.42,662.32,580.7 「 世界統計白書 2010 年版 』 より作成 A B C D ① | 日本中国 | アメリカ | ドイツ ② | アメリカ | ドイツ | 日本中国 ⑨ | ドイツ | 日本 | 中国アメリカ | @ | 中国ドイツ | アメリカ | 日本 (4) 下線部 4 に関して , TPP のような多国間の包括的自由貿易協定への参加に対し , 日本では主としてどのような反対論があるか。最も適当なものを , 次の ①ー④ の中か ら一つ選びなさい。 .8 ① 職を求めて海外に移住する人 々 が増加し , 国内人口が減る。 ③ 国内労働者の平均賃金が上昇し雇用が減る。 ④ 自動車などの生産工場が国内に回帰し , 環境問題が深刻化する。 ② 農産物の輸入が急増し , 国内の農業が衰退する。 ー119 一",
       "text": "総合科目一5 (3) 下線部 3 に関して , 次の表は , 4 か国 A て D の貿易収支の推移を示したものである。 表中の AD に当てはまる国名の組み合わせとして正しいものを , 下の",
       "answer_choices": [
@@ -9158,7 +9180,7 @@
             "ー119",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9177,7 +9199,10 @@
       ],
       "concepts": [],
       "year": 2011,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "a5ee4cc6-6a60-42c6-817e-a6e8820f6f11",
@@ -9487,7 +9512,7 @@
             "ー120",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9669,7 +9694,7 @@
             "|",
             "—121-"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9860,7 +9885,7 @@
             "ー122",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -9868,7 +9893,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "graph_analysis",
@@ -9876,7 +9901,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2011,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "7b780510-034f-48ac-945a-00cc4fe8c47a",
@@ -10165,7 +10194,7 @@
             "ー123",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10323,7 +10352,7 @@
             "ー124",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10331,7 +10360,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10342,7 +10371,11 @@
       ],
       "concepts": [],
       "year": 2011,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "3c3b37bb-e3fe-4e82-b421-36eff44cc9b2",
@@ -10550,7 +10583,7 @@
             "ー125",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10558,7 +10591,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "graph_analysis",
@@ -10568,7 +10601,11 @@
       ],
       "concepts": [],
       "year": 2011,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "e8db539e-0037-46c5-949f-b4cc995d03ca",
@@ -10827,7 +10864,7 @@
             "ー126",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -10835,7 +10872,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "review_required",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -10843,7 +10880,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2011,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_review_required"
+      ],
+      "domain_confidence": 0
     },
     {
       "id": "43cdd493-3207-4050-bf00-dc61c90ab6e3",
@@ -11195,7 +11236,7 @@
             "ー127",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11203,7 +11244,7 @@
       "graphs": [],
       "maps": [],
       "subject": "comprehensive",
-      "domain": "unknown",
+      "domain": "geography",
       "topic": "",
       "subtopic": "",
       "question_type": "multiple_choice",
@@ -11211,7 +11252,11 @@
       "keywords": [],
       "concepts": [],
       "year": 2011,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "domain_recovered"
+      ],
+      "domain_confidence": 1
     },
     {
       "id": "50c12ad9-cb16-43fc-9d7e-d8fb06fd967e",
@@ -11425,7 +11470,7 @@
             "ー128",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11777,7 +11822,7 @@
             "ー129",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -11974,7 +12019,7 @@
             "|e",
             "—130—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12129,7 +12174,7 @@
             "ー131",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12533,7 +12578,7 @@
             "ー132",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -12919,7 +12964,7 @@
             "。",
             "—133-—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13317,7 +13362,7 @@
             "ー134",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13771,7 +13816,7 @@
             "ー135",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -13991,7 +14036,7 @@
             "America)",
             "—136—"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14015,7 +14060,7 @@
     },
     {
       "id": "c9c5da4d-5cc6-45df-941c-8a766886807a",
-      "number": 2619,
+      "number": null,
       "raw_text": "問 2619 世紀のヨーロッパに関する次の出来事 AーD を年代順に並べたものとして正しい ものを。下の ①~ こ ④ の中から一つ選びなさい。 35 A: イタリア (Italy) 王国の成立 B : ウィーン会議 (Congress of Vienna) の開催 Ci クリミア戦争 (Crimean War) の勃発 D : ナポレオン (Napoleon Bonaparte) のロシア遠征 問 27 第一次世界大戦から第二次世界大戦までのイギリスにおける出来事の記述として最 も適当なものを , 次の ①~④ の中から一つ選びなさい。 36 ① マクドナルド (Ramsay MacDonald) を首相とする初の労働党内閣が誕生した。 @ インドなど多くの植民地が独立したため , 経済が停滞した。 © ドイツから得た賠償金をもちとに産業基盤が整備され , 急速に重工業が発展した。 Q すべての成人男性に選挙権が与えられ , 選挙制度も比例代表制に変更された。 ー137 一",
       "text": "問 2619 世紀のヨーロッパに関する次の出来事 AーD を年代順に並べたものとして正しい ものを。下の ①~ こ ④ の中から一つ選びなさい。 35 A: イタリア (Italy) 王国の成立 B : ウィーン会議 (Congress of Vienna) の開催 Ci クリミア戦争 (Crimean War) の勃発 D : ナポレオン (Napoleon Bonaparte) のロシア遠征 問 27 第一次世界大戦から第二次世界大戦までのイギリスにおける出来事の記述として最 も適当なものを , 次の",
       "answer_choices": [],
@@ -14279,7 +14324,7 @@
             "ー137",
             "一"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],
@@ -14297,7 +14342,10 @@
       ],
       "concepts": [],
       "year": 2011,
-      "round": 1
+      "round": 1,
+      "flags": [
+        "invalid_question_number"
+      ]
     },
     {
       "id": "1ced8bf2-dc0d-41d3-b515-4418c29df6c1",
@@ -14611,7 +14659,7 @@
             "。",
             "ー138-"
           ],
-          "confidence": 0.0,
+          "confidence": 0,
           "elem_type": "tables"
         }
       ],

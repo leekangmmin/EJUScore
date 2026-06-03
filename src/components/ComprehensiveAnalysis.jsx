@@ -1,5 +1,5 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect, useCallback } from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, PieChart, Pie, Cell, Legend,
@@ -8,7 +8,7 @@ import {
 } from 'recharts';
 import { COMP_MAX, COMP_QUESTIONS, normalizeCompScore } from '../utils/storage';
 import { predictGoalDate } from '../utils/scorePrediction';
-import { BarChart2, Plus, Calculator, GitBranch, TrendingDown, PieChart as PieIcon, BarChart3, Layers, Flag, Search, AlertTriangle } from 'lucide-react';
+import { BarChart2, Plus, Calculator, GitBranch, TrendingDown, PieChart as PieIcon, BarChart3, Layers, Flag, Search, AlertTriangle, X } from 'lucide-react';
 
 const CARD = { background: 'var(--card-bg)', border: '1px solid var(--bd0)', borderRadius: 18, padding: 24, boxShadow: 'var(--card-shadow)' };
 
@@ -34,6 +34,152 @@ const CustomTooltip = ({ active, payload, label }) => {
     </div>
   );
 };
+
+// ── MemoModal: 오답 메모 전체보기 (React Portal) ──────────
+function MemoModal({ mistake, onClose, onSave }) {
+  const [editText, setEditText] = useState(mistake?.memo || '');
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [onClose]);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
+  }, []);
+
+  const handleSave = useCallback(() => {
+    setSaving(true);
+    // Call the save function passed from parent
+    if (onSave) onSave(mistake, editText);
+    setTimeout(() => { setSaving(false); onClose(); }, 200);
+  }, [mistake, editText, onSave, onClose]);
+
+  if (!mistake) return null;
+
+  const modalContent = (
+    <div
+      style={{
+        position: 'fixed', inset: 0, zIndex: 9999,
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)',
+        padding: 20,
+      }}
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+    >
+      <div
+        style={{
+          background: 'var(--card-bg)', border: '1px solid var(--bd0)',
+          borderRadius: 18, width: '100%', maxWidth: 500, maxHeight: '80vh',
+          overflowY: 'auto', boxShadow: '0 24px 48px rgba(0,0,0,0.4)',
+          padding: 24,
+        }}
+      >
+        {/* Header */}
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 20 }}>
+          <div>
+            <div style={{ fontSize: 18, fontWeight: 800, color: 'var(--t0)' }}>오답 메모</div>
+            <div style={{ fontSize: 12, color: 'var(--t2)', marginTop: 4 }}>
+              {mistake.examName} · {mistake.questionNumber}번 · {mistake.unit || '미분류'}
+            </div>
+          </div>
+          <button
+            onClick={onClose}
+            style={{
+              background: 'var(--bg3)', border: 'none', borderRadius: 10,
+              width: 36, height: 36, display: 'flex', alignItems: 'center',
+              justifyContent: 'center', cursor: 'pointer', color: 'var(--t1)',
+              fontFamily: 'inherit',
+            }}
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        {/* Error type badge */}
+        {mistake.errorType && (
+          <div style={{ marginBottom: 16 }}>
+            <span style={{
+              background: ERROR_COLORS_HEX[mistake.errorType] + '22',
+              color: ERROR_COLORS_HEX[mistake.errorType],
+              padding: '4px 12px', borderRadius: 8, fontWeight: 700, fontSize: 13,
+            }}>
+              {mistake.errorType}
+            </span>
+          </div>
+        )}
+
+        {/* Memo display / edit */}
+        <div style={{ marginBottom: 16 }}>
+          <label style={{ fontSize: 11, color: 'var(--t3)', fontWeight: 600, display: 'block', marginBottom: 6 }}>
+            메모 내용
+          </label>
+          <textarea
+            value={editText}
+            onChange={(e) => setEditText(e.target.value)}
+            placeholder="이 문제에서 틀린 이유를 기록하세요..."
+            style={{
+              width: '100%', minHeight: 120, resize: 'vertical',
+              background: 'var(--bg2)', border: '1.5px solid var(--bd1)',
+              borderRadius: 12, padding: '12px 14px', color: 'var(--t0)',
+              fontSize: 14, fontFamily: 'inherit', lineHeight: 1.6,
+              outline: 'none', boxSizing: 'border-box',
+            }}
+            onFocus={e => e.target.style.borderColor = 'var(--blue)'}
+            onBlur={e => e.target.style.borderColor = 'var(--bd1)'}
+            autoFocus
+          />
+          <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 6, textAlign: 'right' }}>
+            {editText.length}자
+          </div>
+        </div>
+
+        {/* Actions */}
+        <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end' }}>
+          <button
+            onClick={onClose}
+            style={{
+              padding: '10px 20px', borderRadius: 10, border: '1px solid var(--bd1)',
+              background: 'transparent', color: 'var(--t1)', fontWeight: 600,
+              fontSize: 13, cursor: 'pointer', fontFamily: 'inherit',
+            }}
+          >
+            취소
+          </button>
+          <button
+            onClick={handleSave}
+            disabled={saving}
+            style={{
+              padding: '10px 24px', borderRadius: 10, border: 'none',
+              background: saving ? 'var(--bg3)' : 'linear-gradient(135deg, var(--blue), var(--green))',
+              color: saving ? 'var(--t3)' : '#fff', fontWeight: 700, fontSize: 13,
+              cursor: saving ? 'not-allowed' : 'pointer', fontFamily: 'inherit',
+              display: 'flex', alignItems: 'center', gap: 6,
+            }}
+          >
+            {saving ? '저장 중...' : '저장'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Use React Portal if available, otherwise render inline
+  try {
+    const portalRoot = document.getElementById('portal-root') || document.body;
+    // We render via createPortal if in a React environment with portal support
+    // For simplicity, just render the overlay directly (works same as portal)
+    return modalContent;
+  } catch {
+    return modalContent;
+  }
+}
 
 // ── 허용 오답 계산기 ──────────────────────────────────
 function AllowedWrongCalc({ currentScore }) {
@@ -161,6 +307,28 @@ export default function ComprehensiveAnalysis({ exams, settings, onAddNew }) {
   const [sortCol, setSortCol]         = useState('date');
   const [sortDir, setSortDir]         = useState('desc');
   const [filterRecordType, setFilterRecordType] = useState('all'); // 'all'|'exam'|'workbook'
+  // ── Memo Modal state ────────────────────────────────
+  const [memoModalMistake, setMemoModalMistake] = useState(null);
+
+  // Memo save handler: updates the mistake's memo in the exam record
+  const handleMemoSave = useCallback((mistake, newMemo) => {
+    try {
+      const examsData = JSON.parse(localStorage.getItem('eju_exam_data') || '[]');
+      const updated = examsData.map(exam => {
+        if (exam.date !== mistake.examDate && exam.examName !== mistake.examName) return exam;
+        const mistakes = (exam.comprehensive?.mistakes || []).map(m => {
+          if (m.id === mistake.id && m.questionNumber === mistake.questionNumber) {
+            return { ...m, memo: newMemo };
+          }
+          return m;
+        });
+        return { ...exam, comprehensive: { ...exam.comprehensive, mistakes } };
+      });
+      localStorage.setItem('eju_exam_data', JSON.stringify(updated));
+    } catch (e) {
+      console.warn('[Memo] Failed to save memo:', e);
+    }
+  }, []);
 
   const filteredExams = useMemo(() =>
     filterRecordType === 'all' ? exams : exams.filter(e => (e.recordType || 'exam') === filterRecordType),
@@ -313,363 +481,263 @@ export default function ComprehensiveAnalysis({ exams, settings, onAddNew }) {
   const mostWeakUnit  = unitPriority[0];
   const mostCommonError = [...errorTypeCounts].sort((a, b) => b.value - a.value)[0];
   const avgScore = (() => {
-    const withScores = filteredExams.map(e => normalizeCompScore(e.comprehensive)).filter(v => v != null);
-    return withScores.length > 0 ? withScores.reduce((s, v) => s + v, 0) / withScores.length : 0;
+    const withScores = filteredExams.map(e => normalizeCompScore(e.comprehensive));
+    const valid = withScores.filter(s => s != null);
+    return valid.length > 0 ? valid.reduce((a, b) => a + b, 0) / valid.length : null;
   })();
-  const avgCorrect = Math.round((avgScore / COMP_MAX) * COMP_QUESTIONS);
-
-  const PRIORITY_LABELS = ['최우선', '우선', '보통', '낮음'];
-  const getPriorityLabel = (i) => PRIORITY_LABELS[Math.min(i, PRIORITY_LABELS.length - 1)];
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-      {/* Header */}
-      <div>
-        <h1 style={{ fontSize: 26, fontWeight: 800, color: 'var(--t0)', letterSpacing: '-0.5px' }}>종합과목 분석</h1>
-        <div style={{ color: 'var(--t2)', fontSize: 13, marginTop: 5 }}>
-          총 {filteredExams.length}회 시험 · 누적 오답 {totalMistakes}건 · 목표 {tComp}/{COMP_MAX}
-          {goalDate && !goalDate.alreadyAchieved && (
-            <span style={{ marginLeft: 12, color: 'var(--green)', fontWeight: 600 }}>
-              · 목표 달성 예상 {goalDate.date} (약 {goalDate.monthsAhead}개월)
-            </span>
-          )}
-          {goalDate?.alreadyAchieved && (
-            <span style={{ marginLeft: 12, color: 'var(--green)', fontWeight: 700 }}>· 목표 달성</span>
-          )}
-        </div>
-      </div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
 
-      {/* Record type filter */}
-      <div style={{ display: 'flex', gap: 8 }}>
-        {[{ id: 'all', label: '전체' }, { id: 'exam', label: '모의고사' }, { id: 'workbook', label: '문제집' }].map(opt => {
-          const active = filterRecordType === opt.id;
-          return (
-            <button key={opt.id} onClick={() => setFilterRecordType(opt.id)} style={{
-              background: active ? 'rgba(49,130,246,0.15)' : 'var(--bg3)',
-              color: active ? 'var(--blue)' : 'var(--t2)',
-              border: active ? '1.5px solid rgba(49,130,246,0.5)' : '1.5px solid var(--bd1)',
-              borderRadius: 10, padding: '7px 16px', fontSize: 12, fontWeight: active ? 700 : 500,
-              cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.2s',
-            }}>{opt.label}</button>
-          );
-        })}
-      </div>
+      {/* Memo Modal */}
+      {memoModalMistake && (
+        <MemoModal
+          mistake={memoModalMistake}
+          onClose={() => setMemoModalMistake(null)}
+          onSave={handleMemoSave}
+        />
+      )}
 
-      {/* Stats */}
-      <div className="grid-wrap-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
         {[
-          {
-            label: '평균 점수', color: 'var(--green)',
-            value: Math.round(avgScore),
-            suffix: `/${COMP_MAX} (약 ${avgCorrect}/${COMP_QUESTIONS}문제)`,
-          },
-          { label: '누적 오답', value: totalMistakes, suffix: '건', color: 'var(--red)' },
-          { label: '가장 약한 단원', value: mostWeakUnit?.unit || '—', suffix: mostWeakUnit ? ` (${mostWeakUnit.count}회)` : '', color: 'var(--yellow)' },
-          { label: '주요 오답 유형', value: mostCommonError?.name || '—', suffix: mostCommonError ? ` ${mostCommonError.value}건` : '', color: ERROR_COLORS[mostCommonError?.name] || 'var(--t1)' },
+          { label: '총 오답', value: totalMistakes, unit: '건', color: 'var(--red)', subtitle: `${filteredExams.length}회 시험` },
+          { label: '최다 취약 단원', value: mostWeakUnit?.unit || '—', color: 'var(--purple)', subtitle: mostWeakUnit ? `${mostWeakUnit.count}회` : '' },
+          { label: '최다 오답 유형', value: mostCommonError?.name || '—', color: 'var(--yellow)', subtitle: mostCommonError ? `${mostCommonError.value}회` : '' },
+          { label: '평균 점수', value: avgScore != null ? `${Math.round(avgScore)}점` : '—', color: avgScore != null && avgScore >= tComp ? 'var(--green)' : 'var(--blue)', subtitle: `목표 ${tComp}점` },
         ].map(s => (
-          <div key={s.label} style={{ ...CARD }}>
-            <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 10 }}>{s.label}</div>
-            <div style={{ fontSize: typeof s.value === 'number' && s.value > 99 ? 28 : 22, fontWeight: 800, color: s.color }}>
-              {s.value}<span style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 400 }}>{s.suffix}</span>
-            </div>
+          <div key={s.label} style={{ background: 'var(--card-bg)', border: '1px solid var(--bd0)', borderRadius: 14, padding: '14px 16px', boxShadow: 'var(--card-shadow)' }}>
+            <div style={{ fontSize: 11, color: 'var(--t2)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{s.label}</div>
+            <div style={{ fontSize: 24, fontWeight: 800, color: s.color, marginTop: 4 }}>{s.value}{s.unit ? <span style={{ fontSize: 13, color: 'var(--t2)', fontWeight: 400, marginLeft: 2 }}>{s.unit}</span> : ''}</div>
+            {s.subtitle && <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 2 }}>{s.subtitle}</div>}
           </div>
         ))}
       </div>
 
-      {/* 허용 오답 계산기 */}
-      <AllowedWrongCalc currentScore={latestCompScore} />
-
-      {/* Unit Priority Ranking */}
-      {unitPriority.length > 0 && (
+      {/* 점수 추세 */}
+      {scoreChartData.length >= 1 && (
         <div style={{ ...CARD }}>
-          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 7 }}>
-            <Flag size={14} color="var(--t2)" strokeWidth={2} /> 단원별 집중도 우선순위
+          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 7 }}>
+            <BarChart3 size={15} color="var(--t2)" strokeWidth={2} /> 점수 추이
           </div>
-          <div style={{ fontSize: 12, color: 'var(--t2)', marginBottom: 18 }}>정보부족(×3) · 연계사고부족(×2) · 실수(×1) 가중치로 계산된 취약도 점수</div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {unitPriority.map((u, i) => {
-              const maxScore = unitPriority[0].score;
-              const barPct = Math.round((u.score / maxScore) * 100);
-              const barColor = i === 0 ? 'var(--red)' : i === 1 ? 'var(--orange)' : i === 2 ? 'var(--yellow)' : 'var(--green)';
-              return (
-                <div key={u.unit} style={{
-                  display: 'flex', alignItems: 'center', gap: 14,
-                  padding: '14px 16px', background: 'var(--bg3)', borderRadius: 14,
-                  border: i === 0 ? '1px solid rgba(239,68,68,0.35)' : '1px solid var(--bd0)',
-                  transition: 'all 0.2s',
-                }}>
-                  <div style={{ fontSize: 12, fontWeight: 700, minWidth: 80, color: barColor }}>{getPriorityLabel(i)}</div>
-                  <div style={{ flex: '0 0 80px', fontSize: 14, fontWeight: 700, color: 'var(--t0)' }}>{u.unit}</div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ display: 'flex', gap: 6, marginBottom: 7, flexWrap: 'wrap' }}>
-                      {Object.entries(u.types).filter(([, c]) => c > 0).map(([t, c]) => (
-                        <span key={t} style={{
-                          fontSize: 11, padding: '2px 9px', borderRadius: 6, fontWeight: 700,
-                          background: ERROR_COLORS_HEX[t] + '22', color: ERROR_COLORS_HEX[t],
-                        }}>{t} {c}건</span>
-                      ))}
-                    </div>
-                    <div style={{ height: 7, background: 'var(--bg2)', borderRadius: 4, overflow: 'hidden' }}>
-                      <div style={{ height: '100%', width: `${barPct}%`, background: barColor, borderRadius: 4, transition: 'width 0.6s cubic-bezier(.4,0,.2,1)' }} />
-                    </div>
-                  </div>
-                  <div style={{ fontSize: 18, fontWeight: 800, color: barColor, minWidth: 36, textAlign: 'right' }}>
-                    {u.score}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <div style={{ fontSize: 11, color: 'var(--t3)', marginBottom: 16 }}>득점등화 점수 기준 (만점 {COMP_MAX}점)</div>
+          <ResponsiveContainer width="100%" height={220}>
+            <LineChart data={scoreChartData} margin={{ top: 5, right: 10, left: 0, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" />
+              <XAxis dataKey="name" tick={{ fill: 'var(--t2)', fontSize: 11, fontFamily: 'Pretendard, sans-serif' }} />
+              <YAxis domain={[0, COMP_MAX]} tick={{ fill: 'var(--t2)', fontSize: 11, fontFamily: 'Pretendard, sans-serif' }} />
+              <Tooltip contentStyle={{ background: 'var(--tooltip-bg)', border: '1px solid var(--bd1)', borderRadius: 10, fontSize: 12 }} />
+              <ReferenceLine y={tComp} stroke="var(--green)" strokeDasharray="6 3" label={{ value: `목표 ${tComp}`, fill: 'var(--green)', fontSize: 11, fontFamily: 'Pretendard, sans-serif' }} />
+              <Line type="monotone" dataKey="점수" stroke="var(--blue)" strokeWidth={2.5} dot={{ r: 4, fill: 'var(--blue)' }} activeDot={{ r: 6 }} />
+              <Line type="monotone" dataKey="예상정답" stroke="var(--t3)" strokeWidth={1} dot={{ r: 2 }} strokeDasharray="4 3" />
+            </LineChart>
+          </ResponsiveContainer>
+          {goalDate && (
+            <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'var(--t2)' }}>
+              <Flag size={13} color="var(--green)" />
+              현재 추세라면 <b style={{ color: 'var(--t0)' }}>{goalDate}</b>에 목표 <b style={{ color: 'var(--green)' }}>{tComp}점</b> 도달 예상
+            </div>
+          )}
         </div>
       )}
 
-      {/* Radar + Pie */}
-      <div className="grid-2-mobile" style={{ display: 'grid', gridTemplateColumns: unitPriority.length >= 3 ? '1fr 1fr' : '1fr', gap: 14 }}>
-        {unitPriority.length >= 3 && <UnitRadarChart unitPriority={unitPriority} />}
-        {errorTypeCounts.length > 0 && (
-          <div style={{ ...CARD }}>
-            <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 7 }}>
-              <PieIcon size={14} color="var(--t2)" strokeWidth={2} /> 오답 유형 분포
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <PieChart width={190} height={170}>
-                <Pie data={errorTypeCounts} cx={95} cy={80} outerRadius={66} innerRadius={32} dataKey="value" paddingAngle={3} isAnimationActive={false}>
-                  {errorTypeCounts.map(e => <Cell key={e.name} fill={ERROR_COLORS_HEX[e.name]} />)}
+      {/* 오답 유형 분포 */}
+      {errorTypeCounts.length > 0 && (
+        <div style={{ ...CARD }}>
+          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 7 }}>
+            <PieIcon size={15} color="var(--t2)" strokeWidth={2} /> 오답 유형 분포
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, alignItems: 'center' }}>
+            <ResponsiveContainer width="100%" height={200}>
+              <PieChart>
+                <Pie data={errorTypeCounts} cx="50%" cy="50%" innerRadius={50} outerRadius={75} paddingAngle={3} dataKey="value" nameKey="name">
+                  {errorTypeCounts.map((entry, i) => (
+                    <Cell key={entry.name} fill={ERROR_COLORS_HEX[entry.name] || '#94a3b8'} />
+                  ))}
                 </Pie>
-                <Tooltip formatter={(v, n) => [`${v}건`, n]} contentStyle={{ background: 'var(--tooltip-bg)', border: '1px solid var(--bd1)', borderRadius: 10, fontSize: 12 }} />
+                <Tooltip contentStyle={{ background: 'var(--tooltip-bg)', border: '1px solid var(--bd1)', borderRadius: 10, fontSize: 12 }} />
               </PieChart>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 4 }}>
-              {errorTypeCounts.map(e => (
-                <div key={e.name} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', background: ERROR_COLORS_HEX[e.name], flexShrink: 0 }} />
-                  <div style={{ flex: 1, fontSize: 12, color: 'var(--t1)' }}>{e.name}</div>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: ERROR_COLORS_HEX[e.name] }}>{e.value}건</div>
+            </ResponsiveContainer>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              {errorTypeCounts.map(et => (
+                <div key={et.name}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: 'var(--t0)', fontWeight: 600, marginBottom: 4 }}>
+                    <span style={{ color: ERROR_COLORS_HEX[et.name] }}>{et.name}</span>
+                    <span>{et.value}건 ({Math.round((et.value / totalMistakes) * 100)}%)</span>
+                  </div>
+                  <div style={{ height: 5, background: 'var(--bg3)', borderRadius: 4, overflow: 'hidden' }}>
+                    <div style={{ width: `${(et.value / totalMistakes) * 100}%`, height: '100%', background: ERROR_COLORS_HEX[et.name], borderRadius: 4, transition: 'width 0.5s' }} />
+                  </div>
+                  <div style={{ fontSize: 10, color: 'var(--t3)', marginTop: 2 }}>{ERROR_DESC[et.name] || ''}</div>
                 </div>
               ))}
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
-      {/* Score trend */}
-      {scoreChartData.length >= 2 && (
+      {/* 단원별 오답 분포 */}
+      {unitCounts.length > 0 && (
         <div style={{ ...CARD }}>
-          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 7 }}>
-            점수 추이
-            <span style={{ fontSize: 11, color: 'var(--t3)', fontWeight: 400, marginLeft: 4 }}>만점 {COMP_MAX}점 ({COMP_QUESTIONS}문항)</span>
+          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 7 }}>
+            <Layers size={15} color="var(--t2)" strokeWidth={2} /> 단원별 오답 분포
           </div>
-          <ResponsiveContainer width="100%" height={220}>
-            <LineChart data={scoreChartData} margin={{ top: 5, right: 40, left: -20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" />
-              <XAxis dataKey="name" tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} />
-              <YAxis yAxisId="score" domain={[0, COMP_MAX]} tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} />
-              <YAxis yAxisId="q" orientation="right" domain={[0, COMP_QUESTIONS]} tick={{ fill: 'var(--t3)', fontSize: 9, fontFamily: 'Pretendard, sans-serif' }} />
+          <div style={{ fontSize: 11, color: 'var(--t3)', marginBottom: 16 }}>총 {unitCounts.length}개 단원</div>
+          <ResponsiveContainer width="100%" height={Math.max(150, unitCounts.length * 32)}>
+            <BarChart data={unitCounts} layout="vertical" margin={{ top: 5, right: 20, left: 80, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" horizontal={false} />
+              <XAxis type="number" tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} />
+              <YAxis type="category" dataKey="unit" tick={{ fill: 'var(--t1)', fontSize: 12, fontWeight: 600, fontFamily: 'Pretendard, sans-serif' }} width={80} />
               <Tooltip content={<CustomTooltip />} />
-              <Legend wrapperStyle={{ fontSize: 11, color: 'var(--t1)' }} />
-              <ReferenceLine yAxisId="score" y={tComp} stroke="var(--green)" strokeDasharray="6 3" strokeWidth={1.5} label={{ value: `목표 ${tComp}`, fill: 'var(--green)', fontSize: 10 }} />
-              <Line yAxisId="score" type="monotone" dataKey="점수" stroke="var(--green)" strokeWidth={3} dot={{ fill: 'var(--green)', r: 4 }} activeDot={{ r: 6 }} />
-              <Line yAxisId="q" type="monotone" dataKey="예상정답" stroke="var(--blue)" strokeWidth={1.5} strokeDasharray="4 2" dot={{ r: 3 }} activeDot={{ r: 5 }} name="예상정답수" />
-            </LineChart>
+              <Bar dataKey="count" radius={[0, 6, 6, 0]} maxBarSize={24}>
+                {unitCounts.map((entry, i) => (
+                  <Cell key={entry.unit} fill={COLORS[i % COLORS.length] || '#6366f1'} />
+                ))}
+              </Bar>
+            </BarChart>
           </ResponsiveContainer>
         </div>
       )}
 
-      {/* Unit trend */}
-      <UnitTrendChart exams={filteredExams} topUnits={unitPriority} />
-
-      {/* Error type cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
-        {Object.entries(ERROR_COLORS_HEX).map(([type, hex]) => {
-          const count = allMistakes.filter(m => m.errorType === type).length;
-          const pct = totalMistakes > 0 ? Math.round(count / totalMistakes * 100) : 0;
-          return (
-            <div key={type} style={{ ...CARD, borderColor: hex + '44', background: hex + '0a' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: hex }}>{type}</div>
-                <div style={{ fontSize: 26, fontWeight: 800, color: hex }}>{count}</div>
-              </div>
-              <div style={{ fontSize: 11, color: 'var(--t2)', lineHeight: 1.6, marginBottom: 12 }}>{ERROR_DESC[type]}</div>
-              <div style={{ height: 6, background: 'var(--bg3)', borderRadius: 3, overflow: 'hidden' }}>
-                <div style={{ height: '100%', width: `${pct}%`, background: hex, borderRadius: 3, transition: 'width 0.5s' }} />
-              </div>
-              <div style={{ fontSize: 11, color: 'var(--t2)', marginTop: 5, fontWeight: 600 }}>{pct}%</div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Charts */}
+      {/* 단원별 오답 유형 상세 */}
       {unitErrorMap.length > 0 && (
-        <div className="grid-2-mobile" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
-          <div style={{ ...CARD }}>
-            <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 7 }}>
-            <BarChart3 size={14} color="var(--t2)" strokeWidth={2} /> 단원별 오답 횟수
+        <div style={{ ...CARD }}>
+          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 7 }}>
+            <AlertTriangle size={15} color="var(--t2)" strokeWidth={2} /> 단원별 오답 유형 상세
           </div>
-            <ResponsiveContainer width="100%" height={Math.max(200, unitCounts.length * 42)}>
-              <BarChart data={unitCounts} layout="vertical" margin={{ top: 5, right: 20, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" />
-                <XAxis type="number" tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} allowDecimals={false} />
-                <YAxis type="category" dataKey="unit" tick={{ fill: 'var(--t0)', fontSize: 12, fontFamily: 'Pretendard, sans-serif' }} width={70} />
-                <Tooltip content={<CustomTooltip />} />
-                <Bar dataKey="count" radius={[0, 7, 7, 0]}>
-                  {unitCounts.map((_, i) => {
-                    const cs = ['#ef4444','#f59e0b','#1B64DA','#1B64DA','#10b981','#1B64DA'];
-                    return <Cell key={i} fill={cs[i % cs.length]} />;
-                  })}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-          <div style={{ ...CARD }}>
-            <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 7 }}>
-            <Layers size={14} color="var(--t2)" strokeWidth={2} /> 단원 × 오답유형 (스택)
-          </div>
-            <ResponsiveContainer width="100%" height={Math.max(200, unitErrorMap.length * 42)}>
-              <BarChart data={unitErrorMap} layout="vertical" margin={{ top: 5, right: 20, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" />
-                <XAxis type="number" tick={{ fill: 'var(--t2)', fontSize: 10, fontFamily: 'Pretendard, sans-serif' }} allowDecimals={false} />
-                <YAxis type="category" dataKey="unit" tick={{ fill: 'var(--t0)', fontSize: 12, fontFamily: 'Pretendard, sans-serif' }} width={70} />
-                <Tooltip content={<CustomTooltip />} />
-                <Legend wrapperStyle={{ fontSize: 11, color: 'var(--t1)' }} />
-                <Bar dataKey="실수" stackId="a" fill={ERROR_COLORS_HEX['실수']} />
-                <Bar dataKey="정보부족" stackId="a" fill={ERROR_COLORS_HEX['정보부족']} />
-                <Bar dataKey="연계사고부족" stackId="a" fill={ERROR_COLORS_HEX['연계사고부족']} radius={[0, 6, 6, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
+          {unitErrorMap.slice(0, 10).map(u => (
+            <div key={u.unit} style={{ marginBottom: 14, borderBottom: '1px solid var(--bg3)', paddingBottom: 12 }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--t0)', marginBottom: 6 }}>{u.unit} <span style={{ fontSize: 11, color: 'var(--t3)', fontWeight: 400 }}>({u.total}회)</span></div>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                {['실수', '정보부족', '연계사고부족'].filter(t => u[t] > 0).map(t => (
+                  <span key={t} style={{
+                    fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 6,
+                    background: ERROR_COLORS_HEX[t] + '18', color: ERROR_COLORS_HEX[t],
+                  }}>
+                    {t}: {u[t]}회
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       )}
 
-      {/* ── 오답 상세 기록 ─────────────────────────────── */}
-      {allMistakes.length > 0 && (
-        <div style={{ ...CARD }}>
-          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 7 }}>
-            <Search size={14} color="var(--t2)" strokeWidth={2} /> 오답 상세 기록
+      {/* 오답 목록 테이블 */}
+      <div style={{ ...CARD }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 16 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+            <Search size={15} color="var(--t2)" strokeWidth={2} />
+            <span style={{ fontSize: 15, fontWeight: 700, color: 'var(--t0)' }}>오답 목록</span>
+            <span style={{ fontSize: 12, color: 'var(--t3)', fontWeight: 400 }}>총 {allMistakes.length}건</span>
           </div>
-
-          <div style={{
-            display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 16,
-            padding: '14px 16px', background: 'var(--bg3)', borderRadius: 14, border: '1px solid var(--bd0)',
-          }}>
-            <div style={{ flex: '1 1 180px', minWidth: 140 }}>
-              <input
-                type="text"
-                value={filterSearch}
-                onChange={e => setFilterSearch(e.target.value)}
-                placeholder="번호, 단원, 메모 검색..."
-                style={{
-                  width: '100%', background: 'var(--bg2)', border: '1.5px solid var(--bd1)',
-                  borderRadius: 10, padding: '9px 12px', color: 'var(--t0)', fontSize: 12,
-                  fontFamily: 'inherit', outline: 'none',
-                }}
-                onFocus={e => e.target.style.borderColor = 'var(--blue)'}
-                onBlur={e => e.target.style.borderColor = 'var(--bd1)'}
-              />
-            </div>
-            <select
-              value={filterUnit}
-              onChange={e => setFilterUnit(e.target.value)}
-              style={{
-                background: 'var(--bg2)', border: '1.5px solid var(--bd1)', borderRadius: 10,
-                padding: '9px 12px', color: filterUnit ? 'var(--t0)' : 'var(--t2)', fontSize: 12,
-                fontFamily: 'inherit', outline: 'none', cursor: 'pointer', appearance: 'none', minWidth: 100,
-              }}
-            >
-              <option value="">모든 단원</option>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
+            {/* Filter: 기록 유형 */}
+            <select value={filterRecordType} onChange={e => setFilterRecordType(e.target.value)}
+              style={{ background: 'var(--bg2)', border: '1px solid var(--bd0)', borderRadius: 8, padding: '5px 8px', color: 'var(--t0)', fontSize: 11, fontFamily: 'inherit' }}>
+              <option value="all">전체</option>
+              <option value="exam">시험</option>
+              <option value="workbook">문제집</option>
+            </select>
+            {/* Filter: 단원 */}
+            <select value={filterUnit} onChange={e => setFilterUnit(e.target.value)}
+              style={{ background: 'var(--bg2)', border: '1px solid var(--bd0)', borderRadius: 8, padding: '5px 8px', color: 'var(--t0)', fontSize: 11, fontFamily: 'inherit' }}>
+              <option value="">전체 단원</option>
               {allUnits.map(u => <option key={u} value={u}>{u}</option>)}
             </select>
-            <select
-              value={filterType}
-              onChange={e => setFilterType(e.target.value)}
-              style={{
-                background: 'var(--bg2)', border: '1.5px solid var(--bd1)', borderRadius: 10,
-                padding: '9px 12px', color: filterType ? 'var(--t0)' : 'var(--t2)', fontSize: 12,
-                fontFamily: 'inherit', outline: 'none', cursor: 'pointer', appearance: 'none', minWidth: 110,
-              }}
-            >
-              <option value="">모든 유형</option>
-              {['실수', '정보부족', '연계사고부족'].map(t => <option key={t} value={t}>{t}</option>)}
+            {/* Filter: 오답 유형 */}
+            <select value={filterType} onChange={e => setFilterType(e.target.value)}
+              style={{ background: 'var(--bg2)', border: '1px solid var(--bd0)', borderRadius: 8, padding: '5px 8px', color: 'var(--t0)', fontSize: 11, fontFamily: 'inherit' }}>
+              <option value="">전체 유형</option>
+              <option value="실수">실수</option>
+              <option value="정보부족">정보 부족</option>
+              <option value="연계사고부족">연계 사고 부족</option>
             </select>
-            {(filterUnit || filterType || filterSearch) && (
-              <button
-                onClick={() => { setFilterUnit(''); setFilterType(''); setFilterSearch(''); }}
+            {/* Search */}
+            <div style={{ position: 'relative' }}>
+              <Search size={13} color="var(--t3)" style={{ position: 'absolute', left: 10, top: 7 }} />
+              <input
+                value={filterSearch}
+                onChange={e => setFilterSearch(e.target.value)}
+                placeholder="검색..."
                 style={{
-                  background: 'rgba(239,68,68,0.1)', color: 'var(--red)',
-                  border: '1px solid rgba(239,68,68,0.3)', borderRadius: 10,
-                  padding: '9px 14px', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit',
+                  background: 'var(--bg2)', border: '1px solid var(--bd0)', borderRadius: 8,
+                  padding: '5px 10px 5px 28px', color: 'var(--t0)', fontSize: 11,
+                  fontFamily: 'inherit', width: 120, outline: 'none',
                 }}
-              >초기화</button>
-            )}
-            <div style={{ fontSize: 11, color: 'var(--t3)', display: 'flex', alignItems: 'center', marginLeft: 'auto' }}>
-              {filteredMistakes.length}건 표시
+              />
             </div>
           </div>
-
-          <div style={{ overflowX: 'auto' }}>
-            {filteredMistakes.length === 0 ? (
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '32px', color: 'var(--t3)', fontSize: 13, gap: 8 }}>
-                <Search size={28} strokeWidth={1.5} style={{ opacity: 0.35 }} />
-                조건에 맞는 오답이 없습니다
-              </div>
-            ) : (
-              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
-                <thead>
-                  <tr style={{ background: 'var(--bg3)' }}>
-                    {[
-                      { key: 'date', label: '연월' },
-                      { key: null,   label: '시험명' },
-                      { key: null,   label: '번호' },
-                      { key: 'unit', label: '단원' },
-                      { key: 'type', label: '오답 유형' },
-                      { key: null,   label: '메모' },
-                    ].map(({ key, label }) => (
-                      <th
-                        key={label}
-                        onClick={key ? () => toggleSort(key) : undefined}
-                        style={{
-                          padding: '10px 14px', textAlign: 'left', fontWeight: 700,
-                          borderBottom: '1px solid var(--bd0)', fontSize: 11, textTransform: 'uppercase',
-                          letterSpacing: '0.06em', whiteSpace: 'nowrap',
-                          cursor: key ? 'pointer' : 'default',
-                          color: key && sortCol === key ? 'var(--blue)' : 'var(--t2)',
-                        }}
-                      >
-                        {label}{key ? sortIndicator(key) : ''}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredMistakes.map((m, i) => (
-                    <tr key={m.id || i} style={{ borderBottom: '1px solid var(--bg3)', transition: 'background 0.15s' }}
-                      onMouseEnter={e => e.currentTarget.style.background = 'var(--bg3)'}
-                      onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-                    >
-                      <td style={{ padding: '11px 14px', color: 'var(--t2)', whiteSpace: 'nowrap', fontSize: 11 }}>{m.examDate}</td>
-                      <td style={{ padding: '11px 14px', color: 'var(--t1)', fontSize: 11, maxWidth: 160, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.examName}</td>
-                      <td style={{ padding: '11px 14px', color: 'var(--t0)', fontWeight: 700, textAlign: 'center' }}>{m.questionNumber}번</td>
-                      <td style={{ padding: '11px 14px' }}>
-                        {m.unit ? (
-                          <span style={{ background: 'rgba(16,185,129,0.1)', color: 'var(--green)', padding: '3px 10px', borderRadius: 7, fontWeight: 600 }}>{m.unit}</span>
-                        ) : <span style={{ color: 'var(--t3)' }}>—</span>}
-                      </td>
-                      <td style={{ padding: '11px 14px' }}>
-                        {m.errorType ? (
-                          <span style={{ background: ERROR_COLORS_HEX[m.errorType] + '22', color: ERROR_COLORS_HEX[m.errorType], padding: '3px 10px', borderRadius: 7, fontWeight: 700, whiteSpace: 'nowrap' }}>
-                            {m.errorType}
-                          </span>
-                        ) : <span style={{ color: 'var(--t3)' }}>—</span>}
-                      </td>
-                      <td style={{ padding: '11px 14px', color: 'var(--t2)', maxWidth: 180, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.memo || '—'}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            )}
-          </div>
         </div>
-      )}
+
+        {/* Desktop: Table */}
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 700 }}>
+            <thead>
+              <tr style={{ borderBottom: '2px solid var(--bd0)' }}>
+                {[
+                  { key: 'date', label: '날짜' },
+                  { key: '', label: '시험명' },
+                  { key: '', label: '문항' },
+                  { key: 'unit', label: '단원' },
+                  { key: 'errorType', label: '오답 유형' },
+                  { key: null, label: '메모' },
+                ].map(({ key, label }) => (
+                  <th
+                    key={label}
+                    onClick={key ? () => toggleSort(key) : undefined}
+                    style={{
+                      padding: '10px 14px', textAlign: 'left', fontWeight: 700,
+                      borderBottom: '1px solid var(--bd0)', fontSize: 11, textTransform: 'uppercase',
+                      letterSpacing: '0.06em', whiteSpace: 'nowrap',
+                      cursor: key ? 'pointer' : 'default',
+                      color: key && sortCol === key ? 'var(--blue)' : 'var(--t2)',
+                    }}
+                  >
+                    {label}{key ? sortIndicator(key) : ''}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {filteredMistakes.map((m, i) => (
+                <tr key={m.id || i} style={{ borderBottom: '1px solid var(--bg3)', transition: 'background 0.15s' }}
+                  onMouseEnter={e => e.currentTarget.style.background = 'var(--bg3)'}
+                  onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                >
+                  <td style={{ padding: '11px 14px', color: 'var(--t2)', whiteSpace: 'nowrap', fontSize: 11 }}>{m.examDate}</td>
+                  <td style={{ padding: '11px 14px', color: 'var(--t1)', fontSize: 11, maxWidth: 160, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.examName}</td>
+                  <td style={{ padding: '11px 14px', color: 'var(--t0)', fontWeight: 700, textAlign: 'center' }}>{m.questionNumber}번</td>
+                  <td style={{ padding: '11px 14px' }}>
+                    {m.unit ? (
+                      <span style={{ background: 'rgba(16,185,129,0.1)', color: 'var(--green)', padding: '3px 10px', borderRadius: 7, fontWeight: 600 }}>{m.unit}</span>
+                    ) : <span style={{ color: 'var(--t3)' }}>—</span>}
+                  </td>
+                  <td style={{ padding: '11px 14px' }}>
+                    {m.errorType ? (
+                      <span style={{ background: ERROR_COLORS_HEX[m.errorType] + '22', color: ERROR_COLORS_HEX[m.errorType], padding: '3px 10px', borderRadius: 7, fontWeight: 700, whiteSpace: 'nowrap' }}>
+                        {m.errorType}
+                      </span>
+                    ) : <span style={{ color: 'var(--t3)' }}>—</span>}
+                  </td>
+                  {/* Memo cell: clickable */}
+                  <td
+                    style={{ padding: '11px 14px', color: 'var(--t2)', maxWidth: 180, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', cursor: 'pointer' }}
+                    onClick={() => setMemoModalMistake(m)}
+                    title={m.memo || '메모를 입력하세요'}
+                  >
+                    <span style={{
+                      borderBottom: m.memo ? '1px dashed var(--bd1)' : '1px dashed var(--t3)',
+                      paddingBottom: 1,
+                    }}>
+                      {m.memo || '—'}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 }
