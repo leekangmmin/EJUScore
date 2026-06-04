@@ -1,7 +1,7 @@
 {
   "name": "eju-score-tracker",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "EJU Exam Score Tracker — Mock Exam Management App",
   "author": "Lee Kangmin <leekangmmin@github>",
   "license": "MIT",
