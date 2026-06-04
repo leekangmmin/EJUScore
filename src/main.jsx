@@ -82,13 +82,26 @@ function isAdminRoute() {
 }
 
 function renderApp() {
-  const root = createRoot(document.getElementById('root'));
+  const container = document.getElementById('root');
+  if (!container) return; // no mount point (e.g., test env) → skip render
+  const root = createRoot(container);
   if (isAdminRoute()) {
     import('./admin/AdminApp.jsx').then(({ default: AdminApp }) => {
       root.render(<StrictMode><AdminApp /></StrictMode>);
     });
     return;
   }
+  // ── First-visit: show the marketing landing page once ──────────────
+  // Standalone PWA (installed app) skips the landing.
+  try {
+    const isStandalone = window.matchMedia?.('(display-mode: standalone)')?.matches
+      || window.navigator?.standalone;
+    if (import.meta.env.PROD && !isStandalone && !localStorage.getItem('eju_landing_seen') && !location.hash) {
+      localStorage.setItem('eju_landing_seen', '1');
+      location.replace((import.meta.env.BASE_URL || '/') + 'landing.html');
+      return;
+    }
+  } catch { /* ignore — fall through to app */ }
   root.render(
     <StrictMode>
       <App />

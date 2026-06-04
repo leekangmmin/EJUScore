@@ -53,7 +53,11 @@ function detectPlatform() {
    InstallGuide Component
    ═══════════════════════════════════════════════════════════════════ */
 
-export default function InstallGuide({ onClose, onDontShowAgain }) {
+export default function InstallGuide({ onClose, onDontShowAgain, onDismiss }) {
+  // Defensive: accept legacy `onDismiss` so close buttons always work
+  // even if the caller passes the old prop name.
+  const close = onClose || onDismiss || (() => {});
+  const dontShow = onDontShowAgain || onDismiss || close;
   const [platform, setPlatform] = useState(null);
   const [deferredPrompt, setDeferredPrompt] = useState(null);
   const [installed, setInstalled] = useState(false);
@@ -106,12 +110,12 @@ export default function InstallGuide({ onClose, onDontShowAgain }) {
   const isStandalone = platform?.alreadyInstalled;
 
   return (
-    <div style={{
+    <div onClick={close} style={{
       position: 'fixed', inset: 0, zIndex: 9999,
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(8px)',
     }}>
-      <div style={{
+      <div onClick={(e) => e.stopPropagation()} style={{
         width: 'min(440px, 92vw)', maxHeight: '90vh', overflowY: 'auto',
         background: 'var(--card-bg)', border: '1px solid var(--bd0)',
         borderRadius: 24, padding: 28,
@@ -137,7 +141,7 @@ export default function InstallGuide({ onClose, onDontShowAgain }) {
                 : '웹앱(PWA)으로 설치하면 오프라인에서도 사용 가능하고, 더 빠르게 실행됩니다.'}
             </div>
           </div>
-          <button onClick={onClose} style={{
+          <button onClick={close} style={{
             width: 32, height: 32, borderRadius: 10,
             border: '1px solid var(--bd1)', background: 'transparent',
             cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -238,7 +242,7 @@ export default function InstallGuide({ onClose, onDontShowAgain }) {
         {/* ── Footer ── */}
         <div style={{ display: 'flex', gap: 8, marginTop: 4 }}>
           {!isStandalone && (
-            <button onClick={onDontShowAgain} style={{
+            <button onClick={dontShow} style={{
               padding: '9px 14px', borderRadius: 12,
               border: '1px solid var(--bd1)', background: 'transparent',
               color: 'var(--t3)', cursor: 'pointer', fontSize: 11,
@@ -247,7 +251,7 @@ export default function InstallGuide({ onClose, onDontShowAgain }) {
               다시 보지 않기
             </button>
           )}
-          <button onClick={onClose} style={{
+          <button onClick={close} style={{
             marginLeft: 'auto', padding: '9px 18px', borderRadius: 12,
             border: 'none', background: 'rgba(49,130,246,0.08)',
             color: '#1B64DA', cursor: 'pointer', fontSize: 12,

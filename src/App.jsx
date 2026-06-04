@@ -250,7 +250,10 @@ export default function App() {
       </Layout>
       {showQuickInput && <QuickInputModal onClose={() => setShowQuickInput(false)} onSaved={refresh} />}
       {showSettings && <Suspense fallback={null}><SettingsPanel settings={settings} onSave={(s) => { saveSettings(s); setSettings(s); }} onClose={() => setShowSettings(false)} /></Suspense>}
-      {showInstallGuide && <Suspense fallback={null}><InstallGuide onDismiss={() => { setShowInstallGuide(false); localStorage.setItem('eju_pwa_guide_dismissed', '1'); }} /></Suspense>}
+      {showInstallGuide && <Suspense fallback={null}><InstallGuide
+        onClose={() => setShowInstallGuide(false)}
+        onDontShowAgain={() => { setShowInstallGuide(false); localStorage.setItem('eju_pwa_guide_dismissed', '1'); }}
+      /></Suspense>}
     </ErrorBoundary>
   );
 }

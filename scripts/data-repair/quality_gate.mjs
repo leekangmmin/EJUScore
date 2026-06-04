@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 // ═══════════════════════════════════════════════════════════════════
 // PHASE 4 — Data Quality Gate (CI) — v3 (accuracy-driven)
 //
