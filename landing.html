@@ -19,6 +19,35 @@
   body{font-family:'Pretendard',system-ui,sans-serif;background:var(--bg);color:var(--ink);
     -webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
   a{text-decoration:none;color:inherit}
+  /* ── dark mode ── */
+  [data-theme="dark"]{
+    --ink:#e9edf2; --gray:#aeb6c2; --gray2:#7b8694; --line:#2a313c;
+    --bg:#0f141a; --card:#161c24; --shadow:0 1px 3px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  }
+  [data-theme="dark"] .chip{background:#16243d;color:#9cc2ff}
+  [data-theme="dark"] .fcard .ico,[data-theme="dark"] .pill[aria-selected="false"]{background:#16243d}
+  [data-theme="dark"] .bar-track{background:#222a34}
+  [data-theme="dark"] nav{background:rgba(15,20,26,.8)}
+  [data-theme="dark"] .blob{opacity:.28}
+  .theme-btn{width:38px;height:38px;border-radius:11px;border:1px solid var(--line);background:var(--card);
+    cursor:pointer;display:grid;place-items:center;font-size:17px;transition:transform .15s}
+  .theme-btn:active{transform:scale(.92)}
+  /* ── device mockups ── */
+  .shots{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:44px;perspective:1200px}
+  .device{width:248px;border-radius:30px;background:var(--card);border:1px solid var(--line);
+    box-shadow:var(--shadow);padding:12px;transition:transform .3s}
+  .device:hover{transform:translateY(-8px) rotateX(3deg)}
+  .device .screen{background:var(--bg);border-radius:20px;padding:16px;min-height:380px;display:flex;flex-direction:column;gap:12px}
+  .scr-top{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:14px}
+  .scr-top .pillmini{font-size:10px;background:#eaf2ff;color:var(--blue-d);padding:3px 8px;border-radius:6px;font-weight:700}
+  .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .mini-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px}
+  .mini-card .v{font-size:18px;font-weight:800;color:var(--blue)}
+  .mini-card .l{font-size:9px;color:var(--gray2);margin-top:2px;font-weight:600}
+  .spark{height:54px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;display:flex;align-items:flex-end;gap:4px}
+  .spark i{flex:1;background:linear-gradient(180deg,#5b9bff,#3182f6);border-radius:3px;display:block}
+  .rowcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:9px;font-size:11px}
+  .stars{color:#f5a623;font-size:10px}
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
   .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;
     padding:16px 28px;border-radius:14px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;will-change:transform}
@@ -118,7 +147,10 @@
 <nav id="nav">
   <div class="wrap">
     <div class="logo"><span class="mark">E</span> EJU 인텔리전스</div>
-    <a class="btn btn-primary" href="./">앱 시작하기</a>
+    <div style="display:flex;align-items:center;gap:10px">
+      <button class="theme-btn" id="themeBtn" aria-label="테마 전환">🌙</button>
+      <a class="btn btn-primary app-link" href="./">앱 시작하기</a>
+    </div>
   </div>
 </nav>
 
@@ -130,7 +162,7 @@
     <p class="sub">2002년부터의 EJU 기출을 분석해 <b>출제경향·내 약점·예상 토픽</b>을 한눈에.
       사진으로 문제를 옮기고, 자연어로 기출을 검색해요.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="./">무료로 시작하기 →</a>
+      <a class="btn btn-primary app-link" href="./">무료로 시작하기 →</a>
       <a class="btn btn-ghost" href="#demo">기능 살펴보기</a>
     </div>
 
@@ -191,11 +223,52 @@
   </div>
 </section>
 
+<section class="block">
+  <div class="wrap center">
+    <div class="eyebrow reveal">PREVIEW</div>
+    <h2 class="htitle reveal">이런 화면이에요</h2>
+    <p class="hdesc reveal">설치 없이 웹에서 바로. 점수 대시보드부터 출제경향·약점 분석까지.</p>
+    <div class="shots">
+      <div class="device reveal">
+        <div class="screen">
+          <div class="scr-top">대시보드 <span class="pillmini">D-42</span></div>
+          <div class="mini-grid">
+            <div class="mini-card"><div class="v">318</div><div class="l">일본어 (목표 320)</div></div>
+            <div class="mini-card"><div class="v">172</div><div class="l">종합과목 (목표 170)</div></div>
+          </div>
+          <div class="spark"><i style="height:40%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:85%"></i><i style="height:78%"></i></div>
+          <div class="rowcard">📈 최근 5회 추세 · 상승</div>
+          <div class="rowcard">🔥 번아웃 지수 · 낮음</div>
+        </div>
+      </div>
+      <div class="device reveal">
+        <div class="screen">
+          <div class="scr-top">출제경향×약점 <span class="pillmini">우선학습</span></div>
+          <div class="rowcard"><span class="stars">★★★★★</span> 환율·국제수지<br><span style="color:var(--gray2)">출제 102회 · 내 정답률 33%</span></div>
+          <div class="rowcard"><span class="stars">★★★★☆</span> 국제연합(UN)<br><span style="color:var(--gray2)">출제 78회 · 내 정답률 41%</span></div>
+          <div class="rowcard"><span class="stars">★★★☆☆</span> 냉전·데탕트<br><span style="color:var(--gray2)">출제 54회 · 내 정답률 58%</span></div>
+          <div class="rowcard" style="border-color:#cfe0ff;background:#f3f8ff;color:var(--blue-d)">예상 점수 상승 +6점 · 추정</div>
+        </div>
+      </div>
+      <div class="device reveal">
+        <div class="screen">
+          <div class="scr-top">자연어 검색 <span class="pillmini">종합·수학</span></div>
+          <div class="rowcard" style="font-weight:700">🔍 "브레튼우즈 체제"</div>
+          <div class="rowcard">2013·2018·2021 출제 <span style="margin-left:auto;color:var(--blue);font-weight:800">관련도 91%</span></div>
+          <div class="rowcard">관련 개념<br><span style="color:var(--gray2)">금본위·고정환율·IMF·닉슨쇼크</span></div>
+          <div class="rowcard" style="color:var(--gray2)">※ 출제 가능성은 참고 지표</div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-note">※ 화면은 실제 기능 기준 미리보기이며, 표시 수치는 예시입니다.</div>
+  </div>
+</section>
+
 <section class="wrap cta">
   <div class="cta-inner reveal">
     <h2>이제, 감으로 공부하지 마세요</h2>
     <p>설치 없이 웹에서 바로. 한국인 유학생을 위한 EJU 분석 도구.</p>
-    <a class="btn btn-primary" href="./">무료로 시작하기 →</a>
+    <a class="btn btn-primary app-link" href="./">무료로 시작하기 →</a>
   </div>
 </section>
 
@@ -250,6 +323,16 @@
   // render when demo scrolls in
   new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){render('all');o.disconnect();}}),{threshold:.3})
     .observe(document.getElementById('demo'));
+
+  // dark mode (persisted, shared key with app)
+  const root=document.documentElement, tb=document.getElementById('themeBtn');
+  function applyTheme(t){root.setAttribute('data-theme',t);tb.textContent=t==='dark'?'☀️':'🌙';}
+  (function(){let t='light';try{const s=JSON.parse(localStorage.getItem('eju_settings')||'{}');t=s.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');}catch{}applyTheme(t);})();
+  tb.addEventListener('click',()=>{const next=root.getAttribute('data-theme')==='dark'?'light':'dark';applyTheme(next);
+    try{const s=JSON.parse(localStorage.getItem('eju_settings')||'{}');s.theme=next;localStorage.setItem('eju_settings',JSON.stringify(s));}catch{}});
+
+  // CTA → app: mark landing seen so the app doesn't redirect back (loop guard)
+  document.querySelectorAll('.app-link').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('eju_landing_seen','1');}catch{}}));
 </script>
 </body>
 </html>
