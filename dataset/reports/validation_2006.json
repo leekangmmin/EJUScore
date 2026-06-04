@@ -1,0 +1,18 @@
+{
+  "pdf": "2006平成18年第2回文综.pdf",
+  "pages": 22,
+  "questions": 23,
+  "tables": 22,
+  "graphs": 0,
+  "maps": 0,
+  "diagrams": 0,
+  "timelines": 0,
+  "confidence_average": 0.8636,
+  "confidence_min": 0.7143,
+  "confidence_max": 0.93,
+  "low_confidence_count": 2,
+  "validation": "PASS",
+  "warnings": [],
+  "errors": [],
+  "timestamp": "2026-06-01T23:39:00.924197"
+}

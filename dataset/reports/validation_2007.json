@@ -1,0 +1,18 @@
+{
+  "pdf": "2007平成19年第2回文综.pdf",
+  "pages": 21,
+  "questions": 25,
+  "tables": 21,
+  "graphs": 0,
+  "maps": 0,
+  "diagrams": 0,
+  "timelines": 0,
+  "confidence_average": 0.8565,
+  "confidence_min": 0.5939,
+  "confidence_max": 0.9212,
+  "low_confidence_count": 2,
+  "validation": "PASS",
+  "warnings": [],
+  "errors": [],
+  "timestamp": "2026-06-01T23:39:00.924671"
+}

@@ -1,0 +1,4617 @@
+{
+  "id": "mathematics_2025_1",
+  "source_file": "2025令和7年数学1.pdf",
+  "source_path": "/Users/igangmin/Desktop/에쥬 기출/에쥬 수학기출/【2】EJU数学1/【1】数学1真题/2025令和7年数学1.pdf",
+  "subject": "mathematics",
+  "year": 2025,
+  "round": 1,
+  "total_pages": 9,
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1653,
+      "height": 2817,
+      "text": "20257 HAM RIR 数学 (80 分 ) [2-21 (dA, Basic) «I-72 (LB, Advanced) ] ポポ EB’PDI-AK—DEWMA CHB CCB, アッッッノアノッノアノアテククウアウクウノレノウクスクンスーイブイーイグイズイズイイイイイアーイブイイイアイブイアイプ 1 ! | RST oe 1. RBOPVTSLI, 部屋の外に出ることはできません。 ! 82. この間央司子を持ち帰ることはできません。 11 半虹子に関する注意 Il 1. 税談開始の合図がかあるまで , この則期冊子の中を見ないでくだきい。 i 2 MRO SDI Re. FOU, SAREL EH, RARER’ | 1 ように配入してください。 113, コース 1 は 113 ページ , コース 2 は 15 て 27 ページにあります。 i | 4. 尽りないページがあったら , 手をあげて知らせてくださり。 N 5. メモ計算などを書く場合は , 問題則子に書いてください。 \\ \\ 生 MSHARICT SRE \\ 1 . RSS, SEAMS OME (HB) CAL TC AV. N ! 2. 問題文中の A, B, C,… には , それぞれ - (マイナスの符号 ) または , | \\ 0 から 9 までの数がーつずつ入ります。適するものを選び , MSAK | \\ (マークシート ) の対応する解答棚にマークしてください。 \\ (| 3. 同一の問題文中に LA_], [BC] なとが繰り返し現れる場合 2 度目以降 ! (GB, Bosse css, \\ | SECT OBA LORE \\ , Re (/ ) の中に現れる自然数が最小となる形で答えてください。 \\ \\ ( 例 : /32 のときは , 278 ではなく 4/2 と答えます。) \\ (2) 分数を答えるときは , 符号は分子につけ , BLANK (reduced fraction) \\ にして答えてください。 Fas, はーと分上を有有化してから約人かし . 一51 と答えます。) 1 (3) A 8 ve owen, 下のようにマークしてください。 \\ | 4) (DEIrit —r 2A SMH, DE-, E を 1 とし , 下のようにマーク | してください。 TA] 00@99@6@9@9@ N |B | 90900@%9@@9@9@ | N Cc| 000000600000 \\ | D| @0000060000 \\ \\ E 06000000060 @ QO \\ | 4. PEARCE CH SERMAOUTHA TK REV. \\ 1 プ A ノノノノノノ A ノノノノノノ ZZ ノノノノノノ 2 ノノ ZZ ZZ ZZ ZZ ノノ 2 ZZ ZZ ZZ ZZ ZZ // ノノ | ※ 試験開始の合図があったら , 必ず受験番号と名前を記人してください。",
+      "ocr_confidence": 0.6352,
+      "layout": {
+        "tables": [],
+        "diagrams": [],
+        "graphs": [],
+        "maps": [],
+        "timelines": [],
+        "question_regions": [
+          {
+            "number": "1.、",
+            "bbox": {
+              "x0": 260,
+              "y0": 710,
+              "x1": 305,
+              "y1": 761
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "4.",
+            "bbox": {
+              "x0": 254,
+              "y0": 903,
+              "x1": 303,
+              "y1": 952
+            },
+            "confidence": 0.57
+          },
+          {
+            "number": "5.",
+            "bbox": {
+              "x0": 254,
+              "y0": 951,
+              "x1": 303,
+              "y1": 1001
+            },
+            "confidence": 0.95
+          },
+          {
+            "number": "2.",
+            "bbox": {
+              "x0": 252,
+              "y0": 1096,
+              "x1": 302,
+              "y1": 1146
+            },
+            "confidence": 0.56
+          },
+          {
+            "number": "3.",
+            "bbox": {
+              "x0": 252,
+              "y0": 1243,
+              "x1": 302,
+              "y1": 1294
+            },
+            "confidence": 0.86
+          },
+          {
+            "number": "4.",
+            "bbox": {
+              "x0": 249,
+              "y0": 2255,
+              "x1": 299,
+              "y1": 2306
+            },
+            "confidence": 0.53
+          }
+        ],
+        "answer_choices": []
+      },
+      "table_count": 1,
+      "diagram_count": 0,
+      "graph_count": 0,
+      "map_count": 0,
+      "timeline_count": 0,
+      "vertical_text": [
+        {
+          "x": 540,
+          "text": "2025 る ど 数 の る ます が |*|",
+          "word_count": 9,
+          "is_vertical": true
+        },
+        {
+          "x": 660,
+          "text": "年 帰る EC, Re. 。 た 場合 に 2/8 。 注意",
+          "word_count": 11,
+          "is_vertical": true
+        },
+        {
+          "x": 720,
+          "text": "度 の こと , つ ver 事項",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 800,
+          "text": "AAR 3-2 ー で ス を 問題 CAL それ り 欄 て な は も",
+          "word_count": 15,
+          "is_vertical": true
+        },
+        {
+          "x": 1000,
+          "text": "RR イア あま 27 ちせ AV. くだ RLANSBA, る 婚約 し を くだ で",
+          "word_count": 14,
+          "is_vertical": true
+        },
+        {
+          "x": 880,
+          "text": "(8 こと せん 朋子 は て 冊子 ぞ す 最小 4/7 人 を",
+          "word_count": 13,
+          "is_vertical": true
+        },
+        {
+          "x": 980,
+          "text": "0 (LM, の 書い (マイ な 答え T E",
+          "word_count": 9,
+          "is_vertical": true
+        },
+        {
+          "x": 1040,
+          "text": "分 イイ せん を て 形 よう 1",
+          "word_count": 8,
+          "is_vertical": true
+        },
+        {
+          "x": 1100,
+          "text": ") Advanced) ブイ EH, 。 で 。) E し 。",
+          "word_count": 10,
+          "is_vertical": true
+        },
+        {
+          "x": 280,
+          "text": "[2-21 ool. 角 . & SECT (1) (2) (4) 試験",
+          "word_count": 10,
+          "is_vertical": true
+        },
+        {
+          "x": 480,
+          "text": "(A, 関す 関す し は 関す ト 答え に 00@99@6@9@9@ に",
+          "word_count": 11,
+          "is_vertical": true
+        },
+        {
+          "x": 620,
+          "text": "Basic) 部 OME C,… が は 8 た",
+          "word_count": 8,
+          "is_vertical": true
+        },
+        {
+          "x": 920,
+          "text": "2 SAREL 15 知ら TC し つけ 読ん と",
+          "word_count": 9,
+          "is_vertical": true
+        },
+        {
+          "x": 1320,
+          "text": "] イブ マー",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 380,
+          "text": "% 全体 冊子 本 ス や 方 クシ 例 て くだ",
+          "word_count": 11,
+          "is_vertical": true
+        },
+        {
+          "x": 460,
+          "text": "EBSPDIA-AK-—DEVYBA 20CALLE2L に 可 理子 に ペー に で OBA を さい 紙 |",
+          "word_count": 14,
+          "is_vertical": true
+        },
+        {
+          "x": 960,
+          "text": "CHET イイ で て に 適 て と と ,",
+          "word_count": 10,
+          "is_vertical": true
+        },
+        {
+          "x": 1140,
+          "text": "ESV, イア いで に (reduced 数 か て 1111",
+          "word_count": 9,
+          "is_vertical": true
+        },
+        {
+          "x": 180,
+          "text": "Seth ( { ( 1 i ))。 1 {4 \\ \\ \\ \\ \\ \\ ) | i N | し | N ! | !",
+          "word_count": 26,
+          "is_vertical": true
+        },
+        {
+          "x": 260,
+          "text": "hcl 2、 2 3, 5. 1 2. 3. 4,",
+          "word_count": 9,
+          "is_vertical": true
+        },
+        {
+          "x": 360,
+          "text": "lama 目 の 題 ら ( 分 し て 開始",
+          "word_count": 10,
+          "is_vertical": true
+        },
+        {
+          "x": 580,
+          "text": "ス 意 , 持ち さい あっ 書く に き 。) と あっ",
+          "word_count": 12,
+          "is_vertical": true
+        },
+        {
+          "x": 600,
+          "text": "スー 2 [LA], よう に は き さい 替え ある",
+          "word_count": 10,
+          "is_vertical": true
+        },
+        {
+          "x": 640,
+          "text": "スス ペー 一 する 現れ , , eee ら",
+          "word_count": 9,
+          "is_vertical": true
+        },
+        {
+          "x": 680,
+          "text": "444 屋 ジ つ 解答 る ,",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 740,
+          "text": "ス は BO 自然",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 780,
+          "text": "バス に は は は 受験",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 820,
+          "text": "イ 出る きま 則 あげ に Seay ぃ く 分 suai,",
+          "word_count": 11,
+          "is_vertical": true
+        },
+        {
+          "x": 840,
+          "text": "イー 2 ま ます 数 必ず |",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 860,
+          "text": "イイ 呈 マー が 子 と D 番号",
+          "word_count": 8,
+          "is_vertical": true
+        },
+        {
+          "x": 900,
+          "text": "イブ れ 。 ク 。 に -, ce]",
+          "word_count": 8,
+          "is_vertical": true
+        },
+        {
+          "x": 1180,
+          "text": "イブ 〈 。 ク くだ",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 1220,
+          "text": "イイ だ RARER’ し よ",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 1280,
+          "text": "イア MSAK 度目 fraction) くだ",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 1360,
+          "text": "イイ は w ク",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1440,
+          "text": "| | | | i N \\ N | | \\ 1 \\ \\ \\ \\ § EY ! | N \\ \\ ! ト",
+          "word_count": 25,
+          "is_vertical": true
+        },
+        {
+          "x": 300,
+          "text": "民 半 よ 0 (マー",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 320,
+          "text": "験 仙 こ 題 RERGOSRAHS MRO うに メモ 管 RSS, 間 か 同一 に し 解答",
+          "word_count": 16,
+          "is_vertical": true
+        },
+        {
+          "x": 520,
+          "text": "る し くだ ジ る A, の 文中 の くだ > 。 690%0999@6@9@9 書い",
+          "word_count": 14,
+          "is_vertical": true
+        },
+        {
+          "x": 560,
+          "text": "潤 に を 注意 13 が を 注意 B, 対応 の LORE 中 と と て",
+          "word_count": 16,
+          "is_vertical": true
+        },
+        {
+          "x": 400,
+          "text": "の 間 な 9 の 号 GHG, 用",
+          "word_count": 8,
+          "is_vertical": true
+        },
+        {
+          "x": 440,
+          "text": "昨 入 い SEAMS ま ー (/ /82 と 合図",
+          "word_count": 10,
+          "is_vertical": true
+        },
+        {
+          "x": 500,
+          "text": "な SDI て 1 な の の ) 旧 ) 答え て 00000000000 000000060000 @00000060000",
+          "word_count": 15,
+          "is_vertical": true
+        },
+        {
+          "x": 760,
+          "text": "外 この FOU, コー 手 , は , 信 で | -147-",
+          "word_count": 12,
+          "is_vertical": true
+        },
+        {
+          "x": 940,
+          "text": "は 。 - 名",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1120,
+          "text": "。 な さい さい の を 答え て マ , し",
+          "word_count": 11,
+          "is_vertical": true
+        },
+        {
+          "x": 420,
+          "text": "還 1 計算 法 文中 問題 : 数 答え の",
+          "word_count": 10,
+          "is_vertical": true
+        },
+        {
+          "x": 1020,
+          "text": "中 て する の を 前",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 1080,
+          "text": "見 ナス の 分 人",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 1240,
+          "text": "きい ます )、 , 2 て さい",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 1300,
+          "text": "。 。 また 。 。",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 340,
+          "text": "コー 足り GBS, 根 [DEIz TA] ‘BL fc] pl TET",
+          "word_count": 10,
+          "is_vertical": true
+        },
+        {
+          "x": 700,
+          "text": ", ら (HB) に ず 表し る 符号 場合 必ず |",
+          "word_count": 11,
+          "is_vertical": true
+        },
+        {
+          "x": 1060,
+          "text": "ページ くだ くだ も さい ます と さい 記 |",
+          "word_count": 10,
+          "is_vertical": true
+        },
+        {
+          "x": 1160,
+          "text": "あり 。 符号 選び ー 下",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 1200,
+          "text": "くだ て 9 の",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1260,
+          "text": "さい し うに",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 200,
+          "text": "※ | を ee",
+          "word_count": 4,
+          "is_vertical": true
+        }
+      ],
+      "processing_time_ms": 0
+    },
+    {
+      "page_number": 2,
+      "width": 1653,
+      "height": 2723,
+      "text": "Vt Toad 数学コース 1 (基本コース ) (コース 2 は 15 ページからです ) 「 解和光コース 」 肥入方法解答コースには 「 コース 1」 と 「 コース 2」 が < 解答用紙本入例 > ありますので , どちらかのコースを一つだ [ 2 をーーmxoam コース 」 の 「 コース 1」 を 〇 で囲み , TOF のマーク欄をマークしてください。 MA TMB UTC ESV, TI-All GRE Saat ee 選択したコースを正しくマークしないと , 採点されません。 -149-",
+      "ocr_confidence": 0.661,
+      "layout": {
+        "tables": [],
+        "diagrams": [],
+        "graphs": [],
+        "maps": [],
+        "timelines": [],
+        "question_regions": [
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 550,
+              "x1": 1653,
+              "y1": 592
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 848,
+              "x1": 1653,
+              "y1": 879
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 987,
+              "x1": 1653,
+              "y1": 1018
+            },
+            "confidence": 0.5
+          }
+        ],
+        "answer_choices": []
+      },
+      "table_count": 1,
+      "diagram_count": 0,
+      "graph_count": 0,
+      "map_count": 0,
+      "timeline_count": 0,
+      "vertical_text": [
+        {
+          "x": 620,
+          "text": "a, (基本 は を 。 な",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 660,
+          "text": "学 紙 いと",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 840,
+          "text": "ス 肥 され",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 760,
+          "text": "コー ー コ け 採点",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 820,
+          "text": "ス 」 一",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 380,
+          "text": "(コー どちら を",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 500,
+          "text": "ス の くだ マー",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 560,
+          "text": "2 eae さい ク",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 680,
+          "text": "15 解 一 の 「",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 880,
+          "text": "ジ 入 ませ",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 940,
+          "text": "か 法 ん",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 720,
+          "text": "党 だ 解答",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 300,
+          "text": "ARS で は コー",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 400,
+          "text": "Sal ESV, の ク",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 160,
+          "text": "あり MA する の 選択",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 220,
+          "text": "ます TMB 場合",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 280,
+          "text": "の 欄 た",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 340,
+          "text": ", を ス",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 460,
+          "text": "か に て",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 700,
+          "text": "つ GRE 人 ,",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 960,
+          "text": "Saat Course 。",
+          "word_count": 3,
+          "is_vertical": true
+        }
+      ],
+      "processing_time_ms": 0
+    },
+    {
+      "page_number": 3,
+      "width": 1653,
+      "height": 2770,
+      "text": "散学 -2 間 12 次関数 y = 32\" + 52 — 2a のグラブフについて考える。 (1) C が 23z35 において , z 軸と共有点をもつような a の値の範囲求めよう。放物線 C の軸は直線ヶ = - CHS, f(z) = 372+572g LBC LS, GH 2 くく 5 において , z 軸と共有点をもつための条件は 7([Lc])s かつっ 7(L5])s0 である。したがって , 求める c OffommMIs [EF] <a< [GH] である。 (2) G を。z 軸方向に p だけ平行移動した放物線が , 2 点 (2, 0) と (5, 0) を通るとき , p= Ly | CHS, Lk] 2 ー150 一",
+      "ocr_confidence": 0.7216,
+      "layout": {
+        "tables": [],
+        "diagrams": [],
+        "graphs": [],
+        "maps": [],
+        "timelines": [],
+        "question_regions": [
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 805,
+              "x1": 1653,
+              "y1": 838
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 899,
+              "x1": 1653,
+              "y1": 931
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1385,
+              "x1": 1653,
+              "y1": 1419
+            },
+            "confidence": 0.5
+          }
+        ],
+        "answer_choices": []
+      },
+      "table_count": 1,
+      "diagram_count": 0,
+      "graph_count": 0,
+      "map_count": 0,
+      "timeline_count": 0,
+      "vertical_text": [
+        {
+          "x": 240,
+          "text": "学 の (1)",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 320,
+          "text": "2 フ C 放物線 ある G",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 360,
+          "text": "次 が を",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 400,
+          "text": "数 23z35 5 し",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 760,
+          "text": "= と 点",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 800,
+          "text": "32\" た し",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 860,
+          "text": "+ 点 ぁ",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 920,
+          "text": "— も |",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 280,
+          "text": "グラ 2 で",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 420,
+          "text": "に C 軸",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 440,
+          "text": "つい に た",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 480,
+          "text": "て 軸 いて",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 520,
+          "text": "考え は , て 向",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 580,
+          "text": "る お Le)se 求め だ",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 600,
+          "text": "。 いて 軸",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 560,
+          "text": "に z , p",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 640,
+          "text": ", = と 平",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 680,
+          "text": "z ae a 行",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 780,
+          "text": "共有 を OHS —150-",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 900,
+          "text": "を の o",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 940,
+          "text": "つよ 条 EF が ,",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 1000,
+          "text": "うな は | 点",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 460,
+          "text": "の お が 方",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1040,
+          "text": "= く <。< (2,",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1260,
+          "text": "LBC る ぁ を",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 820,
+          "text": "つた も 放物線",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 980,
+          "text": "件 7(P5)s 2",
+          "word_count": 3,
+          "is_vertical": true
+        }
+      ],
+      "processing_time_ms": 0
+    },
+    {
+      "page_number": 4,
+      "width": 1653,
+      "height": 2862,
+      "text": "数学 -4 間 21 人が 2 枚のコイン , も 51 人が | 枚のコインをもっているとする。 2 人がコインをすべて投げ , 出た中の数の多い方が相手から 1 枚のコインを取り , 同数のときはそのまま (引き分け ) とする貝行について考えよう。 COME < DIAL, どちらかが 2 枚のコインを得るまで続ける。 (1) 1 回の肛行において (i) \"コインを 2 枚もっている方が , 相手からコインを取る確率は LN | である。 Lo | (i) コインを 1 枚もっている方が , 相手からコインを取る確率は Lr である。 [a | (iii) 引き分けになる確率は | である。 Ls ] (2) はじめに , A さんが 2 枚のコイン , B さんが 1 枚のコインをもっているとする。 T 2 回目の試行で A さんが 3 枚のコインを得る確率はであり , 2 回目の試行で B さんが 3 枚のコインを得る確率は Ll である。ー152 一",
+      "ocr_confidence": 0.8181,
+      "layout": {
+        "tables": [],
+        "diagrams": [],
+        "graphs": [],
+        "maps": [],
+        "timelines": [],
+        "question_regions": [
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 322,
+              "x1": 1653,
+              "y1": 355
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 396,
+              "x1": 1653,
+              "y1": 431
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 844,
+              "x1": 1653,
+              "y1": 877
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1059,
+              "x1": 1653,
+              "y1": 1091
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1472,
+              "x1": 1653,
+              "y1": 1503
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1566,
+              "x1": 1653,
+              "y1": 1599
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1700,
+              "x1": 1653,
+              "y1": 1731
+            },
+            "confidence": 0.5
+          }
+        ],
+        "answer_choices": []
+      },
+      "table_count": 1,
+      "diagram_count": 0,
+      "graph_count": 0,
+      "map_count": 0,
+      "timeline_count": 0,
+      "vertical_text": [
+        {
+          "x": 240,
+          "text": "4 2 は コイ",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 320,
+          "text": "1 が ン 1 はじめに, さん",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 340,
+          "text": "人 コイ まま を 回",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 360,
+          "text": "が 目 が",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 400,
+          "text": "2 ン 虐 コイ \"コイ 引き の 3",
+          "word_count": 8,
+          "is_vertical": true
+        },
+        {
+          "x": 460,
+          "text": "枚 すべ 行 ン ン",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 500,
+          "text": "の 続け に さん で の",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 540,
+          "text": "コイ いて に さん",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 560,
+          "text": "ン 投げ る 枚 枚 な が ン",
+          "word_count": 8,
+          "is_vertical": true
+        },
+        {
+          "x": 580,
+          "text": ", CT 。 る 2",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 620,
+          "text": "も , っ も っ も 確率 得る",
+          "word_count": 8,
+          "is_vertical": true
+        },
+        {
+          "x": 660,
+          "text": "う 出 て",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 720,
+          "text": "人 表 コイ",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 740,
+          "text": "が の 方 方 の",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 800,
+          "text": "| 数 , , ン",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 840,
+          "text": "枚 多い さん を",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 880,
+          "text": "の ある 一",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 920,
+          "text": "コイ か か",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 960,
+          "text": "ン 相手 コ コ 1 ある",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 1040,
+          "text": "っ か を を の",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 1080,
+          "text": "て 取る 取る",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 1200,
+          "text": "する コイ DHL, っ",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1260,
+          "text": "。 a いる",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 300,
+          "text": "人 (i) 回",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 440,
+          "text": "を まで 枚",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 520,
+          "text": "て お 2 1 け A コイ",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 680,
+          "text": "た いる いる は 枚 確率",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 820,
+          "text": "の 相手 相手 B",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 940,
+          "text": "が LS. ら ら 。 確率 で",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 1140,
+          "text": "枚 確率 確率 ン",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1180,
+          "text": "の も CH),",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 1240,
+          "text": "ン be て",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 1400,
+          "text": "同数 な て で 。",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 1480,
+          "text": "の 。 。",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 220,
+          "text": "き の (1) (2)",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 280,
+          "text": "その (ii) (iii)",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 640,
+          "text": "SMATCOWTHA て 3",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 1000,
+          "text": "COMIE< イン イン は 。",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 1420,
+          "text": "が ある ある の",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 480,
+          "text": "を を 分 A",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 780,
+          "text": "が が , ー152",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 600,
+          "text": "枚 が を",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 760,
+          "text": "ン コイ は",
+          "word_count": 3,
+          "is_vertical": true
+        }
+      ],
+      "processing_time_ms": 0
+    },
+    {
+      "page_number": 5,
+      "width": 1653,
+      "height": 2623,
+      "text": "BY-6 間 1 戦式 P = Gx? + Say ~ Gy? +82 -y+2 ) 7 DEED POL RES, Vern Or VEHT 94 まず P を COWS OMCBAT S & となる。したがって , P を因数分解すると P = 6s\" + (5y +8) — (a Lg]) (Le 7- L5]) P= (CE _]:+ Gy + BE) (7 :- a+ a) …… である。一方 = Jer 1-Vo _ V30-V6+4 。 V6+V5+1 _ (V30- v6 +4) {V6- (V5+1))} ( 画玉 | - (V6+ V5+1) {V6 Sen ae oe ee である。以上から s = (RG - ソ屋中, v= / a) - BA を ① に代入することにより , p=[k」- しコソ VT ees. —154—-",
+      "ocr_confidence": 0.5007,
+      "layout": {
+        "tables": [],
+        "diagrams": [],
+        "graphs": [],
+        "maps": [],
+        "timelines": [],
+        "question_regions": [
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 939,
+              "x1": 1653,
+              "y1": 995
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1613,
+              "x1": 1653,
+              "y1": 1664
+            },
+            "confidence": 0.5
+          }
+        ],
+        "answer_choices": []
+      },
+      "table_count": 1,
+      "diagram_count": 0,
+      "graph_count": 0,
+      "map_count": 0,
+      "timeline_count": 0,
+      "vertical_text": [
+        {
+          "x": 220,
+          "text": "党 と で で",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 240,
+          "text": "ー6 : ある 以上 =[k",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 320,
+          "text": "ext Pec 。 か",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 640,
+          "text": "P SOM 屋",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 680,
+          "text": "= V30- 分",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 780,
+          "text": "+ V6+4 る —154—-",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 800,
+          "text": "Say と -",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 900,
+          "text": "Gy? の a)",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 1020,
+          "text": "-y+2 sy _ BA",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 460,
+          "text": "V5- _ (RG",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 540,
+          "text": "3 THN P",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 300,
+          "text": "\\ 。 。",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 400,
+          "text": "i perer9s- が -[L",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 620,
+          "text": "= V6+4) 5+1) ソ",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1200,
+          "text": "ド - _",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 260,
+          "text": "まず な ある",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 440,
+          "text": "COW っ _ -",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 740,
+          "text": "(C+ {V6-(V5+1)) {(V6",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 380,
+          "text": "た 方 s |]",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 500,
+          "text": ", V5-3 Y30-V6+4 (V30-",
+          "word_count": 4,
+          "is_vertical": true
+        }
+      ],
+      "processing_time_ms": 0
+    },
+    {
+      "page_number": 6,
+      "width": 1653,
+      "height": 2848,
+      "text": "履学 8 間 2 次の文中の CJ Kid, BOR-YOMRK © ~ O の中から敵する 6 のを周びなきい。また | | には , 適する数を人れなさい。 CULLLLLLL ag は実数とする。z に関する 200F SK 2+2 ヵ 7 < 8 ja-—2-2| < 3 を同時に満たす解が存在するような。の範囲求めよう。不等式 ① は (grLRT) (:- Lo J) <0 と表されるので , これより - <:< が得られる。また , 不等式 ⑦ を解くと [e]<:<[o] zg なる。したがって (i) 3-| R | のとき , OF © を同時に満たす解は存在しない。 (i) - 詞軸 <? s | S | のとき , 0% © を同時に満たす解は -L7)<:< Bg である。 (iti) <a<LU ] のとき , OF © を同時に満たす解はである。 (iv) Sa のとき , O&O を同時に満たす解は存在しない。 (2 は次ページに続く ) ー156 一",
+      "ocr_confidence": 0.6913,
+      "layout": {
+        "tables": [],
+        "diagrams": [],
+        "graphs": [],
+        "maps": [],
+        "timelines": [],
+        "question_regions": [
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 260,
+              "x1": 1653,
+              "y1": 295
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 773,
+              "x1": 1653,
+              "y1": 806
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1177,
+              "x1": 1653,
+              "y1": 1230
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1623,
+              "x1": 1653,
+              "y1": 1655
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1750,
+              "x1": 1653,
+              "y1": 1786
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 2103,
+              "x1": 1653,
+              "y1": 2138
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 2457,
+              "x1": 1653,
+              "y1": 2491
+            },
+            "confidence": 0.5
+          }
+        ],
+        "answer_choices": [
+          {
+            "bbox": {
+              "x0": 577,
+              "y0": 2447,
+              "x1": 716,
+              "y1": 2505
+            },
+            "choices": [
+              "①",
+              "⑦⑳"
+            ],
+            "confidence": 0.7
+          }
+        ]
+      },
+      "table_count": 1,
+      "diagram_count": 0,
+      "graph_count": 0,
+      "map_count": 0,
+      "timeline_count": 0,
+      "vertical_text": [
+        {
+          "x": 200,
+          "text": "学 きい を が (iv)",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 240,
+          "text": "8 a 同時 FER な (i)",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 300,
+          "text": "oxo ま 実数 ら 。",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 480,
+          "text": "[|] 。z が これ の",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 620,
+          "text": "に る する ⑦ OF | の",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 640,
+          "text": "は (*+(W))(-Lo])<o を",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 660,
+          "text": ", 20OF Ja—2-2| よう の と",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 700,
+          "text": "右 数 -[<:< 解く O",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 760,
+          "text": "ペー の 人 の を -L7)<7< 同時",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 820,
+          "text": "ジ な 0% © に",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 880,
+          "text": "週 <8 9 を を 満た",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 980,
+          "text": "0 解 に 解",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1040,
+          "text": "~ 存在 満た",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 1080,
+          "text": "⑩ OD Q) す",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1140,
+          "text": "の な 解 は い",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 1160,
+          "text": "中 い は 。",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1260,
+          "text": "寺 2 問",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 280,
+          "text": "。 さ 得 る - で",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 340,
+          "text": "た 満た © し 詞",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 360,
+          "text": "| た 。",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 460,
+          "text": "| 解 , て |",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 500,
+          "text": "に 存在 不等式 s と",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 540,
+          "text": "は と | き",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 580,
+          "text": "適する 関す S ] O&O",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 740,
+          "text": "を と , OF",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 780,
+          "text": "れ SR 範囲 同時",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 840,
+          "text": "さい < に",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 900,
+          "text": "。 求め 満た を 同時",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 380,
+          "text": "と の 。 軸",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 420,
+          "text": "する R <?",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 520,
+          "text": "に より の",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 680,
+          "text": "2+27 な と き",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 940,
+          "text": "cme se す 同時",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 320,
+          "text": "に れる れる 。S-| ある",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 400,
+          "text": "す は で ま が <a<LU Sa",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 720,
+          "text": "o き , を",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1000,
+          "text": "。 に Bg は",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 220,
+          "text": "と と (i) (iti)",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 440,
+          "text": ", た っ",
+          "word_count": 3,
+          "is_vertical": true
+        }
+      ],
+      "processing_time_ms": 0
+    },
+    {
+      "page_number": 7,
+      "width": 1653,
+      "height": 2875,
+      "text": "数学 9 以上より , ⑪ と ⑳ を同二に満たす解が存在する o OOM である。また , ⑪ と ⑳ を同時に滴たす解の中に z = 0 が含まれない o OfMOMAls - 三員 <cs-[Y] [zo< 三剛である。 6) -l-a @ -3-a g 十 1 (0) at+3 [T] の問題はこれで終わりです。ー157 一",
+      "ocr_confidence": 0.7073,
+      "layout": {
+        "tables": [],
+        "diagrams": [],
+        "graphs": [],
+        "maps": [],
+        "timelines": [],
+        "question_regions": [
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 268,
+              "x1": 1653,
+              "y1": 302
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 631,
+              "x1": 1653,
+              "y1": 664
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 734,
+              "x1": 1653,
+              "y1": 794
+            },
+            "confidence": 0.5
+          }
+        ],
+        "answer_choices": []
+      },
+      "table_count": 1,
+      "diagram_count": 0,
+      "graph_count": 0,
+      "map_count": 0,
+      "timeline_count": 0,
+      "vertical_text": [
+        {
+          "x": 200,
+          "text": "以上 ある また ある ⑩ ⑮",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 440,
+          "text": "⑳ 同時 ⑪ 6)",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 520,
+          "text": "同時 に 8-4 a-3",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 700,
+          "text": "す の @ @ 問題",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 880,
+          "text": "する が 終わ",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 240,
+          "text": "。 , 。",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 780,
+          "text": "z l-a g は",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 800,
+          "text": "= 一 これ",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 840,
+          "text": "0 1 で",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 980,
+          "text": "れ @ す",
+          "word_count": 3,
+          "is_vertical": true
+        }
+      ],
+      "processing_time_ms": 0
+    },
+    {
+      "page_number": 8,
+      "width": 1653,
+      "height": 3031,
+      "text": "散学 -10 kk るまうな迷 n をすべて水め , そのときのの値を求めよう。 PRRBTSY である。 n 十 1 とヵ十 2 は互いに素であるから , P が連数であるための必要十分殺件は , さらと —— BHLSKBRCHS CU THS, ener oy, EE, BF on n+ ont2 ntl n+2 (EGY を素数分解すると me oO であるから [BO] FE の約数は | JK | 個である。また , EF Oof [Lo ] fica, DEF | を素因数分解するとこれらの約数を用いて , ——— — ks ような n ERASE, ヵは [P |,[Q | [RS] (たなし BR < ) ぁにとがゎかる。 n=(§ey) ove, P=[TU] n= | のとき , p=[vw] n= [RSJ ove, P=[ XY | 以上よりである。 ==",
+      "ocr_confidence": 0.5783,
+      "layout": {
+        "tables": [],
+        "diagrams": [],
+        "graphs": [],
+        "maps": [],
+        "timelines": [],
+        "question_regions": [
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 280,
+              "x1": 1653,
+              "y1": 318
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 867,
+              "x1": 1653,
+              "y1": 902
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1067,
+              "x1": 1653,
+              "y1": 1102
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1310,
+              "x1": 1653,
+              "y1": 1369
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1429,
+              "x1": 1653,
+              "y1": 1492
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1562,
+              "x1": 1653,
+              "y1": 1597
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1630,
+              "x1": 1653,
+              "y1": 1705
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1752,
+              "x1": 1653,
+              "y1": 1817
+            },
+            "confidence": 0.5
+          }
+        ],
+        "answer_choices": []
+      },
+      "table_count": 1,
+      "diagram_count": 0,
+      "graph_count": 0,
+      "map_count": 0,
+      "timeline_count": 0,
+      "vertical_text": [
+        {
+          "x": 340,
+          "text": "Pm ヵ 約",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 400,
+          "text": "MAN と 民 数 [Q",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 840,
+          "text": "LS 回 ある (cu で ある",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 880,
+          "text": "RAM itl で 。 が",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 1000,
+          "text": "n * の 整数",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1060,
+          "text": "を すべ ont? 要",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1120,
+          "text": "て 人 な",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 1160,
+          "text": "水 素因 よう",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 1360,
+          "text": "き る る",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 440,
+          "text": "+ 数 用",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 480,
+          "text": "3n+2 n’+3n+2 cE いて ove,",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 200,
+          "text": "OMERD で で で nt で",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 360,
+          "text": "£5. する 2 HL を [BO] (fe [RQ [RSJ",
+          "word_count": 9,
+          "is_vertical": true
+        },
+        {
+          "x": 220,
+          "text": "P ある n BC] ある ある これ 以上 あぁ",
+          "word_count": 9,
+          "is_vertical": true
+        },
+        {
+          "x": 260,
+          "text": "を 寺 二 Ba LP], 。",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 280,
+          "text": "変形 。 1 か か ら より",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 460,
+          "text": "n? 古い 分 ], ove, ove,",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 500,
+          "text": "+ に の",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 520,
+          "text": "186n 解す om 正 ,",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 580,
+          "text": "+ と 約",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 680,
+          "text": "-[A]+ ら | と ただ XY",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 300,
+          "text": "と 2 ら ら n= n= n=",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 420,
+          "text": "は YMC [中 - を",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 560,
+          "text": "束 る の",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 600,
+          "text": "ある で SLL m-e P=[TU] P=[VW| P=[",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 660,
+          "text": "か | は ょ",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 700,
+          "text": ", THS, JK",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 740,
+          "text": "P | |",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 900,
+          "text": "ある 。 )",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 960,
+          "text": "め , に",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 1140,
+          "text": "条件 を る",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 720,
+          "text": "0 Bs し ー158-",
+          "word_count": 4,
+          "is_vertical": true
+        }
+      ],
+      "processing_time_ms": 0
+    },
+    {
+      "page_number": 9,
+      "width": 1653,
+      "height": 2895,
+      "text": "数学一12 AB = 3, BC = 8, CA = 7 となる三角形 ABC を考える。 ZABC = [AB]' であり , ; 三角形 ABC ompms | C |V| D |, INRFIOM BI B c nwmo*s LECT である。 Lot, 三角形 ABC の外接円の点 B を含まない弧 AC 上に点 D をとり , さらに線分 AC と線分 BD の交点を E とする。次の 2 つの場合に線分 AD と線分 AE の長さを求めよう。 (1) AD EW BC が平行になる場合 ZBCD = | KL |° となり , AD = である。したがって , AE = である。 [kt ] LM ] 2 (2) 四角形 ABCD の面積が最大になる場合 ZADC = 180° - [ABE であることから ZDAC=[ RS AD= Cv] D [wx] なる。したがって , = RSE) より A = === でぁる。となる。したがって , ZDBC よりー160 一",
+      "ocr_confidence": 0.755,
+      "layout": {
+        "tables": [],
+        "diagrams": [],
+        "graphs": [],
+        "maps": [],
+        "timelines": [],
+        "question_regions": [
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 282,
+              "x1": 1653,
+              "y1": 314
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1106,
+              "x1": 1653,
+              "y1": 1139
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1181,
+              "x1": 1653,
+              "y1": 1214
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 1659,
+              "x1": 1653,
+              "y1": 1690
+            },
+            "confidence": 0.5
+          },
+          {
+            "number": "",
+            "bbox": {
+              "x0": 0,
+              "y0": 2055,
+              "x1": 1653,
+              "y1": 2089
+            },
+            "confidence": 0.5
+          }
+        ],
+        "answer_choices": []
+      },
+      "table_count": 1,
+      "diagram_count": 0,
+      "graph_count": 0,
+      "map_count": 0,
+      "timeline_count": 0,
+      "vertical_text": [
+        {
+          "x": 260,
+          "text": "一 ここ 線",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 280,
+          "text": "12 ZABC ある 2op- ZADC と",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 380,
+          "text": "AB = 三角 = 。",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 440,
+          "text": "= 形 と た",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 460,
+          "text": "3, 画 辺",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 500,
+          "text": "BO=8, 柄 を BC っ",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 640,
+          "text": "CA 。 が",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 700,
+          "text": "= の RS =",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 720,
+          "text": "7 点 の る",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 760,
+          "text": "と 2 Dar] な",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 780,
+          "text": "な |, B つの る",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 800,
+          "text": "る を LHS ー160-",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 900,
+          "text": "肥 な AD=",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 940,
+          "text": "ABC B 線 AE",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 1040,
+          "text": "A LEAD kp",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 420,
+          "text": "[AB]' の 交点 [KT ABCD 180° し",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 560,
+          "text": "で の と が ie, 面積 ZDAC=[ ,",
+          "word_count": 8,
+          "is_vertical": true
+        },
+        {
+          "x": 580,
+          "text": "あり | する",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 240,
+          "text": "三角 MEOH page で と (1)",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 320,
+          "text": "形 。 で 辺 四角 な",
+          "word_count": 6,
+          "is_vertical": true
+        },
+        {
+          "x": 340,
+          "text": "ABC , BD る",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 600,
+          "text": "C DWE 外 平行 ZDBC",
+          "word_count": 5,
+          "is_vertical": true
+        },
+        {
+          "x": 740,
+          "text": "D 場合 に [RSI",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 400,
+          "text": "BIS の 形",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 480,
+          "text": "LS ABC - が",
+          "word_count": 4,
+          "is_vertical": true
+        },
+        {
+          "x": 680,
+          "text": "円 次 に な a= 最大 CHSC",
+          "word_count": 7,
+          "is_vertical": true
+        },
+        {
+          "x": 980,
+          "text": "AC 分 =",
+          "word_count": 3,
+          "is_vertical": true
+        },
+        {
+          "x": 540,
+          "text": "E の て",
+          "word_count": 3,
+          "is_vertical": true
+        }
+      ],
+      "processing_time_ms": 0
+    }
+  ],
+  "questions": [
+    {
+      "id": "3581dc94-ba80-40dc-b2a3-e3a122a783d0",
+      "number": 1,
+      "year": 2025,
+      "round": 1,
+      "subject": "mathematics",
+      "domain": "unknown",
+      "topic": "",
+      "subtopic": "",
+      "raw_text": "1. RBOPVTSLI, 部屋の外に出ることはできません。 ! 82. この間央司子を持ち帰ることはできません。 Il 1. 税談開始の合図がかあるまで , この則期冊子の中を見ないでくだきい。 i 2 MRO SDI Re. FOU, SAREL EH, RARER’ | 1 ように配入してください。 1 5. メモ計算などを書く場合は , 問題則子に書いてください。 \\ \\ 生 MSHARICT SRE \\ 1 . RSS, SEAMS OME (HB) CAL TC AV. N ! 2. 問題文中の A, B, C,… には , それぞれ - (マイナスの符号 ) または , | \\ 0 から 9 までの数がーつずつ入ります。適するものを選び , MSAK | (| 3. 同一の問題文中に LA_], [BC] なとが繰り返し現れる場合 2 度目以降 ! (GB, Bosse css, \\ | SECT OBA LORE \\ , Re (/ ) の中に現れる自然数が最小となる形で答えてください。 \\ (2) 分数を答えるときは , 符号は分子につけ , BLANK (reduced fraction) \\ にして答えてください。 Fas, はーと分上を有有化してから約人かし . 一5 1 と答えます。) 1 (3) A 8 ve owen, 下のようにマークしてください。 \\ | 4) (DEIrit —r 2A SMH, DE-, E を 1 とし , 下のようにマーク | してください。 TA] 00@99@6@9@9@ N |B | 90900@%9@@9@9@ | N Cc| 000000600000 \\ | D| @0000060000 \\ \\ E 06000000060 @ QO \\ | 4. PEARCE CH SERMAOUTHA TK REV. \\ 1 プ A ノノノノノノ A ノノノノノノ ZZ ノノノノノノ 2 ノノ ZZ ZZ ZZ ZZ ノノ 2 ZZ ZZ ZZ ZZ ZZ // ノノ |",
+      "text": " ",
+      "answer_choices": [
+        "1. RBOPVTSLI, 部屋の外に出ることはできません。 ! 82. この間央司子を持ち帰ることはできません。 Il",
+        "1. 税談開始の合図がかあるまで , この則期冊子の中を見ないでくだきい。 i",
+        "2 MRO SDI Re. FOU, SAREL EH, RARER’ |",
+        "1 ように配入してください。 1"
+      ],
+      "difficulty": 2,
+      "confidence": 0.6672,
+      "ocr_confidence": 0.6672,
+      "question_type": "multiple_choice",
+      "keywords": [],
+      "concepts": [],
+      "word_count": 0,
+      "lines": 28,
+      "tables": [
+        {
+          "block_num": 1,
+          "text": "2025 年 度 AAR RR (8 0 分 ) [2-21 (A, Basic) 3-2 2 (LM, Advanced) ] % EBSPDIA-AK-—DEVYBA CHET ESV, Seth hcl lama 20CALLE2L ス 2 スー スス 444 ス バス ー イ イー イイ イブ イイ イア イイ ブイ イア イブ イイ イア イブ イイ イプ | ( | 民 験 全体 に 関す る 潤 意 | { 。] 仙 目 の 昨 可 な し に , 部 屋 の 外 に 出る こと は で あま せん 。 ( 2、 こ の 間 還 理子 を 持ち 帰る こと は で きま せん 。 Il 半 題 冊子 に 関す る 注意 | 1 ool. RERGOSRAHS EC, この 則 呈 朋子 の 中 を 見 な いで 〈 だ きい 。 i 2 MRO SDI Re. FOU, SAREL EH, RARER’ | ))。 よ うに 本 入 し て くだ さい 。 1 3, コー ス 1 は 1 13 ペー ジ , コー ス 2 は 15 て 27 ページ に あり ます 。 i {4 足り な い ペー ジ が あっ た ら , 手 を あげ て 知ら ちせ て くだ さい 。 \\ 5. メモ や 計算 な ど を 書く 場合 は , 問題 冊子 に 書い て くだ さい 。 N \\ 生 角 管 方 法 に 関す る 注意 \\ 1 . RSS, SEAMS OME (HB) CAL TC AV. N \\ 2. 間 題 文中 の A, B, C,… に は , それ ぞ れ - (マイ ナス の 符号 )、 また は , | \\ 0 か ら 9 ま で の 数 が 一 つ ず つ 信 り ま す 。 適 する も の を 選び , MSAK | \\ (マー クシ ー ト ) の 対応 する 解答 欄 に マー ク し て くだ さい 。 \\ \\ 3. 同一 の 問題 文中 に [LA], BO Seay RLANSBA, 2 度目 以降 1 ) & GBS, 旧 の よう に 表し て ぃ ます 。 \\ | SECT OBA LORE \\ (1) 根 号 (/ ) の 中 に 現れ る 自然 数 が 最小 と な る 形 で 答え て くだ さい 。 \\ i ( 例 : /82 の と き は , 2/8 で は な く 4/7 と 答え ます 。) \\ N (2) 分 数 を 答え る と き は , 符号 は 分 子 に つけ , 婚約 分 数 (reduced fraction) § に し て 答え て くだ さい 。 | GHG, eee と 人 し て か 9 し EY と 答え ます 。) ! し 8 ver suai, T の よう E マ ー ク し て くだ き w | (4) [DEIz に > と 替え る 場合 は D を -, E を 1 と し , 下 の よ うに マー ク | し て くだ さい 。 TA] 00@99@6@9@9@ N ‘BL 00000000000 N ! fc] 000000060000 \\ | pl @00000060000 \\ TET 690%0999@6@9@9 ! ! 4, 解答 用 紙 に 書い て ある 注意 事項 も 必ず 読ん で くだ さい 。 ト ※ 試験 開始 の 合図 が あっ た ら , 必ず 受験 番号 と 名 前 を 記 人 し て くだ さい 。 | | |*| | | | ce] | 1111 を ee -147-",
+          "cells": [
+            "2025",
+            "年",
+            "度",
+            "AAR",
+            "RR",
+            "(8",
+            "0",
+            "分",
+            ")",
+            "[2-21",
+            "(A,",
+            "Basic)",
+            "3-2",
+            "2",
+            "(LM,",
+            "Advanced)",
+            "]",
+            "%",
+            "EBSPDIA-AK-—DEVYBA",
+            "CHET",
+            "ESV,",
+            "Seth",
+            "hcl",
+            "lama",
+            "20CALLE2L",
+            "ス",
+            "2",
+            "スー",
+            "スス",
+            "444",
+            "ス",
+            "バス",
+            "ー",
+            "イ",
+            "イー",
+            "イイ",
+            "イブ",
+            "イイ",
+            "イア",
+            "イイ",
+            "ブイ",
+            "イア",
+            "イブ",
+            "イイ",
+            "イア",
+            "イブ",
+            "イイ",
+            "イプ",
+            "|",
+            "(",
+            "|",
+            "民",
+            "験",
+            "全体",
+            "に",
+            "関す",
+            "る",
+            "潤",
+            "意",
+            "|",
+            "{",
+            "。]",
+            "仙",
+            "目",
+            "の",
+            "昨",
+            "可",
+            "な",
+            "し",
+            "に",
+            ",",
+            "部",
+            "屋",
+            "の",
+            "外",
+            "に",
+            "出る",
+            "こと",
+            "は",
+            "で",
+            "あま",
+            "せん",
+            "。",
+            "(",
+            "2、",
+            "こ",
+            "の",
+            "間",
+            "還",
+            "理子",
+            "を",
+            "持ち",
+            "帰る",
+            "こと",
+            "は",
+            "で",
+            "きま",
+            "せん",
+            "。",
+            "Il",
+            "半",
+            "題",
+            "冊子",
+            "に",
+            "関す",
+            "る",
+            "注意",
+            "|",
+            "1",
+            "ool.",
+            "RERGOSRAHS",
+            "EC,",
+            "この",
+            "則",
+            "呈",
+            "朋子",
+            "の",
+            "中",
+            "を",
+            "見",
+            "な",
+            "いで",
+            "〈",
+            "だ",
+            "きい",
+            "。",
+            "i",
+            "2",
+            "MRO",
+            "SDI",
+            "Re.",
+            "FOU,",
+            "SAREL",
+            "EH,",
+            "RARER’",
+            "|",
+            "))。",
+            "よ",
+            "うに",
+            "本",
+            "入",
+            "し",
+            "て",
+            "くだ",
+            "さい",
+            "。",
+            "1",
+            "3,",
+            "コー",
+            "ス",
+            "1",
+            "は",
+            "1",
+            "13",
+            "ペー",
+            "ジ",
+            ",",
+            "コー",
+            "ス",
+            "2",
+            "は",
+            "15",
+            "て",
+            "27",
+            "ページ",
+            "に",
+            "あり",
+            "ます",
+            "。",
+            "i",
+            "{4",
+            "足り",
+            "な",
+            "い",
+            "ペー",
+            "ジ",
+            "が",
+            "あっ",
+            "た",
+            "ら",
+            ",",
+            "手",
+            "を",
+            "あげ",
+            "て",
+            "知ら",
+            "ちせ",
+            "て",
+            "くだ",
+            "さい",
+            "。",
+            "\\",
+            "5.",
+            "メモ",
+            "や",
+            "計算",
+            "な",
+            "ど",
+            "を",
+            "書く",
+            "場合",
+            "は",
+            ",",
+            "問題",
+            "冊子",
+            "に",
+            "書い",
+            "て",
+            "くだ",
+            "さい",
+            "。",
+            "N",
+            "\\",
+            "生",
+            "角",
+            "管",
+            "方",
+            "法",
+            "に",
+            "関す",
+            "る",
+            "注意",
+            "\\",
+            "1",
+            ".",
+            "RSS,",
+            "SEAMS",
+            "OME",
+            "(HB)",
+            "CAL",
+            "TC",
+            "AV.",
+            "N",
+            "\\",
+            "2.",
+            "間",
+            "題",
+            "文中",
+            "の",
+            "A,",
+            "B,",
+            "C,…",
+            "に",
+            "は",
+            ",",
+            "それ",
+            "ぞ",
+            "れ",
+            "-",
+            "(マイ",
+            "ナス",
+            "の",
+            "符号",
+            ")、",
+            "また",
+            "は",
+            ",",
+            "|",
+            "\\",
+            "0",
+            "か",
+            "ら",
+            "9",
+            "ま",
+            "で",
+            "の",
+            "数",
+            "が",
+            "一",
+            "つ",
+            "ず",
+            "つ",
+            "信",
+            "り",
+            "ま",
+            "す",
+            "。",
+            "適",
+            "する",
+            "も",
+            "の",
+            "を",
+            "選び",
+            ",",
+            "MSAK",
+            "|",
+            "\\",
+            "(マー",
+            "クシ",
+            "ー",
+            "ト",
+            ")",
+            "の",
+            "対応",
+            "する",
+            "解答",
+            "欄",
+            "に",
+            "マー",
+            "ク",
+            "し",
+            "て",
+            "くだ",
+            "さい",
+            "。",
+            "\\",
+            "\\",
+            "3.",
+            "同一",
+            "の",
+            "問題",
+            "文中",
+            "に",
+            "[LA],",
+            "BO",
+            "Seay",
+            "RLANSBA,",
+            "2",
+            "度目",
+            "以降",
+            "1",
+            ")",
+            "&",
+            "GBS,",
+            "旧",
+            "の",
+            "よう",
+            "に",
+            "表し",
+            "て",
+            "ぃ",
+            "ます",
+            "。",
+            "\\",
+            "|",
+            "SECT",
+            "OBA",
+            "LORE",
+            "\\",
+            "(1)",
+            "根",
+            "号",
+            "(/",
+            ")",
+            "の",
+            "中",
+            "に",
+            "現れ",
+            "る",
+            "自然",
+            "数",
+            "が",
+            "最小",
+            "と",
+            "な",
+            "る",
+            "形",
+            "で",
+            "答え",
+            "て",
+            "くだ",
+            "さい",
+            "。",
+            "\\",
+            "i",
+            "(",
+            "例",
+            ":",
+            "/82",
+            "の",
+            "と",
+            "き",
+            "は",
+            ",",
+            "2/8",
+            "で",
+            "は",
+            "な",
+            "く",
+            "4/7",
+            "と",
+            "答え",
+            "ます",
+            "。)",
+            "\\",
+            "N",
+            "(2)",
+            "分",
+            "数",
+            "を",
+            "答え",
+            "る",
+            "と",
+            "き",
+            "は",
+            ",",
+            "符号",
+            "は",
+            "分",
+            "子",
+            "に",
+            "つけ",
+            ",",
+            "婚約",
+            "分",
+            "数",
+            "(reduced",
+            "fraction)",
+            "§",
+            "に",
+            "し",
+            "て",
+            "答え",
+            "て",
+            "くだ",
+            "さい",
+            "。",
+            "|",
+            "GHG,",
+            "eee",
+            "と",
+            "人",
+            "し",
+            "て",
+            "か",
+            "9",
+            "し",
+            "EY",
+            "と",
+            "答え",
+            "ます",
+            "。)",
+            "!",
+            "し",
+            "8",
+            "ver",
+            "suai,",
+            "T",
+            "の",
+            "よう",
+            "E",
+            "マ",
+            "ー",
+            "ク",
+            "し",
+            "て",
+            "くだ",
+            "き",
+            "w",
+            "|",
+            "(4)",
+            "[DEIz",
+            "に",
+            ">",
+            "と",
+            "替え",
+            "る",
+            "場合",
+            "は",
+            "D",
+            "を",
+            "-,",
+            "E",
+            "を",
+            "1",
+            "と",
+            "し",
+            ",",
+            "下",
+            "の",
+            "よ",
+            "うに",
+            "マー",
+            "ク",
+            "|",
+            "し",
+            "て",
+            "くだ",
+            "さい",
+            "。",
+            "TA]",
+            "00@99@6@9@9@",
+            "N",
+            "‘BL",
+            "00000000000",
+            "N",
+            "!",
+            "fc]",
+            "000000060000",
+            "\\",
+            "|",
+            "pl",
+            "@00000060000",
+            "\\",
+            "TET",
+            "690%0999@6@9@9",
+            "!",
+            "!",
+            "4,",
+            "解答",
+            "用",
+            "紙",
+            "に",
+            "書い",
+            "て",
+            "ある",
+            "注意",
+            "事項",
+            "も",
+            "必ず",
+            "読ん",
+            "で",
+            "くだ",
+            "さい",
+            "。",
+            "ト",
+            "※",
+            "試験",
+            "開始",
+            "の",
+            "合図",
+            "が",
+            "あっ",
+            "た",
+            "ら",
+            ",",
+            "必ず",
+            "受験",
+            "番号",
+            "と",
+            "名",
+            "前",
+            "を",
+            "記",
+            "人",
+            "し",
+            "て",
+            "くだ",
+            "さい",
+            "。",
+            "|",
+            "|",
+            "|*|",
+            "|",
+            "|",
+            "|",
+            "ce]",
+            "|",
+            "1111",
+            "を",
+            "ee",
+            "-147-"
+          ],
+          "confidence": 0,
+          "elem_type": "tables"
+        }
+      ],
+      "diagrams": [],
+      "graphs": [],
+      "maps": [],
+      "source": "ocr",
+      "flags": []
+    },
+    {
+      "id": "ae464a5d-ac84-4fc4-bce9-30d0d2a312a8",
+      "number": 2,
+      "year": 2025,
+      "round": 1,
+      "subject": "mathematics",
+      "domain": "unknown",
+      "topic": "",
+      "subtopic": "",
+      "raw_text": "2 をーーmxoam コース 」 の 「 コース 1」 を 〇 で囲み , TOF のマーク欄をマークしてください。 MA TMB UTC ESV, TI-All GRE Saat ee 選択したコースを正しくマークしないと , 採点されません。 -149-",
+      "text": "2 をーーmxoam コース 」 の 「 コース 1」 を 〇 で囲み , TOF のマーク欄をマークしてください。 MA TMB UTC ESV, TI-All GRE Saat ee 選択したコースを正しくマークしないと , 採点されません。 -149-",
+      "answer_choices": [],
+      "difficulty": 2,
+      "confidence": 0.5546,
+      "ocr_confidence": 0.5546,
+      "question_type": "multiple_choice",
+      "keywords": [
+        "TOF",
+        "MA",
+        "TMB",
+        "UTC",
+        "ESV",
+        "TI",
+        "GRE"
+      ],
+      "concepts": [],
+      "word_count": 26,
+      "lines": 6,
+      "tables": [
+        {
+          "block_num": 1,
+          "text": "| a, 数 学 コー ス 1 (基本 コー ス ) (コー ス 2 は 15 ペー ジ か ら で す ) 「 解 党 コ ー ス 」 肥 入 方 法 Pe ARS Sal eae < 解答 用 紙 記 入 例 > あり ます の で , どちら か の コー ス を 一 つ だ け | MA TMB UTC ESV, TI-All GRE Saat ee する 場合 は , 右 の よう に , 解答 用 紙 の 「 人 解答 Course 1 Course 2 の マー ク 欄 を マー ク し て くだ さい 。 選択 し た コー ス を 正しく マー ク し な いと , 採点 され ませ ん 。 ー149 一",
+          "cells": [
+            "|",
+            "a,",
+            "数",
+            "学",
+            "コー",
+            "ス",
+            "1",
+            "(基本",
+            "コー",
+            "ス",
+            ")",
+            "(コー",
+            "ス",
+            "2",
+            "は",
+            "15",
+            "ペー",
+            "ジ",
+            "か",
+            "ら",
+            "で",
+            "す",
+            ")",
+            "「",
+            "解",
+            "党",
+            "コ",
+            "ー",
+            "ス",
+            "」",
+            "肥",
+            "入",
+            "方",
+            "法",
+            "Pe",
+            "ARS",
+            "Sal",
+            "eae",
+            "<",
+            "解答",
+            "用",
+            "紙",
+            "記",
+            "入",
+            "例",
+            ">",
+            "あり",
+            "ます",
+            "の",
+            "で",
+            ",",
+            "どちら",
+            "か",
+            "の",
+            "コー",
+            "ス",
+            "を",
+            "一",
+            "つ",
+            "だ",
+            "け",
+            "|",
+            "MA",
+            "TMB",
+            "UTC",
+            "ESV,",
+            "TI-All",
+            "GRE",
+            "Saat",
+            "ee",
+            "する",
+            "場合",
+            "は",
+            ",",
+            "右",
+            "の",
+            "よう",
+            "に",
+            ",",
+            "解答",
+            "用",
+            "紙",
+            "の",
+            "「",
+            "人",
+            "解答",
+            "Course",
+            "1",
+            "Course",
+            "2",
+            "の",
+            "マー",
+            "ク",
+            "欄",
+            "を",
+            "マー",
+            "ク",
+            "し",
+            "て",
+            "くだ",
+            "さい",
+            "。",
+            "選択",
+            "し",
+            "た",
+            "コー",
+            "ス",
+            "を",
+            "正しく",
+            "マー",
+            "ク",
+            "し",
+            "な",
+            "いと",
+            ",",
+            "採点",
+            "され",
+            "ませ",
+            "ん",
+            "。",
+            "ー149",
+            "一"
+          ],
+          "confidence": 0,
+          "elem_type": "tables"
+        }
+      ],
+      "diagrams": [],
+      "graphs": [],
+      "maps": [],
+      "source": "ocr",
+      "flags": []
+    },
+    {
+      "id": "6b5f781d-7962-4f21-ba57-716dbd8db28d",
+      "number": null,
+      "year": 2025,
+      "round": 1,
+      "subject": "mathematics",
+      "domain": "unknown",
+      "topic": "",
+      "subtopic": "",
+      "raw_text": "2 くく 5 において , z 軸と共有点をもつための条件は 7([Lc])s かつっ 7(L5])s0 である。したがって , 求める c OffommMIs [EF] <a< [GH] である。 (2) G を。z 軸方向に p だけ平行移動した放物線が , 2 点 (2, 0) と (5, 0) を通るとき , p= Ly | CHS, ー150 一",
+      "text": "",
+      "answer_choices": [
+        "2 くく",
+        "5 において , z 軸と共有点をもつための条件は 7([Lc])s かつっ 7(L5])s0 である。したがって , 求める c OffommMIs [EF] <a< [GH] である。 (",
+        "2) G を。z 軸方向に p だけ平行移動した放物線が ,",
+        "2 点 (2, 0) と (5, 0) を通るとき , p= Ly | CHS, ー150 一"
+      ],
+      "difficulty": 2,
+      "confidence": 0.736,
+      "ocr_confidence": 0.736,
+      "question_type": "multiple_choice",
+      "keywords": [],
+      "concepts": [],
+      "word_count": 41,
+      "lines": 6,
+      "tables": [
+        {
+          "block_num": 1,
+          "text": "散 学 -2 間 2 次 数 y = 32\" + 52 — 2a の グラ フ に つい て 考え る 。 (1) C が 23z35 に お いて , z 軸 と 共有 点 を も つよ うな a の 値 の 範囲 求め よう 。 放物線 C の 軸 は 直線 ヶ = ae CHS, f(z) = 372+57 2g LBC LS, GH 2 くく 5 に お いて , z 軸 と 共有 点 を も つた め の 条 件 は Le)se ぁ o 7(P5)s で ある 。 し た が っ て , 求め る a Off OHS | EF | く <。< [GH] で ぁ る 。 (2) G を 。z 軸 方 向 に p だ け 平 行 移動 し た 放物線 が , 2 点 (2, 0) と (5, 0) を 通る と き , —150-",
+          "cells": [
+            "散",
+            "学",
+            "-2",
+            "間",
+            "2",
+            "次",
+            "数",
+            "y",
+            "=",
+            "32\"",
+            "+",
+            "52",
+            "—",
+            "2a",
+            "の",
+            "グラ",
+            "フ",
+            "に",
+            "つい",
+            "て",
+            "考え",
+            "る",
+            "。",
+            "(1)",
+            "C",
+            "が",
+            "23z35",
+            "に",
+            "お",
+            "いて",
+            ",",
+            "z",
+            "軸",
+            "と",
+            "共有",
+            "点",
+            "を",
+            "も",
+            "つよ",
+            "うな",
+            "a",
+            "の",
+            "値",
+            "の",
+            "範囲",
+            "求め",
+            "よう",
+            "。",
+            "放物線",
+            "C",
+            "の",
+            "軸",
+            "は",
+            "直線",
+            "ヶ",
+            "=",
+            "ae",
+            "CHS,",
+            "f(z)",
+            "=",
+            "372+57",
+            "2g",
+            "LBC",
+            "LS,",
+            "GH",
+            "2",
+            "くく",
+            "5",
+            "に",
+            "お",
+            "いて",
+            ",",
+            "z",
+            "軸",
+            "と",
+            "共有",
+            "点",
+            "を",
+            "も",
+            "つた",
+            "め",
+            "の",
+            "条",
+            "件",
+            "は",
+            "Le)se",
+            "ぁ",
+            "o",
+            "7(P5)s",
+            "で",
+            "ある",
+            "。",
+            "し",
+            "た",
+            "が",
+            "っ",
+            "て",
+            ",",
+            "求め",
+            "る",
+            "a",
+            "Off",
+            "OHS",
+            "|",
+            "EF",
+            "|",
+            "く",
+            "<。<",
+            "[GH]",
+            "で",
+            "ぁ",
+            "る",
+            "。",
+            "(2)",
+            "G",
+            "を",
+            "。z",
+            "軸",
+            "方",
+            "向",
+            "に",
+            "p",
+            "だ",
+            "け",
+            "平",
+            "行",
+            "移動",
+            "し",
+            "た",
+            "放物線",
+            "が",
+            ",",
+            "2",
+            "点",
+            "(2,",
+            "0)",
+            "と",
+            "(5,",
+            "0)",
+            "を",
+            "通る",
+            "と",
+            "き",
+            ",",
+            "—150-"
+          ],
+          "confidence": 0,
+          "elem_type": "tables"
+        }
+      ],
+      "diagrams": [],
+      "graphs": [],
+      "maps": [],
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
+    },
+    {
+      "id": "d5334a01-4f4b-418a-bb05-f2767c19d344",
+      "number": null,
+      "year": 2025,
+      "round": 1,
+      "subject": "mathematics",
+      "domain": "unknown",
+      "topic": "",
+      "subtopic": "",
+      "raw_text": "2 人がコインをすべて投げ , 出た中の数の多い方が相手から 1 枚のコインを取り , 同数のと きはそのまま (引き分け ) とする貝行について考えよう。 COME < DIAL, どちらかが 2 枚 のコインを得るまで続ける。 (1) 1 回の肛行において (i) \"コインを 2 枚もっている方が , 相手からコインを取る確率は LN | である。 (i) コインを 1 枚もっている方が , 相手からコインを取る確率は Lr である。 (iii) 引き分けになる確率は | である。 (2) はじめに , A さんが 2 枚のコイン , B さんが 1 枚のコインをもっているとする。 2 回目の試行で A さんが 3 枚のコインを得る確率はであり , 2 回目の試行で B さんが 3 枚のコインを得る確率は Ll である。 ー152 一",
+      "text": "",
+      "answer_choices": [
+        "2 人がコインをすべて投げ , 出た中の数の多い方が相手から",
+        "1 枚のコインを取り , 同数のと きはそのまま (引き分け ) とする貝行について考えよう。 COME < DIAL, どちらかが",
+        "2 枚 のコインを得るまで続ける。 (",
+        "1)",
+        "1 回の肛行において (i) \"コインを",
+        "2 枚もっている方が , 相手からコインを取る確率は LN | である。 (i) コインを",
+        "1 枚もっている方が , 相手からコインを取る確率は Lr である。 (iii) 引き分けになる確率は | である。 (",
+        "2) はじめに , A さんが",
+        "2 枚のコイン , B さんが",
+        "1 枚のコインをもっているとする。",
+        "2 回目の試行で A さんが",
+        "3 枚のコインを得る確率はであり ,",
+        "2 回目の試行で B さんが",
+        "3 枚のコインを得る確率は Ll である。 ー152 一"
+      ],
+      "difficulty": 2,
+      "confidence": 0.8229,
+      "ocr_confidence": 0.8229,
+      "question_type": "multiple_choice",
+      "keywords": [],
+      "concepts": [],
+      "word_count": 72,
+      "lines": 11,
+      "tables": [
+        {
+          "block_num": 1,
+          "text": "散 学 4 間 2 1 人 が 2 枚 の コイ ン , も う 1 人 が | 枚 の コイ ン を も っ て いる と する 。 2 人 が コイ ン を すべ て 投げ , 出 た 表 の 数 の 多い 方 が 相手 か ら 1 枚 の コイ ン を 取り , 同数 の と き は その まま GSA) CT SMATCOWTHA LS. COMIE< DHL, どちら な が 2 枚 の コイ ン を 得る まで 続け る 。 (1) 1 回 の 虐 行 に お いて (i) コイ ン を 2 枚 も っ て いる 方 が , 相手 か ら コ イン を 取る 確率 は a て ある 。 (ii) \"コイ ン を 1 枚 も っ て いる 方 が , 相手 か ら コ イン を 取る 確率 は be で ある 。 (iii) 引き 分 け に な る 確率 は で ある 。 (2) はじめに, A さん が 2 枚 の コイ ン , B さん が 1 枚 の コイ ン を も っ て いる と する 。 2 回 目 の 試行 で A さん が 3 枚 の コイ ン を 得る 確率 は CH), 2 回 目 の 試行 で B さん が 3 枚 の コイ ン を 得る 確率 は で ある 。 ー152 一",
+          "cells": [
+            "散",
+            "学",
+            "4",
+            "間",
+            "2",
+            "1",
+            "人",
+            "が",
+            "2",
+            "枚",
+            "の",
+            "コイ",
+            "ン",
+            ",",
+            "も",
+            "う",
+            "1",
+            "人",
+            "が",
+            "|",
+            "枚",
+            "の",
+            "コイ",
+            "ン",
+            "を",
+            "も",
+            "っ",
+            "て",
+            "いる",
+            "と",
+            "する",
+            "。",
+            "2",
+            "人",
+            "が",
+            "コイ",
+            "ン",
+            "を",
+            "すべ",
+            "て",
+            "投げ",
+            ",",
+            "出",
+            "た",
+            "表",
+            "の",
+            "数",
+            "の",
+            "多い",
+            "方",
+            "が",
+            "相手",
+            "か",
+            "ら",
+            "1",
+            "枚",
+            "の",
+            "コイ",
+            "ン",
+            "を",
+            "取り",
+            ",",
+            "同数",
+            "の",
+            "と",
+            "き",
+            "は",
+            "その",
+            "まま",
+            "GSA)",
+            "CT",
+            "SMATCOWTHA",
+            "LS.",
+            "COMIE<",
+            "DHL,",
+            "どちら",
+            "な",
+            "が",
+            "2",
+            "枚",
+            "の",
+            "コイ",
+            "ン",
+            "を",
+            "得る",
+            "まで",
+            "続け",
+            "る",
+            "。",
+            "(1)",
+            "1",
+            "回",
+            "の",
+            "虐",
+            "行",
+            "に",
+            "お",
+            "いて",
+            "(i)",
+            "コイ",
+            "ン",
+            "を",
+            "2",
+            "枚",
+            "も",
+            "っ",
+            "て",
+            "いる",
+            "方",
+            "が",
+            ",",
+            "相手",
+            "か",
+            "ら",
+            "コ",
+            "イン",
+            "を",
+            "取る",
+            "確率",
+            "は",
+            "a",
+            "て",
+            "ある",
+            "。",
+            "(ii)",
+            "\"コイ",
+            "ン",
+            "を",
+            "1",
+            "枚",
+            "も",
+            "っ",
+            "て",
+            "いる",
+            "方",
+            "が",
+            ",",
+            "相手",
+            "か",
+            "ら",
+            "コ",
+            "イン",
+            "を",
+            "取る",
+            "確率",
+            "は",
+            "be",
+            "で",
+            "ある",
+            "。",
+            "(iii)",
+            "引き",
+            "分",
+            "け",
+            "に",
+            "な",
+            "る",
+            "確率",
+            "は",
+            "で",
+            "ある",
+            "。",
+            "(2)",
+            "はじめに,",
+            "A",
+            "さん",
+            "が",
+            "2",
+            "枚",
+            "の",
+            "コイ",
+            "ン",
+            ",",
+            "B",
+            "さん",
+            "が",
+            "1",
+            "枚",
+            "の",
+            "コイ",
+            "ン",
+            "を",
+            "も",
+            "っ",
+            "て",
+            "いる",
+            "と",
+            "する",
+            "。",
+            "2",
+            "回",
+            "目",
+            "の",
+            "試行",
+            "で",
+            "A",
+            "さん",
+            "が",
+            "3",
+            "枚",
+            "の",
+            "コイ",
+            "ン",
+            "を",
+            "得る",
+            "確率",
+            "は",
+            "CH),",
+            "2",
+            "回",
+            "目",
+            "の",
+            "試行",
+            "で",
+            "B",
+            "さん",
+            "が",
+            "3",
+            "枚",
+            "の",
+            "コイ",
+            "ン",
+            "を",
+            "得る",
+            "確率",
+            "は",
+            "で",
+            "ある",
+            "。",
+            "ー152",
+            "一"
+          ],
+          "confidence": 0,
+          "elem_type": "tables"
+        }
+      ],
+      "diagrams": [],
+      "graphs": [],
+      "maps": [],
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
+    },
+    {
+      "id": "d9be8817-429d-457a-a940-3374b4baa1a8",
+      "number": null,
+      "year": 2025,
+      "round": 1,
+      "subject": "mathematics",
+      "domain": "unknown",
+      "topic": "",
+      "subtopic": "",
+      "raw_text": "間 1 戦式 P = Gx? + Say ~ Gy? +82 -y+2 ) 7 DEED POL RES, Vern Or VEHT 94 まず P を COWS OMCBAT S & となる。したがって , P を因数分解すると P = 6s\" + (5y +8) — (a Lg]) (Le 7- L5]) P= (CE _]:+ Gy + BE) (7 :- a+ a) …… である。一方 = Jer 1-Vo _ V30-V6+4 。 V6+V5+1 _ (V30- v6 +4) {V6- (V5+1))} ( 画玉 | - (V6+ V5+1) {V6 Sen ae oe ee 以上から s = (RG - ソ屋中, v= / a) - BA を ① に代入することにより , p=[k」- しコソ VT ees. —154—-",
+      "text": "間",
+      "answer_choices": [
+        "1 戦式 P = Gx? + Say ~ Gy? +82 -y+",
+        "2 ) 7 DEED POL RES, Vern Or VEHT 94 まず P を COWS OMCBAT S & となる。したがって , P を因数分解すると P = 6s\" + (5y +8) — (a Lg]) (Le 7- L5]) P= (CE _]:+ Gy + BE) (7 :- a+ a) …… である。一方 = Jer 1-Vo _ V30-V6+",
+        "4 。 V6+V5+",
+        "1 _ (V30- v6 +",
+        "4) {V6- (V5+",
+        "1))} ( 画玉 | - (V6+ V5+",
+        "1) {V6 Sen ae oe ee 以上から s = (RG - ソ屋中, v= / a) - BA を ① に代入することにより , p=[k」- しコソ VT ees. —154—-"
+      ],
+      "difficulty": 2,
+      "confidence": 0.501,
+      "ocr_confidence": 0.501,
+      "question_type": "multiple_choice",
+      "keywords": [],
+      "concepts": [],
+      "word_count": 100,
+      "lines": 17,
+      "tables": [
+        {
+          "block_num": 1,
+          "text": "勲 党 ー6 間 1 ext P = Gx? + Say ~ Gy? +82 -y+2 : V5- 3 V30- V6+4 \\ i = の を ド ° まず Pec COW THN SOM BATS & perer9s- (C+ CE) (CEy- ) と な る 。 し た が っ て , P を 因数 分 解す る と で ある 。 一 方 V5-3 _ Y30-V6+4 \"V+y5+1 _ (V30- V6+4) {V6-(V5+1)) _ _ - (V6+ 5+1) {(V6 - (V5+1)} sy - し 人 で ある 。 以上 か ら s = (RG - ソ 屋 中, v= / a) - BA を ① に 代入 する こと に より , ァ =[k |] -[L 1VLM ] es. —154—-",
+          "cells": [
+            "勲",
+            "党",
+            "ー6",
+            "間",
+            "1",
+            "ext",
+            "P",
+            "=",
+            "Gx?",
+            "+",
+            "Say",
+            "~",
+            "Gy?",
+            "+82",
+            "-y+2",
+            ":",
+            "V5-",
+            "3",
+            "V30-",
+            "V6+4",
+            "\\",
+            "i",
+            "=",
+            "の",
+            "を",
+            "ド",
+            "°",
+            "まず",
+            "Pec",
+            "COW",
+            "THN",
+            "SOM",
+            "BATS",
+            "&",
+            "perer9s-",
+            "(C+",
+            "CE)",
+            "(CEy-",
+            ")",
+            "と",
+            "な",
+            "る",
+            "。",
+            "し",
+            "た",
+            "が",
+            "っ",
+            "て",
+            ",",
+            "P",
+            "を",
+            "因数",
+            "分",
+            "解す",
+            "る",
+            "と",
+            "で",
+            "ある",
+            "。",
+            "一",
+            "方",
+            "V5-3",
+            "_",
+            "Y30-V6+4",
+            "\"V+y5+1",
+            "_",
+            "(V30-",
+            "V6+4)",
+            "{V6-(V5+1))",
+            "_",
+            "_",
+            "-",
+            "(V6+",
+            "5+1)",
+            "{(V6",
+            "-",
+            "(V5+1)}",
+            "sy",
+            "-",
+            "し",
+            "人",
+            "で",
+            "ある",
+            "。",
+            "以上",
+            "か",
+            "ら",
+            "s",
+            "=",
+            "(RG",
+            "-",
+            "ソ",
+            "屋",
+            "中,",
+            "v=",
+            "/",
+            "a)",
+            "-",
+            "BA",
+            "を",
+            "①",
+            "に",
+            "代入",
+            "する",
+            "こと",
+            "に",
+            "より",
+            ",",
+            "ァ",
+            "=[k",
+            "|]",
+            "-[L",
+            "1VLM",
+            "]",
+            "es.",
+            "—154—-"
+          ],
+          "confidence": 0,
+          "elem_type": "tables"
+        }
+      ],
+      "diagrams": [],
+      "graphs": [],
+      "maps": [],
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
+    },
+    {
+      "id": "267b89f6-d0ad-42e8-afef-2e08b681b2da",
+      "number": null,
+      "year": 2025,
+      "round": 1,
+      "subject": "mathematics",
+      "domain": "unknown",
+      "topic": "",
+      "subtopic": "",
+      "raw_text": "間 2 次の文中の CJ Kid, BOR-YOMRK © ~ O の中から敵する 6 のを周びな きい。また | | には , 適する数を人れなさい。 CULLLLLLL ag は実数とする。z に関する 200F SK 2+2 ヵ 7 < 8 ja-—2-2| < 3 を同時に満たす解が存在するような。の範囲求めよう。 不等式 ① は (grLRT) (:- Lo J) <0 と表されるので , これより - <:< が得られる。また , 不等式 ⑦ を解くと [e]<:<[o] zg なる。したがって (i) 3-| R | のとき , OF © を同時に満たす解は存在しない。 (i) - 詞軸 <? s | S | のとき , 0% © を同時に満たす解は -L7)<:< Bg (iti) <a<LU ] のとき , OF © を同時に満たす解は (iv) Sa のとき , O&O を同時に満たす解は存在しない。 ー156 一",
+      "text": "間",
+      "answer_choices": [
+        "2 次の文中の CJ Kid, BOR-YOMRK © ~ O の中から敵する",
+        "6 のを周びな きい。また | | には , 適する数を人れなさい。 CULLLLLLL ag は実数とする。z に関する 200F SK 2+",
+        "2 ヵ 7 < 8 ja-—2-2| <",
+        "3 を同時に満たす解が存在するような。の範囲求めよう。 不等式 ① は (grLRT) (:- Lo J) <0 と表されるので , これより - <:< が得られる。また , 不等式 ⑦ を解くと [e]<:<[o] zg なる。したがって (i) 3-| R | のとき , OF © を同時に満たす解は存在しない。 (i) - 詞軸 <? s | S | のとき , 0% © を同時に満たす解は -L7)<:< Bg (iti) <a<LU ] のとき , OF © を同時に満たす解は (iv) Sa のとき , O&O を同時に満たす解は存在しない。 ー156 一"
+      ],
+      "difficulty": 2,
+      "confidence": 0.6846,
+      "ocr_confidence": 0.6846,
+      "question_type": "multiple_choice",
+      "keywords": [],
+      "concepts": [],
+      "word_count": 94,
+      "lines": 20,
+      "tables": [
+        {
+          "block_num": 1,
+          "text": "敗 学 8 間 2 oxo [|] に は , 右 の ペー ジ の 週 択 有 0 ~ ⑩ の 中 か ら 寺 する 6 の を 周 び ん きい 。 ま た | | に は 適する 数 を 人 れ な さい 。 a は 実数 と する 。z に 関す る 20OF SR 2+27 <8 cme OD Ja—2-2| < 9 se Q) を 同時 に 満た す 解 が 存在 する よう な o の 範囲 を 求め よう 。 FER © は (*+(W))(-Lo])<o と 表 さ れる の で , これ より -[<:< が 得 ら れる 。 ま た , 不等式 ⑦ を 解く と と な る 。 し た が っ て (i) 。S-| R | の と き , OF O を 同時 に 満た す 解 は 存在 し な い 。 (i) - 詞 軸 <? s | S | の と き , 0% © を 同時 に 満た す 解 は -L7)<7< Bg (iti) <a<LU ] の と き , OF © を 同時 に 満た す 解 は で ある 。 (iv) Sa の と き , O&O を 同時 に 満た す 解 は 存在 し な い 。 ( 問 2 は 次 ペー ジ に 続く ) ー156-",
+          "cells": [
+            "敗",
+            "学",
+            "8",
+            "間",
+            "2",
+            "oxo",
+            "[|]",
+            "に",
+            "は",
+            ",",
+            "右",
+            "の",
+            "ペー",
+            "ジ",
+            "の",
+            "週",
+            "択",
+            "有",
+            "0",
+            "~",
+            "⑩",
+            "の",
+            "中",
+            "か",
+            "ら",
+            "寺",
+            "する",
+            "6",
+            "の",
+            "を",
+            "周",
+            "び",
+            "ん",
+            "きい",
+            "。",
+            "ま",
+            "た",
+            "|",
+            "|",
+            "に",
+            "は",
+            "適する",
+            "数",
+            "を",
+            "人",
+            "れ",
+            "な",
+            "さい",
+            "。",
+            "a",
+            "は",
+            "実数",
+            "と",
+            "する",
+            "。z",
+            "に",
+            "関す",
+            "る",
+            "20OF",
+            "SR",
+            "2+27",
+            "<8",
+            "cme",
+            "OD",
+            "Ja—2-2|",
+            "<",
+            "9",
+            "se",
+            "Q)",
+            "を",
+            "同時",
+            "に",
+            "満た",
+            "す",
+            "解",
+            "が",
+            "存在",
+            "する",
+            "よう",
+            "な",
+            "o",
+            "の",
+            "範囲",
+            "を",
+            "求め",
+            "よう",
+            "。",
+            "FER",
+            "©",
+            "は",
+            "(*+(W))(-Lo])<o",
+            "と",
+            "表",
+            "さ",
+            "れる",
+            "の",
+            "で",
+            ",",
+            "これ",
+            "より",
+            "-[<:<",
+            "が",
+            "得",
+            "ら",
+            "れる",
+            "。",
+            "ま",
+            "た",
+            ",",
+            "不等式",
+            "⑦",
+            "を",
+            "解く",
+            "と",
+            "と",
+            "な",
+            "る",
+            "。",
+            "し",
+            "た",
+            "が",
+            "っ",
+            "て",
+            "(i)",
+            "。S-|",
+            "R",
+            "|",
+            "の",
+            "と",
+            "き",
+            ",",
+            "OF",
+            "O",
+            "を",
+            "同時",
+            "に",
+            "満た",
+            "す",
+            "解",
+            "は",
+            "存在",
+            "し",
+            "な",
+            "い",
+            "。",
+            "(i)",
+            "-",
+            "詞",
+            "軸",
+            "<?",
+            "s",
+            "|",
+            "S",
+            "|",
+            "の",
+            "と",
+            "き",
+            ",",
+            "0%",
+            "©",
+            "を",
+            "同時",
+            "に",
+            "満た",
+            "す",
+            "解",
+            "は",
+            "-L7)<7<",
+            "Bg",
+            "(iti)",
+            "<a<LU",
+            "]",
+            "の",
+            "と",
+            "き",
+            ",",
+            "OF",
+            "©",
+            "を",
+            "同時",
+            "に",
+            "満た",
+            "す",
+            "解",
+            "は",
+            "で",
+            "ある",
+            "。",
+            "(iv)",
+            "Sa",
+            "の",
+            "と",
+            "き",
+            ",",
+            "O&O",
+            "を",
+            "同時",
+            "に",
+            "満た",
+            "す",
+            "解",
+            "は",
+            "存在",
+            "し",
+            "な",
+            "い",
+            "。",
+            "(",
+            "問",
+            "2",
+            "は",
+            "次",
+            "ペー",
+            "ジ",
+            "に",
+            "続く",
+            ")",
+            "ー156-"
+          ],
+          "confidence": 0,
+          "elem_type": "tables"
+        }
+      ],
+      "diagrams": [],
+      "graphs": [],
+      "maps": [],
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
+    },
+    {
+      "id": "840d4345-ea16-463f-8f48-ae8c9f7b0e5a",
+      "number": 6,
+      "year": 2025,
+      "round": 1,
+      "subject": "mathematics",
+      "domain": "unknown",
+      "topic": "",
+      "subtopic": "",
+      "raw_text": "6) -l-a @ -3-a g 十 1 (0) at+3 [T] の問題はこれで終わりです。 ー157 一",
+      "text": "",
+      "answer_choices": [
+        "6) -l-a @ -3-a g 十",
+        "1 (0) at+",
+        "3 [T] の問題はこれで終わりです。 ー157 一"
+      ],
+      "difficulty": 2,
+      "confidence": 0.7873,
+      "ocr_confidence": 0.7873,
+      "question_type": "multiple_choice",
+      "keywords": [],
+      "concepts": [],
+      "word_count": 13,
+      "lines": 4,
+      "tables": [
+        {
+          "block_num": 1,
+          "text": "散 学 -9 以上 より , OY ⑳ を 同時 に 満た す 解 が 存在 する o OMRON で ある 。 また , ⑪ と ⑳ を 同時 に 滴 た す 解 の 中 に z = 0 が 含ま れ な い o OfMOMAls で ある 。 ⑩ 5-a ⑪ 8-4 @ l-a @ -l-a @ -3-a ⑮ a-5 6) a-3 @ g 一 1 g 十 1 (0) at+3 [T] の 問題 は これ で 終わ り で す 。 -157-",
+          "cells": [
+            "散",
+            "学",
+            "-9",
+            "以上",
+            "より",
+            ",",
+            "OY",
+            "⑳",
+            "を",
+            "同時",
+            "に",
+            "満た",
+            "す",
+            "解",
+            "が",
+            "存在",
+            "する",
+            "o",
+            "OMRON",
+            "で",
+            "ある",
+            "。",
+            "また",
+            ",",
+            "⑪",
+            "と",
+            "⑳",
+            "を",
+            "同時",
+            "に",
+            "滴",
+            "た",
+            "す",
+            "解",
+            "の",
+            "中",
+            "に",
+            "z",
+            "=",
+            "0",
+            "が",
+            "含ま",
+            "れ",
+            "な",
+            "い",
+            "o",
+            "OfMOMAls",
+            "で",
+            "ある",
+            "。",
+            "⑩",
+            "5-a",
+            "⑪",
+            "8-4",
+            "@",
+            "l-a",
+            "@",
+            "-l-a",
+            "@",
+            "-3-a",
+            "⑮",
+            "a-5",
+            "6)",
+            "a-3",
+            "@",
+            "g",
+            "一",
+            "1",
+            "g",
+            "十",
+            "1",
+            "(0)",
+            "at+3",
+            "[T]",
+            "の",
+            "問題",
+            "は",
+            "これ",
+            "で",
+            "終わ",
+            "り",
+            "で",
+            "す",
+            "。",
+            "-157-"
+          ],
+          "confidence": 0,
+          "elem_type": "tables"
+        }
+      ],
+      "diagrams": [],
+      "graphs": [],
+      "maps": [],
+      "source": "ocr",
+      "flags": []
+    },
+    {
+      "id": "98407386-17bb-4c4c-9f21-24d0a96f5a58",
+      "number": null,
+      "year": 2025,
+      "round": 1,
+      "subject": "mathematics",
+      "domain": "unknown",
+      "topic": "",
+      "subtopic": "",
+      "raw_text": "散学 -10 kk るまうな迷 n をすべて水め , そのときの の値を求めよう。 PRRBTSY n 十 1 とヵ十 2 は互いに素であるから , P が連数であるための必要十分殺件は , さらと —— BHLSKBRCHS CU THS, ener oy, EE, BF n+ ont2 ntl n+2 (EGY を素数分解すると me oO であるから [BO] FE の約数は | JK | 個である。また , EF Oof [Lo ] fica, DEF | を素因数分解すると これらの約数を用いて , ——— — ks ような n ERASE, ヵは [P |,[Q | [RS] (たなし BR < ) ぁにとがゎかる。 n=(§ey) ove, P=[TU] n= | のとき , p=[vw] n= [RSJ ove, P=[ XY |",
+      "text": "散学 -10 kk るまうな迷 n をすべて水め , そのときの の値を求めよう。 PRRBTSY n 十",
+      "answer_choices": [
+        "1 とヵ十",
+        "2 は互いに素であるから , P が連数であるための必要十分殺件は , さらと —— BHLSKBRCHS CU THS, ener oy, EE, BF n+ ont2 ntl n+",
+        "2 (EGY を素数分解すると me oO であるから [BO] FE の約数は | JK | 個である。また , EF Oof [Lo ] fica, DEF | を素因数分解すると これらの約数を用いて , ——— — ks ような n ERASE, ヵは [P |,[Q | [RS] (たなし BR < ) ぁにとがゎかる。 n=(§ey) ove, P=[TU] n= | のとき , p=[vw] n= [RSJ ove, P=[ XY |"
+      ],
+      "difficulty": 4,
+      "confidence": 0.5834,
+      "ocr_confidence": 0.5834,
+      "question_type": "mathematical_computation",
+      "keywords": [
+        "PRRBTSY"
+      ],
+      "concepts": [],
+      "word_count": 86,
+      "lines": 18,
+      "tables": [
+        {
+          "block_num": 1,
+          "text": "ee-10 Pm MAN Ey LS RAM n n を すべ て 水 め その と き の ア + 3n+2 OMERD £5. P を 変形 する と n? + 186n + 267 n’+3n+2 -[A]+ itl * ont? で ある 。 n 寺 1 と ヵ 2 は 古い に 束 で ある か ら , P が 募 数 で ある た め の 必 要 十 人 条件 は , さら と HL YMC SLL THS, n 二 2 BC] を 束 民 数 分 解す る と 回 m-e で ある か ら [BO] cE om | JK | 個 で ある 。 また , を 素因 数 分 解す る と Ba - [中 (cu <-<) で ある か ら の 正 の 約 数 は | 0 | 個 で ある 。 これ ら の 約 数 を 用 いて , と Bs が と も に 整数 と な る よう な ヵ を 調べ る と , nt LP], [Q ], ( ょ ただ し DED < ) casceans. 以上 より n= (fe ove, P=[TU] n= [RQ ove, P=[VW| n= [RSJ ove, P=[ XY | で あぁ る 。 ー158-",
+          "cells": [
+            "ee-10",
+            "Pm",
+            "MAN",
+            "Ey",
+            "LS",
+            "RAM",
+            "n",
+            "n",
+            "を",
+            "すべ",
+            "て",
+            "水",
+            "め",
+            "その",
+            "と",
+            "き",
+            "の",
+            "ア",
+            "+",
+            "3n+2",
+            "OMERD",
+            "£5.",
+            "P",
+            "を",
+            "変形",
+            "する",
+            "と",
+            "n?",
+            "+",
+            "186n",
+            "+",
+            "267",
+            "n’+3n+2",
+            "-[A]+",
+            "itl",
+            "*",
+            "ont?",
+            "で",
+            "ある",
+            "。",
+            "n",
+            "寺",
+            "1",
+            "と",
+            "ヵ",
+            "2",
+            "は",
+            "古い",
+            "に",
+            "束",
+            "で",
+            "ある",
+            "か",
+            "ら",
+            ",",
+            "P",
+            "が",
+            "募",
+            "数",
+            "で",
+            "ある",
+            "た",
+            "め",
+            "の",
+            "必",
+            "要",
+            "十",
+            "人",
+            "条件",
+            "は",
+            ",",
+            "さら",
+            "と",
+            "HL",
+            "YMC",
+            "SLL",
+            "THS,",
+            "n",
+            "二",
+            "2",
+            "BC]",
+            "を",
+            "束",
+            "民",
+            "数",
+            "分",
+            "解す",
+            "る",
+            "と",
+            "回",
+            "m-e",
+            "で",
+            "ある",
+            "か",
+            "ら",
+            "[BO]",
+            "cE",
+            "om",
+            "|",
+            "JK",
+            "|",
+            "個",
+            "で",
+            "ある",
+            "。",
+            "また",
+            ",",
+            "を",
+            "素因",
+            "数",
+            "分",
+            "解す",
+            "る",
+            "と",
+            "Ba",
+            "-",
+            "[中",
+            "(cu",
+            "<-<)",
+            "で",
+            "ある",
+            "か",
+            "ら",
+            "の",
+            "正",
+            "の",
+            "約",
+            "数",
+            "は",
+            "|",
+            "0",
+            "|",
+            "個",
+            "で",
+            "ある",
+            "。",
+            "これ",
+            "ら",
+            "の",
+            "約",
+            "数",
+            "を",
+            "用",
+            "いて",
+            ",",
+            "と",
+            "Bs",
+            "が",
+            "と",
+            "も",
+            "に",
+            "整数",
+            "と",
+            "な",
+            "る",
+            "よう",
+            "な",
+            "ヵ",
+            "を",
+            "調べ",
+            "る",
+            "と",
+            ",",
+            "nt",
+            "LP],",
+            "[Q",
+            "],",
+            "(",
+            "ょ",
+            "ただ",
+            "し",
+            "DED",
+            "<",
+            ")",
+            "casceans.",
+            "以上",
+            "より",
+            "n=",
+            "(fe",
+            "ove,",
+            "P=[TU]",
+            "n=",
+            "[RQ",
+            "ove,",
+            "P=[VW|",
+            "n=",
+            "[RSJ",
+            "ove,",
+            "P=[",
+            "XY",
+            "|",
+            "で",
+            "あぁ",
+            "る",
+            "。",
+            "ー158-"
+          ],
+          "confidence": 0,
+          "elem_type": "tables"
+        }
+      ],
+      "diagrams": [],
+      "graphs": [],
+      "maps": [],
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
+    },
+    {
+      "id": "f5ac2557-0f0f-43d0-a0c1-714356f8db00",
+      "number": null,
+      "year": 2025,
+      "round": 1,
+      "subject": "mathematics",
+      "domain": "unknown",
+      "topic": "",
+      "subtopic": "",
+      "raw_text": "数学一12 AB = 3, BC = 8, CA = 7 となる三角形 ABC を考える。 ZABC = [AB]' であり , ; 三角形 ABC ompms | C |V| D |, INRFIOM BI B c nwmo*s LECT Lot, 三角形 ABC の外接円の点 B を含まない弧 AC 上に点 D をとり , さらに線分 AC と線分 BD の交点を E とする。次の 2 つの場合に線分 AD と線分 AE の長さを求めよう。 (1) AD EW BC が平行になる場合 ZBCD = | KL |° となり , AD = である。したがって , AE = である。 [kt ] LM ] 2 (2) 四角形 ABCD の面積が最大になる場合 ZADC = 180° - [ABE であることから ZDAC=[ RS AD= Cv] D [wx] なる。したがって , = RSE) より A = === でぁる。 となる。したがって , ZDBC より ー160 一",
+      "text": "数学一12 AB = 3, BC = 8, CA =",
+      "answer_choices": [
+        "2 つの場合に線分 AD と線分 AE の長さを求めよう。 (",
+        "1) AD EW BC が平行になる場合 ZBCD = | KL |° となり , AD = である。したがって , AE = である。 [kt ] LM ]",
+        "2 (",
+        "2) 四角形 ABCD の面積が最大になる場合 ZADC = 180° - [ABE であることから ZDAC=[ RS AD= Cv] D [wx] なる。したがって , = RSE) より A = === でぁる。 となる。したがって , ZDBC より ー160 一"
+      ],
+      "difficulty": 2,
+      "confidence": 0.7447,
+      "ocr_confidence": 0.7447,
+      "question_type": "multiple_choice",
+      "keywords": [
+        "AB",
+        "BC",
+        "CA"
+      ],
+      "concepts": [],
+      "word_count": 112,
+      "lines": 18,
+      "tables": [
+        {
+          "block_num": 1,
+          "text": "数 学 一 12 AB = 3, BO=8, CA = 7 と な る 三角 肥 ABC を 考え る 。 A ZABC = [AB]' で あり , 三角 形 ABC の 画 柄 は | C |V| D |, MEOH BIS LS B c page DWE で ある 。 ここ で , 三角 形 ABC の 外 接 円 の 点 B を 含ま な い 弧 AC LEAD ZED, さらに 線 分 AC と 線 分 BD の 交点 を E と する 。 次 の 2 つの 場合 に 線 分 AD と 線 分 AE の 長 さ を 求 め よう 。 (1) 辺 AD と 辺 BC が 平行 に な る 場合 2op- [KT ie, a= Dar] 23, し kp っ て AE 1 cass, (2) 四角 形 ABCD の 面積 が 最大 に な る 場合 ZADC = 180° - [ABE CHSC LHS TIy ZDAC=[ RS AD= と な る 。 し た が っ て , ZDBC = [RSI &) AE = で ある 。 ー160-",
+          "cells": [
+            "数",
+            "学",
+            "一",
+            "12",
+            "AB",
+            "=",
+            "3,",
+            "BO=8,",
+            "CA",
+            "=",
+            "7",
+            "と",
+            "な",
+            "る",
+            "三角",
+            "肥",
+            "ABC",
+            "を",
+            "考え",
+            "る",
+            "。",
+            "A",
+            "ZABC",
+            "=",
+            "[AB]'",
+            "で",
+            "あり",
+            ",",
+            "三角",
+            "形",
+            "ABC",
+            "の",
+            "画",
+            "柄",
+            "は",
+            "|",
+            "C",
+            "|V|",
+            "D",
+            "|,",
+            "MEOH",
+            "BIS",
+            "LS",
+            "B",
+            "c",
+            "page",
+            "DWE",
+            "で",
+            "ある",
+            "。",
+            "ここ",
+            "で",
+            ",",
+            "三角",
+            "形",
+            "ABC",
+            "の",
+            "外",
+            "接",
+            "円",
+            "の",
+            "点",
+            "B",
+            "を",
+            "含ま",
+            "な",
+            "い",
+            "弧",
+            "AC",
+            "LEAD",
+            "ZED,",
+            "さらに",
+            "線",
+            "分",
+            "AC",
+            "と",
+            "線",
+            "分",
+            "BD",
+            "の",
+            "交点",
+            "を",
+            "E",
+            "と",
+            "する",
+            "。",
+            "次",
+            "の",
+            "2",
+            "つの",
+            "場合",
+            "に",
+            "線",
+            "分",
+            "AD",
+            "と",
+            "線",
+            "分",
+            "AE",
+            "の",
+            "長",
+            "さ",
+            "を",
+            "求",
+            "め",
+            "よう",
+            "。",
+            "(1)",
+            "辺",
+            "AD",
+            "と",
+            "辺",
+            "BC",
+            "が",
+            "平行",
+            "に",
+            "な",
+            "る",
+            "場合",
+            "2op-",
+            "[KT",
+            "ie,",
+            "a=",
+            "Dar]",
+            "23,",
+            "し",
+            "kp",
+            "っ",
+            "て",
+            "AE",
+            "1",
+            "cass,",
+            "(2)",
+            "四角",
+            "形",
+            "ABCD",
+            "の",
+            "面積",
+            "が",
+            "最大",
+            "に",
+            "な",
+            "る",
+            "場合",
+            "ZADC",
+            "=",
+            "180°",
+            "-",
+            "[ABE",
+            "CHSC",
+            "LHS",
+            "TIy",
+            "ZDAC=[",
+            "RS",
+            "AD=",
+            "と",
+            "な",
+            "る",
+            "。",
+            "し",
+            "た",
+            "が",
+            "っ",
+            "て",
+            ",",
+            "ZDBC",
+            "=",
+            "[RSI",
+            "&)",
+            "AE",
+            "=",
+            "で",
+            "ある",
+            "。",
+            "ー160-"
+          ],
+          "confidence": 0,
+          "elem_type": "tables"
+        }
+      ],
+      "diagrams": [],
+      "graphs": [],
+      "maps": [],
+      "source": "ocr",
+      "flags": [
+        "invalid_question_number"
+      ]
+    }
+  ],
+  "metadata": {
+    "doc_metadata": {
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "total_pages": 9
+    },
+    "processed_at": "2026-06-02T08:00:40.478554",
+    "confidence_average": 0.6757
+  },
+  "total_questions": 9,
+  "total_tables": 0,
+  "total_diagrams": 0,
+  "total_graphs": 0,
+  "total_maps": 0
+}

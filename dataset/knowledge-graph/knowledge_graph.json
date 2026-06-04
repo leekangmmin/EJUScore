@@ -1,0 +1,2414 @@
+{
+  "name": "EJU Comprehensive Knowledge Graph",
+  "version": "2.0.0",
+  "generated_at": "2026-06-02T05:13:55.928705",
+  "statistics": {
+    "total_nodes": 80,
+    "total_edges": 137,
+    "domains": 5,
+    "topics": 34,
+    "concepts": 9,
+    "edge_types": {
+      "belongs_to": 34,
+      "prerequisite": 19,
+      "related": 6,
+      "part_of": 64,
+      "related_to": 14
+    }
+  },
+  "nodes": [
+    {
+      "id": "domain:geography",
+      "type": "domain",
+      "label": "geography",
+      "description": "EJU geography domain",
+      "question_count": 73,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "avg_difficulty": 3.55,
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:인구·도시화",
+      "type": "topic",
+      "label": "인구·도시화",
+      "description": "EJU topic: 인구·도시화",
+      "question_count": 25,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "avg_difficulty": 3.52,
+      "question_types": [
+        "data_interpretation",
+        "economic_analysis",
+        "geographical_analysis",
+        "geometry",
+        "multiple_choice",
+        "political_analysis",
+        "probability_statistics",
+        "social_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:환경·생태",
+      "type": "subtopic",
+      "label": "환경·생태",
+      "description": "EJU subtopic: 환경·생태",
+      "question_count": 1,
+      "years": [
+        2002
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "domain:politics",
+      "type": "domain",
+      "label": "politics",
+      "description": "EJU politics domain",
+      "question_count": 108,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "avg_difficulty": 3.43,
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:국제정치·국제기구",
+      "type": "topic",
+      "label": "국제정치·국제기구",
+      "description": "EJU topic: 국제정치·국제기구",
+      "question_count": 11,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2007,
+        2008,
+        2011,
+        2013,
+        2015
+      ],
+      "avg_difficulty": 3.55,
+      "question_types": [
+        "economic_analysis",
+        "geographical_analysis",
+        "historical_analysis",
+        "multiple_choice",
+        "social_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "domain:economy",
+      "type": "domain",
+      "label": "economy",
+      "description": "EJU economy domain",
+      "question_count": 159,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "avg_difficulty": 3.47,
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:금융·통화정책",
+      "type": "topic",
+      "label": "금융·통화정책",
+      "description": "EJU topic: 금융·통화정책",
+      "question_count": 12,
+      "years": [
+        2002,
+        2003,
+        2005,
+        2007,
+        2009,
+        2011,
+        2014
+      ],
+      "avg_difficulty": 3.0,
+      "question_types": [
+        "economic_analysis",
+        "graph_analysis",
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:고용·노동",
+      "type": "subtopic",
+      "label": "고용·노동",
+      "description": "EJU subtopic: 고용·노동",
+      "question_count": 7,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2010,
+        2014,
+        2015
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:환율·국제수지",
+      "type": "topic",
+      "label": "환율·국제수지",
+      "description": "EJU topic: 환율·국제수지",
+      "question_count": 17,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2012,
+        2015
+      ],
+      "avg_difficulty": 3.53,
+      "question_types": [
+        "data_interpretation",
+        "economic_analysis",
+        "graph_analysis",
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:국제무역",
+      "type": "subtopic",
+      "label": "국제무역",
+      "description": "EJU subtopic: 국제무역",
+      "question_count": 10,
+      "years": [
+        2002,
+        2004,
+        2005,
+        2008,
+        2013,
+        2014
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:통치기구",
+      "type": "topic",
+      "label": "통치기구",
+      "description": "EJU topic: 통치기구",
+      "question_count": 17,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "avg_difficulty": 3.12,
+      "question_types": [
+        "economic_analysis",
+        "historical_analysis",
+        "multiple_choice",
+        "political_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:헌법·기본권",
+      "type": "subtopic",
+      "label": "헌법·기본권",
+      "description": "EJU subtopic: 헌법·기본권",
+      "question_count": 6,
+      "years": [
+        2002,
+        2004,
+        2007,
+        2008,
+        2010,
+        2011
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "domain:history",
+      "type": "domain",
+      "label": "history",
+      "description": "EJU history domain",
+      "question_count": 72,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "avg_difficulty": 3.39,
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:세계대전",
+      "type": "topic",
+      "label": "세계대전",
+      "description": "EJU topic: 세계대전",
+      "question_count": 28,
+      "years": [
+        2002,
+        2003,
+        2005,
+        2006,
+        2007,
+        2008,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "avg_difficulty": 3.32,
+      "question_types": [
+        "economic_analysis",
+        "graph_analysis",
+        "historical_analysis",
+        "multiple_choice",
+        "political_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "domain:society",
+      "type": "domain",
+      "label": "society",
+      "description": "EJU society domain",
+      "question_count": 32,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2013,
+        2015
+      ],
+      "avg_difficulty": 3.25,
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:정보화사회",
+      "type": "topic",
+      "label": "정보화사회",
+      "description": "EJU topic: 정보화사회",
+      "question_count": 5,
+      "years": [
+        2002,
+        2003,
+        2013
+      ],
+      "avg_difficulty": 2.6,
+      "question_types": [
+        "data_interpretation",
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:수요·공급과 시장균형",
+      "type": "topic",
+      "label": "수요·공급과 시장균형",
+      "description": "EJU topic: 수요·공급과 시장균형",
+      "question_count": 26,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2013,
+        2014,
+        2015
+      ],
+      "avg_difficulty": 3.62,
+      "question_types": [
+        "data_interpretation",
+        "economic_analysis",
+        "graph_analysis",
+        "historical_analysis",
+        "multiple_choice",
+        "political_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:GDP·국민소득",
+      "type": "subtopic",
+      "label": "GDP·국민소득",
+      "description": "EJU subtopic: GDP·국민소득",
+      "question_count": 3,
+      "years": [
+        2002,
+        2013
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:경제성장·경기변동",
+      "type": "topic",
+      "label": "경제성장·경기변동",
+      "description": "EJU topic: 경제성장·경기변동",
+      "question_count": 8,
+      "years": [
+        2002,
+        2004,
+        2005,
+        2006,
+        2009,
+        2012,
+        2013
+      ],
+      "avg_difficulty": 3.5,
+      "question_types": [
+        "economic_analysis",
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:수요·공급과 시장균형",
+      "type": "subtopic",
+      "label": "수요·공급과 시장균형",
+      "description": "EJU subtopic: 수요·공급과 시장균형",
+      "question_count": 12,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2008,
+        2009,
+        2010,
+        2012,
+        2014
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:자원·농업",
+      "type": "topic",
+      "label": "자원·농업",
+      "description": "EJU topic: 자원·농업",
+      "question_count": 3,
+      "years": [
+        2002,
+        2007,
+        2009
+      ],
+      "avg_difficulty": 4.0,
+      "question_types": [
+        "geographical_analysis",
+        "geometry",
+        "graph_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:산업·교통",
+      "type": "subtopic",
+      "label": "산업·교통",
+      "description": "EJU subtopic: 산업·교통",
+      "question_count": 3,
+      "years": [
+        2002,
+        2003,
+        2007
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:지도·GIS",
+      "type": "topic",
+      "label": "지도·GIS",
+      "description": "EJU topic: 지도·GIS",
+      "question_count": 19,
+      "years": [
+        2002,
+        2003,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2015
+      ],
+      "avg_difficulty": 3.79,
+      "question_types": [
+        "data_interpretation",
+        "geographical_analysis",
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:정치사상",
+      "type": "topic",
+      "label": "정치사상",
+      "description": "EJU topic: 정치사상",
+      "question_count": 1,
+      "years": [
+        2002
+      ],
+      "avg_difficulty": 3.0,
+      "question_types": [
+        "political_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:선거·정당",
+      "type": "topic",
+      "label": "선거·정당",
+      "description": "EJU topic: 선거·정당",
+      "question_count": 16,
+      "years": [
+        2002,
+        2004,
+        2006,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "avg_difficulty": 3.38,
+      "question_types": [
+        "historical_analysis",
+        "multiple_choice",
+        "political_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:국제무역",
+      "type": "topic",
+      "label": "국제무역",
+      "description": "EJU topic: 국제무역",
+      "question_count": 37,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "avg_difficulty": 3.62,
+      "question_types": [
+        "data_interpretation",
+        "economic_analysis",
+        "geographical_analysis",
+        "graph_analysis",
+        "historical_analysis",
+        "multiple_choice",
+        "social_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:헌법·기본권",
+      "type": "topic",
+      "label": "헌법·기본권",
+      "description": "EJU topic: 헌법·기본권",
+      "question_count": 21,
+      "years": [
+        2002,
+        2003,
+        2005,
+        2006,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2015
+      ],
+      "avg_difficulty": 3.57,
+      "question_types": [
+        "historical_analysis",
+        "multiple_choice",
+        "political_analysis",
+        "probability_statistics",
+        "social_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:통치기구",
+      "type": "subtopic",
+      "label": "통치기구",
+      "description": "EJU subtopic: 통치기구",
+      "question_count": 6,
+      "years": [
+        2002,
+        2004,
+        2005,
+        2011
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:윤리·현대사회",
+      "type": "topic",
+      "label": "윤리·현대사회",
+      "description": "EJU topic: 윤리·현대사회",
+      "question_count": 1,
+      "years": [
+        2002
+      ],
+      "avg_difficulty": 3.0,
+      "question_types": [
+        "social_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:정보화사회",
+      "type": "subtopic",
+      "label": "정보화사회",
+      "description": "EJU subtopic: 정보화사회",
+      "question_count": 1,
+      "years": [
+        2002
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:GDP·국민소득",
+      "type": "topic",
+      "label": "GDP·국민소득",
+      "description": "EJU topic: GDP·국민소득",
+      "question_count": 15,
+      "years": [
+        2002,
+        2003,
+        2004,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "avg_difficulty": 3.8,
+      "question_types": [
+        "data_interpretation",
+        "economic_analysis",
+        "graph_analysis",
+        "historical_analysis",
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:금융·통화정책",
+      "type": "subtopic",
+      "label": "금융·통화정책",
+      "description": "EJU subtopic: 금융·통화정책",
+      "question_count": 7,
+      "years": [
+        2002,
+        2008,
+        2013,
+        2015
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:일본경제사",
+      "type": "topic",
+      "label": "일본경제사",
+      "description": "EJU topic: 일본경제사",
+      "question_count": 2,
+      "years": [
+        2003,
+        2008
+      ],
+      "avg_difficulty": 4.0,
+      "question_types": [
+        "economic_analysis",
+        "historical_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:고용·노동",
+      "type": "topic",
+      "label": "고용·노동",
+      "description": "EJU topic: 고용·노동",
+      "question_count": 13,
+      "years": [
+        2003,
+        2004,
+        2006,
+        2007,
+        2008,
+        2009,
+        2013,
+        2015
+      ],
+      "avg_difficulty": 3.38,
+      "question_types": [
+        "economic_analysis",
+        "graph_analysis",
+        "multiple_choice",
+        "political_analysis",
+        "probability_statistics",
+        "social_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:산업혁명·자본주의",
+      "type": "topic",
+      "label": "산업혁명·자본주의",
+      "description": "EJU topic: 산업혁명·자본주의",
+      "question_count": 7,
+      "years": [
+        2003,
+        2004,
+        2006,
+        2011,
+        2012,
+        2013
+      ],
+      "avg_difficulty": 4.0,
+      "question_types": [
+        "economic_analysis",
+        "historical_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:기후·케펜구분",
+      "type": "topic",
+      "label": "기후·케펜구분",
+      "description": "EJU topic: 기후·케펜구분",
+      "question_count": 12,
+      "years": [
+        2003,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "avg_difficulty": 3.67,
+      "question_types": [
+        "geographical_analysis",
+        "graph_analysis",
+        "historical_analysis",
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:인구·도시화",
+      "type": "subtopic",
+      "label": "인구·도시화",
+      "description": "EJU subtopic: 인구·도시화",
+      "question_count": 4,
+      "years": [
+        2003,
+        2012,
+        2014
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:사법·재판",
+      "type": "topic",
+      "label": "사법·재판",
+      "description": "EJU topic: 사법·재판",
+      "question_count": 9,
+      "years": [
+        2003,
+        2004,
+        2005,
+        2007,
+        2009,
+        2010,
+        2014
+      ],
+      "avg_difficulty": 3.78,
+      "question_types": [
+        "historical_analysis",
+        "political_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:제국주의·식민지",
+      "type": "topic",
+      "label": "제국주의·식민지",
+      "description": "EJU topic: 제국주의·식민지",
+      "question_count": 4,
+      "years": [
+        2003,
+        2004,
+        2007,
+        2009
+      ],
+      "avg_difficulty": 3.75,
+      "question_types": [
+        "geographical_analysis",
+        "historical_analysis",
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:세계대전",
+      "type": "subtopic",
+      "label": "세계대전",
+      "description": "EJU subtopic: 세계대전",
+      "question_count": 1,
+      "years": [
+        2003
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:지도·GIS",
+      "type": "subtopic",
+      "label": "지도·GIS",
+      "description": "EJU subtopic: 지도·GIS",
+      "question_count": 11,
+      "years": [
+        2003,
+        2008,
+        2009,
+        2010,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:경제성장·경기변동",
+      "type": "subtopic",
+      "label": "경제성장·경기변동",
+      "description": "EJU subtopic: 경제성장·경기변동",
+      "question_count": 9,
+      "years": [
+        2003,
+        2004,
+        2006,
+        2009,
+        2010,
+        2011,
+        2012
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:안전보장·방위",
+      "type": "subtopic",
+      "label": "안전보장·방위",
+      "description": "EJU subtopic: 안전보장·방위",
+      "question_count": 1,
+      "years": [
+        2003
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "concept:산업혁명",
+      "type": "concept",
+      "label": "산업혁명",
+      "description": "Concept: 산업혁명",
+      "question_count": 3,
+      "years": [
+        2004,
+        2012,
+        2013
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:사회보장·복지",
+      "type": "topic",
+      "label": "사회보장·복지",
+      "description": "EJU topic: 사회보장·복지",
+      "question_count": 6,
+      "years": [
+        2004,
+        2006,
+        2010,
+        2015
+      ],
+      "avg_difficulty": 3.67,
+      "question_types": [
+        "economic_analysis",
+        "graph_analysis",
+        "multiple_choice",
+        "political_analysis",
+        "social_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:다문화사회",
+      "type": "topic",
+      "label": "다문화사회",
+      "description": "EJU topic: 다문화사회",
+      "question_count": 1,
+      "years": [
+        2004
+      ],
+      "avg_difficulty": 4.0,
+      "question_types": [
+        "historical_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "concept:공급곡선",
+      "type": "concept",
+      "label": "공급곡선",
+      "description": "Concept: 공급곡선",
+      "question_count": 6,
+      "years": [
+        2005,
+        2007,
+        2010,
+        2014,
+        2015
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "concept:의원내각제",
+      "type": "concept",
+      "label": "의원내각제",
+      "description": "Concept: 의원내각제",
+      "question_count": 4,
+      "years": [
+        2005,
+        2006,
+        2009
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "concept:수요곡선",
+      "type": "concept",
+      "label": "수요곡선",
+      "description": "Concept: 수요곡선",
+      "question_count": 4,
+      "years": [
+        2005,
+        2007,
+        2009,
+        2010
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "concept:삼권분립",
+      "type": "concept",
+      "label": "삼권분립",
+      "description": "Concept: 삼권분립",
+      "question_count": 5,
+      "years": [
+        2005,
+        2006,
+        2007,
+        2010
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:일본근대사",
+      "type": "topic",
+      "label": "일본근대사",
+      "description": "EJU topic: 일본근대사",
+      "question_count": 1,
+      "years": [
+        2005
+      ],
+      "avg_difficulty": 2.0,
+      "question_types": [
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:소득분배·지니계수",
+      "type": "topic",
+      "label": "소득분배·지니계수",
+      "description": "EJU topic: 소득분배·지니계수",
+      "question_count": 8,
+      "years": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2013
+      ],
+      "avg_difficulty": 3.5,
+      "question_types": [
+        "economic_analysis",
+        "multiple_choice",
+        "political_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:재정·조세정책",
+      "type": "subtopic",
+      "label": "재정·조세정책",
+      "description": "EJU subtopic: 재정·조세정책",
+      "question_count": 2,
+      "years": [
+        2006,
+        2009
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:환율·국제수지",
+      "type": "subtopic",
+      "label": "환율·국제수지",
+      "description": "EJU subtopic: 환율·국제수지",
+      "question_count": 3,
+      "years": [
+        2006,
+        2008,
+        2015
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:냉전",
+      "type": "topic",
+      "label": "냉전",
+      "description": "EJU topic: 냉전",
+      "question_count": 5,
+      "years": [
+        2006,
+        2007,
+        2008,
+        2015
+      ],
+      "avg_difficulty": 3.4,
+      "question_types": [
+        "historical_analysis",
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "concept:냉전",
+      "type": "concept",
+      "label": "냉전",
+      "description": "Concept: 냉전",
+      "question_count": 6,
+      "years": [
+        2006,
+        2007,
+        2008,
+        2014,
+        2015
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:지방자치",
+      "type": "topic",
+      "label": "지방자치",
+      "description": "EJU topic: 지방자치",
+      "question_count": 7,
+      "years": [
+        2006,
+        2007,
+        2010,
+        2011,
+        2013
+      ],
+      "avg_difficulty": 2.71,
+      "question_types": [
+        "historical_analysis",
+        "multiple_choice",
+        "social_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:재정·조세정책",
+      "type": "topic",
+      "label": "재정·조세정책",
+      "description": "EJU topic: 재정·조세정책",
+      "question_count": 14,
+      "years": [
+        2007,
+        2008,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "avg_difficulty": 2.86,
+      "question_types": [
+        "data_interpretation",
+        "economic_analysis",
+        "multiple_choice",
+        "political_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:환경문제",
+      "type": "topic",
+      "label": "환경문제",
+      "description": "EJU topic: 환경문제",
+      "question_count": 5,
+      "years": [
+        2007,
+        2009,
+        2015
+      ],
+      "avg_difficulty": 2.8,
+      "question_types": [
+        "multiple_choice",
+        "social_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:사회보장·복지",
+      "type": "subtopic",
+      "label": "사회보장·복지",
+      "description": "EJU subtopic: 사회보장·복지",
+      "question_count": 1,
+      "years": [
+        2007
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "concept:지구온난화",
+      "type": "concept",
+      "label": "지구온난화",
+      "description": "Concept: 지구온난화",
+      "question_count": 1,
+      "years": [
+        2007
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:선거·정당",
+      "type": "subtopic",
+      "label": "선거·정당",
+      "description": "EJU subtopic: 선거·정당",
+      "question_count": 6,
+      "years": [
+        2007,
+        2008,
+        2009,
+        2013,
+        2014
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:국제정치·국제기구",
+      "type": "subtopic",
+      "label": "국제정치·국제기구",
+      "description": "EJU subtopic: 국제정치·국제기구",
+      "question_count": 3,
+      "years": [
+        2009,
+        2010,
+        2014
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:소득분배·지니계수",
+      "type": "subtopic",
+      "label": "소득분배·지니계수",
+      "description": "EJU subtopic: 소득분배·지니계수",
+      "question_count": 5,
+      "years": [
+        2009,
+        2011,
+        2012,
+        2013
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:정치사상",
+      "type": "subtopic",
+      "label": "정치사상",
+      "description": "EJU subtopic: 정치사상",
+      "question_count": 1,
+      "years": [
+        2009
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:저출산·고령화",
+      "type": "subtopic",
+      "label": "저출산·고령화",
+      "description": "EJU subtopic: 저출산·고령화",
+      "question_count": 1,
+      "years": [
+        2010
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:제국주의·식민지",
+      "type": "subtopic",
+      "label": "제국주의·식민지",
+      "description": "EJU subtopic: 제국주의·식민지",
+      "question_count": 2,
+      "years": [
+        2010,
+        2012
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:시민혁명",
+      "type": "topic",
+      "label": "시민혁명",
+      "description": "EJU topic: 시민혁명",
+      "question_count": 2,
+      "years": [
+        2010,
+        2013
+      ],
+      "avg_difficulty": 3.5,
+      "question_types": [
+        "historical_analysis",
+        "social_analysis"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "concept:프랑스혁명",
+      "type": "concept",
+      "label": "프랑스혁명",
+      "description": "Concept: 프랑스혁명",
+      "question_count": 3,
+      "years": [
+        2010,
+        2012,
+        2013
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:전후세계질서",
+      "type": "subtopic",
+      "label": "전후세계질서",
+      "description": "EJU subtopic: 전후세계질서",
+      "question_count": 8,
+      "years": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:일본경제사",
+      "type": "subtopic",
+      "label": "일본경제사",
+      "description": "EJU subtopic: 일본경제사",
+      "question_count": 1,
+      "years": [
+        2011
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:자원·농업",
+      "type": "subtopic",
+      "label": "자원·농업",
+      "description": "EJU subtopic: 자원·농업",
+      "question_count": 1,
+      "years": [
+        2011
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:사법·재판",
+      "type": "subtopic",
+      "label": "사법·재판",
+      "description": "EJU subtopic: 사법·재판",
+      "question_count": 1,
+      "years": [
+        2011
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:지형·판구조",
+      "type": "topic",
+      "label": "지형·판구조",
+      "description": "EJU topic: 지형·판구조",
+      "question_count": 6,
+      "years": [
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "avg_difficulty": 3.67,
+      "question_types": [
+        "geographical_analysis",
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:시민혁명",
+      "type": "subtopic",
+      "label": "시민혁명",
+      "description": "EJU subtopic: 시민혁명",
+      "question_count": 1,
+      "years": [
+        2012
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:산업혁명·자본주의",
+      "type": "subtopic",
+      "label": "산업혁명·자본주의",
+      "description": "EJU subtopic: 산업혁명·자본주의",
+      "question_count": 1,
+      "years": [
+        2013
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "concept:판구조론",
+      "type": "concept",
+      "label": "판구조론",
+      "description": "Concept: 판구조론",
+      "question_count": 1,
+      "years": [
+        2013
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:냉전",
+      "type": "subtopic",
+      "label": "냉전",
+      "description": "EJU subtopic: 냉전",
+      "question_count": 1,
+      "years": [
+        2014
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "topic:환경·생태",
+      "type": "topic",
+      "label": "환경·생태",
+      "description": "EJU topic: 환경·생태",
+      "question_count": 1,
+      "years": [
+        2015
+      ],
+      "avg_difficulty": 3.0,
+      "question_types": [
+        "multiple_choice"
+      ],
+      "masteryLevel": 0.0
+    },
+    {
+      "id": "subtopic:지방자치",
+      "type": "subtopic",
+      "label": "지방자치",
+      "description": "EJU subtopic: 지방자치",
+      "question_count": 1,
+      "years": [
+        2015
+      ],
+      "masteryLevel": 0.0
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_1",
+      "sourceId": "topic:인구·도시화",
+      "targetId": "domain:geography",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_2",
+      "sourceId": "subtopic:환경·생태",
+      "targetId": "topic:인구·도시화",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_3",
+      "sourceId": "topic:국제정치·국제기구",
+      "targetId": "domain:politics",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_4",
+      "sourceId": "topic:금융·통화정책",
+      "targetId": "domain:economy",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_5",
+      "sourceId": "subtopic:고용·노동",
+      "targetId": "topic:금융·통화정책",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_6",
+      "sourceId": "topic:환율·국제수지",
+      "targetId": "domain:economy",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_7",
+      "sourceId": "subtopic:국제무역",
+      "targetId": "topic:환율·국제수지",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_8",
+      "sourceId": "topic:통치기구",
+      "targetId": "domain:politics",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_9",
+      "sourceId": "subtopic:헌법·기본권",
+      "targetId": "topic:통치기구",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_10",
+      "sourceId": "topic:세계대전",
+      "targetId": "domain:history",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_11",
+      "sourceId": "topic:정보화사회",
+      "targetId": "domain:society",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_12",
+      "sourceId": "topic:수요·공급과 시장균형",
+      "targetId": "domain:economy",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_13",
+      "sourceId": "subtopic:GDP·국민소득",
+      "targetId": "topic:수요·공급과 시장균형",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_14",
+      "sourceId": "topic:경제성장·경기변동",
+      "targetId": "domain:economy",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_15",
+      "sourceId": "subtopic:수요·공급과 시장균형",
+      "targetId": "topic:경제성장·경기변동",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_16",
+      "sourceId": "topic:자원·농업",
+      "targetId": "domain:geography",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_17",
+      "sourceId": "subtopic:산업·교통",
+      "targetId": "topic:자원·농업",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_18",
+      "sourceId": "topic:지도·GIS",
+      "targetId": "domain:geography",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_19",
+      "sourceId": "topic:정치사상",
+      "targetId": "domain:politics",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_20",
+      "sourceId": "topic:선거·정당",
+      "targetId": "domain:politics",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_21",
+      "sourceId": "topic:국제무역",
+      "targetId": "domain:economy",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_22",
+      "sourceId": "subtopic:GDP·국민소득",
+      "targetId": "topic:국제무역",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_23",
+      "sourceId": "topic:헌법·기본권",
+      "targetId": "domain:politics",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_24",
+      "sourceId": "subtopic:통치기구",
+      "targetId": "topic:헌법·기본권",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_25",
+      "sourceId": "topic:윤리·현대사회",
+      "targetId": "domain:society",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_26",
+      "sourceId": "subtopic:정보화사회",
+      "targetId": "topic:윤리·현대사회",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_27",
+      "sourceId": "topic:GDP·국민소득",
+      "targetId": "domain:economy",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_28",
+      "sourceId": "subtopic:금융·통화정책",
+      "targetId": "topic:GDP·국민소득",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_29",
+      "sourceId": "subtopic:통치기구",
+      "targetId": "topic:선거·정당",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_30",
+      "sourceId": "topic:일본경제사",
+      "targetId": "domain:economy",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_31",
+      "sourceId": "subtopic:수요·공급과 시장균형",
+      "targetId": "topic:일본경제사",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_32",
+      "sourceId": "topic:고용·노동",
+      "targetId": "domain:economy",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_33",
+      "sourceId": "topic:산업혁명·자본주의",
+      "targetId": "domain:history",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_34",
+      "sourceId": "topic:기후·케펜구분",
+      "targetId": "domain:geography",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_35",
+      "sourceId": "subtopic:인구·도시화",
+      "targetId": "topic:기후·케펜구분",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_36",
+      "sourceId": "topic:사법·재판",
+      "targetId": "domain:politics",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_37",
+      "sourceId": "topic:제국주의·식민지",
+      "targetId": "domain:history",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_38",
+      "sourceId": "subtopic:세계대전",
+      "targetId": "topic:제국주의·식민지",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_39",
+      "sourceId": "subtopic:고용·노동",
+      "targetId": "topic:국제무역",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_40",
+      "sourceId": "subtopic:지도·GIS",
+      "targetId": "topic:인구·도시화",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_41",
+      "sourceId": "subtopic:경제성장·경기변동",
+      "targetId": "topic:환율·국제수지",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_42",
+      "sourceId": "subtopic:안전보장·방위",
+      "targetId": "topic:국제정치·국제기구",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_43",
+      "sourceId": "subtopic:산업·교통",
+      "targetId": "topic:인구·도시화",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_44",
+      "sourceId": "subtopic:수요·공급과 시장균형",
+      "targetId": "topic:고용·노동",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_45",
+      "sourceId": "subtopic:경제성장·경기변동",
+      "targetId": "topic:GDP·국민소득",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_46",
+      "sourceId": "subtopic:헌법·기본권",
+      "targetId": "topic:사법·재판",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_47",
+      "sourceId": "concept:산업혁명",
+      "targetId": "topic:산업혁명·자본주의",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_48",
+      "sourceId": "topic:사회보장·복지",
+      "targetId": "domain:society",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_49",
+      "sourceId": "topic:다문화사회",
+      "targetId": "domain:society",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_50",
+      "sourceId": "concept:공급곡선",
+      "targetId": "topic:수요·공급과 시장균형",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_51",
+      "sourceId": "subtopic:통치기구",
+      "targetId": "topic:사법·재판",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_52",
+      "sourceId": "concept:의원내각제",
+      "targetId": "topic:사법·재판",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_53",
+      "sourceId": "subtopic:국제무역",
+      "targetId": "topic:수요·공급과 시장균형",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_54",
+      "sourceId": "concept:수요곡선",
+      "targetId": "topic:수요·공급과 시장균형",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_55",
+      "sourceId": "concept:삼권분립",
+      "targetId": "topic:통치기구",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_56",
+      "sourceId": "topic:일본근대사",
+      "targetId": "domain:history",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_57",
+      "sourceId": "topic:소득분배·지니계수",
+      "targetId": "domain:economy",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_58",
+      "sourceId": "subtopic:재정·조세정책",
+      "targetId": "topic:소득분배·지니계수",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_59",
+      "sourceId": "subtopic:환율·국제수지",
+      "targetId": "topic:수요·공급과 시장균형",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_60",
+      "sourceId": "concept:의원내각제",
+      "targetId": "topic:통치기구",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_61",
+      "sourceId": "topic:냉전",
+      "targetId": "domain:history",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_62",
+      "sourceId": "concept:냉전",
+      "targetId": "topic:냉전",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_63",
+      "sourceId": "topic:지방자치",
+      "targetId": "domain:politics",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_64",
+      "sourceId": "concept:삼권분립",
+      "targetId": "topic:지방자치",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_65",
+      "sourceId": "topic:재정·조세정책",
+      "targetId": "domain:economy",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_66",
+      "sourceId": "topic:환경문제",
+      "targetId": "domain:society",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_67",
+      "sourceId": "subtopic:사회보장·복지",
+      "targetId": "topic:환경문제",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_68",
+      "sourceId": "concept:지구온난화",
+      "targetId": "topic:환경문제",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_69",
+      "sourceId": "subtopic:선거·정당",
+      "targetId": "topic:통치기구",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_70",
+      "sourceId": "subtopic:수요·공급과 시장균형",
+      "targetId": "topic:국제무역",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_71",
+      "sourceId": "subtopic:금융·통화정책",
+      "targetId": "topic:환율·국제수지",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_72",
+      "sourceId": "subtopic:헌법·기본권",
+      "targetId": "topic:선거·정당",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_73",
+      "sourceId": "subtopic:수요·공급과 시장균형",
+      "targetId": "topic:환율·국제수지",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_74",
+      "sourceId": "subtopic:선거·정당",
+      "targetId": "topic:사법·재판",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_75",
+      "sourceId": "subtopic:국제정치·국제기구",
+      "targetId": "topic:헌법·기본권",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_76",
+      "sourceId": "subtopic:재정·조세정책",
+      "targetId": "topic:금융·통화정책",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_77",
+      "sourceId": "subtopic:소득분배·지니계수",
+      "targetId": "topic:GDP·국민소득",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_78",
+      "sourceId": "subtopic:정치사상",
+      "targetId": "topic:선거·정당",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_79",
+      "sourceId": "subtopic:고용·노동",
+      "targetId": "topic:수요·공급과 시장균형",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_80",
+      "sourceId": "subtopic:지도·GIS",
+      "targetId": "topic:기후·케펜구분",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_81",
+      "sourceId": "subtopic:국제정치·국제기구",
+      "targetId": "topic:통치기구",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_82",
+      "sourceId": "subtopic:경제성장·경기변동",
+      "targetId": "topic:재정·조세정책",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_83",
+      "sourceId": "subtopic:저출산·고령화",
+      "targetId": "topic:사회보장·복지",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_84",
+      "sourceId": "concept:삼권분립",
+      "targetId": "topic:사법·재판",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_85",
+      "sourceId": "subtopic:제국주의·식민지",
+      "targetId": "topic:세계대전",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_86",
+      "sourceId": "topic:시민혁명",
+      "targetId": "domain:history",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_87",
+      "sourceId": "concept:프랑스혁명",
+      "targetId": "topic:시민혁명",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_88",
+      "sourceId": "subtopic:전후세계질서",
+      "targetId": "topic:세계대전",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_89",
+      "sourceId": "subtopic:소득분배·지니계수",
+      "targetId": "topic:재정·조세정책",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_90",
+      "sourceId": "subtopic:일본경제사",
+      "targetId": "topic:금융·통화정책",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_91",
+      "sourceId": "subtopic:소득분배·지니계수",
+      "targetId": "topic:국제무역",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_92",
+      "sourceId": "subtopic:자원·농업",
+      "targetId": "topic:기후·케펜구분",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_93",
+      "sourceId": "subtopic:사법·재판",
+      "targetId": "topic:지방자치",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_94",
+      "sourceId": "subtopic:수요·공급과 시장균형",
+      "targetId": "topic:재정·조세정책",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_95",
+      "sourceId": "topic:지형·판구조",
+      "targetId": "domain:geography",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_96",
+      "sourceId": "subtopic:지도·GIS",
+      "targetId": "topic:지형·판구조",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_97",
+      "sourceId": "subtopic:시민혁명",
+      "targetId": "topic:세계대전",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_98",
+      "sourceId": "concept:프랑스혁명",
+      "targetId": "topic:세계대전",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_99",
+      "sourceId": "subtopic:수요·공급과 시장균형",
+      "targetId": "topic:GDP·국민소득",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_100",
+      "sourceId": "subtopic:인구·도시화",
+      "targetId": "topic:지형·판구조",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_101",
+      "sourceId": "subtopic:GDP·국민소득",
+      "targetId": "topic:경제성장·경기변동",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_102",
+      "sourceId": "subtopic:산업혁명·자본주의",
+      "targetId": "topic:세계대전",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_103",
+      "sourceId": "subtopic:국제무역",
+      "targetId": "topic:재정·조세정책",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_104",
+      "sourceId": "concept:판구조론",
+      "targetId": "topic:지형·판구조",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_105",
+      "sourceId": "subtopic:국제정치·국제기구",
+      "targetId": "topic:사법·재판",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_106",
+      "sourceId": "subtopic:냉전",
+      "targetId": "topic:세계대전",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_107",
+      "sourceId": "concept:냉전",
+      "targetId": "topic:세계대전",
+      "type": "related_to",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_108",
+      "sourceId": "subtopic:국제무역",
+      "targetId": "topic:GDP·국민소득",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_109",
+      "sourceId": "topic:환경·생태",
+      "targetId": "domain:geography",
+      "type": "belongs_to",
+      "weight": 1.0
+    },
+    {
+      "id": "edge_110",
+      "sourceId": "subtopic:금융·통화정책",
+      "targetId": "topic:수요·공급과 시장균형",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_111",
+      "sourceId": "subtopic:환율·국제수지",
+      "targetId": "topic:국제무역",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_112",
+      "sourceId": "subtopic:지방자치",
+      "targetId": "topic:헌법·기본권",
+      "type": "part_of",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_113",
+      "sourceId": "topic:수요·공급과 시장균형",
+      "targetId": "topic:GDP·국민소득",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_114",
+      "sourceId": "topic:GDP·국민소득",
+      "targetId": "topic:경제성장·경기변동",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_115",
+      "sourceId": "topic:GDP·국민소득",
+      "targetId": "topic:환율·국제수지",
+      "type": "prerequisite",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_116",
+      "sourceId": "topic:수요·공급과 시장균형",
+      "targetId": "topic:재정·조세정책",
+      "type": "prerequisite",
+      "weight": 0.5
+    },
+    {
+      "id": "edge_117",
+      "sourceId": "topic:수요·공급과 시장균형",
+      "targetId": "topic:금융·통화정책",
+      "type": "prerequisite",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_118",
+      "sourceId": "topic:금융·통화정책",
+      "targetId": "topic:일본경제사",
+      "type": "prerequisite",
+      "weight": 0.5
+    },
+    {
+      "id": "edge_119",
+      "sourceId": "topic:국제무역",
+      "targetId": "topic:환율·국제수지",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_120",
+      "sourceId": "topic:헌법·기본권",
+      "targetId": "topic:통치기구",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_121",
+      "sourceId": "topic:헌법·기본권",
+      "targetId": "topic:사법·재판",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_122",
+      "sourceId": "topic:통치기구",
+      "targetId": "topic:선거·정당",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_123",
+      "sourceId": "topic:통치기구",
+      "targetId": "topic:지방자치",
+      "type": "prerequisite",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_124",
+      "sourceId": "topic:정치사상",
+      "targetId": "topic:헌법·기본권",
+      "type": "prerequisite",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_125",
+      "sourceId": "topic:시민혁명",
+      "targetId": "topic:산업혁명·자본주의",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_126",
+      "sourceId": "topic:산업혁명·자본주의",
+      "targetId": "topic:제국주의·식민지",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_127",
+      "sourceId": "topic:제국주의·식민지",
+      "targetId": "topic:세계대전",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_128",
+      "sourceId": "topic:세계대전",
+      "targetId": "topic:냉전",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "id": "edge_129",
+      "sourceId": "topic:지형·판구조",
+      "targetId": "topic:기후·케펜구분",
+      "type": "prerequisite",
+      "weight": 0.5
+    },
+    {
+      "id": "edge_130",
+      "sourceId": "topic:기후·케펜구분",
+      "targetId": "topic:자원·농업",
+      "type": "prerequisite",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_131",
+      "sourceId": "topic:기후·케펜구분",
+      "targetId": "topic:인구·도시화",
+      "type": "prerequisite",
+      "weight": 0.5
+    },
+    {
+      "id": "edge_132",
+      "sourceId": "topic:냉전",
+      "targetId": "topic:국제정치·국제기구",
+      "type": "related",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_133",
+      "sourceId": "topic:세계대전",
+      "targetId": "topic:국제정치·국제기구",
+      "type": "related",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_134",
+      "sourceId": "topic:산업혁명·자본주의",
+      "targetId": "topic:경제성장·경기변동",
+      "type": "related",
+      "weight": 0.7
+    },
+    {
+      "id": "edge_135",
+      "sourceId": "topic:일본경제사",
+      "targetId": "topic:일본근대사",
+      "type": "related",
+      "weight": 0.8
+    },
+    {
+      "id": "edge_136",
+      "sourceId": "topic:자원·농업",
+      "targetId": "topic:국제무역",
+      "type": "related",
+      "weight": 0.6
+    },
+    {
+      "id": "edge_137",
+      "sourceId": "topic:환경·생태",
+      "targetId": "topic:환경문제",
+      "type": "related",
+      "weight": 0.7
+    }
+  ]
+}

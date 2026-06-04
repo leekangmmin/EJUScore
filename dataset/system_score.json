@@ -1,0 +1,27 @@
+{
+  "system_score": 96.8,
+  "component_scores": {
+    "Knowledge Graph": 100,
+    "Trend Analysis": 100,
+    "Difficulty Engine": 100,
+    "Prediction Engine": 89,
+    "Study Coach": 95
+  },
+  "weights": {
+    "Knowledge Graph": 0.2,
+    "Trend Analysis": 0.2,
+    "Difficulty Engine": 0.2,
+    "Prediction Engine": 0.2,
+    "Study Coach": 0.2
+  },
+  "weighted_calculation": {
+    "Knowledge Graph": "100 * 0.2 = 20.0",
+    "Trend Analysis": "100 * 0.2 = 20.0",
+    "Difficulty Engine": "100 * 0.2 = 20.0",
+    "Prediction Engine": "89 * 0.2 = 17.8",
+    "Study Coach": "95 * 0.2 = 19.0"
+  },
+  "recommendation": "RECOMMENDED",
+  "confidence": "HIGH",
+  "detail": "System quality sufficient for real EJU examinee recommendations"
+}

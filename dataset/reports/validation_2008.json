@@ -1,0 +1,20 @@
+{
+  "pdf": "2008平成20年第2回文综.pdf",
+  "pages": 23,
+  "questions": 23,
+  "tables": 23,
+  "graphs": 0,
+  "maps": 0,
+  "diagrams": 0,
+  "timelines": 0,
+  "confidence_average": 0.8709,
+  "confidence_min": 0.727,
+  "confidence_max": 0.93,
+  "low_confidence_count": 3,
+  "validation": "PASS",
+  "warnings": [
+    "3 questions have low confidence"
+  ],
+  "errors": [],
+  "timestamp": "2026-06-01T23:45:15.235988"
+}

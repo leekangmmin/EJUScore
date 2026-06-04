@@ -1,25 +1,51 @@
-// Copyright (c) 2025 이강민 (Lee Kangmin) — EJU Score Tracker Service Worker
-const CACHE_NAME = 'eju-score-v2';
-const ASSETS = ['./', './index.html', './manifest.json'];
+// Copyright (c) 2025 이강민 (Lee Kangmin) — EJU Score Tracker Service Worker (PWA v2)
+const CACHE_NAME = 'eju-score-v3';
+const STATIC_CACHE = 'eju-static-v3';
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(ASSETS)).catch(() => {}));
   self.skipWaiting();
+  // 캐시는 activate에서 lazy-load 방식으로 처리
 });
 
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
-    )   
+      Promise.all(keys.filter(k => k !== CACHE_NAME && k !== STATIC_CACHE).map(k => caches.delete(k)))
+    ).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
+
+  const url = new URL(e.request.url);
+
+  // ── 같은 origin의 JS/CSS/woff2 파일 → Cache-First ──
+  if (url.origin === self.location.origin && /\.(js|css|woff2)$/i.test(url.pathname)) {
+    e.respondWith(
+      caches.open(STATIC_CACHE).then(cache =>
+        cache.match(e.request).then(cached => {
+          const fetchPromise = fetch(e.request).then(res => {
+            if (res.ok) cache.put(e.request, res.clone());
+            return res;
+          }).catch(() => cached);
+          return cached || fetchPromise;
+        })
+      )
+    );
+    return;
+  }
+
+  // ── 그 외 모든 요청 → Network-First, fallback to cache ──
   e.respondWith(
-    fetch(e.request).catch(() => caches.match(e.request))
+    fetch(e.request).then(res => {
+      // HTML/JSON/매니페스트는 조건부 캐싱
+      if (res.ok && (url.pathname.endsWith('.html') || url.pathname.endsWith('manifest.json'))) {
+        const copy = res.clone();
+        caches.open(CACHE_NAME).then(c => c.put(e.request, copy));
+      }
+      return res;
+    }).catch(() => caches.match(e.request).then(cached => cached || caches.match('./index.html')))
   );
 });
 
@@ -40,11 +66,12 @@ self.addEventListener('push', e => {
 
 self.addEventListener('notificationclick', e => {
   e.notification.close();
+  const targetUrl = e.notification.data?.url || self.location.origin + self.location.pathname.replace(/\/sw\.js$/, '/');
   e.waitUntil(
     clients.matchAll({ type: 'window' }).then(list => {
-      const existing = list.find(c => c.url === e.notification.data?.url);
+      const existing = list.find(c => c.url.startsWith(targetUrl));
       if (existing) return existing.focus();
-      return clients.openWindow(e.notification.data?.url || '/');
+      return clients.openWindow(targetUrl);
     })
   );
 });

@@ -1,0 +1,20 @@
+{
+  "pdf": "2005平成17年第2回文综.pdf",
+  "pages": 20,
+  "questions": 20,
+  "tables": 20,
+  "graphs": 0,
+  "maps": 0,
+  "diagrams": 0,
+  "timelines": 0,
+  "confidence_average": 0.8502,
+  "confidence_min": 0.6065,
+  "confidence_max": 0.9125,
+  "low_confidence_count": 3,
+  "validation": "PASS",
+  "warnings": [
+    "3 questions have low confidence"
+  ],
+  "errors": [],
+  "timestamp": "2026-06-01T23:39:00.923953"
+}

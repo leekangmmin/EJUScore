@@ -1,0 +1,20 @@
+{
+  "pdf": "平成16年第2回文综_00.pdf",
+  "pages": 50,
+  "questions": 60,
+  "tables": 50,
+  "graphs": 0,
+  "maps": 0,
+  "diagrams": 0,
+  "timelines": 0,
+  "confidence_average": 0.7166,
+  "confidence_min": 0.2662,
+  "confidence_max": 0.9195,
+  "low_confidence_count": 37,
+  "validation": "FAIL",
+  "warnings": [],
+  "errors": [
+    "Over 30% of questions have low confidence"
+  ],
+  "timestamp": "2026-06-01T23:39:00.923289"
+}

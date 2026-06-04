@@ -1,0 +1,20 @@
+{
+  "pdf": "2009平成21年第2回文综.pdf",
+  "pages": 21,
+  "questions": 24,
+  "tables": 21,
+  "graphs": 0,
+  "maps": 0,
+  "diagrams": 0,
+  "timelines": 0,
+  "confidence_average": 0.8459,
+  "confidence_min": 0.7287,
+  "confidence_max": 0.925,
+  "low_confidence_count": 4,
+  "validation": "PASS",
+  "warnings": [
+    "4 questions have low confidence"
+  ],
+  "errors": [],
+  "timestamp": "2026-06-01T23:45:15.236323"
+}

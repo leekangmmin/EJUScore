@@ -1,28 +1,350 @@
 <!doctype html>
-<!-- Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License -->
-<html lang="ko">
+<!--
+  ═══════════════════════════════════════════════════════════════════
+  EJU Score Tracker — EJU(日本留学試験) 모의고사 점수 AI 분석 & 관리 앱
+  일본유학생, EJU 준비생을 위한 올인원 학습 도구
+  Copyright (c) 2025 이강민 (Lee Kangmin) — github.com/leekangmmin — MIT License
+  ═══════════════════════════════════════════════════════════════════
+-->
+<html lang="ko" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/EJUScore/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="이강민 (Lee Kangmin)" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self' blob: https://huggingface.co https://cdn-lfs.huggingface.co; worker-src 'self' blob:; media-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- ════════════════════════════════════════════════
+         PRIMARY META — 검색 엔진 최적화 (200+ 연관 검색어)
+         ════════════════════════════════════════════════ -->
+    <title>EJU Score Tracker — 日本留学試験 점수 관리 · AI 오답 분석 · PWA</title>
+
+    <meta name="description" content="EJU 일본유학시험 모의고사 점수 기록, 회차별 성장 추이, AI 시험지 분석, 종합과목 38문항 오답 진단. macOS·iOS·Android PWA 무료 앱." />
+
+    <meta name="keywords" content="EJU, 日本留学試験, 일본유학시험, EJU 점수, EJU 성적, EJU 모의고사, EJU 대비, EJU 공부법, EJU 종합과목, EJU 일본어, EJU 수학, EJU 오답, EJU 분석, EJU 앱, EJU アプリ, 日本留学試験 対策, 日本留学試験 スコア, 日本留学試験 総合科目, 早稲田 留学, 日本 大学 留学, 유학 시험, 일본어 시험, JLPT N1, 일본 대학 입시, 점수 관리 앱, score tracker, EJU score, EJU practice, study Japan" />
+
+    <meta name="author" content="이강민 (Lee Kangmin) — github.com/leekangmmin" />
     <meta name="copyright" content="Copyright (c) 2025 이강민 (Lee Kangmin)" />
-    <meta name="description" content="EJU(日本留学試験) 모의고사 점수 관리 앱 — 일본어·종합과목 점수 추적, 오답 분석, 성장률 시각화" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <meta name="naverbot" content="index, follow, max-snippet:-1" />
+    <meta http-equiv="Content-Language" content="ko, ja" />
+
+    <!-- ── Canonical & Hreflang ── -->
+    <link rel="canonical" href="https://leekangmmin.github.io/EJUScore/" />
+    <link rel="alternate" hreflang="ko" href="https://leekangmmin.github.io/EJUScore/" />
+    <link rel="alternate" hreflang="ja" href="https://leekangmmin.github.io/EJUScore/" />
+    <link rel="alternate" hreflang="x-default" href="https://leekangmmin.github.io/EJUScore/" />
+
+    <!-- ── Premium Type: Syne Display 800 + DM Mono ── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=DM+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- ── Icons & PWA ── -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="manifest" href="./manifest.json" />
-    <meta name="theme-color" content="#4f8ef7" />
+    <meta name="theme-color" content="#3182F6" />
     <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="./icon-512.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="EJU스코어" />
-    <link rel="apple-touch-icon" href="./icon-192.png" />
-    <title>EJU Score Tracker</title>
-    <script type="module" crossorigin src="/EJUScore/assets/index-BJyD0YV6.js"></script>
-    <link rel="modulepreload" crossorigin href="/EJUScore/assets/rolldown-runtime-S-ySWqyJ.js">
-    <link rel="modulepreload" crossorigin href="/EJUScore/assets/vendor-react-rFX8zPmr.js">
-    <link rel="modulepreload" crossorigin href="/EJUScore/assets/vendor-recharts-DFNsvHev.js">
-    <link rel="stylesheet" crossorigin href="/EJUScore/assets/index-58NRw3i_.css">
-  </head>
+
+    <!-- ── Open Graph (Facebook, Slack, Discord, KakaoTalk, etc.) ── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="EJU Score Tracker" />
+    <meta property="og:url" content="https://leekangmmin.github.io/EJUScore/" />
+    <meta property="og:title" content="EJU Score Tracker — 日本留学試験 점수 관리 · AI 오답 분석 · PWA" />
+    <meta property="og:description" content="EJU 일본유학시험 모의고사 점수 기록, 회차별 성장 추이, AI 시험지 분석, 종합과목 38문항 오답 진단. macOS·iOS·Android PWA 무료 앱." />
+    <meta property="og:image" content="https://leekangmmin.github.io/EJUScore/app-cover.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="EJU Score Tracker — EJU 모의고사 점수 AI 분석 앱 프리미엄 커버" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- ── Twitter Card ── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://leekangmmin.github.io/EJUScore/" />
+    <meta name="twitter:title" content="EJU Score Tracker — 日本留学試験 점수 관리 · AI 오답 분석 · PWA" />
+    <meta name="twitter:description" content="EJU 일본유학시험 모의고사 점수 기록, 회차별 성장 추이, AI 시험지 분석, 종합과목 38문항 오답 진단. macOS·iOS·Android PWA 무료 앱." />
+    <meta name="twitter:image" content="https://leekangmmin.github.io/EJUScore/app-cover.svg" />
+    <meta name="twitter:image:alt" content="EJU Score Tracker — EJU 모의고사 점수 AI 분석 앱 프리미엄 커버" />
+
+    <!-- ── Search Console (소유권 인증 — 직접 등록 후 주석 해제) ── -->
+    <!-- Google: https://search.google.com/search-console -->
+    <!-- <meta name="google-site-verification" content="여기에_인증_코드_입력" /> -->
+    <!-- Naver: https://searchadvisor.naver.com -->
+    <!-- <meta name="naver-site-verification" content="여기에_인증_코드_입력" /> -->
+
+    <!-- ════════════════════════════════════════════════
+         JSON-LD: STRUCTURED DATA (Schema.org)
+         ════════════════════════════════════════════════ -->
+
+    <!-- WebApplication — 앱 정보 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "EJU Score Tracker",
+      "alternateName": ["EJU 스코어 트래커", "EJU스코어", "EJU 점수 관리 앱", "EJU 모의고사 트래커", "일본유학시험 점수 관리"],
+      "url": "https://leekangmmin.github.io/EJUScore/",
+      "description": "EJU 일본유학시험 모의고사 점수 기록, 회차별 성장 추이, AI 시험지 분석, 종합과목 38문항 오답 진단. macOS·iOS·Android PWA 무료 앱.",
+      "applicationCategory": "EducationApplication",
+      "operatingSystem": "Android, iOS, Windows, macOS, Linux (PWA)",
+      "browserRequirements": "Requires modern browser with JavaScript enabled",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW",
+        "availability": "https://schema.org/InStock"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "이강민 (Lee Kangmin)",
+        "url": "https://github.com/leekangmmin"
+      },
+      "inLanguage": ["ko", "ja", "en"],
+      "keywords": "EJU, 일본유학시험, 모의고사, 점수관리, AI분석, 일본어, 종합과목, 오답진단, 기출트렌드, PWA"
+    }
+    </script>
+
+    <!-- BreadcrumbList — 사이트 경로 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "EJU Score Tracker",
+        "item": "https://leekangmmin.github.io/EJUScore/"
+      }]
+    }
+    </script>
+
+    <!-- FAQPage — 자주 묻는 질문 (검색 결과에 FAQ 리치 스니펫 표시) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "EJU Score Tracker는 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EJU Score Tracker는 EJU(일본유학시험/日本留学試験) 모의고사 점수를 관리하고 AI로 분석하는 무료 오픈소스 웹앱입니다. 일본어 독해/청해 점수와 종합과목 점수를 기록하고, 오답을 AI가 진단하며, 성장률을 그래프로 시각화합니다. 20개년 EJU 기출 트렌드 분석 기능과 D-day 알림도 제공합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "EJU Score Tracker는 어떻게 설치하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "아이폰(iOS)은 Safari 브라우저로 접속 후 공유 버튼 → '홈 화면에 추가'를 선택하면 앱처럼 실행됩니다. 안드로이드는 Chrome에서 '홈 화면에 추가' 또는 '앱 설치'를 선택하세요. Windows/PC는 Edge/Chrome에서 주소창 우측 메뉴 → '앱으로 설치'를 선택하면 됩니다. 설치 후 오프라인에서도 사용 가능한 PWA(Progressive Web App)입니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "EJU Score Tracker는 무료인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, 완전 무료입니다. 오픈소스(MIT License)로 GitHub에 공개되어 있어 누구나 소스코드를 확인하고 수정할 수 있습니다. 별도의 가입이나 로그인이 필요없으며, 모든 데이터는 사용자의 브라우저 로컬 저장소에 안전하게 보관됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "EJU Score Tracker로 어떤 점수를 관리할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EJU 일본어(독해/청해) 점수와 종합과목 점수를 관리할 수 있습니다. 일본어는 독해 최대 200점, 청해 최대 200점까지 기록 가능하며, 종합과목은 최대 200점까지 기록 가능합니다. 점수 입력 후 성장률 그래프, 오답 분석, AI 진단 리포트를 제공합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "EJU 점수는 어떻게 입력하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "대시보드에서 '점수 입력' 버튼을 클릭하여 시험일, 일본어 독해/청해 점수, 종합과목 점수를 입력할 수 있습니다. 빠른 입력 기능을 지원하며, 과거에 응시한 모든 모의고사 점수를 저장하고 추적할 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "EJU 20개년 기출 트렌드 분석은 어떤 기능인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2006년부터 2025년까지 20년간의 EJU 종합과목과 수학 코스1 기출문제를 분석하여 빈출 주제와 출제 경향을 제공합니다. AI가 각 년도별 킬러 문제와 주요 테마를 분석하고, 사용자가 업로드한 파일을 OCR 분석하여 어떤 주제가 자주 출제되는지 가중치 카드로 시각화합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "EJU 시험 D-day 알림을 받을 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, 설정에서 EJU 시험일을 등록하면 D-7, D-3, D-1, D-day에 브라우저 알림으로 자동 알림을 받을 수 있습니다. PWA로 설치하면 앱이 실행 중이 아닐 때도 푸시 알림이 도착합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "EJU Score Tracker의 AI 오답 진단은 어떻게 작동하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "틀린 문제를 입력하면 AI가 4가지 오답 유형(개념 혼동, 사료 해석 오류, 그래프 변곡점 오판, 제도 구조 이해 부족) 중 가장 가능성 높은 원인을 진단합니다. 각 오답에 대해 마인드맵과 우선순위별 처방전을 제공하여 효과적인 복습을 도와줍니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "데이터는 안전하게 보관되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "모든 데이터는 사용자 브라우저의 localStorage에만 저장됩니다. 외부 서버로 전송되지 않으며, 백업 기능을 통해 JSON 파일로 내보내기/가져오기가 가능합니다. 별도의 회원가입이나 개인정보 수집이 없어 안전합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "EJU Score Tracker는 어떤 언어를 지원하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "한국어를 기본으로 지원하며, EJU 시험 특성상 일본어(한자, 가나) 용어도 함께 표시됩니다. 일본유학을 준비하는 한국인 유학생을 주 대상으로 설계되었습니다."
+          }
+        }
+      ]
+    }
+    </script>
+
+      <script type="module" crossorigin src="/EJUScore/assets/index-Cg9a_A7b.js"></script>
+      <link rel="modulepreload" crossorigin href="/EJUScore/assets/rolldown-runtime-BM3Ffeng.js">
+      <link rel="modulepreload" crossorigin href="/EJUScore/assets/vendor-framer-D8u0Pg-a.js">
+      <link rel="modulepreload" crossorigin href="/EJUScore/assets/vendor-react-CqNvoVeJ.js">
+      <link rel="modulepreload" crossorigin href="/EJUScore/assets/engineInitializer-B3_AANog.js">
+      <link rel="modulepreload" crossorigin href="/EJUScore/assets/storage-C8cEectL.js">
+      <link rel="stylesheet" crossorigin href="/EJUScore/assets/index-BsjE589e.css">
+    </head>
+
   <body>
-    <div id="root"></div>
+    <!-- ════════════════════════════════════════════════
+         NOSCRIPT: JavaScript 미지원 환경/크롤러 전용 콘텐츠
+         SPA는 JS로 렌더링되므로, 검색엔진 크롤러가 읽을 수 있는
+         텍스트 콘텐츠를 여기에 제공합니다.
+         ════════════════════════════════════════════════ -->
+    <noscript>
+      <div style="padding: 40px 20px; max-width: 800px; margin: 0 auto; font-family: sans-serif; line-height: 1.8;">
+        <h1>EJU Score Tracker — EJU(일본유학시험) 모의고사 점수 AI 분석 &amp; 관리 앱</h1>
+        <p>이 앱은 JavaScript를 사용합니다. JavaScript를 활성화하거나 최신 브라우저로 접속해 주세요.</p>
+
+        <hr />
+
+        <h2>EJU Score Tracker 주요 기능</h2>
+
+        <h3>📊 EJU 점수 관리 &amp; 추적</h3>
+        <p>EJU(일본유학시험/日本留学試験) 모의고사 점수를 체계적으로 관리하세요. 일본어 독해(Reading) 최대 200점, 일본어 청해(Listening) 최대 200점, 종합과목(Comprehensive Subject) 최대 200점까지 기록할 수 있습니다.</p>
+        <ul>
+          <li>시험별 점수 입력 및 저장 — 날짜, 과목, 점수 기록</li>
+          <li>성장률 그래프 — LineChart로 점수 변화 추이 시각화</li>
+          <li>과목별 고득점/저득점 구간 분석</li>
+          <li>전체 시험 통계 — 평균, 최고점, 최저점, 표준편차</li>
+        </ul>
+
+        <h3>🤖 AI 오답 진단 리포트</h3>
+        <p>틀린 문제를 입력하면 EJU 종합과목 38문항(지리 8문항, 역사 8문항, 정치 8문항, 경제 8문항, 사회 6문항) 각각에 대해 AI가 오답 원인을 분석합니다.</p>
+        <ul>
+          <li>4가지 오답 유형 진단: 개념 혼동, 사료 해석 오류, 그래프 변곡점 오판, 제도 구조 이해 부족</li>
+          <li>오답 마인드맵 — 연관 개념 시각화</li>
+          <li>우선순위별 처방전 — 집중 복습 항목 추천</li>
+        </ul>
+
+        <h3>📈 EJU 20개년 기출 트렌드 AI 분석</h3>
+        <p>2006년부터 2025년까지 20년간의 EJU 기출문제를 AI가 분석합니다. 종합과목(정치, 경제, 사회, 지리, 역사)과 수학 코스1(식과 계산, 이차함수, 도형과 계량, 경우의 수와 확률, 정수론, 도형의 성질)의 출제 경향을 한눈에 파악하세요.</p>
+        <ul>
+          <li>연도별/주제별 빈출도 가중치 카드</li>
+          <li>OCR 파이프라인 시뮬레이션 — 파일 업로드 → 토큰 추출 → LaTeX 분석 → 시러버스 매칭 → 신뢰도 앙상블</li>
+          <li>코사인 유사도 기반 실시간 신뢰도 점수</li>
+          <li>저신뢰도(85% 미만) 자가 교정 모달</li>
+        </ul>
+
+        <h3>🔔 D-day 시험 알림</h3>
+        <p>EJU 시험일을 등록하면 D-7, D-3, D-1, D-day에 푸시 알림으로 알려드립니다. PWA로 설치하면 앱이 실행 중이 아니어도 알림을 받을 수 있습니다.</p>
+
+        <h3>📱 PWA 크로스 플랫폼 지원</h3>
+        <p>아이폰(iOS Safari → 홈 화면에 추가), 안드로이드(Chrome → 앱 설치), Windows(Edge/Chrome → 앱으로 설치)에서 네이티브 앱처럼 실행됩니다.</p>
+        <ul>
+          <li>오프라인 모드 지원 — Service Worker 캐싱</li>
+          <li>푸시 알림 — D-day, 학습 리마인더</li>
+          <li>독립 실행형 — 브라우저 URL창 없는 앱 모드</li>
+        </ul>
+
+        <hr />
+
+        <h2>EJU 시험 관련 정보</h2>
+        <p>EJU(Examination for Japanese University Admission for International Students / 日本留学試験)는 일본의 대학(학부)에 입학을 원하는 외국인 유학생을 대상으로 하는 시험입니다. 일본어 능력과 기초 학력을 평가합니다.</p>
+
+        <h3>EJU 시험 과목</h3>
+        <ul>
+          <li><strong>일본어 (日本語)</strong>: 독해 200점, 청해 200점, 총 400점</li>
+          <li><strong>종합과목 (総合科目)</strong>: 정치, 경제, 사회, 지리, 역사 — 200점</li>
+          <li><strong>수학 코스1 (数学コース1)</strong>: 문과 계열 — 200점</li>
+          <li><strong>수학 코스2 (数学コース2)</strong>: 이과 계열 — 200점</li>
+          <li><strong>이과 (理科)</strong>: 물리, 화학, 생물 중 2과목 — 200점</li>
+        </ul>
+
+        <h3>EJU 관련 검색 키워드</h3>
+        <p>EJU 점수, EJU 모의고사, EJU 기출문제, EJU 시험일정, EJU 접수, EJU 일본어, EJU 종합과목, EJU 수학, 일본유학시험, 일본대학 입시, 일본유학 준비, JLPT, 일본어능력시험, 일본어 독해, 일본어 청해, 일본 대학교, 동경대, 도쿄대, 교토대, 와세다대, 게이오대, 일본국공립대학, 일본사립대학, 유학생 시험, 류학시험.</p>
+
+        <hr />
+
+        <p><strong>EJU Score Tracker</strong> — Copyright (c) 2025 이강민 (Lee Kangmin) — <a href="https://github.com/leekangmmin/EJUScore">GitHub 저장소</a> — MIT License</p>
+        <p>EJU Score Tracker는 EJU(일본유학시험) 준비생을 위한 무료 오픈소스 점수 관리 앱입니다. 일본 대학교 입시를 준비하는 모든 유학생을 응원합니다.</p>
+      </div>
+    </noscript>
+
+    <!-- ════════════════════════════════════════════════
+         REACT APP MOUNT POINT
+         ════════════════════════════════════════════════ -->
+    <div id="root">
+      <!-- 프리미엄 로딩 스플래시 — JS 실행 전 표시 -->
+      <div class="eju-splash">
+        <div class="splash-inner">
+          <div class="splash-logo-wrap">
+            <div class="splash-logo-glow"></div>
+            <div class="splash-logo">
+              <svg width="32" height="32" viewBox="0 0 30 30" fill="none">
+                <path d="M0,20 L0,10 L15,2 L30,10 L30,20" stroke="url(#splashBrand)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+                <path d="M0,10 L15,2 L30,10" fill="url(#splashBrand)" opacity="0.15"/>
+                <path d="M30,10 L23,7 L21,20" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <div class="splash-brand">
+            <span class="splash-eju">EJU</span>
+            <span class="splash-tracker">SCORE TRACKER</span>
+          </div>
+          <div class="splash-loader">
+            <div class="splash-loader-bar"></div>
+          </div>
+          <div class="splash-tag">일본유학시험 · AI 분석 · 기출 트렌드</div>
+        </div>
+      </div>
+      <style>
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes splashPulse { 0%,100%{opacity:0.3} 50%{opacity:0.8} }
+        @keyframes splashSlide { 0%{transform:translateX(-100%)} 100%{transform:translateX(400%)} }
+        .eju-splash{display:flex;align-items:center;justify-content:center;min-height:100vh;min-height:100dvh;background:#FFFFFF;color:#191F28;font-family:'Pretendard',system-ui,-apple-system,sans-serif;flex-direction:column;gap:16px;background-image:radial-gradient(ellipse 55% 35% at 15% 20%,rgba(49,130,246,0.07) 0%,transparent 60%),radial-gradient(ellipse 45% 35% at 85% 80%,rgba(49,130,246,0.04) 0%,transparent 60%)}
+        .splash-inner{display:flex;flex-direction:column;align-items:center;gap:24px}
+        .splash-logo-wrap{position:relative;width:72px;height:72px}
+        .splash-logo-glow{position:absolute;inset:-8px;background:linear-gradient(135deg,#3182F6,#1B64DA);border-radius:24px;filter:blur(12px);opacity:0.25;animation:splashPulse 2.4s ease-in-out infinite}
+        .splash-logo{width:72px;height:72px;border-radius:22px;background:linear-gradient(145deg,#3182F6,#1B64DA);border:none;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 10px 28px rgba(49,130,246,0.32)}
+        .splash-brand{display:flex;flex-direction:column;align-items:center;gap:4px}
+        .splash-eju{font-size:42px;font-weight:800;letter-spacing:-2px;background:linear-gradient(135deg,#3182F6,#1B64DA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-family:'Pretendard',sans-serif}
+        .splash-tracker{font-size:13px;font-weight:600;letter-spacing:8px;color:#8B95A1;font-family:'Pretendard',sans-serif}
+        .splash-loader{width:160px;height:3px;border-radius:3px;background:#EAEDF0;overflow:hidden;margin-top:4px}
+        .splash-loader-bar{height:100%;width:25%;border-radius:3px;background:linear-gradient(90deg,#3182F6,#1B64DA);animation:splashSlide 1.2s ease-in-out infinite}
+        .splash-tag{font-size:12px;font-weight:400;letter-spacing:2px;color:#B0B8C1;margin-top:4px}
+      </style>
+    </div>
+
+    <!-- ════════════════════════════════════════════════
+         APP ENTRY POINT
+         ════════════════════════════════════════════════ -->
   </body>
 </html>
