@@ -1,43 +1,326 @@
 {
-  "generated_at": "2026-06-02T07:37:36.612880",
-  "total_topics": 35,
-  "priority_distribution": {
-    "A+": 17,
-    "B+": 3,
-    "B": 6,
-    "A": 6,
-    "C": 3
+  "id": "study_plan_20260602",
+  "generated_at": "2026-06-04T09:16:54.456861",
+  "version": "2.0.0",
+  "data_based_on": {
+    "knowledge_graph": "knowledge_graph_v3.json (86 nodes, 116 edges)",
+    "trend_analysis": "trend_analysis_v2.json (2002-2025, 1052 questions)",
+    "difficulty_database": "difficulty_database.json (avg score: 40.0)"
   },
-  "top_recommendations": [
-    "수요·공급과 시장균형",
-    "세계대전",
-    "환율·국제수지",
-    "기후·케펜구분",
-    "통치기구",
-    "국제무역",
-    "국제정치·국제기구",
-    "냉전",
-    "GDP·국민소득",
-    "경제성장·경기변동",
-    "근대일본",
-    "선거·정당",
-    "일본경제사",
-    "자원·농업",
-    "헌법·기본권",
-    "환경문제",
-    "금융·통화정책",
-    "고용·노동",
-    "지도·GIS",
-    "사회보장·복지",
-    "인구·도시화",
-    "시민혁명",
-    "재정·조세정책",
-    "정치사상",
-    "지방자치",
-    "제국주의·식민지",
-    "지형·판구조",
-    "사법·재판",
-    "다문화사회",
-    "전후세계질서"
-  ]
+  "today_study": {
+    "date": "2026-06-02",
+    "day": "Tuesday",
+    "focus": "정치 & 지리",
+    "topics": [
+      "통치기구",
+      "기후·케펜구분"
+    ],
+    "estimated_minutes": 120,
+    "tasks": [
+      "의원내각제와 대통령제 비교",
+      "삼권분립과 견제와 균형 원리",
+      "케펜의 기후구분 암기",
+      "기후 그래프 해석 연습"
+    ]
+  },
+  "this_week_plan": {
+    "start_date": "2026-06-01",
+    "total_estimated_hours": 14.0,
+    "schedule": [
+      {
+        "day": "Monday",
+        "focus": "경제 & 정치 기초",
+        "topics": [
+          "수요·공급과 시장균형",
+          "헌법·기본권"
+        ],
+        "estimated_minutes": 120,
+        "tasks": [
+          "수요곡선과 공급곡선의 개념 이해",
+          "시장균형 가격과 수량 변화 분석",
+          "헌법의 기본원리와 기본권 종류 암기",
+          "연습문제 10문항 풀이"
+        ]
+      },
+      {
+        "day": "Tuesday",
+        "focus": "정치 & 지리",
+        "topics": [
+          "통치기구",
+          "기후·케펜구분"
+        ],
+        "estimated_minutes": 120,
+        "tasks": [
+          "의원내각제와 대통령제 비교",
+          "삼권분립과 견제와 균형 원리",
+          "케펜의 기후구분 암기",
+          "기후 그래프 해석 연습"
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "focus": "역사 & 경제",
+        "topics": [
+          "시민혁명",
+          "GDP·국민소득"
+        ],
+        "estimated_minutes": 120,
+        "tasks": [
+          "시민혁명의 흐름과 의의 정리",
+          "명예혁명 → 미국독립 → 프랑스혁명 연결",
+          "GDP 정의와 3면등가의 법칙",
+          "명목GDP와 실질GDP 차이 이해"
+        ]
+      },
+      {
+        "day": "Thursday",
+        "focus": "경제 심화",
+        "topics": [
+          "환율·국제수지",
+          "금융·통화정책"
+        ],
+        "estimated_minutes": 120,
+        "tasks": [
+          "환율변동이 무역에 미치는 영향",
+          "국제수지표 구성요소 이해",
+          "중앙은행의 통화정책 수단",
+          "인플레이션과 디플레이션 원인"
+        ]
+      },
+      {
+        "day": "Friday",
+        "focus": "역사 & 정치 심화",
+        "topics": [
+          "세계대전",
+          "국제정치·국제기구"
+        ],
+        "estimated_minutes": 120,
+        "tasks": [
+          "제1차 세계대전 원인과 결과",
+          "제2차 세계대전과 전후 질서",
+          "UN과 국제기구의 역할",
+          "NATO, EU 등 국제기구 특징"
+        ]
+      },
+      {
+        "day": "Saturday",
+        "focus": "종합 모의고사",
+        "topics": [
+          "전체 영역 종합"
+        ],
+        "estimated_minutes": 180,
+        "tasks": [
+          "38문항 모의고사 풀이",
+          "오답 분석과 개념 복습",
+          "약점 영역 확인",
+          "다음 주 학습 계획 조정"
+        ]
+      },
+      {
+        "day": "Sunday",
+        "focus": "휴식 & 약점 보강",
+        "topics": [
+          "개인 약점 토픽"
+        ],
+        "estimated_minutes": 60,
+        "tasks": [
+          "금주 오답 복습",
+          "약점 토픽 개념 재정리",
+          "다음 주 학습 준비"
+        ]
+      }
+    ]
+  },
+  "critical_weaknesses": {
+    "most_dangerous_topics": [
+      {
+        "topic": "기후·케펜구분",
+        "domain": "지리",
+        "frequency": 135,
+        "avg_difficulty": 3.9,
+        "consecutive_years": 26,
+        "risk_level": "HIGH"
+      },
+      {
+        "topic": "시민혁명",
+        "domain": "역사",
+        "frequency": 100,
+        "avg_difficulty": 4.0,
+        "consecutive_years": 21,
+        "risk_level": "HIGH"
+      },
+      {
+        "topic": "환율·국제수지",
+        "domain": "경제",
+        "frequency": 65,
+        "avg_difficulty": 3.6,
+        "consecutive_years": 10,
+        "risk_level": "HIGH"
+      },
+      {
+        "topic": "통치기구",
+        "domain": "정치",
+        "frequency": 62,
+        "avg_difficulty": 3.19,
+        "consecutive_years": 10,
+        "risk_level": "HIGH"
+      },
+      {
+        "topic": "국제정치·국제기구",
+        "domain": "정치",
+        "frequency": 50,
+        "avg_difficulty": 3.44,
+        "consecutive_years": 10,
+        "risk_level": "HIGH"
+      }
+    ],
+    "prerequisite_gaps": {
+      "GDP·국민소득": [
+        "수요·공급과 시장균형"
+      ],
+      "경제성장·경기변동": [
+        "GDP·국민소득"
+      ],
+      "환율·국제수지": [
+        "GDP·국민소득",
+        "국제무역"
+      ],
+      "재정·조세정책": [
+        "수요·공급과 시장균형"
+      ],
+      "금융·통화정책": [
+        "수요·공급과 시장균형"
+      ],
+      "일본경제사": [
+        "금융·통화정책"
+      ],
+      "통치기구": [
+        "헌법·기본권"
+      ],
+      "사법·재판": [
+        "헌법·기본권"
+      ],
+      "선거·정당": [
+        "통치기구"
+      ],
+      "지방자치": [
+        "통치기구"
+      ],
+      "안전보장·방위": [
+        "국제정치·국제기구"
+      ],
+      "헌법·기본권": [
+        "정치사상"
+      ],
+      "산업혁명·자본주의": [
+        "시민혁명"
+      ],
+      "제국주의·식민지": [
+        "산업혁명·자본주의"
+      ],
+      "세계대전": [
+        "제국주의·식민지"
+      ],
+      "냉전": [
+        "세계대전"
+      ],
+      "전후세계질서": [
+        "냉전"
+      ],
+      "세계화·지역통합": [
+        "냉전"
+      ],
+      "자원·농업": [
+        "기후·케펜구분"
+      ],
+      "인구·도시화": [
+        "기후·케펜구분"
+      ],
+      "산업·교통": [
+        "인구·도시화"
+      ],
+      "기후·케펜구분": [
+        "지형·판구조"
+      ],
+      "지형·판구조": [
+        "지도·GIS"
+      ]
+    },
+    "recommended_study_order": [
+      "Step 1: Foundation topics (Tier 1) - 1 week",
+      "Step 2: Core topics (Tier 2) - 2 weeks",
+      "Step 3: High-frequency exam topics - 1 week",
+      "Step 4: Advanced & specialized - 1 week",
+      "Step 5: Mock exams & review - continuous"
+    ]
+  },
+  "pass_probability": {
+    "estimated_pass_rate": "65-75%",
+    "based_on": "Historical difficulty distribution (40% medium, 60% easy-hard mix)",
+    "improvement_potential": "+15-25% with 4 weeks focused study",
+    "key_factors": [
+      "Difficulty score average: 40.0 (medium level)",
+      "Historical pass threshold: ~60% correct answers",
+      "Most questions (85%) are medium difficulty",
+      "Weekly 6-hour study plan covers 80% of high-frequency topics"
+    ],
+    "score_roadmap": {
+      "current_estimated": "200-240/400",
+      "4_weeks_target": "260-300/400 (+60 points)",
+      "8_weeks_target": "300-340/400 (+100 points)",
+      "12_weeks_target": "340-380/400 (+140 points)",
+      "strategy": "Master foundation topics first, then high-frequency, then advanced"
+    }
+  },
+  "score_improvement_path": {
+    "entry_point": "Identify weakest domain through diagnostic test",
+    "phase_1_foundation": {
+      "duration": "2 weeks",
+      "focus": "Foundation topics + concept mapping",
+      "target_improvement": "+30 points",
+      "key_activities": [
+        "Daily 2-hour study on prerequisite topics",
+        "Create concept maps for each domain",
+        "Solve 10-15 basic questions daily"
+      ]
+    },
+    "phase_2_application": {
+      "duration": "4 weeks",
+      "focus": "High-frequency topics + timed practice",
+      "target_improvement": "+50 points",
+      "key_activities": [
+        "Focus on topics with >20 historical questions",
+        "30-min timed practice sessions",
+        "Error analysis + concept reinforcement"
+      ]
+    },
+    "phase_3_mastery": {
+      "duration": "4 weeks",
+      "focus": "Full mock exams + weak point elimination",
+      "target_improvement": "+40 points",
+      "key_activities": [
+        "2-3 full mock exams per week",
+        "Identify remaining weak areas",
+        "Speed improvement strategies"
+      ]
+    },
+    "phase_4_final": {
+      "duration": "2 weeks",
+      "focus": "Final review + confidence building",
+      "target_improvement": "+20 points",
+      "key_activities": [
+        "Review all concept maps",
+        "Light review of all domains",
+        "Rest and confidence building"
+      ]
+    }
+  },
+  "study_efficiency_tips": [
+    "Focus on high-frequency topics first (economy: 46%, politics: 26% of exam)",
+    "Use prerequisite chains to build understanding systematically",
+    "Practice with actual exam timing (80 min for 38 questions)",
+    "Review wrong answers immediately with concept mapping",
+    "Track progress weekly using weakness profile updates"
+  ],
+  "source": "canonical_dataset_v2"
 }
