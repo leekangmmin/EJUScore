@@ -45,3 +45,13 @@ main.js.old
 
 # Pre-dedup dataset backups (not source of truth)
 dataset/_backup_pre_dedup/
+
+# Xcode / Electron app builds (generated artifacts)
+EJUScore-updated.app/
+EJUScore/
+
+# Deprecated dataset marker files (not part of canonical data)
+dataset/gold_standard/_DEPRECATED_README.md
+dataset/training/_DEPRECATED_README.md
+dataset/training/embedding_centroids.json
+dataset/_backup_repair_20260604_064459/

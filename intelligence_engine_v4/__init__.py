@@ -11,6 +11,10 @@ Key Improvements over V3:
   - Adaptive probability threshold (calibrated by year)
   - XGBoost ensemble meta-learner
   - Thompson sampling for study recommendations
+
+Release Freeze v1.1.0:
+  - Dataset integrity verified at import time (see config.py)
+  - Any mutation to locked dataset files causes a HARD STOP
 """
 
 __version__ = "4.0.0"

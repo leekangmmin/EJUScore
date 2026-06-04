@@ -1,0 +1,547 @@
+{
+  "version": "1.1.0",
+  "created_at": "2026-06-04T00:23:26.215966+00:00",
+  "description": "EJU Intelligence System - v1.1.0 Release Freeze Lockfile",
+  "canonical_datasets": {
+    "dataset/LOCKFILE.json": {
+      "sha256": "84abc6c16e51f29b3ab93a4a16403670d4b4a4f100e93e976fe8d4761348240d",
+      "record_count": 4
+    },
+    "dataset/comprehensive/2002/exam_2002_r1.json": {
+      "sha256": "50a50fd481023a2d496a72622fd2a621b0c896ac2e229b8ccd400a9a5949982d",
+      "record_count": 24
+    },
+    "dataset/comprehensive/2002/exam_2002_r2.json": {
+      "sha256": "707b40b14a4f33da33c63b298c0e7e4508040f683d996fe2b724da49c5589652",
+      "record_count": 68
+    },
+    "dataset/comprehensive/2003/exam_2003_r1.json": {
+      "sha256": "4dd2362595ce32503a26a1cd483f0ffe55d7d971359ed6b72f8887d474a4a074",
+      "record_count": 32
+    },
+    "dataset/comprehensive/2003/exam_2003_r2.json": {
+      "sha256": "b2c6e3042a6054ca7749287c90348cceb826a0d9b37463ad58a351ad48bb7941",
+      "record_count": 62
+    },
+    "dataset/comprehensive/2004/exam_2004_r1.json": {
+      "sha256": "9294bd124bf9c5f9dc11bd48bd5352e3676d9eafffbdbe8b63724eee3ee7f031",
+      "record_count": 24
+    },
+    "dataset/comprehensive/2004/exam_2004_r2.json": {
+      "sha256": "528d8467fa61ea2102cc7165ce422eb8ace14b24ce7a1ceecb271fc735ecabc0",
+      "record_count": 60
+    },
+    "dataset/comprehensive/2005/exam_2005_r1.json": {
+      "sha256": "a289e1a4616ef8316b08c08dd27d3d1e1a9536d0d1370bd02b784bae8d20d746",
+      "record_count": 22
+    },
+    "dataset/comprehensive/2005/exam_2005_r2.json": {
+      "sha256": "578622a1f4d48c9e50e4cbf2b040d3553d09fee46ccf740bd7ac0a689c243dd0",
+      "record_count": 20
+    },
+    "dataset/comprehensive/2006/exam_2006_r1.json": {
+      "sha256": "11da7294e0b303d0c7b650a1864a81e8d5dd2fc520bee7064a6d0fad7e101fa6",
+      "record_count": 25
+    },
+    "dataset/comprehensive/2006/exam_2006_r2.json": {
+      "sha256": "fe8c06489522b1bda963e86448beeea75f80ca4b5ecf45083d95323185f7e9a3",
+      "record_count": 23
+    },
+    "dataset/comprehensive/2007/exam_2007_r1.json": {
+      "sha256": "22a42aa7c99411485d1e7f64fbf5f71bc1162384d9de1d229914bcaea7302d5b",
+      "record_count": 23
+    },
+    "dataset/comprehensive/2007/exam_2007_r2.json": {
+      "sha256": "54a50d566b4da0a28dd89aa161f3e10811c095fa03de136a064219186e79d9f5",
+      "record_count": 25
+    },
+    "dataset/comprehensive/2008/exam_2008_r1.json": {
+      "sha256": "467feb4545508de572fd147201edc7248f844540d7853ee042cee73bdcd71699",
+      "record_count": 28
+    },
+    "dataset/comprehensive/2008/exam_2008_r2.json": {
+      "sha256": "dbcc730fb7f2fa796a233e29056d521bd04dc95ee37a619ce39e2fe73862bb42",
+      "record_count": 23
+    },
+    "dataset/comprehensive/2009/exam_2009_r1.json": {
+      "sha256": "6de00c9e7021d9fab58b61c70f770ec1104d55f70b082017453858e57e72bce9",
+      "record_count": 26
+    },
+    "dataset/comprehensive/2009/exam_2009_r2.json": {
+      "sha256": "863bd113cb8dc3f044ee504ee2ca5750ea737e345ce5c87e3e386942b456f601",
+      "record_count": 24
+    },
+    "dataset/comprehensive/2010/exam_2010_r1.json": {
+      "sha256": "0a226d51a6678914367c26819ee93cee0468d80e5d55dfd6bc686d269fa11013",
+      "record_count": 28
+    },
+    "dataset/comprehensive/2010/exam_2010_r2.json": {
+      "sha256": "fa8a849ad99f3e9818629ae8aa842cbe0ce2100c1d8477a87cb899160acb11df",
+      "record_count": 23
+    },
+    "dataset/comprehensive/2011/exam_2011_r1.json": {
+      "sha256": "f3dc9f4168a727c341ed129bfcc001bf3d17e2b8feef30b5191983a4dd968f7b",
+      "record_count": 27
+    },
+    "dataset/comprehensive/2011/exam_2011_r2.json": {
+      "sha256": "b7f52df9234a39289a5bf5f126caea2e05f92900294bc6cea428b90d18fcb874",
+      "record_count": 22
+    },
+    "dataset/comprehensive/2012/exam_2012_r1.json": {
+      "sha256": "5497bbec3005eb888855b6a9e4f79bddb7fc17cd2846c9cd56a58492d6159b2b",
+      "record_count": 33
+    },
+    "dataset/comprehensive/2012/exam_2012_r2.json": {
+      "sha256": "9b1be3ed99a4a8925f4e99b7adec00f20a74622d16b19eaa85bf929dd89b6c5b",
+      "record_count": 32
+    },
+    "dataset/comprehensive/2013/exam_2013_r1.json": {
+      "sha256": "1582d085e4a38e6ff1e8dff0a5728368ebf81fc16e09edee249ebefa69924b06",
+      "record_count": 32
+    },
+    "dataset/comprehensive/2013/exam_2013_r2.json": {
+      "sha256": "d67484b6457ef48dbef7e15f6b6e78d324b9ffab1046e37d4db4b9567f66c22d",
+      "record_count": 26
+    },
+    "dataset/comprehensive/2014/exam_2014_r1.json": {
+      "sha256": "641ae6eae6c12dbbba2c6890166ec4180b3693121f498ff03cb01d75e1f05816",
+      "record_count": 30
+    },
+    "dataset/comprehensive/2014/exam_2014_r2.json": {
+      "sha256": "a1d58f521c2a2a1d6794c56e0761fc78b11dd4333903d8616a80d6358510c878",
+      "record_count": 27
+    },
+    "dataset/comprehensive/2015/exam_2015_r1.json": {
+      "sha256": "e10b72412354e3e304d86c2ec11fef8580670e6a76d6da03fedc139d30a4728a",
+      "record_count": 26
+    },
+    "dataset/comprehensive/2015/exam_2015_r2.json": {
+      "sha256": "57cda60c9bf2023693b7c6b8153f4f5e9b16aea0b548e38657e3e4291a5c780e",
+      "record_count": 25
+    },
+    "dataset/comprehensive/dataset_consolidated.json": {
+      "sha256": "c724d582efda0fe54f1a15f355b1415088efb862ec1411aac82691ac37e54d81",
+      "record_count": 44
+    },
+    "dataset/comprehensive/master_dataset.json": {
+      "sha256": "da8a150ead4871573345b9e6d4df0a8355261b5af8c11f8d274e2fd5f5cfa6ad",
+      "record_count": 9
+    },
+    "dataset/difficulty/difficulty_database.json": {
+      "sha256": "3dec1dac69e0a177938a84044fc589e4663f14bf4691adb0f51c56171f656949",
+      "record_count": 1052
+    },
+    "dataset/difficulty/math_difficulty_database.json": {
+      "sha256": "b153fa37f2f7c371464b75ca5385d900225f124c5cd93800fe4a29aa99469172",
+      "record_count": 3
+    },
+    "dataset/difficulty_validation.json": {
+      "sha256": "1c72583fdea9cea6e90acf743d6db8bb4e7b90ebee8ba9acbfb4e9e41600720d",
+      "record_count": 10
+    },
+    "dataset/gold_standard/gold_standard.json": {
+      "sha256": "3717f4c4fbacd772130da28ed28f4d2d44224bfc7b751c6fe311c3efda603b70",
+      "record_count": 1121
+    },
+    "dataset/gold_standard/math_gold_standard.json": {
+      "sha256": "3fdd82fff6f5fb7725eee59aafd634e18762076cf5ffc6a3690017a4c80cd891",
+      "record_count": 711
+    },
+    "dataset/insights/insights_v2.json": {
+      "sha256": "d90768fdfab56f32ca251381953e25b90fcbbec7ce331f935fb2ea5466d9b564",
+      "record_count": 19
+    },
+    "dataset/knowledge-graph/knowledge_graph.json": {
+      "sha256": "da7a0ce0ff8c2180c4ce776b3bc26a53adb5f3d886bf805d4459e7a3c1778b46",
+      "record_count": 7
+    },
+    "dataset/knowledge-graph/knowledge_graph_v3.json": {
+      "sha256": "ab2bccda95749ad08bbefa56826f7a64e2992580bd9544dce8622e9e8cb485c6",
+      "record_count": 116
+    },
+    "dataset/knowledge-graph/math_knowledge_graph.json": {
+      "sha256": "cad4988832a6dd87df810b6207336f4b2b8b62b3da017042996b51e4ebbf6f6b",
+      "record_count": 28
+    },
+    "dataset/knowledge_graph_audit.json": {
+      "sha256": "adac06bcf53701ab04b253bb7ec5f664a41240338b32cbe0a1beee095d55c26e",
+      "record_count": 9
+    },
+    "dataset/mathematics/2005/exam_2005_r1.json": {
+      "sha256": "acb9fe75031f8fae57bd7c0dc254c31c78dc95ebd3b2be85c79cdc634bac72b1",
+      "record_count": 19
+    },
+    "dataset/mathematics/2005/exam_2005_r2.json": {
+      "sha256": "9b7f430408ec26cee7aab7873fba70f5324210e8d605d89f344c8c483fa5fb45",
+      "record_count": 20
+    },
+    "dataset/mathematics/2006/exam_2006_r1.json": {
+      "sha256": "35630f9accefce45ce50140536933eb22230180ad461c64a4da6f2077d86416c",
+      "record_count": 19
+    },
+    "dataset/mathematics/2006/exam_2006_r2.json": {
+      "sha256": "933d7c366a3e0a7b385ebe7682146dd4ab6c7718a6814b6978ba3d9d9c6693c1",
+      "record_count": 20
+    },
+    "dataset/mathematics/2007/exam_2007_r1.json": {
+      "sha256": "4b069a639c4b63b4b60af30d0e2695fcd66e1b7514eeb2962deb7e7982869356",
+      "record_count": 20
+    },
+    "dataset/mathematics/2007/exam_2007_r2.json": {
+      "sha256": "629ba3dd23111b3384ca2862cc4425bb0b5331a001336c823cba3cdd78d16e6c",
+      "record_count": 20
+    },
+    "dataset/mathematics/2008/exam_2008_r1.json": {
+      "sha256": "9090d24ab093d6ed273cb9c83a8825099d1ae7e229ba4d93eb001927ada41326",
+      "record_count": 18
+    },
+    "dataset/mathematics/2008/exam_2008_r2.json": {
+      "sha256": "95be1203edd65294c4f771adcd37c903dfade76bcde6b0e78fd241634b4792af",
+      "record_count": 18
+    },
+    "dataset/mathematics/2009/exam_2009_r1.json": {
+      "sha256": "3a0edc11345f06e6b2bff8103513f1752a8e235100840eb231e39f9399c92629",
+      "record_count": 18
+    },
+    "dataset/mathematics/2009/exam_2009_r2.json": {
+      "sha256": "0aca75d60a956efd286f62f9b455ca6933020c37fcd443ac93d50e8fe33f4068",
+      "record_count": 18
+    },
+    "dataset/mathematics/2010/exam_2010_r1.json": {
+      "sha256": "2ca27930c61cece2194e954bcea712c97efd111827f40883ba550a6c1a844c68",
+      "record_count": 18
+    },
+    "dataset/mathematics/2010/exam_2010_r2.json": {
+      "sha256": "7311abf61d7e94c54fa4a97ad908ec9d6bda24d3c2d0afb70b84e82fd6d9de63",
+      "record_count": 20
+    },
+    "dataset/mathematics/2011/exam_2011_r1.json": {
+      "sha256": "26c8d0aa44094d79a759a8a4f7be0f70e28c0413be20d5d3491016c132e3473d",
+      "record_count": 18
+    },
+    "dataset/mathematics/2011/exam_2011_r2.json": {
+      "sha256": "430bfc9720515bf35f77702f83790a604c11e07bbf8e04a7155e25e5ea30957a",
+      "record_count": 15
+    },
+    "dataset/mathematics/2012/exam_2012_r1.json": {
+      "sha256": "24301c14cbc373e871690ead794c54695a6d82f07c33411aab25406a3756edb6",
+      "record_count": 15
+    },
+    "dataset/mathematics/2012/exam_2012_r2.json": {
+      "sha256": "5683346e017bc6bc75aa8bf50d26fb48007071472225618abe79396aaec6d48d",
+      "record_count": 15
+    },
+    "dataset/mathematics/2013/exam_2013_r1.json": {
+      "sha256": "47f55b96560037e59aa97aad65414add0d271476abd8fdcaed31ea3f76db577a",
+      "record_count": 15
+    },
+    "dataset/mathematics/2013/exam_2013_r2.json": {
+      "sha256": "4869f51b33d1642885bdaa84b50f5ecbb66b60b7c3929498feb0f72a0cc896d7",
+      "record_count": 15
+    },
+    "dataset/mathematics/2014/exam_2014_r1.json": {
+      "sha256": "7f2920c238ba79f2e4064032eb27b9b34a6e5178691d3ddf57cdaf5279354303",
+      "record_count": 16
+    },
+    "dataset/mathematics/2014/exam_2014_r2.json": {
+      "sha256": "8dad4407db44cd9de2e1afeb3c01a8074efa12583f7745c26ee16516e949be5a",
+      "record_count": 15
+    },
+    "dataset/mathematics/2015/exam_2015_r1.json": {
+      "sha256": "d82149801bc178800cc831979d7e7a53508393c05fd1557ec00a384a4142cdf5",
+      "record_count": 16
+    },
+    "dataset/mathematics/2015/exam_2015_r2.json": {
+      "sha256": "061a3b1f214058aa6eab0b7c6f00f8e7f8ca2f021e2254ab7cd2f3cf965eb315",
+      "record_count": 15
+    },
+    "dataset/mathematics/2016/exam_2016_r1.json": {
+      "sha256": "1bb653dc3b5c483978d807ad1d412418cd69c31b94e3aeef98127790adda9cd1",
+      "record_count": 15
+    },
+    "dataset/mathematics/2016/exam_2016_r2.json": {
+      "sha256": "0cb31dd76534812faffffa48349ac517ca064ebd818625b9786ac98d1b44d5b2",
+      "record_count": 15
+    },
+    "dataset/mathematics/2017/exam_2017_r1.json": {
+      "sha256": "fc9b10ee1c1ae74decaa7b1cf30fcc56b0e151ac8bab20eb2689c66fdedd32d7",
+      "record_count": 16
+    },
+    "dataset/mathematics/2017/exam_2017_r2.json": {
+      "sha256": "528156e2fbe688b75f1a69a8fe8d44a6a47271a45e67c1a11710704e4b6881ff",
+      "record_count": 15
+    },
+    "dataset/mathematics/2018/exam_2018_r1.json": {
+      "sha256": "ff5d33f3c7bcddd2073a9f2c0a0991222914dd34e4115294941c11e952d829f5",
+      "record_count": 16
+    },
+    "dataset/mathematics/2018/exam_2018_r2.json": {
+      "sha256": "c51b750decbd19d7bbcb16f64cc7dc4dc35a37e0f7ae95a2dd7fdfc334226cd1",
+      "record_count": 16
+    },
+    "dataset/mathematics/2019/exam_2019_r1.json": {
+      "sha256": "6a273e0633e51afd02072da6bdbe811eca6fa5d37a1950537f7dae0943c5bffc",
+      "record_count": 16
+    },
+    "dataset/mathematics/2020/exam_2020_r2.json": {
+      "sha256": "55f35770a8ed4aa703201b7c575e8a7e7534cb6538dcd3741c9c38f2a6c130de",
+      "record_count": 16
+    },
+    "dataset/mathematics/2021/exam_2021_r1.json": {
+      "sha256": "cf2ae376c98364fdb0efc2a2fe5a7a13520171a3aae29e1faba0f992e5c47073",
+      "record_count": 15
+    },
+    "dataset/mathematics/2021/exam_2021_r2.json": {
+      "sha256": "c604c8efedbd1d9171f504cafe2d411389a00e5c23778a57f54af87e047cdc09",
+      "record_count": 15
+    },
+    "dataset/mathematics/2022/exam_2022_r1.json": {
+      "sha256": "682cc8028b9c5ae056974b4b4cb3b45d7c520dd1f180af3e6f9f6db4bf1b8c1e",
+      "record_count": 15
+    },
+    "dataset/mathematics/2022/exam_2022_r2.json": {
+      "sha256": "05b3f24effacd2cbdeeba92a0698073f7c5d62c1a21633e8f9c50d77f446b07a",
+      "record_count": 9
+    },
+    "dataset/mathematics/2023/exam_2023_r1.json": {
+      "sha256": "752237c487db929fae304110362e61aef8283d069da8fd4a9dac88b6ee506af1",
+      "record_count": 14
+    },
+    "dataset/mathematics/2023/exam_2023_r2.json": {
+      "sha256": "d1fac6c5fbdd1e8b0a184a2c0eb63364de70559f6a6a3ee08a6010bf709f0b10",
+      "record_count": 30
+    },
+    "dataset/mathematics/2024/exam_2024_r1.json": {
+      "sha256": "4335123e6fff8433f44487708e51264ca2271f5fb4c32e80277b98de153e62e1",
+      "record_count": 31
+    },
+    "dataset/mathematics/2025/exam_2025_r1.json": {
+      "sha256": "4df5f8f7c4a3f4a09a84500a765ef8c8a4d6aad5c6a780ffc94fa1b4b52c05ad",
+      "record_count": 9
+    },
+    "dataset/mathematics/dataset_consolidated.json": {
+      "sha256": "c2aa1700b0dbd3a549052313366d353a533c6f39c94ff2441fb79e25942a27ef",
+      "record_count": 38
+    },
+    "dataset/mathematics/reports/validation_report.json": {
+      "sha256": "3271bb286112d6dc240c7722c5e0f5abfd7c7f0df5b1022bcaba1ea8e679f3aa",
+      "record_count": 7
+    },
+    "dataset/prediction/math_prediction_2026_2028.json": {
+      "sha256": "4651706789142c2d48d84d0ebab76dcb1379de0bb337468353213ad0dc493a14",
+      "record_count": 6
+    },
+    "dataset/prediction/math_weakness_connector.json": {
+      "sha256": "da6ea8818ac69e60b57fda6bb3e4209a7ca6446eff2aea1ff5f01ba641937d3b",
+      "record_count": 3
+    },
+    "dataset/prediction/prediction_2026.json": {
+      "sha256": "110a3e5b7f94304edea169d68ef88de3566b382967dec497932a29e96d59d283",
+      "record_count": 7
+    },
+    "dataset/prediction/prediction_2026_2028.json": {
+      "sha256": "2ba9ac351ea0ba4cfa644ef87a76bf47d2a497194a4a8415f2e73e43aee05bdf",
+      "record_count": 5
+    },
+    "dataset/prediction/weakness_connector.json": {
+      "sha256": "1ebe01deef5361012cdd334341fe64447144a61c452ce56dbf06ddf8bfc01744",
+      "record_count": 35
+    },
+    "dataset/prediction_accuracy.json": {
+      "sha256": "2f6cf0ff7355dac96b156f82805efd52c5c07844040071d44be6910872af7236",
+      "record_count": 8
+    },
+    "dataset/prediction_accuracy_v2.json": {
+      "sha256": "80d8f53046c0bb62b79b61fe0081c3a4d43ad87f122600268da77d4b2b8e27cb",
+      "record_count": 11
+    },
+    "dataset/reports/data_completion_audit.json": {
+      "sha256": "742eafbd50970f7d0d5e224af475d879a7c3226ec3dac1eacbc7d20f9c521a84",
+      "record_count": 20
+    },
+    "dataset/reports/dataset_statistics.json": {
+      "sha256": "476dc6b80653706f5d7e7e0192f9dffe2146971eb229148155aca2ab2ea7a478",
+      "record_count": 8
+    },
+    "dataset/reports/dataset_validation.json": {
+      "sha256": "17cc20b3c9e088a6d7aceb00e10ec12e36d77c520e7ab838bb30922afd322e6c",
+      "record_count": 14
+    },
+    "dataset/reports/error_report.json": {
+      "sha256": "99b9c18d8d94e73cbc3ef609f0f741d42c87e1d8ea1b16711085b3ddaaf3476c",
+      "record_count": 5
+    },
+    "dataset/reports/final_completion_audit.json": {
+      "sha256": "fa8c82d9b65ab33f1a9eb2b4fdf71599f0097ea8017f57f9b860105f8861764d",
+      "record_count": 13
+    },
+    "dataset/reports/low_confidence_review.json": {
+      "sha256": "df0810a4cedcfdab1de5e9a5be572a1bb492d18e82944af2f963e7d2dd0c1769",
+      "record_count": 291
+    },
+    "dataset/reports/processing_statistics_comprehensive.json": {
+      "sha256": "3ad8acabd28100101bbbc7b5abc038a6e7763365f827e42dbbbb41a4170eeb59",
+      "record_count": 13
+    },
+    "dataset/reports/processing_statistics_mathematics.json": {
+      "sha256": "5c2a24707302639abecc456637c16005658ef3bcd606739ba608e587c0098642",
+      "record_count": 13
+    },
+    "dataset/reports/validation_2002.json": {
+      "sha256": "84dd4b5a5f651d13a0c51ba55033f37886e7d6a181ea38d7c7e771c2ef8b580e",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2003.json": {
+      "sha256": "4d2aa3348cf0c89e3ec36e4fe08e50d553ef279188aa6272961d2d7d197fb2ec",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2004.json": {
+      "sha256": "86cc418763cdf076c5244a3b86932d38db2c0be17c2a0c9c3588812ad03e2671",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2005.json": {
+      "sha256": "c283780ee4c82666d706def6b557c3cb6b81584fc0da73d901bf98621381bd51",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2006.json": {
+      "sha256": "4a1ff58d5f514eac8980196356d4f5ee571a48ae54ad0e2e601785891a9ff2fb",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2007.json": {
+      "sha256": "8a519999c1dcf0d9e7f902114f115ec26d80064652c66f4fecf484eb04a88f28",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2008.json": {
+      "sha256": "67c65b0713232f9aadf5a151576aaa2fd4c8635736c4cd5d6f9f6e0b446a51c2",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2009.json": {
+      "sha256": "c206440bf87b90984b72d56792eb95fadca7ea33261a28331a4388956df167e0",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2010.json": {
+      "sha256": "f2f54383908b540d78e53e8a50c106f807a611e0b9f5acdc5e44eed993e272bf",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2011.json": {
+      "sha256": "2b7228b317df9fb41f7e11717fad5755011f4e77a31a70d3119cba399861286c",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2012.json": {
+      "sha256": "b02fe4d5761a982d2d9d1f8bf2ae5e7471d13af1f9e4430289a734143040fcc6",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2013.json": {
+      "sha256": "80023d48e98487510e7167215d42a5f7e8e05a5993ad4b7c18df130d5ddbb36c",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2014.json": {
+      "sha256": "e89d0f02dd80cd8224cb6318d099caf5b4132e20ae90fce55fb17c92e804fb5e",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2015.json": {
+      "sha256": "7801124902862c35530b04a2b07bbb9966365e6d41091e53c4f009af9cb090b8",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2016.json": {
+      "sha256": "59834987a1a88141b1152036ab50a0bf792a2aafe1bf7d72a549516467a20c7b",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2017.json": {
+      "sha256": "41ccbc572cb6a492d9300dab9c3b3f25cc57b4f607063db478e7b4f77fe27341",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2018.json": {
+      "sha256": "9bd6d6f1b4b86e8bfb6923db0914cb52d141a2d729e72adaea08d323bcd5e83d",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2019.json": {
+      "sha256": "45bb7d860cbb2b4321b3430212217e03d75cc80e5116d1920d8a1180aa57bcbf",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2020.json": {
+      "sha256": "168aca9b335eeae2c32b64b139ccd2f84221d98b6f466d804c6c230c89db3e91",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2021.json": {
+      "sha256": "15ea35b9ed2b588b8c68d4421615bf2b88192c058d3855cb4f1076cf20250ba2",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2022.json": {
+      "sha256": "29cc77666f3aa38a1e91672ebb173c6fdaf40890323d01e24263db097353ff23",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2023.json": {
+      "sha256": "4a3a5a0e30b8311c6454b2388cfcce9bf777d2c8709089a3ea9fcaf9a1a009b6",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2024.json": {
+      "sha256": "b811902cbf110bb4e5685acca99d6f6d733cb3bba58ba78659f2903996cad82d",
+      "record_count": 16
+    },
+    "dataset/reports/validation_2025.json": {
+      "sha256": "129effbed4ee3e8dff3cfaeece989d9d4b4554c96860e4b91e352a5206a74aaa",
+      "record_count": 16
+    },
+    "dataset/study_plan.json": {
+      "sha256": "e0c01e981d9f93bcab8a82f4b90da9bbd1f6bf1d8588ab6c2ce5eceb50b0e91e",
+      "record_count": 11
+    },
+    "dataset/study_plan_validation.json": {
+      "sha256": "0b72db90c0ee1b8c1ca4a0ec5d64f5e7e3cf75468f544978c7edf1e0d5736c6d",
+      "record_count": 10
+    },
+    "dataset/system_score.json": {
+      "sha256": "cd4a51dd2d62b0824474fbacccc40d0c23886760f59ad1e090a17e3d4e96fa0a",
+      "record_count": 7
+    },
+    "dataset/topic-frequency/domain_frequency.json": {
+      "sha256": "254032fedab1b24cbe1c6e742110dbf82b2a4fb50aedd342cf015a232090eb98",
+      "record_count": 6
+    },
+    "dataset/topic-frequency/topic_frequency.json": {
+      "sha256": "792aa9b368ca8b1038d60f04880297767c7b77a047f5d8916c2f4aa722df7859",
+      "record_count": 34
+    },
+    "dataset/training/classifier_training_data.json": {
+      "sha256": "753ac426f4b52ea0cb122f7a3203524092f9c72255a8fb2dd2388960a8386901",
+      "record_count": 8
+    },
+    "dataset/training/embedding_centroids.json": {
+      "sha256": "811ebfdc30dc82925296d4c746b5415e2e065a2306ea49996635feac06cd78cf",
+      "record_count": 0
+    },
+    "dataset/training/reclassification_report.json": {
+      "sha256": "0c11976a75bcd459393eae0f0c6472938ec9b8888bbb307bf34dfa6624d83690",
+      "record_count": 6
+    },
+    "dataset/training/reclassified_ocr_data.json": {
+      "sha256": "7fd660026d1ce44ec55552522658cf3a05aff7245dc87622278b3bdfa579de97",
+      "record_count": 8
+    },
+    "dataset/trend-analysis/math_trend_analysis.json": {
+      "sha256": "5c8219a6c02a6a7214bdf212808536a06fadb5751e376db9a85caa8d9e7410f1",
+      "record_count": 16
+    },
+    "dataset/trend-analysis/trend_analysis.json": {
+      "sha256": "3d0aed5e77ebcd6fadb03f0d1e67246ac784917bfe493272f4d61fd8a8bb35c0",
+      "record_count": 4
+    },
+    "dataset/trend-analysis/trend_analysis_complete.json": {
+      "sha256": "da298abcffe331a56051451809f96994500bae9f1ef0bd09444170ef8a349489",
+      "record_count": 20
+    },
+    "dataset/trend-analysis/trend_analysis_v2.json": {
+      "sha256": "c5ec8ac913fb06c88b64400019e65b07d2d08a733ec8040924c8abd7084eec21",
+      "record_count": 15
+    },
+    "dataset/trend_validation.json": {
+      "sha256": "2ad30cec18552a9505a8514df707103e70cd81c16586ec0e2530633b56e7073d",
+      "record_count": 10
+    },
+    "dataset/weakness_profile.json": {
+      "sha256": "3b6d4571d948e6e2b4361cda6ec8a844ac27f484dc7b240c38d46a33d055fe17",
+      "record_count": 35
+    }
+  }
+}

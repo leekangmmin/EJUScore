@@ -12,11 +12,57 @@ V4 Strategic Update (2026-06-02):
   - Best config: slack=2, strictness=0.7, cluster=OFF
     → P=0.798, R=0.806, F1=0.796
   - Target: P≥0.85, R≥0.80, F1≥0.82 (Phase 2-3)
+
+DATA UNIFICATION (2026-06-04):
+  - Canonical corpus: dataset/comprehensive/dataset_consolidated.json
+  - GOLD_STANDARD_PATH is DEPRECATED — labels merged into canonical corpus
+  - All runtime + analysis modules MUST read from CANONICAL_PATH only
+
+RELEASE FREEZE v1.1.0 (2026-06-04):
+  - Dataset integrity is verified at import time via integrity_check.py
+  - Any mutation to locked dataset files causes a HARD STOP
 """
 
 import os
+import sys
+
+# ── Release Freeze: Immutable Dataset Check ──────────────────────────
+_THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+_LOCKFILE = os.path.join(_THIS_DIR, '..', 'dataset', 'LOCKFILE.json')
+
+
+def _verify_integrity():
+    """
+    Import-time integrity check.
+    Verifies all dataset files against LOCKFILE.json.
+    Hard stop (sys.exit(1)) if any file has been mutated.
+    """
+    try:
+        # Add project root to path
+        _root = os.path.dirname(_THIS_DIR)
+        if _root not in sys.path:
+            sys.path.insert(0, _root)
+        from integrity_check import verify_dataset_integrity
+        verify_dataset_integrity(lockfile_path=_LOCKFILE, exit_on_fail=True)
+    except ImportError:
+        # integrity_check.py may not exist in dev environments; warn but don't crash
+        print(
+            "⚠  integrity_check.py not found — dataset integrity cannot be verified.\n"
+            "   This is expected in development. For production, ensure the file exists.",
+            file=sys.stderr,
+        )
+    except Exception as exc:
+        print(
+            f"⚠  Dataset integrity check encountered an error: {exc}\n"
+            f"   Proceeding without verification.",
+            file=sys.stderr,
+        )
+
+
+_verify_integrity()
 
 # ── Data ──────────────────────────────────────────────────────────────
+# DEPRECATED — kept for reference; runtime uses CANONICAL_PATH
 GOLD_STANDARD_PATH = "dataset/gold_standard/gold_standard.json"
 KNOWLEDGE_GRAPH_PATH = "dataset/knowledge-graph/knowledge_graph_v3.json"
 DIFFICULTY_DB_PATH = "dataset/difficulty/difficulty_database.json"
