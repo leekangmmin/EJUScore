@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>EJU 기출 인텔리전스 — 20년 데이터로 더 똑똑하게</title>
+<meta name="description" content="EJU 일본유학시험 20년 기출을 분석해 출제경향·약점·예측을 한눈에. 사진으로 문제 변환, 자연어 검색까지." />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet" />
+<style>
+  :root{
+    --blue:#3182f6; --blue-d:#1b64da; --ink:#191f28; --gray:#4e5968; --gray2:#8b95a1;
+    --line:#e5e8eb; --bg:#f7f8fa; --card:#fff; --radius:20px;
+    --shadow:0 1px 3px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06);
+    --shadow-lg:0 12px 40px rgba(49,130,246,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Pretendard',system-ui,sans-serif;background:var(--bg);color:var(--ink);
+    -webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;
+    padding:16px 28px;border-radius:14px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;will-change:transform}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:var(--shadow-lg)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 48px rgba(49,130,246,.28)}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{background:#f2f4f6}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(247,248,250,.8);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+  nav.scrolled{border-color:var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:18px}
+  .logo .mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#3182f6,#5b9bff);display:grid;place-items:center;color:#fff;font-size:15px}
+  nav .btn{padding:9px 18px;font-size:14px;border-radius:10px}
+
+  /* hero */
+  .hero{position:relative;padding:84px 0 64px;text-align:center;overflow:hidden}
+  .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0;animation:float 9s ease-in-out infinite}
+  .blob.b1{width:340px;height:340px;background:#cfe0ff;top:-80px;left:-60px}
+  .blob.b2{width:280px;height:280px;background:#e3d9ff;top:20px;right:-50px;animation-delay:-3s}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-26px)}}
+  .hero .wrap{position:relative;z-index:1}
+  .chip{display:inline-flex;align-items:center;gap:7px;background:#eaf2ff;color:var(--blue-d);
+    font-weight:700;font-size:13px;padding:7px 14px;border-radius:999px;margin-bottom:22px}
+  .chip .dot{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:pulse 1.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  h1{font-size:clamp(34px,6vw,56px);font-weight:800;letter-spacing:-.02em;line-height:1.12}
+  h1 .grad{background:linear-gradient(120deg,#3182f6,#7b5bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{margin:20px auto 34px;max-width:560px;font-size:clamp(16px,2.4vw,19px);color:var(--gray)}
+  .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  /* stat strip */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 14px;box-shadow:var(--shadow)}
+  .stat .num{font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--blue);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .stat .lbl{font-size:13px;color:var(--gray2);margin-top:4px;font-weight:600}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* sections */
+  section.block{padding:72px 0}
+  .eyebrow{color:var(--blue);font-weight:700;font-size:14px;letter-spacing:.02em}
+  .htitle{font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:-.02em;margin:10px 0 14px;line-height:1.2}
+  .hdesc{color:var(--gray);font-size:16px;max-width:620px}
+  .center{text-align:center}.center .hdesc{margin:0 auto}
+
+  /* feature cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  .fcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+  .fcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .fcard .ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:24px;margin-bottom:16px;background:#eaf2ff}
+  .fcard h3{font-size:18px;font-weight:800;margin-bottom:8px}
+  .fcard p{color:var(--gray);font-size:14.5px}
+
+  /* interactive demo */
+  .demo{background:linear-gradient(180deg,#fff,#fbfcfe);border:1px solid var(--line);border-radius:28px;padding:36px;box-shadow:var(--shadow);margin-top:40px}
+  .pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:26px}
+  .pill{padding:11px 20px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-weight:700;font-size:15px;cursor:pointer;transition:all .18s}
+  .pill[aria-selected="true"]{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:var(--shadow-lg)}
+  .bars{display:flex;flex-direction:column;gap:13px;max-width:560px;margin:0 auto}
+  .bar-row{display:flex;align-items:center;gap:14px}
+  .bar-row .name{width:64px;font-size:14px;font-weight:700;color:var(--gray)}
+  .bar-track{flex:1;height:30px;background:#f2f4f6;border-radius:10px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,#3182f6,#5b9bff);width:0;transition:width .8s cubic-bezier(.2,.7,.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:10px;color:#fff;font-weight:800;font-size:12px}
+  .demo-note{text-align:center;color:var(--gray2);font-size:13px;margin-top:18px}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);position:relative}
+  .step .n{width:34px;height:34px;border-radius:10px;background:var(--ink);color:#fff;font-weight:800;display:grid;place-items:center;margin-bottom:14px}
+  .step h3{font-size:17px;font-weight:800;margin-bottom:6px}.step p{color:var(--gray);font-size:14px}
+
+  /* cta */
+  .cta{margin:24px 0 80px}
+  .cta-inner{background:linear-gradient(135deg,#1b64da,#3182f6);border-radius:28px;padding:54px 28px;text-align:center;color:#fff;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+  .cta-inner h2{font-size:clamp(26px,4vw,34px);font-weight:800;letter-spacing:-.02em}
+  .cta-inner p{opacity:.9;margin:12px 0 26px;font-size:16px}
+  .cta-inner .btn-primary{background:#fff;color:var(--blue-d)}
+  .cta-inner .btn-primary:hover{transform:translateY(-2px)}
+
+  footer{padding:36px 0 60px;color:var(--gray2);font-size:13px;text-align:center}
+  footer .disc{max-width:640px;margin:12px auto 0;font-size:12px;line-height:1.6;color:#aeb5bd}
+
+  @media(max-width:760px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .cards,.steps{grid-template-columns:1fr}
+    .hero{padding:60px 0 48px}
+    section.block{padding:54px 0}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <div class="logo"><span class="mark">E</span> EJU 인텔리전스</div>
+    <a class="btn btn-primary" href="./">앱 시작하기</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span>일본유학시험(EJU) 전용 · 20년 기출 분석</span>
+    <h1>기출은 많은데<br>어디부터 봐야 할지<br><span class="grad">데이터가 알려줄게요</span></h1>
+    <p class="sub">2002년부터의 EJU 기출을 분석해 <b>출제경향·내 약점·예상 토픽</b>을 한눈에.
+      사진으로 문제를 옮기고, 자연어로 기출을 검색해요.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="./">무료로 시작하기 →</a>
+      <a class="btn btn-ghost" href="#demo">기능 살펴보기</a>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><div class="num" data-to="23" data-suffix="년">0</div><div class="lbl">분석 기출 범위</div></div>
+      <div class="stat"><div class="num" data-to="296" data-suffix="">0</div><div class="lbl">OCR 분석 시험지</div></div>
+      <div class="stat"><div class="num" data-to="1448" data-suffix="">0</div><div class="lbl">구조화 문항</div></div>
+      <div class="stat"><div class="num" data-to="5" data-suffix="영역">0</div><div class="lbl">종합과목 분야</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="block">
+  <div class="wrap center">
+    <div class="eyebrow reveal">WHY EJU 인텔리전스</div>
+    <h2 class="htitle reveal">감이 아니라, 데이터로 공부해요</h2>
+    <p class="hdesc reveal">출제 빈도·최근성·내 오답을 함께 보고 "지금 뭘 먼저 풀지"를 정합니다.</p>
+    <div class="cards">
+      <div class="fcard reveal"><div class="ico">📊</div><h3>20년 출제경향</h3><p>영역·토픽별 출제 빈도와 흐름을 연도별로. 어떤 주제가 꾸준히 나오는지 한눈에 봅니다.</p></div>
+      <div class="fcard reveal"><div class="ico">🎯</div><h3>출제 가능성 + 근거</h3><p>"무조건 나온다"가 아니라 <b>가능성·신뢰도·근거</b>를 함께. 불확실성까지 솔직하게 표시해요.</p></div>
+      <div class="fcard reveal"><div class="ico">🧩</div><h3>출제경향 × 내 약점</h3><p>자주 나오는데 내가 약한 주제 = 최우선 학습. 오답노트와 연결해 우선순위를 매깁니다.</p></div>
+      <div class="fcard reveal"><div class="ico">📷</div><h3>사진 → 문제 변환</h3><p>문제집을 찍으면 텍스트로. 오답을 빠르게 기록하고 분석으로 이어집니다.</p></div>
+      <div class="fcard reveal"><div class="ico">🔍</div><h3>자연어 기출 검색</h3><p>"브레튼우즈 체제", "벡터 내적"처럼 한국어로 검색하면 관련 기출·출제년도·개념을 찾아줘요.</p></div>
+      <div class="fcard reveal"><div class="ico">📈</div><h3>점수 추적 · D-day</h3><p>모의고사 점수 추이와 시험까지 남은 날을 관리. 번아웃·페이스도 함께 봅니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="demo">
+  <div class="wrap center">
+    <div class="eyebrow reveal">LIVE</div>
+    <h2 class="htitle reveal">영역을 눌러보세요</h2>
+    <p class="hdesc reveal">실제 기출 데이터 기준 종합과목 5개 영역의 출제 비중입니다. 클릭하면 바로 보여줘요.</p>
+    <div class="demo reveal">
+      <div class="pills" id="pills">
+        <button class="pill" data-k="all" aria-selected="true">전체</button>
+        <button class="pill" data-k="economy">경제</button>
+        <button class="pill" data-k="politics">정치</button>
+        <button class="pill" data-k="geography">지리</button>
+        <button class="pill" data-k="history">역사</button>
+        <button class="pill" data-k="society">사회</button>
+      </div>
+      <div class="bars" id="bars"></div>
+      <div class="demo-note">※ 출제 빈도는 과거 데이터 기반 <b>참고 지표</b>이며 미래 출제를 보장하지 않습니다.</div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap center">
+    <div class="eyebrow reveal">HOW</div>
+    <h2 class="htitle reveal">3단계면 충분해요</h2>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h3>점수·오답 입력</h3><p>모의고사 점수나 틀린 문제를 기록해요. 사진으로 찍어도 됩니다.</p></div>
+      <div class="step reveal"><div class="n">2</div><h3>경향 × 약점 분석</h3><p>20년 출제경향과 내 약점을 겹쳐 우선순위를 자동으로 계산합니다.</p></div>
+      <div class="step reveal"><div class="n">3</div><h3>오늘 뭘 풀지 확인</h3><p>예상 토픽·우선 학습 주제를 보고 바로 공부를 시작해요.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap cta">
+  <div class="cta-inner reveal">
+    <h2>이제, 감으로 공부하지 마세요</h2>
+    <p>설치 없이 웹에서 바로. 한국인 유학생을 위한 EJU 분석 도구.</p>
+    <a class="btn btn-primary" href="./">무료로 시작하기 →</a>
+  </div>
+</section>
+
+<footer class="wrap">
+  © 2026 EJU 인텔리전스 · 한국인 유학생을 위한 일본유학시험 분석
+  <div class="disc">본 서비스의 출제 가능성·예측은 과거 기출 데이터에 기반한 참고 지표이며, 실제 출제를 보장하지 않습니다.
+  공식 정답률 데이터는 제공하지 않으며, 분석 결과에는 신뢰도와 불확실성이 함께 표시됩니다.</div>
+</footer>
+
+<script>
+  // nav shadow on scroll
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>8),{passive:true});
+
+  // scroll reveal
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // count-up (fires when stats revealed)
+  const countObs=new IntersectionObserver((es)=>es.forEach(e=>{
+    if(!e.isIntersecting)return; countObs.unobserve(e.target);
+    e.target.querySelectorAll('.num').forEach(n=>{
+      const to=+n.dataset.to, suf=n.dataset.suffix||''; const dur=1100, t0=performance.now();
+      const tick=(t)=>{const p=Math.min(1,(t-t0)/dur); const v=Math.round(to*(1-Math.pow(1-p,3)));
+        n.textContent=v.toLocaleString('ko-KR')+suf; if(p<1)requestAnimationFrame(tick);};
+      requestAnimationFrame(tick);
+    });
+  }),{threshold:.4});
+  document.querySelectorAll('.stats').forEach(s=>countObs.observe(s));
+
+  // interactive domain demo — REAL counts (EJU comprehensive, verified dataset)
+  const DOM={economy:345,politics:257,geography:208,history:197,society:45};
+  const KO={economy:'경제',politics:'정치',geography:'지리',history:'역사',society:'사회'};
+  const bars=document.getElementById('bars');
+  function render(sel){
+    const max=Math.max(...Object.values(DOM));
+    bars.innerHTML='';
+    for(const [k,v] of Object.entries(DOM).sort((a,b)=>b[1]-a[1])){
+      const on = sel==='all'||sel===k;
+      const row=document.createElement('div'); row.className='bar-row';
+      row.innerHTML=`<div class="name">${KO[k]}</div><div class="bar-track"><div class="bar-fill"></div></div>`;
+      bars.appendChild(row);
+      const fill=row.querySelector('.bar-fill');
+      fill.style.opacity = on?1:.25;
+      requestAnimationFrame(()=>{ fill.style.width=(v/max*100)+'%'; fill.textContent=v+'회'; });
+    }
+  }
+  const pills=document.getElementById('pills');
+  pills.addEventListener('click',e=>{const b=e.target.closest('.pill'); if(!b)return;
+    [...pills.children].forEach(p=>p.setAttribute('aria-selected', p===b));
+    render(b.dataset.k);});
+  // render when demo scrolls in
+  new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){render('all');o.disconnect();}}),{threshold:.3})
+    .observe(document.getElementById('demo'));
+</script>
+</body>
+</html>
