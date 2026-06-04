@@ -1,12 +1,18 @@
 // ═══════════════════════════════════════════════════════════════════
-// Search Data Loader — multi-subject, manifest-driven (REAL files).
+// Search Data Loader — CANONICAL corpus (parsed_questions.json)
 //
-// Reads public/dataset/search_manifest.json (auto-generated from disk)
-// then fetches per-exam JSON for 종합/수학. 일본어 has no corpus → empty.
-// Kept separate from dataAdapter.js so existing admin pages are untouched.
+// Reads the single canonical corpus from
+//   public/dataset/canonical/parsed_questions.json
+// and provides per-subject question arrays for the search engine.
+//
+// ⚠ OLD sources (DEPRECATED):
+//   - public/dataset/search_manifest.json (per-exam manifest)
+//   - public/dataset/comprehensive/**/*.json (per-exam OCR files)
+//   - public/dataset/mathematics/**/*.json (per-exam math files)
 // ═══════════════════════════════════════════════════════════════════
 
 const BASE = import.meta.env.BASE_URL || '/';
+const CANONICAL_PATH = 'dataset/canonical/parsed_questions.json';
 
 export const SUBJECTS = [
   { id: 'comprehensive', label: '종합과목', short: '종합' },
@@ -21,35 +27,36 @@ const DOMAIN_KO = {
   unknown: '미분류', '': '미분류',
 };
 
-let _manifest = null;
+let _canonicalData = null;
 const _subjectCache = new Map();
 
-export async function getManifest() {
-  if (_manifest) return _manifest;
-  const res = await fetch(`${BASE}dataset/search_manifest.json`);
-  if (!res.ok) throw new Error(`manifest load failed (${res.status})`);
-  _manifest = await res.json();
-  return _manifest;
+async function loadCanonical() {
+  if (_canonicalData) return _canonicalData;
+  const res = await fetch(`${BASE}${CANONICAL_PATH}`);
+  if (!res.ok) throw new Error(`canonical corpus load failed (${res.status})`);
+  _canonicalData = await res.json();
+  console.info(`[SearchData] Loaded canonical corpus: ${_canonicalData.questions?.length || 0} questions`);
+  return _canonicalData;
 }
 
-function normalize(q, exam, subject) {
-  const rawText = q.raw_text || q.text || '';
+function normalize(q, subject) {
+  const rawText = q.body || q.text || q.raw_text || '';
   return {
     id: q.id,
     subject,
-    year: exam.year,
-    round: exam.round,
-    number: q.number ?? null,
+    year: q.year,
+    round: q.round,
+    number: q.questionNumber ?? q.number ?? null,
     domain: q.domain || 'unknown',
     domainKo: DOMAIN_KO[q.domain] || q.domain || '미분류',
     topic: q.topic || '',
     subtopic: q.subtopic || '',
-    text: q.text || rawText,
+    text: q.body || q.text || rawText,
     rawText,
-    options: Array.isArray(q.answer_choices) ? q.answer_choices : [],
+    options: Array.isArray(q.choices) ? q.choices : (Array.isArray(q.answer_choices) ? q.answer_choices : []),
     difficulty: typeof q.difficulty === 'number' ? q.difficulty : null,
     ocrConfidence: typeof q.ocr_confidence === 'number' ? q.ocr_confidence : null,
-    questionType: q.question_type || 'unknown',
+    questionType: q.question_type || q.questionType || 'unknown',
     keywords: Array.isArray(q.keywords) ? q.keywords : [],
     concepts: Array.isArray(q.concepts) ? q.concepts : [],
   };
@@ -58,20 +65,13 @@ function normalize(q, exam, subject) {
 /** Load + normalize all questions for one subject (cached). */
 export async function loadSubject(subject) {
   if (_subjectCache.has(subject)) return _subjectCache.get(subject);
-  const manifest = await getManifest();
-  const files = manifest.subjects?.[subject] || [];
-  const questions = [];
-  for (const meta of files) {
-    try {
-      const res = await fetch(`${BASE}${meta.path}`);
-      if (!res.ok) continue;
-      const doc = await res.json();
-      for (const q of doc.questions || []) {
-        const n = normalize(q, meta, subject);
-        if (n.rawText && n.rawText.length >= 2) questions.push(n);
-      }
-    } catch { /* skip unreadable file, never fabricate */ }
-  }
+
+  const data = await loadCanonical();
+  const questions = (data.questions || [])
+    .filter((q) => q.subject === subject)
+    .map((q) => normalize(q, subject))
+    .filter((n) => n.text && n.text.length >= 2);
+
   _subjectCache.set(subject, questions);
   return questions;
 }

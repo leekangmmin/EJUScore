@@ -1,20 +1,35 @@
 // ═══════════════════════════════════════════════════════════════════════
-// Engine Initializer — Runtime Dataset Loader
-// Loads all 9 dataset JSON files into a shared cache.
-// Auto-executes on app boot via main.jsx.
+// Engine Initializer — Multi-Source Dataset Loader (v3)
+//
+// Loads canonical + supporting datasets at boot:
+//   - CANONICAL:    public/dataset/canonical/parsed_questions.json
+//   - trendComplete: public/dataset/trend-analysis/trend_analysis_complete.json
+//   - insights:      public/dataset/insights/insights_v2.json
+//   - prediction2026: public/dataset/prediction/prediction_2026.json
+//   - knowledgeGraph: public/dataset/knowledge-graph/knowledge_graph_v3.json
+//   - goldStandard:   public/dataset/gold_standard/gold_standard.json
+//   - difficultyDB:   public/dataset/difficulty/difficulty_database.json
+//   - weakProfile:    public/dataset/weakness_profile.json
+//   - studyPlan:      public/dataset/study_plan.json
+//   - trendAnalysis:  public/dataset/trend-analysis/trend_analysis_v2.json
+//
+// Canonical is the single source of truth for questions; the other datasets
+// provide pre-computed analysis (trends, predictions, KG, insights, etc.).
 // ═══════════════════════════════════════════════════════════════════════
 
 /**
  * @typedef {object} DatasetCache
+ * @property {object|null} parsedQuestions - parsed_questions.json (CANONICAL)
  * @property {object|null} goldStandard - gold_standard.json
  * @property {object|null} knowledgeGraph - knowledge_graph_v3.json
  * @property {object|null} trendAnalysis - trend_analysis_v2.json
- * @property {object|null} trendComplete - trend_analysis_complete.json (new complete analysis)
+ * @property {object|null} trendComplete - trend_analysis_complete.json
  * @property {object|null} difficultyDB - difficulty_database.json
  * @property {object|null} prediction2026 - prediction_2026.json
- * @property {object|null} prediction2026_2028 - prediction_2026_2028.json (new 3-year prediction)
+ * @property {object|null} prediction2026_2028 - prediction_2026_2028.json
  * @property {object|null} weakProfile - weakness_profile.json
  * @property {object|null} studyPlan - study_plan.json
+ * @property {object|null} insights - insights_v2.json
  */
 
 let _datasetCache = null;
@@ -22,63 +37,42 @@ let _initialized = false;
 let _initPromise = null;
 let _initCallbacks = [];
 
-// Dataset paths relative to the app root
+// ── Dataset paths (relative to public/) ───────────────────────────────
 const DATASET_PATHS = {
-  goldStandard: './dataset/gold_standard/gold_standard.json',
-  knowledgeGraph: './dataset/knowledge-graph/knowledge_graph_v3.json',
-  trendAnalysis: './dataset/trend-analysis/trend_analysis_v2.json',
-  trendComplete: './dataset/trend-analysis/trend_analysis_complete.json',
-  difficultyDB: './dataset/difficulty/difficulty_database.json',
-  prediction2026: './dataset/prediction/prediction_2026.json',
+  parsedQuestions:   './dataset/canonical/parsed_questions.json',
+  goldStandard:      './dataset/gold_standard/gold_standard.json',
+  knowledgeGraph:    './dataset/knowledge-graph/knowledge_graph_v3.json',
+  trendAnalysis:     './dataset/trend-analysis/trend_analysis_v2.json',
+  trendComplete:     './dataset/trend-analysis/trend_analysis_complete.json',
+  difficultyDB:      './dataset/difficulty/difficulty_database.json',
+  prediction2026:    './dataset/prediction/prediction_2026.json',
   prediction2026_2028: './dataset/prediction/prediction_2026_2028.json',
-  weakProfile: './dataset/weakness_profile.json',
-  studyPlan: './dataset/study_plan.json',
-  insights: './dataset/insights/insights_v2.json',
-};
-
-// Storage keys for caching datasets in localStorage
-const STORAGE_KEYS = {
-  goldStandard: 'eju_gold_standard',
-  knowledgeGraph: 'eju_knowledge_graph_v3',
-  trendAnalysis: 'eju_trend_analysis_v2',
-  trendComplete: 'eju_trend_analysis_complete',
-  difficultyDB: 'eju_difficulty_database',
-  prediction2026: 'eju_prediction_2026',
-  prediction2026_2028: 'eju_prediction_2026_2028',
-  weakProfile: 'eju_weakness_profile',
-  studyPlan: 'eju_study_plan',
-  insights: 'eju_insights_v2',
+  weakProfile:       './dataset/weakness_profile.json',
+  studyPlan:         './dataset/study_plan.json',
+  insights:          './dataset/insights/insights_v2.json',
 };
 
 /**
- * Fetch a single JSON dataset by path.
- * Falls back to localStorage if fetch fails.
- * @param {string} path
- * @param {string} storageKey
+ * Fetch a single JSON dataset from the given path.
+ * @param {string} path - Relative URL path
+ * @param {string} label - Human-readable label for logging
  * @returns {Promise<object|null>}
  */
-async function fetchDataset(path, storageKey) {
+async function fetchDataset(path, label) {
   try {
     const response = await fetch(path);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
-    // Cache in localStorage for offline use
-    try {
-      localStorage.setItem(storageKey, JSON.stringify(data));
-    } catch (_) { /* storage full — ignore */ }
+    console.info(`[EngineInit] Loaded ${label}: ${JSON.stringify(data).length} bytes`);
     return data;
   } catch (e) {
-    console.warn(`[EngineInit] Failed to fetch ${path}: ${e.message}. Trying localStorage...`);
-    try {
-      const cached = localStorage.getItem(storageKey);
-      if (cached) return JSON.parse(cached);
-    } catch (_) { /* ignore */ }
+    console.warn(`[EngineInit] ${label} not available from ${path}: ${e.message}`);
     return null;
   }
 }
 
 /**
- * Initialize all engines by loading datasets.
+ * Initialize all engines by loading all datasets.
  * Safe to call multiple times — returns the same promise.
  *
  * @returns {Promise<DatasetCache>}
@@ -87,30 +81,79 @@ export function initializeEngine() {
   if (_initPromise) return _initPromise;
 
   _initPromise = (async () => {
-    console.info('[EngineInit] Loading datasets...');
+    console.info('[EngineInit] Loading all datasets...');
 
-    const entries = Object.entries(DATASET_PATHS);
-    const results = await Promise.all(
-      entries.map(([key, path]) =>
-        fetchDataset(path, STORAGE_KEYS[key]).then(data => [key, data])
-      )
+    // Load canonical first, then supporting datasets in parallel
+    const parsedQuestions = await fetchDataset(
+      DATASET_PATHS.parsedQuestions,
+      'canonical corpus'
     );
 
-    const cache = {};
-    let loadedCount = 0;
-    for (const [key, data] of results) {
-      cache[key] = data;
-      if (data) loadedCount++;
+    if (parsedQuestions) {
+      console.info(
+        `[EngineInit] Loaded canonical corpus: ${
+          parsedQuestions.totalQuestions ||
+          parsedQuestions.questions?.length ||
+          '?'
+        } questions`
+      );
+    } else {
+      console.warn(
+        '[EngineInit] Canonical corpus not available — app will run without dataset'
+      );
     }
 
-    _datasetCache = cache;
+    // Load supporting datasets in parallel (non-blocking for boot)
+    const [
+      goldStandard,
+      knowledgeGraph,
+      trendAnalysis,
+      trendComplete,
+      difficultyDB,
+      prediction2026,
+      prediction2026_2028,
+      weakProfile,
+      studyPlan,
+      insights,
+    ] = await Promise.all([
+      fetchDataset(DATASET_PATHS.goldStandard, 'gold_standard'),
+      fetchDataset(DATASET_PATHS.knowledgeGraph, 'knowledge_graph_v3'),
+      fetchDataset(DATASET_PATHS.trendAnalysis, 'trend_analysis_v2'),
+      fetchDataset(DATASET_PATHS.trendComplete, 'trend_analysis_complete'),
+      fetchDataset(DATASET_PATHS.difficultyDB, 'difficulty_database'),
+      fetchDataset(DATASET_PATHS.prediction2026, 'prediction_2026'),
+      fetchDataset(DATASET_PATHS.prediction2026_2028, 'prediction_2026_2028'),
+      fetchDataset(DATASET_PATHS.weakProfile, 'weakness_profile'),
+      fetchDataset(DATASET_PATHS.studyPlan, 'study_plan'),
+      fetchDataset(DATASET_PATHS.insights, 'insights_v2'),
+    ]);
+
+    _datasetCache = {
+      parsedQuestions,       // ⬅ CANONICAL — single source of truth for questions
+      goldStandard,
+      knowledgeGraph,
+      trendAnalysis,
+      trendComplete,
+      difficultyDB,
+      prediction2026,
+      prediction2026_2028,
+      weakProfile,
+      studyPlan,
+      insights,
+    };
     _initialized = true;
 
-    console.info(`[EngineInit] Loaded ${loadedCount}/${entries.length} datasets`);
+    const loaded = Object.entries(_datasetCache).filter(([, v]) => v !== null).length;
+    const total = Object.keys(_datasetCache).length;
+    console.info(`[EngineInit] Engine initialized (${loaded}/${total} datasets loaded)`);
 
     // Fire callbacks
     for (const cb of _initCallbacks) {
-      try { cb(_datasetCache); } catch (_) {}
+      try {
+        cb(_datasetCache);
+      } catch (_) {
+        /* ignore */
+      }
     }
     _initCallbacks = [];
 
@@ -138,11 +181,19 @@ export function getDatasetCache() {
 
 /**
  * Get a specific dataset by key.
- * @param {string} key - One of: goldStandard, knowledgeGraph, trendAnalysis, trendComplete, difficultyDB, prediction2026, prediction2026_2028, weakProfile, studyPlan
+ * @param {string} key - dataset key (parsedQuestions, goldStandard, etc.)
  * @returns {object|null}
  */
 export function getDataset(key) {
   return _datasetCache?.[key] ?? null;
+}
+
+/**
+ * Get the canonical parsed questions array.
+ * @returns {Array|null}
+ */
+export function getParsedQuestions() {
+  return _datasetCache?.parsedQuestions?.questions ?? null;
 }
 
 /**
@@ -152,7 +203,9 @@ export function getDataset(key) {
  */
 export function onEngineReady(callback) {
   if (_initialized && _datasetCache) {
-    try { callback(_datasetCache); } catch (_) {}
+    try {
+      callback(_datasetCache);
+    } catch (_) {}
   } else {
     _initCallbacks.push(callback);
   }
@@ -176,7 +229,9 @@ export function setDatasets(datasets) {
   _datasetCache = datasets;
   _initialized = true;
   for (const cb of _initCallbacks) {
-    try { cb(_datasetCache); } catch (_) {}
+    try {
+      cb(_datasetCache);
+    } catch (_) {}
   }
   _initCallbacks = [];
 }
@@ -187,6 +242,7 @@ export default {
   isEngineInitialized,
   getDatasetCache,
   getDataset,
+  getParsedQuestions,
   onEngineReady,
   resetEngine,
   setDatasets,

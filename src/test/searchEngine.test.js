@@ -1,34 +1,41 @@
-// Verifies the new search engine on the REAL corpus (public/dataset).
+// Verifies the new search engine on the CANONICAL corpus (parsed_questions.json).
 // Proves the audited cross-lingual flaw is fixed: KO/EN queries match the
 // Japanese OCR corpus via the concept bridge + BM25 n-gram index.
+//
+// ═══════════════════════════════════════════════════════════════════════
+// CANONICAL SOURCE: scripts/eju-parser/out/parsed_questions.json
+//   → served at runtime as public/dataset/canonical/parsed_questions.json
+// ═══════════════════════════════════════════════════════════════════════
 import { describe, it, expect } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import { bridgeExpand } from '../admin/lib/conceptBridge';
 import { buildIndex, search, tokenize } from '../admin/lib/searchEngine';
 
-const ROOT = process.cwd();
+const CANONICAL_PATH = path.join(process.cwd(), 'public/dataset/canonical/parsed_questions.json');
 
+/**
+ * Load questions for a given subject from the canonical corpus.
+ * Replaces the old per-exam file loading from public/dataset/{subject}/.
+ */
 function loadSubject(subject) {
-  const base = path.join(ROOT, 'public/dataset', subject);
-  if (!fs.existsSync(base)) return [];
-  const out = [];
-  for (const y of fs.readdirSync(base).filter((d) => /^20/.test(d))) {
-    for (const f of fs.readdirSync(path.join(base, y))) {
-      if (!/^exam_.*\.json$/.test(f)) continue;
-      const doc = JSON.parse(fs.readFileSync(path.join(base, y, f), 'utf8'));
-      for (const q of doc.questions || []) {
-        const m = f.match(/exam_(\d{4})_r(\d)/);
-        out.push({
-          id: q.id, year: Number(m?.[1] || y), round: Number(m?.[2] || 1),
-          text: q.text || q.raw_text || '', topic: q.topic || '', domain: q.domain || 'unknown',
-          domainKo: q.domain || '', keywords: q.keywords || [], difficulty: q.difficulty ?? null,
-          number: q.number ?? null,
-        });
-      }
-    }
-  }
-  return out;
+  if (!fs.existsSync(CANONICAL_PATH)) return [];
+
+  const doc = JSON.parse(fs.readFileSync(CANONICAL_PATH, 'utf8'));
+  const questions = (doc.questions || []).filter((q) => q.subject === subject);
+
+  return questions.map((q) => ({
+    id: q.id,
+    year: q.year,
+    round: q.round,
+    text: q.body || q.text || '',
+    topic: q.topic || '',
+    domain: q.domain || 'unknown',
+    domainKo: q.domain || '',
+    keywords: Array.isArray(q.keywords) ? q.keywords : [],
+    difficulty: q.difficulty ?? null,
+    number: q.questionNumber ?? q.number ?? null,
+  }));
 }
 
 describe('concept bridge', () => {
@@ -54,7 +61,7 @@ describe('tokenizer', () => {
   });
 });
 
-describe('search over REAL math corpus', () => {
+describe('search over CANONICAL math corpus', () => {
   const qs = loadSubject('mathematics');
   it('loaded real math questions', () => { expect(qs.length).toBeGreaterThan(100); });
 
@@ -74,7 +81,7 @@ describe('search over REAL math corpus', () => {
   });
 });
 
-describe('search over REAL comprehensive corpus', () => {
+describe('search over CANONICAL comprehensive corpus', () => {
   const qs = loadSubject('comprehensive');
   it('loaded real comprehensive questions', () => { expect(qs.length).toBeGreaterThan(100); });
 

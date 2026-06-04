@@ -1,0 +1,47 @@
+{
+  "total_questions": 767,
+  "review_required_before": 313,
+  "review_required_after": 767,
+  "review_required_recovered": 0,
+  "newly_flagged_review_required": 454,
+  "misclassification_count": 0,
+  "before": {
+    "review_required": 313,
+    "geography": 76,
+    "politics": 112,
+    "economy": 161,
+    "history": 72,
+    "society": 33
+  },
+  "after": {
+    "review_required": 767
+  },
+  "per_domain_accuracy": {
+    "economy": {
+      "correct": 0,
+      "total": 0,
+      "accuracy": 0.0
+    },
+    "politics": {
+      "correct": 0,
+      "total": 0,
+      "accuracy": 0.0
+    },
+    "history": {
+      "correct": 0,
+      "total": 0,
+      "accuracy": 0.0
+    },
+    "geography": {
+      "correct": 0,
+      "total": 0,
+      "accuracy": 0.0
+    },
+    "society": {
+      "correct": 0,
+      "total": 0,
+      "accuracy": 0.0
+    }
+  },
+  "misclassifications": []
+}

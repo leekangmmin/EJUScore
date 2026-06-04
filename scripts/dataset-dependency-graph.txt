@@ -1,0 +1,94 @@
+╔══════════════════════════════════════════════════════════════════╗
+║              DATASET DEPENDENCY GRAPH (AFTER CANONICALIZATION) ║
+╚══════════════════════════════════════════════════════════════════╝
+
+                    ┌─────────────────────────────────────┐
+                    │      CANONICAL CORPUS (CRITICAL)     │
+                    │  scripts/eju-parser/out/             │
+                    │     parsed_questions.json            │
+                    │  ↓ copied to ↓                       │
+                    │  dataset/canonical/parsed_questions  │
+                    │  public/dataset/canonical/           │
+                    │     parsed_questions.json            │
+                    │  Questions: 1,588                    │
+                    │  Subjects: 3 (jpn, comp, math)       │
+                    └───────────────┬─────────────────────┘
+                                    │
+                    ┌───────────────┴─────────────────────┐
+                    │                                     │
+                    ▼                                     ▼
+    ┌──────────────────────────────┐    ┌──────────────────────────────┐
+    │   engineInitializer.js       │    │     admin/dataAdapter.js    │
+    │   (app boot: main.jsx)       │    │   (admin corpus stats)      │
+    │   ───────────────────────    │    │   ────────────────────────  │
+    │   initializeEngine() ────────┼───►│   loadAll() → {exams, qs}  │
+    │   getParsedQuestions()       │    │   loadExam() → exam doc     │
+    │   getDatasetCache()          │    │   listExams()               │
+    └───────────┬──────────────────┘    └───────────────┬──────────────┘
+                │                                       │
+                ▼                                       ▼
+    ┌──────────────────┐                    ┌──────────────────────────┐
+    │  main.jsx         │                    │  Admin Pages:           │
+    │  (app mount)      │                    │  ├ Dashboard.jsx        │
+    └──────────────────┘                    │  ├ Datasets.jsx          │
+                │                           │  ├ OcrReview.jsx        │
+                ▼                           │  ├ QuestionReview.jsx   │
+    ┌──────────────────┐                    │  ├ Search.jsx           │
+    │  ExamIntelligence │                    │  ├ Uploads.jsx          │
+    │  Center.jsx       │                    │  └ Vector.jsx           │
+    │  AICoach.jsx      │                    └──────────────────────────┘
+    │  TrendDashboard   │
+    │    .jsx           │                    ┌──────────────────────────┐
+    │  personalAccuracy │                    │   admin/searchData.js   │
+    │    .js            │                    │  ─────────────────────  │
+    └──────────────────┘                    │  loadSubject(subject)   │
+                                             │  → questions[] filtered │
+                                             │    by subject           │
+                                             └───────────┬──────────────┘
+                                                         │
+                                                         ▼
+                                             ┌──────────────────────────┐
+                                             │  admin/Search.jsx       │
+                                             │  searchEngine.js        │
+                                             └──────────────────────────┘
+
+
+┌═══════════════════════════════════════════════════════════════════════┐
+║ SECONDARY ANALYSIS DATASETS (ALLOWED — not part of canonical swap)   ║
+║ These are analysis outputs computed FROM the canonical corpus.       ║
+║ They are statically imported by TrendDashboardData.js:               ║
+╚═══════════════════════════════════════════════════════════════════════╝
+
+  dataset/trend-analysis/trend_analysis_complete.json
+  dataset/prediction/prediction_2026_2028.json
+  dataset/prediction/weakness_connector.json
+  dataset/insights/insights_v2.json
+          │
+          ▼
+  TrendDashboardData.js
+    → buildEnhancedModel()
+    → used by TrendDashboard.jsx, ExamIntelligenceCenter.jsx
+
+
+┌═══════════════════════════════════════════════════════════════════════┐
+║ DEPRECATED — BLOCKED AT BUILD TIME                                   ║
+║ The Vite plugin in vite.config.js blocks static imports of:          ║
+╚═══════════════════════════════════════════════════════════════════════╝
+
+  ❌ dataset/comprehensive/**/*.json           (per-exam OCR files)
+  ❌ dataset/mathematics/**/*.json             (per-exam math files)
+  ❌ dataset/gold_standard/**                  (gold_standard.json)
+  ❌ dataset_consolidated.json                 (any consolidated file)
+  ❌ master_dataset.json                        (any master file)
+
+
+┌═══════════════════════════════════════════════════════════════════════┐
+║ RUNTIME CONSUMERS OF ENGINE INITIALIZER                              ║
+║ (all use getDatasetCache() / getParsedQuestions() / onEngineReady()) ║
+╚═══════════════════════════════════════════════════════════════════════╝
+
+  src/main.jsx                                    ← boot
+  src/components/ExamIntelligenceCenter.jsx        ← main dashboard
+  src/components/AICoach.jsx                       ← AI coach panel
+  src/components/TrendDashboard.jsx                ← trend dashboard
+  src/admin/lib/personalAccuracy.js                ← admin accuracy stats

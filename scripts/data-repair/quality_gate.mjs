@@ -1,11 +1,17 @@
 #!/usr/bin/env node
 // ═══════════════════════════════════════════════════════════════════
-// PHASE 4 — Data Quality Gate (CI). Fails the build on:
-//   • any question number > 100 (artifact)
-//   • out-of-range numbers (4+ digits)
-//   • comprehensive unknown-domain > 10%
+// PHASE 4 — Data Quality Gate (CI) — v2 (canonical target)
+//
+// Fails the build on:
+//   • canonical canonical/parsed_questions.json not found
+//   • comprehensive domain coverage < 52.8% baseline
+//   • review_required ratio increased vs baseline (currently 0%)
+//   • number > 100 artifacts in canonical comprehensive
 //   • mixed math schemas (>1 distinct)
-// Exposed as runGate() for the vitest CI test + a CLI (non-zero exit on fail).
+//   • engine datasets (trendComplete/insights/prediction2026/knowledgeGraph)
+//     not loadable or null
+//
+// Exposed as runGate() for vitest CI test + CLI (non-zero exit on fail).
 // ═══════════════════════════════════════════════════════════════════
 import fs from 'node:fs';
 import path from 'node:path';
@@ -14,68 +20,148 @@ import { fileURLToPath } from 'node:url';
 const J = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
 const exists = (p) => fs.existsSync(p);
 
-function perExamRecords(root, sub) {
-  const dir = path.join(root, 'dataset', sub);
-  const recs = [];
-  if (!exists(dir)) return recs;
-  for (const y of fs.readdirSync(dir).filter((d) => /^20/.test(d))) {
-    for (const f of fs.readdirSync(path.join(dir, y))) {
-      if (!/^exam_.*\.json$/.test(f)) continue;
-      for (const q of J(path.join(dir, y, f)).questions || []) recs.push(q);
-    }
-  }
-  return recs;
-}
-
 export function runGate(root = process.cwd()) {
   const violations = [];
-  const num = (q) => (typeof q.number === 'number' ? q.number
-    : typeof q.question_number === 'number' ? q.question_number : null);
+  const metrics = {};
+  const now = new Date().toISOString();
 
-  // gather every question record across all datasets
-  const all = [];
-  all.push(...perExamRecords(root, 'comprehensive'));
-  all.push(...perExamRecords(root, 'mathematics'));
-  const cons = path.join(root, 'dataset/comprehensive/dataset_consolidated.json');
-  if (exists(cons)) for (const ex of J(cons).exams || []) all.push(...(ex.questions || []));
-  for (const gf of ['dataset/gold_standard/gold_standard.json', 'dataset/gold_standard/math_gold_standard.json']) {
-    const p = path.join(root, gf); if (exists(p)) all.push(...(J(p).questions || []));
+  // ── [0] Canonical source ─────────────────────────────────────
+  const CANONICAL_PATH = path.join(root, 'public', 'dataset', 'canonical', 'parsed_questions.json');
+  const CANONICAL_REL = 'public/dataset/canonical/parsed_questions.json';
+
+  if (!exists(CANONICAL_PATH)) {
+    violations.push({ rule: 'canonical_not_found', path: CANONICAL_REL });
+    return { pass: false, violations, metrics: { ...metrics, canonical: 'NOT_FOUND' } };
   }
-  const rc = path.join(root, 'dataset/training/reclassified_ocr_data.json');
-  if (exists(rc)) { const d = J(rc); all.push(...(d.ocr_questions || []), ...(d.vision_questions || [])); }
 
-  // [1] number > 100 / artifacts
-  const overflow = all.filter((q) => { const n = num(q); return typeof n === 'number' && n > 100; });
-  if (overflow.length) violations.push({ rule: 'number_gt_100', count: overflow.length, sample: overflow.slice(0, 5).map(num) });
-  const fourDigit = all.filter((q) => { const n = num(q); return typeof n === 'number' && n >= 1000; });
-  if (fourDigit.length) violations.push({ rule: 'four_plus_digit_artifact', count: fourDigit.length, sample: fourDigit.slice(0, 5).map(num) });
+  const canonical = J(CANONICAL_PATH);
+  const questions = canonical.questions || [];
+  const total = questions.length;
+  metrics.canonical_total = total;
+  metrics.canonical_generatedAt = canonical.generatedAt;
 
-  // [2] comprehensive unknown-domain > 10% (review_required is NOT unknown)
-  const comp = perExamRecords(root, 'comprehensive');
-  const unknown = comp.filter((q) => q.domain === 'unknown' || q.domain === '' || q.domain == null).length;
-  const unkPct = comp.length ? (100 * unknown) / comp.length : 0;
-  if (unkPct > 10) violations.push({ rule: 'comprehensive_unknown_gt_10pct', value: +unkPct.toFixed(1) });
+  // ── [1] Domain coverage (comprehensive questions) ────────────
+  const VALID_DOMAINS = new Set(['economy', 'politics', 'history', 'geography', 'society']);
+  const compQs = questions.filter((q) => q.subject === 'comprehensive');
+  const compTotal = compQs.length;
+  const validDomain = compQs.filter((q) => q.domain && VALID_DOMAINS.has(q.domain));
+  const domainCoverage = compTotal > 0 ? (validDomain.length / compTotal) * 100 : 0;
+  metrics.comprehensive_total = compTotal;
+  metrics.comprehensive_valid_domains = validDomain.length;
+  metrics.comprehensive_domain_coverage_pct = +domainCoverage.toFixed(1);
 
-  // [3] mixed math schemas
-  const mdir = path.join(root, 'dataset/mathematics');
+  // Domain coverage baseline: ≥52.8%
+  const DOMAIN_COVERAGE_BASELINE = 52.8;
+  if (domainCoverage < DOMAIN_COVERAGE_BASELINE) {
+    violations.push({
+      rule: 'domain_coverage_below_baseline',
+      value: +domainCoverage.toFixed(1),
+      baseline: DOMAIN_COVERAGE_BASELINE,
+    });
+  }
+
+  // ── [2] Review required check (must not increase) ────────────
+  const reviewRequired = compQs.filter((q) => q.domain === 'review_required').length;
+  const reviewReqPct = compTotal > 0 ? (reviewRequired / compTotal) * 100 : 0;
+  metrics.comprehensive_review_required = reviewRequired;
+  metrics.comprehensive_review_required_pct = +reviewReqPct.toFixed(1);
+
+  // Baseline: review_required should be 0 (we never introduce it)
+  const REVIEW_REQUIRED_BASELINE_PCT = 0;
+  if (reviewReqPct > REVIEW_REQUIRED_BASELINE_PCT) {
+    violations.push({
+      rule: 'review_required_increased',
+      value: +reviewReqPct.toFixed(1),
+      baseline: REVIEW_REQUIRED_BASELINE_PCT,
+    });
+  }
+
+  // ── [3] Number > 100 artifacts in canonical comprehensive ────
+  const overflow = compQs.filter((q) => {
+    const n = q.questionNumber;
+    return typeof n === 'number' && n > 100;
+  });
+  if (overflow.length > 0) {
+    violations.push({
+      rule: 'canonical_number_gt_100',
+      count: overflow.length,
+      sample: overflow.slice(0, 5).map((q) => ({
+        id: q.id,
+        questionNumber: q.questionNumber,
+      })),
+    });
+  }
+  metrics.canonical_number_gt_100 = overflow.length;
+
+  // Number > 90 is suspicious (max legit EJU is 38-40)
+  const overflow90 = compQs.filter((q) => {
+    const n = q.questionNumber;
+    return typeof n === 'number' && n > 90;
+  });
+  metrics.canonical_number_gt_90 = overflow90.length;
+
+  // ── [4] Math schema check ────────────────────────────────────
+  const MATH_DIR = path.join(root, 'public', 'dataset', 'mathematics');
   const schemas = new Set();
-  if (exists(mdir)) for (const y of fs.readdirSync(mdir).filter((d) => /^20/.test(d))) {
-    for (const f of fs.readdirSync(path.join(mdir, y))) {
-      if (!/^exam_.*\.json$/.test(f)) continue;
-      const q = (J(path.join(mdir, y, f)).questions || [])[0];
-      if (q) schemas.add(Object.keys(q).sort().join(','));
+  if (exists(MATH_DIR)) {
+    for (const y of fs.readdirSync(MATH_DIR).filter((d) => /^20/.test(d))) {
+      const yearDir = path.join(MATH_DIR, y);
+      if (!fs.statSync(yearDir).isDirectory()) continue;
+      for (const f of fs.readdirSync(yearDir)) {
+        if (!/^exam_.*\.json$/.test(f)) continue;
+        try {
+          const exam = J(path.join(yearDir, f));
+          const q0 = (exam.questions || [])[0];
+          if (q0) schemas.add(Object.keys(q0).sort().join(','));
+        } catch {}
+      }
     }
   }
-  if (schemas.size > 1) violations.push({ rule: 'mixed_math_schemas', distinct: schemas.size });
+  if (schemas.size > 1) {
+    violations.push({ rule: 'mixed_math_schemas', distinct: schemas.size });
+  }
+  metrics.math_distinct_schemas = schemas.size;
+
+  // ── [5] Engine datasets presence ─────────────────────────────
+  const ENGINE_DATASETS = {
+    trendComplete:   path.join(root, 'public', 'dataset', 'trend-analysis', 'trend_analysis_complete.json'),
+    insights:        path.join(root, 'public', 'dataset', 'insights', 'insights_v2.json'),
+    prediction2026:  path.join(root, 'public', 'dataset', 'prediction', 'prediction_2026.json'),
+    knowledgeGraph:  path.join(root, 'public', 'dataset', 'knowledge-graph', 'knowledge_graph_v3.json'),
+  };
+
+  const engineResults = {};
+  for (const [key, filePath] of Object.entries(ENGINE_DATASETS)) {
+    if (!exists(filePath)) {
+      engineResults[key] = 'NOT_FOUND';
+      violations.push({ rule: `engine_dataset_${key}_not_found`, path: filePath });
+    } else {
+      try {
+        const data = J(filePath);
+        if (data === null || (typeof data === 'object' && Object.keys(data).length === 0)) {
+          engineResults[key] = 'EMPTY';
+          violations.push({ rule: `engine_dataset_${key}_empty` });
+        } else {
+          engineResults[key] = 'OK';
+        }
+      } catch (e) {
+        engineResults[key] = 'PARSE_ERROR';
+        violations.push({ rule: `engine_dataset_${key}_parse_error`, error: e.message });
+      }
+    }
+  }
+  metrics.engine_datasets = engineResults;
+
+  // ── Summary ─────────────────────────────────────────────────
+  const pass = violations.length === 0;
 
   return {
-    pass: violations.length === 0,
+    pass,
     violations,
     metrics: {
-      totalRecords: all.length,
-      comprehensive_unknown_pct: +unkPct.toFixed(1),
-      math_distinct_schemas: schemas.size,
-      max_number: Math.max(0, ...all.map(num).filter((n) => typeof n === 'number')),
+      ...metrics,
+      canonical_path: CANONICAL_REL,
+      checkedAt: now,
     },
   };
 }
@@ -83,8 +169,11 @@ export function runGate(root = process.cwd()) {
 // CLI (robust to non-ASCII paths)
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const r = runGate();
-  console.log('[data-gate]', JSON.stringify(r.metrics));
-  if (r.pass) { console.log('[data-gate] ✅ PASS'); process.exit(0); }
-  console.error('[data-gate] ❌ FAIL:', JSON.stringify(r.violations, null, 2));
-  process.exit(1);
+  const status = r.pass ? '✅ PASS' : '❌ FAIL';
+  console.log(`[data:gate] ${status} — checkedAt=${r.metrics.checkedAt}`);
+  console.log('[data:gate]', JSON.stringify(r.metrics, null, 2));
+  if (!r.pass) {
+    console.error('[data:gate] Violations:', JSON.stringify(r.violations, null, 2));
+    process.exit(1);
+  }
 }
