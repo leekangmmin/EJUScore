@@ -1,6 +1,6 @@
 // Copyright (c) 2025 이강민 (Lee Kangmin) — EJU Score Tracker Service Worker (PWA v2)
-const CACHE_NAME = 'eju-score-v6';
-const STATIC_CACHE = 'eju-static-v6';
+const CACHE_NAME = 'eju-score-v7';
+const STATIC_CACHE = 'eju-static-v7';
 
 self.addEventListener('install', e => {
   self.skipWaiting();
