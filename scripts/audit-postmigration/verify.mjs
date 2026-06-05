@@ -13,6 +13,15 @@ const J = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
 const S = JSON.stringify;
 const out = { backup: path.relative(ROOT, BKDIR) };
 
+// ── Retired post-diet: the legacy per-exam source (dataset/comprehensive)
+// was intentionally removed in the dist-diet. This one-time migration audit
+// no longer applies; exit 0 so it is not a false deploy gate. ──────────────
+if (!fs.existsSync(path.join(ROOT, 'dataset/comprehensive'))) {
+  console.log('[verify] SKIPPED — legacy source dataset/comprehensive removed (dist-diet). '
+    + 'Migration was verified at v1.1.x; this audit is retired. (exit 0)');
+  process.exit(0);
+}
+
 // ── helper: list per-exam files relative ───────────────────
 function perExamFiles(base) {
   const dir = path.join(base, 'dataset/comprehensive');

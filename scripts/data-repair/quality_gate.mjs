@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════
-// PHASE 4 — Data Quality Gate (CI) — v3 (accuracy-driven)
+// PHASE 4 — Data Quality Gate (CI) — v4 (canonical-based math check)
 //
 // Replaces old "domain_coverage ≥ 52.8%" rule with accuracy gates:
 //
@@ -175,19 +175,26 @@ export async function runGate(root = process.cwd()) {
   metrics.canonical_number_gt_100 = overflow.length;
 
   // c3: Math schema check (must have exactly 1 distinct schema)
-  const MATH_DIR = path.join(root, 'public', 'dataset', 'mathematics');
+  // Re-wired v4: check canonical parsed_questions.json for subject=mathematics
   const schemas = new Set();
-  if (exists(MATH_DIR)) {
-    for (const y of fs.readdirSync(MATH_DIR).filter((d) => /^20/.test(d))) {
-      const yearDir = path.join(MATH_DIR, y);
-      if (!fs.statSync(yearDir).isDirectory()) continue;
-      for (const f of fs.readdirSync(yearDir)) {
-        if (!/^exam_.*\.json$/.test(f)) continue;
-        try {
-          const exam = J(path.join(yearDir, f));
-          const q0 = (exam.questions || [])[0];
-          if (q0) schemas.add(Object.keys(q0).sort().join(','));
-        } catch {}
+  const mathQs = (canonical.questions || []).filter((q) => q.subject === 'mathematics');
+  metrics.math_total = mathQs.length;
+  if (mathQs.length > 0) {
+    // Group by examId and check schema per exam
+    const examGroups = new Map();
+    for (const q of mathQs) {
+      const eid = q.examId || `math_${q.year}_r${q.round}`;
+      if (!examGroups.has(eid)) examGroups.set(eid, []);
+      examGroups.get(eid).push(q);
+    }
+    for (const [, group] of examGroups) {
+      const q0keys = Object.keys(group[0]).sort().join(',');
+      schemas.add(q0keys);
+      for (const q of group) {
+        const keys = Object.keys(q).sort().join(',');
+        if (keys !== q0keys) {
+          schemas.add('mixed_' + keys);
+        }
       }
     }
   }
