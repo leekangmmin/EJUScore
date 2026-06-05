@@ -534,7 +534,9 @@ export default function ComprehensiveAnalysis({ exams, settings, onAddNew }) {
           {goalDate && (
             <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'var(--t2)' }}>
               <Flag size={13} color="var(--green)" />
-              현재 추세라면 <b style={{ color: 'var(--t0)' }}>{goalDate}</b>에 목표 <b style={{ color: 'var(--green)' }}>{tComp}점</b> 도달 예상
+              {goalDate.alreadyAchieved
+                ? <>이미 목표 <b style={{ color: 'var(--green)' }}>{tComp}점</b>을 달성했어요 🎉</>
+                : <>현재 추세라면 <b style={{ color: 'var(--t0)' }}>{goalDate.date}</b>에 목표 <b style={{ color: 'var(--green)' }}>{tComp}점</b> 도달 예상</>}
             </div>
           )}
         </div>
