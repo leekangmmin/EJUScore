@@ -1588,10 +1588,20 @@ export default function PhotoToQuestion({ onSaved }) {
     parsing:       '질문 구조 분석 중...',
   }[ocrPhase] || 'OCR 변환 중...';
 
-  const confColor = ocrConfidence == null ? 'var(--t3)'
-    : ocrConfidence >= 70 ? '#10b981'
-    : ocrConfidence >= 40 ? '#f59e0b'
-    : '#ef4444';
+  // ── HONEST OCR framing ──────────────────────────────────────────────
+  // Tesseract's confidence is a rough recognition rate, NOT a usability
+  // guarantee — it reports ~70% even on garbled output, and garbage made of
+  // valid Japanese characters is indistinguishable from good text by cheap
+  // heuristics. So we NEVER claim the result is trustworthy: photo OCR is
+  // always a DRAFT the user must verify. The % is shown only as a faint hint.
+  const effConf = ocrConfidence;
+  const confLabel = effConf == null ? ''
+    : effConf >= 55
+      ? '변환 초안입니다 — 사진 OCR은 오탈자가 있을 수 있으니 저장 전 반드시 확인·수정하세요'
+      : '인식 품질 낮음 — 직접 입력/수정 권장 (밝은 곳·정면·글자 확대 촬영 후 재시도)';
+  const confColor = effConf == null ? 'var(--t3)'
+    : effConf >= 55 ? '#3182f6'   // info blue — a draft to review, not "verified" green
+    : '#f59e0b';
 
   /* ══════════════════════════════════════════════
      RENDER
@@ -1608,7 +1618,7 @@ export default function PhotoToQuestion({ onSaved }) {
         fileInputRef, cameraInputRef,
         resetAll, handleFiles, handleFile, handleDragOver, handleDragLeave, handleDrop,
         handleSaveEdit, handleSaveAsWrong, handleDeleteAllSaved, startAIAnalysis,
-        ocrPhaseLabel, confColor, isDragging,
+        ocrPhaseLabel, confColor, effConf, confLabel, isDragging,
       }} />
     );
   }
@@ -1889,14 +1899,10 @@ export default function PhotoToQuestion({ onSaved }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
                 <BarChart2 size={13} color={confColor} />
                 <span style={{ fontSize: 12, fontWeight: 700, color: confColor }}>
-                  OCR 신뢰도 {ocrConfidence}%
+                  OCR 인식률 {effConf}%
                 </span>
                 <span style={{ fontSize: 11, color: 'var(--t2)' }}>
-                  {ocrConfidence >= 70
-                    ? '✓ 고정밀 — 변환 결과를 신뢰할 수 있습니다'
-                    : ocrConfidence >= 40
-                      ? '△ 보통 — 수정 모드로 검토를 권장합니다'
-                      : '✗ 저정밀 — 수동 입력 권장 (사진 화질 개선 후 재시도)'}
+                  {confLabel}
                 </span>
               </div>
             </div>
@@ -2298,9 +2304,9 @@ function MobilePhotoToQuestion({ ctx }) {
             <div style={{ ...M_CARD, padding: '12px 14px', background: `${confColor}0d`, border: `1px solid ${confColor}30` }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
                 <BarChart2 size={13} color={confColor} />
-                <span style={{ fontSize: 12.5, fontWeight: 700, color: confColor }}>OCR 신뢰도 {ocrConfidence}%</span>
+                <span style={{ fontSize: 12.5, fontWeight: 700, color: confColor }}>OCR 인식률 {effConf}%</span>
                 <span style={{ fontSize: 11.5, color: 'var(--t2)', width: '100%' }}>
-                  {ocrConfidence >= 70 ? '✓ 고정밀 — 변환 결과를 신뢰할 수 있습니다' : ocrConfidence >= 40 ? '△ 보통 — 수정 모드로 검토를 권장합니다' : '✗ 저정밀 — 수동 입력 권장 (사진 화질 개선 후 재시도)'}
+                  {confLabel}
                 </span>
               </div>
             </div>
