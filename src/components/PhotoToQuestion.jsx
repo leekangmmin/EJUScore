@@ -1546,6 +1546,29 @@ export default function PhotoToQuestion({ onSaved }) {
     setBatchQueue([]); setBatchActive(false); setBatchCurrent(0);
   };
 
+  // ── 텍스트 붙여넣기: 폰 기본 OCR(아이폰 Live Text / 안드 Google 렌즈)이
+  //    인앱 tesseract보다 훨씬 정확하므로, 그 결과를 붙여넣어 그대로 파싱한다.
+  const handlePastedText = (raw) => {
+    const text = (raw || '').trim();
+    if (text.length < 5) return;
+    const parsedQ = parseQuestionFromText(text) || {
+      domain: 'unknown', questionText: text.slice(0, 600), options: [],
+      confidence: 80, rawLength: text.length, rawText: text,
+    };
+    parsedQ.rawText = text;
+    setPhoto(null);
+    setOcrConfidence(null); // user-provided clean text → no OCR confidence banner
+    setParsed(parsedQ);
+    setEditing(false);
+    setMode('result');
+  };
+  const promptPasteText = () => {
+    const t = window.prompt(
+      '폰에서 인식한 문제 텍스트를 붙여넣으세요.\n\n• 아이폰: 사진을 길게 눌러 "텍스트 인식(Live Text)" → 복사\n• 안드로이드: Google 렌즈로 텍스트 복사\n\n→ 인앱 사진 OCR보다 훨씬 정확합니다.'
+    );
+    if (t && t.trim().length >= 5) handlePastedText(t.trim());
+  };
+
   /* ──────────────────────────────────────────────
      저장된 변환 문제 전체 삭제
   ────────────────────────────────────────────── */
@@ -1615,7 +1638,7 @@ export default function PhotoToQuestion({ onSaved }) {
         editing, setEditing, editForm, setEditForm, mode,
         savedQuestions, batchActive, batchQueue, batchCurrent,
         aiStreamText, aiLoading, aiLoadProgress, aiError,
-        fileInputRef, cameraInputRef,
+        fileInputRef, cameraInputRef, promptPasteText,
         resetAll, handleFiles, handleFile, handleDragOver, handleDragLeave, handleDrop,
         handleSaveEdit, handleSaveAsWrong, handleDeleteAllSaved, startAIAnalysis,
         ocrPhaseLabel, confColor, effConf, confLabel, isDragging,
@@ -1761,9 +1784,16 @@ export default function PhotoToQuestion({ onSaved }) {
                 <Camera size={14} /> 카메라 촬영
               </button>
               <button onClick={e => { e.stopPropagation(); fileInputRef.current?.click(); }}
-                style={{ ...btnPrimary, padding: '9px 14px' }}>
+                style={{ ...btnSecondary, padding: '9px 14px' }}>
                 <FileImage size={14} /> 파일 / PDF 선택 (다중)
               </button>
+              <button onClick={e => { e.stopPropagation(); promptPasteText(); }}
+                style={{ ...btnPrimary, padding: '9px 14px' }}>
+                📋 텍스트 붙여넣기 (가장 정확)
+              </button>
+            </div>
+            <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 12, lineHeight: 1.5 }}>
+              💡 사진 OCR(베타)은 오탈자가 많습니다. 폰의 기본 텍스트 인식(아이폰 Live Text / 안드로이드 Google 렌즈)으로 복사해 “텍스트 붙여넣기”가 가장 정확합니다.
             </div>
           </div>
 
@@ -2117,7 +2147,7 @@ function MobilePhotoToQuestion({ ctx }) {
     editing, setEditing, editForm, setEditForm, mode,
     savedQuestions, batchActive, batchQueue, batchCurrent,
     aiStreamText, aiLoading, aiLoadProgress, aiError,
-    fileInputRef, cameraInputRef,
+    fileInputRef, cameraInputRef, promptPasteText,
     resetAll, handleFiles, handleFile, handleDragOver, handleDragLeave, handleDrop,
     handleSaveEdit, handleSaveAsWrong, handleDeleteAllSaved, startAIAnalysis,
     ocrPhaseLabel, confColor, isDragging,
@@ -2222,8 +2252,12 @@ function MobilePhotoToQuestion({ ctx }) {
             <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--t0)', marginBottom: 6 }}>탭하여 이미지·PDF 업로드</div>
             <div style={{ fontSize: 11, color: 'var(--t3)', marginBottom: 14, lineHeight: 1.5 }}>JPG · PNG · WebP · PDF · 여러 PDF 한 번에 선택 가능</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              <button onClick={e => { e.stopPropagation(); cameraInputRef.current?.click(); }} style={mBtnSecondary}><Camera size={15} /> 카메라 촬영</button>
-              <button onClick={e => { e.stopPropagation(); fileInputRef.current?.click(); }} style={mBtnPrimary}><FileImage size={15} /> 파일 / PDF 선택 (다중)</button>
+              <button onClick={e => { e.stopPropagation(); cameraInputRef.current?.click(); }} style={mBtnSecondary}><Camera size={15} /> 카메라 촬영 <span style={{ fontSize: 10, fontWeight: 700, color: '#f59e0b' }}>BETA</span></button>
+              <button onClick={e => { e.stopPropagation(); fileInputRef.current?.click(); }} style={mBtnSecondary}><FileImage size={15} /> 파일 / PDF 선택 (다중)</button>
+              <button onClick={e => { e.stopPropagation(); promptPasteText(); }} style={mBtnPrimary}>📋 텍스트 붙여넣기 <span style={{ fontSize: 10, fontWeight: 700, opacity: .85 }}>(가장 정확)</span></button>
+            </div>
+            <div style={{ fontSize: 10.5, color: 'var(--t3)', marginTop: 10, lineHeight: 1.5, textAlign: 'left' }}>
+              💡 사진 OCR은 오탈자가 많아요. <b>아이폰: 사진 길게 눌러 텍스트 인식(Live Text)</b> / <b>안드로이드: Google 렌즈</b>로 복사해 "텍스트 붙여넣기"가 가장 정확합니다.
             </div>
           </div>
 
