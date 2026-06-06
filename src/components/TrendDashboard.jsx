@@ -43,6 +43,7 @@ import {
 } from '../intelligence/engineInitializer';
 import useIsMobile from '../hooks/useIsMobile';
 import MobileTrendDashboard from './MobileTrendDashboard';
+import ExamDifficultyPanel from './ExamDifficultyPanel';
 import {
   computePersonalAccuracy, computePriorityTopics,
   analyzeErrorTypes,
@@ -642,6 +643,9 @@ export default function TrendDashboard({ exams = [] }) {
           </div>
         </div>
       </div>
+
+      {/* ═══ 연도·회차별 문항 난이도 분석 (독립 패널) ═══ */}
+      <ExamDifficultyPanel />
 
       {/* ═══ EXECUTIVE SUMMARY ═══ */}
       {execSummary?.lines?.length > 0 && (

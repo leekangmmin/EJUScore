@@ -20,6 +20,7 @@ import {
   BarChart3, Sparkles, FileText, Layers, Brain, ListChecks,
   Network, GitBranch, Clock, TrendingUp, TrendingDown, Target,
 } from 'lucide-react';
+import ExamDifficultyPanel from './ExamDifficultyPanel';
 
 const DOMAIN_COLORS = {
   economy: '#10b981',
@@ -136,6 +137,9 @@ export default function MobileTrendDashboard({ data }) {
           ))}
         </div>
       </div>
+
+      {/* ═══ 연도·회차별 문항 난이도 분석 (독립 패널) ═══ */}
+      <ExamDifficultyPanel />
 
       {/* ═══ 수치 요약 (default open) ═══ */}
       {execSummary?.lines?.length > 0 && (
