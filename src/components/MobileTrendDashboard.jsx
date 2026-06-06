@@ -263,7 +263,7 @@ export default function MobileTrendDashboard({ data }) {
       {topicIntel.length > 0 && (
         <Section icon={<Brain size={15} color="#6366f1" />} title="토픽 인텔리전스" defaultOpen={false}>
           <div style={{ fontSize: 10.5, color: 'var(--t3)', marginBottom: 10, lineHeight: 1.5 }}>
-            {topicIntel.length}개 표준 토픽별 지표·예측 점수 (probability_pct)·데이터신뢰도(evidence_pct). gold_standard·OCR(2002-2015)에서 산출.
+            {topicIntel.length}개 표준 토픽별 지표·예측 점수 (probability_pct)·데이터신뢰도(evidence_pct). 실제 기출 38회 OCR(2005-2025)에서 산출.
           </div>
           {topicIntel.map((t, i) => {
             const c = DOMAIN_COLORS[t.domain] || '#94a3b8';
@@ -365,7 +365,7 @@ export default function MobileTrendDashboard({ data }) {
               </span>
             ))}
           </div>
-          <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--t1)', margin: '12px 0 6px' }}>예상 출제 형식 분포 <span style={{ fontSize: 10, color: 'var(--t3)', fontWeight: 400 }}>(2002-2015 OCR 기반)</span></div>
+          <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--t1)', margin: '12px 0 6px' }}>예상 출제 형식 분포 <span style={{ fontSize: 10, color: 'var(--t3)', fontWeight: 400 }}>(2005-2025 OCR 기반)</span></div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
             {Object.entries(examSim.format_dist || {}).map(([k, v]) => (
               <span key={k} style={{ fontSize: 11.5, padding: '3px 9px', borderRadius: 7, background: 'var(--bg1)', border: '1px solid var(--bd0)', color: k === '데이터 없음' ? 'var(--t3)' : 'var(--t1)' }}>

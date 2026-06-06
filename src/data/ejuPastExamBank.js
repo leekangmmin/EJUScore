@@ -1,8 +1,12 @@
-// ⚠️ 자동 생성 파일 — 38회차 OCR 정밀 분석 결과에 기반한 하드코딩 데이터
-// EJU 기출 사전 분석 뱅크: 종합과목 38회분(1444문항 표준 환산)
-// 🔬 신뢰도: OCR 평균 84.4% | 38회차 중 35회차 80%↑ | 3회차 75-79% (저신뢰)
-// 🎯 정밀 분석 방법: 일본어 OCR 원문 키워드 기반 5대 영역 재분류 + 시대별 추이
-// 배포 시에도 출제경향 화면에 기본 표시되는 하드코딩 데이터
+// ⚠️ DEPRECATED (2026-06) — 이 파일의 jongkwa 수치는 사용자 화면에 렌더되지 않습니다.
+//   · 기출경향(TrendDashboard)/insights/prediction의 실데이터 출처는 이제:
+//       public/dataset/trend-analysis/trend_analysis_complete.json
+//       public/dataset/insights/insights_v2.json
+//       public/dataset/prediction/prediction_2026_2028.json
+//     (생성 스크립트: scripts/trend-rebuild/*.py — 실제 기출 38회 OCR 기반)
+//   · buildEnhancedModel(TrendDashboardData.js)은 현재 import되지 않는 dead code,
+//     ExamIntelligenceCenter는 PAST_EXAM_BANK.math만 참조(현재 미정의).
+//   · 아래 jongkwa 수치는 과거 추정치이며 신뢰 출처가 아님 — 신규 코드에서 사용 금지.
 
 export const PAST_EXAM_BANK = {
   "generatedAt": "2026-06-01",

@@ -219,7 +219,7 @@ function ChartNarrative({ meaning, action }) {
 
 // ── Data-classification badge (REAL / DERIVED / PREDICTED / UNKNOWN) ──
 const BADGE_META = {
-  REAL:      { c: '#10b981', bg: 'rgba(16,185,129,0.12)', label: 'REAL',      tip: '원본 데이터 직접 측정 (gold_standard 1,121문항 / prediction 모델 성분)' },
+  REAL:      { c: '#10b981', bg: 'rgba(16,185,129,0.12)', label: 'REAL',      tip: '실제 기출 38회(2005-2025) OCR 본문에서 직접 측정 (표준 38문항 기준 약 1,444문항)' },
   DERIVED:   { c: '#0ea5e9', bg: 'rgba(14,165,233,0.12)', label: 'DERIVED',   tip: '실측 데이터로 계산 (공식 표기)' },
   PREDICTED: { c: '#a855f7', bg: 'rgba(168,85,247,0.12)', label: 'PREDICTED', tip: '예측 모델 결과 (확률·청사진)' },
   UNKNOWN:   { c: '#94a3b8', bg: 'rgba(148,163,184,0.14)', label: 'UNKNOWN',  tip: '데이터 없음 — 생성하지 않음' },
@@ -313,7 +313,7 @@ function ExplainableAIPanel({ topic, predDetail, confidence }) {
       {open && (
         <div style={{ marginTop: 6, padding: '8px 10px', background: 'var(--bg1)', borderRadius: 8, border: '1px dashed var(--bd1)', fontSize: 11, lineHeight: 1.6, color: 'var(--t2)' }}>
           {topic && <div><b>토픽:</b> {topic}</div>}
-          {predDetail?.total_24yr_count != null && <div><b>총 출제 횟수:</b> {predDetail.total_24yr_count}회 (24년)</div>}
+          {predDetail?.total_24yr_count != null && <div><b>총 출제 횟수:</b> {predDetail.total_24yr_count}회 (21년)</div>}
           {predDetail?.recent_5yr_count != null && <div><b>최근 5년 빈도:</b> {predDetail.recent_5yr_count}회</div>}
           {predDetail?.probability_pct != null && <div><b>예측 점수:</b> {Math.round(predDetail.probability_pct)}% (모델 점수, 실제 확률 아님)</div>}
           {predDetail?.confidence != null && <div><b>신뢰도:</b> {Math.round(predDetail.confidence * 100)}%</div>}
@@ -560,7 +560,7 @@ export default function TrendDashboard({ exams = [] }) {
 
   const topicReport = {
     key: top100[0]
-      ? `최다 출제 토픽: <b>${top100[0].topic}</b> (${top100[0]?.total?.toLocaleString() || 0}회 · 24년). 추적 토픽: <b>${stats.topicsTracked}개</b>.`
+      ? `최다 출제 토픽: <b>${top100[0].topic}</b> (${top100[0]?.total?.toLocaleString() || 0}회 · 21년). 추적 토픽: <b>${stats.topicsTracked}개</b>.`
       : '',
     longterm: top100.length
       ? `상위 10개 = 전체 출제 ${top10share}%(${top100.slice(0, 10).reduce((a, t) => a + (t.total || 0), 0).toLocaleString()}문항 / ${totalQ?.toLocaleString() || 0}문항).`
@@ -720,7 +720,7 @@ export default function TrendDashboard({ exams = [] }) {
       <div className="td-grid-2">
         {/* 6. 영역별 비중 */}
         <div className="td-card">
-          <div className="td-card-title"><Target size={16} /> 영역별 비중 (24년 누적)</div>
+          <div className="td-card-title"><Target size={16} /> 영역별 비중 (21년 누적)</div>
           {subjectList.length > 0 && (
             <ResponsiveContainer width="100%" height={240}>
               <PieChart>
@@ -901,7 +901,7 @@ export default function TrendDashboard({ exams = [] }) {
         <div className="td-card">
           <div className="td-card-title"><Brain size={16} color="#6366f1" /> 토픽 인텔리전스 (Topic Intelligence)</div>
           <div style={{ fontSize: 12, color: 'var(--t3)', marginBottom: 12 }}>
-            35개 표준 토픽별 페이지. 지표·예측점수(probability_pct)·데이터근거(confidence) + 출제근거/형태/학습 자동 생성. 모든 수치는 gold_standard(1,121문항)·OCR(2002-2015)에서 산출.
+            35개 표준 토픽별 페이지. 지표·예측점수(probability_pct)·데이터근거(confidence) + 출제근거/형태/학습 자동 생성. 모든 수치는 실제 기출 38회(2005-2025) OCR 본문 용어 빈도에서 산출.
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, maxHeight: 620, overflowY: 'auto' }}>
             {topicIntel.map((t, i) => {
@@ -964,7 +964,7 @@ export default function TrendDashboard({ exams = [] }) {
         <div className="td-card">
           <div className="td-card-title"><Layers size={16} color="#0ea5e9" /> 영역 인텔리전스 (Domain Intelligence)</div>
           <div style={{ fontSize: 12, color: 'var(--t3)', marginBottom: 10 }}>
-            영역별 비중·추세 = 24년 실측(trend_analysis), 예상 비중 = 예측 청사진(Exam Blueprint), 난이도·배분시간 = 파생값.
+            영역별 비중·추세 = 21년(2005-2025) 실측(trend_analysis), 예상 비중 = 예측 청사진(Exam Blueprint), 난이도·배분시간 = 파생값.
           </div>
           <div style={{ overflowX: 'auto' }}>
             <div style={{ minWidth: 560 }}>
@@ -1160,7 +1160,7 @@ export default function TrendDashboard({ exams = [] }) {
       {/* ═══ FORMAT TREND ═══ */}
       {fmtByYear?.length > 0 && (
         <div className="td-card">
-          <div className="td-card-title"><Image size={16} color="#06b6d4" /> 문항 형식 변화 추이 ({fmtSummary?.coverage || '2002-2015'})</div>
+          <div className="td-card-title"><Image size={16} color="#06b6d4" /> 문항 형식 변화 추이 ({fmtSummary?.coverage || '2005-2025'})</div>
           <div style={{ fontSize: 12, color: 'var(--t3)', marginBottom: 10 }}>{fmtSummary?.method}</div>
           <ResponsiveContainer width="100%" height={220}>
             <AreaChart data={fmtByYear}>
@@ -1340,7 +1340,7 @@ export default function TrendDashboard({ exams = [] }) {
         const exp = explainForTopTopic;
         const sigs = [
           { label: 'Bayesian (30%)', value: exp.bayesian, color: '#10b981',
-            calc: predDetail ? `24년 중 ${predDetail.total_24yr_count ?? 0}회 출제, 최근 5년 ${predDetail.recent_5yr_count ?? 0}회. Recency-weighted Beta-Binomial 사후확률.` : '계산 데이터 없음' },
+            calc: predDetail ? `21년 중 ${predDetail.total_24yr_count ?? 0}회 출제, 최근 5년 ${predDetail.recent_5yr_count ?? 0}회. Recency-weighted Beta-Binomial 사후확률.` : '계산 데이터 없음' },
           { label: 'Markov (20%)', value: exp.markov, color: '#0ea5e9',
             calc: predDetail ? `직전 출제 ${predDetail.last_appeared ?? '?'}년 · 연속 ${predDetail.consecutive ?? 0}년. 2-상태 전이확률.` : '계산 데이터 없음' },
           { label: 'Trend (20%)', value: exp.trend, color: '#f59e0b',
@@ -1375,7 +1375,7 @@ export default function TrendDashboard({ exams = [] }) {
             <div style={{ marginTop: 10, fontSize: 11, color: 'var(--t3)', lineHeight: 1.5, padding: '8px 10px', background: 'var(--bg1)', borderRadius: 8, border: '1px dashed var(--bd1)' }}>
               <b>basis:</b> {exp.basis || predDetail?.basis || '데이터 없음'}
               {exp.model_confidence != null && <span> · <b>모델 신뢰도:</b> {Math.round(exp.model_confidence * 100)}%</span>}
-              {predDetail?.total_24yr_count != null && <span> · <b>총 출제:</b> {predDetail.total_24yr_count}회/24년</span>}
+              {predDetail?.total_24yr_count != null && <span> · <b>총 출제:</b> {predDetail.total_24yr_count}회/21년</span>}
               {predDetail?.recent_5yr_count != null && <span> · <b>최근5년:</b> {predDetail.recent_5yr_count}회</span>}
               {predDetail?.confidence != null && <span> · <b>confidence:</b> {predDetail.confidence > 0.7 ? '높음' : predDetail.confidence > 0.4 ? '보통' : '낮음'} ({Math.round(predDetail.confidence * 100)}%)</span>}
             </div>
@@ -1457,7 +1457,7 @@ export default function TrendDashboard({ exams = [] }) {
             </div>
           </div>
           <ChartNarrative
-            meaning={`실제 EJU 종합과목과 동일한 <b>${examSim.total_questions}문항</b> 구성, 영역 비중 = 과거 24년 실제 분포 반영. 토픽 = 2026 예측확률 상위로 채움.`}
+            meaning={`실제 EJU 종합과목과 동일한 <b>${examSim.total_questions}문항</b> 구성, 영역 비중 = 과거 21년(2005-2025) 실제 분포 반영. 토픽 = 2026 예측확률 상위로 채움.`}
             action={`이 구성표를 실전 연습 범위로 사용하세요. ⚠️ 문제 텍스트가 아닌 구성 예측이므로 실제 출제 보장은 아닙니다.`}
           />
         </div>
